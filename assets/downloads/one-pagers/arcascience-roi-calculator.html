@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcaScience ROI Summary | One-Pager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.5;
+            font-size: 9.5pt;
+            background: #ffffff;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+
+        .page {
+            padding: 0;
+            min-height: 297mm;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 28px 35px 22px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .logo {
+            font-size: 16pt;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 8.5pt;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+
+        .header h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .header p {
+            font-size: 10pt;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 22px 35px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2563EB;
+            margin-bottom: 10px;
+            margin-top: 18px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Hero metrics */
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .hero-metric {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 18px 14px;
+            text-align: center;
+        }
+
+        .hero-metric .number {
+            font-size: 28pt;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .hero-metric .label {
+            font-size: 8.5pt;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 4px;
+            line-height: 1.3;
+        }
+
+        /* Time savings */
+        .savings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .saving-card {
+            background: #f0f4ff;
+            border-radius: 8px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .saving-card .pct {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #2563EB;
+            flex-shrink: 0;
+            width: 65px;
+            text-align: center;
+        }
+
+        .saving-card .detail {
+            font-size: 8.5pt;
+            color: #334155;
+            line-height: 1.4;
+        }
+
+        .saving-card .detail strong {
+            display: block;
+            font-size: 9pt;
+            color: #1a1a2e;
+        }
+
+        /* Comparison table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.5pt;
+            margin-bottom: 16px;
+        }
+
+        th {
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        th.col-metric {
+            background: #f1f5f9;
+            color: #475569;
+            width: 35%;
+        }
+
+        th.col-manual {
+            background: #fef2f2;
+            color: #b91c1c;
+            width: 25%;
+            text-align: center;
+        }
+
+        th.col-arca {
+            background: #f0f4ff;
+            color: #2563EB;
+            width: 25%;
+            text-align: center;
+        }
+
+        th.col-improvement {
+            background: #f0fdf4;
+            color: #15803d;
+            width: 15%;
+            text-align: center;
+        }
+
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        td.center {
+            text-align: center;
+        }
+
+        td.improvement {
+            text-align: center;
+            font-weight: 700;
+            color: #15803d;
+        }
+
+        tr:nth-child(even) td {
+            background: #fafbfc;
+        }
+
+        /* Quality metrics */
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .quality-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+        }
+
+        .quality-card .number {
+            font-size: 16pt;
+            font-weight: 800;
+            color: #15803d;
+            line-height: 1;
+        }
+
+        .quality-card .label {
+            font-size: 7.5pt;
+            color: #475569;
+            margin-top: 4px;
+            line-height: 1.3;
+        }
+
+        /* Cost section */
+        .cost-scenario {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+        }
+
+        .cost-scenario h4 {
+            font-size: 9.5pt;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .cost-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 8.5pt;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .cost-row:last-child {
+            border-bottom: none;
+            padding-top: 8px;
+            margin-top: 4px;
+            border-top: 2px solid #2563EB;
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: #2563EB;
+        }
+
+        .cost-row .label { color: #475569; }
+        .cost-row .value { font-weight: 600; color: #1a1a2e; }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 16px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer .cta {
+            font-size: 10pt;
+            font-weight: 600;
+        }
+
+        .footer .cta span {
+            font-weight: 400;
+            font-size: 8.5pt;
+            opacity: 0.85;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .footer .legal {
+            font-size: 7.5pt;
+            opacity: 0.75;
+            text-align: right;
+        }
+
+        @media print {
+            body { max-width: none; }
+            .page { height: 297mm; overflow: hidden; }
+            .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .hero-metric { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .saving-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .quality-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            td.improvement { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <div class="header">
+        <div class="header-top">
+            <div class="logo">ArcaScience</div>
+            <div class="tagline">AI-Driven Benefit-Risk Analysis</div>
+        </div>
+        <h1>ROI Summary</h1>
+        <p>Quantified impact of AI-driven benefit-risk analysis on pharmaceutical development operations</p>
+    </div>
+
+    <div class="main-content">
+
+        <div class="hero-metrics">
+            <div class="hero-metric">
+                <div class="number">73%</div>
+                <div class="label">Faster safety<br>signal detection</div>
+            </div>
+            <div class="hero-metric">
+                <div class="number">60%</div>
+                <div class="label">Faster benefit-risk<br>assessment</div>
+            </div>
+            <div class="hero-metric">
+                <div class="number">75%</div>
+                <div class="label">Faster PBRER/PSUR<br>generation</div>
+            </div>
+        </div>
+
+        <div class="section-title">Time Savings by Activity</div>
+
+        <div class="savings-grid">
+            <div class="saving-card">
+                <div class="pct">73%</div>
+                <div class="detail">
+                    <strong>Safety Signal Detection</strong>
+                    From 14.2 months to 3.8 months median time to signal identification
+                </div>
+            </div>
+            <div class="saving-card">
+                <div class="pct">60%</div>
+                <div class="detail">
+                    <strong>Benefit-Risk Assessment</strong>
+                    From 30 weeks to 12 weeks for comprehensive quantitative BRA
+                </div>
+            </div>
+            <div class="saving-card">
+                <div class="pct">75%</div>
+                <div class="detail">
+                    <strong>PBRER/PSUR Generation</strong>
+                    From 16 weeks to 4 weeks per periodic safety report
+                </div>
+            </div>
+            <div class="saving-card">
+                <div class="pct">50%</div>
+                <div class="detail">
+                    <strong>HTA Evidence Synthesis</strong>
+                    From 20 weeks to 10 weeks for systematic review and NMA
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Manual vs. ArcaScience Comparison</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-metric">Process</th>
+                    <th class="col-manual">Manual Process</th>
+                    <th class="col-arca">ArcaScience</th>
+                    <th class="col-improvement">Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BRA preparation time</td>
+                    <td class="center">8-12 weeks</td>
+                    <td class="center">3-5 weeks</td>
+                    <td class="improvement">60%</td>
+                </tr>
+                <tr>
+                    <td>BRA cost per assessment</td>
+                    <td class="center">$600K-$1.2M</td>
+                    <td class="center">$140K-$320K</td>
+                    <td class="improvement">70-75%</td>
+                </tr>
+                <tr>
+                    <td>Sensitivity scenarios analyzed</td>
+                    <td class="center">5-10</td>
+                    <td class="center">10,000+</td>
+                    <td class="improvement">1,000x</td>
+                </tr>
+                <tr>
+                    <td>Data sources integrated</td>
+                    <td class="center">2-3</td>
+                    <td class="center">12+</td>
+                    <td class="improvement">4-6x</td>
+                </tr>
+                <tr>
+                    <td>Signal detection false positive rate</td>
+                    <td class="center">85-95%</td>
+                    <td class="center">10-15%</td>
+                    <td class="improvement">89%</td>
+                </tr>
+                <tr>
+                    <td>PBRER preparation time</td>
+                    <td class="center">12-20 weeks</td>
+                    <td class="center">3-5 weeks</td>
+                    <td class="improvement">75%</td>
+                </tr>
+                <tr>
+                    <td>PBRER cost per report</td>
+                    <td class="center">$500K-$1.2M</td>
+                    <td class="center">$140K-$320K</td>
+                    <td class="improvement">70%</td>
+                </tr>
+                <tr>
+                    <td>Regulatory queries on BRA</td>
+                    <td class="center">4-8 per submission</td>
+                    <td class="center">1-3 per submission</td>
+                    <td class="improvement">40-60%</td>
+                </tr>
+                <tr>
+                    <td>BRA update turnaround (new data)</td>
+                    <td class="center">3-4 weeks</td>
+                    <td class="center">1-2 days</td>
+                    <td class="improvement">90%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">Quality Improvement Metrics</div>
+
+        <div class="quality-grid">
+            <div class="quality-card">
+                <div class="number">89%</div>
+                <div class="label">Reduction in signal<br>false positives</div>
+            </div>
+            <div class="quality-card">
+                <div class="number">92%</div>
+                <div class="label">First-pass quality<br>compliance rate</div>
+            </div>
+            <div class="quality-card">
+                <div class="number">40%</div>
+                <div class="label">Fewer regulatory<br>queries on BRA</div>
+            </div>
+            <div class="quality-card">
+                <div class="number">100%</div>
+                <div class="label">Audit trail<br>traceability</div>
+            </div>
+        </div>
+
+        <div class="section-title">Annual Cost Reduction Estimate</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="cost-scenario">
+                <h4>Mid-Size Pharma (5 marketed products)</h4>
+                <div class="cost-row">
+                    <span class="label">PBRER savings (5 reports/year)</span>
+                    <span class="value">$1.8M - $3.5M</span>
+                </div>
+                <div class="cost-row">
+                    <span class="label">BRA savings (3 assessments/year)</span>
+                    <span class="value">$1.4M - $2.6M</span>
+                </div>
+                <div class="cost-row">
+                    <span class="label">Signal detection efficiency</span>
+                    <span class="value">$0.8M - $1.2M</span>
+                </div>
+                <div class="cost-row">
+                    <span class="label">Estimated annual savings</span>
+                    <span class="value">$4.0M - $7.3M</span>
+                </div>
+            </div>
+            <div class="cost-scenario">
+                <h4>Large Pharma (15+ marketed products)</h4>
+                <div class="cost-row">
+                    <span class="label">PBRER savings (15+ reports/year)</span>
+                    <span class="value">$5.4M - $10.5M</span>
+                </div>
+                <div class="cost-row">
+                    <span class="label">BRA savings (8+ assessments/year)</span>
+                    <span class="value">$3.7M - $7.0M</span>
+                </div>
+                <div class="cost-row">
+                    <span class="label">Signal detection efficiency</span>
+                    <span class="value">$2.4M - $3.6M</span>
+                </div>
+                <div class="cost-row">
+                    <span class="label">Estimated annual savings</span>
+                    <span class="value">$11.5M - $21.1M</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="cta">
+            Calculate your custom ROI at arcascience.ai/roi
+            <span>Schedule a personalized demo: info@arcascience.ai | arcascience.ai/contact</span>
+        </div>
+        <div class="legal">
+            &copy; 2026 ArcaScience<br>
+            All rights reserved. | arcascience.ai
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

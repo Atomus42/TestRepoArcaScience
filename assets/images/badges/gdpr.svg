@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40" fill="none">
+  <rect x="1" y="1" width="118" height="38" rx="6" fill="#F0F3FF" stroke="#003399" stroke-width="1.5"/>
+  <!-- EU Stars icon -->
+  <g transform="translate(16, 20)">
+    <g fill="#003399">
+      <circle cx="0" cy="-9" r="1.2"/>
+      <circle cx="4.5" cy="-7.8" r="1.2"/>
+      <circle cx="7.8" cy="-4.5" r="1.2"/>
+      <circle cx="9" cy="0" r="1.2"/>
+      <circle cx="7.8" cy="4.5" r="1.2"/>
+      <circle cx="4.5" cy="7.8" r="1.2"/>
+      <circle cx="0" cy="9" r="1.2"/>
+      <circle cx="-4.5" cy="7.8" r="1.2"/>
+      <circle cx="-7.8" cy="4.5" r="1.2"/>
+      <circle cx="-9" cy="0" r="1.2"/>
+      <circle cx="-7.8" cy="-4.5" r="1.2"/>
+      <circle cx="-4.5" cy="-7.8" r="1.2"/>
+    </g>
+  </g>
+  <!-- Text -->
+  <text x="38" y="18" style="font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #003399;">GDPR</text>
+  <text x="38" y="29" style="font-family: 'Inter', Arial, sans-serif; font-size: 7px; font-weight: 500; fill: #003399; opacity: 0.7;">Compliant</text>
+</svg>

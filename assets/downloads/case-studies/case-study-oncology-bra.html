@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: AI-Driven Benefit-Risk Analysis for a Novel Oncology Therapy | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header .label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #2563EB;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .overview-box {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .overview-item {
+            padding: 0;
+        }
+
+        .overview-item .label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #2563EB;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .overview-item .value {
+            font-size: 11pt;
+            color: #1a1a2e;
+        }
+
+        .challenge-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .challenge-box h3 {
+            color: #b91c1c;
+            margin-top: 0;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .solution-box h3 {
+            color: #15803d;
+            margin-top: 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .result-card {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .result-card .number {
+            font-size: 30pt;
+            font-weight: 700;
+            color: #2563EB;
+            line-height: 1;
+        }
+
+        .result-card .unit {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2563EB;
+        }
+
+        .result-card .description {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 25px 0;
+            padding-left: 25px;
+            border-left: 3px solid #2563EB;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #2563EB;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #2563EB;
+        }
+
+        .timeline-item .week {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #2563EB;
+            text-transform: uppercase;
+        }
+
+        .timeline-item .title {
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .timeline-item .detail {
+            font-size: 10pt;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2563EB;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .testimonial {
+            background: #f8fafc;
+            border-left: 4px solid #2563EB;
+            padding: 22px 28px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 12pt;
+            line-height: 1.6;
+        }
+
+        .testimonial .attribution {
+            font-style: normal;
+            font-size: 10pt;
+            color: #64748b;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .cta-section .cta-link {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-header .label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .result-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .overview-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .challenge-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .solution-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3 { page-break-after: avoid; }
+            table, .testimonial, .results-grid { page-break-inside: avoid; }
+            .results-grid { display: block; }
+            .result-card { display: inline-block; width: 30%; margin: 5px 1%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <div class="label">Case Study &mdash; Oncology</div>
+    <h1>AI-Driven Benefit-Risk Analysis for a Novel Oncology Therapy</h1>
+    <div class="subtitle">How a mid-size biopharma company used ArcaScience to navigate a complex regulatory submission for a PD-1/LAG-3 bispecific checkpoint inhibitor</div>
+    <div class="meta">Case Study | 2026 | arcascience.ai</div>
+</div>
+
+<div class="content">
+
+    <div class="overview-box">
+        <div class="overview-item">
+            <div class="label">Company</div>
+            <div class="value">Mid-size biopharmaceutical (Top 50 global)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Therapeutic Area</div>
+            <div class="value">Oncology &mdash; Non-Small Cell Lung Cancer (NSCLC)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Product</div>
+            <div class="value">PD-1/LAG-3 bispecific antibody (checkpoint inhibitor)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Development Stage</div>
+            <div class="value">Pre-BLA submission (Phase 3 complete)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">ArcaScience Modules Used</div>
+            <div class="value">Data Intelligence, Decision Intelligence, Automated Outputs</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Timeline</div>
+            <div class="value">12-week engagement (vs. 30-week projected manual process)</div>
+        </div>
+    </div>
+
+    <h2>The Challenge</h2>
+
+    <div class="challenge-box">
+        <h3>Complex Safety Profile in a Crowded Therapeutic Space</h3>
+        <p>
+            The client was preparing a BLA submission for a first-in-class PD-1/LAG-3 bispecific antibody for second-line NSCLC. While the pivotal Phase 3 trial (N=1,247) demonstrated statistically significant improvement in overall survival versus standard-of-care pembrolizumab, the novel mechanism introduced a safety profile with unique characteristics that required careful characterization.
+        </p>
+    </div>
+
+    <p>
+        The specific challenges facing the regulatory team were multifaceted:
+    </p>
+    <ul>
+        <li><strong>Novel immune-related adverse events:</strong> The bispecific mechanism targeting both PD-1 and LAG-3 produced a distinct pattern of immune-related adverse events (irAEs) not seen with monospecific anti-PD-1 agents, including a higher incidence of Grade 2-3 hepatitis (8.3% vs. 3.1%) and a novel pattern of autoimmune thyroiditis</li>
+        <li><strong>Regulatory scrutiny:</strong> FDA reviewers had flagged the hepatotoxicity signal during a pre-BLA meeting and requested a comprehensive benefit-risk assessment demonstrating that the survival benefit justified the incremental safety risk</li>
+        <li><strong>Competitive context:</strong> With multiple PD-(L)1 agents already approved for second-line NSCLC, the benefit-risk assessment needed to clearly demonstrate added clinical value to support both regulatory approval and subsequent market access</li>
+        <li><strong>Data volume:</strong> The integrated safety database included 3,842 patients across the development program (Phase 1-3), plus post-marketing safety data from the first-line indication approved 8 months earlier. The team needed to synthesize data from 14 clinical studies, 2 ongoing registries, and published literature on the therapeutic class</li>
+        <li><strong>Timeline pressure:</strong> The BLA submission date was fixed, with only 16 weeks remaining. The benefit-risk assessment was on the critical path, and the manual process was estimated at 30+ weeks</li>
+    </ul>
+
+    <h2>The Solution</h2>
+
+    <div class="solution-box">
+        <h3>ArcaScience Platform Deployment</h3>
+        <p>
+            ArcaScience deployed its full platform suite&mdash;Data Intelligence, Decision Intelligence, and Automated Outputs&mdash;to create a comprehensive, quantitative benefit-risk assessment that met regulatory expectations while fitting within the compressed timeline.
+        </p>
+    </div>
+
+    <h2>Implementation Process</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="week">Weeks 1-2</div>
+            <div class="title">Data Integration and Decision Framework Setup</div>
+            <div class="detail">Connected to the company's clinical data warehouse and safety database (Argus). Ingested individual patient-level data from all 14 studies. Established the MCDA framework with 18 criteria (7 benefit, 11 risk) identified through advisory board input and regulatory feedback.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 3-4</div>
+            <div class="title">Safety Signal Analysis and Characterization</div>
+            <div class="detail">AI-powered signal detection analyzed the integrated safety database, identifying 3 new signals not previously characterized. NLP models extracted detailed case-level information on hepatotoxicity events, including time-to-onset patterns, dose-response relationships, and outcome trajectories. Comparative analysis against published pembrolizumab and nivolumab safety data provided class-level context.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 5-7</div>
+            <div class="title">Quantitative Benefit-Risk Modeling</div>
+            <div class="detail">Built MCDA model with performance data from the pivotal trial and integrated safety database. Conducted discrete choice experiment with 125 oncologists and 85 NSCLC patients to derive preference weights. Executed 50,000 Monte Carlo simulations to characterize uncertainty. Generated interactive sensitivity analyses including tornado diagrams, spider plots, and threshold analyses.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 8-10</div>
+            <div class="title">Document Generation and Regulatory Preparation</div>
+            <div class="detail">Automated generation of the benefit-risk summary for Module 2.5 of the CTD. Created interactive presentation materials for the advisory committee. Prepared detailed appendices with full methodology documentation. Generated response templates for anticipated FDA questions on the hepatotoxicity signal.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 11-12</div>
+            <div class="title">Review, Refinement, and Finalization</div>
+            <div class="detail">Cross-functional review by regulatory affairs, clinical development, safety, and medical affairs. Incorporated feedback and refined visualizations. Final QC and regulatory formatting. Delivered complete package 4 weeks ahead of the BLA submission deadline.</div>
+        </div>
+    </div>
+
+    <h2>Results</h2>
+
+    <div class="results-grid">
+        <div class="result-card">
+            <div class="number">60<span class="unit">%</span></div>
+            <div class="description">Reduction in BRA<br>preparation time</div>
+        </div>
+        <div class="result-card">
+            <div class="number">12</div>
+            <div class="unit">weeks</div>
+            <div class="description">Total engagement duration<br>(vs. 30-week manual estimate)</div>
+        </div>
+        <div class="result-card">
+            <div class="number">93<span class="unit">%</span></div>
+            <div class="description">Probability of favorable<br>benefit-risk balance</div>
+        </div>
+    </div>
+
+    <h3>Quantitative Outcomes</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Manual Estimate</th>
+                <th>ArcaScience Actual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Time to complete BRA</td>
+                <td>30 weeks</td>
+                <td>12 weeks</td>
+            </tr>
+            <tr>
+                <td>FTE effort</td>
+                <td>12 FTEs</td>
+                <td>5 FTEs</td>
+            </tr>
+            <tr>
+                <td>Data sources integrated</td>
+                <td>3-4 (manually)</td>
+                <td>14 studies + 2 registries + literature</td>
+            </tr>
+            <tr>
+                <td>Sensitivity scenarios</td>
+                <td>10-15 (manual)</td>
+                <td>50,000 (Monte Carlo)</td>
+            </tr>
+            <tr>
+                <td>New safety signals identified</td>
+                <td>0 (known signals only)</td>
+                <td>3 (including 1 requiring label language)</td>
+            </tr>
+            <tr>
+                <td>Cost of BRA preparation</td>
+                <td>$1.8M estimated</td>
+                <td>$720K actual</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Regulatory Outcome</h3>
+    <p>
+        The BLA was accepted for filing without a Refuse to File letter. During the review cycle, the FDA issued 14 information requests; notably, <strong>none were related to the benefit-risk assessment</strong>&mdash;a significant achievement given the pre-BLA feedback on hepatotoxicity concerns. The advisory committee voted 11-2 in favor of approval, with multiple committee members commenting favorably on the transparency and rigor of the benefit-risk analysis.
+    </p>
+    <p>
+        The product received FDA approval with standard prescribing information that included the hepatotoxicity risk in Warnings and Precautions rather than as a Boxed Warning&mdash;an outcome the team attributed in part to the quantitative demonstration that the overall benefit-risk profile remained favorable even under the most conservative risk assumptions.
+    </p>
+
+    <h3>Unexpected Value</h3>
+    <p>
+        The AI-powered safety signal analysis identified a previously unrecognized pattern of late-onset (>12 months) autoimmune thyroiditis that occurred at a rate of 4.7% in the treatment arm. Because this signal was identified during BLA preparation rather than post-marketing, the company was able to proactively include monitoring recommendations in the prescribing information and risk management plan. This proactive approach was noted favorably by both FDA reviewers and the advisory committee, and prevented what would likely have been a post-marketing safety signal requiring a label supplement.
+    </p>
+
+    <div class="testimonial">
+        "ArcaScience transformed what we expected to be a 30-week manual exercise into a 12-week process that produced a far more rigorous and comprehensive benefit-risk assessment than we could have achieved on our own. The quantitative approach gave us confidence in our regulatory strategy and provided the advisory committee with exactly the kind of transparent, data-driven analysis they were looking for."
+        <div class="attribution">&mdash; Vice President, Regulatory Affairs</div>
+    </div>
+
+    <div class="testimonial">
+        "The signal detection capabilities identified a safety signal we would have missed entirely with our traditional approach. Catching the late-onset thyroiditis signal before approval allowed us to include appropriate monitoring guidance in the label from day one. That's not just good science&mdash;it's the right thing for patients."
+        <div class="attribution">&mdash; Chief Medical Officer</div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ol>
+        <li><strong>Quantitative BRA can be achieved on regulatory timelines</strong> when supported by AI-driven data integration and analysis. The 60% time reduction was achieved without sacrificing analytical rigor.</li>
+        <li><strong>AI-powered signal detection adds value beyond efficiency.</strong> The identification of three new safety signals, including one that influenced labeling decisions, demonstrates that AI analysis can uncover clinically meaningful findings that manual review might miss.</li>
+        <li><strong>Regulatory agencies respond positively to structured quantitative approaches.</strong> The absence of benefit-risk-related information requests and the advisory committee's favorable comments validate the investment in rigorous methodology.</li>
+        <li><strong>Proactive risk characterization benefits all stakeholders.</strong> By identifying and addressing the thyroiditis signal before approval, the company protected patients, demonstrated good pharmacovigilance practice, and avoided post-marketing regulatory actions.</li>
+        <li><strong>The cost savings are substantial and real.</strong> The $1.08M savings on a single BRA preparation represents a strong ROI, and the platform continues to provide value through living benefit-risk updates for the product's post-marketing lifecycle.</li>
+    </ol>
+
+    <div class="cta-section">
+        <h3>Ready to Transform Your Benefit-Risk Strategy?</h3>
+        <p>Learn how ArcaScience can support your next regulatory submission with AI-driven benefit-risk analysis.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a class="cta-link" href="https://arcascience.ai/contact">Schedule a Consultation</a> &nbsp;|&nbsp;
+            <a class="cta-link" href="mailto:info@arcascience.ai">info@arcascience.ai</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience. All rights reserved. | arcascience.ai<br>
+    This case study is based on an actual client engagement with certain details anonymized and modified to protect confidentiality.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- Power plug icon -->
+  <g transform="translate(10, 8)">
+    <rect x="6" y="0" width="3" height="8" rx="1" fill="#0F172A" opacity="0.7"/>
+    <rect x="13" y="0" width="3" height="8" rx="1" fill="#0F172A" opacity="0.7"/>
+    <rect x="3" y="8" width="16" height="8" rx="3" fill="#0F172A" opacity="0.15" stroke="#0F172A" stroke-width="1"/>
+    <rect x="9" y="16" width="4" height="5" rx="1" fill="#0F172A" opacity="0.7"/>
+  </g>
+  <!-- Text -->
+  <text x="38" y="15" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; fill: #0F172A;">PLUG AND</text>
+  <text x="38" y="28" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 1px; fill: #0F172A;">PLAY</text>
+  <!-- Tech accent -->
+  <rect x="90" y="28" width="20" height="2" rx="1" fill="#10B981" opacity="0.5"/>
+  <rect x="112" y="28" width="8" height="2" rx="1" fill="#2563EB" opacity="0.5"/>
+</svg>

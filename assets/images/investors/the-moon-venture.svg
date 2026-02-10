@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- Crescent Moon icon -->
+  <g transform="translate(12, 10)">
+    <circle cx="10" cy="10" r="8" fill="#0F172A" opacity="0.08"/>
+    <path d="M14 4a8 8 0 0 0 0 12A8 8 0 1 1 14 4z" fill="#0F172A" opacity="0.85"/>
+    <circle cx="7.5" cy="7" r="0.6" fill="#FAFBFF" opacity="0.6"/>
+    <circle cx="11" cy="12" r="0.4" fill="#FAFBFF" opacity="0.4"/>
+  </g>
+  <!-- Text -->
+  <text x="36" y="16" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 8px; font-weight: 600; letter-spacing: 0.5px; fill: #0F172A;">THE MOON</text>
+  <text x="36" y="28" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; fill: #0F172A;">VENTURE</text>
+</svg>

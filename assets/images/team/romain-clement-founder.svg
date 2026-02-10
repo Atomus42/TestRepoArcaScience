@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="silhouette" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.18);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.08);stop-opacity:1" />
+    </linearGradient>
+    <clipPath id="roundClip">
+      <rect width="400" height="400" rx="0" ry="0"/>
+    </clipPath>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bg)" clip-path="url(#roundClip)"/>
+  <!-- Subtle pattern overlay -->
+  <rect width="400" height="400" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Person silhouette -->
+  <ellipse cx="200" cy="160" rx="62" ry="66" fill="url(#silhouette)"/>
+  <ellipse cx="200" cy="360" rx="110" ry="120" fill="url(#silhouette)"/>
+  <!-- Decorative ring -->
+  <circle cx="200" cy="160" r="72" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <!-- Initials -->
+  <text x="200" y="175" text-anchor="middle" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="48" font-weight="700" fill="rgba(255,255,255,0.9)" letter-spacing="2">RC</text>
+  <!-- Title -->
+  <rect x="100" y="260" width="200" height="1" fill="rgba(255,255,255,0.2)"/>
+  <text x="200" y="290" text-anchor="middle" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="14" font-weight="600" fill="rgba(255,255,255,0.85)" letter-spacing="1.5" text-transform="uppercase">CEO &amp; FOUNDER</text>
+  <text x="200" y="315" text-anchor="middle" font-family="'Literata','Georgia',serif" font-size="12" fill="rgba(255,255,255,0.5)">ArcaScience</text>
+</svg>

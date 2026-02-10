@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- AstraZeneca wordmark -->
+  <text x="10" y="25" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: -0.3px; fill: #7C3AED;">Astra</text>
+  <text x="55" y="25" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: -0.3px; fill: #B8860B;">Zeneca</text>
+  <!-- Decorative swoosh -->
+  <path d="M10 30 Q50 34 130 28" stroke="#7C3AED" stroke-width="1" fill="none" opacity="0.3"/>
+  <!-- Top accent -->
+  <rect x="10" y="10" width="16" height="1.5" rx="0.75" fill="#7C3AED" opacity="0.4"/>
+  <rect x="28" y="10" width="8" height="1.5" rx="0.75" fill="#B8860B" opacity="0.4"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- Brain icon simplified -->
+  <g transform="translate(10, 8)">
+    <path d="M12 2C8 2 5 4.5 5 8c0 1.5.5 3 1.5 4-1 1.2-1.5 2.8-1.5 4.5C5 20 8 22 12 22s7-2 7-5.5c0-1.7-.5-3.3-1.5-4.5 1-1 1.5-2.5 1.5-4C19 4.5 16 2 12 2z" fill="#2563EB" opacity="0.1" stroke="#2563EB" stroke-width="1"/>
+    <path d="M12 4v16" stroke="#10B981" stroke-width="0.8" opacity="0.6"/>
+    <path d="M9 8c2 1 4 1 6 0" stroke="#2563EB" stroke-width="0.6" fill="none" opacity="0.5"/>
+    <path d="M8 13c2.5 1.2 5.5 1.2 8 0" stroke="#2563EB" stroke-width="0.6" fill="none" opacity="0.5"/>
+  </g>
+  <!-- Text -->
+  <text x="36" y="17" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 9px; font-weight: 700; fill: #2563EB;">Paris Brain</text>
+  <text x="36" y="28" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 9px; font-weight: 500; fill: #10B981;">Institute</text>
+</svg>

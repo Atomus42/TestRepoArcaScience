@@ -197,7 +197,7 @@
 
           <!-- Left: Thumbnail -->
           <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; overflow: hidden;">
-            <img src="/images/resources/featured-whitepaper-quantitative-bra.jpg" alt="Quantitative Benefit-Risk Assessment: A Framework for Structured Decision-Making" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="/images/resources/featured-whitepaper-quantitative-bra.svg" alt="Quantitative Benefit-Risk Assessment: A Framework for Structured Decision-Making" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
 
           <!-- Right: Content -->
@@ -214,9 +214,14 @@
               <span class="arca-caption arca-text-grey-600">24 min read</span>
               <span class="arca-caption arca-text-grey-600">Feb 2026</span>
             </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex;">
-              Read Whitepaper <span class="arca-arrow">&rarr;</span>
-            </span>
+            <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+              <span class="arca-btn-tertiary" style="display: inline-flex;">
+                Read Whitepaper <span class="arca-arrow">&rarr;</span>
+              </span>
+              <a href="/downloads/whitepapers/quantitative-bra-methodology.html" class="arca-btn arca-btn--primary" style="text-decoration: none; padding: 10px 20px; font-size: 0.875rem;" target="_blank" rel="noopener" onclick="event.stopPropagation();">
+                Download Whitepaper <span aria-hidden="true">&darr;</span>
+              </a>
+            </div>
           </div>
 
         </a>
@@ -235,25 +240,30 @@
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" data-resource-grid>
 
           <!-- Resource Card 1: Whitepaper (Blue) -->
-          <a href="/resources-whitepapers" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="whitepaper" data-resource-topic="ai-in-pharma">
-            <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/ai-signal-detection.jpg" alt="AI Models for Signal Detection in Pharmacovigilance" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Whitepaper</span>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI Models for Signal Detection in Pharmacovigilance</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-              How domain-specific AI models outperform traditional disproportionality methods for identifying safety signals in spontaneous adverse event databases.
-            </p>
-            <div style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
-              <span class="arca-caption arca-text-grey-600">Dr. Michael Torres</span>
-              <span class="arca-caption arca-text-grey-600">18 min read</span>
-            </div>
-          </a>
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate data-resource-type="whitepaper" data-resource-topic="ai-in-pharma">
+            <a href="/resources-whitepapers" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+                <img src="/images/resources/ai-signal-detection.svg" alt="AI Models for Signal Detection in Pharmacovigilance" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Whitepaper</span>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI Models for Signal Detection in Pharmacovigilance</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                How domain-specific AI models outperform traditional disproportionality methods for identifying safety signals in spontaneous adverse event databases.
+              </p>
+              <div style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
+                <span class="arca-caption arca-text-grey-600">Dr. Michael Torres</span>
+                <span class="arca-caption arca-text-grey-600">18 min read</span>
+              </div>
+            </a>
+            <a href="/downloads/whitepapers/ai-signal-detection-whitepaper.html" class="arca-link arca-link--download" style="display: inline-flex; align-items: center; gap: 4px; margin-top: var(--space-3); font-size: 0.8125rem; text-decoration: none; color: var(--blue-600); font-weight: 500;" target="_blank" rel="noopener">
+              Download PDF <span aria-hidden="true">&darr;</span>
+            </a>
+          </div>
 
           <!-- Resource Card 2: Blog Post (Teal) -->
           <a href="/resources" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="blog" data-resource-topic="regulatory">
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/fda-benefit-risk-2026.jpg" alt="FDA Benefit-Risk Framework: 2026 Update" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="/images/resources/fda-benefit-risk-2026.svg" alt="FDA Benefit-Risk Framework: 2026 Update" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <span class="arca-module-tag is-analytics" style="background: var(--teal-50); color: var(--teal-700); border-color: var(--teal-200); margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Blog Post</span>
             <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">FDA Benefit-Risk Framework: 2026 Update</h3>
@@ -269,7 +279,7 @@
           <!-- Resource Card 3: Webinar (Indigo) -->
           <a href="/resources-webinars" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="webinar" data-resource-topic="regulatory">
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden; position: relative;">
-              <img src="/images/resources/pbrer-automation-webinar.jpg" alt="Automating PBRER Generation with Regulatory Compliance" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="/images/resources/pbrer-automation-webinar.svg" alt="Automating PBRER Generation with Regulatory Compliance" style="width: 100%; height: 100%; object-fit: cover;">
               <!-- Play icon overlay -->
               <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="var(--indigo-600)"/></svg>
@@ -289,7 +299,7 @@
           <!-- Resource Card 4: Regulatory Update (Green) -->
           <a href="/resources" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="regulatory" data-resource-topic="regulatory">
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/ema-bra-templates.jpg" alt="EMA Benefit-Risk Methodology: Updated Templates" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="/images/resources/ema-bra-templates.svg" alt="EMA Benefit-Risk Methodology: Updated Templates" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <span class="arca-module-tag is-output" style="background: var(--green-50); color: var(--green-700); border-color: var(--green-200); margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Regulatory Update</span>
             <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">EMA Benefit-Risk Methodology: Updated Templates</h3>
@@ -303,25 +313,30 @@
           </a>
 
           <!-- Resource Card 5: Whitepaper (Blue) -->
-          <a href="/resources-whitepapers" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="whitepaper" data-resource-topic="bra-methodology">
-            <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/mcda-pharma.jpg" alt="MCDA in Pharmaceutical Development" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Whitepaper</span>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">MCDA in Pharmaceutical Development: A Practical Guide</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-              Multi-criteria decision analysis (MCDA) for benefit-risk assessment — including swing weighting, SMAA, and preference-based approaches used by global HTAs.
-            </p>
-            <div style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
-              <span class="arca-caption arca-text-grey-600">Dr. James Liu</span>
-              <span class="arca-caption arca-text-grey-600">22 min read</span>
-            </div>
-          </a>
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate data-resource-type="whitepaper" data-resource-topic="bra-methodology">
+            <a href="/resources-whitepapers" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+                <img src="/images/resources/mcda-pharma.svg" alt="MCDA in Pharmaceutical Development" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Whitepaper</span>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">MCDA in Pharmaceutical Development: A Practical Guide</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Multi-criteria decision analysis (MCDA) for benefit-risk assessment — including swing weighting, SMAA, and preference-based approaches used by global HTAs.
+              </p>
+              <div style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
+                <span class="arca-caption arca-text-grey-600">Dr. James Liu</span>
+                <span class="arca-caption arca-text-grey-600">22 min read</span>
+              </div>
+            </a>
+            <a href="/downloads/whitepapers/quantitative-bra-methodology.html" class="arca-link arca-link--download" style="display: inline-flex; align-items: center; gap: 4px; margin-top: var(--space-3); font-size: 0.8125rem; text-decoration: none; color: var(--blue-600); font-weight: 500;" target="_blank" rel="noopener">
+              Download PDF <span aria-hidden="true">&darr;</span>
+            </a>
+          </div>
 
           <!-- Resource Card 6: Blog Post (Teal) -->
           <a href="/resources" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="blog" data-resource-topic="signal-detection">
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/rwe-signal-detection.jpg" alt="Real-World Evidence in Signal Detection" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="/images/resources/rwe-signal-detection.svg" alt="Real-World Evidence in Signal Detection" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <span class="arca-module-tag is-analytics" style="background: var(--teal-50); color: var(--teal-700); border-color: var(--teal-200); margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Blog Post</span>
             <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Real-World Evidence in Signal Detection: Beyond FAERS</h3>
@@ -337,7 +352,7 @@
           <!-- Resource Card 7: Documentation (Blue) -->
           <a href="/resources" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="documentation" data-resource-topic="ai-in-pharma">
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/api-documentation.jpg" alt="Platform API Reference" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="/images/resources/api-documentation.svg" alt="Platform API Reference" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Documentation</span>
             <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Platform API Reference</h3>
@@ -353,7 +368,7 @@
           <!-- Resource Card 8: Webinar (Indigo) -->
           <a href="/resources-webinars" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="webinar" data-resource-topic="heor">
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden; position: relative;">
-              <img src="/images/resources/heor-webinar.jpg" alt="HEOR Value Dossiers for HTA Submissions" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="/images/resources/heor-webinar.svg" alt="HEOR Value Dossiers for HTA Submissions" style="width: 100%; height: 100%; object-fit: cover;">
               <!-- Play icon overlay -->
               <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="var(--indigo-600)"/></svg>
@@ -371,20 +386,25 @@
           </a>
 
           <!-- Resource Card 9: Whitepaper (Blue) -->
-          <a href="/resources-whitepapers" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate data-resource-type="whitepaper" data-resource-topic="bra-methodology">
-            <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-              <img src="/images/resources/brat-framework.jpg" alt="BRAT Framework Implementation Guide" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Whitepaper</span>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">BRAT Framework Implementation Guide</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-              Step-by-step guide to implementing the Benefit-Risk Action Team (BRAT) framework — from value tree construction to effects tables and regulatory communication.
-            </p>
-            <div style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
-              <span class="arca-caption arca-text-grey-600">Dr. Sarah Chen</span>
-              <span class="arca-caption arca-text-grey-600">28 min read</span>
-            </div>
-          </a>
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate data-resource-type="whitepaper" data-resource-topic="bra-methodology">
+            <a href="/resources-whitepapers" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+                <img src="/images/resources/brat-framework.svg" alt="BRAT Framework Implementation Guide" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); display: inline-block; width: fit-content;">Whitepaper</span>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">BRAT Framework Implementation Guide</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                Step-by-step guide to implementing the Benefit-Risk Action Team (BRAT) framework — from value tree construction to effects tables and regulatory communication.
+              </p>
+              <div style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
+                <span class="arca-caption arca-text-grey-600">Dr. Sarah Chen</span>
+                <span class="arca-caption arca-text-grey-600">28 min read</span>
+              </div>
+            </a>
+            <a href="/downloads/whitepapers/brat-framework-guide.html" class="arca-link arca-link--download" style="display: inline-flex; align-items: center; gap: 4px; margin-top: var(--space-3); font-size: 0.8125rem; text-decoration: none; color: var(--blue-600); font-weight: 500;" target="_blank" rel="noopener">
+              Download PDF <span aria-hidden="true">&darr;</span>
+            </a>
+          </div>
 
         </div>
       </div>

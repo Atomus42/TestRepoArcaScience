@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- GSK wordmark -->
+  <text x="20" y="27" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 3px; fill: #EA580C;">GSK</text>
+  <!-- Decorative bar -->
+  <rect x="20" y="9" width="30" height="2.5" rx="1.25" fill="#EA580C"/>
+  <rect x="52" y="9" width="14" height="2.5" rx="1.25" fill="#EA580C" opacity="0.4"/>
+  <!-- Bottom accent -->
+  <rect x="20" y="31" width="44" height="1" rx="0.5" fill="#EA580C" opacity="0.2"/>
+</svg>

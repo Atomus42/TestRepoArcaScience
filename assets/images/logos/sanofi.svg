@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- Sanofi wordmark -->
+  <text x="16" y="26" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; fill: #7C3AED;">sanofi</text>
+  <!-- Decorative accent dot -->
+  <circle cx="120" cy="20" r="5" fill="#7C3AED" opacity="0.12"/>
+  <circle cx="120" cy="20" r="2.5" fill="#7C3AED" opacity="0.3"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40" fill="none">
+  <rect x="1" y="1" width="118" height="38" rx="6" fill="#F0F2F8" stroke="#1E293B" stroke-width="1.5"/>
+  <!-- Lock icon -->
+  <g transform="translate(10, 7)">
+    <rect x="5" y="11" width="14" height="12" rx="2" fill="#1E293B" opacity="0.12" stroke="#1E293B" stroke-width="1.3"/>
+    <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="#1E293B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="12" cy="17.5" r="1.8" fill="#1E293B"/>
+    <rect x="11.3" y="17.5" width="1.4" height="3" rx="0.7" fill="#1E293B"/>
+  </g>
+  <!-- Text -->
+  <text x="38" y="17" style="font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 700; fill: #1E293B;">HIPAA</text>
+  <text x="38" y="28" style="font-family: 'Inter', Arial, sans-serif; font-size: 7px; font-weight: 500; fill: #1E293B; opacity: 0.7;">Compliant</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- French tricolor accent -->
+  <rect x="10" y="8" width="4" height="24" rx="2" fill="#002395"/>
+  <rect x="14" y="8" width="4" height="24" rx="0" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.3"/>
+  <rect x="18" y="8" width="4" height="24" rx="2" fill="#ED2939"/>
+  <!-- Bpifrance wordmark -->
+  <text x="30" y="18" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 7px; font-weight: 800; letter-spacing: 0.5px; fill: #002395;">BPI</text>
+  <text x="49" y="18" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 7px; font-weight: 400; letter-spacing: 0.5px; fill: #002395;">FRANCE</text>
+  <!-- Full name below -->
+  <text x="30" y="28" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: -0.3px; fill: #002395;">Bpifrance</text>
+  <!-- Decorative bar -->
+  <rect x="30" y="31" width="40" height="1" rx="0.5" fill="#002395" opacity="0.2"/>
+</svg>

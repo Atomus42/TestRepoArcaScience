@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+  <rect x="0.5" y="0.5" width="139" height="39" rx="4" fill="#FAFBFF" stroke="#E2E8F0" stroke-width="0.5"/>
+  <!-- ICON wordmark -->
+  <text x="22" y="27" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 2px; fill: #2563EB;">ICON</text>
+  <!-- Decorative lines -->
+  <rect x="22" y="9" width="24" height="2" rx="1" fill="#2563EB"/>
+  <rect x="48" y="9" width="10" height="2" rx="1" fill="#2563EB" opacity="0.4"/>
+  <!-- Subtle bottom accent -->
+  <rect x="22" y="31" width="52" height="1" rx="0.5" fill="#2563EB" opacity="0.15"/>
+</svg>

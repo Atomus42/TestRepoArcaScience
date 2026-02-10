@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D9488"/>
+      <stop offset="100%" style="stop-color:#0F766E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="65%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.08)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#bg)"/>
+  <rect width="600" height="340" fill="url(#glow)"/>
+
+  <!-- Neural network nodes and connections -->
+  <g stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none">
+    <!-- Layer 1 connections to Layer 2 -->
+    <line x1="360" y1="50" x2="430" y2="80"/>
+    <line x1="360" y1="50" x2="430" y2="140"/>
+    <line x1="360" y1="120" x2="430" y2="80"/>
+    <line x1="360" y1="120" x2="430" y2="140"/>
+    <line x1="360" y1="120" x2="430" y2="200"/>
+    <line x1="360" y1="190" x2="430" y2="140"/>
+    <line x1="360" y1="190" x2="430" y2="200"/>
+    <line x1="360" y1="190" x2="430" y2="260"/>
+    <line x1="360" y1="260" x2="430" y2="200"/>
+    <line x1="360" y1="260" x2="430" y2="260"/>
+
+    <!-- Layer 2 connections to Layer 3 -->
+    <line x1="430" y1="80" x2="510" y2="110"/>
+    <line x1="430" y1="80" x2="510" y2="170"/>
+    <line x1="430" y1="140" x2="510" y2="110"/>
+    <line x1="430" y1="140" x2="510" y2="170"/>
+    <line x1="430" y1="140" x2="510" y2="230"/>
+    <line x1="430" y1="200" x2="510" y2="170"/>
+    <line x1="430" y1="200" x2="510" y2="230"/>
+    <line x1="430" y1="260" x2="510" y2="230"/>
+    <line x1="430" y1="260" x2="510" y2="170"/>
+  </g>
+
+  <!-- Highlighted connections -->
+  <g stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none">
+    <line x1="360" y1="120" x2="430" y2="140"/>
+    <line x1="430" y1="140" x2="510" y2="170"/>
+    <line x1="360" y1="190" x2="430" y2="200"/>
+    <line x1="430" y1="200" x2="510" y2="170"/>
+  </g>
+
+  <!-- Layer 1 nodes -->
+  <g>
+    <circle cx="360" cy="50" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <circle cx="360" cy="120" r="8" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <circle cx="360" cy="190" r="8" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <circle cx="360" cy="260" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Layer 2 nodes -->
+  <g>
+    <circle cx="430" cy="80" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <circle cx="430" cy="140" r="10" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    <circle cx="430" cy="200" r="10" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    <circle cx="430" cy="260" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Layer 3 nodes -->
+  <g>
+    <circle cx="510" cy="110" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <circle cx="510" cy="170" r="12" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <circle cx="510" cy="230" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Signal pulse rings on center output node -->
+  <circle cx="510" cy="170" r="20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <circle cx="510" cy="170" r="30" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Floating data particles -->
+  <circle cx="380" cy="85" r="2" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="470" cy="120" r="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="395" cy="225" r="1.5" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="480" cy="210" r="1.5" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="550" cy="150" r="2" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="560" cy="30" r="50" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="340" cy="310" r="70" fill="rgba(255,255,255,0.02)"/>
+
+  <!-- Title -->
+  <text x="40" y="90" font-family="Literata, Georgia, serif" font-size="26" font-weight="700" fill="#fff">AI-Powered</text>
+  <text x="40" y="124" font-family="Literata, Georgia, serif" font-size="26" font-weight="700" fill="#fff">Signal Detection</text>
+
+  <!-- Subtitle -->
+  <text x="40" y="160" font-family="Inter, system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Machine learning approaches to</text>
+  <text x="40" y="178" font-family="Inter, system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">pharmacovigilance signals</text>
+
+  <!-- Accent line -->
+  <rect x="40" y="200" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="320" width="600" height="20" fill="rgba(0,0,0,0.15)"/>
+  <text x="40" y="334" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.6)" letter-spacing="0.5">ARCASCIENCE</text>
+
+  <!-- Category label -->
+  <rect x="40" y="40" width="100" height="24" rx="12" fill="rgba(255,255,255,0.15)"/>
+  <text x="90" y="56" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.9)" text-anchor="middle" letter-spacing="1">WHITEPAPER</text>
+</svg>

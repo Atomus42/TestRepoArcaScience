@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A8A"/>
+      <stop offset="50%" style="stop-color:#2563EB"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0D9488"/>
+      <stop offset="50%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#6366F1"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="30%" r="40%">
+      <stop offset="0%" style="stop-color:rgba(99,102,241,0.15)"/>
+      <stop offset="100%" style="stop-color:rgba(99,102,241,0)"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="70%" r="35%">
+      <stop offset="0%" style="stop-color:rgba(13,148,136,0.1)"/>
+      <stop offset="100%" style="stop-color:rgba(13,148,136,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle grid pattern -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Decorative geometric shapes (right side) -->
+  <!-- Abstract document icons -->
+  <g transform="translate(750, 120)">
+    <!-- Large document -->
+    <rect x="0" y="0" width="110" height="140" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+    <rect x="16" y="22" width="40" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
+    <rect x="16" y="36" width="78" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+    <rect x="16" y="50" width="70" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+    <rect x="16" y="64" width="78" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="16" y="78" width="55" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <!-- Mini chart -->
+    <rect x="16" y="96" width="78" height="30" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <polyline points="22,118 36,110 50,114 64,104 78,108 88,100" fill="none" stroke="rgba(13,148,136,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Medium document -->
+  <g transform="translate(890, 90)">
+    <rect x="0" y="0" width="95" height="120" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <rect x="14" y="18" width="35" height="3.5" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+    <rect x="14" y="30" width="67" height="3.5" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+    <rect x="14" y="42" width="60" height="3.5" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+    <rect x="14" y="54" width="67" height="3.5" rx="1.5" fill="rgba(255,255,255,0.05)"/>
+    <!-- Play icon (webinar) -->
+    <circle cx="47" cy="88" r="16" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+    <polygon points="42,80 42,96 54,88" fill="rgba(255,255,255,0.4)"/>
+  </g>
+
+  <!-- Small document -->
+  <g transform="translate(1020, 140)">
+    <rect x="0" y="0" width="80" height="100" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+    <rect x="12" y="16" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+    <rect x="12" y="26" width="56" height="3" rx="1.5" fill="rgba(255,255,255,0.05)"/>
+    <rect x="12" y="36" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.05)"/>
+    <rect x="12" y="46" width="56" height="3" rx="1.5" fill="rgba(255,255,255,0.04)"/>
+    <!-- Code brackets -->
+    <text x="40" y="78" font-family="monospace" font-size="18" fill="rgba(255,255,255,0.12)" text-anchor="middle">&lt;/&gt;</text>
+  </g>
+
+  <!-- Abstract data visualization elements -->
+  <g transform="translate(780, 320)">
+    <!-- Bar chart -->
+    <rect x="0" y="50" width="24" height="60" rx="4" fill="rgba(255,255,255,0.08)"/>
+    <rect x="34" y="30" width="24" height="80" rx="4" fill="rgba(255,255,255,0.1)"/>
+    <rect x="68" y="40" width="24" height="70" rx="4" fill="rgba(255,255,255,0.08)"/>
+    <rect x="102" y="15" width="24" height="95" rx="4" fill="rgba(255,255,255,0.12)"/>
+    <rect x="136" y="25" width="24" height="85" rx="4" fill="rgba(255,255,255,0.09)"/>
+    <rect x="170" y="5" width="24" height="105" rx="4" fill="rgba(255,255,255,0.11)"/>
+  </g>
+
+  <!-- Neural network dots pattern -->
+  <g>
+    <circle cx="820" cy="480" r="5" fill="rgba(255,255,255,0.08)"/>
+    <circle cx="870" cy="500" r="4" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="920" cy="470" r="6" fill="rgba(255,255,255,0.07)"/>
+    <circle cx="970" cy="490" r="4" fill="rgba(255,255,255,0.05)"/>
+    <circle cx="1020" cy="475" r="5" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="1070" cy="495" r="4" fill="rgba(255,255,255,0.05)"/>
+    <line x1="820" y1="480" x2="870" y2="500" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="870" y1="500" x2="920" y2="470" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="920" y1="470" x2="970" y2="490" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="970" y1="490" x2="1020" y2="475" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="1020" y1="475" x2="1070" y2="495" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  </g>
+
+  <!-- Large decorative circles -->
+  <circle cx="1100" cy="100" r="120" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="700" cy="550" r="150" fill="rgba(255,255,255,0.015)"/>
+
+  <!-- Content area (left side) -->
+
+  <!-- ArcaScience branding -->
+  <g transform="translate(80, 160)">
+    <!-- Logo mark (abstract A) -->
+    <rect x="0" y="0" width="36" height="36" rx="8" fill="rgba(255,255,255,0.15)"/>
+    <text x="18" y="26" font-family="Literata, Georgia, serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+    <text x="48" y="26" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="rgba(255,255,255,0.8)" letter-spacing="0.5">ArcaScience</text>
+  </g>
+
+  <!-- Gradient accent line -->
+  <rect x="80" y="230" width="120" height="4" rx="2" fill="url(#accentLine)"/>
+
+  <!-- Main title -->
+  <text x="80" y="290" font-family="Literata, Georgia, serif" font-size="52" font-weight="700" fill="#fff">Resources</text>
+  <text x="80" y="350" font-family="Literata, Georgia, serif" font-size="52" font-weight="700" fill="#fff">&amp; Insights</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="410" font-family="Inter, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" font-weight="400">Whitepapers, Webinars &amp; Research</text>
+
+  <!-- Category pills -->
+  <g transform="translate(80, 450)">
+    <rect x="0" y="0" width="120" height="34" rx="17" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="60" y="22" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.7)" text-anchor="middle">Whitepapers</text>
+
+    <rect x="132" y="0" width="100" height="34" rx="17" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="182" y="22" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.7)" text-anchor="middle">Webinars</text>
+
+    <rect x="244" y="0" width="100" height="34" rx="17" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="294" y="22" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.7)" text-anchor="middle">Guides</text>
+
+    <rect x="356" y="0" width="130" height="34" rx="17" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="421" y="22" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.7)" text-anchor="middle">Documentation</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="rgba(0,0,0,0.2)"/>
+  <text x="80" y="615" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="rgba(255,255,255,0.5)" letter-spacing="0.5">ARCASCIENCE</text>
+  <text x="1120" y="615" font-family="Inter, system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.35)" text-anchor="end">arcascience.com</text>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accentLine)"/>
+</svg>

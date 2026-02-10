@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 32" width="180" height="32" fill="none">
+  <!-- Abstract "A" mark -->
+  <g>
+    <path d="M4 28L14 4h4l10 24h-4.5l-2.2-5.5H10.7L8.5 28H4zm8.2-9.5h7.6L16 8.5l-3.8 10z" fill="#2563EB"/>
+    <path d="M12 18.5h8l-1.5 3.5h-5L12 18.5z" fill="#2563EB" opacity="0.5"/>
+    <circle cx="16" cy="6" r="2" fill="#2563EB" opacity="0.7"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="36" y="22" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 700; letter-spacing: -0.3px; fill: #2563EB;">Arca</text>
+  <text x="72" y="22" style="font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 400; letter-spacing: -0.3px; fill: #2563EB;">Science</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40" fill="none">
+  <rect x="1" y="1" width="118" height="38" rx="6" fill="#F0FDF4" stroke="#166534" stroke-width="1.5"/>
+  <!-- Shield with Checkmark icon -->
+  <g transform="translate(10, 8)">
+    <path d="M12 2L4 6v6c0 5.2 3.4 10 8 11.2 4.6-1.2 8-6 8-11.2V6L12 2z" fill="#166534" opacity="0.1"/>
+    <path d="M12 2L4 6v6c0 5.2 3.4 10 8 11.2 4.6-1.2 8-6 8-11.2V6L12 2z" stroke="#166534" stroke-width="1.5" fill="none"/>
+    <polyline points="8,12 11,15 16,9" stroke="#166534" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Text -->
+  <text x="38" y="17" style="font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: #166534;">SOC 2</text>
+  <text x="38" y="28" style="font-family: 'Inter', Arial, sans-serif; font-size: 7.5px; font-weight: 500; fill: #166534; opacity: 0.75;">Type II</text>
+</svg>
