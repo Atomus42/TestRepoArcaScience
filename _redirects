@@ -1,0 +1,71 @@
+# Navigation top-level shortcuts
+/platform         /platform-overview    301
+/science          /science-methodology  301
+/evidence         /evidence-case-studies-hub 301
+/company          /about                301
+/solutions        /solution-template    301
+
+# Platform nested paths
+/platform/overview            /platform-overview           301
+/platform/how-it-works        /platform-how-it-works       301
+/platform/data-intelligence   /platform-data-intelligence  301
+/platform/data                /platform-data-intelligence  301
+/platform/ai-models           /platform-ai-models          301
+/platform/outputs             /platform-outputs            301
+/platform/integrations        /platform-integrations       301
+/platform/decision-intelligence /platform-ai-models        301
+/platform/security            /security-compliance         301
+/platform/security/*          /security-compliance         301
+
+# Solutions nested paths
+/solutions/overview           /solution-template           301
+/solutions/early-development  /solution-early-development  301
+/solutions/late-development   /solution-late-development   301
+/solutions/post-marketing     /solution-post-marketing     301
+/solutions/market-access      /solution-market-access      301
+/solutions/therapeutic-area   /solution-therapeutic-area   301
+/solutions/lifecycle          /solution-lifecycle-phase    301
+/solutions/role               /solution-role               301
+/solutions/phase/post-marketing /solution-post-marketing   301
+/solutions/therapeutic-area/* /solution-therapeutic-area   301
+/solutions/lifecycle/*        /solution-lifecycle-phase    301
+/solutions/role/*             /solution-role               301
+
+# Company nested paths
+/company/about      /about       301
+/company/leadership /leadership  301
+/company/careers    /careers     301
+/company/team       /leadership  301
+/company/news       /about       301
+/company/contact    /contact     301
+/company/careers/*  /careers     301
+
+# Evidence nested paths
+/evidence/case-studies    /evidence-case-studies-hub  301
+/evidence/publications    /evidence-publications      301
+/evidence/metrics         /evidence-metrics           301
+/evidence/overview        /evidence-case-studies-hub  301
+/evidence/case-studies/*  /evidence-case-studies-hub  301
+
+# Resources nested paths
+/resources/hub            /resource-hub            301
+/resources/faq            /resources-faq           301
+/resources/glossary       /resources-glossary      301
+/resources/webinars       /resources-webinars      301
+/resources/whitepapers    /resources-whitepapers   301
+/resources/case-studies   /evidence-case-studies-hub 301
+/resources/publications   /evidence-publications   301
+/resources/documentation  /resources               301
+/resources/insights       /resources               301
+/resources/regulatory-intelligence /resources      301
+/resources/regulatory/*   /resources               301
+/resources/insights/*     /resources               301
+/resources/whitepapers/*  /resources-whitepapers   301
+/resources/webinars/*     /resources-webinars       301
+
+# Legal nested paths
+/legal              /legal-privacy       301
+/legal/privacy      /legal-privacy       301
+/legal/terms        /legal-terms         301
+/legal/cookies      /legal-cookies       301
+/legal/accessibility /legal-accessibility 301

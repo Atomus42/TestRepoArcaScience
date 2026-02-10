@@ -64,18 +64,18 @@
 
         <!-- Platform dropdown -->
         <div style="position: relative;">
-          <a href="/platform" class="arca-nav-link">Platform</a>
+          <a href="/platform-overview" class="arca-nav-link">Platform</a>
           <!-- Webflow: Use Dropdown component. Items below. -->
         </div>
 
         <!-- Solutions dropdown -->
         <div style="position: relative;">
-          <a href="/solutions" class="arca-nav-link">Solutions</a>
+          <a href="/solution-therapeutic-area" class="arca-nav-link">Solutions</a>
         </div>
 
-        <a href="/science" class="arca-nav-link">Science</a>
-        <a href="/evidence" class="arca-nav-link is-active">Evidence</a>
-        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/science-methodology" class="arca-nav-link">Science</a>
+        <a href="/evidence-case-studies-hub" class="arca-nav-link is-active">Evidence</a>
+        <a href="/about" class="arca-nav-link">Company</a>
         <a href="/resources" class="arca-nav-link">Resources</a>
       </div>
 
@@ -101,9 +101,9 @@
           <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
             <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
             <li style="color: var(--grey-400);">/</li>
-            <li><a href="/evidence" style="color: var(--grey-600); text-decoration: none;">Evidence</a></li>
+            <li><a href="/evidence-case-studies-hub" style="color: var(--grey-600); text-decoration: none;">Evidence</a></li>
             <li style="color: var(--grey-400);">/</li>
-            <li><a href="/evidence/case-studies" style="color: var(--grey-600); text-decoration: none;">Case Studies</a></li>
+            <li><a href="/evidence-case-studies-hub" style="color: var(--grey-600); text-decoration: none;">Case Studies</a></li>
             <li style="color: var(--grey-400);">/</li>
             <li style="color: var(--grey-900);">[CASE_STUDY_TITLE]</li>
           </ol>
@@ -448,7 +448,7 @@
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
 
           <!-- Related Case Study 1 -->
-          <a href="/evidence/case-studies/[RELATED_1_SLUG]" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
+          <a href="/evidence-case-studies-hub" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
               <img src="[RELATED_1_THUMBNAIL]" alt="[RELATED_1_TITLE]" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -458,7 +458,7 @@
           </a>
 
           <!-- Related Case Study 2 -->
-          <a href="/evidence/case-studies/[RELATED_2_SLUG]" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
+          <a href="/evidence-case-studies-hub" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
               <img src="[RELATED_2_THUMBNAIL]" alt="[RELATED_2_TITLE]" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -468,7 +468,7 @@
           </a>
 
           <!-- Related Case Study 3 -->
-          <a href="/evidence/case-studies/[RELATED_3_SLUG]" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
+          <a href="/evidence-case-studies-hub" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
             <div style="aspect-ratio: 16/9; background: var(--grey-200); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
               <img src="[RELATED_3_THUMBNAIL]" alt="[RELATED_3_TITLE]" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -526,11 +526,11 @@
         <div>
           <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
-            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
-            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
-            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
-            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
           </nav>
         </div>
 
@@ -538,10 +538,10 @@
         <div>
           <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
-            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
-            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
-            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+            <a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solution-market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
           </nav>
         </div>
 
@@ -549,10 +549,10 @@
         <div>
           <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
-            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
-            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
-            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
             <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
           </nav>
         </div>
@@ -561,10 +561,10 @@
         <div>
           <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
-            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
-            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
-            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
           </nav>
         </div>
 
@@ -576,10 +576,10 @@
           &copy; 2026 ArcaScience. All rights reserved.
         </p>
         <div style="display: flex; gap: 24px;">
-          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
-          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
-          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
-          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
         </div>
       </div>
     </div>

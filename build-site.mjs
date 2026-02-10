@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, copyFileSync, readdirSync } from 'fs';
+import { cpSync, mkdirSync, copyFileSync, readdirSync, existsSync } from 'fs';
 
 // Create public directory structure
 mkdirSync('public/dist', { recursive: true });
@@ -22,6 +22,11 @@ for (const f of readdirSync('webflow-pages')) {
     mkdirSync(`public/${name}`, { recursive: true });
     copyFileSync(`webflow-pages/${f}`, `public/${name}/index.html`);
   }
+}
+
+// Copy Netlify _redirects
+if (existsSync('_redirects')) {
+  copyFileSync('_redirects', 'public/_redirects');
 }
 
 console.log('Site built to public/');
