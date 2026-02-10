@@ -175,6 +175,51 @@
           <img src="/images/logos/icon-plc-logo.svg" alt="ICON plc logo" style="height: 48px; filter: brightness(0) invert(1); opacity: 0.9;">
         </div>
 
+        <!-- Hero image: Inline SVG — ascending bar chart with trend line for CRO efficiency -->
+        <div style="max-width: 680px; margin: 0 auto var(--space-6); border-radius: 8px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+          <svg viewBox="0 0 680 383" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICON CRO efficiency gains bar chart visualization" style="width: 100%; display: block;">
+            <defs>
+              <linearGradient id="ic-hero-bg" x1="0" y1="0" x2="680" y2="383" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#0A1530"/><stop offset="50%" stop-color="#101E40"/><stop offset="100%" stop-color="#0D1835"/>
+              </linearGradient>
+              <linearGradient id="ic-hero-bar" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#3B7DD8" stop-opacity="0.25"/><stop offset="100%" stop-color="#3B7DD8" stop-opacity="0.6"/>
+              </linearGradient>
+            </defs>
+            <rect width="680" height="383" fill="url(#ic-hero-bg)"/>
+            <!-- Y axis -->
+            <line x1="80" y1="30" x2="80" y2="320" stroke="#3B7DD8" stroke-width="1" opacity="0.2"/>
+            <!-- X axis -->
+            <line x1="80" y1="320" x2="650" y2="320" stroke="#3B7DD8" stroke-width="1" opacity="0.2"/>
+            <!-- Grid lines -->
+            <line x1="80" y1="250" x2="650" y2="250" stroke="#4338CA" stroke-width="0.5" opacity="0.08" stroke-dasharray="4 8"/>
+            <line x1="80" y1="180" x2="650" y2="180" stroke="#4338CA" stroke-width="0.5" opacity="0.08" stroke-dasharray="4 8"/>
+            <line x1="80" y1="110" x2="650" y2="110" stroke="#4338CA" stroke-width="0.5" opacity="0.08" stroke-dasharray="4 8"/>
+            <!-- Bars (ascending, wider for hero) -->
+            <rect x="105" y="278" width="50" height="42" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="175" y="255" width="50" height="65" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="245" y="228" width="50" height="92" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="315" y="195" width="50" height="125" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="385" y="155" width="50" height="165" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="455" y="112" width="50" height="208" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="525" y="75" width="50" height="245" rx="3" fill="url(#ic-hero-bar)"/>
+            <rect x="595" y="48" width="50" height="272" rx="3" fill="url(#ic-hero-bar)"/>
+            <!-- Trend line -->
+            <polyline points="130,270 200,248 270,222 340,188 410,148 480,105 550,68 620,42" stroke="#4338CA" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+            <!-- Dots on trend line -->
+            <circle cx="130" cy="270" r="4" fill="#4338CA" opacity="0.7"/>
+            <circle cx="340" cy="188" r="4" fill="#4338CA" opacity="0.7"/>
+            <circle cx="550" cy="68" r="4.5" fill="#4338CA" opacity="0.8"/>
+            <circle cx="620" cy="42" r="5" fill="#4338CA" opacity="0.85"/>
+            <!-- Arrow indicator -->
+            <path d="M620 36 L625 26 L615 26 Z" fill="#4338CA" opacity="0.6"/>
+            <!-- Y-axis labels -->
+            <rect x="40" y="248" width="28" height="4" rx="2" fill="#3B7DD8" opacity="0.12"/>
+            <rect x="40" y="178" width="28" height="4" rx="2" fill="#3B7DD8" opacity="0.12"/>
+            <rect x="40" y="108" width="28" height="4" rx="2" fill="#3B7DD8" opacity="0.12"/>
+          </svg>
+        </div>
+
         <div style="max-width: 840px; margin: 0 auto; text-align: center;">
           <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
             ICON plc: Scaling BRA Across 200+ Compounds with an AI-Powered CRO Platform
@@ -531,8 +576,8 @@
 
           <!-- Related Case Study 1: AstraZeneca -->
           <a href="/case-study-astrazeneca" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
-            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-100), var(--teal-100)); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <span style="font-size: 2rem; font-weight: 700; color: var(--blue-600); opacity: 0.6;">AstraZeneca</span>
+            <div style="aspect-ratio: 16/9; border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+              <svg viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 100%; height: 100%; display: block;"><defs><linearGradient id="az-c5" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0F2B46"/><stop offset="100%" stop-color="#0D3B5E"/></linearGradient></defs><rect width="400" height="225" fill="url(#az-c5)"/><line x1="120" y1="70" x2="200" y2="112" stroke="#0D7C6B" stroke-width="1.5" opacity="0.5"/><line x1="200" y1="112" x2="280" y2="80" stroke="#3B7DD8" stroke-width="1.5" opacity="0.5"/><line x1="200" y1="112" x2="160" y2="160" stroke="#0D7C6B" stroke-width="1.5" opacity="0.5"/><line x1="200" y1="112" x2="300" y2="150" stroke="#3B7DD8" stroke-width="1.5" opacity="0.4"/><line x1="280" y1="80" x2="340" y2="112" stroke="#0D7C6B" stroke-width="1.5" opacity="0.4"/><circle cx="200" cy="112" r="10" fill="#0D7C6B" opacity="0.8"/><circle cx="200" cy="112" r="18" fill="none" stroke="#0D7C6B" stroke-width="1" opacity="0.3"/><circle cx="120" cy="70" r="7" fill="#3B7DD8" opacity="0.7"/><circle cx="280" cy="80" r="8" fill="#3B7DD8" opacity="0.7"/><circle cx="160" cy="160" r="6" fill="#0D7C6B" opacity="0.6"/><circle cx="300" cy="150" r="7" fill="#3B7DD8" opacity="0.6"/><circle cx="340" cy="112" r="5" fill="#0D7C6B" opacity="0.5"/></svg>
             </div>
             <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Accelerating Oncology BRA with AI-Driven Signal Detection</h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">AstraZeneca</p>
@@ -541,8 +586,8 @@
 
           <!-- Related Case Study 2: Sanofi -->
           <a href="/case-study-sanofi" class="arca-card" style="text-decoration: none; color: inherit; display: block;" data-animate>
-            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--indigo-100), var(--teal-100)); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <span style="font-size: 2rem; font-weight: 700; color: var(--indigo-600); opacity: 0.6;">Sanofi</span>
+            <div style="aspect-ratio: 16/9; border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+              <svg viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 100%; height: 100%; display: block;"><defs><linearGradient id="sn-c5" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1A1145"/><stop offset="100%" stop-color="#0F2B5E"/></linearGradient></defs><rect width="400" height="225" fill="url(#sn-c5)"/><line x1="200" y1="30" x2="200" y2="70" stroke="#4338CA" stroke-width="2.5" opacity="0.7"/><line x1="200" y1="70" x2="120" y2="100" stroke="#4338CA" stroke-width="2" opacity="0.6"/><line x1="200" y1="70" x2="280" y2="100" stroke="#3B7DD8" stroke-width="2" opacity="0.6"/><line x1="120" y1="100" x2="70" y2="140" stroke="#4338CA" stroke-width="1.5" opacity="0.5"/><line x1="120" y1="100" x2="150" y2="140" stroke="#4338CA" stroke-width="1.5" opacity="0.5"/><line x1="280" y1="100" x2="240" y2="140" stroke="#3B7DD8" stroke-width="1.5" opacity="0.5"/><line x1="280" y1="100" x2="320" y2="140" stroke="#3B7DD8" stroke-width="1.5" opacity="0.5"/><circle cx="200" cy="30" r="5" fill="#4338CA" opacity="0.8"/><circle cx="200" cy="70" r="6" fill="#4338CA" opacity="0.7"/><circle cx="120" cy="100" r="5" fill="#4338CA" opacity="0.65"/><circle cx="280" cy="100" r="5" fill="#3B7DD8" opacity="0.65"/><circle cx="70" cy="140" r="4" fill="#4338CA" opacity="0.55"/><circle cx="150" cy="140" r="4" fill="#4338CA" opacity="0.55"/><circle cx="240" cy="140" r="4" fill="#3B7DD8" opacity="0.55"/><circle cx="320" cy="140" r="4" fill="#3B7DD8" opacity="0.55"/></svg>
             </div>
             <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Transforming Rare Disease Benefit-Risk Assessment</h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Sanofi</p>

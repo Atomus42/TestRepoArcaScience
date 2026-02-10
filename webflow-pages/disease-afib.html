@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atrial Fibrillation BRA — ArcaScience | AFib Benefit-Risk Analysis</title>
+  <meta name="description" content="AI-driven benefit-risk analysis for Atrial Fibrillation therapies. Comprehensive BRA for DOACs, antiarrhythmic drugs, catheter ablation, and left atrial appendage closure, balancing stroke prevention against bleeding risk across diverse patient populations.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home"><img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32"></a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;"><a href="/platform-overview" class="arca-nav-link">Platform</a></div>
+        <div style="position: relative;"><a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions</a></div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">Talk to a Scientist</a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- HERO -->
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(13, 124, 107, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 125, 216, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
+        <circle cx="210" cy="160" r="16" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="160" r="6" fill="rgba(13,124,107,0.3)"/>
+        <circle cx="290" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="290" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none;">Cardiology</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Atrial Fibrillation</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">Cardiology &rsaquo; Atrial Fibrillation</p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Benefit-Risk Analysis for Atrial Fibrillation Therapies
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Atrial fibrillation management requires continuous balancing of stroke prevention against bleeding risk, with treatment decisions spanning DOACs, antiarrhythmic drugs, catheter ablation, and left atrial appendage closure. ArcaScience provides integrated BRA across pharmacological and interventional strategies using CHA&#8322;DS&#8322;-VASc and HAS-BLED frameworks enhanced by AI-driven patient-level risk modeling.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="/platform-overview" class="arca-btn-primary-inverted">See Platform</a>
+            <a href="/contact?disease=afib" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="60000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">People living with AFib worldwide</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="1900" data-countup-suffix="+">0</span>
+            <p class="arca-caption">AFib therapy trials analyzed</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="64" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Stroke risk reduction with DOACs vs. no anticoagulation</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="5" data-countup-suffix="x">0</span>
+            <p class="arca-caption">Increased stroke risk in untreated AFib</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEASE OVERVIEW -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Disease Overview</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why Atrial Fibrillation Demands Specialized BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            AFib therapy is defined by the fundamental tension between preventing thromboembolic stroke and causing hemorrhagic complications. With DOACs replacing warfarin, rhythm versus rate control strategies evolving based on EAST-AFNET 4, and catheter ablation expanding into first-line therapy, benefit-risk assessment must integrate pharmacological, interventional, and patient-specific variables simultaneously.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Stroke vs. Bleeding Risk Balancing</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              CHA&#8322;DS&#8322;-VASc scoring guides anticoagulation initiation, while HAS-BLED estimates bleeding risk, but these scores have limited discriminatory power in individual patients. DOACs (apixaban from ARISTOTLE, rivaroxaban from ROCKET AF, edoxaban from ENGAGE AF-TIMI 48) each have distinct pharmacokinetic profiles affecting efficacy and safety. BRA must model patient-level stroke-bleeding tradeoffs accounting for age, renal function, concomitant antiplatelet therapy, and fall risk.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Rhythm vs. Rate Control Strategy</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              EAST-AFNET 4 demonstrated that early rhythm control improves cardiovascular outcomes, shifting the paradigm from the AFFIRM-era rate control preference. However, antiarrhythmic drugs (amiodarone, flecainide, dronedarone, sotalol) carry significant proarrhythmic, thyroid, pulmonary, and hepatic toxicities. Catheter ablation (CABANA, CASTLE-AF) offers rhythm control without chronic drug exposure but introduces procedural risks including cardiac tamponade, pulmonary vein stenosis, and esophageal injury.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Anticoagulation in Special Populations</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              DOAC dosing in renal impairment (CrCl 15-50 mL/min) requires careful dose reduction with differing thresholds per agent. Frail and elderly patients face amplified bleeding risk but also the highest stroke risk, creating a narrow therapeutic window. Perioperative anticoagulation management, bridging decisions, and anticoagulation around catheter ablation or left atrial appendage closure (WATCHMAN device) demand procedure-specific BRA that accounts for temporary interruption risks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCASCIENCE APPROACH -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses AFib BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">Our modules are configured with AFib anticoagulation and rhythm control data, stroke-bleeding prediction models trained on DOAC trial populations, and regulatory templates for anticoagulant and antiarrhythmic submissions.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card arca-card-colored-top is-data" data-animate="slide-up">
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">AFib Anticoagulation &amp; Rhythm Data</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">1,900+ AFib trials including ARISTOTLE, ROCKET AF, ENGAGE AF-TIMI 48, RE-LY, CABANA, CASTLE-AF, and EAST-AFNET 4 datasets. Comprehensive bleeding and stroke event databases covering DOACs, warfarin, antiarrhythmic drugs, and catheter ablation outcomes with real-world data from anticoagulation clinics and nationwide AFib registries spanning 2M+ patient-years.</p>
+            <a href="/platform-data-intelligence" class="arca-btn-tertiary">Explore Data Engine <span class="arca-arrow">&rarr;</span></a>
+          </div>
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate="slide-up">
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Stroke-Bleeding AI Models</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">AI models for patient-level stroke-bleeding tradeoff optimization beyond CHA&#8322;DS&#8322;-VASc and HAS-BLED, renal function-adjusted DOAC dosing simulation, comparative DOAC efficacy-safety profiling (apixaban vs. rivaroxaban vs. edoxaban), catheter ablation complication risk prediction, and antiarrhythmic drug proarrhythmia detection using ECG and electrophysiology data patterns.</p>
+            <a href="/platform-ai-models" class="arca-btn-tertiary">Explore AI Models <span class="arca-arrow">&rarr;</span></a>
+          </div>
+          <div class="arca-card arca-card-colored-top is-output" data-animate="slide-up">
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Anticoagulant Regulatory Outputs</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">PSURs with detailed bleeding event analysis by type (major, CRNM, minor) and location (intracranial, GI, genitourinary), RMPs with renal dose adjustment protocols and perioperative management guidance, comparative effectiveness documents for DOAC class differentiation, and post-marketing commitment reports for stroke prevention efficacy in real-world populations aligned with FDA and EMA anticoagulant guidance.</p>
+            <a href="/platform-outputs" class="arca-btn-tertiary">Explore Outputs <span class="arca-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS -->
+    <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">AFib Intelligence</p>
+          <h2 class="arca-display-sm">Platform Performance in Atrial Fibrillation</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="4200000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption arca-text-grey-600">AFib anticoagulation data points tracked</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="68" data-countup-suffix="%">0</span>
+            <p class="arca-caption arca-text-grey-600">Faster bleeding signal detection</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="10">0</span>
+            <p class="arca-caption arca-text-grey-600">Stroke-bleeding prediction models deployed</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="11">0</span>
+            <p class="arca-caption arca-text-grey-600">AFib regulatory submissions supported</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE EVIDENCE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div>
+            <p class="arca-section-label">Case Evidence &mdash; Atrial Fibrillation</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">DOAC Comparative Safety Analysis for Renal Impairment Populations</h2>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">A DOAC manufacturer needed to demonstrate their agent's favorable benefit-risk profile in patients with moderate renal impairment (CrCl 25-50 mL/min), where reduced-dose regimens apply but real-world dosing errors are common. The regulatory authority required evidence that dose-reduced patients maintained stroke protection without excess bleeding compared to competitors.</p>
+            </div>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Result</h3>
+              <p class="arca-body-sm arca-text-grey-600">ArcaScience integrated ARISTOTLE, ROCKET AF, and ENGAGE AF-TIMI 48 subgroup analyses with real-world renal impairment cohort data from 180,000+ patients. The platform identified that inappropriate dose reduction (occurring in 15-30% of patients) significantly increased stroke risk, enabling the company to propose enhanced renal monitoring guidance that was adopted into the updated product label.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="2.8" data-countup-suffix="x">0</span>
+                <p class="arca-caption arca-text-grey-600">Faster renal safety subgroup analysis</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="38" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in inappropriate dosing signal noise</p>
+              </div>
+            </div>
+            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">View All Case Studies <span class="arca-arrow">&rarr;</span></a>
+          </div>
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              The renal impairment BRA was the linchpin of our label update submission. ArcaScience helped us disentangle appropriate dose reduction from inappropriate underdosing in real-world data, which was exactly the differentiation regulators needed to see. The platform turned what would have been a six-month manual analysis into a three-week deliverable.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Director of Cardiovascular Pharmacovigilance</p>
+              <p class="arca-body-sm arca-text-grey-600">Global Anticoagulant Manufacturer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-teal-100 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Frequently Asked Questions</p>
+          <h2 class="arca-display-sm">Atrial Fibrillation BRA</h2>
+        </div>
+        <div style="max-width: 820px; margin: 0 auto;">
+          <div class="arca-accordion" data-accordion="group">
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience compare DOACs for stroke-bleeding tradeoffs?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Our platform provides head-to-head comparative BRA between apixaban, rivaroxaban, edoxaban, and dabigatran using data from ARISTOTLE, ROCKET AF, ENGAGE AF-TIMI 48, and RE-LY alongside real-world registries. AI models analyze net clinical benefit (stroke prevention minus major bleeding) across patient subgroups defined by age, renal function, body weight, and concomitant medications. This supports formulary decisions, treatment guidelines, and regulatory differentiation claims.</p>
+              </div>
+            </div>
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Can the platform assess catheter ablation benefit-risk versus drug therapy?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Yes. Using data from CABANA, CASTLE-AF, and EAST-AFNET 4, our platform models the benefit-risk of catheter ablation versus antiarrhythmic drug therapy for rhythm control. The analysis incorporates procedural complication rates (cardiac tamponade at 1-2%, pulmonary vein stenosis, phrenic nerve injury, atrioesophageal fistula), recurrence rates requiring repeat ablation, and the long-term avoidance of antiarrhythmic drug toxicities. For heart failure patients with AFib, CASTLE-AF data demonstrates mortality benefit from ablation that reframes the benefit-risk calculus.</p>
+              </div>
+            </div>
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience handle DOAC dosing in renal impairment?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Each DOAC has distinct renal dose adjustment thresholds: apixaban uses serum creatinine plus age and weight criteria, rivaroxaban and edoxaban use CrCl cutoffs, and dabigatran has the most renal-dependent clearance. Our models simulate dose-exposure-response relationships across the renal function spectrum, identify patients at risk of inappropriate dosing (both under- and over-dosing), and flag real-world dosing patterns that deviate from label recommendations. This supports pharmacovigilance for dose-related adverse events and label optimization.</p>
+              </div>
+            </div>
+            <div class="arca-accordion-item">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Does the platform cover perioperative anticoagulation management?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Yes. Perioperative DOAC management is a major source of adverse events, with decisions around timing of interruption, bridging anticoagulation, and resumption carrying significant stroke and bleeding risks. Our platform models procedure-specific bleeding risk (high vs. low), DOAC half-life considerations based on renal function, and the evidence against routine heparin bridging from the BRIDGE trial. This supports risk minimization measures in product labels and perioperative management guidelines included in regulatory submissions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Atrial Fibrillation</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration focused on AFib BRA. Our cardiovascular scientists will present DOAC comparative safety analysis, stroke-bleeding tradeoff models, catheter ablation benefit-risk evaluation, and renal impairment dosing frameworks.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?disease=afib" class="arca-btn-primary-inverted">Request AFib Briefing</a>
+          <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore the Platform <span class="arca-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div><img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);"><p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a><a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a><a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a><a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a><a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a></nav></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a><a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a><a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a></nav></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a><a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a><a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a><a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a><a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a></nav></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a><a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a><a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a><a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a></nav></div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience. All rights reserved.</p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.arca-accordion-icon');
+          var isOpen = content.style.display === 'block';
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) { c.style.display = 'none'; });
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) { i.textContent = '+'; });
+          if (!isOpen) { content.style.display = 'block'; icon.textContent = '\u2212'; }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

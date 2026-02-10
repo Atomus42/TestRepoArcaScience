@@ -140,16 +140,27 @@
 .arca-nav-link.is-active { color: var(--blue-600); }
 .arca-nav-link.is-active::after { width:100%; left:0; }
 
-/* Dropdown navigation — hover show/hide */
+/* Dropdown navigation — JS-controlled with CSS transitions */
 .arca-nav-dropdown-wrap { position: relative; }
+.arca-nav-dropdown {
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms !important;
+}
+.arca-nav-dropdown-wrap.is-open > .arca-nav-dropdown,
 .arca-nav-dropdown-wrap:hover > .arca-nav-dropdown,
 .arca-nav-dropdown-wrap:focus-within > .arca-nav-dropdown {
   opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+/* Gap bridge — invisible area between trigger and dropdown to prevent flicker */
+.arca-nav-dropdown::before {
+  content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px;
 }
 .arca-nav-dropdown a:hover {
   background-color: var(--blue-50) !important; color: var(--blue-600) !important; text-decoration: none !important;
 }
-/* Chevron rotation on hover */
+/* Chevron rotation */
+.arca-nav-dropdown-wrap.is-open > .arca-nav-link svg,
 .arca-nav-dropdown-wrap:hover > .arca-nav-link svg,
 .arca-nav-dropdown-wrap:focus-within > .arca-nav-link svg {
   transform: rotate(180deg); transition: transform 200ms ease;
@@ -463,6 +474,206 @@
 }
 
 /* =========================================================================
+   Enhanced Visual Effects — eye-candy animations
+   ========================================================================= */
+
+/* Shimmer effect on stat numbers */
+.arca-stat-lg, .arca-stat-sm {
+  background: linear-gradient(90deg, currentColor 40%, var(--blue-400) 50%, currentColor 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: arca-shimmer 3s ease-in-out infinite;
+}
+@keyframes arca-shimmer {
+  0%, 100% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+}
+
+/* Pulse glow on credibility metrics */
+.arca-credibility-metric {
+  position: relative;
+}
+.arca-credibility-metric::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue-400), transparent);
+  animation: arca-pulse-width 2s ease-in-out infinite;
+}
+@keyframes arca-pulse-width {
+  0%, 100% { width: 40px; opacity: 0.5; }
+  50% { width: 80px; opacity: 1; }
+}
+
+/* Gradient text for section labels */
+.arca-section-label {
+  background: linear-gradient(135deg, var(--blue-600), var(--teal-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Hover-reveal line animation for card dividers */
+.arca-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-600), var(--teal-600));
+  transition: width 0.4s ease, left 0.4s ease;
+  border-radius: 2px;
+}
+.arca-card:hover::before {
+  width: 60%;
+  left: 20%;
+}
+.arca-card { position: relative; overflow: hidden; }
+
+/* Animated underline on headings in view */
+[data-animate].is-visible .arca-heading-1::after,
+[data-animate].is-visible .arca-heading-2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-600), var(--teal-600));
+  margin-top: 12px;
+  border-radius: 2px;
+  animation: arca-line-grow 0.6s ease forwards;
+}
+@keyframes arca-line-grow {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+/* Smooth image reveal */
+[data-animate] img {
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+[data-animate].is-visible img {
+  transform: scale(1);
+}
+
+/* Enhanced card hover — tilt effect */
+.arca-card {
+  transition: border-color 250ms ease, box-shadow 250ms ease, transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background 250ms ease;
+}
+
+/* Floating badge animation */
+.arca-module-tag {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.arca-module-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Resource badge colors */
+.arca-resource-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.arca-resource-badge.is-whitepaper { background: var(--blue-100); color: var(--blue-600); }
+.arca-resource-badge.is-webinar { background: var(--indigo-100); color: var(--indigo-600); }
+.arca-resource-badge.is-case-study { background: var(--teal-100); color: var(--teal-600); }
+.arca-resource-badge.is-regulatory-guide { background: var(--amber-100); color: var(--amber-600); }
+.arca-resource-badge.is-blog-post { background: var(--green-100); color: var(--green-600); }
+
+/* Scroll progress bar glow */
+[data-scroll-progress] {
+  box-shadow: 0 0 8px rgba(35, 86, 160, 0.4);
+}
+
+/* Enhanced section divider — animated on scroll */
+.arca-section-divider {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.arca-section-divider.is-visible {
+  opacity: 1;
+}
+
+/* Nav scrolled glass effect enhancement */
+.arca-nav.is-scrolled {
+  border-bottom: 1px solid rgba(209, 213, 222, 0.3);
+}
+
+/* Testimonial hover lift */
+.arca-testimonial:hover {
+  transform: translateY(-4px);
+  transition: transform 300ms ease;
+}
+
+/* Form field micro-interaction */
+.arca-form-field:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px var(--blue-100), 0 4px 12px rgba(35, 86, 160, 0.1);
+}
+
+/* Link arrow bounce on hover */
+.arca-arrow {
+  display: inline-block;
+  transition: transform 250ms ease;
+}
+a:hover .arca-arrow, button:hover .arca-arrow {
+  animation: arca-arrow-bounce 0.6s ease;
+}
+@keyframes arca-arrow-bounce {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(6px); }
+  60% { transform: translateX(3px); }
+}
+
+/* Compliance badge entrance */
+.arca-compliance-badge {
+  transition: opacity 200ms ease, filter 200ms ease, transform 200ms ease;
+}
+.arca-compliance-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Back-to-top button pulse when first shown */
+[data-back-to-top].is-visible {
+  animation: arca-pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes arca-pop-in {
+  0% { transform: translateY(10px) scale(0.8); opacity: 0; }
+  60% { transform: translateY(-2px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Loading skeleton shimmer for images */
+img[loading="lazy"] {
+  background: linear-gradient(90deg, var(--grey-100) 25%, var(--grey-50) 50%, var(--grey-100) 75%);
+  background-size: 400% 100%;
+  animation: arca-skeleton 1.5s ease-in-out infinite;
+}
+img[loading="lazy"][src]:not([src=""]) {
+  animation: none;
+  background: transparent;
+}
+@keyframes arca-skeleton {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================================================================
    Compliance Badges
    ========================================================================= */
 .arca-compliance-badges { display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; }
@@ -492,11 +703,237 @@
 
 [data-animate-stagger] > [data-animate] { transition-delay: calc(var(--stagger-index, 0) * 100ms); }
 
+/* =========================================================================
+   Gradient border on focus for form fields — rotating conic-gradient spinner
+   ========================================================================= */
+.arca-form-field {
+  position: relative;
+  background: var(--white);
+}
+.arca-form-field:focus {
+  border-color: transparent;
+  background-image: none;
+}
+/* Gradient border wrapper — applied via an outer container */
+.arca-form-field-wrap {
+  position: relative;
+  border-radius: var(--radius-sm);
+}
+.arca-form-field-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-sm) + 2px);
+  background: conic-gradient(
+    from var(--arca-focus-angle, 0deg),
+    var(--blue-600),
+    var(--teal-600),
+    var(--blue-400),
+    var(--blue-600)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  animation: arca-rotate-gradient 2s linear infinite;
+}
+.arca-form-field-wrap:focus-within::before {
+  opacity: 1;
+}
+@property --arca-focus-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes arca-rotate-gradient {
+  to { --arca-focus-angle: 360deg; }
+}
+/* Fallback for browsers without @property — static gradient border */
+@supports not (background: paint(something)) {
+  .arca-form-field:focus {
+    border-image: linear-gradient(135deg, var(--blue-600), var(--teal-600), var(--blue-400)) 1;
+    border-image-slice: 1;
+  }
+}
+
+/* =========================================================================
+   Section entry animations — subtle scale-up + fade on viewport entry
+   ========================================================================= */
+section[data-animate] {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+section[data-animate].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================================================
+   Nav dropdown item hover — left border indicator that slides in
+   ========================================================================= */
+.arca-nav-dropdown a {
+  position: relative;
+  transition: background-color 200ms ease, color 200ms ease, padding-left 200ms ease;
+  border-left: 2px solid transparent;
+}
+.arca-nav-dropdown a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 2px;
+  height: 60%;
+  background: var(--blue-600);
+  border-radius: 1px;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center;
+}
+.arca-nav-dropdown a:hover::before {
+  transform: translateY(-50%) scaleY(1);
+}
+.arca-nav-dropdown a:hover {
+  padding-left: 6px;
+}
+
+/* =========================================================================
+   Card grid stagger — staggered entrance delays based on position
+   ========================================================================= */
+[data-animate-stagger] > .arca-card:nth-child(1),
+[data-animate-stagger] > [data-animate]:nth-child(1) { --stagger-index: 0; }
+[data-animate-stagger] > .arca-card:nth-child(2),
+[data-animate-stagger] > [data-animate]:nth-child(2) { --stagger-index: 1; }
+[data-animate-stagger] > .arca-card:nth-child(3),
+[data-animate-stagger] > [data-animate]:nth-child(3) { --stagger-index: 2; }
+[data-animate-stagger] > .arca-card:nth-child(4),
+[data-animate-stagger] > [data-animate]:nth-child(4) { --stagger-index: 3; }
+[data-animate-stagger] > .arca-card:nth-child(5),
+[data-animate-stagger] > [data-animate]:nth-child(5) { --stagger-index: 4; }
+[data-animate-stagger] > .arca-card:nth-child(6),
+[data-animate-stagger] > [data-animate]:nth-child(6) { --stagger-index: 5; }
+
+/* Three-column grids: stagger by column position */
+[data-animate-stagger] > .arca-card:nth-child(3n+1) { transition-delay: calc(var(--stagger-index, 0) * 100ms + 0ms); }
+[data-animate-stagger] > .arca-card:nth-child(3n+2) { transition-delay: calc(var(--stagger-index, 0) * 100ms + 60ms); }
+[data-animate-stagger] > .arca-card:nth-child(3n+3) { transition-delay: calc(var(--stagger-index, 0) * 100ms + 120ms); }
+
+/* =========================================================================
+   Testimonial quote animation — large quote mark fades in and slides down
+   ========================================================================= */
+.arca-testimonial-quote::before {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-12px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+[data-animate].is-visible .arca-testimonial-quote::before,
+.arca-testimonial.is-visible .arca-testimonial-quote::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================================================================
+   Smooth accordion transition enhancement — opacity fade + bg color shift
+   ========================================================================= */
+[data-accordion-content] {
+  opacity: 0.5;
+  transition: max-height 300ms ease-out, opacity 300ms ease 50ms;
+}
+[data-accordion-trigger][aria-expanded="true"] + [data-accordion-content],
+[data-accordion-item]:has([data-accordion-trigger][aria-expanded="true"]) [data-accordion-content] {
+  opacity: 1;
+}
+[data-accordion-trigger] {
+  transition: background-color 250ms ease, padding-left 200ms ease;
+}
+[data-accordion-trigger][aria-expanded="true"] {
+  background-color: var(--blue-50);
+  padding-left: var(--space-3);
+}
+
+/* =========================================================================
+   CTA section particles — CSS-only floating dots
+   ========================================================================= */
+.arca-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle 2px at 15% 20%, rgba(255,255,255,0.15) 50%, transparent 50%),
+    radial-gradient(circle 1.5px at 40% 70%, rgba(255,255,255,0.12) 50%, transparent 50%),
+    radial-gradient(circle 2px at 65% 30%, rgba(255,255,255,0.10) 50%, transparent 50%),
+    radial-gradient(circle 1px at 80% 80%, rgba(255,255,255,0.14) 50%, transparent 50%),
+    radial-gradient(circle 1.5px at 25% 55%, rgba(255,255,255,0.08) 50%, transparent 50%),
+    radial-gradient(circle 2px at 90% 15%, rgba(255,255,255,0.11) 50%, transparent 50%);
+  background-size: 100% 100%;
+  animation: arca-particles-float 8s ease-in-out infinite alternate;
+}
+.arca-cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle 1.5px at 10% 45%, rgba(255,255,255,0.10) 50%, transparent 50%),
+    radial-gradient(circle 2px at 50% 15%, rgba(255,255,255,0.12) 50%, transparent 50%),
+    radial-gradient(circle 1px at 75% 55%, rgba(255,255,255,0.09) 50%, transparent 50%),
+    radial-gradient(circle 1.5px at 35% 85%, rgba(255,255,255,0.13) 50%, transparent 50%),
+    radial-gradient(circle 2px at 55% 50%, rgba(255,255,255,0.07) 50%, transparent 50%);
+  background-size: 100% 100%;
+  animation: arca-particles-float-alt 10s ease-in-out infinite alternate;
+}
+.arca-cta-section > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes arca-particles-float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-15px) translateX(8px); }
+  100% { transform: translateY(-5px) translateX(-5px); }
+}
+@keyframes arca-particles-float-alt {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(10px) translateX(-10px); }
+  100% { transform: translateY(-8px) translateX(6px); }
+}
+
+/* =========================================================================
+   Image reveal clip-path base styles
+   ========================================================================= */
+[data-animate] img {
+  clip-path: inset(0 0 0 0);
+  transition: transform 0.6s ease, filter 0.6s ease, clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+/* =========================================================================
+   Typing cursor styles (injected by JS, CSS fallback here)
+   ========================================================================= */
+[data-typing] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================================
+   Scroll velocity text base transition
+   ========================================================================= */
+[data-scroll-speed] {
+  will-change: transform;
+  transition: transform 0.1s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0ms !important; transition-duration: 0ms !important; }
   [data-animate] { opacity: 1; transform: none; filter: none; clip-path: none; }
+  section[data-animate] { opacity: 1; transform: none; }
   .arca-cta-section { animation: none; }
+  .arca-cta-section::before, .arca-cta-section::after { animation: none; }
   .arca-btn-primary::after, .arca-btn-secondary::before { display: none; }
+  .arca-testimonial-quote::before { opacity: 1; transform: translateX(-50%); }
+  [data-accordion-content] { opacity: 1; }
+  [data-scroll-speed] { transform: none !important; }
+  .arca-form-field-wrap::before { animation: none; }
+  [data-animate] img { clip-path: none; }
 }
 
 /* =========================================================================

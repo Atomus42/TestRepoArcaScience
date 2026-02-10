@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type 2 Diabetes BRA — ArcaScience | GLP-1, SGLT2 &amp; Insulin</title>
+  <meta name="description" content="AI-driven benefit-risk analysis for Type 2 Diabetes including GLP-1 receptor agonists, SGLT2 inhibitors, and insulin analogs. ArcaScience covers CVOT requirements, thyroid safety signals, and cardiovascular outcome modeling.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">Talk to a Scientist</a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- HERO -->
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
+        <circle cx="210" cy="160" r="16" stroke="rgba(217,119,6,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="160" r="6" fill="rgba(217,119,6,0.3)"/>
+        <circle cx="290" cy="100" r="10" stroke="rgba(217,119,6,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="100" r="10" stroke="rgba(217,119,6,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="290" cy="220" r="10" stroke="rgba(217,119,6,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="220" r="10" stroke="rgba(217,119,6,0.4)" stroke-width="1" fill="none"/>
+        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(217,119,6,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(217,119,6,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(217,119,6,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(217,119,6,0.3)" stroke-width="1.5"/>
+      </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/ta-endocrinology" style="color: rgba(255,255,255,0.65); text-decoration: none;">Endocrinology</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Type 2 Diabetes</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label" style="color: #f59e0b; margin-bottom: var(--space-3);">Endocrinology &rsaquo; Type 2 Diabetes</p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            AI-Driven Benefit-Risk Analysis for Type 2 Diabetes
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Type 2 diabetes BRA spans GLP-1 receptor agonists, SGLT2 inhibitors, insulin analogs, and emerging dual agonists. ArcaScience delivers class-specific cardiovascular outcome modeling across semaglutide, tirzepatide, empagliflozin, and dapagliflozin&mdash;with integrated CVOT analysis and post-marketing safety surveillance.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="/platform-overview" class="arca-btn-primary-inverted">See Platform</a>
+            <a href="/contact?disease=type-2-diabetes" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="540000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Diabetes patients globally</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="8500" data-countup-suffix="+">0</span>
+            <p class="arca-caption">T2D clinical trials analyzed</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="72" data-countup-suffix="B">$0</span>
+            <p class="arca-caption">Global T2D therapeutics market</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="40" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Approved T2D agents tracked</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEASE OVERVIEW -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Disease Overview</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why Type 2 Diabetes Demands Specialized BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            The T2D landscape has been transformed by GLP-1 receptor agonists and SGLT2 inhibitors delivering cardiovascular and renal benefits beyond glycemic control. This expansion of indications&mdash;from diabetes to obesity, heart failure, and CKD&mdash;creates overlapping safety populations and complex benefit-risk profiles that require disease-specific analytical frameworks.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">GLP-1 Thyroid &amp; Pancreatitis Risk</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Semaglutide, tirzepatide, and liraglutide carry FDA boxed warnings for thyroid C-cell tumor risk based on rodent studies, alongside signals for acute pancreatitis. As these agents expand into obesity and cardiovascular indications, BRA must model class-wide thyroid safety across broader populations with longer exposure durations than original diabetes CVOTs.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">SGLT2 DKA &amp; Genitourinary Safety</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Empagliflozin, dapagliflozin, and canagliflozin present a unique safety constellation including euglycemic diabetic ketoacidosis, Fournier's gangrene, lower limb amputations (canagliflozin), and urinary tract infections. Cross-indication use in heart failure and CKD patients without diabetes introduces novel risk-benefit considerations.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Cardiovascular Outcome Trial Requirements</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Since the 2008 FDA CVOT guidance, every new T2D therapy must demonstrate cardiovascular safety. This has generated massive datasets from EMPA-REG OUTCOME, DECLARE-TIMI 58, SUSTAIN-6, PIONEER 6, and SURPASS trials that require integrated benefit-risk modeling across MACE endpoints, hospitalization for heart failure, and renal composite outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCASCIENCE APPROACH -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses Type 2 Diabetes BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our platform integrates T2D-specific CVOT data, class-level safety models for GLP-1 and SGLT2 agents, and regulatory templates aligned with FDA cardiovascular guidance, EMA benefit-risk methodology, and PMDA requirements for metabolic therapies.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card arca-card-colored-top is-data" data-animate="slide-up">
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">T2D Data Coverage</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              8,500+ T2D clinical trials including EMPA-REG OUTCOME, DECLARE-TIMI 58, SUSTAIN, PIONEER, SURPASS, and AMPLITUDE-O datasets. Adverse event data covering GLP-1 thyroid signals, SGLT2 DKA and genitourinary events, insulin hypoglycemia patterns, and cardiovascular outcome endpoints across all major drug classes.
+            </p>
+            <a href="/platform-data-intelligence" class="arca-btn-tertiary">Explore Data Engine <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate="slide-up">
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">CVOT-Integrated AI Models</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              AI models for cardiovascular outcome modeling across MACE, HHF, and renal composites, GLP-1 thyroid C-cell risk extrapolation from preclinical to clinical data, SGLT2 DKA risk stratification in diabetic and non-diabetic populations, and cross-indication safety modeling for obesity and heart failure expansions.
+            </p>
+            <a href="/platform-ai-models" class="arca-btn-tertiary">Explore AI Models <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-output" data-animate="slide-up">
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">T2D Regulatory Outputs</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              PSURs with cardiovascular safety deep-dives for GLP-1 and SGLT2 agents, RMPs with DKA monitoring and thyroid risk minimization measures, CTD Module 2.5 with CVOT endpoint integration, and HEOR reports supporting NICE and G-BA submissions for cardiovascular and renal benefit claims.
+            </p>
+            <a href="/platform-outputs" class="arca-btn-tertiary">Explore Outputs <span class="arca-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS -->
+    <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Type 2 Diabetes Intelligence</p>
+          <h2 class="arca-display-sm">Platform Performance in T2D</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div>
+            <span class="arca-stat-lg" style="color: #d97706;" data-countup="18000000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption arca-text-grey-600">T2D adverse event data points</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: #d97706;" data-countup="55" data-countup-suffix="%">0</span>
+            <p class="arca-caption arca-text-grey-600">Faster CVOT safety signal integration</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: #d97706;" data-countup="6">0</span>
+            <p class="arca-caption arca-text-grey-600">Drug classes modeled end-to-end</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: #d97706;" data-countup="14">0</span>
+            <p class="arca-caption arca-text-grey-600">T2D regulatory submissions supported</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE EVIDENCE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div>
+            <p class="arca-section-label">Case Evidence &mdash; Type 2 Diabetes</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">Post-Marketing Cardiovascular Safety Signal Monitoring for GLP-1 Agonists</h2>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: #d97706;">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">A top-10 pharma company needed real-time cardiovascular safety signal monitoring for their GLP-1 receptor agonist as it expanded from T2D into obesity and cardiovascular risk reduction indications, requiring integrated BRA across three distinct patient populations with differing baseline cardiovascular risk profiles.</p>
+            </div>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: #d97706;">Result</h3>
+              <p class="arca-body-sm arca-text-grey-600">ArcaScience deployed cross-indication cardiovascular safety models integrating CVOT data, real-world evidence from claims databases, and spontaneous reporting systems. The platform detected a potential pancreatitis signal enrichment in the obesity population 4.1 months earlier than traditional pharmacovigilance methods, enabling proactive label update discussions with FDA and EMA.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: #d97706;" data-countup="4.1" data-countup-suffix=" mo">0</span>
+                <p class="arca-caption arca-text-grey-600">Earlier signal detection vs. traditional PV</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: #d97706;" data-countup="38" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in CVOT data integration time</p>
+              </div>
+            </div>
+            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">View All Case Studies <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid #f59e0b;">
+              Managing cardiovascular safety across diabetes, obesity, and cardiovascular indications simultaneously was becoming unmanageable with our traditional approaches. ArcaScience gave us a single integrated view of our GLP-1 safety profile across all three populations, which was critical for our regulatory strategy.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">VP, Global Pharmacovigilance</p>
+              <p class="arca-body-sm arca-text-grey-600">Top-10 Pharmaceutical Company</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-teal-100 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Frequently Asked Questions</p>
+          <h2 class="arca-display-sm">Type 2 Diabetes Benefit-Risk Analysis</h2>
+        </div>
+        <div style="max-width: 820px; margin: 0 auto;">
+          <div data-accordion="group">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience handle the FDA CVOT requirement in diabetes BRA?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Our platform is purpose-built around the 2008 FDA cardiovascular guidance for diabetes therapies. We integrate MACE endpoints (cardiovascular death, non-fatal MI, non-fatal stroke), hospitalization for heart failure, and renal composite outcomes from all major CVOTs. The AI models generate pre-specified CVOT-aligned benefit-risk frameworks that map directly to FDA and EMA regulatory expectations, including meta-analysis across the GLP-1 and SGLT2 classes.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does the platform analyze GLP-1 thyroid C-cell tumor safety signals?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">ArcaScience integrates preclinical rodent C-cell data with clinical medullary thyroid carcinoma (MTC) surveillance from FAERS, EudraVigilance, and registry data. Our models assess the translational relevance of rodent findings to human populations, track calcitonin biomarker trends, and provide class-level and molecule-specific thyroid risk assessments. This is especially critical as GLP-1 exposure durations extend with obesity indications where patients may remain on therapy indefinitely.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Can ArcaScience model SGLT2 benefit-risk for off-label use in heart failure and CKD?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Yes. Our platform models SGLT2 inhibitor safety across diabetes, heart failure (EMPEROR-Preserved, DELIVER), and CKD (DAPA-CKD, EMPA-KIDNEY) populations. The key BRA challenge is that DKA risk profiles differ substantially between diabetic and non-diabetic patients, while genitourinary infection rates, volume depletion, and amputation signals require population-specific weighting. Our models provide indication-specific benefit-risk assessments that support both label expansion submissions and post-marketing surveillance across indications.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does the platform handle obesity indication crossover safety for GLP-1 agents?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">ArcaScience provides integrated safety modeling across T2D and obesity indications for semaglutide (Ozempic/Wegovy) and tirzepatide (Mounjaro/Zepbound). The platform accounts for dose-dependent safety differences, distinct patient demographics (younger, fewer comorbidities in obesity), GI tolerability profiles at higher obesity doses, and suicidality signal monitoring mandated by regulatory authorities. Our cross-indication BRA framework ensures consistent safety oversight as these agents reach much larger patient populations.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item>
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">What considerations apply to pediatric Type 2 Diabetes BRA?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Pediatric T2D presents unique BRA challenges as the disease progresses more aggressively in adolescents. Our platform models safety data from ELLIPSE (liraglutide), AWARD-PEDS (dulaglutide), and emerging pediatric semaglutide trials, with particular attention to growth and development impacts, thyroid safety in developing endocrine systems, bone mineral density effects of SGLT2 inhibitors, and long-term cardiovascular risk modeling across decades of projected exposure. We support pediatric investigation plan (PIP) and pediatric study plan (PSP) benefit-risk frameworks.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Type 2 Diabetes</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration of ArcaScience's platform configured for Type 2 Diabetes benefit-risk analysis. Our endocrinology scientists will walk through CVOT data integration, GLP-1 and SGLT2 class-level safety models, and cardiovascular outcome regulatory output examples.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?disease=type-2-diabetes" class="arca-btn-primary-inverted">Request T2D Briefing</a>
+          <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore the Platform <span class="arca-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience. All rights reserved.</p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+</body>
+</html>

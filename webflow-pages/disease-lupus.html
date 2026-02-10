@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systemic Lupus Erythematosus BRA — ArcaScience | Belimumab, Anifrolumab &amp; Calcineurin</title>
+  <meta name="description" content="AI-driven benefit-risk analysis for Systemic Lupus Erythematosus including belimumab, anifrolumab, voclosporin, and hydroxychloroquine. ArcaScience covers multi-organ lupus safety profiling, lupus nephritis BRA, and immunosuppressive risk modeling.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">Talk to a Scientist</a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- HERO -->
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
+        <circle cx="210" cy="160" r="16" stroke="rgba(79,70,229,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="160" r="6" fill="rgba(79,70,229,0.3)"/>
+        <circle cx="290" cy="100" r="10" stroke="rgba(79,70,229,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="100" r="10" stroke="rgba(79,70,229,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="290" cy="220" r="10" stroke="rgba(79,70,229,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="220" r="10" stroke="rgba(79,70,229,0.4)" stroke-width="1" fill="none"/>
+        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(79,70,229,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(79,70,229,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(79,70,229,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(79,70,229,0.3)" stroke-width="1.5"/>
+      </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none;">Immunology</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Systemic Lupus Erythematosus</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label" style="color: var(--indigo-400); margin-bottom: var(--space-3);">Immunology &rsaquo; Systemic Lupus Erythematosus</p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            AI-Driven Benefit-Risk Analysis for Systemic Lupus Erythematosus
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            SLE benefit-risk analysis spans B-cell targeted biologics, type I interferon receptor antibodies, calcineurin inhibitors, and foundational antimalarials. ArcaScience delivers organ-specific safety profiling across belimumab, anifrolumab, voclosporin, and hydroxychloroquine&mdash;with integrated multi-organ flare and immunosuppressive risk modeling.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="/platform-overview" class="arca-btn-primary-inverted">See Platform</a>
+            <a href="/contact?disease=lupus" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="5000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Lupus patients globally</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="800" data-countup-suffix="+">0</span>
+            <p class="arca-caption">SLE clinical trials analyzed</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="3" data-countup-suffix="B">$0</span>
+            <p class="arca-caption">Global SLE therapeutics market</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" style="font-size: 1.75rem;">Limited</span>
+            <p class="arca-caption">Approved therapies&mdash;high unmet need</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEASE OVERVIEW -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Disease Overview</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why SLE Demands Specialized BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Systemic lupus erythematosus is a prototypical multi-organ autoimmune disease with unpredictable flare patterns, disproportionate impact on women of childbearing age, and a history of clinical trial failures. The limited approved therapy landscape, combined with severe organ manifestations in lupus nephritis and neuropsychiatric lupus, demands BRA frameworks that account for disease heterogeneity and cumulative immunosuppressive risk.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Serious Infection &amp; Immunosuppression Risk</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Belimumab, anifrolumab, and voclosporin all carry significant infection risks layered on top of background immunosuppression with mycophenolate and corticosteroids. BRA must model cumulative immunosuppressive burden, herpes zoster reactivation (particularly with anifrolumab), opportunistic infections, and the critical balance between disease control and infectious complications across organ-specific manifestations.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Hypersensitivity &amp; Infusion Reactions</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Belimumab carries risk of serious hypersensitivity reactions including anaphylaxis, with post-marketing reports of fatal outcomes. Infusion-related reactions require pre-medication protocols and long-term monitoring. BRA must account for the IV-to-SC formulation safety differences and the distinct reaction profiles in different ethnic populations, given lupus prevalence disparities.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Nephrotoxicity &amp; Retinal Toxicity Monitoring</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Voclosporin, as a calcineurin inhibitor for lupus nephritis, introduces nephrotoxicity risk in patients with already-compromised renal function. Hydroxychloroquine&mdash;the backbone of SLE treatment&mdash;requires long-term retinal toxicity monitoring with OCT screening, where cumulative dose-dependent maculopathy can cause irreversible vision loss. These require distinct longitudinal BRA modeling approaches.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCASCIENCE APPROACH -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses SLE BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our platform integrates SLE-specific multi-organ disease activity data, immunosuppressive safety models, and regulatory templates aligned with FDA and EMA lupus-specific guidance documents including the 2010 FDA SLE guidance and 2015 lupus nephritis guidance.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card arca-card-colored-top is-data" data-animate="slide-up">
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">SLE Data Coverage</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              800+ SLE clinical trials including BLISS-52, BLISS-76, TULIP-1, TULIP-2, AURORA, and NOBILITY datasets. Adverse event data covering belimumab hypersensitivity, anifrolumab herpes zoster, voclosporin nephrotoxicity, HCQ retinal toxicity, and background immunosuppressant infection rates across all organ manifestations.
+            </p>
+            <a href="/platform-data-intelligence" class="arca-btn-tertiary">Explore Data Engine <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate="slide-up">
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Multi-Organ AI Models</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              AI models for cumulative immunosuppressive risk scoring, organ-specific flare prediction and safety impact modeling, herpes zoster reactivation risk stratification with anifrolumab, nephrotoxicity monitoring for voclosporin in lupus nephritis, and SRI-4/BICLA responder-safety correlation analysis. BRAT framework with SLE-specific regulatory precedent integration.
+            </p>
+            <a href="/platform-ai-models" class="arca-btn-tertiary">Explore AI Models <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-output" data-animate="slide-up">
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">SLE Regulatory Outputs</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              PSURs with infection safety deep-dives and organ-specific event tracking, RMPs with hypersensitivity monitoring and immunosuppression risk minimization, CTD Module 2.5 with SRI-4, BICLA, and renal response endpoint integration, and HEOR reports supporting the limited comparator landscape for HTA submissions.
+            </p>
+            <a href="/platform-outputs" class="arca-btn-tertiary">Explore Outputs <span class="arca-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS -->
+    <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">SLE Intelligence</p>
+          <h2 class="arca-display-sm">Platform Performance in Lupus</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="3200000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption arca-text-grey-600">SLE adverse event data points</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="50" data-countup-suffix="%">0</span>
+            <p class="arca-caption arca-text-grey-600">Faster infection signal detection</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="7">0</span>
+            <p class="arca-caption arca-text-grey-600">Organ systems modeled</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="6">0</span>
+            <p class="arca-caption arca-text-grey-600">SLE regulatory submissions supported</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE EVIDENCE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div>
+            <p class="arca-section-label">Case Evidence &mdash; Systemic Lupus</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">Type I Interferon Receptor Antibody BRA for Multi-Organ Lupus</h2>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">A mid-size biotech required comprehensive benefit-risk assessment for their type I interferon receptor antibody across SLE patients with skin, joint, and renal manifestations, needing to demonstrate safety across organ subtypes while managing the herpes zoster signal that emerged during pivotal trials and early post-marketing experience.</p>
+            </div>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Result</h3>
+              <p class="arca-body-sm arca-text-grey-600">ArcaScience deployed organ-specific safety models that stratified herpes zoster risk by baseline immunosuppressive regimen, organ manifestation, and ethnicity. The platform identified that zoster risk was concentrated in patients on triple immunosuppression, enabling targeted risk minimization recommendations that supported a successful EMA RMP update and informed vaccination guidance in the product label.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="2.8" data-countup-suffix="x">0</span>
+                <p class="arca-caption arca-text-grey-600">Faster zoster risk stratification</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="40" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">More precise organ-specific safety profiling</p>
+              </div>
+            </div>
+            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">View All Case Studies <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--indigo-400);">
+              Lupus is inherently heterogeneous, and our safety data reflected that complexity. ArcaScience helped us untangle the herpes zoster signal from background immunosuppressive effects, which was exactly what EMA needed to see in our risk management plan. The organ-specific modeling capability was something we could not replicate internally.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Head of Immunology Safety</p>
+              <p class="arca-body-sm arca-text-grey-600">Mid-Size Biotech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-teal-100 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Frequently Asked Questions</p>
+          <h2 class="arca-display-sm">SLE Benefit-Risk Analysis</h2>
+        </div>
+        <div style="max-width: 820px; margin: 0 auto;">
+          <div data-accordion="group">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience handle lupus nephritis-specific BRA?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Our platform provides dedicated lupus nephritis BRA modeling that integrates data from AURORA (voclosporin), BLISS-LN (belimumab), and NOBILITY (obinutuzumab) trials. We model the complex interaction between nephritis-specific endpoints (complete renal response, proteinuria reduction) and safety concerns unique to renal patients, including voclosporin nephrotoxicity risk in patients with already-impaired GFR, infection risk stratification by eGFR category, and the benefit-risk of adding biologics to mycophenolate + corticosteroid background therapy.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">What pregnancy safety considerations does the platform address for SLE?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Given that SLE disproportionately affects women of childbearing age, pregnancy safety is central to our BRA framework. We model teratogenicity risk for mycophenolate (Category D), the safety profile of hydroxychloroquine continuation during pregnancy (protective against neonatal lupus), belimumab pregnancy registry data, and the timing of treatment washout periods before conception. Our models also integrate antiphospholipid antibody status and its interaction with medication safety during pregnancy.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience model long-term HCQ retinal toxicity risk?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Our platform integrates the 2016 AAO screening guidelines with real-world retinal toxicity data from lupus registries. We model cumulative dose-dependent maculopathy risk using actual body weight-based dosing (5 mg/kg/day threshold), duration of use, renal function impact on drug clearance, and concurrent tamoxifen use. The AI tracks OCT screening compliance patterns and provides individualized risk projections for retinal toxicity that inform the long-term benefit-risk balance of this foundational SLE therapy.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">What challenges does pediatric SLE present for benefit-risk analysis?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Pediatric-onset SLE (pSLE) tends to be more severe than adult-onset disease, with higher rates of lupus nephritis and neuropsychiatric involvement. Our platform models the unique BRA challenges including growth and development impacts from long-term corticosteroid use, limited pediatric-specific efficacy data for biologics, the extended lifetime exposure to immunosuppressants, and vaccine safety considerations in immunosuppressed children. We support pediatric investigation plan frameworks that address these age-specific safety concerns.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item>
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does the platform handle flare management safety during treatment transitions?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Treatment transitions in SLE carry flare risk that must be modeled alongside medication safety. Our platform analyzes washout period safety for immunosuppressant switches, corticosteroid taper protocols and rebound flare risk, the safety of biologic-to-biologic transitions (e.g., belimumab to anifrolumab), and the impact of disease flares on cumulative organ damage scores. The AI models integrate SLEDAI and BILAG activity indices with safety event timelines to provide comprehensive transition BRA.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Lupus</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration of ArcaScience's platform configured for SLE benefit-risk analysis. Our immunology scientists will walk through multi-organ safety modeling, lupus nephritis-specific data coverage, and infection risk stratification examples.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?disease=lupus" class="arca-btn-primary-inverted">Request SLE Briefing</a>
+          <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore the Platform <span class="arca-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience. All rights reserved.</p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+</body>
+</html>

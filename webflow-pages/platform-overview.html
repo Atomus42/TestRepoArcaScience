@@ -62,9 +62,18 @@
         <a href="/" class="arca-nav-link">Home</a>
 
         <!-- Platform dropdown — ACTIVE -->
-        <div style="position: relative;">
-          <a href="/platform-overview" class="arca-nav-link is-active">Platform</a>
-          <!-- Webflow: Use Dropdown component. Items below. -->
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link is-active">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
         </div>
 
         <!-- Solutions dropdown -->
@@ -137,6 +146,25 @@
       <!-- arca-decor: glow orbs -->
       <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: left-side abstract platform nodes -->
+    <svg width="180" height="260" viewBox="0 0 180 260" fill="none" aria-hidden="true" style="position: absolute; left: -10px; top: 60%; transform: translateY(-50%); opacity: 0.08; pointer-events: none; z-index: 0;">
+      <circle cx="40" cy="50" r="6" fill="rgba(13,124,107,0.6)"/>
+      <circle cx="90" cy="30" r="4" fill="rgba(13,124,107,0.4)"/>
+      <circle cx="140" cy="70" r="5" fill="rgba(67,56,202,0.5)"/>
+      <circle cx="60" cy="130" r="8" fill="rgba(59,125,216,0.5)"/>
+      <circle cx="130" cy="150" r="4" fill="rgba(67,56,202,0.4)"/>
+      <circle cx="40" cy="210" r="5" fill="rgba(22,128,60,0.5)"/>
+      <circle cx="110" cy="230" r="6" fill="rgba(22,128,60,0.4)"/>
+      <line x1="40" y1="50" x2="90" y2="30" stroke="rgba(13,124,107,0.25)" stroke-width="1"/>
+      <line x1="90" y1="30" x2="140" y2="70" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+      <line x1="40" y1="50" x2="60" y2="130" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="140" y1="70" x2="130" y2="150" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+      <line x1="60" y1="130" x2="130" y2="150" stroke="rgba(67,56,202,0.15)" stroke-width="1"/>
+      <line x1="60" y1="130" x2="40" y2="210" stroke="rgba(22,128,60,0.2)" stroke-width="1"/>
+      <line x1="130" y1="150" x2="110" y2="230" stroke="rgba(22,128,60,0.2)" stroke-width="1"/>
+      <line x1="40" y1="210" x2="110" y2="230" stroke="rgba(22,128,60,0.15)" stroke-width="1"/>
+    </svg>
 
     <!-- arca-decor: platform circuit SVG -->
     <svg width="480" height="340" viewBox="0 0 480 340" fill="none" aria-hidden="true" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); opacity: 0.1; pointer-events: none; z-index: 0;">
@@ -336,11 +364,47 @@
     </section>
 
     <!-- ================================================================
+         ACCENT STRIP: TEAL — Platform capabilities summary
+         Teal-100 background with gradient mesh for visual break.
+         ================================================================ -->
+    <section class="arca-bg-teal-100 arca-bg-mesh" style="padding: var(--space-6) 0; position: relative; overflow: hidden;" data-animate>
+      <!-- Decorative SVG: abstract data flow nodes -->
+      <svg width="200" height="120" viewBox="0 0 200 120" fill="none" aria-hidden="true" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none;">
+        <circle cx="30" cy="60" r="8" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="100" cy="30" r="6" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="100" cy="90" r="6" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="170" cy="60" r="8" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
+        <line x1="38" y1="60" x2="94" y2="30" stroke="rgba(13,124,107,0.3)" stroke-width="1"/>
+        <line x1="38" y1="60" x2="94" y2="90" stroke="rgba(13,124,107,0.3)" stroke-width="1"/>
+        <line x1="106" y1="30" x2="162" y2="60" stroke="rgba(13,124,107,0.3)" stroke-width="1"/>
+        <line x1="106" y1="90" x2="162" y2="60" stroke="rgba(13,124,107,0.3)" stroke-width="1"/>
+      </svg>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+          <div>
+            <p class="arca-heading-3" style="color: var(--teal-800); margin-bottom: var(--space-1);">Data Intelligence</p>
+            <p class="arca-body-sm" style="color: var(--teal-700);">100B+ data points from 15+ sources, continuously harmonized</p>
+          </div>
+          <div>
+            <p class="arca-heading-3" style="color: var(--indigo-800); margin-bottom: var(--space-1);">Decision Intelligence</p>
+            <p class="arca-body-sm" style="color: var(--indigo-700);">24 proprietary AI models with BRAT, MCDA, and PrOACT-URL frameworks</p>
+          </div>
+          <div>
+            <p class="arca-heading-3" style="color: var(--green-800); margin-bottom: var(--space-1);">Automated Outputs</p>
+            <p class="arca-body-sm" style="color: var(--green-700);">PSUR, RMP, CTD 2.5, HEOR &mdash; formatted for FDA, EMA, PMDA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
          SECTION 3: DATA INTELLIGENCE ENGINE DEEP-DIVE
          White background. Teal/data module color accent.
          AS Profiling Base 100B description, data sources, harmonization.
          ================================================================ -->
-    <section style="padding: var(--space-9) 0;" data-animate>
+        <div class="arca-section-divider" aria-hidden="true"></div>
+
+<section style="padding: var(--space-9) 0; background: var(--white);" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start;">
 
@@ -402,12 +466,12 @@
 
     <!-- ================================================================
          SECTION 4: DECISION INTELLIGENCE DEEP-DIVE
-         Grey-50 background. Indigo/analytics module color accent.
+         Indigo-100 background with rings pattern. Indigo/analytics module color accent.
          BRAT framework, MCDA, 24 AI models.
          ================================================================ -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
-    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
+    <section class="arca-bg-indigo-100 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
 
@@ -467,7 +531,9 @@
          White background. Green/output module color accent.
          PSUR, RMP, CTD 2.5, HEOR, Signal Reports.
          ================================================================ -->
-    <section style="padding: var(--space-9) 0;" data-animate>
+        <div class="arca-section-divider" aria-hidden="true"></div>
+
+<section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start;">
 
@@ -542,7 +608,7 @@
          ================================================================ -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
-    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
+    <section class="arca-bg-blue-50 arca-bg-cross" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Comparison</p>
@@ -633,7 +699,9 @@
          White background. Enterprise compliance certifications.
          FDA 21 CFR Part 11, GDPR, ISO 27001, HDS, HIPAA.
          ================================================================ -->
-    <section style="padding: var(--space-7) 0;" data-animate>
+        <div class="arca-section-divider" aria-hidden="true"></div>
+
+<section class="arca-bg-grey-50 arca-bg-lines" style="padding: var(--space-7) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; text-align: center;">
         <p class="arca-section-label" style="margin-bottom: var(--space-5);">Enterprise Compliance</p>
         <div class="arca-compliance-badges" style="justify-content: center;">

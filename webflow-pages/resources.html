@@ -106,8 +106,18 @@
         <a href="/" class="arca-nav-link">Home</a>
 
         <!-- Platform dropdown -->
-        <div style="position: relative;">
-          <a href="/platform-overview" class="arca-nav-link">Platform</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
         </div>
 
         <!-- Solutions dropdown -->
@@ -270,16 +280,16 @@
          Hero-style card for the latest/pinned resource.
          Webflow: Bind to a CMS reference field or filtered collection item.
          ================================================================ -->
-    <section style="padding: var(--space-8) 0;" data-animate>
+    <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-8) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
-        <a href="/resources" class="arca-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; text-decoration: none; color: inherit; padding: var(--space-6);" data-cms="featured-resource" data-animate>
+        <a href="/resources-whitepapers" class="arca-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; text-decoration: none; color: inherit; padding: var(--space-6);" data-cms="featured-resource" data-animate>
 
           <!-- Left: Featured image -->
           <div style="aspect-ratio: 16/10; background: var(--grey-100); border-radius: 8px; overflow: hidden;">
             <img
-              src="/images/resources/[FEATURED_THUMBNAIL]"
-              alt="[FEATURED_TITLE]"
+              src="/images/resources/featured-whitepaper-quantitative-bra.svg"
+              alt="Quantitative Benefit-Risk Assessment: A Framework for Structured Decision-Making"
               style="width: 100%; height: 100%; object-fit: cover;"
               data-cms-field="thumbnail"
               loading="eager"
@@ -290,10 +300,10 @@
           <div>
             <span class="arca-resource-badge is-white-paper" data-cms-field="resource-type">White Paper</span>
             <h2 class="arca-heading-1" style="margin: var(--space-4) 0 var(--space-3);" data-cms-field="title">
-              [FEATURED_TITLE]
+              Quantitative Benefit-Risk Assessment: A Framework for Structured Decision-Making
             </h2>
             <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5); line-height: 1.7;" data-cms-field="excerpt">
-              [FEATURED_EXCERPT] — Placeholder: A comprehensive analysis of how AI-driven benefit-risk assessment is transforming pharmaceutical development timelines and regulatory submission quality across oncology, cardiovascular, and rare disease programs.
+              A comprehensive analysis of how AI-driven benefit-risk assessment is transforming pharmaceutical development timelines and regulatory submission quality across oncology, cardiovascular, and rare disease programs.
             </p>
             <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
               <span class="arca-caption arca-text-grey-500" data-cms-field="date">January 2026</span>
@@ -317,12 +327,14 @@
       </div>
     </section>
 
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
     <!-- ================================================================
          SECTION 4: RESOURCE GRID
          3-column responsive grid. Webflow CMS Collection List.
          data-cms="resources" on the wrapper, data-cms-field on each field.
          ================================================================ -->
-    <section style="padding: 0 0 var(--space-9);" data-animate>
+    <section style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <!-- Active filter count / results summary -->
@@ -350,11 +362,11 @@
 
           <!-- Resource Card 1 -->
           <article class="arca-card arca-resource-card" role="listitem" data-animate data-resource-type="white-paper" data-therapeutic-area="oncology">
-            <a href="/resources" style="text-decoration: none; color: inherit; display: block;">
+            <a href="/resources-whitepapers" style="text-decoration: none; color: inherit; display: block;">
               <div style="aspect-ratio: 16/9; background: var(--grey-100); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
                 <img
-                  src="/images/resources/[RESOURCE_THUMBNAIL]"
-                  alt="[RESOURCE_TITLE]"
+                  src="/images/resources/featured-whitepaper-quantitative-bra.svg"
+                  alt="Quantitative Benefit-Risk Assessment Framework"
                   style="width: 100%; height: 100%; object-fit: cover;"
                   data-cms-field="thumbnail"
                   loading="lazy"
@@ -362,10 +374,10 @@
               </div>
               <span class="arca-resource-badge is-white-paper" data-cms-field="resource-type">White Paper</span>
               <h3 class="arca-heading-3" style="margin: var(--space-3) 0 var(--space-2);" data-cms-field="title">
-                [RESOURCE_TITLE]
+                Quantitative Benefit-Risk Assessment: A Framework for Structured Decision-Making
               </h3>
               <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;" data-cms-field="excerpt">
-                [RESOURCE_EXCERPT] — Placeholder: Quantitative frameworks for structured benefit-risk assessment in oncology drug development programs.
+                Quantitative frameworks for structured benefit-risk assessment in oncology drug development programs. Covers BRAT, MCDA, value trees, and regulatory alignment.
               </p>
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
                 <span class="arca-caption arca-text-grey-500" data-cms-field="date">Jan 15, 2026</span>
@@ -386,11 +398,11 @@
 
           <!-- Resource Card 2 -->
           <article class="arca-card arca-resource-card" role="listitem" data-animate data-resource-type="webinar" data-therapeutic-area="cardiovascular">
-            <a href="/resources" style="text-decoration: none; color: inherit; display: block;">
+            <a href="/resources-webinars" style="text-decoration: none; color: inherit; display: block;">
               <div style="aspect-ratio: 16/9; background: var(--grey-100); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden; position: relative;">
                 <img
-                  src="/images/resources/[RESOURCE_THUMBNAIL]"
-                  alt="[RESOURCE_TITLE]"
+                  src="/images/resources/heor-webinar.svg"
+                  alt="Real-World Evidence in Cardiovascular BRA"
                   style="width: 100%; height: 100%; object-fit: cover;"
                   data-cms-field="thumbnail"
                   loading="lazy"
@@ -404,10 +416,10 @@
               </div>
               <span class="arca-resource-badge is-webinar" data-cms-field="resource-type">Webinar</span>
               <h3 class="arca-heading-3" style="margin: var(--space-3) 0 var(--space-2);" data-cms-field="title">
-                [RESOURCE_TITLE]
+                Real-World Evidence in Cardiovascular Benefit-Risk Assessment
               </h3>
               <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;" data-cms-field="excerpt">
-                [RESOURCE_EXCERPT] — Placeholder: On-demand webinar covering real-world evidence integration in cardiovascular benefit-risk assessment.
+                On-demand webinar covering real-world evidence integration in cardiovascular benefit-risk assessment, including EHR data and claims databases.
               </p>
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
                 <span class="arca-caption arca-text-grey-500" data-cms-field="date">Jan 8, 2026</span>
@@ -423,22 +435,16 @@
 
           <!-- Resource Card 3 -->
           <article class="arca-card arca-resource-card" role="listitem" data-animate data-resource-type="case-study" data-therapeutic-area="oncology">
-            <a href="/resources" style="text-decoration: none; color: inherit; display: block;">
-              <div style="aspect-ratio: 16/9; background: var(--grey-100); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
-                <img
-                  src="/images/resources/[RESOURCE_THUMBNAIL]"
-                  alt="[RESOURCE_TITLE]"
-                  style="width: 100%; height: 100%; object-fit: cover;"
-                  data-cms-field="thumbnail"
-                  loading="lazy"
-                >
+            <a href="/evidence-case-studies-hub" style="text-decoration: none; color: inherit; display: block;">
+              <div style="aspect-ratio: 16/9; border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+                <svg viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 100%; height: 100%; display: block;"><defs><linearGradient id="az-r" x1="0" y1="0" x2="400" y2="225" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0F2B46"/><stop offset="100%" stop-color="#0D3B5E"/></linearGradient></defs><rect width="400" height="225" fill="url(#az-r)"/><line x1="120" y1="70" x2="200" y2="112" stroke="#0D7C6B" stroke-width="1.5" opacity="0.5"/><line x1="200" y1="112" x2="280" y2="80" stroke="#3B7DD8" stroke-width="1.5" opacity="0.5"/><line x1="200" y1="112" x2="160" y2="160" stroke="#0D7C6B" stroke-width="1.5" opacity="0.5"/><line x1="200" y1="112" x2="300" y2="150" stroke="#3B7DD8" stroke-width="1.5" opacity="0.4"/><line x1="280" y1="80" x2="340" y2="112" stroke="#0D7C6B" stroke-width="1.5" opacity="0.4"/><circle cx="200" cy="112" r="10" fill="#0D7C6B" opacity="0.8"/><circle cx="200" cy="112" r="18" fill="none" stroke="#0D7C6B" stroke-width="1" opacity="0.3"/><circle cx="120" cy="70" r="7" fill="#3B7DD8" opacity="0.7"/><circle cx="280" cy="80" r="8" fill="#3B7DD8" opacity="0.7"/><circle cx="160" cy="160" r="6" fill="#0D7C6B" opacity="0.6"/><circle cx="300" cy="150" r="7" fill="#3B7DD8" opacity="0.6"/><circle cx="340" cy="112" r="5" fill="#0D7C6B" opacity="0.5"/></svg>
               </div>
               <span class="arca-resource-badge is-case-study" data-cms-field="resource-type">Case Study</span>
               <h3 class="arca-heading-3" style="margin: var(--space-3) 0 var(--space-2);" data-cms-field="title">
-                [RESOURCE_TITLE]
+                AstraZeneca: Accelerating Oncology BRA with AI-Driven Signal Detection
               </h3>
               <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;" data-cms-field="excerpt">
-                [RESOURCE_EXCERPT] — Placeholder: How a top-10 pharma company reduced BRA timelines by 60% using ArcaScience for their oncology submission.
+                How a top-10 pharma company reduced BRA timelines by 60% using ArcaScience for their oncology submission.
               </p>
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
                 <span class="arca-caption arca-text-grey-500" data-cms-field="date">Dec 20, 2025</span>

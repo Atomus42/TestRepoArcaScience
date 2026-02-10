@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breast Cancer BRA — ArcaScience | HER2+ &amp; Triple-Negative</title>
+  <meta name="description" content="AI-driven benefit-risk analysis for Breast Cancer including HER2-positive and Triple-Negative subtypes. ArcaScience covers ADC safety profiles, endocrine therapy monitoring, and CDK4/6 inhibitor BRA.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">Talk to a Scientist</a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- HERO -->
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(13, 124, 107, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 125, 216, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
+        <circle cx="210" cy="160" r="16" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="160" r="6" fill="rgba(13,124,107,0.3)"/>
+        <circle cx="290" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="290" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none;">Oncology</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Breast Cancer</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">Oncology &rsaquo; Breast Cancer</p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            AI-Driven Benefit-Risk Analysis for Breast Cancer
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Breast cancer BRA spans HER2-positive targeted therapies, triple-negative immunotherapy combinations, CDK4/6 inhibitor endocrine regimens, and emerging ADC platforms. ArcaScience delivers subtype-specific safety profiling across trastuzumab, T-DXd, pembrolizumab, and palbociclib.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="/platform-overview" class="arca-btn-primary-inverted">See Platform</a>
+            <a href="/contact?disease=breast-cancer" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="2300000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">New breast cancer cases per year globally</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="4200" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Breast cancer clinical trials analyzed</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="38" data-countup-suffix="B">$0</span>
+            <p class="arca-caption">Global breast cancer therapeutics market</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="55" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Approved breast cancer agents tracked</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEASE OVERVIEW -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Disease Overview</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why Breast Cancer Demands Specialized BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Breast cancer's molecular subtyping (HR+/HER2-, HER2+, triple-negative) creates distinct treatment paradigms with fundamentally different safety profiles, requiring subtype-specific benefit-risk frameworks that traditional approaches cannot deliver efficiently.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">HER2+ Cardiotoxicity Monitoring</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Trastuzumab, pertuzumab, and T-DM1 carry significant cardiotoxicity risk with LVEF decline requiring serial monitoring. When combined with anthracyclines, cumulative cardiac risk demands sophisticated longitudinal BRA modeling across neoadjuvant, adjuvant, and metastatic settings.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ADC Interstitial Lung Disease</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Trastuzumab deruxtecan (T-DXd, Enhertu) has transformed HER2+ and HER2-low treatment but carries ILD risk with fatality rates of 1-3%. BRA must account for ILD onset patterns, dose modification impact, and benefit-risk across HER2 expression levels from DESTINY-Breast trials.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">CDK4/6 Inhibitor Long-Term Safety</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Palbociclib, ribociclib, and abemaciclib are now standard in HR+/HER2- breast cancer with neutropenia, hepatotoxicity, and QTc prolongation (ribociclib) as key concerns. Long-term post-marketing data reveals venous thromboembolism signals requiring ongoing benefit-risk reassessment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCASCIENCE APPROACH -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses Breast Cancer BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our platform is configured with breast cancer subtype-specific data, cardiotoxicity and ILD detection models, and regulatory templates aligned with oncology submission requirements across FDA, EMA, and PMDA.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card arca-card-colored-top is-data" data-animate="slide-up">
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Breast Cancer Data Coverage</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              4,200+ breast cancer clinical trials including DESTINY-Breast, MONALEESA, PALOMA, KEYNOTE-522, and IMpassion datasets. Adverse event data covering trastuzumab cardiotoxicity, T-DXd ILD, CDK4/6 inhibitor neutropenia, and PARP inhibitor myelodysplasia across all molecular subtypes.
+            </p>
+            <a href="/platform-data-intelligence" class="arca-btn-tertiary">Explore Data Engine <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate="slide-up">
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Subtype-Specific AI Models</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              AI models for cardiac safety monitoring in HER2+ regimens, ILD risk stratification for ADC therapies, comparative CDK4/6 inhibitor safety profiling, and TNBC immunotherapy response-toxicity modeling. BRAT framework application with breast cancer-specific regulatory precedent from ODAC deliberations.
+            </p>
+            <a href="/platform-ai-models" class="arca-btn-tertiary">Explore AI Models <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-output" data-animate="slide-up">
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Breast Cancer Regulatory Outputs</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              PSURs with cardiac safety deep-dives for HER2+ agents, RMPs with ILD monitoring and cardiac risk minimization protocols, CTD 2.5 with pCR, EFS, PFS, and OS endpoint summaries, and HEOR reports supporting NICE and G-BA submissions for CDK4/6 inhibitor combinations.
+            </p>
+            <a href="/platform-outputs" class="arca-btn-tertiary">Explore Outputs <span class="arca-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS -->
+    <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Breast Cancer Intelligence</p>
+          <h2 class="arca-display-sm">Platform Performance in Breast Cancer</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="12000000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption arca-text-grey-600">Breast cancer adverse event data points</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="60" data-countup-suffix="%">0</span>
+            <p class="arca-caption arca-text-grey-600">Faster cardiotoxicity signal detection</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="4">0</span>
+            <p class="arca-caption arca-text-grey-600">Molecular subtypes modeled</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="10">0</span>
+            <p class="arca-caption arca-text-grey-600">Breast cancer submissions supported</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE EVIDENCE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div>
+            <p class="arca-section-label">Case Evidence &mdash; Breast Cancer</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">ADC Safety Surveillance for HER2+ Breast Cancer</h2>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">A global pharma company required enhanced ILD monitoring for their ADC therapy across HER2-positive and HER2-low breast cancer populations following accelerated approval, with real-time benefit-risk updates for their REMS program and EMA RMP commitments.</p>
+            </div>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Result</h3>
+              <p class="arca-body-sm arca-text-grey-600">ArcaScience deployed ILD-specific AI detection models trained on breast cancer ADC data, enabling real-time ILD signal monitoring that identified grade 2+ ILD events 3.2x faster than traditional disproportionality analysis, supporting proactive label updates and dose modification guidance.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="3.2" data-countup-suffix="x">0</span>
+                <p class="arca-caption arca-text-grey-600">Faster ILD signal detection</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="45" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in false positive ILD signals</p>
+              </div>
+            </div>
+            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">View All Case Studies <span class="arca-arrow">&rarr;</span></a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              The ILD detection sensitivity ArcaScience provides for our ADC program has been transformative. We can now distinguish true ILD signals from confounding respiratory events with much greater confidence, which directly informed our label update strategy.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Director, Oncology Pharmacovigilance</p>
+              <p class="arca-body-sm arca-text-grey-600">Global Pharma Company</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-teal-100 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Frequently Asked Questions</p>
+          <h2 class="arca-display-sm">Breast Cancer Benefit-Risk Analysis</h2>
+        </div>
+        <div style="max-width: 820px; margin: 0 auto;">
+          <div data-accordion="group">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience model cardiotoxicity across HER2+ treatment sequences?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);">
+                  <p class="arca-body-sm arca-text-grey-600">Our AI models track cumulative cardiac risk across treatment sequences from neoadjuvant anthracycline-based regimens through adjuvant trastuzumab/pertuzumab and into metastatic T-DXd or tucatinib combinations. The platform integrates LVEF trajectory data, troponin biomarkers, and clinical cardiac events to provide longitudinal cardiac BRA that accounts for prior cardiotoxic exposure.</p>
+                </div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Does the platform cover TNBC immunotherapy BRA?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);">
+                  <p class="arca-body-sm arca-text-grey-600">Yes. We provide comprehensive BRA for pembrolizumab + chemotherapy in TNBC from KEYNOTE-522 and KEYNOTE-355 data, including immune-related AE profiling (colitis, hepatitis, adrenal insufficiency), comparison of neoadjuvant vs. metastatic safety profiles, and PD-L1 CPS-stratified benefit-risk modeling. Our platform also covers sacituzumab govitecan (Trodelvy) ADC safety in TNBC.</p>
+                </div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience support PARP inhibitor BRA in BRCA-mutated breast cancer?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);">
+                  <p class="arca-body-sm arca-text-grey-600">Our platform covers olaparib and talazoparib BRA in germline BRCA-mutated breast cancer, including long-term myelodysplastic syndrome (MDS) and acute myeloid leukemia (AML) risk monitoring from OlympiA and EMBRACA trial data. The AI models assess cumulative hematologic toxicity and provide comparative class-level safety analysis across PARP inhibitors.</p>
+                </div>
+              </div>
+            </div>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Can ArcaScience model benefit-risk across HER2 expression levels?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);">
+                  <p class="arca-body-sm arca-text-grey-600">Yes. Following the DESTINY-Breast04 paradigm shift establishing T-DXd efficacy in HER2-low (IHC 1+ and IHC 2+/ISH-) breast cancer, our platform models benefit-risk across the full HER2 expression spectrum from HER2-0 through HER2-3+. This includes ILD risk stratification by HER2 expression level and prior treatment history, supporting the evolving regulatory landscape for ADC therapies.</p>
+                </div>
+              </div>
+            </div>
+            <div data-accordion-item>
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">What endocrine therapy long-term safety data does the platform cover?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);">
+                  <p class="arca-body-sm arca-text-grey-600">We track long-term safety data for tamoxifen, aromatase inhibitors (letrozole, anastrozole, exemestane), and extended endocrine therapy regimens including bone density loss, cardiovascular events, endometrial cancer risk (tamoxifen), musculoskeletal toxicity, and cognitive effects from major trials like ATLAS, aTTom, and MA.17R. Our models integrate 10+ years of post-marketing surveillance data.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Breast Cancer</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration of ArcaScience's platform configured for breast cancer benefit-risk analysis. Our oncology scientists will walk through subtype-specific data coverage, cardiotoxicity and ILD detection models, and regulatory output examples.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?disease=breast-cancer" class="arca-btn-primary-inverted">Request Breast Cancer Briefing</a>
+          <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore the Platform <span class="arca-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience. All rights reserved.</p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+</body>
+</html>

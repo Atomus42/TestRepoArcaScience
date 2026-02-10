@@ -211,7 +211,9 @@
          TWO-COLUMN LAYOUT: TOC (sticky) + MAIN CONTENT
          3/9 grid split
          ================================================================ -->
-    <section style="padding: var(--space-9) 0;">
+        <div class="arca-section-divider" aria-hidden="true"></div>
+
+<section style="padding: var(--space-9) 0; background: var(--white);">
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: 3fr 9fr; gap: 48px; align-items: start;">
 
@@ -253,7 +255,7 @@
             <!-- ===========================================================
                  SECTION 2: OUR SCIENTIFIC PHILOSOPHY
                  =========================================================== -->
-            <article id="philosophy" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+            <article id="philosophy" data-anchor-link data-animate style="padding: var(--space-7); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100); background: var(--blue-50); border-radius: 12px;">
               <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Our Scientific Philosophy</h2>
               <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
                 ArcaScience was founded on a simple but uncommon principle in health technology: <strong>science must come before software</strong>. Our founders spent years conducting benefit-risk assessments manually &mdash; building BRAT value trees by hand, reconciling disproportionality analyses across fragmented spreadsheets, and assembling PSURs from dozens of disconnected data sources. They understood firsthand which parts of the process needed automation and, critically, which parts required human scientific judgment that technology should support rather than replace.
@@ -304,7 +306,13 @@
             <!-- ===========================================================
                  SECTION 3: BRA FRAMEWORKS WE IMPLEMENT
                  =========================================================== -->
-            <article id="frameworks" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+            <article id="frameworks" data-anchor-link data-animate style="padding: var(--space-7); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100); background: var(--grey-50); border-radius: 12px; position: relative; overflow: hidden;">
+              <!-- Decorative rings pattern overlay -->
+              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" aria-hidden="true" style="position: absolute; right: -40px; top: -40px; opacity: 0.06; pointer-events: none;">
+                <circle cx="100" cy="100" r="40" stroke="var(--indigo-600)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="65" stroke="var(--indigo-600)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="90" stroke="var(--indigo-600)" stroke-width="1"/>
+              </svg>
               <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">BRA Frameworks We Implement</h2>
               <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
                 ArcaScience's analytical core is built on established, peer-reviewed quantitative frameworks for structured benefit-risk assessment. These are not theoretical implementations &mdash; they are operationalized, AI-assisted workflows that produce regulatory-grade outputs. Every assessment produced by the platform is grounded in one or more of these frameworks, selected based on the product's lifecycle stage, therapeutic area, and regulatory jurisdiction.
@@ -466,7 +474,7 @@
             <!-- ===========================================================
                  SECTION 4: AI MODEL ARCHITECTURE
                  =========================================================== -->
-            <article id="ai-architecture" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+            <article id="ai-architecture" data-anchor-link data-animate style="padding: var(--space-7); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100); background: var(--indigo-50); border-radius: 12px;">
               <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">AI Model Architecture</h2>
               <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
                 ArcaScience's 24 proprietary AI/ML models are purpose-built for pharmacovigilance and benefit-risk analysis. Unlike general-purpose large language models applied to healthcare data, these models are trained on domain-specific corpora with pharmacovigilance-specific ontologies, validated against regulatory-grade benchmarks, and designed to produce auditable, traceable, deterministic outputs.
@@ -479,7 +487,8 @@
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-6);">
 
                 <!-- NLP Models Card -->
-                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--teal-500);" data-animate>
+                <div class="arca-card arca-card-colored-top is-data" style="padding: var(--space-5);" data-animate>
+                  <span class="arca-module-tag is-data" style="margin-bottom: var(--space-2); display: inline-block;">Data Intelligence</span>
                   <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-3);">Category 1</p>
                   <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">NLP Models</h3>
                   <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Natural language processing for unstructured biomedical text:</p>
@@ -493,7 +502,8 @@
                 </div>
 
                 <!-- Statistical Models Card -->
-                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--indigo-500);" data-animate>
+                <div class="arca-card arca-card-colored-top is-analytics" style="padding: var(--space-5);" data-animate>
+                  <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-2); display: inline-block;">Decision Intelligence</span>
                   <p class="arca-label" style="color: var(--indigo-600); margin-bottom: var(--space-3);">Category 2</p>
                   <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Statistical Models</h3>
                   <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Disproportionality analysis and Bayesian inference:</p>
@@ -507,7 +517,8 @@
                 </div>
 
                 <!-- Predictive Models Card -->
-                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--blue-500);" data-animate>
+                <div class="arca-card arca-card-colored-top is-analytics" style="padding: var(--space-5);" data-animate>
+                  <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-2); display: inline-block;">Decision Intelligence</span>
                   <p class="arca-label" style="color: var(--blue-600); margin-bottom: var(--space-3);">Category 3</p>
                   <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Predictive Models</h3>
                   <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Forecasting and trajectory modeling for proactive safety:</p>
@@ -521,7 +532,8 @@
                 </div>
 
                 <!-- Validation Models Card -->
-                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--green-500);" data-animate>
+                <div class="arca-card arca-card-colored-top is-output" style="padding: var(--space-5);" data-animate>
+                  <span class="arca-module-tag is-output" style="margin-bottom: var(--space-2); display: inline-block;">Automated Outputs</span>
                   <p class="arca-label" style="color: var(--green-600); margin-bottom: var(--space-3);">Category 4</p>
                   <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Validation Models</h3>
                   <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Quality assurance and cross-source reconciliation:</p>
@@ -597,7 +609,7 @@
             <!-- ===========================================================
                  SECTION 5: DATA SCIENCE PIPELINE
                  =========================================================== -->
-            <article id="data-pipeline" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+            <article id="data-pipeline" data-anchor-link data-animate style="padding: var(--space-7); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100); background: var(--grey-50); border-radius: 12px;">
               <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Data Science Pipeline</h2>
 
               <!-- AS Profiling Base Highlight -->
@@ -709,7 +721,7 @@
             <!-- ===========================================================
                  SECTION 6: REGULATORY-GRADE VALIDATION
                  =========================================================== -->
-            <article id="regulatory-validation" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+            <article id="regulatory-validation" data-anchor-link data-animate style="padding: var(--space-7); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100); background: var(--blue-50); border-radius: 12px;">
               <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Regulatory-Grade Validation</h2>
               <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
                 ArcaScience's outputs are designed to meet the standards of major global regulatory authorities from the moment they are generated. This is not an afterthought &mdash; regulatory compliance is an architectural requirement that shapes every aspect of the platform, from data ingestion to final document output.
@@ -805,7 +817,7 @@
             <!-- ===========================================================
                  SECTION 7: PUBLICATIONS & RESEARCH
                  =========================================================== -->
-            <article id="publications" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+            <article id="publications" data-anchor-link data-animate style="padding: var(--space-7); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100); background: var(--teal-50); border-radius: 12px;">
               <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Publications &amp; Research</h2>
               <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
                 ArcaScience's methodology is grounded in peer-reviewed research and validated through academic collaboration and regulatory engagement. Our team publishes regularly in leading pharmacovigilance and regulatory science journals, contributing to the broader advancement of quantitative benefit-risk methodology.

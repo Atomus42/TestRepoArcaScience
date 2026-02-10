@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Failure BRA — ArcaScience | HFrEF &amp; HFpEF Benefit-Risk Analysis</title>
+  <meta name="description" content="AI-driven benefit-risk analysis for Heart Failure therapies. Comprehensive BRA for SGLT2 inhibitors, sacubitril/valsartan, vericiguat, and omecamtiv mecarbil across HFrEF and HFpEF, including GDMT optimization and multi-drug regimen safety.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home"><img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32"></a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">Talk to a Scientist</a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- HERO -->
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(13, 124, 107, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 125, 216, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
+        <circle cx="210" cy="160" r="16" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="160" r="6" fill="rgba(13,124,107,0.3)"/>
+        <circle cx="290" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="290" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none;">Cardiology</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Heart Failure</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">Cardiology &rsaquo; Heart Failure</p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Benefit-Risk Analysis for Heart Failure Therapies
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Heart failure management has been transformed by guideline-directed medical therapy (GDMT) including SGLT2 inhibitors, sacubitril/valsartan, and novel agents. ArcaScience delivers comprehensive BRA across HFrEF and HFpEF, optimizing multi-drug regimen safety across the four pillars of GDMT and emerging therapies like vericiguat and omecamtiv mecarbil.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="/platform-overview" class="arca-btn-primary-inverted">See Platform</a>
+            <a href="/contact?disease=heart-failure" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="64000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">People living with heart failure worldwide</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="2400" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Heart failure therapy trials analyzed</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="26" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Relative risk reduction in CV death with dapagliflozin (DAPA-HF)</p>
+          </div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="50" data-countup-suffix="%">0</span>
+            <p class="arca-caption">5-year mortality rate in advanced heart failure</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISEASE OVERVIEW -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Disease Overview</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why Heart Failure Demands Specialized BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Heart failure therapy has evolved into a complex multi-drug paradigm with four foundational pillars of GDMT (ARNI/ACEi/ARB, beta-blocker, MRA, SGLT2i) plus emerging agents. Balancing efficacy across HFrEF and HFpEF subtypes while managing hypotension, renal decline, hyperkalemia, and device therapy integration creates unprecedented benefit-risk complexity.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">GDMT Multi-Drug Regimen Optimization</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              The four pillars of GDMT &mdash; sacubitril/valsartan (PARADIGM-HF), beta-blockers, mineralocorticoid receptor antagonists, and SGLT2 inhibitors (DAPA-HF, EMPEROR-Reduced) &mdash; must be titrated simultaneously. Each agent carries additive risks of hypotension, bradycardia, hyperkalemia, and renal impairment. BRA must model drug-drug interactions and optimal sequencing strategies to achieve target doses while minimizing adverse events.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">HFpEF Treatment Heterogeneity</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Until EMPEROR-Preserved and DELIVER demonstrated SGLT2 inhibitor efficacy in HFpEF, no therapy had shown clear benefit in this phenotype. HFpEF encompasses diverse pathophysiologies &mdash; obesity-related, hypertensive, amyloid, and valvular &mdash; each with distinct risk profiles. BRA must account for phenotype-specific treatment responses and the challenge of applying trial data from selected populations to heterogeneous real-world patients.
+            </p>
+          </div>
+          <div class="arca-card" data-animate="slide-up">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Device Therapy &amp; Transplant Integration</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Advanced heart failure management integrates cardiac resynchronization therapy (CRT), implantable cardioverter-defibrillators (ICDs), left ventricular assist devices (LVADs), and cardiac transplantation with pharmacotherapy. BRA must evaluate the interplay between device-based and drug therapies, including anticoagulation management with LVADs, infection risks, and the benefit-risk calculus of transplant candidacy versus destination LVAD therapy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCASCIENCE APPROACH -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses Heart Failure BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">Our modules are configured with heart failure outcomes data, multi-drug interaction models trained on GDMT regimen patterns, and regulatory templates for cardiovascular submissions across HFrEF and HFpEF indications.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div class="arca-card arca-card-colored-top is-data" data-animate="slide-up">
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Heart Failure Outcomes Data</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">2,400+ heart failure therapy trials including DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, DELIVER, PARADIGM-HF, VICTORIA, and GALACTIC-HF datasets. Comprehensive safety databases covering hypotension, renal function decline, hyperkalemia, and diabetic ketoacidosis across SGLT2 inhibitor and ARNI populations with real-world evidence from registries and electronic health records.</p>
+            <a href="/platform-data-intelligence" class="arca-btn-tertiary">Explore Data Engine <span class="arca-arrow">&rarr;</span></a>
+          </div>
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate="slide-up">
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">GDMT Optimization Models</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">AI models for multi-drug interaction risk assessment across the four GDMT pillars, hypotension prediction during titration, renal function trajectory modeling (eGFR decline vs. long-term renoprotection), hyperkalemia risk stratification with MRA/ARNI combinations, and phenotype-specific HFpEF treatment response prediction based on patient comorbidity profiles.</p>
+            <a href="/platform-ai-models" class="arca-btn-tertiary">Explore AI Models <span class="arca-arrow">&rarr;</span></a>
+          </div>
+          <div class="arca-card arca-card-colored-top is-output" data-animate="slide-up">
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Cardiovascular Regulatory Outputs</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">PSURs with cardiovascular safety sections covering MACE endpoints and heart failure hospitalization data, RMPs with renal monitoring protocols and hypotension management guidance, FDA cardiovascular outcomes trial (CVOT) reporting templates, and EMA benefit-risk assessment documents for expanded heart failure indications from HFrEF to HFpEF.</p>
+            <a href="/platform-outputs" class="arca-btn-tertiary">Explore Outputs <span class="arca-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS -->
+    <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Heart Failure Intelligence</p>
+          <h2 class="arca-display-sm">Platform Performance in Heart Failure</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="3800000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption arca-text-grey-600">Heart failure safety data points tracked</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="65" data-countup-suffix="%">0</span>
+            <p class="arca-caption arca-text-grey-600">Faster adverse event signal detection</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="12">0</span>
+            <p class="arca-caption arca-text-grey-600">GDMT interaction models deployed</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="9">0</span>
+            <p class="arca-caption arca-text-grey-600">Heart failure regulatory submissions supported</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE EVIDENCE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div>
+            <p class="arca-section-label">Case Evidence &mdash; Heart Failure</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">SGLT2 Inhibitor Indication Expansion BRA for HFpEF</h2>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">A pharmaceutical company sought regulatory approval to expand their SGLT2 inhibitor from HFrEF to the full spectrum of heart failure including HFpEF, requiring comprehensive benefit-risk evaluation across heterogeneous patient populations with varying ejection fractions, comorbidity profiles, and concomitant GDMT regimens.</p>
+            </div>
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Result</h3>
+              <p class="arca-body-sm arca-text-grey-600">ArcaScience's platform integrated DAPA-HF, EMPEROR-Reduced, EMPEROR-Preserved, and DELIVER trial data with real-world evidence to demonstrate consistent benefit-risk across the ejection fraction spectrum, identifying renal function as the key safety modifier and enabling a unified label that covered HFrEF through HFpEF with phenotype-specific dosing guidance.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="3.2" data-countup-suffix="x">0</span>
+                <p class="arca-caption arca-text-grey-600">Faster BRA document generation</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="42" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in regulatory review cycles</p>
+              </div>
+            </div>
+            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">View All Case Studies <span class="arca-arrow">&rarr;</span></a>
+          </div>
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              Expanding our SGLT2 inhibitor label from HFrEF to the full heart failure spectrum was the most complex BRA we had ever undertaken. ArcaScience's ability to integrate four pivotal trials with real-world renal safety data gave us the confidence to present a unified benefit-risk narrative that regulators found compelling and comprehensive.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">VP of Cardiovascular Safety</p>
+              <p class="arca-body-sm arca-text-grey-600">Top 10 Pharmaceutical Company</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-teal-100 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Frequently Asked Questions</p>
+          <h2 class="arca-display-sm">Heart Failure BRA</h2>
+        </div>
+        <div style="max-width: 820px; margin: 0 auto;">
+          <div class="arca-accordion" data-accordion="group">
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience model multi-drug GDMT interaction risks?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Our platform models the four pillars of GDMT &mdash; ARNI/ACEi/ARB, beta-blocker, MRA, and SGLT2 inhibitor &mdash; as an integrated system rather than individual therapies. AI models assess cumulative hypotension risk during simultaneous titration, hyperkalemia probability with MRA plus ARNI combinations, and renal function trajectories across all four drug classes. This enables optimized sequencing recommendations and identifies patients at highest risk of adverse events during GDMT intensification.</p>
+              </div>
+            </div>
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Can the platform differentiate BRA across HFrEF, HFmrEF, and HFpEF?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Yes. ArcaScience provides ejection fraction-stratified BRA using data from DAPA-HF and EMPEROR-Reduced (HFrEF, EF &le;40%), DELIVER and EMPEROR-Preserved (HFpEF, EF &gt;40%), and PARADIGM-HF (HFrEF). Our models account for the distinct pathophysiology and treatment response patterns across the heart failure spectrum, including the greater phenotypic heterogeneity in HFpEF where obesity, hypertension, atrial fibrillation, and cardiac amyloidosis drive different benefit-risk profiles.</p>
+              </div>
+            </div>
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience handle renal safety monitoring for SGLT2 inhibitors?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">SGLT2 inhibitors cause an initial eGFR dip that stabilizes and may provide long-term renoprotection, as demonstrated in DAPA-CKD and EMPA-KIDNEY. Our platform distinguishes this hemodynamic eGFR reduction from true nephrotoxicity using trajectory modeling that tracks eGFR slopes over time. This is critical for benefit-risk assessment because misinterpreting the initial dip as harm could lead to inappropriate drug discontinuation, while missing genuine renal decline in vulnerable populations could endanger patients.</p>
+              </div>
+            </div>
+            <div class="arca-accordion-item">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Does the platform integrate device therapy data with pharmacotherapy BRA?</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">Yes. For advanced heart failure, our platform integrates CRT, ICD, and LVAD data alongside pharmacotherapy outcomes. This includes modeling anticoagulation requirements for LVAD patients (warfarin management, pump thrombosis risk), CRT response prediction to assess the incremental benefit of device therapy over optimized GDMT, and the complex benefit-risk calculus of cardiac transplant candidacy versus destination LVAD therapy. This holistic approach ensures regulatory submissions reflect the full treatment landscape.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Heart Failure</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration focused on heart failure BRA. Our cardiovascular scientists will present GDMT optimization models, SGLT2 inhibitor renal safety monitoring, HFpEF phenotype-specific analysis, and device therapy integration frameworks.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?disease=heart-failure" class="arca-btn-primary-inverted">Request Heart Failure Briefing</a>
+          <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore the Platform <span class="arca-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div><img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);"><p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a><a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a><a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a><a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a><a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a></nav></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a><a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a><a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a></nav></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a><a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a><a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a><a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a><a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a></nav></div>
+        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a><a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a><a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a><a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a></nav></div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience. All rights reserved.</p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.arca-accordion-icon');
+          var isOpen = content.style.display === 'block';
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) { c.style.display = 'none'; });
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) { i.textContent = '+'; });
+          if (!isOpen) { content.style.display = 'block'; icon.textContent = '\u2212'; }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
