@@ -163,13 +163,13 @@
    * ======================================================================== */
 
   /** Standard entrance offset (translateY start position) */
-  --as-offset-entrance: 20px;
+  --as-offset-entrance: 24px;
 
   /** Card hover lift */
-  --as-offset-hover-lift: -2px;
+  --as-offset-hover-lift: -4px;
 
   /** Button hover lift */
-  --as-offset-button-lift: -1px;
+  --as-offset-button-lift: -2px;
 
   /** Dropdown entrance offset */
   --as-offset-dropdown: -8px;
@@ -179,12 +179,25 @@
 
   /* ========================================================================
    * SHADOW TOKENS (for animated shadow transitions)
+   * Inspired by layered shadow approach (Flinn.ai multi-depth shadows)
    * ======================================================================== */
 
-  --as-shadow-card-rest: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --as-shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --as-shadow-button-hover: 0 4px 12px rgba(74, 111, 165, 0.3);
-  --as-shadow-button-rest: none;
+  --as-shadow-card-rest: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --as-shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.08);
+  --as-shadow-button-hover: 0 4px 12px rgba(35, 86, 160, 0.25), 0 8px 24px rgba(35, 86, 160, 0.15);
+  --as-shadow-button-rest: 0 1px 3px rgba(35, 86, 160, 0.12);
+
+  /* ========================================================================
+   * GRADIENT TOKENS (section backgrounds, button fills)
+   * ======================================================================== */
+
+  --as-gradient-primary: linear-gradient(135deg, #2356A0 0%, #3B7DD8 100%);
+  --as-gradient-primary-hover: linear-gradient(135deg, #1A3A6B 0%, #2356A0 100%);
+  --as-gradient-dark: linear-gradient(180deg, #0A1628 0%, #12203D 100%);
+  --as-gradient-section-fade: linear-gradient(180deg, #F7F8FA 0%, #FFFFFF 100%);
+  --as-gradient-mesh-subtle: radial-gradient(ellipse at 20% 50%, rgba(35, 86, 160, 0.04) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 20%, rgba(13, 124, 107, 0.03) 0%, transparent 50%);
+  --as-gradient-glow: radial-gradient(circle, rgba(59, 125, 216, 0.15) 0%, transparent 70%);
 }
 
 /* ========================================================================

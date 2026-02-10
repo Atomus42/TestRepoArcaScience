@@ -26,17 +26,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  background: var(--as-color-primary);
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--as-gradient-primary);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
   color: #FFFFFF;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
+  letter-spacing: 0.01em;
   border: 1px solid transparent;
-  border-radius: 6px;
+  border-radius: 100px;
   cursor: pointer;
   overflow: hidden;
-  transition-property: background-color, box-shadow, transform;
+  box-shadow: var(--as-shadow-button-rest);
+  transition-property: background-position, box-shadow, transform;
   transition-duration: var(--as-duration-normal);
   transition-timing-function: var(--as-ease-default);
   -webkit-font-smoothing: antialiased;
@@ -50,18 +55,30 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.12) 50%,
     transparent 100%
   );
   transform: translateX(-100%);
-  transition: transform var(--as-duration-measured) ease;
+  transition: transform var(--as-duration-deliberate) ease;
   pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Arrow icon in buttons */
+.as-btn-primary .as-btn-arrow,
+.as-btn-secondary .as-btn-arrow {
+  display: inline-flex;
+  transition: transform var(--as-duration-normal) var(--as-ease-default);
 }
 
 .as-btn-primary:hover {
-  background: var(--as-color-primary-dark);
+  background-position: 100% 50%;
   box-shadow: var(--as-shadow-button-hover);
   transform: translateY(var(--as-offset-button-lift));
+}
+
+.as-btn-primary:hover .as-btn-arrow {
+  transform: translateX(4px);
 }
 
 .as-btn-primary:hover::after {
@@ -69,14 +86,14 @@
 }
 
 .as-btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(74, 111, 165, 0.2);
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 4px rgba(35, 86, 160, 0.2);
   transition-duration: var(--as-duration-instant);
 }
 
 .as-btn-primary:focus-visible {
   outline: 2px solid var(--as-color-primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .as-btn-primary:disabled {
@@ -90,39 +107,65 @@
   display: none;
 }
 
-/* --- Secondary Button (Ghost) --- */
+/* --- Secondary Button (Ghost / Outlined) --- */
 .as-btn-secondary {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
+  gap: 8px;
+  padding: 14px 32px;
   background: transparent;
   color: var(--as-color-primary);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
-  border: 1px solid var(--as-color-primary);
-  border-radius: 6px;
+  letter-spacing: 0.01em;
+  border: 1.5px solid var(--as-color-primary);
+  border-radius: 100px;
   cursor: pointer;
-  transition-property: background-color, border-color, color;
+  overflow: hidden;
+  transition-property: background-color, border-color, color, box-shadow, transform;
   transition-duration: var(--as-duration-normal);
   transition-timing-function: var(--as-ease-default);
 }
 
+/* Fill sweep on hover */
+.as-btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--as-color-primary);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--as-duration-measured) var(--as-ease-default);
+  z-index: -1;
+}
+
 .as-btn-secondary:hover {
-  background: var(--as-color-primary-subtle);
-  border-color: var(--as-color-primary-dark);
-  color: var(--as-color-primary-dark);
+  color: #FFFFFF;
+  border-color: var(--as-color-primary);
+  box-shadow: var(--as-shadow-button-hover);
+  transform: translateY(var(--as-offset-button-lift));
+}
+
+.as-btn-secondary:hover::before {
+  transform: scaleX(1);
+}
+
+.as-btn-secondary:hover .as-btn-arrow {
+  transform: translateX(4px);
 }
 
 .as-btn-secondary:active {
-  background: rgba(74, 111, 165, 0.12);
+  transform: translateY(0) scale(0.98);
   transition-duration: var(--as-duration-instant);
 }
 
 .as-btn-secondary:focus-visible {
   outline: 2px solid var(--as-color-primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* --- Button Loading State --- */
@@ -194,23 +237,40 @@
   font-size: 15px;
   font-weight: 450;
   text-decoration: none;
-  background-image: linear-gradient(var(--as-color-primary), var(--as-color-primary));
-  background-size: 0% 1px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  transition: background-size var(--as-duration-normal) var(--as-ease-default),
-              color var(--as-duration-fast) var(--as-ease-default);
+  transition: color var(--as-duration-fast) var(--as-ease-default);
+}
+
+/* Animated underline — grows from center */
+.as-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--as-gradient-primary);
+  border-radius: 1px;
+  transition: width var(--as-duration-normal) var(--as-ease-default),
+              left var(--as-duration-normal) var(--as-ease-default);
 }
 
 .as-nav-link:hover {
   color: var(--as-color-primary);
-  background-size: 100% 1px;
+}
+
+.as-nav-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .as-nav-link[aria-current="page"] {
   color: var(--as-color-primary);
-  background-size: 100% 2px;
   font-weight: 500;
+}
+
+.as-nav-link[aria-current="page"]::after {
+  width: 100%;
+  left: 0;
 }
 
 /* --- Dropdown Menu --- */
@@ -333,38 +393,50 @@
 
 
 /* ========================================================================
- * 3. CARDS
+ * 3. CARDS — Glassmorphism-inspired with layered shadows
  * ======================================================================== */
 
 .as-card {
-  border: 1px solid var(--as-color-grid-line);
-  border-radius: 8px;
-  padding: 24px;
-  background: #FFFFFF;
+  position: relative;
+  border: 1px solid rgba(209, 213, 222, 0.6);
+  border-radius: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: var(--as-shadow-card-rest);
-  transition-property: border-color, box-shadow, transform;
+  transition-property: border-color, box-shadow, transform, background;
   transition-duration: var(--as-duration-normal);
   transition-timing-function: var(--as-ease-default);
 }
 
 .as-card:hover {
-  border-color: #D1D5DB;
+  border-color: rgba(59, 125, 216, 0.2);
   box-shadow: var(--as-shadow-card-hover);
   transform: translateY(var(--as-offset-hover-lift));
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .as-card:focus-within {
   border-color: var(--as-color-primary);
-  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.12), var(--as-shadow-card-hover);
 }
 
-/* Card icon saturation on hover */
+/* Card icon lift and color boost on hover */
 .as-card:hover .as-card-icon {
-  filter: saturate(1.1);
+  filter: saturate(1.15);
+  transform: translateY(-2px);
 }
 
 .as-card-icon {
-  transition: filter var(--as-duration-normal) var(--as-ease-default);
+  transition: filter var(--as-duration-normal) var(--as-ease-default),
+              transform var(--as-duration-normal) var(--as-ease-default);
+}
+
+/* Card inner link arrow animation */
+.as-card:hover .as-card-link .as-btn-arrow,
+.as-card:hover .as-card-link .arca-arrow {
+  transform: translateX(4px);
 }
 
 /* --- Expandable Card --- */
@@ -716,39 +788,169 @@
 /* --- Visible state (after scroll trigger) --- */
 [data-animate].as-animated {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) rotate(0) scale(1);
   transition: opacity var(--as-duration-measured) var(--as-ease-default),
-              transform var(--as-duration-measured) var(--as-ease-default);
+              transform var(--as-duration-deliberate) var(--as-ease-default),
+              filter var(--as-duration-measured) var(--as-ease-default);
 }
 
-/* --- Stagger children --- */
+/* --- Stagger children — smoother cascade --- */
 [data-animate-stagger] > [data-animate] {
   transition-delay: calc(var(--as-stagger-index, 0) * var(--as-stagger-normal));
 }
 
 /* --- Specific entrance variants --- */
 [data-animate="fade"] {
-  transform: none; /* fade only, no translate */
+  transform: none;
 }
 
 [data-animate="slide-up"] {
-  /* Default behavior — translateY */
+  /* Default — translateY from below */
 }
 
 [data-animate="slide-right"] {
-  transform: translateX(-20px);
+  transform: translateX(-30px);
 }
 
 [data-animate="slide-right"].as-animated {
   transform: translateX(0);
 }
 
+[data-animate="slide-left"] {
+  transform: translateX(30px);
+}
+
+[data-animate="slide-left"].as-animated {
+  transform: translateX(0);
+}
+
 [data-animate="scale"] {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
 [data-animate="scale"].as-animated {
   transform: scale(1);
+}
+
+/* Scale + fade with blur — premium reveal */
+[data-animate="scale-blur"] {
+  transform: scale(0.95);
+  filter: blur(4px);
+}
+
+[data-animate="scale-blur"].as-animated {
+  transform: scale(1);
+  filter: blur(0px);
+}
+
+/* Rotate in slightly — adds depth */
+[data-animate="rotate-in"] {
+  transform: translateY(var(--as-offset-entrance)) rotate(-1.5deg);
+}
+
+[data-animate="rotate-in"].as-animated {
+  transform: translateY(0) rotate(0);
+}
+
+/* Clip reveal — content wipes in */
+[data-animate="clip-up"] {
+  clip-path: inset(100% 0 0 0);
+  transform: none;
+  opacity: 1;
+}
+
+[data-animate="clip-up"].as-animated {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path var(--as-duration-deliberate) var(--as-ease-default);
+}
+
+
+/* ========================================================================
+ * REDUCED MOTION: Global override for all micro-interactions
+ * ======================================================================== */
+
+/* ========================================================================
+ * 9. AMBIENT ANIMATIONS & DECORATIVE EFFECTS
+ * ======================================================================== */
+
+/* Gradient background shift — for hero or dark sections */
+.as-gradient-shift {
+  background-size: 200% 200%;
+  animation: as-gradient-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes as-gradient-drift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle floating element */
+.as-float {
+  animation: as-float 6s ease-in-out infinite;
+}
+
+@keyframes as-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Subtle pulse glow — for interactive indicators */
+.as-pulse-glow {
+  animation: as-pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes as-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(35, 86, 160, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(35, 86, 160, 0); }
+}
+
+/* Mesh gradient background for sections */
+.as-mesh-bg {
+  position: relative;
+}
+
+.as-mesh-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--as-gradient-mesh-subtle);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow orb — decorative background element */
+.as-glow-orb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--as-gradient-glow);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: as-float 8s ease-in-out infinite;
+}
+
+/* Text gradient effect — for hero headings */
+.as-text-gradient {
+  background: linear-gradient(135deg, #3B7DD8 0%, #0D7C6B 50%, #4338CA 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: as-text-gradient-shift 6s ease-in-out infinite alternate;
+}
+
+@keyframes as-text-gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Separator line with gradient — section divider */
+.as-divider-gradient {
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent 0%, rgba(35, 86, 160, 0.2) 50%, transparent 100%);
 }
 
 
@@ -757,8 +959,9 @@
  * ======================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .as-btn-primary::after {
-    display: none; /* No light sweep */
+  .as-btn-primary::after,
+  .as-btn-secondary::before {
+    display: none;
   }
 
   .as-skeleton {
@@ -767,16 +970,28 @@
   }
 
   .as-btn-spinner {
-    /* Keep spinner for functional feedback even in reduced motion */
-    animation-duration: 1200ms; /* Slower rotation */
+    animation-duration: 1200ms;
   }
 
   [data-animate] {
     opacity: 1;
     transform: none;
+    filter: none;
+    clip-path: none;
   }
 
   .as-data-point.is-discoverable {
     animation: none;
+  }
+
+  .as-gradient-shift,
+  .as-float,
+  .as-pulse-glow,
+  .as-text-gradient {
+    animation: none;
+  }
+
+  .as-glow-orb {
+    display: none;
   }
 }

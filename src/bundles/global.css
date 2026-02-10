@@ -119,77 +119,126 @@
 .arca-text-green-600  { color: var(--green-600); }
 
 /* =========================================================================
-   Navigation
+   Navigation — frosted glass with refined hover states
    ========================================================================= */
 .arca-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-height);
-  transition: height 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+  transition: height 200ms ease, background-color 200ms ease, box-shadow 200ms ease, backdrop-filter 200ms ease;
 }
 .arca-nav.is-scrolled {
   height: var(--nav-height-scrolled);
-  background-color: rgba(255,255,255,0.97);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 1px 0 var(--grey-200);
+  background-color: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  box-shadow: 0 1px 0 rgba(209, 213, 222, 0.5), 0 4px 12px rgba(0,0,0,0.04);
 }
 .arca-nav-link { color: var(--grey-800); text-decoration: none; transition: color 150ms ease; position: relative; }
-.arca-nav-link:hover, .arca-nav-link.is-active { color: var(--blue-600); }
-.arca-nav-link.is-active::after { content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px; background:var(--blue-600); }
+.arca-nav-link::after { content:''; position:absolute; bottom:-2px; left:50%; width:0; height:2px; background:linear-gradient(135deg, var(--blue-600), var(--blue-500)); border-radius:1px; transition: width 200ms ease, left 200ms ease; }
+.arca-nav-link:hover { color: var(--blue-600); }
+.arca-nav-link:hover::after { width:100%; left:0; }
+.arca-nav-link.is-active { color: var(--blue-600); }
+.arca-nav-link.is-active::after { width:100%; left:0; }
 
 /* =========================================================================
-   Buttons
+   Buttons — pill shape, gradient fills, animated hovers
    ========================================================================= */
 .arca-btn-primary {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 12px 32px; height: 48px; border-radius: var(--radius-sm);
-  background: var(--blue-600); color: var(--white);
-  font-family: var(--font-primary); font-size: 1rem; font-weight: 600;
-  text-decoration: none; border: none; cursor: pointer;
-  transition: background-color 150ms ease;
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 32px; height: 48px; border-radius: 100px;
+  background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-500) 100%);
+  background-size: 200% 100%; background-position: 0% 50%;
+  color: var(--white); font-family: var(--font-primary); font-size: 1rem; font-weight: 600; letter-spacing: 0.01em;
+  text-decoration: none; border: none; cursor: pointer; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(35, 86, 160, 0.12);
+  transition: background-position 250ms ease, box-shadow 250ms ease, transform 250ms ease;
 }
-.arca-btn-primary:hover { background: var(--blue-500); }
-.arca-btn-primary:active { background: var(--blue-700); }
-.arca-btn-primary:focus-visible { outline: 2px solid var(--blue-400); outline-offset: 2px; }
+.arca-btn-primary:hover {
+  background-position: 100% 50%;
+  box-shadow: 0 4px 12px rgba(35, 86, 160, 0.25), 0 8px 24px rgba(35, 86, 160, 0.15);
+  transform: translateY(-2px); text-decoration: none; color: var(--white);
+}
+.arca-btn-primary:active { transform: translateY(0) scale(0.98); box-shadow: 0 2px 4px rgba(35, 86, 160, 0.2); }
+.arca-btn-primary:focus-visible { outline: 2px solid var(--blue-400); outline-offset: 3px; }
+.arca-btn-primary .arca-arrow { display: inline-block; transition: transform 250ms ease; }
+.arca-btn-primary:hover .arca-arrow { transform: translateX(4px); }
+
+/* Light sweep overlay */
+.arca-btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+  transform: translateX(-100%); transition: transform 600ms ease; pointer-events: none; border-radius: inherit;
+}
+.arca-btn-primary:hover::after { transform: translateX(100%); }
 
 .arca-btn-secondary {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 12px 32px; height: 48px; border-radius: var(--radius-sm);
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 32px; height: 48px; border-radius: 100px;
   background: transparent; color: var(--blue-600);
-  font-family: var(--font-primary); font-size: 1rem; font-weight: 600;
-  text-decoration: none; border: 1px solid var(--blue-600); cursor: pointer;
-  transition: background-color 150ms ease;
+  font-family: var(--font-primary); font-size: 1rem; font-weight: 600; letter-spacing: 0.01em;
+  text-decoration: none; border: 1.5px solid var(--blue-600); cursor: pointer; overflow: hidden;
+  transition: color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
 }
-.arca-btn-secondary:hover { background: var(--blue-50); }
+/* Fill sweep on hover */
+.arca-btn-secondary::before {
+  content: ''; position: absolute; inset: 0; background: var(--blue-600);
+  border-radius: inherit; transform: scaleX(0); transform-origin: left center;
+  transition: transform 400ms ease; z-index: -1;
+}
+.arca-btn-secondary:hover {
+  color: var(--white); text-decoration: none;
+  box-shadow: 0 4px 12px rgba(35, 86, 160, 0.25); transform: translateY(-2px);
+}
+.arca-btn-secondary:hover::before { transform: scaleX(1); }
+.arca-btn-secondary:active { transform: translateY(0) scale(0.98); }
+.arca-btn-secondary .arca-arrow { display: inline-block; transition: transform 250ms ease; }
+.arca-btn-secondary:hover .arca-arrow { transform: translateX(4px); }
 
 .arca-btn-tertiary {
-  display: inline-flex; align-items: center; gap: 4px;
+  position: relative; display: inline-flex; align-items: center; gap: 4px;
   color: var(--blue-600); font-family: var(--font-primary); font-size: 1rem; font-weight: 600;
   text-decoration: none; border: none; background: none; cursor: pointer;
 }
-.arca-btn-tertiary:hover { text-decoration: underline; }
-.arca-btn-tertiary .arca-arrow { display: inline-block; transition: transform 150ms ease; }
-.arca-btn-tertiary:hover .arca-arrow { transform: translateX(4px); }
+.arca-btn-tertiary::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px;
+  background: var(--blue-500); transition: width 200ms ease;
+}
+.arca-btn-tertiary:hover { text-decoration: none; color: var(--blue-500); }
+.arca-btn-tertiary:hover::after { width: 100%; }
+.arca-btn-tertiary .arca-arrow { display: inline-block; transition: transform 250ms ease; }
+.arca-btn-tertiary:hover .arca-arrow { transform: translateX(5px); }
 
 .arca-btn-primary-inverted {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 12px 32px; height: 48px; border-radius: var(--radius-sm);
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 32px; height: 48px; border-radius: 100px;
   background: var(--white); color: var(--blue-600);
-  font-family: var(--font-primary); font-size: 1rem; font-weight: 600;
+  font-family: var(--font-primary); font-size: 1rem; font-weight: 600; letter-spacing: 0.01em;
   text-decoration: none; border: none; cursor: pointer;
-  transition: background-color 150ms ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 250ms ease, transform 250ms ease;
 }
-.arca-btn-primary-inverted:hover { background: var(--blue-50); }
+.arca-btn-primary-inverted:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15); transform: translateY(-2px); text-decoration: none; color: var(--blue-600);
+}
+.arca-btn-primary-inverted:active { transform: translateY(0) scale(0.98); }
+.arca-btn-primary-inverted .arca-arrow { display: inline-block; transition: transform 250ms ease; }
+.arca-btn-primary-inverted:hover .arca-arrow { transform: translateX(4px); }
 
 /* =========================================================================
-   Cards
+   Cards — glassmorphism with layered shadows
    ========================================================================= */
 .arca-card {
-  border: 1px solid var(--grey-200); border-radius: var(--radius-sm);
-  padding: var(--space-5); background: var(--white);
-  transition: border-color 150ms ease, transform 150ms ease;
+  border: 1px solid rgba(209, 213, 222, 0.6); border-radius: 12px;
+  padding: var(--space-5); background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04);
+  transition: border-color 250ms ease, box-shadow 250ms ease, transform 250ms ease, background 250ms ease;
 }
-.arca-card:hover { border-color: var(--grey-400); transform: translateY(-2px); }
+.arca-card:hover {
+  border-color: rgba(59, 125, 216, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08);
+  transform: translateY(-4px); background: rgba(255, 255, 255, 0.95);
+}
 
 .arca-card-colored-top { border-top: 3px solid var(--blue-600); }
 .arca-card-colored-top.is-data { border-top-color: var(--teal-600); }
@@ -249,19 +298,21 @@
 [data-scroll-progress] { position: fixed; top: 0; left: 0; height: 2px; background: var(--blue-600); z-index: 1001; width: 0; }
 
 /* =========================================================================
-   Back to Top
+   Back to Top — frosted glass style
    ========================================================================= */
 [data-back-to-top] {
   position: fixed; bottom: var(--space-5); right: var(--space-5);
-  width: 40px; height: 40px; border-radius: var(--radius-sm);
-  background: var(--grey-50); border: 1px solid var(--grey-200);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(209,213,222,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer; opacity: 0; transform: translateY(10px);
-  transition: opacity 200ms ease, transform 200ms ease;
+  cursor: pointer; opacity: 0; transform: translateY(10px) scale(0.9);
+  transition: opacity 250ms ease, transform 250ms ease, box-shadow 250ms ease;
   pointer-events: none; z-index: 900;
 }
-[data-back-to-top].is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-[data-back-to-top]:hover { background: var(--grey-100); }
+[data-back-to-top].is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+[data-back-to-top]:hover { background: rgba(255,255,255,0.95); box-shadow: 0 4px 16px rgba(0,0,0,0.12); transform: translateY(-2px) scale(1); }
 
 /* =========================================================================
    Form Fields
@@ -287,11 +338,22 @@
 .arca-module-tag.is-output { background: var(--green-100); color: var(--green-600); }
 
 /* =========================================================================
-   CTA Section (full-width blue)
+   CTA Section (full-width gradient with ambient animation)
    ========================================================================= */
-.arca-cta-section { background: linear-gradient(135deg, var(--blue-700), var(--blue-600)); padding: var(--space-9) 0; text-align: center; }
+.arca-cta-section {
+  background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-600) 50%, var(--blue-500) 100%);
+  background-size: 200% 200%;
+  animation: arca-gradient-shift 12s ease-in-out infinite alternate;
+  padding: var(--space-9) 0; text-align: center; position: relative;
+}
 .arca-cta-section .arca-heading-1 { color: var(--white); }
 .arca-cta-section .arca-body-lg { color: rgba(255,255,255,0.85); }
+
+@keyframes arca-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 /* =========================================================================
    Compliance Badges
@@ -301,14 +363,33 @@
 .arca-compliance-badge:hover { opacity: 1; filter: grayscale(0%); }
 
 /* =========================================================================
-   Scroll Reveal
+   Scroll Reveal — enhanced with variants
    ========================================================================= */
-[data-animate] { opacity: 0; transform: translateY(12px); transition: opacity 400ms ease, transform 400ms ease; }
-[data-animate].is-visible { opacity: 1; transform: translateY(0); }
+[data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 400ms ease, transform 600ms ease, filter 400ms ease; }
+[data-animate].is-visible { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+
+[data-animate="slide-right"] { transform: translateX(-30px); }
+[data-animate="slide-right"].is-visible { transform: translateX(0); }
+
+[data-animate="slide-left"] { transform: translateX(30px); }
+[data-animate="slide-left"].is-visible { transform: translateX(0); }
+
+[data-animate="scale"] { transform: scale(0.92); }
+[data-animate="scale"].is-visible { transform: scale(1); }
+
+[data-animate="scale-blur"] { transform: scale(0.95); filter: blur(4px); }
+[data-animate="scale-blur"].is-visible { transform: scale(1); filter: blur(0px); }
+
+[data-animate="clip-up"] { clip-path: inset(100% 0 0 0); transform: none; opacity: 1; }
+[data-animate="clip-up"].is-visible { clip-path: inset(0 0 0 0); transition: clip-path 600ms ease; }
+
+[data-animate-stagger] > [data-animate] { transition-delay: calc(var(--stagger-index, 0) * 100ms); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0ms !important; transition-duration: 0ms !important; }
-  [data-animate] { opacity: 1; transform: none; }
+  [data-animate] { opacity: 1; transform: none; filter: none; clip-path: none; }
+  .arca-cta-section { animation: none; }
+  .arca-btn-primary::after, .arca-btn-secondary::before { display: none; }
 }
 
 /* =========================================================================
