@@ -1,0 +1,455 @@
+<!--
+  ArcaScience Solution by Role — Webflow Structure Reference
+  ===========================================================
+  REUSABLE TEMPLATE for 5 role/audience pages:
+  - For Drug Safety & PV Leaders (/solutions/role/drug-safety)
+  - For Regulatory Affairs (/solutions/role/regulatory-affairs)
+  - For Clinical Operations (/solutions/role/clinical-operations)
+  - For Market Access & HEOR (/solutions/role/market-access-heor)
+  - For Chief Medical Officers (/solutions/role/cmo)
+
+  Replace [ROLE_NAME], [ROLE_SLUG], [ROLE_TITLE], [ROLE_DESCRIPTION]
+  with actual content per page.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ROLE_NAME] — ArcaScience Solutions</title>
+  <meta name="description" content="How ArcaScience helps [ROLE_NAME] professionals with AI-driven benefit-risk analysis. [ROLE_DESCRIPTION]">
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       SECTION 1: Navigation (same on all pages)
+       ============================================================ -->
+  <nav class="arca-nav" data-nav="sticky">
+    <div class="arca-nav-inner">
+      <a href="/" class="arca-nav-logo" aria-label="ArcaScience home">
+        <!-- Webflow: Insert ArcaScience logo as image or SVG -->
+        ArcaScience
+      </a>
+      <div class="arca-nav-links">
+        <a href="/platform/overview" class="arca-nav-link">Platform</a>
+        <a href="/solutions/overview" class="arca-nav-link is-active">Solutions</a>
+        <a href="/evidence/overview" class="arca-nav-link">Evidence</a>
+        <a href="/company/about" class="arca-nav-link">Company</a>
+        <a href="/resources/hub" class="arca-nav-link">Resources</a>
+      </div>
+      <div class="arca-nav-actions">
+        <a href="/company/contact" class="arca-btn-primary">Talk to a Scientist</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 2: Breadcrumb
+         ============================================================ -->
+    <div class="arca-breadcrumb" data-animate>
+      <div class="arca-container">
+        <a href="/solutions/overview">Solutions</a>
+        <span class="arca-breadcrumb-sep">/</span>
+        <a href="/solutions/overview">By Role</a>
+        <span class="arca-breadcrumb-sep">/</span>
+        <span>[ROLE_NAME]</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 3: Hero — Role-specific value proposition
+         ============================================================ -->
+    <section class="arca-section arca-bg-blue-900 arca-py-10">
+      <div class="arca-container">
+        <div class="arca-section-label arca-text-blue-200">For [ROLE_TITLE]</div>
+        <h1 class="arca-display-lg arca-text-white" data-animate>
+          [HERO_HEADLINE]
+        </h1>
+        <p class="arca-body-lg arca-text-blue-100" style="max-width: 680px;" data-animate>
+          [HERO_SUBHEADLINE — Describe what ArcaScience does specifically for this role. 2-3 sentences.]
+        </p>
+        <div class="arca-hero-actions" data-animate>
+          <a href="/company/contact" class="arca-btn-primary-inverted">Request a [ROLE_NAME] Demo</a>
+          <a href="/platform/overview" class="arca-btn-tertiary arca-text-white">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: Pain Points — What keeps [ROLE_NAME] up at night
+         ============================================================ -->
+    <section class="arca-section arca-bg-white arca-py-9">
+      <div class="arca-container">
+        <div class="arca-section-label" data-animate>Your Challenges</div>
+        <h2 class="arca-display-sm" data-animate>
+          The Reality of [ROLE_NAME] Today
+        </h2>
+        <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px;" data-animate>
+          [Describe the daily pressures and challenges this role faces with current BRA approaches. 2-3 sentences.]
+        </p>
+
+        <div class="arca-grid-3" data-animate>
+          <!-- Pain Point 1 -->
+          <div class="arca-card">
+            <div class="arca-card-inner">
+              <h3 class="arca-heading-3">[Pain Point 1 Title]</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                [Description of pain point 1 specific to this role. E.g., for Drug Safety: "Manual signal detection across global databases consumes 70% of your team's bandwidth."]
+              </p>
+            </div>
+          </div>
+
+          <!-- Pain Point 2 -->
+          <div class="arca-card">
+            <div class="arca-card-inner">
+              <h3 class="arca-heading-3">[Pain Point 2 Title]</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                [Description of pain point 2.]
+              </p>
+            </div>
+          </div>
+
+          <!-- Pain Point 3 -->
+          <div class="arca-card">
+            <div class="arca-card-inner">
+              <h3 class="arca-heading-3">[Pain Point 3 Title]</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                [Description of pain point 3.]
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: How ArcaScience Helps — Role-specific workflows
+         ============================================================ -->
+    <section class="arca-section arca-bg-grey-50 arca-py-9">
+      <div class="arca-container">
+        <div class="arca-section-label" data-animate>How ArcaScience Helps</div>
+        <h2 class="arca-display-sm" data-animate>
+          Your Workflow, Transformed
+        </h2>
+
+        <!-- Workflow Step 1 -->
+        <div class="arca-grid-7-5" data-animate>
+          <div>
+            <div class="arca-module-tag is-data">Data Intelligence</div>
+            <h3 class="arca-heading-2">[Workflow Step 1 Title]</h3>
+            <p class="arca-body-md arca-text-grey-600">
+              [How the Data Intelligence module addresses this role's specific data needs. 2-3 sentences.]
+            </p>
+            <ul class="arca-feature-list">
+              <li>[Specific capability relevant to role]</li>
+              <li>[Specific capability relevant to role]</li>
+              <li>[Specific capability relevant to role]</li>
+            </ul>
+          </div>
+          <div class="arca-workflow-visual">
+            <!-- Webflow: add screenshot or diagram placeholder -->
+            <div class="arca-placeholder-img" style="aspect-ratio: 4/3; background: var(--teal-100, #e0f7f5); border-radius: 8px;"></div>
+          </div>
+        </div>
+
+        <!-- Workflow Step 2 -->
+        <div class="arca-grid-7-5" style="margin-top: var(--space-8, 64px);" data-animate>
+          <div class="arca-workflow-visual" style="order: -1;">
+            <div class="arca-placeholder-img" style="aspect-ratio: 4/3; background: var(--indigo-100, #e8eaf6); border-radius: 8px;"></div>
+          </div>
+          <div>
+            <div class="arca-module-tag is-analytics">Decision Intelligence</div>
+            <h3 class="arca-heading-2">[Workflow Step 2 Title]</h3>
+            <p class="arca-body-md arca-text-grey-600">
+              [How the Decision Intelligence module supports this role's analysis and decision-making. 2-3 sentences.]
+            </p>
+            <ul class="arca-feature-list">
+              <li>[Specific capability relevant to role]</li>
+              <li>[Specific capability relevant to role]</li>
+              <li>[Specific capability relevant to role]</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Workflow Step 3 -->
+        <div class="arca-grid-7-5" style="margin-top: var(--space-8, 64px);" data-animate>
+          <div>
+            <div class="arca-module-tag is-output">Automated Outputs</div>
+            <h3 class="arca-heading-2">[Workflow Step 3 Title]</h3>
+            <p class="arca-body-md arca-text-grey-600">
+              [How the Automated Outputs module produces the deliverables this role needs. 2-3 sentences.]
+            </p>
+            <ul class="arca-feature-list">
+              <li>[Specific output relevant to role]</li>
+              <li>[Specific output relevant to role]</li>
+              <li>[Specific output relevant to role]</li>
+            </ul>
+          </div>
+          <div class="arca-workflow-visual">
+            <div class="arca-placeholder-img" style="aspect-ratio: 4/3; background: var(--green-100, #e8f5e9); border-radius: 8px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: Impact Metrics — What [ROLE_NAME] achieves
+         ============================================================ -->
+    <section class="arca-section arca-bg-blue-600 arca-py-8">
+      <div class="arca-container">
+        <h2 class="arca-heading-1 arca-text-white arca-text-center" data-animate>
+          Impact for [ROLE_NAME] Teams
+        </h2>
+        <div class="arca-grid-4" data-animate>
+          <div class="arca-text-center">
+            <div class="arca-stat-lg arca-text-white">
+              <span data-countup="60" data-countup-suffix="%" data-countup-duration="2000">0</span>
+            </div>
+            <div class="arca-body-sm arca-text-blue-100">[Metric 1 label, e.g., "Faster report generation"]</div>
+          </div>
+          <div class="arca-text-center">
+            <div class="arca-stat-lg arca-text-white">
+              <span data-countup="3" data-countup-suffix="×" data-countup-duration="2000">0</span>
+            </div>
+            <div class="arca-body-sm arca-text-blue-100">[Metric 2 label]</div>
+          </div>
+          <div class="arca-text-center">
+            <div class="arca-stat-lg arca-text-white">
+              <span data-countup="100" data-countup-suffix="%" data-countup-duration="2000">0</span>
+            </div>
+            <div class="arca-body-sm arca-text-blue-100">[Metric 3 label]</div>
+          </div>
+          <div class="arca-text-center">
+            <div class="arca-stat-lg arca-text-white">
+              <span data-countup="40" data-countup-suffix="%" data-countup-duration="2000">0</span>
+            </div>
+            <div class="arca-body-sm arca-text-blue-100">[Metric 4 label]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: Testimonial from this role
+         ============================================================ -->
+    <section class="arca-section arca-bg-white arca-py-9">
+      <div class="arca-container" style="max-width: 800px;">
+        <div class="arca-testimonial" data-animate>
+          <blockquote class="arca-testimonial-quote arca-quote">
+            "[Testimonial from a [ROLE_NAME] professional who uses ArcaScience. 3-4 sentences describing the transformation in their workflow and outcomes.]"
+          </blockquote>
+          <div class="arca-testimonial-attribution">
+            <div class="arca-testimonial-avatar">
+              <!-- Webflow: add headshot image -->
+            </div>
+            <div>
+              <div class="arca-heading-3">[Name]</div>
+              <div class="arca-body-sm arca-text-grey-600">[Title], [Company]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8: Case Study — Relevant to this role
+         ============================================================ -->
+    <section class="arca-section arca-bg-grey-50 arca-py-9">
+      <div class="arca-container">
+        <div class="arca-section-label" data-animate>See It in Action</div>
+        <h2 class="arca-display-sm" data-animate>[CASE_STUDY_TITLE]</h2>
+
+        <div class="arca-grid-7-5" data-animate>
+          <div>
+            <p class="arca-body-md arca-text-grey-600">
+              [2-3 sentence summary of the case study, focused on what the [ROLE_NAME] user achieved.]
+            </p>
+            <div class="arca-grid-3" style="margin-top: var(--space-5, 24px);">
+              <div>
+                <div class="arca-stat-sm" data-countup="60" data-countup-suffix="%">0</div>
+                <div class="arca-caption arca-text-grey-600">[Result metric 1]</div>
+              </div>
+              <div>
+                <div class="arca-stat-sm" data-countup="3" data-countup-suffix="×">0</div>
+                <div class="arca-caption arca-text-grey-600">[Result metric 2]</div>
+              </div>
+              <div>
+                <div class="arca-stat-sm" data-countup="100" data-countup-suffix="%">0</div>
+                <div class="arca-caption arca-text-grey-600">[Result metric 3]</div>
+              </div>
+            </div>
+            <a href="/evidence/case-studies/[CASE_STUDY_SLUG]" class="arca-btn-tertiary" style="margin-top: var(--space-4, 16px);">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+          <div>
+            <div class="arca-card">
+              <div class="arca-card-inner">
+                <div class="arca-caption arca-text-grey-600">Client</div>
+                <div class="arca-heading-3">[Client Name]</div>
+                <div class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3, 12px);">Therapeutic Area</div>
+                <div class="arca-body-sm">[TA Name]</div>
+                <div class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3, 12px);">Development Phase</div>
+                <div class="arca-body-sm">[Phase Name]</div>
+                <div class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3, 12px);">Modules Used</div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;">
+                  <span class="arca-module-tag is-data">Data</span>
+                  <span class="arca-module-tag is-analytics">Decision</span>
+                  <span class="arca-module-tag is-output">Output</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9: Related Resources
+         ============================================================ -->
+    <section class="arca-section arca-bg-white arca-py-9">
+      <div class="arca-container">
+        <div class="arca-section-label" data-animate>Resources for [ROLE_NAME]</div>
+        <h2 class="arca-heading-1" data-animate>Deepen Your Understanding</h2>
+
+        <div class="arca-grid-3" data-animate>
+          <!-- Resource 1: Whitepaper -->
+          <div class="arca-card">
+            <div class="arca-card-inner">
+              <span class="arca-resource-tag is-whitepaper">Whitepaper</span>
+              <h3 class="arca-heading-3">[Whitepaper title relevant to role]</h3>
+              <p class="arca-body-sm arca-text-grey-600">[1-sentence excerpt]</p>
+              <a href="#" class="arca-btn-tertiary">
+                Download <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Resource 2: Blog Post -->
+          <div class="arca-card">
+            <div class="arca-card-inner">
+              <span class="arca-resource-tag is-blog">Blog</span>
+              <h3 class="arca-heading-3">[Blog post title relevant to role]</h3>
+              <p class="arca-body-sm arca-text-grey-600">[1-sentence excerpt]</p>
+              <a href="#" class="arca-btn-tertiary">
+                Read <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Resource 3: Webinar -->
+          <div class="arca-card">
+            <div class="arca-card-inner">
+              <span class="arca-resource-tag is-webinar">Webinar</span>
+              <h3 class="arca-heading-3">[Webinar title relevant to role]</h3>
+              <p class="arca-body-sm arca-text-grey-600">[1-sentence excerpt]</p>
+              <a href="#" class="arca-btn-tertiary">
+                Watch <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 10: CTA
+         ============================================================ -->
+    <section class="arca-cta-section arca-bg-blue-900 arca-py-10">
+      <div class="arca-container arca-text-center">
+        <h2 class="arca-display-sm arca-text-white" data-animate>
+          Ready to Transform Your [ROLE_NAME] Workflow?
+        </h2>
+        <p class="arca-body-lg arca-text-blue-100" data-animate>
+          See how ArcaScience empowers [ROLE_NAME] professionals at leading pharmaceutical companies.
+        </p>
+        <div class="arca-hero-actions" data-animate>
+          <a href="/company/contact" class="arca-btn-primary-inverted">Request a [ROLE_NAME] Demo</a>
+          <a href="/evidence/case-studies" class="arca-btn-tertiary arca-text-white">
+            View Case Studies <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (same on all pages)
+       ============================================================ -->
+  <footer class="arca-footer arca-bg-blue-900">
+    <div class="arca-container">
+      <div class="arca-footer-grid">
+        <div class="arca-footer-col">
+          <div class="arca-footer-logo">ArcaScience</div>
+          <p class="arca-body-sm arca-text-blue-200">AI-driven benefit-risk analysis for pharmaceutical development.</p>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Platform</h4>
+          <a href="/platform/overview" class="arca-footer-link">Overview</a>
+          <a href="/platform/data" class="arca-footer-link">Data Intelligence</a>
+          <a href="/platform/ai-models" class="arca-footer-link">AI Models</a>
+          <a href="/platform/outputs" class="arca-footer-link">Automated Outputs</a>
+          <a href="/platform/security" class="arca-footer-link">Security</a>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Solutions</h4>
+          <a href="/solutions/phase/post-marketing" class="arca-footer-link">Post-Marketing</a>
+          <a href="/solutions/therapeutic-area/oncology" class="arca-footer-link">Oncology</a>
+          <a href="/solutions/role/drug-safety" class="arca-footer-link">Drug Safety</a>
+          <a href="/solutions/role/regulatory-affairs" class="arca-footer-link">Regulatory Affairs</a>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Company</h4>
+          <a href="/company/about" class="arca-footer-link">About</a>
+          <a href="/company/leadership" class="arca-footer-link">Leadership</a>
+          <a href="/company/careers" class="arca-footer-link">Careers</a>
+          <a href="/company/contact" class="arca-footer-link">Contact</a>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Resources</h4>
+          <a href="/resources/insights" class="arca-footer-link">Blog</a>
+          <a href="/resources/whitepapers" class="arca-footer-link">Whitepapers</a>
+          <a href="/resources/webinars" class="arca-footer-link">Events</a>
+          <a href="/resources/faq" class="arca-footer-link">FAQ</a>
+        </div>
+      </div>
+      <div class="arca-footer-bottom">
+        <p class="arca-caption arca-text-blue-300">&copy; 2025 ArcaScience. All rights reserved.</p>
+        <div class="arca-footer-legal">
+          <a href="/legal/privacy" class="arca-footer-link">Privacy</a>
+          <a href="/legal/terms" class="arca-footer-link">Terms</a>
+          <a href="/legal/cookies" class="arca-footer-link">Cookies</a>
+          <a href="/legal/accessibility" class="arca-footer-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init();
+    });
+  </script>
+
+</body>
+</html>

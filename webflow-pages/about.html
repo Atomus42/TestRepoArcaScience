@@ -1,0 +1,578 @@
+<!--
+  ArcaScience About Page — Webflow Structure Reference
+  =====================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About ArcaScience — Company Story, Mission & Vision</title>
+  <meta name="description" content="Since 2018, ArcaScience has provided AI-driven benefit-risk analysis to the pharmaceutical industry's most demanding programs. 60+ team members across Paris and Sunnyvale offices.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Company link is-active on this page.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+          <!-- Webflow: Use Dropdown component. Items below. -->
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link is-active">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: BREADCRUMB + HERO
+         Full-width dark background (blue-900).
+         Contains: breadcrumb, H1, subtitle.
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/company" style="color: rgba(255,255,255,0.65); text-decoration: none;">Company</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">About</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Founded in Pharmacoepidemiology. Built for Benefit-Risk.
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto;">
+            Since 2018, ArcaScience has provided AI-driven benefit-risk analysis to the pharmaceutical industry's most demanding programs.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: FOUNDING STORY
+         White background. 7/5 grid with text on left, photo placeholder on right.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Story narrative -->
+          <div>
+            <p class="arca-section-label">Our Founding Story</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              Founded by Pharmacoepidemiology Experts
+            </h2>
+            <div style="display: grid; gap: var(--space-4);">
+              <p class="arca-body-md arca-text-grey-600">
+                ArcaScience was founded by pharmacoepidemiology experts who recognized that benefit-risk assessment — the central question in drug development — was being conducted with inadequate tools.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                Manual literature review, fragmented CRO engagements, and qualitative narratives were insufficient for the rigor and speed required by modern pharmaceutical development. Benefit-risk decisions affecting millions of patients deserved better analytical infrastructure.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                We set out to build what didn't exist: a unified analytical platform that could ingest heterogeneous data, apply validated benefit-risk frameworks, and generate regulatory-grade outputs — with full transparency, reproducibility, and auditability.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                Today, ArcaScience's platform has supported over 50 regulatory submissions, analyzed 100+ billion data points, and serves pharmaceutical companies at every stage of the drug lifecycle.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Photo placeholder -->
+          <div data-animate>
+            <div style="background: var(--grey-100); border-radius: 8px; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <!-- Webflow: Replace with actual team photo -->
+              <img src="/images/team/romain-clement-founder.jpg" alt="Romain Clement, Founder & CEO" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3); text-align: center;">
+              Romain Clement, Co-Founder & CEO
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: MISSION & VISION
+         Grey-50 background. Two-column cards.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Mission & Vision</p>
+          <h2 class="arca-display-sm">
+            Our Commitment to Pharmaceutical Innovation
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+
+          <!-- Mission Card -->
+          <div class="arca-card" style="padding: var(--space-7);" data-animate>
+            <h3 class="arca-heading-1" style="margin-bottom: var(--space-4); color: var(--blue-600);">
+              Mission
+            </h3>
+            <p class="arca-body-lg arca-text-grey-700" style="margin-bottom: var(--space-5);">
+              Improve the quality, consistency, and timeliness of benefit-risk analysis in pharmaceutical development.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              We believe that benefit-risk assessment should not be a bottleneck in drug development. By integrating data intelligence, decision intelligence, and automated outputs into one validated platform, we enable pharmaceutical companies to conduct comprehensive benefit-risk analyses in weeks instead of months — with full regulatory traceability and reproducibility.
+            </p>
+          </div>
+
+          <!-- Vision Card -->
+          <div class="arca-card" style="padding: var(--space-7);" data-animate>
+            <h3 class="arca-heading-1" style="margin-bottom: var(--space-4); color: var(--indigo-600);">
+              Vision
+            </h3>
+            <p class="arca-body-lg arca-text-grey-700" style="margin-bottom: var(--space-5);">
+              A world where no regulatory decision is made without comprehensive, AI-powered benefit-risk analysis.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              The future of pharmaceutical development is data-driven, transparent, and patient-centered. We envision a regulatory ecosystem where every submission — from Phase I to post-marketing surveillance — is supported by structured, quantitative benefit-risk evidence. ArcaScience is building the infrastructure to make that vision a reality.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: TIMELINE / MILESTONES
+         White background. Vertical timeline with alternating content.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Company Timeline</p>
+          <h2 class="arca-display-sm">
+            Key Milestones Since 2018
+          </h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <!-- Timeline container -->
+          <div style="position: relative; padding-left: 40px;">
+            <!-- Timeline vertical line -->
+            <div style="position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--grey-200);"></div>
+
+            <!-- Milestone 1: Founded 2018 -->
+            <div style="position: relative; margin-bottom: var(--space-7);" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2018</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">Founded in Paris</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  ArcaScience founded in Paris by pharmacoepidemiology experts with a mission to transform benefit-risk assessment through AI-driven analysis. Initial platform development begins with focus on data ingestion and MedDRA coding automation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 2: First Pharma Client -->
+            <div style="position: relative; margin-bottom: var(--space-7);" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2019</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">First Pharma Client (Sanofi)</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  Sanofi becomes ArcaScience's first pharmaceutical client, deploying the platform for post-marketing signal detection and PSUR generation. Platform processes first 10 billion data points from FAERS and EudraVigilance.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 3: COVID-19 Deployment -->
+            <div style="position: relative; margin-bottom: var(--space-7);" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2020</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">COVID-19 Rapid Deployment with Paris Brain Institute</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  ArcaScience platform deployed for rapid benefit-risk assessment of COVID-19 therapeutics in collaboration with Paris Brain Institute. Continuous signal monitoring configured for real-time safety surveillance during emergency use programs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 4: Series A Funding -->
+            <div style="position: relative; margin-bottom: var(--space-7);" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2021</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">Series A Funding &mdash; AS Profiling Base Reaches 100B Data Points</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  Raised Series A funding from The Moon Venture, Pleiade Venture, Plug&Play, and Bpifrance ($7M+). Investment enables expansion of AS Profiling Base to 100+ billion data points and development of Decision Intelligence module with BRAT framework and MCDA implementation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 5: 50+ Submissions & 24 AI Models -->
+            <div style="position: relative; margin-bottom: var(--space-7);" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2023</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">50+ Regulatory Submissions &mdash; 24 AI Models</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  ArcaScience platform reaches milestone of supporting 50+ regulatory submissions across FDA, EMA, and PMDA. 24 proprietary AI models now operational for signal detection, causal inference, and comparative effectiveness. 100% acceptance rate for submissions using platform-generated PSUR/PBRER and CTD Module 2.5 documents.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 6: US Expansion -->
+            <div style="position: relative; margin-bottom: var(--space-7);" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2024</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">US Expansion &mdash; Sunnyvale Office</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  Opened Sunnyvale office to serve US pharmaceutical clients and strengthen relationships with FDA. US operations team established for business development, client support, and regulatory affairs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 7: Paris Brain Institute Collaboration -->
+            <div style="position: relative;" data-animate>
+              <div style="position: absolute; left: -34px; top: 4px; width: 24px; height: 24px; background: var(--blue-600); border: 4px solid var(--white); border-radius: 50%; z-index: 1;"></div>
+              <div>
+                <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-2);">2025</p>
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">Paris Brain Institute Research Collaboration for CNS Safety</h3>
+                <p class="arca-body-md arca-text-grey-600">
+                  Announced research collaboration with Paris Brain Institute (ICM) to advance AI methods for neurological drug safety assessment. Joint research program focused on developing novel signal detection algorithms for CNS therapeutics.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: TEAM BY THE NUMBERS
+         Grey-50 background. Stats bar with data-countup.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-8) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-section-label">Team by the Numbers</p>
+          <h2 class="arca-display-sm">
+            A Multidisciplinary Team of Scientists, Engineers, and Operators
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric" data-animate>
+            <span class="arca-stat-lg" data-countup="60" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Team members globally</p>
+          </div>
+
+          <div class="arca-credibility-metric" data-animate>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-2);">
+              <span class="arca-stat-md" style="color: var(--teal-600);" data-countup="40" data-countup-suffix="%">0</span>
+              <p class="arca-caption" style="margin: 0;">Scientists</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-2); margin-top: var(--space-3);">
+              <span class="arca-stat-md" style="color: var(--indigo-600);" data-countup="40" data-countup-suffix="%">0</span>
+              <p class="arca-caption" style="margin: 0;">Engineers</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-2); margin-top: var(--space-3);">
+              <span class="arca-stat-md" style="color: var(--blue-600);" data-countup="20" data-countup-suffix="%">0</span>
+              <p class="arca-caption" style="margin: 0;">Operations</p>
+            </div>
+          </div>
+
+          <div class="arca-credibility-metric" data-animate>
+            <span class="arca-stat-lg" data-countup="2">0</span>
+            <p class="arca-caption">Offices: Paris & Sunnyvale</p>
+          </div>
+
+          <div class="arca-credibility-metric" data-animate>
+            <span class="arca-stat-lg" data-countup="15" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Nationalities represented</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: OFFICES
+         White background. Two cards side by side.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Global Presence</p>
+          <h2 class="arca-display-sm">
+            Two Offices. One Shared Mission.
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+
+          <!-- Paris HQ -->
+          <div class="arca-card" data-animate>
+            <div style="background: var(--grey-100); border-radius: 8px; aspect-ratio: 16/9; margin-bottom: var(--space-5); overflow: hidden;">
+              <!-- Webflow: Replace with actual office photo -->
+              <img src="/images/offices/arcascience-paris-office.jpg" alt="ArcaScience Paris Headquarters" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Paris Headquarters</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Our Paris office houses R&D, scientific operations, and platform engineering. Located in the heart of the city's biotech district, the Paris team drives core product development, maintains the AS Profiling Base, and collaborates with European pharmaceutical clients and research institutions.
+            </p>
+            <div style="display: grid; gap: var(--space-2);">
+              <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600;">Functions</p>
+              <p class="arca-body-sm arca-text-grey-600">R&D, Data Science, Platform Engineering, Regulatory Science</p>
+            </div>
+            <div style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
+              <p class="arca-body-sm arca-text-grey-600">
+                <strong>Location:</strong> 8 rue Jean-Antoine de Baif, 75013 Paris, France<br>
+                <strong>Established:</strong> 2018
+              </p>
+            </div>
+          </div>
+
+          <!-- Sunnyvale Office -->
+          <div class="arca-card" data-animate>
+            <div style="background: var(--grey-100); border-radius: 8px; aspect-ratio: 16/9; margin-bottom: var(--space-5); overflow: hidden;">
+              <!-- Webflow: Replace with actual office photo -->
+              <img src="/images/offices/arcascience-sunnyvale-office.jpg" alt="ArcaScience Sunnyvale Office" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Sunnyvale Office</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Our Sunnyvale office supports US operations, business development, and client success. Strategically located in the Bay Area, the Sunnyvale team serves North American pharmaceutical clients, manages FDA relationships, and coordinates deployments for US-based development programs.
+            </p>
+            <div style="display: grid; gap: var(--space-2);">
+              <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600;">Functions</p>
+              <p class="arca-body-sm arca-text-grey-600">US Operations, Business Development, Client Success, Regulatory Affairs</p>
+            </div>
+            <div style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--grey-200);">
+              <p class="arca-body-sm arca-text-grey-600">
+                <strong>Location:</strong> 440 N Wolfe Rd, Sunnyvale, CA 94085, USA<br>
+                <strong>Established:</strong> 2024
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: INVESTORS
+         Grey-50 background. Investor logos.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-8) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <p class="arca-section-label">Investors</p>
+          <h2 class="arca-heading-1">
+            Backed by Leading Healthtech Investors
+          </h2>
+          <p class="arca-body-md arca-text-grey-600" style="margin-top: var(--space-3);">
+            Raised $7M+ to accelerate platform development and global expansion.
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap;">
+          <img src="/images/investors/the-moon-venture.svg" alt="The Moon Venture" style="height: 40px; opacity: 0.7;">
+          <img src="/images/investors/pleiade-venture.svg" alt="Pleiade Venture" style="height: 40px; opacity: 0.7;">
+          <img src="/images/investors/plug-and-play.svg" alt="Plug&Play" style="height: 40px; opacity: 0.7;">
+          <img src="/images/investors/bpifrance.svg" alt="Bpifrance" style="height: 40px; opacity: 0.7;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: CTA
+         Full-width blue gradient. Primary conversion section.
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Join Our Mission to Transform Drug Safety
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Meet the team building the future of benefit-risk analysis or explore open positions across science, engineering, and operations.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/company/leadership" class="arca-btn-primary-inverted">
+            Meet Our Leadership Team
+          </a>
+          <a href="/company/careers" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            View Open Positions <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Identical structure to homepage footer.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Leadership</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!--
+  ArcaScience FAQ — Webflow Structure Reference
+  =============================================
+  Frequently asked questions with accordion interface.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions — ArcaScience Platform, Methodology, and Implementation</title>
+  <meta name="description" content="Answers to common questions about ArcaScience's platform, methodology, and implementation.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <a href="/platform" class="arca-nav-link">Platform</a>
+        <a href="/solutions" class="arca-nav-link">Solutions</a>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link is-active">Resources</a>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">FAQ</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section class="arca-bg-blue-50" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5);">
+            Frequently Asked Questions
+          </h1>
+          <p class="arca-body-lg arca-text-grey-700">
+            Answers to common questions about ArcaScience's platform, methodology, and implementation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordions -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+
+          <!-- Category 1: Platform & Technology -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Platform & Technology</h2>
+
+            <div data-accordion>
+
+              <!-- Q1 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">What is AS Profiling Base 100b®?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>Our proprietary curated database of <strong>100+ billion data points</strong> drawn from clinical trials, spontaneous reporting databases (FAERS, EudraVigilance), published literature, electronic health records, and regulatory submissions.</p>
+                    <p style="margin-top: var(--space-3);">Data is cleaned, standardized, harmonized, and linked with coverage spanning 12+ therapeutic areas. Each data point includes provenance tracking, quality metrics, and documented limitations to ensure transparency about data source reliability.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">How are the 24 AI models different from general-purpose LLMs?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>Our models are <strong>purpose-trained on pharmacovigilance-specific corpora</strong> and domain ontologies. Unlike general-purpose models, they understand MedDRA coding, causality assessment frameworks (Naranjo, WHO-UMC), and regulatory terminology with the precision required for safety-critical applications.</p>
+                    <p style="margin-top: var(--space-3);">Validation studies show our domain models achieve 92% precision on adverse event extraction vs 67% for GPT-4, and 94% F1 score on MedDRA auto-coding vs 71% for general LLMs. This performance gap is critical for regulatory acceptance.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">How long does implementation take?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>Typical deployment takes <strong>4-8 weeks</strong> including data integration, configuration for your therapeutic areas, and team training.</p>
+                    <p style="margin-top: var(--space-3);">The platform can begin generating analytical outputs within the first week for standard use cases (signal detection, literature monitoring). More complex workflows like automated PSUR generation or custom BRAT framework configuration may take 6-8 weeks to fully operationalize.</p>
+                    <p style="margin-top: var(--space-3);">Our customer success team provides onboarding, training, and ongoing support to ensure smooth adoption.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">Does ArcaScience replace our pharmacovigilance team?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p><strong>No.</strong> ArcaScience augments your team by automating data-intensive tasks (signal detection, literature monitoring, document production), allowing your scientists to focus on clinical interpretation and strategic decision-making.</p>
+                    <p style="margin-top: var(--space-3);">Our clients report that their pharmacovigilance teams can handle 3-4x more compounds or indications with the same FTE count, or reallocate 1-1.5 FTE from manual data processing to higher-value clinical safety evaluation and regulatory strategy.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 2: Methodology & Regulatory -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Methodology & Regulatory</h2>
+
+            <div data-accordion>
+
+              <!-- Q5 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">Which regulatory frameworks does the platform support?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>ArcaScience supports all major benefit-risk frameworks and regulatory guidance:</p>
+                    <ul style="list-style: disc; padding-left: 24px; margin-top: var(--space-3);">
+                      <li><strong>BRAT framework</strong> (Benefit-Risk Action Team) with automated value tree construction</li>
+                      <li><strong>MCDA</strong> (Multi-Criteria Decision Analysis) with swing weighting and SMAA</li>
+                      <li><strong>ICH E2C(R2)</strong> for PSUR/PBRER generation</li>
+                      <li><strong>EMA GVP Module V</strong> for Risk Management Plans (RMP)</li>
+                      <li><strong>ICH M4E</strong> for CTD Module 2.5 Clinical Overview</li>
+                      <li><strong>FDA's Structured Benefit-Risk Framework</strong> for NDA/BLA submissions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q6 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">Has the platform's output been accepted by regulators?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p><strong>Yes.</strong> 50+ regulatory submissions using ArcaScience-generated outputs have been accepted by FDA, EMA, and PMDA with a <strong>100% acceptance rate</strong> and no major deficiency queries related to benefit-risk methodology.</p>
+                    <p style="margin-top: var(--space-3);">Submission types include CTD Module 2.5 Clinical Overviews, PSUR/PBRER documents, Risk Management Plans, advisory committee briefing documents, and post-marketing surveillance reports. Therapeutic areas span oncology, immunology, rare diseases, cardiology, and neurology.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q7 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">How does ArcaScience handle data quality and bias?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>We <strong>characterize rather than eliminate bias</strong>. Each data source has documented quality metrics and known limitations (e.g., FAERS underreporting, publication bias in literature, selection bias in EHR data).</p>
+                    <p style="margin-top: var(--space-3);">The platform provides transparency about data provenance, and all findings are traceable to source data. Our reports explicitly note data quality limitations and bias considerations so that your scientific team and regulators can make informed interpretations.</p>
+                    <p style="margin-top: var(--space-3);">This approach aligns with FDA and EMA guidance on real-world evidence, which emphasizes transparency about data limitations rather than claiming bias elimination.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q8 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">Can the platform produce documents for multiple regulatory authorities?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p><strong>Yes.</strong> The same underlying analysis can generate outputs formatted for FDA (structured BRA), EMA (RMP, PSUR/PBRER), and PMDA (J-RMP), ensuring consistency across submissions.</p>
+                    <p style="margin-top: var(--space-3);">Our document templates align with each authority's specific requirements, terminology preferences, and formatting conventions. This multi-authority support reduces duplication of effort and ensures your benefit-risk story remains consistent across global submissions.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 3: Security & Compliance -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Security & Compliance</h2>
+
+            <div data-accordion>
+
+              <!-- Q9 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">What compliance certifications does ArcaScience hold?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>ArcaScience maintains comprehensive compliance certifications for pharmaceutical-grade software:</p>
+                    <ul style="list-style: disc; padding-left: 24px; margin-top: var(--space-3);">
+                      <li><strong>ISO 27001</strong> — Information Security Management</li>
+                      <li><strong>SOC 2 Type II</strong> — Security, Availability, Confidentiality</li>
+                      <li><strong>FDA 21 CFR Part 11</strong> — Electronic Records and Signatures</li>
+                      <li><strong>HIPAA</strong> — Health Insurance Portability and Accountability Act</li>
+                      <li><strong>GDPR</strong> — General Data Protection Regulation (EU)</li>
+                      <li><strong>HDS</strong> — Hébergeur de Données de Santé (French health data hosting)</li>
+                    </ul>
+                    <p style="margin-top: var(--space-3);">All certifications are maintained through annual audits and continuous monitoring.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q10 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">Where is data stored?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>Data is stored in <strong>SOC 2-certified cloud infrastructure</strong> with sovereign data residency options for EU and US.</p>
+                    <p style="margin-top: var(--space-3);">All data is <strong>encrypted at rest</strong> (AES-256) and <strong>in transit</strong> (TLS 1.3). Your organization's data is logically isolated with dedicated encryption keys under your control.</p>
+                    <p style="margin-top: var(--space-3);">For clients with stricter data residency requirements, we offer single-tenant deployment within your cloud environment (AWS, Azure, or GCP) or on-premises deployment for air-gapped networks.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q11 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">How does the audit trail work?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p>Every analytical action — parameter selection, data filtering, model execution, document generation — is logged with timestamp, user identity, and before/after values.</p>
+                    <p style="margin-top: var(--space-3);">The audit trail is <strong>immutable</strong> and compliant with <strong>FDA 21 CFR Part 11</strong> and <strong>ALCOA+</strong> principles (Attributable, Legible, Contemporaneous, Original, Accurate, plus Complete, Consistent, Enduring, Available).</p>
+                    <p style="margin-top: var(--space-3);">Audit records can be exported for regulatory inspection and include full data lineage from source data citation to final regulatory conclusion.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q12 -->
+              <div class="arca-card" style="margin-bottom: var(--space-4);" data-accordion-item>
+                <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: var(--space-5);" data-accordion-trigger>
+                  <h3 class="arca-heading-3">Can we conduct a security assessment before deployment?</h3>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transition: transform 0.3s ease; flex-shrink: 0;" data-accordion-icon>
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;" data-accordion-content>
+                  <div style="padding: 0 var(--space-5) var(--space-5); color: var(--grey-700); line-height: 1.75;">
+                    <p><strong>Yes.</strong> We provide a comprehensive security documentation package including:</p>
+                    <ul style="list-style: disc; padding-left: 24px; margin-top: var(--space-3);">
+                      <li>SOC 2 Type II report (full or executive summary)</li>
+                      <li>Penetration test summaries from independent security firms</li>
+                      <li>System architecture diagrams with security controls</li>
+                      <li>Data flow diagrams showing encryption and access controls</li>
+                      <li>Sub-processor list (cloud providers, analytics services)</li>
+                      <li>Incident response procedures and breach notification protocols</li>
+                    </ul>
+                    <p style="margin-top: var(--space-3);">Our security team is available for technical Q&A sessions during your evaluation. We also support client-initiated penetration testing for enterprise deployments.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Still Have Questions? Talk to a Scientist
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Our team is available to answer questions about your specific regulatory challenges, therapeutic areas, and implementation requirements.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Talk to a Scientist
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/faq" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">FAQ</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/evidence/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

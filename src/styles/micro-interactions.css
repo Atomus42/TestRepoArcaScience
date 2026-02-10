@@ -1,0 +1,782 @@
+/**
+ * ArcaScience Micro-Interactions Stylesheet
+ * ==========================================
+ * Implements all micro-interaction specifications from the Motion Architecture.
+ *
+ * Dependencies: motion-tokens.css must be loaded first.
+ *
+ * Sections:
+ *   1. Button States
+ *   2. Navigation
+ *   3. Cards
+ *   4. Data Points & Tooltips
+ *   5. Form Fields
+ *   6. Loading States
+ *   7. Page Transitions
+ *   8. Animation State Classes (scroll-triggered)
+ */
+
+/* ========================================================================
+ * 1. BUTTON STATES
+ * ======================================================================== */
+
+/* --- Primary Button (CTA) --- */
+.as-btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: var(--as-color-primary);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  transition-property: background-color, box-shadow, transform;
+  transition-duration: var(--as-duration-normal);
+  transition-timing-function: var(--as-ease-default);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Light sweep overlay */
+.as-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform var(--as-duration-measured) ease;
+  pointer-events: none;
+}
+
+.as-btn-primary:hover {
+  background: var(--as-color-primary-dark);
+  box-shadow: var(--as-shadow-button-hover);
+  transform: translateY(var(--as-offset-button-lift));
+}
+
+.as-btn-primary:hover::after {
+  transform: translateX(100%);
+}
+
+.as-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(74, 111, 165, 0.2);
+  transition-duration: var(--as-duration-instant);
+}
+
+.as-btn-primary:focus-visible {
+  outline: 2px solid var(--as-color-primary);
+  outline-offset: 2px;
+}
+
+.as-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.as-btn-primary:disabled::after {
+  display: none;
+}
+
+/* --- Secondary Button (Ghost) --- */
+.as-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--as-color-primary);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  border: 1px solid var(--as-color-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition-property: background-color, border-color, color;
+  transition-duration: var(--as-duration-normal);
+  transition-timing-function: var(--as-ease-default);
+}
+
+.as-btn-secondary:hover {
+  background: var(--as-color-primary-subtle);
+  border-color: var(--as-color-primary-dark);
+  color: var(--as-color-primary-dark);
+}
+
+.as-btn-secondary:active {
+  background: rgba(74, 111, 165, 0.12);
+  transition-duration: var(--as-duration-instant);
+}
+
+.as-btn-secondary:focus-visible {
+  outline: 2px solid var(--as-color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Button Loading State --- */
+.as-btn-primary.is-loading {
+  pointer-events: none;
+}
+
+.as-btn-primary.is-loading .as-btn-text {
+  opacity: 0;
+  transition: opacity var(--as-duration-fast) var(--as-ease-default);
+}
+
+.as-btn-primary.is-loading .as-btn-spinner {
+  display: block;
+}
+
+.as-btn-spinner {
+  display: none;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: as-spin 600ms linear infinite;
+}
+
+@keyframes as-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success checkmark after loading */
+.as-btn-primary.is-success .as-btn-spinner {
+  display: none;
+}
+
+.as-btn-primary.is-success .as-btn-check {
+  display: block;
+}
+
+.as-btn-check {
+  display: none;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.as-btn-check path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: as-check-draw 300ms var(--as-ease-default) forwards;
+}
+
+@keyframes as-check-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+
+/* ========================================================================
+ * 2. NAVIGATION
+ * ======================================================================== */
+
+/* --- Desktop Nav Links --- */
+.as-nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 0 4px;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 450;
+  text-decoration: none;
+  background-image: linear-gradient(var(--as-color-primary), var(--as-color-primary));
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: background-size var(--as-duration-normal) var(--as-ease-default),
+              color var(--as-duration-fast) var(--as-ease-default);
+}
+
+.as-nav-link:hover {
+  color: var(--as-color-primary);
+  background-size: 100% 1px;
+}
+
+.as-nav-link[aria-current="page"] {
+  color: var(--as-color-primary);
+  background-size: 100% 2px;
+  font-weight: 500;
+}
+
+/* --- Dropdown Menu --- */
+.as-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  padding: 8px 0;
+  background: #FFFFFF;
+  border: 1px solid var(--as-color-grid-line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(var(--as-offset-dropdown));
+  pointer-events: none;
+  transition: opacity var(--as-duration-fast) var(--as-ease-default),
+              transform var(--as-duration-fast) var(--as-ease-default);
+}
+
+.as-nav-item:hover .as-nav-dropdown,
+.as-nav-item:focus-within .as-nav-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* --- Mobile Navigation --- */
+.as-mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  background: #FFFFFF;
+  transform: translateX(var(--as-offset-nav-slide));
+  transition: transform 300ms var(--as-ease-default);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.as-mobile-nav.is-open {
+  transform: translateX(0);
+}
+
+.as-mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--as-duration-normal) var(--as-ease-default);
+  z-index: 999;
+}
+
+.as-mobile-nav-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile nav items stagger entrance */
+.as-mobile-nav.is-open .as-mobile-nav-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.as-mobile-nav-item {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity var(--as-duration-normal) var(--as-ease-default),
+              transform var(--as-duration-normal) var(--as-ease-default);
+}
+
+.as-mobile-nav-item:nth-child(1) { transition-delay: 100ms; }
+.as-mobile-nav-item:nth-child(2) { transition-delay: 150ms; }
+.as-mobile-nav-item:nth-child(3) { transition-delay: 200ms; }
+.as-mobile-nav-item:nth-child(4) { transition-delay: 250ms; }
+.as-mobile-nav-item:nth-child(5) { transition-delay: 300ms; }
+.as-mobile-nav-item:nth-child(6) { transition-delay: 350ms; }
+
+/* --- Hamburger to X transform --- */
+.as-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.as-hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #374151;
+  border-radius: 1px;
+  transition: transform var(--as-duration-normal) var(--as-ease-default),
+              opacity var(--as-duration-fast) var(--as-ease-default);
+}
+
+.as-hamburger-bar:nth-child(1) { transform: translateY(-6px); }
+.as-hamburger-bar:nth-child(2) { transform: translateY(0); }
+.as-hamburger-bar:nth-child(3) { transform: translateY(6px); }
+
+.as-hamburger.is-active .as-hamburger-bar:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.as-hamburger.is-active .as-hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.as-hamburger.is-active .as-hamburger-bar:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+
+/* ========================================================================
+ * 3. CARDS
+ * ======================================================================== */
+
+.as-card {
+  border: 1px solid var(--as-color-grid-line);
+  border-radius: 8px;
+  padding: 24px;
+  background: #FFFFFF;
+  box-shadow: var(--as-shadow-card-rest);
+  transition-property: border-color, box-shadow, transform;
+  transition-duration: var(--as-duration-normal);
+  transition-timing-function: var(--as-ease-default);
+}
+
+.as-card:hover {
+  border-color: #D1D5DB;
+  box-shadow: var(--as-shadow-card-hover);
+  transform: translateY(var(--as-offset-hover-lift));
+}
+
+.as-card:focus-within {
+  border-color: var(--as-color-primary);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
+}
+
+/* Card icon saturation on hover */
+.as-card:hover .as-card-icon {
+  filter: saturate(1.1);
+}
+
+.as-card-icon {
+  transition: filter var(--as-duration-normal) var(--as-ease-default);
+}
+
+/* --- Expandable Card --- */
+.as-card-expandable {
+  cursor: pointer;
+}
+
+.as-card-expand-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 350ms var(--as-ease-default),
+              opacity var(--as-duration-normal) var(--as-ease-default);
+}
+
+.as-card-expandable.is-expanded .as-card-expand-content {
+  /* max-height is set via JS to the calculated scrollHeight */
+  opacity: 1;
+  transition-delay: 0ms, 150ms; /* opacity delayed 150ms after height starts */
+}
+
+.as-card-expand-icon {
+  transition: transform var(--as-duration-normal) var(--as-ease-default);
+}
+
+.as-card-expandable.is-expanded .as-card-expand-icon {
+  transform: rotate(180deg);
+}
+
+
+/* ========================================================================
+ * 4. DATA POINTS & TOOLTIPS
+ * ======================================================================== */
+
+.as-data-point {
+  cursor: pointer;
+  transition: transform var(--as-duration-fast) var(--as-ease-default);
+}
+
+.as-data-point:hover {
+  transform: scale(1.3);
+}
+
+.as-data-point:focus-visible {
+  outline: 2px solid var(--as-color-primary);
+  outline-offset: 2px;
+}
+
+/* Discoverability pulse — plays once on entrance to teach interactivity */
+.as-data-point.is-discoverable {
+  animation: as-discover-pulse 400ms var(--as-ease-default) 1;
+}
+
+@keyframes as-discover-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* --- Tooltip --- */
+.as-tooltip {
+  position: absolute;
+  background: var(--as-color-tooltip-bg);
+  color: var(--as-color-tooltip-text);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 280px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 120ms var(--as-ease-default),
+              transform 120ms var(--as-ease-default);
+  z-index: 100;
+  font-variant-numeric: tabular-nums;
+}
+
+.as-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tooltip arrow (pointing down by default — tooltip above target) */
+.as-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--as-color-tooltip-bg);
+}
+
+/* Tooltip positioned below target */
+.as-tooltip.is-below {
+  transform: translateY(-4px);
+}
+
+.as-tooltip.is-below.is-visible {
+  transform: translateY(0);
+}
+
+.as-tooltip.is-below::after {
+  top: -4px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 4px solid var(--as-color-tooltip-bg);
+}
+
+/* Tooltip structured content */
+.as-tooltip-label {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.as-tooltip-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.as-tooltip-meta {
+  font-size: 11px;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+
+/* ========================================================================
+ * 5. FORM FIELDS
+ * ======================================================================== */
+
+.as-input-group {
+  position: relative;
+}
+
+.as-input {
+  width: 100%;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1F2937;
+  background: #FFFFFF;
+  transition: border-color var(--as-duration-fast) ease,
+              box-shadow var(--as-duration-fast) ease;
+}
+
+.as-input:focus {
+  border-color: var(--as-color-primary);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
+  outline: none;
+}
+
+.as-input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.as-input.is-valid {
+  border-color: var(--as-color-confidence-high);
+}
+
+/* Floating label */
+.as-input-label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #9CA3AF;
+  pointer-events: none;
+  transition: transform var(--as-duration-normal) var(--as-ease-default),
+              font-size var(--as-duration-normal) var(--as-ease-default),
+              color var(--as-duration-normal) var(--as-ease-default);
+  transform-origin: left center;
+}
+
+.as-input:focus + .as-input-label,
+.as-input:not(:placeholder-shown) + .as-input-label {
+  transform: translateY(-34px) scale(0.85);
+  color: var(--as-color-primary);
+}
+
+/* Error message */
+.as-input-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #EF4444;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity var(--as-duration-normal) var(--as-ease-default),
+              transform var(--as-duration-normal) var(--as-ease-default);
+}
+
+.as-input-error.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========================================================================
+ * 6. LOADING STATES
+ * ======================================================================== */
+
+/* --- Skeleton Screen --- */
+.as-skeleton {
+  background: linear-gradient(
+    90deg,
+    #F3F4F6 0%,
+    #E5E7EB 40%,
+    #F3F4F6 80%
+  );
+  background-size: 200% 100%;
+  animation: as-skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes as-skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Skeleton shape presets */
+.as-skeleton-text {
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.as-skeleton-text.is-short { width: 60%; }
+.as-skeleton-text.is-medium { width: 80%; }
+.as-skeleton-text.is-full { width: 100%; }
+
+.as-skeleton-heading {
+  height: 24px;
+  width: 40%;
+  margin-bottom: 16px;
+}
+
+.as-skeleton-block {
+  height: 120px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Skeleton to content transition */
+.as-skeleton-container {
+  transition: opacity var(--as-duration-normal) var(--as-ease-default);
+}
+
+.as-skeleton-container.is-loaded {
+  animation: none;
+}
+
+/* --- Page-level progress bar --- */
+.as-page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 9999;
+  background: transparent;
+  overflow: hidden;
+}
+
+.as-page-loader-bar {
+  height: 100%;
+  background: var(--as-color-primary);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 300ms var(--as-ease-default);
+}
+
+.as-page-loader.is-loading .as-page-loader-bar {
+  transform: scaleX(0.85);
+  transition-duration: 8000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.as-page-loader.is-complete .as-page-loader-bar {
+  transform: scaleX(1);
+  transition-duration: 200ms;
+}
+
+.as-page-loader.is-hiding {
+  opacity: 0;
+  transition: opacity 300ms var(--as-ease-default);
+}
+
+
+/* ========================================================================
+ * 7. PAGE TRANSITIONS (View Transitions API)
+ * ======================================================================== */
+
+@supports (view-transition-name: root) {
+  ::view-transition-old(root) {
+    animation: as-page-fade-out 150ms var(--as-ease-exit) forwards;
+  }
+
+  ::view-transition-new(root) {
+    animation: as-page-fade-in 200ms var(--as-ease-default) forwards;
+  }
+
+  @keyframes as-page-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes as-page-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Navigation bar does not participate in page transition */
+  .as-site-header {
+    view-transition-name: site-header;
+  }
+
+  ::view-transition-old(site-header),
+  ::view-transition-new(site-header) {
+    animation: none;
+  }
+}
+
+/* Fallback: fade-in on DOMContentLoaded */
+@supports not (view-transition-name: root) {
+  .as-page-content {
+    animation: as-page-fade-in 200ms var(--as-ease-default) forwards;
+  }
+}
+
+
+/* ========================================================================
+ * 8. ANIMATION STATE CLASSES (Scroll-triggered)
+ * Applied and managed by scroll-animation-controller.js
+ * ======================================================================== */
+
+/* --- Hidden state (before scroll trigger) --- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(var(--as-offset-entrance));
+}
+
+/* --- Visible state (after scroll trigger) --- */
+[data-animate].as-animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--as-duration-measured) var(--as-ease-default),
+              transform var(--as-duration-measured) var(--as-ease-default);
+}
+
+/* --- Stagger children --- */
+[data-animate-stagger] > [data-animate] {
+  transition-delay: calc(var(--as-stagger-index, 0) * var(--as-stagger-normal));
+}
+
+/* --- Specific entrance variants --- */
+[data-animate="fade"] {
+  transform: none; /* fade only, no translate */
+}
+
+[data-animate="slide-up"] {
+  /* Default behavior — translateY */
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(-20px);
+}
+
+[data-animate="slide-right"].as-animated {
+  transform: translateX(0);
+}
+
+[data-animate="scale"] {
+  transform: scale(0.95);
+}
+
+[data-animate="scale"].as-animated {
+  transform: scale(1);
+}
+
+
+/* ========================================================================
+ * REDUCED MOTION: Global override for all micro-interactions
+ * ======================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .as-btn-primary::after {
+    display: none; /* No light sweep */
+  }
+
+  .as-skeleton {
+    animation: none;
+    background: #F3F4F6;
+  }
+
+  .as-btn-spinner {
+    /* Keep spinner for functional feedback even in reduced motion */
+    animation-duration: 1200ms; /* Slower rotation */
+  }
+
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .as-data-point.is-discoverable {
+    animation: none;
+  }
+}

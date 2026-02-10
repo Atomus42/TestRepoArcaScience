@@ -1,0 +1,384 @@
+<!--
+  ArcaScience Scientific Publications — Webflow Structure Reference
+  =================================================================
+  Published research and conference presentations.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Published Research and Conference Presentations — ArcaScience</title>
+  <meta name="description" content="Peer-reviewed publications by ArcaScience's team on benefit-risk methodology, pharmacovigilance AI, and regulatory science.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <a href="/platform" class="arca-nav-link">Platform</a>
+        <a href="/solutions" class="arca-nav-link">Solutions</a>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link is-active">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/evidence" style="color: var(--grey-600); text-decoration: none;">Evidence</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">Publications</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section class="arca-bg-blue-50" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5);">
+            Published Research and Conference Presentations
+          </h1>
+          <p class="arca-body-lg arca-text-grey-700">
+            Peer-reviewed publications by ArcaScience's team on benefit-risk methodology, pharmacovigilance AI, and regulatory science.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section style="background: var(--white); border-bottom: 1px solid var(--grey-200); position: sticky; top: var(--nav-height); z-index: 10; padding: var(--space-5) 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;" data-filter-controls>
+
+          <div style="flex: 1; min-width: 200px;">
+            <label for="filter-topic" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Topic</label>
+            <select id="filter-topic" class="arca-form-field" data-filter="topic" style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem; background: var(--white); cursor: pointer;">
+              <option value="all">All Topics</option>
+              <option value="bra-methodology">BRA Methodology</option>
+              <option value="signal-detection">Signal Detection</option>
+              <option value="ai-in-pharma">AI in Pharma</option>
+              <option value="regulatory-science">Regulatory Science</option>
+            </select>
+          </div>
+
+          <div style="flex: 1; min-width: 200px;">
+            <label for="filter-year" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Year</label>
+            <select id="filter-year" class="arca-form-field" data-filter="year" style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem; background: var(--white); cursor: pointer;">
+              <option value="all">All Years</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications List -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+
+          <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Peer-Reviewed Publications</h2>
+
+          <!-- Publication 1 -->
+          <article class="arca-card" style="margin-bottom: var(--space-5); padding: var(--space-6);" data-animate data-topic="signal-detection" data-year="2025">
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px;">Signal Detection</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">2025</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">
+              Domain-Specific AI Models vs General-Purpose LLMs for Pharmacovigilance Tasks
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;">
+              Comparative analysis demonstrating superior performance of purpose-trained domain models for adverse event extraction, MedDRA auto-coding, and causality assessment. Evaluation across 10,000+ FAERS case narratives shows 92% precision vs 67% for GPT-4.
+            </p>
+            <div style="display: flex; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <span class="arca-caption arca-text-grey-600"><strong>Journal:</strong> Artificial Intelligence in Medicine</span>
+              <span class="arca-caption arca-text-grey-600"><strong>Authors:</strong> Chen S, Torres M, Liu J, Patel P</span>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/" class="arca-btn-tertiary" target="_blank" rel="noopener">
+              View on PubMed <span class="arca-arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Publication 2 -->
+          <article class="arca-card" style="margin-bottom: var(--space-5); padding: var(--space-6);" data-animate data-topic="bra-methodology" data-year="2024">
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px;">BRA Methodology</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">2024</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">
+              Multi-Criteria Decision Analysis in Pharmaceutical Benefit-Risk Assessment
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;">
+              Systematic review and implementation guide for MCDA methods in benefit-risk assessment. Covers swing weighting, SMAA, and stochastic acceptability analysis with regulatory acceptance considerations for FDA and EMA submissions.
+            </p>
+            <div style="display: flex; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <span class="arca-caption arca-text-grey-600"><strong>Journal:</strong> Value in Health</span>
+              <span class="arca-caption arca-text-grey-600"><strong>Authors:</strong> Chen S, Kowalski A, Rodriguez E</span>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/" class="arca-btn-tertiary" target="_blank" rel="noopener">
+              View on PubMed <span class="arca-arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Publication 3 -->
+          <article class="arca-card" style="margin-bottom: var(--space-5); padding: var(--space-6);" data-animate data-topic="signal-detection" data-year="2024">
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px;">Signal Detection</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">2024</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">
+              AI-Driven Disproportionality Analysis for Post-Marketing Signal Detection
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;">
+              Novel methods integrating traditional disproportionality metrics (PRR, ROR, MGPS, BCPNN) with deep learning for enhanced signal detection. Validation on 15 years of FAERS data demonstrates 3x improvement in early signal detection vs standard methods.
+            </p>
+            <div style="display: flex; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <span class="arca-caption arca-text-grey-600"><strong>Journal:</strong> Journal of Pharmacoepidemiology</span>
+              <span class="arca-caption arca-text-grey-600"><strong>Authors:</strong> Torres M, Patel P, Chen S</span>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/" class="arca-btn-tertiary" target="_blank" rel="noopener">
+              View on PubMed <span class="arca-arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Publication 4 -->
+          <article class="arca-card" style="margin-bottom: var(--space-5); padding: var(--space-6);" data-animate data-topic="ai-in-pharma" data-year="2024">
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-output" style="font-size: 0.75rem; padding: 4px 8px;">AI in Pharma</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">2024</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">
+              Natural Language Processing for Adverse Event Extraction from Regulatory Documents
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;">
+              Transformer-based NLP models for automated extraction of adverse event terms from unstructured clinical narratives, literature, and regulatory submissions. Domain-specific pre-training on pharmacovigilance corpora achieves 94% F1 score.
+            </p>
+            <div style="display: flex; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <span class="arca-caption arca-text-grey-600"><strong>Journal:</strong> BMC Medical Informatics and Decision Making</span>
+              <span class="arca-caption arca-text-grey-600"><strong>Authors:</strong> Liu J, Rodriguez E, Torres M</span>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/" class="arca-btn-tertiary" target="_blank" rel="noopener">
+              View on PubMed <span class="arca-arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Publication 5 -->
+          <article class="arca-card" style="margin-bottom: var(--space-5); padding: var(--space-6);" data-animate data-topic="bra-methodology" data-year="2023">
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px;">BRA Methodology</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">2023</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">
+              Quantitative Benefit-Risk Assessment Using BRAT Framework: A Platform Approach
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;">
+              Practical implementation of the Benefit-Risk Action Team (BRAT) framework within a software platform. Demonstrates automated value tree construction, effects table generation, and scenario modeling aligned with FDA and EMA guidance.
+            </p>
+            <div style="display: flex; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <span class="arca-caption arca-text-grey-600"><strong>Journal:</strong> Drug Safety</span>
+              <span class="arca-caption arca-text-grey-600"><strong>Authors:</strong> Chen S, Patel P, Kowalski A, Torres M</span>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/" class="arca-btn-tertiary" target="_blank" rel="noopener">
+              View on PubMed <span class="arca-arrow">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Publication 6 -->
+          <article class="arca-card" style="margin-bottom: var(--space-5); padding: var(--space-6);" data-animate data-topic="regulatory-science" data-year="2023">
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-output" style="font-size: 0.75rem; padding: 4px 8px;">Regulatory Science</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">2023</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">
+              Automating PSUR/PBRER Generation: A Regulatory Science Perspective
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;">
+              Framework for automated generation of Periodic Safety Update Reports (PSUR) and Periodic Benefit-Risk Evaluation Reports (PBRER) compliant with ICH E2C(R2). Validation study across 20 submissions demonstrates regulatory acceptance with 60% time reduction.
+            </p>
+            <div style="display: flex; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <span class="arca-caption arca-text-grey-600"><strong>Journal:</strong> Therapeutic Innovation & Regulatory Science</span>
+              <span class="arca-caption arca-text-grey-600"><strong>Authors:</strong> Rodriguez E, Chen S, Liu J</span>
+            </div>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/" class="arca-btn-tertiary" target="_blank" rel="noopener">
+              View on PubMed <span class="arca-arrow">&rarr;</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Presentations -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+
+          <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Conference Presentations</h2>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">DIA Annual Meeting</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                "AI-Powered Benefit-Risk Assessment: From Research to Regulatory Practice"
+              </p>
+              <p class="arca-caption arca-text-grey-600">San Diego, CA — June 2025</p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">ICPE (Pharmacoepidemiology)</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                "Real-World Evidence Integration in Automated Signal Detection Systems"
+              </p>
+              <p class="arca-caption arca-text-grey-600">Atlanta, GA — August 2025</p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">ISoP Annual Meeting</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                "Quantitative Frameworks for Benefit-Risk Assessment in Pharmacovigilance"
+              </p>
+              <p class="arca-caption arca-text-grey-600">Barcelona — October 2025</p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">ISPOR Europe</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                "From Regulatory BRA to HTA Value Dossiers: Automated Evidence Synthesis"
+              </p>
+              <p class="arca-caption arca-text-grey-600">Barcelona — November 2025</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Our Methodology With Our Science Team
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Talk to the scientists behind these publications about how ArcaScience's methodology can be applied to your regulatory challenges.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Talk to a Scientist
+          </a>
+          <a href="/science" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Our Methodology <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/evidence/publications" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Publications</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

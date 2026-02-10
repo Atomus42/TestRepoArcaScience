@@ -1,0 +1,581 @@
+<!--
+  ArcaScience Contact / Demo Request Page — Webflow Structure Reference
+  =====================================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Demonstration — ArcaScience</title>
+  <meta name="description" content="Request a customized ArcaScience demonstration tailored to your therapeutic area, development phase, and regulatory challenge. Talk to our scientists.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Same nav as homepage; Contact link is active.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+          <!-- Webflow: Use Dropdown component. Items below. -->
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary is-active" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <nav aria-label="Breadcrumb">
+        <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0;">
+          <li>
+            <a href="/" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Home</a>
+          </li>
+          <li>
+            <span class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</span>
+          </li>
+          <li aria-current="page">
+            <span class="arca-body-sm arca-text-grey-900" style="font-weight: 600;">Contact</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         White background. H1 + subtitle.
+         ================================================================ -->
+    <section style="padding: var(--space-7) 0 var(--space-5);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 780px;">
+          <p class="arca-section-label" style="margin-bottom: var(--space-3);">Request a Demonstration</p>
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            See ArcaScience Applied to Your Therapeutic Area and Regulatory Challenge
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600">
+            Every demonstration is customized. Tell us about your development program and regulatory needs, and our scientists will prepare a walkthrough using data and outputs relevant to your therapeutic area.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: FORM + SIDEBAR (7/5 split)
+         Two-column layout. Left: demo request form. Right: what to expect.
+         ================================================================ -->
+    <section style="padding: var(--space-5) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
+
+          <!-- ============================================================
+               LEFT COLUMN: Demo Request Form
+               ============================================================ -->
+          <div>
+            <form data-form="demo-request" method="POST" novalidate>
+
+              <!-- Step 1: Your Information -->
+              <fieldset style="border: none; margin: 0; padding: 0;">
+                <legend class="arca-heading-3" style="margin-bottom: var(--space-5);">Your Information</legend>
+
+                <!-- Name -->
+                <div style="margin-bottom: var(--space-4);">
+                  <label for="contact-name" class="arca-form-label">Full Name <span aria-hidden="true" style="color: var(--red-600);">*</span></label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="arca-form-field"
+                    placeholder="Dr. Jane Smith"
+                    required
+                    autocomplete="name"
+                  >
+                </div>
+
+                <!-- Work Email -->
+                <div style="margin-bottom: var(--space-4);">
+                  <label for="contact-email" class="arca-form-label">Work Email <span aria-hidden="true" style="color: var(--red-600);">*</span></label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="arca-form-field"
+                    placeholder="jane.smith@pharma.com"
+                    required
+                    autocomplete="email"
+                    data-form-email
+                  >
+                  <p class="arca-form-error" data-form-error="email">Please enter a valid work email address. Free email providers (Gmail, Yahoo, etc.) are not accepted.</p>
+                </div>
+
+                <!-- Role / Title -->
+                <div style="margin-bottom: var(--space-4);">
+                  <label for="contact-role" class="arca-form-label">Role / Title <span aria-hidden="true" style="color: var(--red-600);">*</span></label>
+                  <input
+                    type="text"
+                    id="contact-role"
+                    name="role"
+                    class="arca-form-field"
+                    placeholder="VP Drug Safety, Head of Pharmacovigilance, etc."
+                    required
+                    autocomplete="organization-title"
+                  >
+                </div>
+
+                <!-- Intent Dropdown -->
+                <div style="margin-bottom: var(--space-5);">
+                  <label for="contact-intent" class="arca-form-label">What brings you to ArcaScience? <span aria-hidden="true" style="color: var(--red-600);">*</span></label>
+                  <select
+                    id="contact-intent"
+                    name="intent"
+                    class="arca-form-field"
+                    required
+                    style="appearance: auto;"
+                  >
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="platform-demo">I want a platform demonstration</option>
+                    <option value="specific-project">I have a specific project or submission</option>
+                    <option value="evaluation">I am evaluating BRA tools for my organization</option>
+                    <option value="partnership">I am interested in a partnership or integration</option>
+                    <option value="academic">Academic or research collaboration</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </fieldset>
+
+              <!-- Step 2: Optional Context -->
+              <fieldset style="border: none; margin: 0; padding: 0; padding-top: var(--space-5); border-top: 1px solid var(--grey-200);">
+                <legend class="arca-heading-3" style="margin-bottom: var(--space-2);">Optional Context</legend>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                  The more context you provide, the more relevant your customized demonstration will be.
+                </p>
+
+                <!-- Therapeutic Area -->
+                <div style="margin-bottom: var(--space-4);">
+                  <label for="contact-therapeutic-area" class="arca-form-label">Therapeutic Area</label>
+                  <select
+                    id="contact-therapeutic-area"
+                    name="therapeutic_area"
+                    class="arca-form-field"
+                    style="appearance: auto;"
+                  >
+                    <option value="" disabled selected>Select a therapeutic area</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="immunology">Immunology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="cardiovascular">Cardiovascular</option>
+                    <option value="rare-disease">Rare Disease</option>
+                    <option value="infectious-disease">Infectious Disease</option>
+                    <option value="metabolic">Metabolic / Endocrinology</option>
+                    <option value="respiratory">Respiratory</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="ophthalmology">Ophthalmology</option>
+                    <option value="gene-cell-therapy">Gene &amp; Cell Therapy</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Development Phase -->
+                <div style="margin-bottom: var(--space-4);">
+                  <label for="contact-phase" class="arca-form-label">Development Phase</label>
+                  <select
+                    id="contact-phase"
+                    name="development_phase"
+                    class="arca-form-field"
+                    style="appearance: auto;"
+                  >
+                    <option value="" disabled selected>Select development phase</option>
+                    <option value="preclinical">Preclinical</option>
+                    <option value="phase-1">Phase I</option>
+                    <option value="phase-2">Phase II</option>
+                    <option value="phase-3">Phase III</option>
+                    <option value="submission">Regulatory Submission</option>
+                    <option value="post-marketing">Post-Marketing</option>
+                    <option value="lifecycle-management">Lifecycle Management</option>
+                    <option value="multiple">Multiple Phases</option>
+                  </select>
+                </div>
+
+                <!-- Specific Challenge (Textarea) -->
+                <div style="margin-bottom: var(--space-5);">
+                  <label for="contact-challenge" class="arca-form-label">Specific Challenge or Question</label>
+                  <textarea
+                    id="contact-challenge"
+                    name="challenge"
+                    class="arca-form-field"
+                    placeholder="Describe your current benefit-risk analysis challenge, upcoming regulatory submission, or specific question about the platform..."
+                    rows="4"
+                    style="height: auto; padding: var(--space-3) var(--space-4); resize: vertical;"
+                  ></textarea>
+                </div>
+              </fieldset>
+
+              <!-- Privacy Consent -->
+              <div style="margin-bottom: var(--space-5); display: flex; align-items: flex-start; gap: var(--space-3);">
+                <input
+                  type="checkbox"
+                  id="contact-consent"
+                  name="consent"
+                  required
+                  style="margin-top: 4px; flex-shrink: 0;"
+                >
+                <label for="contact-consent" class="arca-body-sm arca-text-grey-600" style="cursor: pointer;">
+                  I agree to ArcaScience's <a href="/legal/privacy" style="color: var(--blue-600);">Privacy Policy</a>. ArcaScience will use the information provided to contact me about relevant products and services. I can unsubscribe at any time.
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="arca-btn-primary"
+                style="width: 100%;"
+              >
+                Request a Demonstration
+              </button>
+
+              <!-- Form status messages -->
+              <div data-form-success style="display: none; margin-top: var(--space-5); padding: var(--space-4); background: var(--green-100); border-radius: var(--radius-sm);">
+                <p class="arca-body-md" style="font-weight: 600; color: var(--green-600);">Thank you. Your request has been received.</p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-2);">A member of our scientific team will contact you within one business day to schedule your customized demonstration.</p>
+              </div>
+
+              <div data-form-error-global style="display: none; margin-top: var(--space-5); padding: var(--space-4); background: var(--red-100); border-radius: var(--radius-sm);">
+                <p class="arca-body-md" style="font-weight: 600; color: var(--red-600);">Something went wrong. Please try again or email us directly at contact@arcascience.ai.</p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- ============================================================
+               RIGHT COLUMN: What to Expect + Trust Signals
+               ============================================================ -->
+          <div>
+
+            <!-- What to Expect -->
+            <div class="arca-card" style="margin-bottom: var(--space-5); border-color: var(--blue-100); background: var(--blue-50);" data-animate>
+              <h2 class="arca-heading-3" style="margin-bottom: var(--space-4);">What to Expect</h2>
+
+              <div style="margin-bottom: var(--space-4);">
+                <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">A customized demonstration</p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Every demo is prepared by our scientific team using data and regulatory outputs relevant to your therapeutic area and development phase. No generic slide decks.
+                </p>
+              </div>
+
+              <div style="margin-bottom: var(--space-4);">
+                <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Duration: 45 minutes</p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  30 minutes of platform walkthrough tailored to your use case, followed by 15 minutes of Q&amp;A with our pharmacoepidemiology team.
+                </p>
+              </div>
+
+              <div style="margin-bottom: var(--space-4);">
+                <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Who to bring</p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  We recommend including your drug safety lead, a regulatory affairs representative, and any data science or biostatistics colleagues who would evaluate or use the platform.
+                </p>
+              </div>
+
+              <div>
+                <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Response time</p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  A member of our team will reply within one business day to schedule at your convenience.
+                </p>
+              </div>
+            </div>
+
+            <!-- Upcoming Conferences -->
+            <div class="arca-card" style="margin-bottom: var(--space-5);" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-4);">Meet Us at Upcoming Conferences</h3>
+
+              <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                <div style="padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                  <p class="arca-body-sm" style="font-weight: 600;">DIA Annual Meeting 2026</p>
+                  <p class="arca-caption arca-text-grey-600">June 2026 &mdash; Washington, DC</p>
+                </div>
+                <div style="padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                  <p class="arca-body-sm" style="font-weight: 600;">ICPE Annual Conference</p>
+                  <p class="arca-caption arca-text-grey-600">August 2026 &mdash; Barcelona, Spain</p>
+                </div>
+                <div style="padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                  <p class="arca-body-sm" style="font-weight: 600;">ISoP Annual Meeting</p>
+                  <p class="arca-caption arca-text-grey-600">October 2026 &mdash; Cancun, Mexico</p>
+                </div>
+                <div>
+                  <p class="arca-body-sm" style="font-weight: 600;">ISPOR Europe</p>
+                  <p class="arca-caption arca-text-grey-600">November 2026 &mdash; Vienna, Austria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="arca-card" style="background: var(--grey-50); border-color: var(--grey-100);" data-animate>
+              <p class="arca-label" style="margin-bottom: var(--space-4); color: var(--grey-600);">Enterprise Trust</p>
+
+              <!-- Compliance badges -->
+              <div class="arca-compliance-badges" style="margin-bottom: var(--space-4); flex-wrap: wrap;">
+                <img src="/images/badges/iso-27001.svg" alt="ISO 27001 Certified" class="arca-compliance-badge">
+                <img src="/images/badges/fda-21-cfr.svg" alt="FDA 21 CFR Part 11 Compliant" class="arca-compliance-badge">
+                <img src="/images/badges/gdpr.svg" alt="GDPR Compliant" class="arca-compliance-badge">
+                <img src="/images/badges/hds.svg" alt="HDS Certified" class="arca-compliance-badge">
+                <img src="/images/badges/hipaa.svg" alt="HIPAA Compliant" class="arca-compliance-badge">
+              </div>
+
+              <!-- Metric -->
+              <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-3);">
+                50+ regulatory submissions accepted
+              </p>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Used by 20+ pharmaceutical companies across 12 therapeutic areas. 100% competitive win rate in head-to-head evaluations.
+              </p>
+
+              <!-- Testimonial snippet -->
+              <div style="padding-left: var(--space-4); border-left: 3px solid var(--blue-400);">
+                <p class="arca-quote" style="font-size: 0.9375rem; margin-bottom: var(--space-3);">
+                  ArcaScience's analysis changed the trajectory of our development program.
+                </p>
+                <p class="arca-caption arca-text-grey-600">VP Drug Safety &mdash; Sanofi</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: OTHER WAYS TO CONNECT
+         Grey-50 background. Contact alternatives below the form.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-section-label" style="margin-bottom: var(--space-3);">Other Ways to Connect</p>
+          <h2 class="arca-heading-1">Prefer a Different Channel?</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <!-- Email -->
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Email Us Directly</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              For general inquiries, demo requests, or technical questions.
+            </p>
+            <a href="mailto:contact@arcascience.ai" class="arca-btn-tertiary" style="font-size: 0.875rem;">
+              contact@arcascience.ai <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Paris Office -->
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Paris Office</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">
+              ArcaScience SAS
+            </p>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">
+              17 rue de la Baume
+            </p>
+            <p class="arca-body-sm arca-text-grey-600">
+              75008 Paris, France
+            </p>
+          </div>
+
+          <!-- Sunnyvale Office -->
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Sunnyvale Office</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">
+              ArcaScience, Inc.
+            </p>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">
+              440 N Wolfe Rd
+            </p>
+            <p class="arca-body-sm arca-text-grey-600">
+              Sunnyvale, CA 94085, USA
+            </p>
+          </div>
+
+          <!-- Partnership & Careers -->
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Partnerships &amp; Careers</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Interested in integrating with ArcaScience or joining our team?
+            </p>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+              <a href="mailto:partnerships@arcascience.ai" class="arca-btn-tertiary" style="font-size: 0.875rem;">
+                Partnership Inquiries <span class="arca-arrow">&rarr;</span>
+              </a>
+              <a href="/company/careers" class="arca-btn-tertiary" style="font-size: 0.875rem;">
+                View Open Positions <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Same footer as homepage.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS only (no hero or countup needed on this page) -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

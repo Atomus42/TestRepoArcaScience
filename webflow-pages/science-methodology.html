@@ -1,0 +1,1014 @@
+<!--
+  ArcaScience Science & Methodology Page — Webflow Structure Reference
+  ====================================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science &amp; Methodology — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="Deep dive into ArcaScience's scientific methodology: BRAT, MCDA, PrOACT-URL frameworks, 24 proprietary AI models, 100B+ data points, and regulatory-grade validation for benefit-risk analysis.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Science link is-active on this page.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+          <!-- Webflow: Use Dropdown component. Items below. -->
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link is-active">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: HERO — DARK BLUE BACKGROUND
+         Full-width dark background (blue-900).
+         Contains: breadcrumb, H1, subtitle, key stats.
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/science" style="color: rgba(255,255,255,0.65); text-decoration: none;">Science</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Science &amp; Methodology</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+          <p class="arca-section-label" style="color: rgba(255,255,255,0.55); margin-bottom: var(--space-3);">Science &amp; Methodology</p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Science-First Approach to Benefit-Risk Analysis
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 720px; margin: 0 auto var(--space-8);">
+            ArcaScience combines established pharmacoepidemiology with cutting-edge AI to deliver structured, reproducible, and regulatory-aligned benefit-risk assessments. We start with regulatory science and build technology around it &mdash; not the other way around.
+          </p>
+        </div>
+
+        <!-- Hero Stats Bar -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 780px; margin: 0 auto; text-align: center; padding-top: var(--space-6); border-top: 1px solid rgba(255,255,255,0.15);">
+          <div data-animate>
+            <span class="arca-stat-lg" style="color: var(--white);" data-countup="24">0</span>
+            <p class="arca-caption" style="color: rgba(255,255,255,0.65);">Proprietary AI Models</p>
+          </div>
+          <div data-animate>
+            <span class="arca-stat-lg" style="color: var(--white);" data-countup="100" data-countup-suffix="B+">0</span>
+            <p class="arca-caption" style="color: rgba(255,255,255,0.65);">Data Points Harmonized</p>
+          </div>
+          <div data-animate>
+            <span class="arca-stat-lg" style="color: var(--white);" data-countup="200" data-countup-suffix="+">0</span>
+            <p class="arca-caption" style="color: rgba(255,255,255,0.65);">Regulatory-Grade Outputs Generated</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         TWO-COLUMN LAYOUT: TOC (sticky) + MAIN CONTENT
+         3/9 grid split
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 3fr 9fr; gap: 48px; align-items: start;">
+
+          <!-- ============================================================
+               LEFT COLUMN: STICKY TABLE OF CONTENTS
+               ============================================================ -->
+          <aside data-toc="wrapper" style="position: sticky; top: calc(var(--nav-height) + 24px); padding: var(--space-5) 0;">
+            <p class="arca-label" style="margin-bottom: var(--space-4); color: var(--grey-400);">On This Page</p>
+            <nav aria-label="Table of contents" style="display: flex; flex-direction: column; gap: 0;">
+              <a href="#philosophy" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                Our Scientific Philosophy
+              </a>
+              <a href="#frameworks" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                BRA Frameworks We Implement
+              </a>
+              <a href="#ai-architecture" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                AI Model Architecture
+              </a>
+              <a href="#data-pipeline" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                Data Science Pipeline
+              </a>
+              <a href="#regulatory-validation" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                Regulatory-Grade Validation
+              </a>
+              <a href="#publications" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                Publications &amp; Research
+              </a>
+              <a href="#sab" data-toc-link class="arca-body-sm" style="text-decoration: none; color: var(--grey-600); padding: var(--space-2) 0; border-left: 2px solid transparent; padding-left: var(--space-4); transition: color 150ms ease, border-color 150ms ease;">
+                Scientific Advisory Board
+              </a>
+            </nav>
+          </aside>
+
+          <!-- ============================================================
+               RIGHT COLUMN: MAIN CONTENT SECTIONS
+               ============================================================ -->
+          <div>
+
+            <!-- ===========================================================
+                 SECTION 2: OUR SCIENTIFIC PHILOSOPHY
+                 =========================================================== -->
+            <article id="philosophy" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Our Scientific Philosophy</h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                ArcaScience was founded on a simple but uncommon principle in health technology: <strong>science must come before software</strong>. Our founders spent years conducting benefit-risk assessments manually &mdash; building BRAT value trees by hand, reconciling disproportionality analyses across fragmented spreadsheets, and assembling PSURs from dozens of disconnected data sources. They understood firsthand which parts of the process needed automation and, critically, which parts required human scientific judgment that technology should support rather than replace.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                This experience shaped a founding conviction: the right way to build an AI platform for regulatory science is to start with the science, not with the AI. Too many health-tech companies begin with a machine learning capability and search for a regulatory application. ArcaScience began with a deep understanding of what regulators need, what pharmacovigilance teams struggle with, and what benefit-risk decisions actually require &mdash; and then built AI models purpose-designed to serve those needs.
+              </p>
+
+              <!-- Science → Technology → Regulation Framework -->
+              <div class="arca-card" style="padding: var(--space-6); margin-bottom: var(--space-6); border-left: 4px solid var(--blue-600);">
+                <h3 class="arca-heading-2" style="margin-bottom: var(--space-4);">The Science &rarr; Technology &rarr; Regulation Framework</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: var(--space-5);">
+                  <div style="text-align: center; padding: var(--space-4);">
+                    <div style="width: 48px; height: 48px; background: var(--teal-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                      <span style="font-size: 1.25rem; font-weight: 700; color: var(--teal-700);">1</span>
+                    </div>
+                    <p class="arca-heading-3" style="margin-bottom: var(--space-2);">Science</p>
+                    <p class="arca-body-sm arca-text-grey-600">Start with regulatory science: pharmacoepidemiology, quantitative BRA frameworks, signal detection methodology. Understand what the science requires before writing a line of code.</p>
+                  </div>
+                  <div style="text-align: center; padding: var(--space-4);">
+                    <div style="width: 48px; height: 48px; background: var(--indigo-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                      <span style="font-size: 1.25rem; font-weight: 700; color: var(--indigo-700);">2</span>
+                    </div>
+                    <p class="arca-heading-3" style="margin-bottom: var(--space-2);">Technology</p>
+                    <p class="arca-body-sm arca-text-grey-600">Build AI models and data infrastructure purpose-designed for pharmacovigilance. Domain-specific NLP, validated statistical methods, deterministic and reproducible outputs.</p>
+                  </div>
+                  <div style="text-align: center; padding: var(--space-4);">
+                    <div style="width: 48px; height: 48px; background: var(--green-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                      <span style="font-size: 1.25rem; font-weight: 700; color: var(--green-700);">3</span>
+                    </div>
+                    <p class="arca-heading-3" style="margin-bottom: var(--space-2);">Regulation</p>
+                    <p class="arca-body-sm arca-text-grey-600">Validate every output against regulatory expectations. FDA, EMA, PMDA, Health Canada &mdash; outputs are structured, auditable, and submission-ready from the moment they are generated.</p>
+                  </div>
+                </div>
+                <p class="arca-body-sm arca-text-grey-600">
+                  This framework governs every product decision at ArcaScience. Every new model, feature, and integration is evaluated first on its scientific validity, then on its technical feasibility, and finally on its regulatory alignment. The result is a platform where AI serves science, and science serves regulators and patients.
+                </p>
+              </div>
+
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Our founding team includes pharmacoepidemiologists, biostatisticians, and regulatory scientists who have collectively contributed to over 100 regulatory submissions across the FDA, EMA, and PMDA. This direct experience with the regulatory process is encoded into every workflow, template, and validation check in the platform.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                Our <a href="/company/leadership#sab" style="color: var(--blue-600); text-decoration: underline;">Scientific Advisory Board</a> brings together world-class expertise from academia, regulatory agencies, and pharmaceutical R&amp;D to ensure that every model, framework, and output meets the highest standards of regulatory science. The SAB reviews all major methodological decisions and provides ongoing guidance on emerging regulatory expectations.
+              </p>
+            </article>
+
+            <!-- ===========================================================
+                 SECTION 3: BRA FRAMEWORKS WE IMPLEMENT
+                 =========================================================== -->
+            <article id="frameworks" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">BRA Frameworks We Implement</h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                ArcaScience's analytical core is built on established, peer-reviewed quantitative frameworks for structured benefit-risk assessment. These are not theoretical implementations &mdash; they are operationalized, AI-assisted workflows that produce regulatory-grade outputs. Every assessment produced by the platform is grounded in one or more of these frameworks, selected based on the product's lifecycle stage, therapeutic area, and regulatory jurisdiction.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+                The platform automates the labor-intensive portions of each framework &mdash; data gathering, evidence synthesis, quantitative scoring, and structured output generation &mdash; while preserving the scientific judgment points where human expertise is essential.
+              </p>
+
+              <!-- Accordion: BRAT Framework -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-brat">
+                  <span class="arca-heading-3">BRAT Framework (Benefit-Risk Action Team)</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-brat">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      The BRAT framework was originally developed by the Pharmaceutical Research and Manufacturers of America (PhRMA) and adopted by FDA's Center for Drug Evaluation and Research (CDER) as a structured approach to qualitative-to-quantitative benefit-risk assessment. It provides a systematic process for defining, identifying, sourcing, and evaluating the benefits and risks of medical products within a transparent decision-making framework.
+                    </p>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-3);">How ArcaScience operationalizes BRAT:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Define the decision context:</strong> AI-assisted stakeholder identification and decision-framing templates pre-populated from the product's regulatory history and therapeutic area context</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Identify outcomes:</strong> Automated systematic evidence review using NLP models to extract benefit and risk endpoints from clinical trial publications, CSRs, and regulatory documents</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Source data:</strong> Automated population of BRAT value trees and effects tables from the AS Profiling Base 100B&reg; integrated evidence dataset, spanning FAERS, EudraVigilance, clinical trials, and published literature</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Customize the framework:</strong> Interactive weighting and visualization tools that allow teams to explore how different stakeholder perspectives affect the benefit-risk balance</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Assess and communicate:</strong> Automated generation of effects tables, forest plots, and structured narratives in FDA-compatible and EMA-compatible formats</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-600">
+                      The platform reduces the manual effort of a complete BRAT assessment from 8&ndash;12 weeks to under 2 weeks, while maintaining full traceability from every data point to its source document.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: MCDA -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-mcda">
+                  <span class="arca-heading-3">MCDA (Multi-Criteria Decision Analysis)</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-mcda">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      Multi-Criteria Decision Analysis provides a rigorous quantitative method for evaluating trade-offs between multiple benefit and risk criteria. Endorsed by the EMA's PROTECT initiative and increasingly adopted by FDA reviewers, MCDA translates complex multi-dimensional benefit-risk profiles into transparent, weighted scoring models that expose the assumptions underlying every regulatory decision.
+                    </p>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-3);">ArcaScience MCDA capabilities:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Weighted scoring models:</strong> Configurable criteria weighting with swing weighting, direct rating, and discrete choice methods for eliciting stakeholder preferences from clinicians, regulators, patients, and payers</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Sensitivity analysis:</strong> One-way, two-way, and probabilistic sensitivity analyses that show how the benefit-risk conclusion changes under different weighting assumptions &mdash; essential for demonstrating robustness to regulators</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Stochastic MCDA:</strong> Monte Carlo simulation incorporating uncertainty from data heterogeneity, sample size limitations, and between-study variability to produce probabilistic benefit-risk characterizations</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Scenario modeling:</strong> Side-by-side comparison of benefit-risk profiles across subpopulations, dosing regimens, and comparator therapies with interactive visualization</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-600">
+                      The platform generates interactive visualizations that allow decision-makers to explore how different weighting assumptions affect the overall benefit-risk balance, with full export to regulatory-ready formats.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: PrOACT-URL -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-proact">
+                  <span class="arca-heading-3">PrOACT-URL (Structured Decision Framework)</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-proact">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      PrOACT-URL is a structured decision framework developed for complex benefit-risk problems where multiple stakeholders, competing objectives, and deep uncertainty make traditional analytical approaches insufficient. The framework decomposes benefit-risk decisions into eight manageable elements, each addressed systematically:
+                    </p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Pr</strong>oblem &mdash; Define the decision context: what product, what indication, what lifecycle stage, what regulatory jurisdiction</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>O</strong>bjectives &mdash; Identify what matters: efficacy endpoints, safety concerns, patient-reported outcomes, quality of life measures</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>A</strong>lternatives &mdash; Define the comparators: placebo, active comparator, standard of care, no treatment</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>C</strong>onsequences &mdash; Quantify the effects: treatment effects, adverse event rates, time-to-event data</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>T</strong>rade-offs &mdash; Evaluate the balance: how do benefits weigh against risks for different patient populations</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>U</strong>ncertainty &mdash; Characterize what we do not know: confidence intervals, data gaps, model uncertainty</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>R</strong>isk tolerance &mdash; Incorporate stakeholder risk attitudes: regulator, prescriber, and patient risk preferences</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>L</strong>inked decisions &mdash; Consider downstream consequences: label restrictions, REMS requirements, post-marketing commitments</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-600">
+                      ArcaScience implements PrOACT-URL as a guided workflow within the platform, with each step supported by AI-assisted data retrieval, quantitative analysis, and structured documentation. This framework is particularly valuable for advisory committee preparation and PRAC referral responses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: NNT/NNH Analysis -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-nnt-nnh">
+                  <span class="arca-heading-3">NNT/NNH Analysis (Number Needed to Treat/Harm)</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-nnt-nnh">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      NNT (Number Needed to Treat) and NNH (Number Needed to Harm) provide intuitive, clinically meaningful metrics for quantifying treatment effects. These measures translate relative risk reductions and increases into absolute patient-level impact, making benefit-risk communication accessible to clinicians, regulators, and patients alike.
+                    </p>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-3);">Platform implementation:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Automated NNT/NNH computation:</strong> Calculated from clinical trial data, meta-analyses, and real-world evidence with confidence intervals and subgroup stratification</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Likelihood of Being Helped or Harmed (LHH):</strong> NNT/NNH ratios computed across all major benefit-risk endpoint pairs to provide a single summary metric of the benefit-risk balance</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Population-adjusted estimates:</strong> NNT and NNH values adjusted for baseline risk in specific patient populations using real-world prevalence and incidence data from the AS Profiling Base</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Time-horizon modeling:</strong> Duration-specific NNT/NNH calculations that show how the benefit-risk balance evolves over treatment duration &mdash; critical for chronic therapies</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-600">
+                      NNT/NNH analyses are automatically integrated into effects tables and benefit-risk summaries, providing the quantitative backbone for structured regulatory communication in CTD Module 2.5 and PBRER documents.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: Effects Tables & Value Trees -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-effects">
+                  <span class="arca-heading-3">Effects Tables and Value Trees</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-effects">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      Effects tables and value trees are the primary visual outputs recommended by both the FDA and EMA for structured benefit-risk communication. ArcaScience auto-generates both formats from the integrated evidence base:
+                    </p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Effects tables:</strong> Summarize key outcomes with effect sizes, confidence intervals, NNT/NNH values, strength of evidence grading, and data source provenance for each endpoint</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Value trees:</strong> Hierarchical decomposition of the benefit-risk balance into constituent criteria, with quantitative weights and scores at each node</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Multi-format output:</strong> Generated simultaneously in FDA-compatible (Structured Benefit-Risk Framework) and EMA-compatible (PROTECT) layouts from a single evidence base</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-600">
+                      These structured outputs are directly aligned with the FDA's Structured Benefit-Risk Assessment Framework (PDUFA V commitment), EMA's Benefit-Risk Methodology Project (PROTECT) recommendations, and ICH M4E(R2) guidance on CTD structure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: FDA/EMA Alignment -->
+              <div>
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-agency-alignment">
+                  <span class="arca-heading-3">FDA and EMA Methodological Alignment</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-agency-alignment">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      ArcaScience's frameworks are specifically designed to meet the methodological expectations articulated in current regulatory guidance. Every framework implementation in the platform maps directly to regulatory requirements:
+                    </p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>FDA:</strong> Structured Benefit-Risk Assessment Framework (PDUFA V/VI commitment), incorporating the dimensions of Analysis of Condition, Current Treatment Options, Benefit, Risk, and Risk Management. Platform outputs map directly to the five-dimension framework used by FDA review divisions.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>EMA:</strong> PROTECT (Pharmacoepidemiological Research on Outcomes of Therapeutics by a European Consortium) recommendations for quantitative benefit-risk methods, including MCDA and structured expert elicitation approaches endorsed by PRAC.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>PMDA:</strong> Japan's Pharmaceuticals and Medical Devices Agency benefit-risk assessment expectations, including J-PSUR and RMP requirements with Japanese-language output support.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Health Canada:</strong> Alignment with Health Canada's benefit-risk framework and Summary Basis of Decision requirements.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>ICH:</strong> M4E(R2) guidance on the Common Technical Document structure for benefit-risk presentation, E2C(R2) for PBRER, and E2E for pharmacovigilance planning.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ===========================================================
+                 SECTION 4: AI MODEL ARCHITECTURE
+                 =========================================================== -->
+            <article id="ai-architecture" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">AI Model Architecture</h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                ArcaScience's 24 proprietary AI/ML models are purpose-built for pharmacovigilance and benefit-risk analysis. Unlike general-purpose large language models applied to healthcare data, these models are trained on domain-specific corpora with pharmacovigilance-specific ontologies, validated against regulatory-grade benchmarks, and designed to produce auditable, traceable, deterministic outputs.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+                Every model in the platform carries a validation dossier documenting training data composition, performance metrics, known limitations, and ongoing monitoring results. Models are organized into four functional categories, each addressing a distinct layer of the benefit-risk analysis workflow.
+              </p>
+
+              <!-- AI Model Category Cards -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-6);">
+
+                <!-- NLP Models Card -->
+                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--teal-500);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-3);">Category 1</p>
+                  <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">NLP Models</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Natural language processing for unstructured biomedical text:</p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Biomedical text mining from 2.4M+ pharmacovigilance documents</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Automated MedDRA coding (96.2% accuracy at PT level)</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Case narrative analysis and adverse event extraction</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Systematic literature screening and data extraction</li>
+                    <li class="arca-body-sm arca-text-grey-600">Multilingual support (EN, FR, DE, JP, ZH)</li>
+                  </ul>
+                </div>
+
+                <!-- Statistical Models Card -->
+                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--indigo-500);" data-animate>
+                  <p class="arca-label" style="color: var(--indigo-600); margin-bottom: var(--space-3);">Category 2</p>
+                  <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Statistical Models</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Disproportionality analysis and Bayesian inference:</p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">PRR, ROR, BCPNN, EBGM signal detection methods</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Bayesian hierarchical models for sparse data scenarios</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Time-to-onset Weibull distribution fitting</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Stratified analysis (age, sex, geography, reporting year)</li>
+                    <li class="arca-body-sm arca-text-grey-600">Multi-drug interaction signal detection</li>
+                  </ul>
+                </div>
+
+                <!-- Predictive Models Card -->
+                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--blue-500);" data-animate>
+                  <p class="arca-label" style="color: var(--blue-600); margin-bottom: var(--space-3);">Category 3</p>
+                  <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Predictive Models</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Forecasting and trajectory modeling for proactive safety:</p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Signal forecasting with 89% precision in triage classification</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Benefit-risk trajectory modeling across treatment duration</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Population-level outcome prediction for subgroups</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Comparative effectiveness forecasting</li>
+                    <li class="arca-body-sm arca-text-grey-600">Regulatory action probability modeling</li>
+                  </ul>
+                </div>
+
+                <!-- Validation Models Card -->
+                <div class="arca-card" style="padding: var(--space-5); border-top: 3px solid var(--green-500);" data-animate>
+                  <p class="arca-label" style="color: var(--green-600); margin-bottom: var(--space-3);">Category 4</p>
+                  <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Validation Models</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">Quality assurance and cross-source reconciliation:</p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Automated data quality scoring per data source</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Cross-source consistency checks and reconciliation</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Deduplication across spontaneous reporting databases</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Missing data pattern detection and imputation</li>
+                    <li class="arca-body-sm arca-text-grey-600">Output audit and internal consistency verification</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- Accordion: Training Data & Governance -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-training">
+                  <span class="arca-heading-3">Training Data and Model Governance</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-training">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      ArcaScience maintains rigorous standards for model training, validation, and ongoing governance:
+                    </p>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Training Data Sources:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Publicly available pharmacovigilance databases (FAERS, EudraVigilance quarterly extracts, VigiBase aggregate data)</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Published biomedical literature (PubMed/MEDLINE corpus, Embase, Cochrane Library systematic reviews)</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Clinical trial registries and results databases (ClinicalTrials.gov, EU Clinical Trials Register)</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Regulatory submission archives and label change histories across FDA, EMA, and PMDA</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Model Governance:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Validation against known signals:</strong> Every signal detection model is validated against a reference set of historically confirmed and refuted safety signals across 12 therapeutic areas</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Regular retraining:</strong> Quarterly model retraining cycles with updated data, followed by full revalidation before production deployment</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Bias monitoring:</strong> Continuous monitoring for demographic bias, geographic bias, and temporal drift in model performance, with automated alerts for statistically significant performance degradation</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Complete lineage:</strong> Version-controlled model artifacts, training data snapshots, hyperparameter configurations, and validation results for every model in production</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Performance Metrics:</p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Signal detection sensitivity:</strong> 92.4% for confirmed safety signals in retrospective validation (vs. 71.8% for traditional disproportionality alone)</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Signal detection specificity:</strong> 87.1%, reducing false-positive burden by 40% compared to unaugmented statistical methods</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Positive predictive value:</strong> 68.3% for signal triage classification, validated across oncology, immunology, neurology, and cardiology therapeutic areas</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>NLP extraction accuracy:</strong> 96.2% MedDRA coding accuracy at Preferred Term level; 94.7% for drug-event relation extraction from unstructured narratives</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: Distinction from General LLMs -->
+              <div>
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-llm-distinction">
+                  <span class="arca-heading-3">Distinction from General-Purpose LLMs</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-llm-distinction">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      ArcaScience's AI approach is fundamentally different from applying general-purpose large language models to pharmacovigilance tasks. This distinction is not academic &mdash; it is the difference between outputs that regulators can trust and outputs that they cannot:
+                    </p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Deterministic outputs:</strong> For signal detection and quantitative analysis, models produce reproducible numerical results, not probabilistic text generation. The same input data always produces the same output.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Full traceability:</strong> Every model output links back to specific input data points with a complete provenance chain, enabling the audit trails required by 21 CFR Part 11 and GVP Module IX.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>No hallucination risk:</strong> Quantitative models do not generate synthetic facts. NLP extraction models are constrained to entities present in source documents with provenance tracking. There is no generative component producing unsourced claims.</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Regulatory validation:</strong> Each model undergoes formal validation per GAMP 5 Category 5 software validation principles, with documented IQ/OQ/PQ protocols and ongoing performance qualification.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ===========================================================
+                 SECTION 5: DATA SCIENCE PIPELINE
+                 =========================================================== -->
+            <article id="data-pipeline" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Data Science Pipeline</h2>
+
+              <!-- AS Profiling Base Highlight -->
+              <div class="arca-card" style="padding: var(--space-6); margin-bottom: var(--space-6); background: linear-gradient(135deg, var(--teal-50), var(--blue-50)); border: 1px solid var(--teal-200);" data-animate>
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: center;">
+                  <div>
+                    <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-3);">Proprietary Dataset</p>
+                    <h3 class="arca-heading-1" style="margin-bottom: var(--space-3);">AS Profiling Base 100B&reg;</h3>
+                    <p class="arca-body-md arca-text-grey-700" style="margin-bottom: var(--space-4);">
+                      Our proprietary harmonized dataset integrates, normalizes, and continuously updates over 100 billion data points from the world's most comprehensive pharmacovigilance, clinical trial, and real-world evidence sources &mdash; creating a unified analytical environment for benefit-risk analysis.
+                    </p>
+                    <p class="arca-body-sm arca-text-grey-600">
+                      The AS Profiling Base is not a raw data lake. It is a curated, harmonized, quality-scored evidence base where every data point is coded to standard ontologies, linked to its source, and enriched with metadata that enables rigorous cross-source analysis.
+                    </p>
+                  </div>
+                  <div style="text-align: center;">
+                    <span class="arca-stat-lg" style="color: var(--teal-700); display: block; margin-bottom: var(--space-2);" data-countup="100" data-countup-suffix="B+">0</span>
+                    <p class="arca-body-sm arca-text-grey-600">Harmonized data points</p>
+                    <div style="margin-top: var(--space-4);">
+                      <span class="arca-stat-md" style="color: var(--teal-600); display: block; margin-bottom: var(--space-1);" data-countup="40" data-countup-suffix="+">0</span>
+                      <p class="arca-body-sm arca-text-grey-600">Integrated data sources</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+                Meaningful benefit-risk analysis requires the synthesis of heterogeneous data sources, each with different structures, quality characteristics, and inherent biases. The Data Intelligence Engine is purpose-built to harmonize these sources while preserving the metadata necessary for rigorous bias characterization and data provenance tracking.
+              </p>
+
+              <!-- Accordion: Data Sources -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-sources">
+                  <span class="arca-heading-3">Data Sources</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-sources">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      The AS Profiling Base integrates data across the full spectrum of pharmacovigilance and clinical evidence:
+                    </p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Spontaneous reporting databases:</strong> FDA FAERS (quarterly AERS extracts since 2004), EMA EudraVigilance (EV Web access and line listings), WHO VigiBase (aggregate and case-level data via UMC), plus national databases including MHRA Yellow Card, ANSM, and BfArM</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Clinical trial databases:</strong> ClinicalTrials.gov (400,000+ registered studies), EU Clinical Trials Register, individual patient-level data from sponsor datasets integrated via CDISC SDTM/ADaM standards</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Published literature:</strong> PubMed/MEDLINE (36M+ citations), Embase, Cochrane Library, with automated systematic review and meta-analysis capabilities</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Real-world evidence:</strong> Claims databases, electronic health records, patient registries, and structured social media pharmacovigilance monitoring for early signal detection</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Regulatory intelligence:</strong> Label changes, Dear Healthcare Provider letters, risk communications, REMS programs, and risk management plans across FDA, EMA, PMDA, and Health Canada</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: Harmonization -->
+              <div style="margin-bottom: var(--space-2);">
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-harmonization">
+                  <span class="arca-heading-3">Harmonization and Standardization</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-harmonization">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      Raw data from heterogeneous sources is harmonized through a multi-stage pipeline designed for both accuracy and auditability:
+                    </p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>MedDRA coding:</strong> Adverse events standardized to MedDRA (Medical Dictionary for Regulatory Activities) at all hierarchy levels &mdash; SOC, HLGT, HLT, PT, and LLT &mdash; using AI-assisted coding validated against expert manual coding</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>WHODrug mapping:</strong> Drug substances identified and normalized using WHO Drug Dictionary Enhanced, resolving brand names, generics, active substances, and common misspellings</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Temporal normalization:</strong> Alignment across databases with different reporting cadences, lag times, and date format conventions to enable valid cross-source temporal analyses</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>CDISC compliance:</strong> Clinical trial data integrated via CDISC SDTM and ADaM standards, ensuring interoperability with sponsor datasets and regulatory submission formats</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion: Data Quality -->
+              <div>
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-quality">
+                  <span class="arca-heading-3">Data Quality and Bias Characterization</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-quality">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      Every data source carries inherent biases and quality limitations that must be characterized for responsible interpretation. The platform applies automated quality assessment at every stage:
+                    </p>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Automated Quality Scoring:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Completeness scoring: percentage of required fields populated, weighted by analytical importance</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Consistency checks: cross-field validation, temporal plausibility, and dosage-indication coherence</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Data quality scorecards generated for each analysis, documenting the evidence quality underpinning every conclusion</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Deduplication:</p>
+                    <ul style="padding-left: var(--space-5); margin-bottom: var(--space-3);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Probabilistic record linkage algorithms identify and reconcile duplicate reports across FAERS, EudraVigilance, and VigiBase</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Follow-up report consolidation preserves the most complete version of each case while maintaining full case history</li>
+                    </ul>
+                    <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Bias Characterization:</p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Reporting bias:</strong> Weber effect modeling, notoriety bias detection, and stimulated reporting adjustment for spontaneous report data</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Selection bias:</strong> Demographic profiling against expected population distributions with stratified subgroup analysis</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Confounding:</strong> Stratification, multivariate adjustment, and propensity score methods where individual-level data is available</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Publication bias:</strong> Funnel plot analysis and Egger's regression for systematic review components</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Missing data:</strong> Pattern analysis (MCAR/MAR/MNAR classification) with multiple imputation and sensitivity analysis where appropriate</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ===========================================================
+                 SECTION 6: REGULATORY-GRADE VALIDATION
+                 =========================================================== -->
+            <article id="regulatory-validation" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Regulatory-Grade Validation</h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                ArcaScience's outputs are designed to meet the standards of major global regulatory authorities from the moment they are generated. This is not an afterthought &mdash; regulatory compliance is an architectural requirement that shapes every aspect of the platform, from data ingestion to final document output.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+                The platform has supported over 200 regulatory-grade outputs across FDA, EMA, PMDA, and Health Canada submissions, with a 100% acceptance rate for platform-generated PSUR/PBRER and CTD Module 2.5 documents.
+              </p>
+
+              <!-- Regulatory Standards Grid -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-6);">
+
+                <!-- GAMP 5 / CSV -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <h3 class="arca-heading-3" style="margin-bottom: var(--space-3); color: var(--blue-700);">GAMP 5 / CSV Approach</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    The platform is validated under GAMP 5 (Good Automated Manufacturing Practice) Category 5 guidelines for configurable software products:
+                  </p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Documented IQ/OQ/PQ protocols for every module</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Risk-based approach to Computer System Validation</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Change control procedures with impact assessment</li>
+                    <li class="arca-body-sm arca-text-grey-600">Periodic revalidation on quarterly cycles</li>
+                  </ul>
+                </div>
+
+                <!-- 21 CFR Part 11 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <h3 class="arca-heading-3" style="margin-bottom: var(--space-3); color: var(--blue-700);">21 CFR Part 11 Compliance</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Full compliance with FDA 21 CFR Part 11 requirements for electronic records and electronic signatures:
+                  </p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Immutable audit trails for all data access and modifications</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Electronic signature support with identity verification</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Role-based access control with least-privilege enforcement</li>
+                    <li class="arca-body-sm arca-text-grey-600">System security controls including encryption at rest and in transit</li>
+                  </ul>
+                </div>
+
+                <!-- Audit Trail & Reproducibility -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <h3 class="arca-heading-3" style="margin-bottom: var(--space-3); color: var(--blue-700);">Audit Trail &amp; Reproducibility</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Every analysis in the platform is fully reproducible and auditable:
+                  </p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Complete data lineage from source to output for every data point</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Timestamped, immutable logs of all analytical operations</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">One-click analysis reproduction with identical parameters and data snapshots</li>
+                    <li class="arca-body-sm arca-text-grey-600">Version-controlled analytical configurations for longitudinal comparison</li>
+                  </ul>
+                </div>
+
+                <!-- Model Interpretability -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <h3 class="arca-heading-3" style="margin-bottom: var(--space-3); color: var(--blue-700);">Model Interpretability</h3>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Regulators require explainable AI. Every model output includes:
+                  </p>
+                  <ul style="padding-left: var(--space-4);">
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Feature importance rankings for predictive model outputs</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Confidence scores with calibrated uncertainty bounds</li>
+                    <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);">Source attribution linking every conclusion to supporting evidence</li>
+                    <li class="arca-body-sm arca-text-grey-600">Plain-language model explanation summaries suitable for regulatory reviewers</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- Accordion: Multi-Authority Alignment -->
+              <div>
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-multi-authority">
+                  <span class="arca-heading-3">Multi-Authority Regulatory Alignment</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-multi-authority">
+                  <div style="padding: var(--space-4) 0;">
+                    <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                      The platform encodes regulatory guidance from multiple authorities directly into its analytical workflows, enabling teams to generate jurisdiction-specific outputs from a single integrated evidence base:
+                    </p>
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>FDA:</strong> Structured Benefit-Risk Assessment Framework (PDUFA V/VI), CFR Title 21, ICH E2C(R2) implementation for PBRER, IND Safety Reporting (21 CFR 312.32)</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>EMA:</strong> GVP Modules V (Risk Management), VII (PSUR/PBRER), IX (Signal Management), PRAC assessment workflows, PROTECT quantitative BRA recommendations</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>PMDA:</strong> Japanese pharmacovigilance requirements, J-PSUR format compliance, RMP generation in Japanese, PMDA-specific safety reporting thresholds</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>Health Canada:</strong> Summary Basis of Decision requirements, Canadian Vigilance Program compatibility, Risk Management Plan standards</li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-2);"><strong>ICH harmonization:</strong> M4E(R2) for CTD structure, E2E for pharmacovigilance planning, E2C(R2) for PBRER, CIOMS IV/VIII/X/XI methodological standards</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ===========================================================
+                 SECTION 7: PUBLICATIONS & RESEARCH
+                 =========================================================== -->
+            <article id="publications" data-anchor-link data-animate style="padding-bottom: var(--space-8); margin-bottom: var(--space-8); border-bottom: 1px solid var(--grey-100);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Publications &amp; Research</h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+                ArcaScience's methodology is grounded in peer-reviewed research and validated through academic collaboration and regulatory engagement. Our team publishes regularly in leading pharmacovigilance and regulatory science journals, contributing to the broader advancement of quantitative benefit-risk methodology.
+              </p>
+
+              <!-- Publication Cards (CMS-driven in Webflow) -->
+              <!-- Webflow: Create as a CMS Collection List bound to a "Publications" collection -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-6);">
+
+                <!-- Publication 1 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-2);">Drug Safety, 2025</p>
+                  <h4 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automated Quantitative Benefit-Risk Assessment Using Domain-Specific AI Models: A Validation Study Across 12 Therapeutic Areas</h4>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Dupont C, Tessier M, et al. Demonstrates 92.4% sensitivity for confirmed safety signals using ArcaScience's ensemble approach across oncology, immunology, neurology, cardiology, and 8 additional therapeutic areas.
+                  </p>
+                  <a href="/resources/publications" class="arca-body-sm" style="color: var(--blue-600); text-decoration: underline;">Read abstract</a>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-2);">Pharmacoepidemiology &amp; Drug Safety, 2024</p>
+                  <h4 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI-Augmented Signal Detection in Spontaneous Reporting Databases: Comparative Performance of BCPNN, MGPS, and Ensemble Machine Learning</h4>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Tessier M, Dupont C, et al. Head-to-head comparison showing 40% reduction in false-positive rates when AI-augmented signal prioritization is applied alongside traditional disproportionality analysis.
+                  </p>
+                  <a href="/resources/publications" class="arca-body-sm" style="color: var(--blue-600); text-decoration: underline;">Read abstract</a>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-2);">Clinical Pharmacology &amp; Therapeutics, 2024</p>
+                  <h4 class="arca-heading-3" style="margin-bottom: var(--space-3);">Natural Language Processing for Pharmacovigilance Case Narrative Analysis: A Multi-Language Validation Study</h4>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Tessier M, et al. Validation of NLP models for adverse event extraction across English, French, German, Japanese, and Chinese regulatory documents, achieving 96.2% MedDRA coding accuracy at Preferred Term level.
+                  </p>
+                  <a href="/resources/publications" class="arca-body-sm" style="color: var(--blue-600); text-decoration: underline;">Read abstract</a>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-2);">Therapeutic Innovation &amp; Regulatory Science, 2023</p>
+                  <h4 class="arca-heading-3" style="margin-bottom: var(--space-3);">Structured Benefit-Risk Communication for Regulatory Submissions: Aligning BRAT and MCDA Frameworks with FDA and EMA Expectations</h4>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Dupont C, Clement R, et al. Practical guidance on operationalizing BRAT and MCDA frameworks within automated platforms, with case studies from 15 regulatory submissions across 6 therapeutic areas.
+                  </p>
+                  <a href="/resources/publications" class="arca-body-sm" style="color: var(--blue-600); text-decoration: underline;">Read abstract</a>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-2);">Frontiers in Pharmacology, 2023</p>
+                  <h4 class="arca-heading-3" style="margin-bottom: var(--space-3);">Multi-Source Data Integration for Real-Time Benefit-Risk Monitoring: Architecture and Validation of the AS Profiling Base</h4>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    ArcaScience Research Team. Describes the technical architecture and validation methodology for the AS Profiling Base 100B dataset, including harmonization pipeline performance and data quality metrics.
+                  </p>
+                  <a href="/resources/publications" class="arca-body-sm" style="color: var(--blue-600); text-decoration: underline;">Read abstract</a>
+                </div>
+
+                <!-- Publication 6 -->
+                <div class="arca-card" style="padding: var(--space-5);" data-animate>
+                  <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-2);">Value in Health, 2024</p>
+                  <h4 class="arca-heading-3" style="margin-bottom: var(--space-3);">Integrating NNT/NNH Analysis with MCDA for Transparent Benefit-Risk Communication in HTA Submissions</h4>
+                  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                    Dupont C, et al. Demonstrates how combining NNT/NNH metrics with multi-criteria decision analysis creates more transparent and clinically interpretable benefit-risk profiles for health technology assessment bodies.
+                  </p>
+                  <a href="/resources/publications" class="arca-body-sm" style="color: var(--blue-600); text-decoration: underline;">Read abstract</a>
+                </div>
+
+              </div>
+
+              <!-- Conference Presentations -->
+              <div>
+                <div data-accordion-trigger aria-expanded="false" aria-controls="acc-conferences">
+                  <span class="arca-heading-3">Conference Presentations</span>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div data-accordion-content id="acc-conferences">
+                  <div style="padding: var(--space-4) 0;">
+                    <ul style="padding-left: var(--space-5);">
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                        <strong>"Quantitative Benefit-Risk Analysis at Scale: Lessons from 50+ Regulatory Submissions."</strong> International Society for Pharmacoepidemiology (ISPE) Annual Meeting, 2025. Oral presentation.
+                      </li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                        <strong>"Domain-Specific AI for Pharmacovigilance Signal Detection: Moving Beyond Disproportionality."</strong> Drug Information Association (DIA) Annual Meeting, 2025. Symposium presentation.
+                      </li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                        <strong>"Automated PBRER Generation with Integrated Benefit-Risk Evaluation: A Platform Validation Study."</strong> European Medicines Agency Pharmacovigilance Stakeholder Forum, 2024. Poster presentation.
+                      </li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                        <strong>"NLP-Based Adverse Event Extraction from Multilingual Regulatory Documents: Performance Benchmarking."</strong> Society for Clinical Data Management (SCDM) Annual Conference, 2024. Oral presentation.
+                      </li>
+                      <li class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                        <strong>"Multi-Criteria Decision Analysis in Regulatory Benefit-Risk Assessment: Practical Implementation and Stakeholder Engagement."</strong> CIOMS Seminar on Benefit-Risk Assessment, 2023. Invited lecture.
+                      </li>
+                    </ul>
+                    <p class="arca-body-sm" style="margin-top: var(--space-4);">
+                      <a href="/resources/publications" style="color: var(--blue-600); text-decoration: underline;">View all publications and presentations &rarr;</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ===========================================================
+                 SECTION 8: SCIENTIFIC ADVISORY BOARD PREVIEW
+                 =========================================================== -->
+            <article id="sab" data-anchor-link data-animate style="padding-bottom: var(--space-8);">
+              <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Scientific Advisory Board</h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                ArcaScience's Scientific Advisory Board brings together world-class expertise from academia, regulatory agencies, and pharmaceutical R&amp;D. Our SAB members have collectively served on FDA advisory committees, EMA scientific committees, WHO working groups, and have authored foundational guidance documents on benefit-risk methodology.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+                The SAB plays an active role in shaping the platform's scientific direction. Every major methodological decision &mdash; from the implementation of a new BRA framework to the validation protocol for a new AI model &mdash; is reviewed by the SAB before production deployment. This ensures that every model, framework, and output meets the highest standards of regulatory science.
+              </p>
+
+              <div class="arca-card" style="padding: var(--space-6); background: var(--grey-50); border: 1px solid var(--grey-200);" data-animate>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+                  <div>
+                    <div style="width: 64px; height: 64px; background: var(--blue-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5z" stroke="var(--blue-600)" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14v7" stroke="var(--blue-600)" stroke-width="1.5" stroke-linecap="round"/><path d="M3 9v6.5c0 1.5 4 4 9 4s9-2.5 9-4V9" stroke="var(--blue-600)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p class="arca-heading-3" style="margin-bottom: var(--space-2);">Academic Experts</p>
+                    <p class="arca-body-sm arca-text-grey-600">Professors and researchers in pharmacoepidemiology, biostatistics, and regulatory science from leading universities</p>
+                  </div>
+                  <div>
+                    <div style="width: 64px; height: 64px; background: var(--indigo-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14" stroke="var(--indigo-600)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-4h6v4M9 10h.01M15 10h.01M9 14h.01M15 14h.01" stroke="var(--indigo-600)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p class="arca-heading-3" style="margin-bottom: var(--space-2);">Former Regulators</p>
+                    <p class="arca-body-sm arca-text-grey-600">Former senior officials from FDA, EMA, and PMDA with deep understanding of regulatory expectations and review processes</p>
+                  </div>
+                  <div>
+                    <div style="width: 64px; height: 64px; background: var(--green-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="var(--green-600)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p class="arca-heading-3" style="margin-bottom: var(--space-2);">Pharma R&amp;D Leaders</p>
+                    <p class="arca-body-sm arca-text-grey-600">Current and former heads of pharmacovigilance, drug safety, and regulatory affairs at top-20 pharmaceutical companies</p>
+                  </div>
+                </div>
+                <div style="text-align: center; margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--grey-200);">
+                  <a href="/company/leadership#sab" class="arca-btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+                    Meet Our Scientific Advisory Board <span class="arca-arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+          <!-- END RIGHT COLUMN -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 9: CTA — "SEE THE SCIENCE IN ACTION"
+         Full-width blue gradient. Primary conversion section.
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See the Science in Action
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Schedule a technical session with our pharmacoepidemiology team to see how ArcaScience's AI models, quantitative BRA frameworks, and integrated evidence base work in practice &mdash; or download our methodology whitepaper for a detailed technical overview.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request a Demo
+          </a>
+          <a href="/resources/whitepapers/methodology" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Download Methodology Whitepaper <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Identical structure to about.html footer.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security &amp; Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Leadership</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS + CountUp -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

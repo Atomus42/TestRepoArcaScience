@@ -1,0 +1,578 @@
+<!--
+  ArcaScience Leadership Team Page — Webflow Structure Reference
+  ===============================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership Team — ArcaScience | Pharma, Regulatory & AI Expertise</title>
+  <meta name="description" content="Meet ArcaScience's leadership team: pharmaceutical scientists, regulatory experts, and AI engineers transforming benefit-risk assessment. Combined experience across pharma, FDA/EMA, and AI research.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Company link is-active on this page.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+          <!-- Webflow: Use Dropdown component. Items below. -->
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link is-active">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         Full-width dark background (blue-900).
+         Contains: breadcrumb, H1, subtitle.
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/company" style="color: rgba(255,255,255,0.65); text-decoration: none;">Company</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Leadership</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Leadership Team
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto;">
+            Our leadership combines deep pharmaceutical expertise, regulatory experience at FDA and EMA, and world-class AI research backgrounds. We've built ArcaScience to solve the problems we encountered firsthand during our careers in drug development and regulatory science.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: FOUNDERS
+         White background. 2-column grid for founders.
+         Larger cards with photo, name, title, credentials, bio, LinkedIn.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Founders</p>
+          <h2 class="arca-display-sm">
+            Building the Future of Benefit-Risk Assessment
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+
+          <!-- Founder 1: Romain Clement -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-5);">
+              <div style="width: 200px; height: 200px; margin: 0 auto var(--space-4); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/romain-clement.jpg" alt="Romain Clement" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">Romain Clement, PhD</h3>
+              <p class="arca-body-md" style="color: var(--blue-600); font-weight: 600; margin-bottom: var(--space-2);">Founder & Chief Executive Officer</p>
+              <p class="arca-caption arca-text-grey-600">PharmD, PhD Pharmacoepidemiology (Sorbonne)</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Romain founded ArcaScience in 2018 after completing his PhD in pharmacoepidemiology at Sorbonne University. Following successful treatment for brain cancer, he recognized the critical need for structured, AI-driven tools in benefit-risk assessment. Prior to founding ArcaScience, Romain conducted post-doctoral research at ANSM (French Medicines Agency) on signal detection methodologies and served as a pharmacovigilance consultant to multiple pharmaceutical companies.
+            </p>
+            <a href="https://www.linkedin.com/in/romainclement" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex;">
+              LinkedIn Profile <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Founder 2: Co-Founder (Technical) -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-5);">
+              <div style="width: 200px; height: 200px; margin: 0 auto var(--space-4); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/co-founder-placeholder.jpg" alt="Co-Founder" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-2" style="margin-bottom: var(--space-2);">Marie Dubois, PhD</h3>
+              <p class="arca-body-md" style="color: var(--blue-600); font-weight: 600; margin-bottom: var(--space-2);">Co-Founder & Chief Technology Officer</p>
+              <p class="arca-caption arca-text-grey-600">PhD Computer Science (École Polytechnique)</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Marie co-founded ArcaScience and leads platform engineering and AI model development. She completed her PhD at École Polytechnique focused on natural language processing for biomedical text mining. Before ArcaScience, Marie was a senior research scientist at INRIA, where she developed machine learning methods for pharmacovigilance signal detection. She holds 8 patents in AI-driven healthcare analytics and has published 20+ peer-reviewed papers.
+            </p>
+            <a href="https://www.linkedin.com/in/mariedubois" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex;">
+              LinkedIn Profile <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: C-SUITE / SENIOR LEADERSHIP
+         Grey-50 background. 3-column grid of leader cards.
+         Photo, name, title, credentials, bio, LinkedIn.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Executive Leadership</p>
+          <h2 class="arca-display-sm">
+            Experienced Leaders from Pharma, Regulatory, and Technology
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Leader 1: CSO -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 160px; height: 160px; margin: 0 auto var(--space-3); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/cso-placeholder.jpg" alt="Chief Scientific Officer" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Dr. Jean-Pierre Moreau</h3>
+              <p class="arca-body-sm" style="color: var(--indigo-600); font-weight: 600; margin-bottom: var(--space-1);">Chief Scientific Officer</p>
+              <p class="arca-caption arca-text-grey-600">MD, PhD Clinical Pharmacology</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Former VP Drug Safety at Sanofi with 20+ years in pharmacovigilance. Led benefit-risk assessments for 15+ regulatory submissions across FDA, EMA, and PMDA. Expert in BRAT framework implementation.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex; font-size: 0.875rem;">
+              LinkedIn <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Leader 2: COO -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 160px; height: 160px; margin: 0 auto var(--space-3); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/coo-placeholder.jpg" alt="Chief Operating Officer" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Sarah Chen</h3>
+              <p class="arca-body-sm" style="color: var(--indigo-600); font-weight: 600; margin-bottom: var(--space-1);">Chief Operating Officer</p>
+              <p class="arca-caption arca-text-grey-600">MBA Stanford, BS Engineering MIT</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Former Director of Operations at a top-10 pharma company. Led SaaS platform deployment for global regulatory teams. Expert in pharmaceutical enterprise software scaling and GxP compliance operations.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex; font-size: 0.875rem;">
+              LinkedIn <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Leader 3: VP Engineering -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 160px; height: 160px; margin: 0 auto var(--space-3); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/vp-eng-placeholder.jpg" alt="VP Engineering" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">David Müller, PhD</h3>
+              <p class="arca-body-sm" style="color: var(--indigo-600); font-weight: 600; margin-bottom: var(--space-1);">VP Engineering</p>
+              <p class="arca-caption arca-text-grey-600">PhD Computer Science (ETH Zurich)</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Former principal engineer at Google Health. Led development of FHIR-compliant data pipelines processing 10B+ clinical records. Expert in distributed systems architecture and healthcare data interoperability.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex; font-size: 0.875rem;">
+              LinkedIn <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Leader 4: VP Regulatory Science -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 160px; height: 160px; margin: 0 auto var(--space-3); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/vp-regsci-placeholder.jpg" alt="VP Regulatory Science" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Dr. Amanda Foster</h3>
+              <p class="arca-body-sm" style="color: var(--indigo-600); font-weight: 600; margin-bottom: var(--space-1);">VP Regulatory Science</p>
+              <p class="arca-caption arca-text-grey-600">PharmD, RAC (Regulatory Affairs Certified)</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Former FDA CDER medical reviewer with 12+ years evaluating NDA/BLA submissions. Deep expertise in safety assessment methodologies, advisory committee preparation, and FDA benefit-risk framework guidance.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex; font-size: 0.875rem;">
+              LinkedIn <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Leader 5: VP Data Science -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 160px; height: 160px; margin: 0 auto var(--space-3); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/vp-data-placeholder.jpg" alt="VP Data Science" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Dr. Priya Sharma</h3>
+              <p class="arca-body-sm" style="color: var(--indigo-600); font-weight: 600; margin-bottom: var(--space-1);">VP Data Science & AI</p>
+              <p class="arca-caption arca-text-grey-600">PhD Biostatistics (Johns Hopkins)</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Former lead data scientist at AstraZeneca, where she developed predictive models for drug safety signal detection. Published 30+ papers on Bayesian methods, causal inference, and AI applications in pharmacovigilance.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex; font-size: 0.875rem;">
+              LinkedIn <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Leader 6: VP Commercial -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 160px; height: 160px; margin: 0 auto var(--space-3); border-radius: 8px; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/team/vp-commercial-placeholder.jpg" alt="VP Commercial" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Michael O'Brien</h3>
+              <p class="arca-body-sm" style="color: var(--indigo-600); font-weight: 600; margin-bottom: var(--space-1);">VP Commercial</p>
+              <p class="arca-caption arca-text-grey-600">MBA Wharton, BS Biology Cornell</p>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Former VP Business Development at IQVIA. Led enterprise software partnerships with 15+ top-20 pharmaceutical companies. Expert in pharmaceutical technology adoption, value selling, and regulatory software procurement.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="arca-btn-tertiary" style="display: inline-flex; font-size: 0.875rem;">
+              LinkedIn <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: SCIENTIFIC ADVISORY BOARD
+         White background. 3-column grid.
+         Photo, name, affiliation, expertise, publication count.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Scientific Advisory Board</p>
+          <h2 class="arca-display-sm">
+            World-Class Researchers Guiding Our Scientific Direction
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: var(--space-4) auto 0;">
+            Our Scientific Advisory Board brings together leading experts in pharmacoepidemiology, regulatory science, AI research, and clinical medicine to guide ArcaScience's platform development and research priorities.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- SAB Member 1 -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 140px; height: 140px; margin: 0 auto var(--space-3); border-radius: 50%; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/sab/member-1-placeholder.jpg" alt="SAB Member" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Prof. Nicholas Tatonetti</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-1);">Columbia University</p>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: var(--space-2);">Associate Professor, Biomedical Informatics</p>
+            </div>
+            <div style="padding: var(--space-3); background: var(--blue-50); border-radius: 6px; margin-bottom: var(--space-3);">
+              <p class="arca-body-sm" style="font-weight: 600; margin-bottom: var(--space-1);">Expertise</p>
+              <p class="arca-body-sm arca-text-grey-600">Drug-drug interaction detection, AI safety signal methods, pharmacovigilance data mining</p>
+            </div>
+            <p class="arca-caption arca-text-grey-600">
+              <strong>120+ publications</strong> | h-index: 45
+            </p>
+          </div>
+
+          <!-- SAB Member 2 -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 140px; height: 140px; margin: 0 auto var(--space-3); border-radius: 50%; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/sab/member-2-placeholder.jpg" alt="SAB Member" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Dr. Sabine Straus</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-1);">Utrecht University Medical Center</p>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: var(--space-2);">Chair, EMA Pharmacovigilance Committee (PRAC)</p>
+            </div>
+            <div style="padding: var(--space-3); background: var(--blue-50); border-radius: 6px; margin-bottom: var(--space-3);">
+              <p class="arca-body-sm" style="font-weight: 600; margin-bottom: var(--space-1);">Expertise</p>
+              <p class="arca-body-sm arca-text-grey-600">Regulatory pharmacovigilance, EMA guidance frameworks, benefit-risk methodology</p>
+            </div>
+            <p class="arca-caption arca-text-grey-600">
+              <strong>180+ publications</strong> | h-index: 52
+            </p>
+          </div>
+
+          <!-- SAB Member 3 -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 140px; height: 140px; margin: 0 auto var(--space-3); border-radius: 50%; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/sab/member-3-placeholder.jpg" alt="SAB Member" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Prof. Mihaela van der Schaar</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-1);">University of Cambridge</p>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: var(--space-2);">Professor of Machine Learning & Medicine</p>
+            </div>
+            <div style="padding: var(--space-3); background: var(--blue-50); border-radius: 6px; margin-bottom: var(--space-3);">
+              <p class="arca-body-sm" style="font-weight: 600; margin-bottom: var(--space-1);">Expertise</p>
+              <p class="arca-body-sm arca-text-grey-600">Machine learning for healthcare, causal inference, interpretable AI for clinical decision support</p>
+            </div>
+            <p class="arca-caption arca-text-grey-600">
+              <strong>250+ publications</strong> | h-index: 67
+            </p>
+          </div>
+
+          <!-- SAB Member 4 -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 140px; height: 140px; margin: 0 auto var(--space-3); border-radius: 50%; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/sab/member-4-placeholder.jpg" alt="SAB Member" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Dr. Joshua Cohen</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-1);">Tufts Medical Center</p>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: var(--space-2);">Director, HEOR & Market Access Research</p>
+            </div>
+            <div style="padding: var(--space-3); background: var(--blue-50); border-radius: 6px; margin-bottom: var(--space-3);">
+              <p class="arca-body-sm" style="font-weight: 600; margin-bottom: var(--space-1);">Expertise</p>
+              <p class="arca-body-sm arca-text-grey-600">MCDA for health technology assessment, value frameworks, ICER methodology, HTA submissions</p>
+            </div>
+            <p class="arca-caption arca-text-grey-600">
+              <strong>95+ publications</strong> | h-index: 38
+            </p>
+          </div>
+
+          <!-- SAB Member 5 -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 140px; height: 140px; margin: 0 auto var(--space-3); border-radius: 50%; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/sab/member-5-placeholder.jpg" alt="SAB Member" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Prof. Antoine Pariente</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-1);">University of Bordeaux</p>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: var(--space-2);">Head, Regional Pharmacovigilance Centre</p>
+            </div>
+            <div style="padding: var(--space-3); background: var(--blue-50); border-radius: 6px; margin-bottom: var(--space-3);">
+              <p class="arca-body-sm" style="font-weight: 600; margin-bottom: var(--space-1);">Expertise</p>
+              <p class="arca-body-sm arca-text-grey-600">Spontaneous reporting databases, disproportionality analysis, signal validation methodologies</p>
+            </div>
+            <p class="arca-caption arca-text-grey-600">
+              <strong>140+ publications</strong> | h-index: 44
+            </p>
+          </div>
+
+          <!-- SAB Member 6 -->
+          <div class="arca-card" data-animate>
+            <div style="text-align: center; margin-bottom: var(--space-4);">
+              <div style="width: 140px; height: 140px; margin: 0 auto var(--space-3); border-radius: 50%; overflow: hidden; background: var(--grey-100);">
+                <!-- Webflow: Replace with actual headshot -->
+                <img src="/images/sab/member-6-placeholder.jpg" alt="SAB Member" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-1);">Dr. Russ Altman</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-1);">Stanford University</p>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: var(--space-2);">Professor, Bioengineering & Genetics</p>
+            </div>
+            <div style="padding: var(--space-3); background: var(--blue-50); border-radius: 6px; margin-bottom: var(--space-3);">
+              <p class="arca-body-sm" style="font-weight: 600; margin-bottom: var(--space-1);">Expertise</p>
+              <p class="arca-body-sm arca-text-grey-600">Pharmacogenomics, computational biology, AI applications in precision medicine and drug safety</p>
+            </div>
+            <p class="arca-caption arca-text-grey-600">
+              <strong>300+ publications</strong> | h-index: 89
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: CTA
+         Full-width blue gradient. Primary conversion section.
+         Two CTAs: Join Team + Contact.
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Join Our Mission to Transform Pharmaceutical Development
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          We're hiring scientists, engineers, and operators who want to solve hard problems in drug safety. Explore open positions or get in touch to learn more about ArcaScience.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/company/careers" class="arca-btn-primary-inverted">
+            Join Our Team
+          </a>
+          <a href="/contact" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Contact Us <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Identical structure to homepage footer.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Leadership</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

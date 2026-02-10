@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hematology Solutions — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="ArcaScience's AI-driven benefit-risk analysis platform for Hematology. 7B+ records covering cell and gene therapies, anticoagulants, rare blood disorder treatments, and specialized small-population BRA methodologies.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown — ACTIVE -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- SECTION 1: BREADCRUMB + DARK HERO -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Hematology</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Therapeutic Area Solutions
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Hematology Benefit-Risk Analysis
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Specialized BRA for hematology therapies — cell and gene therapies, anticoagulants, hemophilia treatments, and rare blood disorder interventions requiring small-population statistical methodologies and long-term safety follow-up.
+          </p>
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request Hematology Briefing
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: DATA COVERAGE STATS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="7000000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Hematology-specific safety records</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="4800" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Hematology clinical trials analyzed</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="12" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Gene/cell therapy submissions supported</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="15" data-countup-suffix=" yr">0</span>
+            <p class="arca-caption">Long-term follow-up data coverage</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TA-SPECIFIC CHALLENGE SECTION -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Unique Challenges</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Why Hematology BRA Is Different
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Hematology therapies span from well-established anticoagulants to cutting-edge gene therapies, each presenting distinct benefit-risk challenges driven by bleeding/thrombotic event balancing, rare disease populations, and novel safety profiles requiring decades of follow-up.
+          </p>
+        </div>
+
+        <!-- 3 TA-specific challenge cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Bleeding & Thrombotic Event Balancing</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Anticoagulants and antiplatelet therapies require continuous benefit-risk optimization between preventing thrombotic events and minimizing hemorrhagic complications. DOACs, heparins, and novel factor XI inhibitors each have distinct bleeding profiles. BRA must incorporate time-in-therapeutic-range analysis, ISTH bleeding classification, and patient-specific risk scoring (CHA2DS2-VASc, HAS-BLED) to generate clinically meaningful benefit-risk profiles.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Long-Term Gene Therapy Safety</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Gene therapies for hemophilia A/B, sickle cell disease, and beta-thalassemia require 15-year post-authorization safety follow-up to monitor for insertional mutagenesis, vector integration-site oncogenesis, and durability of transgene expression. The challenge is conducting meaningful benefit-risk assessment with limited long-term data and evolving understanding of genome editing off-target effects from CRISPR-based and base-editing therapies.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Small-Population BRA Methodology</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Rare hematologic conditions — thrombotic thrombocytopenic purpura (TTP), paroxysmal nocturnal hemoglobinuria (PNH), aplastic anemia — have patient populations too small for traditional frequentist statistical approaches. BRA requires Bayesian methods, external control arms from natural history studies, and registry data augmentation to generate regulatory-grade benefit-risk assessments from trials enrolling fewer than 100 patients.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PLATFORM CAPABILITIES FOR THIS TA -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            How ArcaScience Addresses Hematology BRA Challenges
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our three integrated modules — Data Intelligence, Decision Intelligence, and Automated Outputs — are configured for Hematology-specific benefit-risk assessment workflows.
+          </p>
+        </div>
+
+        <!-- 3 module cards with colored tops -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Module 1: Data Intelligence (teal) -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Hematology Data Coverage
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Comprehensive hematology data from 4,800+ clinical trials, 7B+ adverse event records, rare disease registries (INALC, WBDR, PNH Registry), and gene therapy long-term follow-up databases. Includes ISTH-classified bleeding event data, anticoagulant therapeutic range databases, hemophilia joint outcome scores, and sickle cell crisis frequency registries with MedDRA coding optimized for hematologic safety signals.
+            </p>
+            <a href="/platform/data-intelligence" class="arca-btn-tertiary">
+              Explore Data Engine <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 2: Decision Intelligence (indigo) -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              TA-Specific AI Models
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              6 AI models trained specifically on hematology safety and efficacy patterns, including bleeding event prediction and classification, thrombotic risk scoring, gene therapy durability modeling, and small-population Bayesian BRA. Specialized algorithms for CAR-T cytokine release syndrome grading, ICANS neurotoxicity detection, and anticoagulant reversal agent effectiveness analysis.
+            </p>
+            <a href="/platform/ai-models" class="arca-btn-tertiary">
+              Explore AI Models <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 3: Automated Outputs (green) -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Hematology Regulatory Outputs
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Submission-ready bleeding event analyses, gene therapy long-term follow-up reports, PSUR/PBRER with hematology-specific safety sections, and ATMP-specific Risk Management Plans. Outputs formatted for FDA CBER/CDER, EMA CAT (Committee for Advanced Therapies), and PMDA requirements, including 15-year gene therapy follow-up report templates and rare disease registry data integration summaries.
+            </p>
+            <a href="/platform/outputs" class="arca-btn-tertiary">
+              Explore Outputs <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ADVERSE EVENT LANDSCAPE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Safety Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Hematology Adverse Event Landscape
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key safety signal categories tracked across hematology development programs, with AI-powered detection for both established therapeutic classes and novel cell and gene therapy modalities.
+          </p>
+        </div>
+
+        <!-- AE category grid -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Cytokine Release Syndrome</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              CRS grading (ASTCT consensus) in CAR-T cell therapy — ranging from mild fever to life-threatening capillary leak and multi-organ failure requiring tocilizumab intervention and ICU-level monitoring protocols.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">ICANS Neurotoxicity</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Immune effector cell-associated neurotoxicity syndrome — encephalopathy, seizures, cerebral edema — a CAR-T-specific safety signal requiring ICE score monitoring and specialized neurologic assessment protocols.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Major Bleeding Events</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Intracranial hemorrhage, GI bleeding, and fatal bleeds with anticoagulants — classified per ISTH criteria and requiring continuous benefit-risk balancing against thromboembolic event prevention.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Insertional Oncogenesis</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Vector integration near proto-oncogenes in gene therapy — the critical long-term safety signal requiring 15-year monitoring, integration site analysis, and clonal expansion surveillance for lentiviral and AAV-based therapies.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Inhibitor Development</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Anti-drug antibodies (inhibitors) against factor VIII/IX in hemophilia patients — occurring in up to 30% of severe hemophilia A patients and fundamentally altering the benefit-risk profile of replacement therapies.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Veno-Occlusive Disease</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Hepatic VOD/SOS following conditioning regimens for stem cell transplant and CAR-T therapy — a serious complication requiring early detection biomarkers and defibrotide intervention monitoring.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Link to data coverage -->
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/platform/data" class="arca-btn-tertiary">
+            See Full Hematology Data Coverage <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CASE STUDY EXCERPT -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Case study content -->
+          <div>
+            <p class="arca-section-label">Case Study — Hematology</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              CAR-T Cell Therapy — Cytokine Release Syndrome Monitoring
+            </h2>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                A cell therapy developer needed to establish comprehensive CRS and ICANS monitoring across their CAR-T platform targeting B-cell malignancies. Post-approval REMS commitments required real-time safety monitoring at 120+ certified treatment centers, standardized CRS grading per ASTCT consensus criteria, and automated FAERS reporting for Grade 3+ events — while simultaneously building the long-term safety database for secondary malignancy monitoring mandated by FDA.
+              </p>
+            </div>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Approach</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                ArcaScience deployed hematology-specific AI models for CRS severity prediction from early cytokine biomarkers (IL-6, ferritin, CRP), automated ASTCT grading classification, and real-time REMS compliance monitoring across treatment sites. Bayesian signal detection for rare events (secondary T-cell lymphomas) was implemented with integration of CIBMTR registry data as an external comparator for expected malignancy rates post-lymphodepletion.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="24" data-countup-suffix="hr">0</span>
+                <p class="arca-caption arca-text-grey-600">Earlier CRS severity prediction</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="120" data-countup-suffix="+">0</span>
+                <p class="arca-caption arca-text-grey-600">Treatment centers monitored</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="50" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in REMS reporting burden</p>
+              </div>
+            </div>
+
+            <a href="/evidence/case-studies/hematology-case-study" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Testimonial -->
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              The ability to predict CRS severity 24 hours earlier using ArcaScience's cytokine biomarker models has fundamentally changed our approach to CAR-T safety management. We can now intervene proactively rather than reactively, improving patient outcomes while meeting our REMS obligations efficiently.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Dr. Michael Torres</p>
+              <p class="arca-body-sm arca-text-grey-600">Chief Medical Officer, Cell Therapy Developer</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: REGULATORY CONTEXT -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Regulatory Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Hematology Regulatory Context
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key regulatory considerations and guidance specific to hematology benefit-risk assessment, including cell/gene therapy requirements, for FDA, EMA, and PMDA submissions.
+          </p>
+        </div>
+
+        <!-- Accordion for regulatory guidance -->
+        <div style="max-width: 820px; margin: 0 auto;">
+
+          <div class="arca-accordion" data-accordion>
+
+            <!-- Accordion item 1 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">FDA Gene Therapy & Cell Therapy Guidance</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  FDA's CBER has issued comprehensive guidance for gene therapy products including "Long Term Follow-Up After Administration of a Human Gene Therapy Product" (2020, updated 2024) mandating 15-year post-approval safety monitoring for integrating vectors and 5 years for non-integrating vectors. For CAR-T products, FDA requires REMS programs with Elements to Assure Safe Use (ETASU) including certified treatment center requirements and mandatory CRS/ICANS monitoring protocols.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key requirements:</strong> Integration site analysis for gene therapy long-term follow-up, standardized CRS/ICANS grading per ASTCT criteria, secondary malignancy monitoring (including T-cell lymphomas for CAR-T), vector shedding studies, and Regenerative Medicine Advanced Therapy (RMAT) designation benefit-risk frameworks for accelerated approval pathways.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 2 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">EMA ATMP Requirements</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  EMA's Committee for Advanced Therapies (CAT) evaluates all Advanced Therapy Medicinal Products (ATMPs) including gene therapies, somatic cell therapies, and tissue-engineered products under Regulation (EC) No 1394/2007. CAT requires comprehensive risk management plans with ATMP-specific safety concerns, long-term efficacy and safety follow-up studies, and patient registries for rare hematologic conditions. PRIME (PRIority MEdicines) designation provides enhanced regulatory support for promising hematology ATMPs.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key focus areas:</strong> ATMP-specific PSUR requirements, post-authorization efficacy studies (PAES) for conditional approvals, EU ATMP registry integration, hospital exemption provisions for patient-specific cell therapies, and HTA-aligned outcomes data for ATMP reimbursement negotiations given high treatment costs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 3 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">PMDA Guidance for Hematology Products</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Japan's PMDA regulates regenerative medicine products under the Act on the Safety of Regenerative Medicine and the Pharmaceuticals and Medical Devices Act (PMD Act). PMDA's conditional and time-limited approval pathway for regenerative products requires periodic re-evaluation of benefit-risk with real-world effectiveness data. For hematology gene therapies, PMDA requires Japanese patient safety data with attention to ethnic factors affecting vector immunogenicity and transgene expression durability.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Submission requirements:</strong> Japanese bridging studies for cell/gene therapies, mandatory all-case post-marketing surveillance, J-RMP with gene therapy-specific risk minimization measures, alignment with SAKIGAKE designation for breakthrough regenerative medicines, and post-marketing re-examination data within 7 years for conditional approvals.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 4 -->
+            <div class="arca-accordion-item">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Post-Marketing Requirements for Hematology Therapies</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Regulatory authorities globally require enhanced post-marketing surveillance for hematology therapies, particularly cell and gene therapies with mandated long-term follow-up. ArcaScience automates PSUR/PBRER generation, gene therapy 15-year follow-up reports, REMS compliance monitoring, and rare disease registry data integration aligned with ICH E2C(R2), EU GVP Module VIII, and FDA LTFU guidance. Specialized hematology safety signal libraries cover CRS/ICANS for CAR-T, bleeding/thrombotic events for anticoagulants, inhibitor development for factor replacement therapies, and insertional oncogenesis for gene therapies.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-7);">
+            <a href="/resources/regulatory-intelligence" class="arca-btn-tertiary">
+              View All Hematology Regulatory Updates <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RELATED RESOURCES -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Resources</p>
+          <h2 class="arca-display-sm">Related Hematology Resources</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Resource 1: Whitepaper -->
+          <a href="/resources/whitepapers/gene-therapy-long-term-safety" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--blue-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--blue-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Whitepaper</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Gene Therapy Long-Term Safety Monitoring: AI-Driven Approaches</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Methodology for 15-year gene therapy follow-up monitoring, including integration site analysis automation, clonal expansion detection, and regulatory reporting across FDA, EMA, and PMDA requirements.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Download Whitepaper <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 2: Blog Post -->
+          <a href="/resources/insights/car-t-safety-landscape-2026" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--indigo-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--indigo-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Insight</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">CAR-T Safety Landscape 2026: Secondary Malignancy Signal Analysis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Analysis of emerging T-cell lymphoma signals in CAR-T recipients, regulatory responses from FDA and EMA, and implications for benefit-risk assessment in hematologic malignancies.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Read Article <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 3: Webinar -->
+          <a href="/resources/webinars/rare-hematology-bra-webinar" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--green-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--green-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Webinar</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Small-Population BRA in Rare Hematologic Conditions</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              On-demand webinar covering Bayesian BRA methods for rare blood disorders, external control arm construction, and regulatory acceptance of small-sample benefit-risk frameworks.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Watch Recording <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/resources/hub?ta=hematology" class="arca-btn-tertiary">
+            View All Hematology Resources <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See How ArcaScience Supports Hematology Programs
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration of ArcaScience's platform configured for hematology benefit-risk analysis. Our scientists will walk through cell/gene therapy safety monitoring capabilities, anticoagulant BRA frameworks, and regulatory output examples relevant to your hematology development program.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?ta=hematology" class="arca-btn-primary-inverted">
+            Request Hematology Briefing
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+
+      // Accordion functionality
+      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.arca-accordion-icon');
+          var isOpen = content.style.display === 'block';
+
+          // Close all accordions in this group
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) {
+            c.style.display = 'none';
+          });
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) {
+            i.textContent = '+';
+          });
+
+          // Toggle current accordion
+          if (!isOpen) {
+            content.style.display = 'block';
+            icon.textContent = '\u2212';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

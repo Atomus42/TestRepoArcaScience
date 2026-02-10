@@ -1,0 +1,544 @@
+<!--
+  ArcaScience Solution / Use-Case Page Template — Webflow Structure Reference
+  =============================================================================
+  This file is the BLUEPRINT for all 4 lifecycle solution pages:
+    1. Early Development (Phase I-II)
+    2. Late Development & Submission (Phase III / Filing)
+    3. Post-Marketing Surveillance
+    4. Market Access & HEOR
+
+  HOW TO USE:
+  1. Duplicate this template for each solution page.
+  2. Replace all {{PLACEHOLDER}} markers with page-specific content.
+  3. In Webflow, recreate each section as a div block with the classes shown.
+  4. Paste custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  5. The data-* attributes trigger JS behaviors automatically.
+
+  PLACEHOLDER REFERENCE:
+    {{PAGE_NAME}}         — Breadcrumb label (e.g., "Early Development")
+    {{PAGE_TITLE}}        — HTML <title> tag
+    {{META_DESCRIPTION}}  — Meta description for SEO
+    {{SECTION_LABEL}}     — arca-label text (e.g., "Early Development")
+    {{H1}}                — Page H1 headline
+    {{SUBTITLE}}          — Subtitle paragraph in arca-body-lg
+    {{HERO_PARAGRAPH}}    — Extended hero description paragraph
+
+    {{CHALLENGE_TITLE}}        — "The Challenge" section heading
+    {{CHALLENGE_DESCRIPTION}}  — Challenge section body text
+    {{PAIN_CARD_1_TITLE}}      — Pain point card 1 heading
+    {{PAIN_CARD_1_TEXT}}       — Pain point card 1 body
+    {{PAIN_CARD_2_TITLE}}      — Pain point card 2 heading
+    {{PAIN_CARD_2_TEXT}}       — Pain point card 2 body
+    {{PAIN_CARD_3_TITLE}}      — Pain point card 3 heading
+    {{PAIN_CARD_3_TEXT}}       — Pain point card 3 body
+
+    {{CAPABILITY_1_TAG}}       — Module tag text (e.g., "Data Intelligence")
+    {{CAPABILITY_1_TAG_CLASS}} — Module tag modifier (e.g., "is-data")
+    {{CAPABILITY_1_TITLE}}     — Capability card 1 heading
+    {{CAPABILITY_1_TEXT}}      — Capability card 1 body
+    (repeat for 2 and 3)
+
+    {{STEP_1}} through {{STEP_4}} — Workflow step descriptions
+
+    {{METRIC_1_VALUE}}, {{METRIC_1_SUFFIX}}, {{METRIC_1_LABEL}}
+    {{METRIC_2_VALUE}}, {{METRIC_2_SUFFIX}}, {{METRIC_2_LABEL}}
+    {{METRIC_3_VALUE}}, {{METRIC_3_SUFFIX}}, {{METRIC_3_LABEL}}
+
+    {{CASE_STUDY_LABEL}}       — Case study section label
+    {{CASE_STUDY_TITLE}}       — Case study heading
+    {{CASE_STUDY_TEXT}}        — Case study description
+    {{CASE_STUDY_LINK}}        — Case study URL
+    {{TESTIMONIAL_QUOTE}}      — Client testimonial text
+    {{TESTIMONIAL_NAME}}       — Testimonial attribution name/title
+    {{TESTIMONIAL_ORG}}        — Testimonial organization
+
+    {{RELATED_1_HREF}}, {{RELATED_1_TITLE}}, {{RELATED_1_TEXT}}
+    {{RELATED_2_HREF}}, {{RELATED_2_TITLE}}, {{RELATED_2_TEXT}}
+    {{RELATED_3_HREF}}, {{RELATED_3_TITLE}}, {{RELATED_3_TEXT}}
+
+    {{USE_CASE}}               — CTA use case name (e.g., "Early Development")
+    {{SOLUTIONS_NAV_ACTIVE}}   — Set is-active on correct Solutions link
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PAGE_TITLE}} — ArcaScience</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Identical to homepage nav.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown — active on solution pages -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <nav aria-label="Breadcrumb" style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0;">
+        <li><a href="/" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Home</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li><a href="/solutions" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Solutions</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li class="arca-body-sm arca-text-grey-900" aria-current="page">{{PAGE_NAME}}</li>
+      </ol>
+    </nav>
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         White background. Section label, H1, subtitle.
+         ================================================================ -->
+    <section style="padding: var(--space-8) 0 var(--space-7);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 780px;">
+          <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-3);">
+            {{SECTION_LABEL}}
+          </p>
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            {{H1}}
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-5); max-width: 680px;">
+            {{SUBTITLE}}
+          </p>
+          <p class="arca-body-md arca-text-grey-600" style="max-width: 680px;">
+            {{HERO_PARAGRAPH}}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: THE CHALLENGE
+         White background. 7/5 grid — left text, right pain-point cards.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
+
+          <!-- Left: Challenge text -->
+          <div>
+            <p class="arca-section-label">The Challenge</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              {{CHALLENGE_TITLE}}
+            </h2>
+            <p class="arca-body-md arca-text-grey-600">
+              {{CHALLENGE_DESCRIPTION}}
+            </p>
+          </div>
+
+          <!-- Right: 3 pain-point cards stacked -->
+          <div style="display: grid; gap: 16px;">
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">{{PAIN_CARD_1_TITLE}}</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                {{PAIN_CARD_1_TEXT}}
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">{{PAIN_CARD_2_TITLE}}</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                {{PAIN_CARD_2_TEXT}}
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">{{PAIN_CARD_3_TITLE}}</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                {{PAIN_CARD_3_TEXT}}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: HOW ARCASCIENCE ADDRESSES THIS
+         Grey-50 background. 3-column capability cards with module tags.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">How ArcaScience Addresses This</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Platform Capabilities for {{SECTION_LABEL}}
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Capability 1: Data Intelligence -->
+          <div class="arca-card arca-card-colored-top {{CAPABILITY_1_TAG_CLASS}}" data-animate>
+            <span class="arca-module-tag {{CAPABILITY_1_TAG_CLASS}}">{{CAPABILITY_1_TAG}}</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              {{CAPABILITY_1_TITLE}}
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              {{CAPABILITY_1_TEXT}}
+            </p>
+          </div>
+
+          <!-- Capability 2: Decision Intelligence -->
+          <div class="arca-card arca-card-colored-top {{CAPABILITY_2_TAG_CLASS}}" data-animate>
+            <span class="arca-module-tag {{CAPABILITY_2_TAG_CLASS}}">{{CAPABILITY_2_TAG}}</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              {{CAPABILITY_2_TITLE}}
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              {{CAPABILITY_2_TEXT}}
+            </p>
+          </div>
+
+          <!-- Capability 3: Automated Outputs -->
+          <div class="arca-card arca-card-colored-top {{CAPABILITY_3_TAG_CLASS}}" data-animate>
+            <span class="arca-module-tag {{CAPABILITY_3_TAG_CLASS}}">{{CAPABILITY_3_TAG}}</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              {{CAPABILITY_3_TITLE}}
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              {{CAPABILITY_3_TEXT}}
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: WORKFLOW / PROCESS
+         White background. Numbered step-by-step process.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Workflow</p>
+          <h2 class="arca-display-sm">How It Works</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <!-- Step 1 -->
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              1
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">{{STEP_1_TITLE}}</p>
+            <p class="arca-body-sm arca-text-grey-600">{{STEP_1}}</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              2
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">{{STEP_2_TITLE}}</p>
+            <p class="arca-body-sm arca-text-grey-600">{{STEP_2}}</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              3
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">{{STEP_3_TITLE}}</p>
+            <p class="arca-body-sm arca-text-grey-600">{{STEP_3}}</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              4
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">{{STEP_4_TITLE}}</p>
+            <p class="arca-body-sm arca-text-grey-600">{{STEP_4}}</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PERFORMANCE METRICS
+         Dark background. Credibility bar with count-up metrics.
+         ================================================================ -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-3);">Performance Metrics</p>
+          <h2 class="arca-heading-1 arca-text-white">Measured Impact</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="{{METRIC_1_VALUE}}" data-countup-suffix="{{METRIC_1_SUFFIX}}">0</span>
+            <p class="arca-caption">{{METRIC_1_LABEL}}</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="{{METRIC_2_VALUE}}" data-countup-suffix="{{METRIC_2_SUFFIX}}">0</span>
+            <p class="arca-caption">{{METRIC_2_LABEL}}</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="{{METRIC_3_VALUE}}" data-countup-suffix="{{METRIC_3_SUFFIX}}">0</span>
+            <p class="arca-caption">{{METRIC_3_LABEL}}</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: RELATED CASE STUDY
+         Blue-50 background. Featured case study with testimonial.
+         ================================================================ -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Case study content -->
+          <div>
+            <p class="arca-section-label">{{CASE_STUDY_LABEL}}</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              {{CASE_STUDY_TITLE}}
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              {{CASE_STUDY_TEXT}}
+            </p>
+            <a href="{{CASE_STUDY_LINK}}" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Testimonial -->
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              {{TESTIMONIAL_QUOTE}}
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">{{TESTIMONIAL_NAME}}</p>
+              <p class="arca-body-sm arca-text-grey-600">{{TESTIMONIAL_ORG}}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: RELATED USE CASES
+         White background. Cards linking to the other 3 lifecycle phases.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Related Solutions</p>
+          <h2 class="arca-display-sm">Benefit-Risk Analysis Across the Lifecycle</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <a href="{{RELATED_1_HREF}}" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">{{RELATED_1_TITLE}}</h3>
+            <p class="arca-body-sm arca-text-grey-600">{{RELATED_1_TEXT}}</p>
+          </a>
+
+          <a href="{{RELATED_2_HREF}}" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">{{RELATED_2_TITLE}}</h3>
+            <p class="arca-body-sm arca-text-grey-600">{{RELATED_2_TEXT}}</p>
+          </a>
+
+          <a href="{{RELATED_3_HREF}}" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">{{RELATED_3_TITLE}}</h3>
+            <p class="arca-body-sm arca-text-grey-600">{{RELATED_3_TEXT}}</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: CTA
+         Full-width blue gradient. Primary conversion section.
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Your {{USE_CASE}} Challenge
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your regulatory challenge, development phase, and therapeutic area.
+        </p>
+        <a href="/contact" class="arca-btn-primary-inverted">
+          Talk to a Scientist
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Identical to homepage footer.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS + CountUp -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

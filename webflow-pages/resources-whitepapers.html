@@ -1,0 +1,326 @@
+<!--
+  ArcaScience Whitepapers & Reports — Webflow Structure Reference
+  ================================================================
+  Technical whitepapers and methodology guides with gated downloads.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Whitepapers and Methodology Guides — ArcaScience</title>
+  <meta name="description" content="In-depth publications on benefit-risk methodology, AI in pharmacovigilance, and regulatory science.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <a href="/platform" class="arca-nav-link">Platform</a>
+        <a href="/solutions" class="arca-nav-link">Solutions</a>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link is-active">Resources</a>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">Whitepapers</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section class="arca-bg-blue-50" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5);">
+            Technical Whitepapers and Methodology Guides
+          </h1>
+          <p class="arca-body-lg arca-text-grey-700">
+            In-depth publications on benefit-risk methodology, AI in pharmacovigilance, and regulatory science.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Whitepaper Cards Grid -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Whitepaper 1 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-500) 0%, var(--indigo-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              The ArcaScience Methodology
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">24 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">The ArcaScience Methodology: AI-Driven Benefit-Risk Analysis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comprehensive overview of the platform's scientific foundation. Covers the AS Profiling Base data architecture, 24 AI model taxonomy, BRAT framework implementation, and regulatory alignment with FDA and EMA guidance.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-whitepaper-download="methodology">
+              Download PDF
+            </button>
+          </div>
+
+          <!-- Whitepaper 2 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--indigo-500) 0%, var(--purple-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              BRAT Framework Implementation
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">18 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">BRAT Framework Implementation: From Theory to Automated Practice</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              How ArcaScience operationalizes the Benefit-Risk Action Team (BRAT) framework. Step-by-step guide to automated value tree construction, effects table generation, and scenario modeling for regulatory submissions.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-whitepaper-download="brat">
+              Download PDF
+            </button>
+          </div>
+
+          <!-- Whitepaper 3 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--teal-500) 0%, var(--green-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              Domain AI vs General Models
+            </div>
+            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); width: fit-content;">16 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Domain-Specific AI vs General-Purpose Models for Pharmacovigilance</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comparative analysis of approach effectiveness. Benchmark study demonstrating why purpose-trained models outperform general LLMs for adverse event extraction, MedDRA coding, and causality assessment.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-whitepaper-download="domain-ai">
+              Download PDF
+            </button>
+          </div>
+
+          <!-- Whitepaper 4 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--orange-500) 0%, var(--red-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              Automating PSUR/PBRER
+            </div>
+            <span class="arca-module-tag is-output" style="margin-bottom: var(--space-3); width: fit-content;">20 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automating PSUR/PBRER: A Technical Guide</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              ICH E2C(R2) alignment and automation methodology. Detailed walkthrough of data integration, signal detection, literature synthesis, and submission-ready document generation with full regulatory traceability.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-whitepaper-download="psur-pbrer">
+              Download PDF
+            </button>
+          </div>
+
+          <!-- Whitepaper 5 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-600) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              Signal Detection at Scale
+            </div>
+            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); width: fit-content;">14 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Signal Detection at Scale: Methods and Validation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Disproportionality analysis and AI-augmented detection. Technical deep-dive on PRR, ROR, MGPS, BCPNN methods enhanced with deep learning for 3x faster signal identification and reduced false positives.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-whitepaper-download="signal-detection">
+              Download PDF
+            </button>
+          </div>
+
+          <!-- Whitepaper 6 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--purple-500) 0%, var(--pink-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              BRA for HTA Bodies
+            </div>
+            <span class="arca-module-tag is-output" style="margin-bottom: var(--space-3); width: fit-content;">12 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Benefit-Risk Evidence for HTA Bodies: Extending Regulatory Analysis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              From regulatory BRA to payer value story. How to repurpose regulatory benefit-risk analysis for NICE, G-BA, and other health technology assessment submissions with comparative effectiveness evidence.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-whitepaper-download="hta">
+              Download PDF
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Form Modal (Hidden by default, shown via JS) -->
+    <div id="whitepaper-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; padding: 24px; overflow-y: auto;">
+      <div style="max-width: 480px; margin: 80px auto; background: var(--white); border-radius: 8px; padding: var(--space-7); position: relative;">
+        <button aria-label="Close" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.5rem; color: var(--grey-600); cursor: pointer;" data-modal-close>&times;</button>
+
+        <h2 class="arca-heading-2" style="margin-bottom: var(--space-4);">Download Whitepaper</h2>
+        <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-6);">
+          Please provide your information to download this resource. We'll also send you relevant insights on benefit-risk methodology.
+        </p>
+
+        <form data-whitepaper-form style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <label for="download-name" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Full Name *</label>
+            <input type="text" id="download-name" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+          </div>
+
+          <div>
+            <label for="download-email" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Work Email *</label>
+            <input type="email" id="download-email" class="arca-form-field" data-form-email required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+            <p class="arca-caption arca-text-grey-600" style="margin-top: var(--space-2);">Corporate email required (no Gmail, Yahoo, etc.)</p>
+          </div>
+
+          <div>
+            <label for="download-company" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Company *</label>
+            <input type="text" id="download-company" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+          </div>
+
+          <div>
+            <label for="download-role" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Job Function *</label>
+            <select id="download-role" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem; background: var(--white); cursor: pointer;">
+              <option value="">Select...</option>
+              <option value="medical-affairs">Medical Affairs</option>
+              <option value="regulatory">Regulatory Affairs</option>
+              <option value="pharmacovigilance">Pharmacovigilance</option>
+              <option value="clinical-development">Clinical Development</option>
+              <option value="market-access">Market Access/HEOR</option>
+              <option value="executive">Executive Leadership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div style="margin-top: var(--space-3);">
+            <label style="display: flex; align-items: start; gap: 8px; cursor: pointer;">
+              <input type="checkbox" required style="margin-top: 4px;">
+              <span class="arca-caption arca-text-grey-600">
+                I agree to receive communications from ArcaScience. View <a href="/legal/privacy" style="text-decoration: underline;">Privacy Policy</a>.
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="arca-btn-primary" style="width: 100%; margin-top: var(--space-3);">
+            Download PDF
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Request Custom Analysis
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Need a tailored analysis for your specific compound, indication, or regulatory challenge? Talk to our scientific team about custom research services.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request Custom Analysis
+          </a>
+          <a href="/science" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Learn About Our Methodology <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/webinars" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Webinars</a>
+            <a href="/evidence/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

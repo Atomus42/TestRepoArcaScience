@@ -1,0 +1,141 @@
+/* ============================================================
+   ArcaScience Webflow Utility Classes
+   Atomic helpers for Webflow custom class fields.
+   Naming: as-{property}-{value}
+   ============================================================ */
+
+/* ---- Text sizes ---- */
+.as-text-display-lg { font-size: var(--text-display-lg); line-height: var(--leading-display); letter-spacing: -0.02em; }
+.as-text-display-sm { font-size: var(--text-display-sm); line-height: var(--leading-display); letter-spacing: -0.015em; }
+.as-text-heading-1  { font-size: var(--text-heading-1);  line-height: var(--leading-heading); letter-spacing: -0.01em; }
+.as-text-heading-2  { font-size: var(--text-heading-2);  line-height: 1.25; letter-spacing: -0.005em; }
+.as-text-heading-3  { font-size: var(--text-heading-3);  line-height: 1.3; }
+.as-text-body-lg    { font-size: var(--text-body-lg);    line-height: var(--leading-body); }
+.as-text-body-md    { font-size: var(--text-body-md);    line-height: var(--leading-body); }
+.as-text-body-sm    { font-size: var(--text-body-sm);    line-height: var(--leading-body); }
+.as-text-caption    { font-size: var(--text-caption);    line-height: 1.5; }
+.as-text-label      { font-size: var(--text-label);      font-weight: var(--weight-semi); text-transform: uppercase; letter-spacing: 0.08em; line-height: var(--leading-tight); }
+.as-text-stat-lg    { font-size: var(--text-stat-lg);    font-weight: var(--weight-bold); line-height: 1; letter-spacing: -0.02em; }
+.as-text-stat-sm    { font-size: var(--text-stat-sm);    font-weight: var(--weight-bold); line-height: 1; letter-spacing: -0.01em; }
+.as-text-mono       { font-family: var(--font-mono);     font-size: var(--text-body-sm); }
+
+/* ---- Font weights ---- */
+.as-weight-regular { font-weight: var(--weight-regular); }
+.as-weight-medium  { font-weight: var(--weight-medium); }
+.as-weight-semi    { font-weight: var(--weight-semi); }
+.as-weight-bold    { font-weight: var(--weight-bold); }
+
+/* ---- Text colors ---- */
+.as-text-primary   { color: var(--color-grey-900); }
+.as-text-secondary { color: var(--color-grey-600); }
+.as-text-tertiary  { color: var(--color-grey-400); }
+.as-text-blue      { color: var(--color-blue-600); }
+.as-text-teal      { color: var(--color-teal-600); }
+.as-text-indigo    { color: var(--color-indigo-600); }
+.as-text-green     { color: var(--color-green-600); }
+.as-text-white     { color: var(--color-white); }
+.as-text-red       { color: var(--color-red-600); }
+
+/* ---- Background colors ---- */
+.as-bg-white    { background-color: var(--color-white); }
+.as-bg-grey-50  { background-color: var(--color-grey-50); }
+.as-bg-grey-100 { background-color: var(--color-grey-100); }
+.as-bg-blue-50  { background-color: var(--color-blue-50); }
+.as-bg-blue-100 { background-color: var(--color-blue-100); }
+.as-bg-blue-600 { background-color: var(--color-blue-600); }
+.as-bg-blue-900 { background-color: var(--color-blue-900); }
+.as-bg-teal-100 { background-color: var(--color-teal-100); }
+.as-bg-indigo-100 { background-color: var(--color-indigo-100); }
+.as-bg-green-100  { background-color: var(--color-green-100); }
+
+/* ---- Spacing (margin) ---- */
+.as-mt-0  { margin-top: 0; }
+.as-mt-1  { margin-top: var(--space-1); }
+.as-mt-2  { margin-top: var(--space-2); }
+.as-mt-3  { margin-top: var(--space-3); }
+.as-mt-4  { margin-top: var(--space-4); }
+.as-mt-5  { margin-top: var(--space-5); }
+.as-mt-6  { margin-top: var(--space-6); }
+.as-mt-7  { margin-top: var(--space-7); }
+.as-mt-8  { margin-top: var(--space-8); }
+.as-mt-9  { margin-top: var(--space-9); }
+
+.as-mb-0  { margin-bottom: 0; }
+.as-mb-1  { margin-bottom: var(--space-1); }
+.as-mb-2  { margin-bottom: var(--space-2); }
+.as-mb-3  { margin-bottom: var(--space-3); }
+.as-mb-4  { margin-bottom: var(--space-4); }
+.as-mb-5  { margin-bottom: var(--space-5); }
+.as-mb-6  { margin-bottom: var(--space-6); }
+.as-mb-7  { margin-bottom: var(--space-7); }
+.as-mb-8  { margin-bottom: var(--space-8); }
+
+/* ---- Spacing (padding) ---- */
+.as-p-0  { padding: 0; }
+.as-p-3  { padding: var(--space-3); }
+.as-p-4  { padding: var(--space-4); }
+.as-p-5  { padding: var(--space-5); }
+.as-p-6  { padding: var(--space-6); }
+
+.as-py-7  { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+.as-py-8  { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.as-py-9  { padding-top: var(--space-9); padding-bottom: var(--space-9); }
+.as-py-10 { padding-top: var(--space-10); padding-bottom: var(--space-10); }
+
+/* ---- Layout helpers ---- */
+.as-flex        { display: flex; }
+.as-flex-col    { display: flex; flex-direction: column; }
+.as-flex-center { display: flex; align-items: center; justify-content: center; }
+.as-flex-between { display: flex; align-items: center; justify-content: space-between; }
+.as-gap-2  { gap: var(--space-2); }
+.as-gap-3  { gap: var(--space-3); }
+.as-gap-4  { gap: var(--space-4); }
+.as-gap-5  { gap: var(--space-5); }
+.as-gap-6  { gap: var(--space-6); }
+
+.as-text-center { text-align: center; }
+.as-text-right  { text-align: right; }
+
+.as-mx-auto { margin-left: auto; margin-right: auto; }
+
+.as-max-w-narrow { max-width: 640px; }
+.as-max-w-medium { max-width: 800px; }
+.as-max-w-wide   { max-width: var(--max-width); }
+.as-max-w-full   { max-width: 100%; }
+
+.as-w-full { width: 100%; }
+
+/* ---- Borders ---- */
+.as-border        { border: 1px solid var(--color-grey-200); }
+.as-border-bottom { border-bottom: 1px solid var(--color-grey-200); }
+.as-border-top    { border-top: 1px solid var(--color-grey-200); }
+.as-rounded       { border-radius: var(--border-radius); }
+
+/* ---- Visibility ---- */
+.as-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Desktop-only / Mobile-only */
+@media (max-width: 767px) {
+  .as-hide-mobile { display: none !important; }
+}
+@media (min-width: 768px) {
+  .as-hide-desktop { display: none !important; }
+}
+
+/* ---- Tabular nums (for data) ---- */
+.as-tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* ---- Images ---- */
+.as-img-cover { object-fit: cover; width: 100%; height: 100%; }
+.as-img-grayscale { filter: grayscale(100%); transition: filter var(--duration-normal); }
+.as-img-grayscale:hover { filter: grayscale(0%); }

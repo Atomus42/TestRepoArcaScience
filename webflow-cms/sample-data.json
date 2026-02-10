@@ -1,0 +1,316 @@
+{
+  "_comment": "ArcaScience Webflow CMS — Sample data for design and testing. Import via Webflow CMS API or enter manually in the Designer.",
+
+  "therapeutic-areas": [
+    {
+      "name": "Oncology",
+      "short-name": "Onco",
+      "description": "Comprehensive benefit-risk analysis for oncology drugs, covering complex safety profiles, biomarker-driven therapies, and accelerated approval pathways.",
+      "data-coverage": "25B+ oncology-specific adverse event records",
+      "display-order": 1
+    },
+    {
+      "name": "Immunology",
+      "short-name": "Immuno",
+      "description": "Specialized BRA capabilities for immunomodulatory and biologic therapies, including long-term safety monitoring and immunogenicity assessment.",
+      "data-coverage": "18B+ immunology data points",
+      "display-order": 2
+    },
+    {
+      "name": "Rare Diseases",
+      "short-name": "Rare",
+      "description": "Tailored analysis for orphan drugs and rare disease therapies, addressing small population challenges and natural history data integration.",
+      "data-coverage": "8B+ rare disease records across 3,000+ conditions",
+      "display-order": 3
+    },
+    {
+      "name": "Dermatology",
+      "short-name": "Derm",
+      "description": "Benefit-risk assessment for dermatologic therapies including biologics, small molecules, and topical treatments with patient-reported outcome integration.",
+      "data-coverage": "12B+ dermatology-related records",
+      "display-order": 4
+    },
+    {
+      "name": "Neurology",
+      "short-name": "Neuro",
+      "description": "Advanced BRA for neurologic therapies addressing complex CNS safety profiles, cognitive outcomes, and long-term treatment effects.",
+      "data-coverage": "15B+ neurology data points",
+      "display-order": 5
+    },
+    {
+      "name": "Cardiology",
+      "short-name": "Cardio",
+      "description": "Cardiovascular safety analysis including MACE endpoint modeling, QT prolongation assessment, and post-marketing CV surveillance.",
+      "data-coverage": "20B+ cardiovascular records",
+      "display-order": 6
+    },
+    {
+      "name": "Respiratory",
+      "short-name": "Resp",
+      "description": "BRA support for respiratory therapies including inhaled biologics, COPD treatments, and asthma biologic safety monitoring.",
+      "data-coverage": "10B+ respiratory data points",
+      "display-order": 7
+    },
+    {
+      "name": "Infectious Disease",
+      "short-name": "ID",
+      "description": "Rapid benefit-risk analysis for anti-infective therapies, vaccines, and pandemic-response treatments with real-time safety signal detection.",
+      "data-coverage": "22B+ infectious disease records",
+      "display-order": 8
+    },
+    {
+      "name": "Gastroenterology",
+      "short-name": "GI",
+      "description": "Specialized analysis for GI therapies including IBD biologics, liver disease treatments, and GI safety signal characterization.",
+      "data-coverage": "9B+ GI-related records",
+      "display-order": 9
+    },
+    {
+      "name": "Endocrinology",
+      "short-name": "Endo",
+      "description": "BRA for metabolic and endocrine therapies including diabetes treatments, thyroid medications, and hormone therapies with cardiovascular risk integration.",
+      "data-coverage": "14B+ endocrinology data points",
+      "display-order": 10
+    },
+    {
+      "name": "Hematology",
+      "short-name": "Heme",
+      "description": "Benefit-risk assessment for hematologic therapies including cell and gene therapies, anticoagulants, and rare blood disorder treatments.",
+      "data-coverage": "7B+ hematology records",
+      "display-order": 11
+    },
+    {
+      "name": "Pediatrics",
+      "short-name": "Peds",
+      "description": "Age-appropriate BRA for pediatric drug development, incorporating growth and development safety endpoints and extrapolation modeling.",
+      "data-coverage": "5B+ pediatric-specific records",
+      "display-order": 12
+    }
+  ],
+
+  "platform-modules": [
+    {
+      "name": "Data Intelligence",
+      "color-code": "teal",
+      "short-description": "Ingest, harmonize, and enrich 100B+ data points from clinical trials, post-market databases, and real-world evidence sources."
+    },
+    {
+      "name": "Decision Intelligence",
+      "color-code": "indigo",
+      "short-description": "Apply BRAT frameworks, MCDA models, and AI-powered analytics to quantify benefit-risk profiles with regulatory-grade rigor."
+    },
+    {
+      "name": "Automated Outputs",
+      "color-code": "green",
+      "short-description": "Generate submission-ready documents including PSURs, RMPs, CTD Module 2.5, and HEOR reports with full audit trails."
+    }
+  ],
+
+  "topics": [
+    { "name": "BRA Methodology", "display-order": 1 },
+    { "name": "Signal Detection", "display-order": 2 },
+    { "name": "AI in Pharma", "display-order": 3 },
+    { "name": "Regulatory Affairs", "display-order": 4 },
+    { "name": "Pharmacovigilance", "display-order": 5 },
+    { "name": "Real-World Evidence", "display-order": 6 },
+    { "name": "Drug Safety", "display-order": 7 },
+    { "name": "HEOR & Market Access", "display-order": 8 },
+    { "name": "Company News", "display-order": 9 }
+  ],
+
+  "case-studies": [
+    {
+      "client-name": "Sanofi",
+      "title": "Dermatology BRA Acceleration",
+      "therapeutic-area": "Dermatology",
+      "development-phase": "Post-Marketing",
+      "challenge": "Sanofi's pharmacovigilance team needed to accelerate periodic safety update report generation for a key dermatology biologic while maintaining regulatory rigor. Manual processes required 12+ weeks per cycle and involved reconciling data from 47 countries.",
+      "approach": "ArcaScience deployed the full platform—Data Intelligence for multi-source harmonization, Decision Intelligence for automated BRAT analysis, and Automated Outputs for PSUR draft generation—integrated with Sanofi's existing safety database.",
+      "outcome": "60% reduction in PSUR cycle time (from 12 weeks to under 5 weeks), with improved signal detection sensitivity and full EMA acceptance of AI-assisted submissions.",
+      "key-metric-value": "60",
+      "key-metric-label": "% reduction in PSUR cycle time",
+      "metric-2-value": "47",
+      "metric-2-label": "countries harmonized",
+      "metric-3-value": "100",
+      "metric-3-label": "% regulatory acceptance rate",
+      "testimonial-quote": "ArcaScience transformed our periodic reporting from a quarterly burden into a strategic advantage. The platform's ability to harmonize global safety data and generate regulatory-ready outputs has fundamentally changed how we approach benefit-risk assessment.",
+      "testimonial-author": "Dr. Sophie Laurent",
+      "testimonial-title": "VP Pharmacovigilance, Sanofi",
+      "is-featured": true
+    },
+    {
+      "client-name": "AstraZeneca",
+      "title": "Oncology Signal Detection Enhancement",
+      "therapeutic-area": "Oncology",
+      "development-phase": "Post-Marketing",
+      "challenge": "AstraZeneca required faster, more sensitive signal detection across their oncology portfolio, where complex multi-drug regimens and novel mechanisms created a high volume of safety signals requiring prioritization.",
+      "approach": "Deployed ArcaScience's AI-powered signal detection with disproportionality analysis (PRR, ROR, BCPNN) and machine learning classifiers trained on oncology-specific adverse event patterns.",
+      "outcome": "3x improvement in signal detection speed, with 40% reduction in false-positive rates, enabling the safety team to focus on clinically meaningful signals.",
+      "key-metric-value": "3",
+      "key-metric-label": "× faster signal detection",
+      "metric-2-value": "40",
+      "metric-2-label": "% reduction in false positives",
+      "metric-3-value": "12",
+      "metric-3-label": "oncology compounds monitored",
+      "testimonial-quote": "The precision of ArcaScience's signal detection has given our oncology safety team confidence to act faster on emerging risks while spending less time chasing noise.",
+      "testimonial-author": "Dr. James Chen",
+      "testimonial-title": "Head of Oncology Safety, AstraZeneca",
+      "is-featured": false
+    },
+    {
+      "client-name": "Takeda",
+      "title": "Rare Disease Regulatory Submission",
+      "therapeutic-area": "Rare Diseases",
+      "development-phase": "Submission",
+      "challenge": "Takeda faced the unique challenge of building a comprehensive benefit-risk case for an orphan drug with limited clinical data, requiring integration of natural history studies, real-world evidence, and expert elicitation.",
+      "approach": "ArcaScience's Decision Intelligence module applied structured expert elicitation alongside quantitative BRA frameworks, integrating sparse clinical data with external evidence to build a robust submission-ready benefit-risk assessment.",
+      "outcome": "Successful FDA and EMA submission with first-cycle approval. The benefit-risk framework was cited by reviewers as exemplary for rare disease applications.",
+      "key-metric-value": "1",
+      "key-metric-label": "st-cycle approval (both FDA & EMA)",
+      "metric-2-value": "8",
+      "metric-2-label": "evidence sources integrated",
+      "metric-3-value": "6",
+      "metric-3-label": "month submission timeline",
+      "testimonial-quote": "For rare diseases, every data point matters. ArcaScience helped us weave together disparate evidence sources into a compelling benefit-risk narrative that resonated with regulators on both sides of the Atlantic.",
+      "testimonial-author": "Dr. Maria Gonzalez",
+      "testimonial-title": "VP Regulatory Affairs, Takeda",
+      "is-featured": false
+    }
+  ],
+
+  "team-members": [
+    {
+      "name": "Romain Clement",
+      "title": "Co-Founder & CEO",
+      "department": "Leadership",
+      "short-bio": "Founded ArcaScience after personal experience with brain cancer treatment highlighted the need for better drug safety decision-making.",
+      "credentials": "MSc Biostatistics",
+      "is-founder": true,
+      "is-leadership": true,
+      "display-order": 1
+    },
+    {
+      "name": "Dr. Claire Dupont",
+      "title": "Co-Founder & Chief Science Officer",
+      "department": "Leadership",
+      "short-bio": "15+ years in pharmacoepidemiology and regulatory science. Former EMA Committee member.",
+      "credentials": "PhD Pharmacoepidemiology",
+      "is-founder": true,
+      "is-leadership": true,
+      "display-order": 2
+    },
+    {
+      "name": "Dr. Marc Tessier",
+      "title": "Chief Technology Officer",
+      "department": "Leadership",
+      "short-bio": "Previously led AI/ML engineering at a top-10 pharma company. Expert in NLP for biomedical text mining.",
+      "credentials": "PhD Computer Science",
+      "is-founder": false,
+      "is-leadership": true,
+      "display-order": 3
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "Chief Operating Officer",
+      "department": "Leadership",
+      "short-bio": "20 years in pharma operations and SaaS scaling. Previously COO at a leading clinical trial technology company.",
+      "credentials": "MBA",
+      "is-founder": false,
+      "is-leadership": true,
+      "display-order": 4
+    }
+  ],
+
+  "open-positions": [
+    {
+      "name": "Senior ML Engineer — NLP",
+      "department": "Engineering",
+      "location": "Paris (France)",
+      "employment-type": "Full-time",
+      "seniority": "Senior",
+      "short-description": "Build and deploy NLP models that extract safety signals from millions of biomedical documents.",
+      "is-active": true
+    },
+    {
+      "name": "Pharmacoepidemiologist",
+      "department": "Science",
+      "location": "Paris (France)",
+      "employment-type": "Full-time",
+      "seniority": "Mid-level",
+      "short-description": "Design and validate quantitative benefit-risk assessment methodologies for our platform.",
+      "is-active": true
+    },
+    {
+      "name": "Full-Stack Engineer",
+      "department": "Engineering",
+      "location": "Remote (EU)",
+      "employment-type": "Full-time",
+      "seniority": "Mid-level",
+      "short-description": "Build the interfaces that pharma teams use daily to make critical safety decisions.",
+      "is-active": true
+    },
+    {
+      "name": "Senior Data Engineer",
+      "department": "Engineering",
+      "location": "Paris (France)",
+      "employment-type": "Full-time",
+      "seniority": "Senior",
+      "short-description": "Design and maintain the data pipelines that process 100B+ pharmacovigilance records.",
+      "is-active": true
+    },
+    {
+      "name": "Regulatory Affairs Specialist",
+      "department": "Science",
+      "location": "Sunnyvale (CA)",
+      "employment-type": "Full-time",
+      "seniority": "Mid-level",
+      "short-description": "Guide platform development to ensure alignment with FDA, EMA, and ICH regulatory expectations.",
+      "is-active": true
+    },
+    {
+      "name": "Account Executive — Enterprise Pharma",
+      "department": "Commercial",
+      "location": "Sunnyvale (CA)",
+      "employment-type": "Full-time",
+      "seniority": "Senior",
+      "short-description": "Drive enterprise sales to top-20 pharmaceutical companies across North America.",
+      "is-active": true
+    }
+  ],
+
+  "conferences-events": [
+    {
+      "name": "DIA 2025",
+      "date-start": "2025-06-15",
+      "date-end": "2025-06-19",
+      "location": "San Diego, CA",
+      "booth-number": "1247",
+      "description": "Visit us at booth #1247 for a live platform demo and discussion with our science team.",
+      "is-upcoming": true
+    },
+    {
+      "name": "ICPE 2025",
+      "date-start": "2025-08-24",
+      "date-end": "2025-08-27",
+      "location": "Atlanta, GA",
+      "description": "Presenting on AI-powered disproportionality analysis in post-marketing surveillance.",
+      "is-upcoming": true
+    },
+    {
+      "name": "ISoP Annual Meeting 2025",
+      "date-start": "2025-10-15",
+      "date-end": "2025-10-18",
+      "location": "Barcelona, Spain",
+      "description": "Workshop: Quantitative Benefit-Risk Assessment — From Framework to Automated Output.",
+      "is-upcoming": true
+    },
+    {
+      "name": "ISPOR Europe 2025",
+      "date-start": "2025-11-09",
+      "date-end": "2025-11-12",
+      "location": "Barcelona, Spain",
+      "description": "Showcasing automated HEOR report generation and real-world evidence integration.",
+      "is-upcoming": true
+    }
+  ]
+}

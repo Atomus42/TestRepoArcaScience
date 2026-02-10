@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardiology Solutions — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="ArcaScience's AI-driven benefit-risk analysis platform for Cardiology. Comprehensive data coverage, TA-specific AI models, and regulatory-grade outputs for Cardiology drug development and post-marketing surveillance.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown — ACTIVE -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- SECTION 1: BREADCRUMB + DARK HERO -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Cardiology</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Therapeutic Area Solutions
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Cardiology Benefit-Risk Analysis
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Cardiovascular safety analysis including MACE endpoint modeling, QT prolongation assessment, and post-marketing CV surveillance.
+          </p>
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request Cardiology Briefing
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: DATA COVERAGE STATS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="20000000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Cardiovascular records</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="7000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Cardiology clinical trials</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="12">0</span>
+            <p class="arca-caption">Cardiology submissions</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="10" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Years CV safety data</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TA-SPECIFIC CHALLENGE SECTION -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Unique Challenges</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Benefit-Risk Complexity in Cardiology
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Cardiology presents distinct challenges for benefit-risk assessment that require specialized data coverage, analytical approaches, and regulatory expertise.
+          </p>
+        </div>
+
+        <!-- 3 TA-specific challenge cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">MACE Endpoint Modeling</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              MACE endpoint adjudication and modeling complexity including cardiovascular death, MI, stroke, and hospitalization for heart failure. Composite endpoint analysis requires sophisticated adjudication processes and time-to-event modeling across diverse cardiovascular manifestations.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">QT Prolongation Assessment</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              QT prolongation risk assessment across drug classes including thorough QT studies, exposure-response modeling, and cardiac repolarization risk prediction. ICH E14 and S7B compliance requires integrated non-clinical and clinical cardiac safety assessment strategies.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Cardiovascular Outcome Trials</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Cardiovascular outcome trials (CVOTs) for non-CV drugs including diabetes, oncology, and immunology therapies. Regulatory requirements mandate CVOT data for many drug classes, requiring long-term cardiovascular safety monitoring and adjudicated MACE endpoint analysis.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PLATFORM CAPABILITIES FOR THIS TA -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            How ArcaScience Addresses Cardiology BRA Challenges
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our three integrated modules — Data Intelligence, Decision Intelligence, and Automated Outputs — are configured for Cardiology-specific benefit-risk assessment workflows.
+          </p>
+        </div>
+
+        <!-- 3 module cards with colored tops -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Module 1: Data Intelligence (teal) -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Cardiology Data Coverage
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Comprehensive cardiology data from 7,000+ clinical trials, 20B+ cardiovascular records, CVOT databases, ECG repositories, and real-world evidence from EHR and claims databases. Continuous updates with MedDRA coding specific to cardiology safety signals including MACE adjudication, QT interval databases, and cardiovascular outcome surveillance across all drug classes.
+            </p>
+            <a href="/platform/data-intelligence" class="arca-btn-tertiary">
+              Explore Data Engine <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 2: Decision Intelligence (indigo) -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              TA-Specific AI Models
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              7 AI models trained specifically on cardiology safety and efficacy patterns, including MACE endpoint prediction, QT prolongation risk modeling, cardiovascular outcome trial analysis, and bleeding risk stratification. BRAT framework application with cardiology regulatory precedent integration including FDA cardiovascular safety guidance and EMA CHMP cardiology-specific requirements.
+            </p>
+            <a href="/platform/ai-models" class="arca-btn-tertiary">
+              Explore AI Models <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 3: Automated Outputs (green) -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Cardiology Regulatory Outputs
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Submission-ready PSUR/PBRER, Risk Management Plans, CTD Module 2.5, and HEOR reports formatted for FDA, EMA, and PMDA requirements with cardiology-specific safety sections, MACE adjudication summaries, QT assessment reports, and regulatory citations from approved cardiology submissions including anticoagulants, antihypertensives, and lipid-lowering therapies with comprehensive cardiovascular safety data.
+            </p>
+            <a href="/platform/outputs" class="arca-btn-tertiary">
+              Explore Outputs <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ADVERSE EVENT LANDSCAPE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Safety Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Cardiology Adverse Event Landscape
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key safety signal categories tracked across cardiology development programs, with AI-powered detection and comparative analysis against class-wide safety profiles.
+          </p>
+        </div>
+
+        <!-- AE category grid -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Major Adverse Cardiovascular Events (MACE)</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Cardiovascular death, MI, stroke, heart failure hospitalization — composite endpoint requiring systematic adjudication and time-to-event analysis with competing risk considerations.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">QT Prolongation / Torsades de Pointes</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Cardiac repolarization abnormalities, TdP risk — requiring thorough QT studies, ECG monitoring, and proarrhythmic risk assessment aligned with ICH E14 guidance.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Heart Failure Exacerbation</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Worsening heart failure, fluid retention, cardiac decompensation — particularly with certain diabetes and oncology therapies requiring baseline cardiac assessment and monitoring.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Bleeding Events (Anticoagulants)</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Major bleeding, intracranial hemorrhage, GI bleeding — critical safety signals for anticoagulants requiring standardized bleeding classification (BARC, TIMI, ISTH) and risk stratification.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Hypertension</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Treatment-emergent hypertension, blood pressure elevation — common with oncology therapies (VEGF inhibitors) and requiring systematic BP monitoring and management protocols.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Thromboembolic Events</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              VTE, pulmonary embolism, arterial thrombosis — requiring risk stratification, prophylaxis strategies, and long-term monitoring particularly in oncology and immunology populations.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Link to data coverage -->
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/platform/data" class="arca-btn-tertiary">
+            See Full Cardiology Data Coverage <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CASE STUDY EXCERPT -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Case study content -->
+          <div>
+            <p class="arca-section-label">Case Study — Cardiology</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              CVOT Analysis for Diabetes Therapy
+            </h2>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                A top-10 pharmaceutical company needed comprehensive cardiovascular outcome trial analysis for a novel diabetes therapy with 10,000+ patient CVOT, requiring MACE adjudication, time-to-event modeling, and integration with broader cardiovascular safety database spanning 10+ years of post-marketing surveillance across multiple indications.
+              </p>
+            </div>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Approach</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                ArcaScience deployed cardiology-specific data intelligence covering 7,000+ cardiology trials and 20B+ cardiovascular records, applied MACE endpoint prediction models and time-to-event analysis, and generated automated regulatory outputs with cardiovascular safety summaries aligned with FDA cardiovascular safety guidance and EMA CHMP diabetes-cardiovascular safety requirements.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="10000" data-countup-suffix="+">0</span>
+                <p class="arca-caption arca-text-grey-600">CVOT patients analyzed</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="10" data-countup-suffix="+">0</span><span class="arca-stat-sm" style="color: var(--indigo-600);">yrs</span>
+                <p class="arca-caption arca-text-grey-600">Post-marketing CV data</p>
+              </div>
+            </div>
+
+            <a href="/evidence/case-studies/cardiology-case-study" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Testimonial -->
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              ArcaScience's cardiovascular safety AI models enabled us to integrate our CVOT data with 10+ years of post-marketing surveillance, providing regulators with unprecedented cardiovascular safety confidence.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Dr. Robert Anderson</p>
+              <p class="arca-body-sm arca-text-grey-600">VP Cardiovascular Safety, Top-10 Pharmaceutical Company</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: REGULATORY CONTEXT -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Regulatory Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Cardiology Regulatory Context
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key regulatory considerations and guidance specific to cardiology benefit-risk assessment for FDA, EMA, and PMDA submissions.
+          </p>
+        </div>
+
+        <!-- Accordion for regulatory guidance -->
+        <div style="max-width: 820px; margin: 0 auto;">
+
+          <div class="arca-accordion" data-accordion>
+
+            <!-- Accordion item 1 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">FDA Guidance for Cardiology</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  FDA's guidance for cardiology therapies emphasizes comprehensive cardiovascular safety assessment including MACE endpoint adjudication, thorough QT studies (ICH E14), cardiovascular outcome trials for diabetes therapies, and cardiac safety monitoring for non-CV drugs with potential cardiovascular risks. Recent updates (2024-2025) require structured benefit-risk frameworks aligned with BRAT methodology for all cardiovascular NDAs, with concentration-QTc modeling replacing thorough QT studies where feasible.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key requirements:</strong> Cardiovascular outcome trials for new diabetes therapies, MACE adjudication by independent clinical events committee, thorough QT or exposure-QT analysis, bleeding risk assessment for anticoagulants using standardized scales (BARC, TIMI), and long-term cardiovascular safety monitoring for drugs with potential CV risk signals.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 2 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">EMA Guidance for Cardiology</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  EMA's Committee for Medicinal Products for Human Use (CHMP) has issued cardiology-specific guidance emphasizing EU GVP Module V compliance for Risk Management Plans, with detailed cardiovascular safety monitoring plans, MACE adjudication requirements, and cardiac safety assessment for all drug classes with potential cardiovascular effects. Cardiovascular outcome data requirements aligned with FDA for diabetes therapies and other high-risk populations.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key focus areas:</strong> European cardiovascular registries integration, HTA-aligned cardiovascular outcome evidence, standardized MACE definition and adjudication, QT assessment per ICH E14, bleeding classification using international standards (ISTH), and real-world cardiovascular safety data collection through European healthcare databases.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 3 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">PMDA Guidance for Cardiology</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Japan's PMDA requires cardiology-specific data from Japanese patient populations, with emphasis on ethnic factors affecting cardiovascular drug responses and safety profiles. Recent guidelines mandate comprehensive post-marketing cardiovascular surveillance for all therapies with potential CV risks, including quarterly safety reporting during first year post-launch for high-risk drug classes.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Submission requirements:</strong> Japanese cardiovascular pharmacokinetic bridging studies, J-RMP (Japanese Risk Management Plan) with cardiology-specific safety monitoring including ECG surveillance and MACE tracking, cardiovascular outcome data in Japanese populations (or ethnic bridging justification), and standardized bleeding assessment for anticoagulants aligned with Japanese practice patterns.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 4 -->
+            <div class="arca-accordion-item">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Post-Marketing Requirements for Cardiology</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Regulatory authorities globally require ongoing cardiovascular benefit-risk evaluation through cardiovascular registries, long-term CVOT studies, and real-world MACE surveillance. ArcaScience automates PSUR/PBRER generation, cardiovascular signal monitoring, and RMP updates aligned with ICH E2C(R2) and EU GVP Module VIII, with specialized cardiology safety signal libraries tracking MACE patterns, QT signal detection, bleeding events adjudication, and heart failure exacerbation across all drug classes with longitudinal cardiovascular outcome modeling.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-7);">
+            <a href="/resources/regulatory-intelligence" class="arca-btn-tertiary">
+              View All Cardiology Regulatory Updates <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RELATED RESOURCES -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Resources</p>
+          <h2 class="arca-display-sm">Related Cardiology Resources</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Resource 1: Whitepaper -->
+          <a href="/resources/whitepapers/cardiology-bra-methodology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--blue-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--blue-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Whitepaper</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI-Driven BRA for Cardiology: Methodology & Case Studies</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Comprehensive overview of ArcaScience's cardiology-specific benefit-risk analysis approach, including data sources, AI model validation, and regulatory submission outcomes.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Download Whitepaper <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 2: Blog Post -->
+          <a href="/resources/insights/cardiology-regulatory-trends-2026" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--indigo-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--indigo-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Insight</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Cardiology Regulatory Trends: What Changed in 2026</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Analysis of recent FDA and EMA guidance updates affecting cardiology benefit-risk assessment requirements, with implications for current development programs.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Read Article <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 3: Webinar -->
+          <a href="/resources/webinars/cardiology-signal-detection-webinar" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--green-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--green-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Webinar</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI-Powered Signal Detection in Cardiology</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              On-demand webinar covering advanced signal detection methods for cardiology therapies, including case examples and live platform demonstration.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Watch Recording <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/resources/hub?ta=cardiology" class="arca-btn-tertiary">
+            View All Cardiology Resources <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See How ArcaScience Supports Cardiology
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration of ArcaScience's platform configured for cardiology benefit-risk analysis. Our scientists will walk through TA-specific data coverage, AI model capabilities, and regulatory output examples relevant to your development program.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?ta=cardiology" class="arca-btn-primary-inverted">
+            Request Cardiology Briefing
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+
+      // Accordion functionality
+      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.arca-accordion-icon');
+          var isOpen = content.style.display === 'block';
+
+          // Close all accordions in this group
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) {
+            c.style.display = 'none';
+          });
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) {
+            i.textContent = '+';
+          });
+
+          // Toggle current accordion
+          if (!isOpen) {
+            content.style.display = 'block';
+            icon.textContent = '−';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endocrinology Solutions — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="ArcaScience's AI-driven benefit-risk analysis platform for Endocrinology. Specialized data coverage for diabetes treatments, thyroid medications, hormone therapies, and cardiovascular risk integration across metabolic drug development.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown — ACTIVE -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- SECTION 1: BREADCRUMB + DARK HERO -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Endocrinology</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Therapeutic Area Solutions
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Endocrinology Benefit-Risk Analysis
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Comprehensive BRA for metabolic and endocrine therapies — diabetes treatments, thyroid medications, hormone therapies, and GLP-1 agonists with integrated cardiovascular outcome analysis.
+          </p>
+          <a href="/contact?ta=endocrinology" class="arca-btn-primary-inverted">
+            Request Endocrinology Briefing
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: DATA COVERAGE STATS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="14000000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Endocrinology-specific data points</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="6800" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Metabolic/endocrine clinical trials analyzed</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="6" data-countup-suffix="">0</span>
+            <p class="arca-caption">Endocrinology-specific AI models deployed</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="18" data-countup-suffix="+">0</span>
+            <p class="arca-caption">CV outcome trials integrated</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TA-SPECIFIC CHALLENGE SECTION -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Unique Challenges</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Why Endocrinology BRA Is Different
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Endocrinology drugs operate within interconnected metabolic systems, creating cascade effects where a single intervention can impact cardiovascular, renal, hepatic, and oncologic risk profiles simultaneously.
+          </p>
+        </div>
+
+        <!-- 3 TA-specific challenge cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Metabolic Cascade Effects</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Endocrine therapies trigger interconnected metabolic responses — glucose-lowering agents affect lipid profiles, body weight, blood pressure, and renal function simultaneously. Benefit-risk assessment must model these multi-system interactions rather than evaluating safety endpoints in isolation, requiring systems pharmacology approaches to capture the full metabolic impact.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Cardiovascular Risk in Diabetes Drugs</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Since the FDA's 2008 mandate for cardiovascular outcome trials (CVOTs) in diabetes drug development, every new antidiabetic agent must demonstrate cardiovascular safety. MACE endpoint analysis, heart failure hospitalization risk, and long-term CV mortality assessment require integration of CVOT data with post-marketing real-world cardiovascular surveillance across heterogeneous patient populations.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Thyroid Cancer Signal Detection</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              GLP-1 receptor agonists carry thyroid C-cell tumor signals observed in rodent studies, requiring ongoing medullary thyroid carcinoma (MTC) surveillance in human populations. Long latency periods between drug exposure and tumor detection, low background incidence, and family history confounders demand specialized signal detection methodologies with extended follow-up windows.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PLATFORM CAPABILITIES FOR THIS TA -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            How ArcaScience Addresses Endocrinology BRA Challenges
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our three integrated modules — Data Intelligence, Decision Intelligence, and Automated Outputs — are configured for Endocrinology-specific benefit-risk assessment workflows.
+          </p>
+        </div>
+
+        <!-- 3 module cards with colored tops -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Module 1: Data Intelligence (teal) -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Endocrinology Data Coverage
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Comprehensive endocrinology data from 6,800+ clinical trials, 14B+ adverse event records, cardiovascular outcome trial (CVOT) datasets, diabetes registries, thyroid cancer surveillance databases, and real-world evidence from EHR and claims sources. Continuous updates with MedDRA coding specific to metabolic, cardiovascular, and endocrine safety signals.
+            </p>
+            <a href="/platform/data-intelligence" class="arca-btn-tertiary">
+              Explore Data Engine <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 2: Decision Intelligence (indigo) -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Metabolic AI Models
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              6 AI models trained on endocrinology safety and efficacy patterns, including MACE endpoint prediction, hypoglycemia risk stratification, GLP-1 agonist cross-indication safety profiling, thyroid cancer signal detection, and metabolic cascade effect modeling. BRAT framework application with CVOT precedent integration and FDA cardiovascular safety guidance alignment.
+            </p>
+            <a href="/platform/ai-models" class="arca-btn-tertiary">
+              Explore AI Models <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 3: Automated Outputs (green) -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Endocrinology Regulatory Outputs
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Submission-ready CV outcome analysis reports, metabolic safety summaries, PSURs/PBRERs with integrated CVOT data, and Risk Management Plans formatted for FDA, EMA, and PMDA requirements. Includes MACE-specific safety sections, HbA1c-weighted benefit-risk frameworks, and automated cardiovascular safety narrative generation aligned with FDA CVOT guidance.
+            </p>
+            <a href="/platform/outputs" class="arca-btn-tertiary">
+              Explore Outputs <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ADVERSE EVENT LANDSCAPE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Safety Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Endocrinology Adverse Event Landscape
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key safety signal categories tracked across endocrinology development programs, with AI-powered detection and comparative analysis against class-wide safety profiles.
+          </p>
+        </div>
+
+        <!-- AE category grid -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Cardiovascular Events (MACE)</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Major adverse cardiovascular events including myocardial infarction, stroke, and CV death — the primary safety endpoint for all diabetes drug CVOTs, requiring long-term outcome monitoring and population subgroup analysis.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Hypoglycemia</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Severe, symptomatic, and nocturnal hypoglycemia events — a critical safety differentiator among diabetes drug classes. Risk stratification by concomitant insulin use, renal function, and elderly patient subpopulations.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Thyroid Malignancy Signals</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Medullary thyroid carcinoma and other thyroid neoplasm signals, particularly with GLP-1 receptor agonists. Requires extended surveillance windows, family history assessment, and calcitonin monitoring protocols.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Pancreatitis</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Acute and chronic pancreatitis signals associated with incretin-based therapies (GLP-1 agonists, DPP-4 inhibitors). Causality assessment complicated by elevated baseline pancreatitis risk in type 2 diabetes populations.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Diabetic Ketoacidosis</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Euglycemic DKA with SGLT2 inhibitors — an atypical presentation requiring specialized detection algorithms that look beyond glucose thresholds. Perioperative risk management and ketone monitoring protocols.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Bone Fracture & Osteoporosis</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Fracture risk associated with thiazolidinediones, SGLT2 inhibitors, and thyroid hormone replacement. Long-term bone density monitoring required alongside metabolic benefit assessment, particularly in postmenopausal populations.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Link to data coverage -->
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/platform/data" class="arca-btn-tertiary">
+            See Full Endocrinology Data Coverage <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CASE STUDY EXCERPT -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Case study content -->
+          <div>
+            <p class="arca-section-label">Use Case — Endocrinology</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              GLP-1 Agonist Safety Profile Across Indications
+            </h2>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                A major pharma company required unified safety profiling for a GLP-1 receptor agonist expanding from type 2 diabetes into obesity and NASH indications. Different dose regimens, patient populations, and treatment durations across indications created a complex multi-dimensional safety landscape requiring integrated cardiovascular, pancreatic, thyroid, and GI safety signal analysis.
+              </p>
+            </div>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Approach</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                ArcaScience deployed endocrinology-specific AI models integrating CVOT data, obesity trial safety databases, and NASH clinical program data, with cross-indication dose-response modeling, thyroid cancer signal surveillance, and automated CV outcome analysis generating unified benefit-risk profiles across all three indications.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="3">0</span>
+                <p class="arca-caption arca-text-grey-600">Indications unified in single BRA</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="70" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in cross-indication review time</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="18">0</span>
+                <p class="arca-caption arca-text-grey-600">CVOTs integrated into safety analysis</p>
+              </div>
+            </div>
+
+            <a href="/evidence/case-studies/glp1-cross-indication-safety" class="arca-btn-tertiary">
+              Read Full Use Case <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Testimonial -->
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              Expanding our GLP-1 agonist into obesity and NASH meant reconciling safety data across fundamentally different patient populations. ArcaScience gave us the integrated view we needed to make confident regulatory decisions across all three indications simultaneously.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Dr. Andreas Hoffmann</p>
+              <p class="arca-body-sm arca-text-grey-600">Head of Metabolic Safety, Major Pharma Company</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: REGULATORY CONTEXT -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Regulatory Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Endocrinology Regulatory Context
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key regulatory considerations and guidance specific to endocrinology benefit-risk assessment for FDA, EMA, and PMDA submissions.
+          </p>
+        </div>
+
+        <!-- Accordion for regulatory guidance -->
+        <div style="max-width: 820px; margin: 0 auto;">
+
+          <div class="arca-accordion" data-accordion>
+
+            <!-- Accordion item 1 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">FDA CV Outcome Trial Requirements for Diabetes Drugs</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Following the 2008 FDA Guidance for Industry on Diabetes Mellitus — Evaluating Cardiovascular Risk in New Antidiabetic Therapies to Treat Type 2 Diabetes, all new diabetes drugs must demonstrate that the upper bound of the 95% CI for the estimated risk ratio of MACE does not exceed 1.8 pre-approval and 1.3 post-approval. This requirement has fundamentally shaped diabetes drug development strategy and post-marketing obligations.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key requirements:</strong> Pre-approval CVOT or meta-analysis demonstrating CV safety, post-marketing CVOT with 1.3 upper bound CI if pre-approval data shows 1.3-1.8 range, long-term follow-up for MACE including CV death, non-fatal MI, and non-fatal stroke, and comprehensive CV safety sections in NDA submissions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 2 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">EMA Guidelines on Diabetes Drug Development</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  EMA's CHMP guideline on clinical investigation of medicinal products for the treatment of diabetes mellitus requires cardiovascular safety evaluation as part of the overall benefit-risk assessment. The guideline emphasizes HbA1c as the primary efficacy endpoint while requiring comprehensive safety data on hypoglycemia, CV events, pancreatitis, and thyroid safety signals, with specific attention to long-term outcome data.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key focus areas:</strong> Integration of CVOT data into European Risk Management Plans, HTA-aligned glycemic control and CV outcome communication, mandatory post-authorization safety studies for novel mechanisms, and specific requirements for pediatric diabetes drug development under the Paediatric Regulation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 3 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">FDA Guidance for Obesity Drug Development</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  FDA's guidance for developing products for weight management requires demonstration of clinically meaningful weight loss alongside comprehensive safety monitoring for cardiovascular events, psychiatric effects, and metabolic parameters. With GLP-1 agonists approved at higher doses for obesity than diabetes, dose-dependent safety signal assessment across indications is critical.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Safety considerations:</strong> CV risk assessment in obese populations with distinct comorbidity profiles, suicidality monitoring per FDA requirements for weight management drugs, GI tolerability assessment at obesity-specific dose levels, and post-discontinuation weight regain safety implications.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 4 -->
+            <div class="arca-accordion-item">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Post-Marketing Requirements for Endocrine Therapies</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Regulatory authorities globally require ongoing benefit-risk evaluation for endocrine therapies through periodic safety reports, CVOT follow-up, thyroid malignancy surveillance, and metabolic outcome registries. ArcaScience automates PSUR/PBRER generation with integrated CVOT data, signal monitoring for CV/metabolic/thyroid endpoints, and RMP updates aligned with ICH E2C(R2) and EU GVP Module VIII, with specialized endocrinology safety signal libraries covering MACE, hypoglycemia, pancreatitis, and thyroid cancer.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-7);">
+            <a href="/resources/regulatory-intelligence" class="arca-btn-tertiary">
+              View All Endocrinology Regulatory Updates <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RELATED RESOURCES -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Resources</p>
+          <h2 class="arca-display-sm">Related Endocrinology Resources</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Resource 1: Whitepaper -->
+          <a href="/resources/whitepapers/cvot-integrated-bra-methodology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--blue-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--blue-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Whitepaper</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">CVOT-Integrated Benefit-Risk Analysis for Diabetes Therapies</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Comprehensive methodology for incorporating cardiovascular outcome trial data into structured benefit-risk frameworks, with case examples from SGLT2 inhibitor and GLP-1 agonist programs.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Download Whitepaper <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 2: Blog Post -->
+          <a href="/resources/insights/glp1-multi-indication-safety-2026" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--indigo-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--indigo-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Insight</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">GLP-1 Agonists Across Indications: Safety Implications of Multi-Indication Expansion</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Analysis of safety signal implications as GLP-1 agonists expand from diabetes into obesity, NASH, and cardiovascular indications, with regulatory strategy recommendations.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Read Article <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 3: Webinar -->
+          <a href="/resources/webinars/cvot-analysis-automation" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--green-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--green-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Webinar</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automating CV Outcome Analysis for Metabolic Drug Programs</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              On-demand webinar covering AI-powered CVOT data integration, MACE endpoint analysis, and automated cardiovascular safety narrative generation for regulatory submissions.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Watch Recording <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/resources/hub?ta=endocrinology" class="arca-btn-tertiary">
+            View All Endocrinology Resources <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See How ArcaScience Supports Endocrinology
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration of ArcaScience's platform configured for endocrinology benefit-risk analysis. Our scientists will walk through metabolic-specific data coverage, CVOT integration capabilities, GLP-1 safety profiling, and regulatory output examples relevant to your development program.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?ta=endocrinology" class="arca-btn-primary-inverted">
+            Request Endocrinology Briefing
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+
+      // Accordion functionality
+      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.arca-accordion-icon');
+          var isOpen = content.style.display === 'block';
+
+          // Close all accordions in this group
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) {
+            c.style.display = 'none';
+          });
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) {
+            i.textContent = '+';
+          });
+
+          // Toggle current accordion
+          if (!isOpen) {
+            content.style.display = 'block';
+            icon.textContent = '\u2212';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

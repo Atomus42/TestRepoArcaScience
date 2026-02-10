@@ -1,0 +1,216 @@
+/**
+ * ArcaScience Motion Design Tokens
+ * =================================
+ * Foundation CSS custom properties for all motion and animation across the platform.
+ *
+ * Usage: Import this file at the root of your stylesheet.
+ * All animation components reference these tokens for consistent motion behavior.
+ *
+ * Categories:
+ *   --as-duration-*    Duration timing tokens
+ *   --as-ease-*        Easing curve tokens
+ *   --as-stagger-*     Stagger delay tokens
+ *   --as-scroll-*      Scroll trigger configuration
+ *   --as-color-*       Animation-specific color tokens
+ */
+
+:root {
+  /* ========================================================================
+   * DURATION TOKENS
+   * Strict hierarchy: every animation duration must use one of these tokens.
+   * Never use arbitrary ms values in component CSS.
+   * ======================================================================== */
+
+  /** Pressed / active states — feels instantaneous */
+  --as-duration-instant: 80ms;
+
+  /** Micro-interactions: hover, focus ring, tooltip enter */
+  --as-duration-fast: 150ms;
+
+  /** Standard transitions: card hover, button state, nav dropdown */
+  --as-duration-normal: 250ms;
+
+  /** Entrance animations: section reveals, card entrances */
+  --as-duration-measured: 400ms;
+
+  /** Complex state changes: expand/collapse, balance reweighting */
+  --as-duration-deliberate: 600ms;
+
+  /** Visualization phase durations: pipeline station sequences */
+  --as-duration-narrative: 800ms;
+
+  /** Extended narrative sequences (max for a single phase) */
+  --as-duration-extended: 1200ms;
+
+  /* ========================================================================
+   * EASING TOKENS
+   * Four approved easing curves. No others are permitted.
+   * ======================================================================== */
+
+  /**
+   * Default ease — controlled deceleration.
+   * Use for: entrances, reveals, hover transitions.
+   * Character: confident, measured arrival.
+   */
+  --as-ease-default: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /**
+   * Exit ease — controlled acceleration.
+   * Use for: element exits, dropdown close, tooltip disappear.
+   * Character: purposeful departure.
+   */
+  --as-ease-exit: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+
+  /**
+   * State ease — symmetric transition.
+   * Use for: toggle states, color transitions, resize.
+   * Character: balanced, neutral transformation.
+   */
+  --as-ease-state: ease-in-out;
+
+  /**
+   * Balance ease — slight overshoot with damped settling.
+   * Use for: ONLY the benefit-risk balance beam tilt animation.
+   * Character: physical simulation of a balance finding equilibrium.
+   * DO NOT use this for any other animation.
+   */
+  --as-ease-balance: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ========================================================================
+   * STAGGER TOKENS
+   * Control the delay between sequentially-appearing child elements.
+   * ======================================================================== */
+
+  /** Tight stagger: list items, grid cells, rapid sequences */
+  --as-stagger-tight: 50ms;
+
+  /** Normal stagger: cards, section children, moderate sequences */
+  --as-stagger-normal: 100ms;
+
+  /** Relaxed stagger: major elements, headline-then-body-then-CTA */
+  --as-stagger-relaxed: 150ms;
+
+  /** Narrative stagger: pipeline stations, sequential story reveals */
+  --as-stagger-narrative: 200ms;
+
+  /* ========================================================================
+   * SCROLL TRIGGER CONFIGURATION
+   * Percentage of element that must be visible before animation triggers.
+   * Used by the scroll-animation-controller.js IntersectionObserver setup.
+   * These are stored as CSS custom properties for documentation consistency
+   * but are read by JavaScript at runtime.
+   * ======================================================================== */
+
+  /** Text blocks, cards, simple content */
+  --as-scroll-trigger-content: 0.25;
+
+  /** Data visualizations, interactive components */
+  --as-scroll-trigger-visual: 0.50;
+
+  /** Background/decorative elements (section dividers, subtle patterns) */
+  --as-scroll-trigger-immediate: 0;
+
+  /* ========================================================================
+   * ANIMATION COLOR TOKENS
+   * Colors used specifically within animated visualizations.
+   * These should align with the main design system palette.
+   * ======================================================================== */
+
+  /* Platform primary */
+  --as-color-primary: #4A6FA5;
+  --as-color-primary-dark: #3D5F8F;
+  --as-color-primary-glow: rgba(74, 111, 165, 0.3);
+  --as-color-primary-subtle: rgba(74, 111, 165, 0.06);
+
+  /* Data source colors (used in pipeline, evidence matrix) */
+  --as-color-clinical-trials: #3B82F6;
+  --as-color-rwe: #10B981;
+  --as-color-literature: #8B5CF6;
+  --as-color-regulatory: #F59E0B;
+  --as-color-safety-reports: #EF4444;
+  --as-color-spontaneous: #06B6D4;
+
+  /* Confidence / severity spectrum */
+  --as-color-confidence-high: #10B981;
+  --as-color-confidence-substantial: #3B82F6;
+  --as-color-confidence-developing: #F59E0B;
+  --as-color-confidence-insufficient: #EF4444;
+
+  /* Node states */
+  --as-color-node-dormant: #E5E7EB;
+  --as-color-node-active: #10B981;
+  --as-color-node-processing: #3B82F6;
+
+  /* Benefit-risk specific */
+  --as-color-benefit: #10B981;
+  --as-color-benefit-light: rgba(16, 185, 129, 0.15);
+  --as-color-risk: #EF4444;
+  --as-color-risk-light: rgba(239, 68, 68, 0.15);
+
+  /* Evidence gaps */
+  --as-color-gap-border: #D1D5DB;
+  --as-color-gap-pulse: #FCA5A5;
+
+  /* Neutral / structural */
+  --as-color-grid-line: #E5E7EB;
+  --as-color-surface: #F9FAFB;
+  --as-color-tooltip-bg: #1F2937;
+  --as-color-tooltip-text: #FFFFFF;
+
+  /* ========================================================================
+   * SPATIAL TOKENS
+   * Standard distances for transform-based animations.
+   * ======================================================================== */
+
+  /** Standard entrance offset (translateY start position) */
+  --as-offset-entrance: 20px;
+
+  /** Card hover lift */
+  --as-offset-hover-lift: -2px;
+
+  /** Button hover lift */
+  --as-offset-button-lift: -1px;
+
+  /** Dropdown entrance offset */
+  --as-offset-dropdown: -8px;
+
+  /** Mobile nav slide distance */
+  --as-offset-nav-slide: 100%;
+
+  /* ========================================================================
+   * SHADOW TOKENS (for animated shadow transitions)
+   * ======================================================================== */
+
+  --as-shadow-card-rest: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --as-shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --as-shadow-button-hover: 0 4px 12px rgba(74, 111, 165, 0.3);
+  --as-shadow-button-rest: none;
+}
+
+/* ========================================================================
+ * REDUCED MOTION OVERRIDE
+ * When the user prefers reduced motion, collapse all durations and
+ * disable all transform-based animations.
+ * ======================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --as-duration-instant: 0ms;
+    --as-duration-fast: 0ms;
+    --as-duration-normal: 100ms;  /* Keep minimal transition for state clarity */
+    --as-duration-measured: 0ms;
+    --as-duration-deliberate: 100ms;
+    --as-duration-narrative: 0ms;
+    --as-duration-extended: 0ms;
+
+    --as-stagger-tight: 0ms;
+    --as-stagger-normal: 0ms;
+    --as-stagger-relaxed: 0ms;
+    --as-stagger-narrative: 0ms;
+
+    --as-offset-entrance: 0px;
+    --as-offset-hover-lift: 0px;
+    --as-offset-button-lift: 0px;
+    --as-offset-dropdown: 0px;
+  }
+}

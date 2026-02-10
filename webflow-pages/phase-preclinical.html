@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preclinical & Phase I — Benefit-Risk Analysis Solutions | ArcaScience</title>
+  <meta name="description" content="ArcaScience's AI-driven benefit-risk analysis platform for Preclinical & Phase I drug development. Structured BRA methodologies, regulatory-grade outputs, and phase-specific insights to navigate early safety signals and first-in-human studies.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-10);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions/lifecycle" style="color: rgba(255,255,255,0.65); text-decoration: none;">By Lifecycle Phase</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Preclinical & Phase I</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Drug Lifecycle Phase
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Benefit-Risk Intelligence for Preclinical and First-in-Human Studies
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); margin-bottom: var(--space-7); max-width: 680px; margin-left: auto; margin-right: auto;">
+            Identify safety signals, screen for drug-drug interactions, and build the benefit-risk framework before significant clinical investment. At this critical stage, structured benefit-risk analysis is essential to navigate regulatory expectations, manage safety signals, demonstrate clinical value, and inform go/no-go decisions with quantitative evidence.
+          </p>
+          <a href="/contact?source=phase-preclinical" class="arca-btn-primary-inverted">
+            Request Preclinical-Specific Demo
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="arca-bg-grey-50" style="padding: var(--space-8) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <p class="arca-section-label">Drug Development Lifecycle</p>
+          <h2 class="arca-heading-2" style="margin-bottom: var(--space-3);">
+            Where Preclinical & Phase I Sits in the Drug Development Journey
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; position: relative;">
+
+          <div style="position: absolute; top: 24px; left: 8.33%; right: 8.33%; height: 2px; background: linear-gradient(to right, var(--grey-300) 0%, var(--grey-300) 100%); z-index: 0;"></div>
+
+          <div class="arca-card arca-lifecycle-phase-card is-current-phase" data-phase="preclinical-phase-1" style="position: relative; z-index: 1; text-align: center; padding: var(--space-3); border-color: var(--indigo-500); background: var(--indigo-50);">
+            <div class="arca-phase-indicator" style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--indigo-500); background: var(--indigo-500); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: var(--white);">1</div>
+            <h3 class="arca-caption" style="font-weight: 600; margin-bottom: 4px;">Preclinical &amp; Phase I</h3>
+            <p class="arca-caption arca-text-grey-600" style="font-size: 0.625rem;">Early safety signals</p>
+          </div>
+
+          <div class="arca-card arca-lifecycle-phase-card" data-phase="phase-2" style="position: relative; z-index: 1; text-align: center; padding: var(--space-3);">
+            <div class="arca-phase-indicator" style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--grey-300); background: var(--white); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: var(--grey-600);">2</div>
+            <h3 class="arca-caption" style="font-weight: 600; margin-bottom: 4px;">Phase II</h3>
+            <p class="arca-caption arca-text-grey-600" style="font-size: 0.625rem;">Dose finding &amp; efficacy</p>
+          </div>
+
+          <div class="arca-card arca-lifecycle-phase-card" data-phase="phase-3" style="position: relative; z-index: 1; text-align: center; padding: var(--space-3);">
+            <div class="arca-phase-indicator" style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--grey-300); background: var(--white); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: var(--grey-600);">3</div>
+            <h3 class="arca-caption" style="font-weight: 600; margin-bottom: 4px;">Phase III</h3>
+            <p class="arca-caption arca-text-grey-600" style="font-size: 0.625rem;">Confirmatory trials</p>
+          </div>
+
+          <div class="arca-card arca-lifecycle-phase-card" data-phase="regulatory-submission" style="position: relative; z-index: 1; text-align: center; padding: var(--space-3);">
+            <div class="arca-phase-indicator" style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--grey-300); background: var(--white); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: var(--grey-600);">4</div>
+            <h3 class="arca-caption" style="font-weight: 600; margin-bottom: 4px;">Regulatory Submission</h3>
+            <p class="arca-caption arca-text-grey-600" style="font-size: 0.625rem;">NDA/BLA/MAA filing</p>
+          </div>
+
+          <div class="arca-card arca-lifecycle-phase-card" data-phase="post-marketing" style="position: relative; z-index: 1; text-align: center; padding: var(--space-3);">
+            <div class="arca-phase-indicator" style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--grey-300); background: var(--white); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: var(--grey-600);">5</div>
+            <h3 class="arca-caption" style="font-weight: 600; margin-bottom: 4px;">Post-Marketing</h3>
+            <p class="arca-caption arca-text-grey-600" style="font-size: 0.625rem;">Continuous surveillance</p>
+          </div>
+
+          <div class="arca-card arca-lifecycle-phase-card" data-phase="market-access-hta" style="position: relative; z-index: 1; text-align: center; padding: var(--space-3);">
+            <div class="arca-phase-indicator" style="width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--grey-300); background: var(--white); margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: var(--grey-600);">6</div>
+            <h3 class="arca-caption" style="font-weight: 600; margin-bottom: 4px;">Market Access &amp; HTA</h3>
+            <p class="arca-caption arca-text-grey-600" style="font-size: 0.625rem;">Reimbursement &amp; value</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Key Challenges</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Benefit-Risk Analysis Challenges at Preclinical & Phase I
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Each development phase brings unique benefit-risk assessment challenges. Here's what pharmaceutical teams face during Preclinical & Phase I.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: var(--indigo-50); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Limited Human Safety Data</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Preclinical development relies heavily on animal models and in vitro data, which often fail to predict human toxicity. Without direct human evidence, establishing the benefit-risk framework requires extrapolation from pharmacologically similar compounds and historical precedents. This challenge becomes acute when preparing Investigator's Brochures and IND safety summaries for regulatory review.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: var(--indigo-50); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Background Rate Estimation</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Determining what adverse event rates to expect in the target population before clinical trials begin is challenging but essential for protocol design and informed consent. Without accurate background rates for the intended indication and population demographics, Phase I safety signals cannot be properly contextualized or attributed to the investigational compound.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: var(--indigo-50); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Class-Level Safety Profiling</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              New molecular entities must be assessed within the context of their pharmacological class to identify potential class effects. This requires comprehensive literature mining, analysis of structurally or mechanistically similar compounds, and synthesis of fragmented safety evidence from approved and discontinued drugs in the same class—a process that is time-intensive and prone to oversight when done manually.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: var(--indigo-50); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Drug-Drug Interaction Screening</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              For compounds intended for polypharmacy indications, early DDI screening is critical to protocol design and patient selection criteria. Identifying potential interactions with common co-medications (anticoagulants, antihypertensives, immunosuppressants) requires cross-referencing CYP metabolism pathways, transporter proteins, and pharmacokinetic profiles—a complex task where delays or oversights can lead to serious safety events in early clinical trials.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">ArcaScience for Preclinical & Phase I</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            How the Platform Addresses Preclinical & Phase I BRA Challenges
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            ArcaScience's three integrated modules provide end-to-end benefit-risk analysis capabilities specifically tailored to Preclinical & Phase I requirements.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Data Intelligence for Preclinical & Phase I
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Access 100+ billion data points across FAERS, EudraVigilance, published literature, and real-world evidence databases to establish background adverse event rates for target populations before human trials begin. Class-level safety profiling leverages mechanistic similarity algorithms to identify relevant safety signals from pharmacologically related compounds.
+            </p>
+            <ul class="arca-list" style="margin-bottom: var(--space-5);">
+              <li>Background rate estimation from claims and EHR data</li>
+              <li>Class-level safety profiling across 50+ therapeutic areas</li>
+              <li>Automated DDI screening from drug interaction databases</li>
+            </ul>
+            <a href="/platform/data-intelligence" class="arca-btn-tertiary">
+              Explore Data Engine <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Decision Intelligence for Preclinical & Phase I
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Establish the early benefit-risk framework with value trees that structure efficacy expectations against anticipated safety concerns. DDI screening operates at 3x the detection rate of manual review by cross-referencing CYP enzyme pathways, transporter mechanisms, and PK profiles across the entire approved drug landscape.
+            </p>
+            <ul class="arca-list" style="margin-bottom: var(--space-5);">
+              <li>Early value tree and effects table generation</li>
+              <li>DDI screening with mechanistic pathway analysis</li>
+              <li>Target population background rate contextualization</li>
+            </ul>
+            <a href="/platform/decision-intelligence" class="arca-btn-tertiary">
+              Explore Decision Engine <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Regulatory Outputs for Preclinical & Phase I
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Generate Investigator's Brochure safety sections, IND safety summaries, and early benefit-risk framework documents formatted for FDA and EMA submission. DDI screening reports include mechanistic explanations, risk classifications, and protocol recommendations for inclusion/exclusion criteria.
+            </p>
+            <ul class="arca-list" style="margin-bottom: var(--space-5);">
+              <li>Investigator's Brochure (IB) safety sections</li>
+              <li>IND safety summaries with background rate context</li>
+              <li>DDI screening reports with protocol recommendations</li>
+            </ul>
+            <a href="/platform/outputs" class="arca-btn-tertiary">
+              Explore Outputs <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Deliverables</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Typical Outputs for Preclinical & Phase I
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            ArcaScience generates submission-ready deliverables tailored to Preclinical & Phase I regulatory and strategic requirements.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate style="text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-50); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Investigator's Brochure Safety Sections</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              IB Sections 5 and 6 with preclinical toxicology summaries, class-level safety profiling, and background rate contextualization for the intended indication.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate style="text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-50); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">IND Safety Summaries</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              FDA IND Section 2.5 summaries with integrated benefit-risk narrative, nonclinical safety conclusions, and Phase I risk mitigation strategies.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate style="text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-50); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Early Benefit-Risk Framework</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Value trees and effects tables that structure anticipated efficacy endpoints against nonclinical safety findings and class-level risk profiles.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate style="text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-50); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">DDI Screening Reports</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Comprehensive drug-drug interaction assessments with CYP enzyme pathway analysis, transporter mechanisms, and protocol exclusion criteria recommendations.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate style="text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-50); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Background Rate Analyses</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Target population adverse event baseline rates derived from 100+ billion RWE data points, stratified by demographics and comorbidities.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate style="text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-50); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Class Safety Profiles</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Mechanism-based safety profiles from pharmacologically similar compounds, including discontinued drugs and approved therapies in the same class.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Regulatory Context</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            What Regulators Expect at Preclinical & Phase I
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Understanding regulatory authority expectations for benefit-risk assessment at this phase is critical for successful submission and approval.
+          </p>
+        </div>
+
+        <div style="max-width: 880px; margin: 0 auto;">
+
+          <div class="arca-accordion-item" data-accordion data-animate>
+            <button class="arca-accordion-trigger" aria-expanded="false" style="width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; padding: var(--space-5); background: var(--white); border: 1px solid var(--grey-200); border-radius: 8px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <img src="/images/badges/fda-logo.svg" alt="FDA" style="height: 32px; opacity: 0.7;">
+                <h3 class="arca-heading-3">FDA (United States)</h3>
+              </div>
+              <svg class="arca-accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--grey-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s;">
+                <polyline points="6 9 10 13 14 9"/>
+              </svg>
+            </button>
+            <div class="arca-accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+              <div style="padding: var(--space-5); background: var(--white); border: 1px solid var(--grey-200); border-top: none; border-radius: 0 0 8px 8px; margin-top: -12px; margin-bottom: 12px;">
+                <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                  The FDA's IND requirements emphasize comprehensive nonclinical safety assessment and clear articulation of known and anticipated risks. The Investigator's Brochure must provide sufficient safety context to support informed consent and risk mitigation strategies. FDA reviewers expect sponsors to demonstrate that Phase I trial designs appropriately account for preclinical findings, class effects, and potential DDIs. ArcaScience addresses these expectations by generating IND-ready safety summaries that integrate preclinical toxicology, class-level safety profiles, and background rate contextualization—all formatted to FDA specifications.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  <strong>Key FDA Guidance:</strong>
+                </p>
+                <ul class="arca-list">
+                  <li>Content and Format of Investigational New Drug Applications (INDs) for Phase 1 Studies of Drugs (January 2013)</li>
+                  <li>ICH M3(R2): Guidance on Nonclinical Safety Studies for the Conduct of Human Clinical Trials (January 2010)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="arca-accordion-item" data-accordion data-animate>
+            <button class="arca-accordion-trigger" aria-expanded="false" style="width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; padding: var(--space-5); background: var(--white); border: 1px solid var(--grey-200); border-radius: 8px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <img src="/images/badges/ema-logo.svg" alt="EMA" style="height: 32px; opacity: 0.7;">
+                <h3 class="arca-heading-3">EMA (European Union)</h3>
+              </div>
+              <svg class="arca-accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--grey-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s;">
+                <polyline points="6 9 10 13 14 9"/>
+              </svg>
+            </button>
+            <div class="arca-accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+              <div style="padding: var(--space-5); background: var(--white); border: 1px solid var(--grey-200); border-top: none; border-radius: 0 0 8px 8px; margin-top: -12px; margin-bottom: 12px;">
+                <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                  EMA's first-in-human guidance requires detailed justification of starting dose selection, dose escalation schemes, and stopping rules based on nonclinical safety data. The Investigator's Brochure must contextualize preclinical findings within the broader therapeutic class and provide transparent assessment of uncertainties. EMA reviewers place particular emphasis on pharmacological class effects and expect sponsors to address lessons learned from mechanistically similar compounds—including those that failed in development or were withdrawn post-approval.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  <strong>Key EMA Guidance:</strong>
+                </p>
+                <ul class="arca-list">
+                  <li>Guideline on Strategies to Identify and Mitigate Risks for First-In-Human and Early Clinical Trials (July 2017)</li>
+                  <li>ICH M3(R2): Non-clinical Safety Studies for the Conduct of Human Clinical Trials and Marketing Authorization (EMA Implementation)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="arca-accordion-item" data-accordion data-animate>
+            <button class="arca-accordion-trigger" aria-expanded="false" style="width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center; padding: var(--space-5); background: var(--white); border: 1px solid var(--grey-200); border-radius: 8px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s;">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <img src="/images/badges/pmda-logo.svg" alt="PMDA" style="height: 32px; opacity: 0.7;">
+                <h3 class="arca-heading-3">PMDA (Japan)</h3>
+              </div>
+              <svg class="arca-accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--grey-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s;">
+                <polyline points="6 9 10 13 14 9"/>
+              </svg>
+            </button>
+            <div class="arca-accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+              <div style="padding: var(--space-5); background: var(--white); border: 1px solid var(--grey-200); border-top: none; border-radius: 0 0 8px 8px; margin-top: -12px; margin-bottom: 12px;">
+                <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                  PMDA's approach to first-in-human studies emphasizes thorough assessment of ethnic factors that may affect drug metabolism, safety, or efficacy in Japanese populations. Sponsors must address potential DDIs with medications commonly used in Japan and provide justification for dose selection based on PK/PD modeling that accounts for ethnic differences. PMDA reviewers expect early consideration of how nonclinical findings may translate to the Japanese population, particularly for drugs targeting conditions with different prevalence or treatment patterns in Japan.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  <strong>Key PMDA Guidance:</strong>
+                </p>
+                <ul class="arca-list">
+                  <li>Basic Principles on Global Clinical Trials (PFSB/ELD Notification 0928 No. 2, September 2012)</li>
+                  <li>Ethnic Factors in the Acceptability of Foreign Clinical Data (ICH E5 Implementation)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+
+          <div>
+            <p class="arca-section-label">Preclinical & Phase I Case Study</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              DDI Screening Prevented Phase I Safety Event
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              A mid-size biotech developing a novel kinase inhibitor for oncology faced the challenge of comprehensive DDI screening before initiating Phase I trials. The target patient population—advanced cancer patients—routinely takes anticoagulants, immunosuppressants, and CYP3A4 substrates. Manual DDI screening had identified 14 potential interactions, but the sponsor remained concerned about overlooked risks.
+            </p>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              ArcaScience's platform analyzed the compound's metabolic profile against 2,400+ approved drugs and identified 23 clinically significant interactions—9 more than manual review. Most critically, the platform flagged a high-risk interaction with a commonly co-prescribed anticoagulant that could lead to hemorrhagic events. This finding directly informed protocol exclusion criteria, preventing a potential serious adverse event during Phase I dose escalation and enabling the sponsor to proceed with confidence.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="9">0</span>
+                <p class="arca-caption arca-text-grey-600">Additional DDIs identified vs manual review</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);">3x</span>
+                <p class="arca-caption arca-text-grey-600">Detection rate improvement</p>
+              </div>
+            </div>
+
+            <a href="/evidence/case-studies/ddi-screening-phase-1" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div>
+            <div class="arca-card" style="background: var(--blue-50); border-color: var(--blue-200);">
+              <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400); margin-bottom: var(--space-5);">
+                <p class="arca-body-md" style="font-style: italic; color: var(--grey-700);">
+                  "ArcaScience identified a critical drug-drug interaction that our manual review process missed. That finding directly influenced our Phase I protocol exclusion criteria and likely prevented a serious adverse event. The platform's comprehensive DDI screening gave us confidence to proceed with first-in-human studies knowing we had thoroughly characterized the interaction landscape."
+                </p>
+              </div>
+              <div class="arca-testimonial-attribution">
+                <p class="arca-body-md" style="font-weight: 600;">Dr. Sarah Chen</p>
+                <p class="arca-body-sm arca-text-grey-600">VP, Clinical Development</p>
+                <p class="arca-body-sm arca-text-grey-600">Mid-size Oncology Biotech — Kinase Inhibitors</p>
+              </div>
+            </div>
+
+            <div class="arca-card" style="margin-top: var(--space-5); text-align: center;">
+              <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="47">0</span>
+              <p class="arca-caption arca-text-grey-600">Preclinical & Phase I programs supported</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Lifecycle Navigation</p>
+          <h2 class="arca-heading-2">Explore Adjacent Development Phases</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 920px; margin: 0 auto;">
+
+          <div class="arca-card" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px; transition: all 0.2s; border: 2px solid var(--grey-200); opacity: 0.5;" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: var(--grey-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--grey-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </div>
+            <div>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: 4px;">Previous Phase</p>
+              <h3 class="arca-heading-3" style="color: var(--grey-400);">None (First Phase)</h3>
+            </div>
+          </div>
+
+          <a href="/solutions/lifecycle/phase-2" class="arca-card" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px; transition: all 0.2s; border: 2px solid var(--grey-200); justify-content: space-between;" data-animate>
+            <div>
+              <p class="arca-caption arca-text-grey-600" style="margin-bottom: 4px;">Next Phase</p>
+              <h3 class="arca-heading-3">Phase II</h3>
+            </div>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: var(--grey-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--grey-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <a href="/solutions/lifecycle" class="arca-btn-tertiary">
+            View All Lifecycle Phases <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See ArcaScience Applied to Preclinical & Phase I
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your Preclinical & Phase I program. Our scientists will show you how the platform ingests your data, applies phase-specific BRA frameworks, and generates regulatory-ready outputs for this development stage.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?source=phase-preclinical" class="arca-btn-primary-inverted">
+            Discuss Your Early Development Program
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/lifecycle/preclinical-phase-1" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Preclinical & Phase I</a>
+            <a href="/solutions/lifecycle/phase-2" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Phase II</a>
+            <a href="/solutions/lifecycle/phase-3" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Phase III</a>
+            <a href="/solutions/lifecycle/regulatory-submission" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Submission</a>
+            <a href="/solutions/lifecycle/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/lifecycle/market-access-hta" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access & HTA</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+
+      document.querySelectorAll('[data-accordion]').forEach(item => {
+        const trigger = item.querySelector('.arca-accordion-trigger');
+        const content = item.querySelector('.arca-accordion-content');
+        const icon = item.querySelector('.arca-accordion-icon');
+
+        trigger.addEventListener('click', () => {
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+
+          document.querySelectorAll('[data-accordion]').forEach(otherItem => {
+            if (otherItem !== item) {
+              const otherTrigger = otherItem.querySelector('.arca-accordion-trigger');
+              const otherContent = otherItem.querySelector('.arca-accordion-content');
+              const otherIcon = otherItem.querySelector('.arca-accordion-icon');
+              otherTrigger.setAttribute('aria-expanded', 'false');
+              otherContent.style.maxHeight = '0';
+              otherIcon.style.transform = 'rotate(0deg)';
+            }
+          });
+
+          trigger.setAttribute('aria-expanded', !expanded);
+          content.style.maxHeight = expanded ? '0' : content.scrollHeight + 'px';
+          icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

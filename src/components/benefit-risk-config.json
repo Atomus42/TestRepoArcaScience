@@ -1,0 +1,232 @@
+{
+  "$schema": "Benefit-Risk Balance Visualization — Data Configuration",
+  "$version": "1.0.0",
+  "$description": "Defines the factors, weights, and confidence levels displayed in the benefit-risk balance visualization at each drug lifecycle stage. All values are illustrative for the marketing site demonstration. Weights are on a 1-10 scale. Confidence is 0.0-1.0.",
+
+  "lifecycleStages": [
+    {
+      "id": "phase-1",
+      "label": "Phase I",
+      "shortLabel": "Ph I",
+      "description": "First-in-human studies. Safety focus, limited efficacy data."
+    },
+    {
+      "id": "phase-2",
+      "label": "Phase II",
+      "shortLabel": "Ph II",
+      "description": "Dose-finding studies. Preliminary efficacy signals emerge."
+    },
+    {
+      "id": "phase-3",
+      "label": "Phase III",
+      "shortLabel": "Ph III",
+      "description": "Pivotal trials. Robust efficacy and safety data."
+    },
+    {
+      "id": "approval",
+      "label": "Approval",
+      "shortLabel": "Appr.",
+      "description": "Regulatory review complete. Full clinical evidence package."
+    },
+    {
+      "id": "post-marketing",
+      "label": "Post-Marketing",
+      "shortLabel": "Post-Mkt",
+      "description": "Real-world surveillance. Largest patient population data."
+    }
+  ],
+
+  "benefitFactors": [
+    {
+      "id": "efficacy",
+      "label": "Efficacy",
+      "description": "Primary endpoint treatment effect",
+      "color": "#10B981",
+      "weights": {
+        "phase-1": 2,
+        "phase-2": 5,
+        "phase-3": 8,
+        "approval": 9,
+        "post-marketing": 8
+      },
+      "confidence": {
+        "phase-1": 0.2,
+        "phase-2": 0.5,
+        "phase-3": 0.85,
+        "approval": 0.92,
+        "post-marketing": 0.88
+      }
+    },
+    {
+      "id": "qol",
+      "label": "Quality of Life",
+      "description": "Patient-reported outcomes improvement",
+      "color": "#059669",
+      "weights": {
+        "phase-1": 1,
+        "phase-2": 3,
+        "phase-3": 6,
+        "approval": 7,
+        "post-marketing": 7
+      },
+      "confidence": {
+        "phase-1": 0.15,
+        "phase-2": 0.4,
+        "phase-3": 0.75,
+        "approval": 0.85,
+        "post-marketing": 0.82
+      }
+    },
+    {
+      "id": "survival",
+      "label": "Survival Improvement",
+      "description": "Overall or progression-free survival benefit",
+      "color": "#34D399",
+      "weights": {
+        "phase-1": 0,
+        "phase-2": 2,
+        "phase-3": 7,
+        "approval": 8,
+        "post-marketing": 8
+      },
+      "confidence": {
+        "phase-1": 0.0,
+        "phase-2": 0.3,
+        "phase-3": 0.7,
+        "approval": 0.88,
+        "post-marketing": 0.9
+      }
+    },
+    {
+      "id": "response-rate",
+      "label": "Treatment Response Rate",
+      "description": "Percentage of patients achieving clinical response",
+      "color": "#6EE7B7",
+      "weights": {
+        "phase-1": 1,
+        "phase-2": 4,
+        "phase-3": 7,
+        "approval": 8,
+        "post-marketing": 7
+      },
+      "confidence": {
+        "phase-1": 0.1,
+        "phase-2": 0.45,
+        "phase-3": 0.8,
+        "approval": 0.9,
+        "post-marketing": 0.85
+      }
+    }
+  ],
+
+  "riskFactors": [
+    {
+      "id": "adverse-events",
+      "label": "Adverse Events",
+      "description": "Common treatment-related adverse events",
+      "color": "#EF4444",
+      "weights": {
+        "phase-1": 6,
+        "phase-2": 5,
+        "phase-3": 5,
+        "approval": 5,
+        "post-marketing": 6
+      },
+      "confidence": {
+        "phase-1": 0.4,
+        "phase-2": 0.6,
+        "phase-3": 0.85,
+        "approval": 0.9,
+        "post-marketing": 0.95
+      }
+    },
+    {
+      "id": "serious-adverse-events",
+      "label": "Serious Adverse Events",
+      "description": "Life-threatening or hospitalization-requiring events",
+      "color": "#DC2626",
+      "weights": {
+        "phase-1": 7,
+        "phase-2": 5,
+        "phase-3": 3,
+        "approval": 3,
+        "post-marketing": 4
+      },
+      "confidence": {
+        "phase-1": 0.25,
+        "phase-2": 0.5,
+        "phase-3": 0.8,
+        "approval": 0.88,
+        "post-marketing": 0.92
+      }
+    },
+    {
+      "id": "drug-interactions",
+      "label": "Drug Interactions",
+      "description": "Clinically significant drug-drug interactions",
+      "color": "#F87171",
+      "weights": {
+        "phase-1": 3,
+        "phase-2": 4,
+        "phase-3": 4,
+        "approval": 4,
+        "post-marketing": 5
+      },
+      "confidence": {
+        "phase-1": 0.2,
+        "phase-2": 0.4,
+        "phase-3": 0.65,
+        "approval": 0.75,
+        "post-marketing": 0.85
+      }
+    },
+    {
+      "id": "organ-toxicity",
+      "label": "Organ Toxicity",
+      "description": "Hepatic, renal, cardiac, or other organ-specific toxicity",
+      "color": "#FCA5A5",
+      "weights": {
+        "phase-1": 5,
+        "phase-2": 4,
+        "phase-3": 3,
+        "approval": 3,
+        "post-marketing": 3
+      },
+      "confidence": {
+        "phase-1": 0.3,
+        "phase-2": 0.55,
+        "phase-3": 0.8,
+        "approval": 0.85,
+        "post-marketing": 0.9
+      }
+    }
+  ],
+
+  "animationConfig": {
+    "autoPlayDuration": 8000,
+    "stageTransitionDuration": 400,
+    "beamTiltDuration": 600,
+    "beamTiltEasing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+    "confidenceBandTransition": 500,
+    "maxTiltDegrees": 15,
+    "holdAtEndDuration": 3000,
+    "scrubTransitionDuration": 200
+  },
+
+  "comparator": {
+    "$description": "When 'Compare' mode is enabled, this second drug profile is shown side-by-side.",
+    "label": "Comparator",
+    "benefitFactors": {
+      "efficacy":       { "phase-1": 1, "phase-2": 4, "phase-3": 6, "approval": 7, "post-marketing": 6 },
+      "qol":            { "phase-1": 1, "phase-2": 2, "phase-3": 5, "approval": 5, "post-marketing": 5 },
+      "survival":       { "phase-1": 0, "phase-2": 1, "phase-3": 5, "approval": 6, "post-marketing": 6 },
+      "response-rate":  { "phase-1": 1, "phase-2": 3, "phase-3": 5, "approval": 6, "post-marketing": 5 }
+    },
+    "riskFactors": {
+      "adverse-events":         { "phase-1": 5, "phase-2": 5, "phase-3": 6, "approval": 6, "post-marketing": 7 },
+      "serious-adverse-events": { "phase-1": 6, "phase-2": 5, "phase-3": 4, "approval": 4, "post-marketing": 5 },
+      "drug-interactions":      { "phase-1": 4, "phase-2": 4, "phase-3": 5, "approval": 5, "post-marketing": 6 },
+      "organ-toxicity":         { "phase-1": 4, "phase-2": 3, "phase-3": 3, "approval": 3, "post-marketing": 4 }
+    }
+  }
+}

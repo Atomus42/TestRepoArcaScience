@@ -1,0 +1,453 @@
+<!--
+  ArcaScience Solution Page — Late Development & Submission (Phase III / Filing)
+  ==============================================================================
+  Built from solution-template.html.
+  This page targets regulatory affairs, clinical operations leads,
+  and drug safety teams preparing Phase III data for regulatory submission.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Late Development &amp; Submission Benefit-Risk Analysis — ArcaScience</title>
+  <meta name="description" content="Submission-ready benefit-risk analysis for Phase III and regulatory filing. CTD Module 2.5, advisory committee preparation, integrated BRA aligned with FDA and EMA expectations.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <nav aria-label="Breadcrumb" style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0;">
+        <li><a href="/" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Home</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li><a href="/solutions" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Solutions</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li class="arca-body-sm arca-text-grey-900" aria-current="page">Late Development &amp; Submission</li>
+      </ol>
+    </nav>
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         ================================================================ -->
+    <section style="padding: var(--space-8) 0 var(--space-7);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 780px;">
+          <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-3);">
+            Late Development &amp; Submission
+          </p>
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Submission-Ready Benefit-Risk Analysis for Phase III and Regulatory Filing
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-5); max-width: 680px;">
+            CTD Module 2.5 benefit-risk sections, advisory committee preparation, and integrated safety-efficacy assessment — built from your data.
+          </p>
+          <p class="arca-body-md arca-text-grey-600" style="max-width: 680px;">
+            The regulatory submission is the moment when benefit-risk analysis becomes a formal deliverable. ArcaScience's platform supports Phase III and submission teams by integrating pivotal trial data with real-world evidence, producing quantified benefit-risk assessments aligned with FDA and EMA expectations, and generating the CTD Module 2.5 benefit-risk section directly from the analytical framework. For programs facing advisory committee review, the platform produces the structured analyses and visualizations that committee members expect.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: THE CHALLENGE
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
+
+          <div>
+            <p class="arca-section-label">The Challenge</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              The Evolving Standard for Benefit-Risk in Regulatory Submissions
+            </h2>
+            <p class="arca-body-md arca-text-grey-600">
+              Regulatory expectations for structured, quantitative benefit-risk assessment in submissions have increased substantially. FDA's Structured Benefit-Risk Framework, established through PDUFA V and VI commitments, sets explicit expectations for how benefit-risk should be presented. EMA's emphasis on quantified benefit-risk evaluation in MAA submissions continues to intensify. ICH M4E guidance on the Clinical Overview (Module 2.5) requires a coherent benefit-risk narrative that integrates across the entire clinical development program. Advisory committee briefing documents now routinely include structured benefit-risk presentations. Yet most submissions still rely on qualitative narratives rather than structured, quantified frameworks — creating a gap between what regulators expect and what sponsors deliver.
+            </p>
+          </div>
+
+          <div style="display: grid; gap: 16px;">
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Qualitative Narratives Are Insufficient</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Regulators at FDA and EMA increasingly expect quantified benefit-risk presentations with effects tables, value trees, and scenario analyses. Narrative-only submissions face more questions and longer review cycles.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">12-18 Month Production Timelines</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Comprehensive benefit-risk assessments for NDA/MAA submission take 12-18 months using traditional approaches — manual data aggregation, medical writing, iterative review cycles — compressing the window for competitive launch timing.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Advisory Committee Preparation Gap</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Advisory committees expect quantitative benefit-risk presentations and scenario analyses. Preparing these requires integrating clinical data with external evidence under tight timelines, often with weeks between notification and the committee meeting.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: HOW ARCASCIENCE ADDRESSES THIS
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">How ArcaScience Addresses This</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Integrating Pivotal Data with Contextual Evidence
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Data Intelligence -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Pivotal Trial &amp; Real-World Data Integration
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Integrate Phase III safety and efficacy endpoint data with real-world evidence on comparators, background adverse event rates, and class-level effects. The Data Intelligence Engine draws from AS Profiling Base 100b to contextualize pivotal trial findings within the broader evidence landscape, providing the comparative context regulators require.
+            </p>
+          </div>
+
+          <!-- Decision Intelligence -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Quantitative BRA &amp; Advisory Prep
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Generate comprehensive benefit-risk assessments using effects tables, value trees, and MCDA aligned with BRAT framework methodology. Produce subpopulation analyses (by demographic, comorbidity, and region), sensitivity analyses showing how conclusions change under different assumptions, and scenario modeling for advisory committee "what if" questions.
+            </p>
+          </div>
+
+          <!-- Automated Outputs -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              CTD Module 2.5 &amp; Submission Documents
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Generate the CTD Module 2.5 benefit-risk section directly from the quantitative framework, formatted per ICH M4E with cross-references to Module 2.7 clinical summary and Module 5 study reports. Produce advisory committee briefing materials with effects tables, forest plots, and structured scenario analyses. Internal consistency is guaranteed: the document reflects exactly what the analysis shows.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: WORKFLOW / PROCESS
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Workflow</p>
+          <h2 class="arca-display-sm">How It Works</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              1
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Integrate Pivotal Trial Data</p>
+            <p class="arca-body-sm arca-text-grey-600">Ingest Phase III clinical trial data — safety endpoints, efficacy outcomes, and subpopulation results — alongside comparator evidence from AS Profiling Base 100b.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              2
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Run Quantitative Benefit-Risk Assessment</p>
+            <p class="arca-body-sm arca-text-grey-600">Decision Intelligence applies BRAT framework, MCDA, and 24 proprietary AI models to produce structured effects tables, value trees, and quantitative evaluations with sensitivity analyses.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              3
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Prepare Advisory Committee Materials</p>
+            <p class="arca-body-sm arca-text-grey-600">Generate scenario analyses, forest plots, and structured presentations formatted for CHMP, PRAC, or FDA advisory committee briefing documents with anticipatory "what if" modeling.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              4
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Generate Submission-Ready CTD 2.5</p>
+            <p class="arca-body-sm arca-text-grey-600">Produce the CTD Module 2.5 benefit-risk section directly from the analytical framework, with ICH M4E formatting and cross-references to Modules 2.7 and 5.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PERFORMANCE METRICS
+         ================================================================ -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-3);">Performance Metrics</p>
+          <h2 class="arca-heading-1 arca-text-white">Measured Impact for Regulatory Submission</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="60" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Faster benefit-risk evaluation vs. traditional CRO-led approaches</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="50" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Regulatory submissions completed across FDA, EMA, and PMDA</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="9" data-countup-suffix="x">0</span>
+            <p class="arca-caption">More safety and efficacy signals identified vs. manual review</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: RELATED CASE STUDY
+         ================================================================ -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <div>
+            <p class="arca-section-label">Case Study — Sanofi</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              Thromboembolic Risk Detection That Re-Routed a Development Investment
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Sanofi's team used ArcaScience's platform to conduct a benefit-risk assessment that identified a previously undetected thromboembolic risk signal. The finding informed the decision to re-route significant development investment before Phase III commitment — demonstrating how integrated, quantitative BRA can change the trajectory of a development program.
+            </p>
+            <a href="/evidence/case-studies/sanofi-dermatology" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              ArcaScience's analysis changed the trajectory of our development program. The signal they identified in our data saved us from a costly Phase III commitment and allowed us to reallocate resources to a more favorable compound.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">VP Drug Safety</p>
+              <p class="arca-body-sm arca-text-grey-600">Sanofi — Thromboembolic Risk Program</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: RELATED USE CASES
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Related Solutions</p>
+          <h2 class="arca-display-sm">Benefit-Risk Analysis Across the Lifecycle</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <a href="/solutions/early-development" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Early Development</h3>
+            <p class="arca-body-sm arca-text-grey-600">Phase I-II signal detection, DDI screening, comparator profiling, and early benefit-risk framing.</p>
+          </a>
+
+          <a href="/solutions/post-marketing" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Post-Marketing Surveillance</h3>
+            <p class="arca-body-sm arca-text-grey-600">Automated PSUR/PBRER generation, continuous signal monitoring, RMP updates, label change support.</p>
+          </a>
+
+          <a href="/solutions/market-access" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Market Access &amp; HEOR</h3>
+            <p class="arca-body-sm arca-text-grey-600">Value dossiers, HTA submission support, comparative effectiveness evidence, payer communication materials.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: CTA
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Your Regulatory Submission Challenge
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your Phase III program, regulatory authority requirements, and submission timeline.
+        </p>
+        <a href="/contact" class="arca-btn-primary-inverted">
+          Talk to a Scientist
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!--
+  ArcaScience Webinars & Events — Webflow Structure Reference
+  ===========================================================
+  Register for upcoming events or watch recorded webinars.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinars, Conferences, and Industry Events — ArcaScience</title>
+  <meta name="description" content="Register for upcoming sessions or watch recorded presentations from ArcaScience's scientific team.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <a href="/platform" class="arca-nav-link">Platform</a>
+        <a href="/solutions" class="arca-nav-link">Solutions</a>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link is-active">Resources</a>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">Webinars & Events</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section class="arca-bg-blue-50" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5);">
+            Webinars, Conferences, and Industry Events
+          </h1>
+          <p class="arca-body-lg arca-text-grey-700">
+            Register for upcoming sessions or watch recorded presentations from ArcaScience's scientific team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Upcoming Events</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <!-- Event 1: DIA 2025 -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px;">Conference</span>
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px; background: var(--green-50); color: var(--green-700); border-color: var(--green-200);">June 15-19, 2025</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">DIA 2025 Annual Meeting</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6;">
+              San Diego, CA • Booth #1247
+            </p>
+            <p class="arca-body-sm arca-text-grey-700" style="margin-bottom: var(--space-5); line-height: 1.6;">
+              Live platform demonstration showing end-to-end benefit-risk analysis workflow. Meet the ArcaScience team to discuss your regulatory challenges and see the platform in action.
+            </p>
+            <a href="/contact?event=dia2025" class="arca-btn-tertiary">
+              Schedule Meeting <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Event 2: ICPE 2025 -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px;">Presentation</span>
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px; background: var(--green-50); color: var(--green-700); border-color: var(--green-200);">August 24-27, 2025</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ICPE 2025 (Pharmacoepidemiology)</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6;">
+              Atlanta, GA • Oral Presentation
+            </p>
+            <p class="arca-body-sm arca-text-grey-700" style="margin-bottom: var(--space-5); line-height: 1.6;">
+              "AI-Powered Disproportionality Analysis for Post-Marketing Signal Detection" — Dr. Michael Torres presents validation study results across 15 years of FAERS data.
+            </p>
+            <a href="/contact?event=icpe2025" class="arca-btn-tertiary">
+              Request Meeting <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Event 3: ISoP 2025 -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-output" style="font-size: 0.75rem; padding: 4px 8px;">Workshop</span>
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px; background: var(--green-50); color: var(--green-700); border-color: var(--green-200);">October 15-18, 2025</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ISoP Annual Meeting 2025</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6;">
+              Barcelona, Spain • Half-Day Workshop
+            </p>
+            <p class="arca-body-sm arca-text-grey-700" style="margin-bottom: var(--space-5); line-height: 1.6;">
+              "Quantitative Benefit-Risk Assessment: Practical Implementation" — Hands-on workshop covering BRAT framework, MCDA methods, and regulatory submission preparation.
+            </p>
+            <a href="/contact?event=isop2025" class="arca-btn-tertiary">
+              Reserve Spot <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Event 4: ISPOR Europe 2025 -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-output" style="font-size: 0.75rem; padding: 4px 8px;">Showcase</span>
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px; background: var(--green-50); color: var(--green-700); border-color: var(--green-200);">November 9-12, 2025</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ISPOR Europe 2025</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6;">
+              Barcelona, Spain • Theater Presentation
+            </p>
+            <p class="arca-body-sm arca-text-grey-700" style="margin-bottom: var(--space-5); line-height: 1.6;">
+              "Automated HEOR Report Generation for HTA Submissions" — Demonstration of automated value dossier creation using regulatory BRA as foundation for payer evidence.
+            </p>
+            <a href="/contact?event=ispor2025" class="arca-btn-tertiary">
+              Schedule Demo <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- On-Demand Webinars -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">On-Demand Webinars</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Webinar 1 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-500) 0%, var(--indigo-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3);"></div>
+              <div style="position: relative; width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="var(--indigo-600)"/></svg>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-data" style="font-size: 0.75rem; padding: 4px 8px;">45 min</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">January 2025</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI-Driven Signal Detection: Methods and Results</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              How ArcaScience's AI models identify safety signals 3x faster than traditional disproportionality methods. Includes validation study results and live case examples.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-webinar-watch="signal-detection">
+              Watch Now
+            </button>
+          </div>
+
+          <!-- Webinar 2 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--indigo-500) 0%, var(--purple-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3);"></div>
+              <div style="position: relative; width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="var(--indigo-600)"/></svg>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-output" style="font-size: 0.75rem; padding: 4px 8px;">60 min</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">November 2024</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automating PSUR Production: A Live Platform Demonstration</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              End-to-end walkthrough of automated PSUR/PBRER generation. Watch as we transform raw safety data into submission-ready ICH E2C(R2) documents in real-time.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-webinar-watch="psur-automation">
+              Watch Now
+            </button>
+          </div>
+
+          <!-- Webinar 3 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--teal-500) 0%, var(--green-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3);"></div>
+              <div style="position: relative; width: 64px; height: 64px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="var(--indigo-600)"/></svg>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-bottom: var(--space-3);">
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px;">30 min</span>
+              <span class="arca-module-tag is-analytics" style="font-size: 0.75rem; padding: 4px 8px; background: var(--grey-100); color: var(--grey-700); border-color: var(--grey-300);">September 2024</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Quantitative Benefit-Risk for Advisory Committees</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              How to prepare structured benefit-risk presentations for FDA advisory committee meetings using BRAT and MCDA frameworks. Includes real AC examples.
+            </p>
+            <button class="arca-btn-primary" style="width: 100%;" data-webinar-watch="advisory-committee">
+              Watch Now
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Gate Form (similar to whitepaper modal) -->
+    <div id="webinar-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; padding: 24px; overflow-y: auto;">
+      <div style="max-width: 480px; margin: 80px auto; background: var(--white); border-radius: 8px; padding: var(--space-7); position: relative;">
+        <button aria-label="Close" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.5rem; color: var(--grey-600); cursor: pointer;" data-modal-close>&times;</button>
+
+        <h2 class="arca-heading-2" style="margin-bottom: var(--space-4);">Watch Webinar</h2>
+        <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-6);">
+          Please provide your information to access this on-demand webinar.
+        </p>
+
+        <form data-webinar-form style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <label for="webinar-name" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Full Name *</label>
+            <input type="text" id="webinar-name" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+          </div>
+
+          <div>
+            <label for="webinar-email" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Work Email *</label>
+            <input type="email" id="webinar-email" class="arca-form-field" data-form-email required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+          </div>
+
+          <div>
+            <label for="webinar-company" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Company *</label>
+            <input type="text" id="webinar-company" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+          </div>
+
+          <button type="submit" class="arca-btn-primary" style="width: 100%; margin-top: var(--space-3);">
+            Watch Webinar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Request Private Briefing
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Schedule a private platform demonstration customized to your organization's regulatory challenges, therapeutic areas, and development phases.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request Private Briefing
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/webinars" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Webinars</a>
+            <a href="/evidence/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

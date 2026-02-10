@@ -1,0 +1,126 @@
+<!--
+  ArcaScience 404 Error Page — Webflow Structure Reference
+  =========================================================
+  In Webflow: Edit the 404 page under Utility Pages.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — ArcaScience</title>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="arca-nav" data-nav="sticky">
+    <div class="arca-nav-inner">
+      <a href="/" class="arca-nav-logo" aria-label="ArcaScience home">ArcaScience</a>
+      <div class="arca-nav-links">
+        <a href="/platform/overview" class="arca-nav-link">Platform</a>
+        <a href="/solutions/overview" class="arca-nav-link">Solutions</a>
+        <a href="/evidence/overview" class="arca-nav-link">Evidence</a>
+        <a href="/company/about" class="arca-nav-link">Company</a>
+        <a href="/resources/hub" class="arca-nav-link">Resources</a>
+      </div>
+      <div class="arca-nav-actions">
+        <a href="/company/contact" class="arca-btn-primary">Talk to a Scientist</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="arca-section arca-bg-white" style="min-height: 60vh; display: flex; align-items: center;">
+      <div class="arca-container arca-text-center">
+        <div class="arca-stat-lg arca-text-blue-600" style="font-size: 6rem; margin-bottom: 16px;">404</div>
+        <h1 class="arca-display-sm">Page Not Found</h1>
+        <p class="arca-body-lg arca-text-grey-600" style="max-width: 480px; margin: 16px auto 32px;">
+          The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/" class="arca-btn-primary">Go to Homepage</a>
+          <a href="/platform/overview" class="arca-btn-secondary">Explore the Platform</a>
+        </div>
+
+        <div style="margin-top: 64px; max-width: 480px; margin-left: auto; margin-right: auto;">
+          <h2 class="arca-heading-3" style="margin-bottom: 16px;">Popular pages</h2>
+          <div style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+            <a href="/platform/overview" class="arca-btn-tertiary">Platform Overview <span class="arca-arrow">&rarr;</span></a>
+            <a href="/evidence/case-studies" class="arca-btn-tertiary">Case Studies <span class="arca-arrow">&rarr;</span></a>
+            <a href="/company/contact" class="arca-btn-tertiary">Request a Demo <span class="arca-arrow">&rarr;</span></a>
+            <a href="/resources/hub" class="arca-btn-tertiary">Resource Hub <span class="arca-arrow">&rarr;</span></a>
+            <a href="/company/careers" class="arca-btn-tertiary">Careers <span class="arca-arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="arca-footer arca-bg-blue-900">
+    <div class="arca-container">
+      <div class="arca-footer-grid">
+        <div class="arca-footer-col">
+          <div class="arca-footer-logo">ArcaScience</div>
+          <p class="arca-body-sm arca-text-blue-200">AI-driven benefit-risk analysis for pharmaceutical development.</p>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Platform</h4>
+          <a href="/platform/overview" class="arca-footer-link">Overview</a>
+          <a href="/platform/data" class="arca-footer-link">Data Intelligence</a>
+          <a href="/platform/ai-models" class="arca-footer-link">AI Models</a>
+          <a href="/platform/outputs" class="arca-footer-link">Automated Outputs</a>
+          <a href="/platform/security" class="arca-footer-link">Security</a>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Solutions</h4>
+          <a href="/solutions/phase/post-marketing" class="arca-footer-link">Post-Marketing</a>
+          <a href="/solutions/therapeutic-area/oncology" class="arca-footer-link">Oncology</a>
+          <a href="/solutions/role/drug-safety" class="arca-footer-link">Drug Safety</a>
+          <a href="/solutions/role/regulatory-affairs" class="arca-footer-link">Regulatory Affairs</a>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Company</h4>
+          <a href="/company/about" class="arca-footer-link">About</a>
+          <a href="/company/leadership" class="arca-footer-link">Leadership</a>
+          <a href="/company/careers" class="arca-footer-link">Careers</a>
+          <a href="/company/contact" class="arca-footer-link">Contact</a>
+        </div>
+        <div class="arca-footer-col">
+          <h4 class="arca-footer-heading">Resources</h4>
+          <a href="/resources/insights" class="arca-footer-link">Blog</a>
+          <a href="/resources/whitepapers" class="arca-footer-link">Whitepapers</a>
+          <a href="/resources/webinars" class="arca-footer-link">Events</a>
+          <a href="/resources/faq" class="arca-footer-link">FAQ</a>
+        </div>
+      </div>
+      <div class="arca-footer-bottom">
+        <p class="arca-caption arca-text-blue-300">&copy; 2025 ArcaScience. All rights reserved.</p>
+        <div class="arca-footer-legal">
+          <a href="/legal/privacy" class="arca-footer-link">Privacy</a>
+          <a href="/legal/terms" class="arca-footer-link">Terms</a>
+          <a href="/legal/cookies" class="arca-footer-link">Cookies</a>
+          <a href="/legal/accessibility" class="arca-footer-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!--
+  ArcaScience Platform: AI Models — Webflow Structure Reference
+  =============================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Models — ArcaScience | 24 Domain-Specific Models for Pharmacovigilance</title>
+  <meta name="description" content="General-purpose NLP lacks the training data and domain ontologies required for regulatory-grade safety analysis. ArcaScience's 24 models are purpose-trained on pharmacovigilance data.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown — ACTIVE -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link is-active">Platform</a>
+        </div>
+
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none;">Platform</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">AI Models</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 780px;">
+          <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); display: inline-block;">Decision Intelligence</span>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            24 Domain-Specific Models Trained on Pharmacovigilance Data
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 640px;">
+            General-purpose NLP lacks the training data and domain ontologies required for regulatory-grade safety analysis.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: WHY DOMAIN-SPECIFIC MODELS MATTER
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Explanation -->
+          <div>
+            <p class="arca-section-label" style="margin-bottom: var(--space-4);">Why Domain Specificity Matters</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              MedDRA Coding Accuracy Determines Regulatory Acceptance
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              General-purpose language models trained on internet text lack the specialized knowledge required for pharmacovigilance tasks. MedDRA coding, causality assessment, and regulatory classification require domain-specific training data and validation.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              ArcaScience's models are trained exclusively on pharmacovigilance and regulatory data — clinical trial databases, adverse event reports, regulatory submissions, and pharmacoepidemiology literature. This specialization delivers regulatory-grade accuracy that general models cannot match.
+            </p>
+          </div>
+
+          <!-- Right: Consequence examples -->
+          <div>
+            <div class="arca-card" style="background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(220,38,38,0.03) 100%); border-left: 4px solid #DC2626; margin-bottom: var(--space-5);">
+              <p class="arca-label" style="color: #DC2626; margin-bottom: var(--space-3);">False Negative Risk</p>
+              <p class="arca-body-sm arca-text-grey-600">
+                Missed adverse event signal in spontaneous reporting data leads to delayed regulatory action. Failure to detect drug-drug interaction results in preventable patient harm.
+              </p>
+            </div>
+
+            <div class="arca-card" style="background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(220,38,38,0.03) 100%); border-left: 4px solid #DC2626;">
+              <p class="arca-label" style="color: #DC2626; margin-bottom: var(--space-3);">False Positive Consequence</p>
+              <p class="arca-body-sm arca-text-grey-600">
+                Incorrect MedDRA coding triggers unnecessary signal investigation, wasting months of analyst time and delaying submissions. Overestimated risk profile affects market access decisions.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: MODEL CATEGORIES WITH TECHNICAL DEPTH
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Four Complementary Categories</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            24 Models Organized by Analytical Function
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 720px; margin: 0 auto;">
+            Each category addresses a distinct stage of the benefit-risk analysis pipeline. Models are designed to work together with consistent data formats and validation protocols.
+          </p>
+        </div>
+
+        <!-- NLP Models — Deep Dive -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(13,124,107,0.08) 0%, rgba(13,124,107,0.03) 100%); padding: var(--space-7); border-radius: 8px; border: 2px solid var(--teal-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--teal-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                6
+              </div>
+              <div>
+                <h3 class="arca-heading-1">NLP Models</h3>
+                <p class="arca-body-md arca-text-grey-600">Natural language processing for unstructured pharmacovigilance text</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Text Extraction</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Named entity recognition (NER) for drugs, adverse events, patient demographics, dosages, and temporal relationships from case narratives and regulatory documents.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Trained on: 10M+ case narratives</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Entity Recognition</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Identification of drug names (generic, brand, synonyms), adverse events (MedDRA terms), patient characteristics, lab values, and causality indicators.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Accuracy: 96.2% on held-out test set</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Classification</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Automated MedDRA coding (PT, HLT, SOC), seriousness criteria assessment (death, life-threatening, hospitalization), expectedness determination, and regulatory category assignment.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">MedDRA PT accuracy: 94.8%</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Sentiment Analysis</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Severity language detection, clinical significance scoring, outcome assessment (recovered, fatal, permanent), and reporter confidence evaluation.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Severity correlation: 0.91 (Pearson r)</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Summarization</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Generate executive summaries from multi-source evidence, signal detection reports, benefit-risk synthesis for regulatory submissions (PSUR, CTD 2.5).
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">ROUGE-L score: 0.87</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Translation</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Multi-language support (English, French, German, Spanish, Japanese, Mandarin) with pharmacovigilance-specific terminology preservation and MedDRA term mapping.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Supports 6 languages</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistical Models — Deep Dive -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(67,56,202,0.08) 0%, rgba(67,56,202,0.03) 100%); padding: var(--space-7); border-radius: 8px; border: 2px solid var(--indigo-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--indigo-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                6
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Statistical Models</h3>
+                <p class="arca-body-md arca-text-grey-600">Quantitative methods for benefit-risk evaluation</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Bayesian Inference</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Prior-informed signal detection with posterior probability distributions. Credible intervals for benefit-risk metrics. Uncertainty propagation through decision frameworks.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Method: MCMC with Gibbs sampling</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Frequentist Analysis</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Classical hypothesis testing (t-tests, chi-square, Fisher's exact), confidence interval estimation, p-value calculation for regulatory documentation. Multiple testing correction (Bonferroni, Benjamini-Hochberg).
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Supports all standard tests</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Survival Analysis</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Kaplan-Meier curves, log-rank tests, Cox proportional hazards regression, time-varying covariates, competing risks analysis. Essential for long-term safety evaluation and oncology endpoints.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Cox PH with stratification support</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Dose-Response</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Non-linear modeling (Emax, sigmoid, polynomial), threshold detection, benchmark dose (BMD) calculation, safety margin estimation for toxicology and first-in-human studies.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">FDA BMDS-compliant methods</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Meta-Analysis</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Fixed effects and random effects models (DerSimonian-Laird, REML), forest plot generation, heterogeneity assessment (I², Cochran's Q), publication bias detection (funnel plots, Egger's test).
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Cochrane-compliant methods</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Regression</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Linear, logistic, Poisson, negative binomial regression. Multivariable adjustment for confounding, subgroup identification, interaction testing, propensity score matching for observational data.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Supports complex interactions</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Predictive Models — Deep Dive -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(67,56,202,0.08) 0%, rgba(67,56,202,0.03) 100%); padding: var(--space-7); border-radius: 8px; border: 2px solid var(--indigo-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--indigo-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                6
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Predictive Models</h3>
+                <p class="arca-body-md arca-text-grey-600">Machine learning for signal detection and risk forecasting</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Signal Detection</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Disproportionality analysis (PRR, ROR, EBGM), multi-item gamma Poisson shrinker (MGPS), Bayesian confidence propagation neural network (BCPNN). Continuous monitoring with automated alerts.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Sensitivity: 89.3% | Specificity: 91.7%</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Trend Forecasting</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  ARIMA time series models, changepoint detection, seasonal decomposition, epidemic curve modeling for emerging safety signals and public health surveillance.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Forecast horizon: 12 months</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Risk Scoring</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Patient-level adverse event probability prediction using gradient boosting (XGBoost), random forests, and neural networks. Calibrated risk scores with interpretable feature importance.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">AUC-ROC: 0.87 (validation set)</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Patient Stratification</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Unsupervised clustering (k-means, hierarchical, DBSCAN) for subgroup identification. Supervised classification for benefit-risk responder prediction. Treatment effect heterogeneity assessment.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Silhouette score: 0.71</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Outcome Prediction</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Deep learning models (LSTM, transformer) for longitudinal outcome prediction. Multi-task learning for simultaneous efficacy and safety prediction. Explainable AI with SHAP values.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Mean absolute error: 0.09</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Comparative Effectiveness</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Real-world evidence synthesis with propensity score weighting, doubly-robust estimation, network meta-analysis for indirect comparisons. G-computation for causal inference.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Supports indirect comparisons</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Validation Models — Deep Dive -->
+        <div data-animate>
+          <div style="background: linear-gradient(135deg, rgba(13,124,107,0.08) 0%, rgba(13,124,107,0.03) 100%); padding: var(--space-7); border-radius: 8px; border: 2px solid var(--teal-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--teal-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                6
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Validation Models</h3>
+                <p class="arca-body-md arca-text-grey-600">Quality assurance and uncertainty quantification</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Consistency Checks</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Cross-reference validation across data sources (FAERS vs EudraVigilance), duplicate case detection, temporal consistency verification, data lineage tracking for audit trail.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Detects 99.5% of duplicates</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Cross-Validation</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  K-fold cross-validation (k=5, 10), stratified sampling, temporal validation (train on historical data, test on recent), holdout test sets for performance evaluation.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Standard: 5-fold CV</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Bias Detection</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Reporting bias assessment (funnel plots, Egger's test), selection bias quantification, confounding detection with directed acyclic graphs (DAGs), immortal time bias checks.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">DAG-based causal analysis</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Completeness Scoring</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Field-level completeness assessment for regulatory submission readiness. Missing data pattern analysis, imputation quality scoring, minimum data quality thresholds for analysis inclusion.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Threshold: 95% completeness</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Confidence Calibration</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Platt scaling, isotonic regression, temperature scaling for probabilistic model calibration. Reliability diagrams (calibration curves) for visual assessment.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Expected calibration error: 0.03</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Uncertainty Quantification</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Bayesian credible intervals, bootstrap confidence intervals, Monte Carlo simulation for parameter uncertainty propagation. Prediction intervals for forecasts.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Default: 10,000 bootstrap samples</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: TRAINING DATA AND VALIDATION METHODOLOGY
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 64px;">
+
+          <!-- Left: Methodology -->
+          <div>
+            <p class="arca-section-label" style="margin-bottom: var(--space-4);">Training & Validation</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              Continuous Improvement and Model Lifecycle
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              All 24 models undergo quarterly retraining on the latest data. Model performance is continuously monitored with automated alerts for degradation.
+            </p>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+              Validation uses independent test sets never seen during training. Performance benchmarks are measured against regulatory gold standards and published baselines.
+            </p>
+          </div>
+
+          <!-- Right: Stats -->
+          <div style="display: grid; gap: 24px;">
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Training Data</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                10M+ adverse event case reports, 500K+ clinical trial records, 2M+ PubMed abstracts, 100K+ regulatory documents. All data is de-identified and compliant with GDPR/HIPAA.
+              </p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Validation Protocol</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                80/20 train-test split with temporal validation. Independent expert review of 1000+ predictions per model. Annual external audit by regulatory consultants.
+              </p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Performance Monitoring</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Real-time dashboards tracking accuracy, precision, recall, F1 score, AUC-ROC. Automated alerts for performance degradation below thresholds. Quarterly retraining cycle.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PERFORMANCE METRICS VISUALIZATION
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Performance Metrics</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Measured Against Regulatory Gold Standards
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            All models are validated on independent test sets with performance benchmarks exceeding published baselines.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <div class="arca-card" style="text-align: center;">
+            <p class="arca-label arca-text-grey-600" style="margin-bottom: var(--space-3);">Accuracy</p>
+            <div style="margin-bottom: var(--space-2);">
+              <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="94" data-countup-suffix="%">0</span>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600">Overall classification accuracy</p>
+          </div>
+
+          <div class="arca-card" style="text-align: center;">
+            <p class="arca-label arca-text-grey-600" style="margin-bottom: var(--space-3);">Precision</p>
+            <div style="margin-bottom: var(--space-2);">
+              <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="91" data-countup-suffix="%">0</span>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600">True positive rate</p>
+          </div>
+
+          <div class="arca-card" style="text-align: center;">
+            <p class="arca-label arca-text-grey-600" style="margin-bottom: var(--space-3);">Recall</p>
+            <div style="margin-bottom: var(--space-2);">
+              <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="89" data-countup-suffix="%">0</span>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600">Sensitivity</p>
+          </div>
+
+          <div class="arca-card" style="text-align: center;">
+            <p class="arca-label arca-text-grey-600" style="margin-bottom: var(--space-3);">F1 Score</p>
+            <div style="margin-bottom: var(--space-2);">
+              <span class="arca-stat-lg" style="color: var(--indigo-600);">0.90</span>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600">Harmonic mean of precision and recall</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: CTA — Download the Technical White Paper
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Download the Technical White Paper
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          In-depth technical documentation covering model architectures, training protocols, validation methodologies, and performance benchmarks for all 24 AI models.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request White Paper
+          </a>
+          <a href="/science" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            View Scientific Methodology <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-svg-paths.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceSVGPaths) ArcaScienceSVGPaths.init({ selector: '[data-svg-animate]' });
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet"
+     role="img" aria-label="ArcaScience platform data flow: five data sources feed into 24 AI models, producing five regulatory-ready outputs">
+  <desc>
+    Animated visualization of the ArcaScience pipeline. On the left, five pharmaceutical
+    data sources (Clinical Trials, Real-World Evidence, Published Literature, Regulatory Data,
+    Safety Reports) connect via data flow lines to a central grid of 24 AI model processing
+    nodes arranged in a 4-by-6 matrix. From the processing core, outputs emerge on the right:
+    PSUR Documents, RMP Frameworks, Benefit-Risk Matrices, Safety Signal Reports, and
+    Decision Reports.
+  </desc>
+
+  <defs>
+    <!-- Glow filter for connection lines -->
+    <filter id="line-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#4A6FA5" flood-opacity="0.3" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Data source colors -->
+    <style>
+      /* === Data Source Labels === */
+      .source-label, .output-label {
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+        font-size: 12px;
+        font-weight: 450;
+        fill: #374151;
+      }
+
+      /* === Connection Lines === */
+      .connection-line {
+        stroke: #4A6FA5;
+        stroke-width: 1;
+        fill: none;
+        filter: url(#line-glow);
+      }
+
+      .connection-line-input {
+        stroke-dasharray: var(--line-length);
+        stroke-dashoffset: var(--line-length);
+      }
+
+      .connection-line-output {
+        stroke-dasharray: var(--line-length);
+        stroke-dashoffset: var(--line-length);
+      }
+
+      /* === AI Model Nodes === */
+      .model-node {
+        fill: #E5E7EB;
+        rx: 2;
+        ry: 2;
+        transition: fill 200ms ease-in-out;
+      }
+
+      .model-node.active {
+        fill: #10B981;
+      }
+
+      .model-node-label {
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+        font-size: 7px;
+        fill: #6B7280;
+        text-anchor: middle;
+      }
+
+      /* === Data Flow Particles === */
+      .flow-particle {
+        opacity: 0.8;
+      }
+
+      /* === Progress Bar === */
+      .progress-track {
+        fill: #F3F4F6;
+        rx: 1.5;
+        ry: 1.5;
+      }
+
+      .progress-fill {
+        fill: #4A6FA5;
+        rx: 1.5;
+        ry: 1.5;
+      }
+
+      /* === Reduced Motion === */
+      @media (prefers-reduced-motion: reduce) {
+        .connection-line-input,
+        .connection-line-output {
+          stroke-dasharray: none;
+          stroke-dashoffset: 0;
+        }
+
+        .model-node {
+          fill: #10B981;
+        }
+
+        .flow-particle {
+          display: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- ============================================================
+       LEFT ZONE: Data Source Labels and Icons
+       Five data sources at x=40, spaced vertically
+       ============================================================ -->
+  <g class="data-sources" transform="translate(40, 80)">
+    <!-- Clinical Trials -->
+    <g class="source-group" data-source="clinical-trials" opacity="0">
+      <rect x="0" y="0" width="14" height="14" rx="2" fill="none" stroke="#3B82F6" stroke-width="1"/>
+      <line x1="3" y1="4" x2="11" y2="4" stroke="#3B82F6" stroke-width="0.75"/>
+      <line x1="3" y1="7" x2="11" y2="7" stroke="#3B82F6" stroke-width="0.75"/>
+      <line x1="3" y1="10" x2="8" y2="10" stroke="#3B82F6" stroke-width="0.75"/>
+      <text class="source-label" x="20" y="11">Clinical Trials</text>
+    </g>
+
+    <!-- Real-World Evidence -->
+    <g class="source-group" data-source="rwe" opacity="0" transform="translate(0, 55)">
+      <circle cx="7" cy="7" r="6" fill="none" stroke="#10B981" stroke-width="1"/>
+      <circle cx="4" cy="6" r="1" fill="#10B981"/>
+      <circle cx="8" cy="4" r="1" fill="#10B981"/>
+      <circle cx="10" cy="8" r="1" fill="#10B981"/>
+      <text class="source-label" x="20" y="11">Real-World Evidence</text>
+    </g>
+
+    <!-- Published Literature -->
+    <g class="source-group" data-source="literature" opacity="0" transform="translate(0, 110)">
+      <rect x="0" y="0" width="14" height="14" rx="1" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+      <rect x="2" y="0" width="10" height="14" rx="1" fill="none" stroke="#8B5CF6" stroke-width="0.75"/>
+      <line x1="4" y1="4" x2="10" y2="4" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="4" y1="7" x2="10" y2="7" stroke="#8B5CF6" stroke-width="0.5"/>
+      <text class="source-label" x="20" y="11">Published Literature</text>
+    </g>
+
+    <!-- Regulatory Data -->
+    <g class="source-group" data-source="regulatory" opacity="0" transform="translate(0, 165)">
+      <rect x="0" y="2" width="14" height="10" rx="1" fill="none" stroke="#F59E0B" stroke-width="1"/>
+      <rect x="3" y="0" width="8" height="3" rx="0.5" fill="none" stroke="#F59E0B" stroke-width="0.75"/>
+      <text class="source-label" x="20" y="11">Regulatory Data</text>
+    </g>
+
+    <!-- Safety Reports -->
+    <g class="source-group" data-source="safety" opacity="0" transform="translate(0, 220)">
+      <polygon points="7,0 14,12 0,12" fill="none" stroke="#EF4444" stroke-width="1"/>
+      <line x1="7" y1="4" x2="7" y2="8" stroke="#EF4444" stroke-width="1"/>
+      <circle cx="7" cy="10" r="0.75" fill="#EF4444"/>
+      <text class="source-label" x="20" y="11">Safety Reports</text>
+    </g>
+  </g>
+
+  <!-- ============================================================
+       INPUT CONNECTION LINES
+       From each source to the AI Core (x=450)
+       ============================================================ -->
+  <g class="input-connections">
+    <path class="connection-line connection-line-input" data-source="clinical-trials"
+          d="M 180 87 L 440 87 L 440 160" style="--line-length: 340"/>
+    <path class="connection-line connection-line-input" data-source="rwe"
+          d="M 180 142 L 420 142 L 420 170" style="--line-length: 310"/>
+    <path class="connection-line connection-line-input" data-source="literature"
+          d="M 180 197 L 440 197" style="--line-length: 260"/>
+    <path class="connection-line connection-line-input" data-source="regulatory"
+          d="M 180 252 L 420 252 L 420 230" style="--line-length: 310"/>
+    <path class="connection-line connection-line-input" data-source="safety"
+          d="M 180 307 L 440 307 L 440 240" style="--line-length: 340"/>
+  </g>
+
+  <!-- ============================================================
+       CENTER: AI Processing Core (24 model nodes in 6×4 grid)
+       Grid starts at x=460, y=130 — each node is 40×20 with 8px gap
+       ============================================================ -->
+  <g class="ai-core" transform="translate(460, 130)">
+    <!-- Row 1 -->
+    <rect class="model-node" x="0"   y="0" width="38" height="18" data-model="nlp-extract"/>
+    <rect class="model-node" x="46"  y="0" width="38" height="18" data-model="nlp-sent"/>
+    <rect class="model-node" x="92"  y="0" width="38" height="18" data-model="nlp-ner"/>
+    <rect class="model-node" x="138" y="0" width="38" height="18" data-model="nlp-class"/>
+    <rect class="model-node" x="184" y="0" width="38" height="18" data-model="nlp-summ"/>
+    <rect class="model-node" x="230" y="0" width="38" height="18" data-model="nlp-trans"/>
+
+    <!-- Row 2 -->
+    <rect class="model-node" x="0"   y="26" width="38" height="18" data-model="stat-bayes"/>
+    <rect class="model-node" x="46"  y="26" width="38" height="18" data-model="stat-freq"/>
+    <rect class="model-node" x="92"  y="26" width="38" height="18" data-model="stat-surv"/>
+    <rect class="model-node" x="138" y="26" width="38" height="18" data-model="stat-dose"/>
+    <rect class="model-node" x="184" y="26" width="38" height="18" data-model="stat-meta"/>
+    <rect class="model-node" x="230" y="26" width="38" height="18" data-model="stat-reg"/>
+
+    <!-- Row 3 -->
+    <rect class="model-node" x="0"   y="52" width="38" height="18" data-model="pred-signal"/>
+    <rect class="model-node" x="46"  y="52" width="38" height="18" data-model="pred-trend"/>
+    <rect class="model-node" x="92"  y="52" width="38" height="18" data-model="pred-risk"/>
+    <rect class="model-node" x="138" y="52" width="38" height="18" data-model="pred-strat"/>
+    <rect class="model-node" x="184" y="52" width="38" height="18" data-model="pred-outcome"/>
+    <rect class="model-node" x="230" y="52" width="38" height="18" data-model="pred-comp"/>
+
+    <!-- Row 4 -->
+    <rect class="model-node" x="0"   y="78" width="38" height="18" data-model="val-consist"/>
+    <rect class="model-node" x="46"  y="78" width="38" height="18" data-model="val-cross"/>
+    <rect class="model-node" x="92"  y="78" width="38" height="18" data-model="val-bias"/>
+    <rect class="model-node" x="138" y="78" width="38" height="18" data-model="val-complete"/>
+    <rect class="model-node" x="184" y="78" width="38" height="18" data-model="val-confid"/>
+    <rect class="model-node" x="230" y="78" width="38" height="18" data-model="val-uncert"/>
+
+    <!-- Processing progress bar beneath grid -->
+    <rect class="progress-track" x="0" y="108" width="268" height="3"/>
+    <rect class="progress-fill" x="0" y="108" width="0" height="3" data-progress="core"/>
+
+    <!-- Core label -->
+    <text x="134" y="125" text-anchor="middle"
+          font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif"
+          font-size="10" font-weight="500" fill="#4A6FA5">
+      24 AI Models — Processing Core
+    </text>
+  </g>
+
+  <!-- ============================================================
+       OUTPUT CONNECTION LINES
+       From AI Core (x=730) to output labels
+       ============================================================ -->
+  <g class="output-connections">
+    <path class="connection-line connection-line-output" data-output="psur"
+          d="M 730 160 L 760 160 L 760 87 L 840 87" style="--line-length: 200"/>
+    <path class="connection-line connection-line-output" data-output="rmp"
+          d="M 730 170 L 770 170 L 770 142 L 840 142" style="--line-length: 170"/>
+    <path class="connection-line connection-line-output" data-output="br-matrix"
+          d="M 730 197 L 840 197" style="--line-length: 110"/>
+    <path class="connection-line connection-line-output" data-output="signals"
+          d="M 730 230 L 770 230 L 770 252 L 840 252" style="--line-length: 170"/>
+    <path class="connection-line connection-line-output" data-output="decision"
+          d="M 730 240 L 760 240 L 760 307 L 840 307" style="--line-length: 200"/>
+  </g>
+
+  <!-- ============================================================
+       RIGHT ZONE: Output Labels
+       ============================================================ -->
+  <g class="outputs" transform="translate(850, 80)">
+    <g class="output-group" data-output="psur" opacity="0">
+      <rect x="0" y="0" width="14" height="14" rx="1" fill="none" stroke="#10B981" stroke-width="1"/>
+      <line x1="3" y1="4" x2="11" y2="4" stroke="#10B981" stroke-width="0.75"/>
+      <line x1="3" y1="7" x2="11" y2="7" stroke="#10B981" stroke-width="0.75"/>
+      <line x1="3" y1="10" x2="7" y2="10" stroke="#10B981" stroke-width="0.75"/>
+      <text class="output-label" x="20" y="11">PSUR Document</text>
+    </g>
+
+    <g class="output-group" data-output="rmp" opacity="0" transform="translate(0, 55)">
+      <rect x="0" y="1" width="14" height="12" rx="1" fill="none" stroke="#3B82F6" stroke-width="1"/>
+      <polyline points="2,11 5,5 8,8 12,3" fill="none" stroke="#3B82F6" stroke-width="0.75"/>
+      <text class="output-label" x="20" y="11">RMP Framework</text>
+    </g>
+
+    <g class="output-group" data-output="br-matrix" opacity="0" transform="translate(0, 110)">
+      <line x1="2" y1="0" x2="2" y2="14" stroke="#8B5CF6" stroke-width="0.75"/>
+      <line x1="0" y1="12" x2="14" y2="12" stroke="#8B5CF6" stroke-width="0.75"/>
+      <circle cx="6" cy="6" r="2" fill="#10B981" opacity="0.8"/>
+      <circle cx="10" cy="3" r="2" fill="#EF4444" opacity="0.8"/>
+      <text class="output-label" x="20" y="11">Benefit-Risk Matrix</text>
+    </g>
+
+    <g class="output-group" data-output="signals" opacity="0" transform="translate(0, 165)">
+      <polyline points="0,10 3,10 5,4 7,10 10,10 12,1 14,10" fill="none" stroke="#F59E0B" stroke-width="1"/>
+      <text class="output-label" x="20" y="11">Safety Signals</text>
+    </g>
+
+    <g class="output-group" data-output="decision" opacity="0" transform="translate(0, 220)">
+      <circle cx="7" cy="7" r="6" fill="none" stroke="#06B6D4" stroke-width="1"/>
+      <polyline points="4,7 6,9 10,5" fill="none" stroke="#06B6D4" stroke-width="1"/>
+      <text class="output-label" x="20" y="11">Decision Report</text>
+    </g>
+  </g>
+</svg>

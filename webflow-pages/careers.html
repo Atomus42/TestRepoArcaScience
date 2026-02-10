@@ -1,0 +1,673 @@
+<!--
+  ArcaScience Careers Hub — Webflow Structure Reference
+  ======================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — ArcaScience | Build the Future of Drug Safety</title>
+  <meta name="description" content="Join ArcaScience's team of scientists and engineers transforming how the pharmaceutical industry makes benefit-risk decisions. 60+ team members across Paris and Sunnyvale. Open positions in Engineering, Science, and Operations.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Company link is-active on this page.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+          <!-- Webflow: Use Dropdown component. Items below. -->
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link is-active">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: BREADCRUMB + HERO
+         Full-width dark background (blue-900).
+         Contains: breadcrumb, H1, subtitle, primary CTA.
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-10);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/company" style="color: rgba(255,255,255,0.65); text-decoration: none;">Company</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Careers</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 780px; margin: 0 auto; text-align: center;">
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Build the Future of Drug Safety
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); margin-bottom: var(--space-7); max-width: 680px; margin-left: auto; margin-right: auto;">
+            Join a team of scientists and engineers transforming how the pharmaceutical industry makes benefit-risk decisions.
+          </p>
+          <a href="#positions" class="arca-btn-primary-inverted">
+            View Open Positions
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: MISSION STATEMENT
+         White background. Centered paragraph.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 680px; margin: 0 auto; text-align: center;">
+          <p class="arca-body-lg arca-text-grey-600">
+            ArcaScience is building the analytical foundation for better drug safety decisions. Every feature we ship serves one mission: helping pharmaceutical companies make benefit-risk assessments that are faster, more rigorous, and more transparent. If you want your work to directly improve outcomes for millions of patients, you belong here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: WHY ARCASCIENCE
+         Grey-50 background. 4-card grid of employer value propositions.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Why ArcaScience</p>
+          <h2 class="arca-display-sm">What You'll Find Here</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Meaningful Impact</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Your work directly improves drug safety decisions affecting millions of patients. Every analysis, every model, every regulatory output contributes to safer medicines and better-informed benefit-risk assessments.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Scientific Rigor</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Work alongside PhDs in pharmacoepidemiology, biostatistics, and regulatory science. We never compromise on methodological integrity. Our team includes former FDA reviewers, EMA consultants, and published researchers.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Technical Challenge</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Process 100B+ data points with cutting-edge AI/ML infrastructure. Build domain-specific models for signal detection, causal inference, and comparative effectiveness. Scale systems that pharmaceutical giants depend on daily.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Global Team</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              15+ nationalities across Paris and Sunnyvale offices. Diverse perspectives from biotech, consulting, academia, and regulatory agencies. Collaborative culture where the best ideas win, regardless of seniority.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: TEAM BY THE NUMBERS
+         Dark background (blue-600). Stats bar with count-up animation.
+         ================================================================ -->
+    <section class="arca-credibility-bar" style="background: var(--blue-600);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="60" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Team members</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="40" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Scientists</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="40" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Engineers</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="15" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Nationalities</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="2">0</span>
+            <p class="arca-caption">Global offices</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: DEPARTMENTS
+         White background. 3 featured department cards.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Departments</p>
+          <h2 class="arca-display-sm">Explore Our Teams</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Engineering -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: var(--blue-100); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <!-- Icon placeholder: Code/Terminal -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Engineering</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Build the infrastructure processing 100B+ data points. Python, Rust, PostgreSQL, Kubernetes. ML pipelines, distributed systems, regulatory-grade validation.
+            </p>
+            <a href="/company/careers/engineering" class="arca-btn-tertiary">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Science -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: var(--teal-100); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <!-- Icon placeholder: Microscope/Atom -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m6.36-15.36l-4.24 4.24m0 6.36l4.24 4.24M1 12h6m6 0h6M3.64 3.64l4.24 4.24m6.36 0l4.24-4.24M3.64 20.36l4.24-4.24m6.36 0l4.24 4.24"></path>
+              </svg>
+            </div>
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Science</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Drive pharmacoepidemiology research and regulatory science. Signal detection methodology, BRAT framework implementation, AI model validation, regulatory submission support.
+            </p>
+            <a href="/company/careers/science" class="arca-btn-tertiary">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Operations & Commercial -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: var(--indigo-100); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <!-- Icon placeholder: Chart/Graph -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-3);">Operations & Commercial</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Scale ArcaScience's impact across the pharmaceutical industry. Client success, commercial strategy, partnerships, compliance, and operations roles supporting global growth.
+            </p>
+            <a href="/company/careers/operations" class="arca-btn-tertiary">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: OPEN POSITIONS
+         Grey-50 background. Filterable by department using tabs.
+         Includes 6 placeholder positions + "Don't see your role?" card.
+         ================================================================ -->
+    <section id="positions" class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Open Positions</p>
+          <h2 class="arca-display-sm">Join Our Team</h2>
+        </div>
+
+        <!-- Department filter tabs -->
+        <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: var(--space-7); flex-wrap: wrap;" data-tabs="departments">
+          <button class="arca-tab-button is-active" data-tab-target="all" style="padding: 8px 16px; border: 1px solid var(--grey-300); border-radius: 6px; background: var(--white); cursor: pointer; font-size: 0.875rem; font-weight: 500;">
+            All
+          </button>
+          <button class="arca-tab-button" data-tab-target="engineering" style="padding: 8px 16px; border: 1px solid var(--grey-300); border-radius: 6px; background: var(--white); cursor: pointer; font-size: 0.875rem; font-weight: 500; color: var(--grey-700);">
+            Engineering
+          </button>
+          <button class="arca-tab-button" data-tab-target="science" style="padding: 8px 16px; border: 1px solid var(--grey-300); border-radius: 6px; background: var(--white); cursor: pointer; font-size: 0.875rem; font-weight: 500; color: var(--grey-700);">
+            Science
+          </button>
+          <button class="arca-tab-button" data-tab-target="operations" style="padding: 8px 16px; border: 1px solid var(--grey-300); border-radius: 6px; background: var(--white); cursor: pointer; font-size: 0.875rem; font-weight: 500; color: var(--grey-700);">
+            Operations
+          </button>
+          <button class="arca-tab-button" data-tab-target="commercial" style="padding: 8px 16px; border: 1px solid var(--grey-300); border-radius: 6px; background: var(--white); cursor: pointer; font-size: 0.875rem; font-weight: 500; color: var(--grey-700);">
+            Commercial
+          </button>
+        </div>
+
+        <!-- Position cards -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <!-- Position 1: Senior Backend Engineer -->
+          <div class="arca-card" data-animate data-department="engineering">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+              <span class="arca-tag" style="background: var(--blue-100); color: var(--blue-700); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Engineering</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Paris</span>
+              <span style="color: var(--grey-400);">•</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Full-time</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Senior Backend Engineer</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Build distributed systems processing 100B+ pharmacovigilance data points. Python, Rust, PostgreSQL, Kubernetes. Experience with ML pipelines and regulatory validation requirements.
+            </p>
+            <a href="/company/careers/positions/senior-backend-engineer" class="arca-btn-primary">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Position 2: ML Research Scientist -->
+          <div class="arca-card" data-animate data-department="engineering">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+              <span class="arca-tag" style="background: var(--blue-100); color: var(--blue-700); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Engineering</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Sunnyvale</span>
+              <span style="color: var(--grey-400);">•</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Full-time</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ML Research Scientist</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Develop domain-specific AI models for signal detection, causal inference, and comparative effectiveness. PhD in ML/Statistics preferred. Experience with healthcare or pharmacovigilance data a plus.
+            </p>
+            <a href="/company/careers/positions/ml-research-scientist" class="arca-btn-primary">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Position 3: Senior Pharmacoepidemiologist -->
+          <div class="arca-card" data-animate data-department="science">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+              <span class="arca-tag" style="background: var(--teal-100); color: var(--teal-700); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Science</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Paris / Remote</span>
+              <span style="color: var(--grey-400);">•</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Full-time</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Senior Pharmacoepidemiologist</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Lead benefit-risk methodology development and regulatory science strategy. PhD in pharmacoepidemiology or related field. 5+ years post-doc experience. Publications in regulatory science preferred.
+            </p>
+            <a href="/company/careers/positions/senior-pharmacoepidemiologist" class="arca-btn-primary">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Position 4: Regulatory Science Consultant -->
+          <div class="arca-card" data-animate data-department="science">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+              <span class="arca-tag" style="background: var(--teal-100); color: var(--teal-700); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Science</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Sunnyvale</span>
+              <span style="color: var(--grey-400);">•</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Full-time</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Regulatory Science Consultant</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Support pharmaceutical clients through regulatory submission preparation. Experience with FDA, EMA, or PMDA submissions. PharmD or PhD with regulatory affairs background. Travel required (25%).
+            </p>
+            <a href="/company/careers/positions/regulatory-science-consultant" class="arca-btn-primary">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Position 5: Client Success Manager -->
+          <div class="arca-card" data-animate data-department="commercial">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+              <span class="arca-tag" style="background: var(--indigo-100); color: var(--indigo-700); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Commercial</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Paris</span>
+              <span style="color: var(--grey-400);">•</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Full-time</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Client Success Manager</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Own pharmaceutical client relationships and drive platform adoption. Scientific background (PharmD/MSc/PhD) required. 3+ years in client-facing role at SaaS, biotech, or CRO preferred.
+            </p>
+            <a href="/company/careers/positions/client-success-manager" class="arca-btn-primary">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Position 6: Compliance & QA Lead -->
+          <div class="arca-card" data-animate data-department="operations">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+              <span class="arca-tag" style="background: var(--grey-200); color: var(--grey-700); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Operations</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Sunnyvale</span>
+              <span style="color: var(--grey-400);">•</span>
+              <span style="color: var(--grey-500); font-size: 0.875rem;">Full-time</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Compliance & QA Lead</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Ensure FDA 21 CFR Part 11, GDPR, and ISO 27001 compliance across the platform. Experience with pharmaceutical software validation, audit management, and regulatory inspections.
+            </p>
+            <a href="/company/careers/positions/compliance-qa-lead" class="arca-btn-primary">
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Don't see your role? card -->
+          <div class="arca-card" style="background: var(--blue-50); border: 2px dashed var(--blue-300); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: var(--space-7);" data-animate data-department="all">
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Don't See Your Role?</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5); max-width: 400px;">
+              We're always looking for exceptional talent across all disciplines. Send us your CV and tell us how you'd contribute to ArcaScience's mission.
+            </p>
+            <a href="/company/careers/submit-cv" class="arca-btn-secondary">
+              Send Us Your CV
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: LIFE AT ARCASCIENCE
+         White background. 4-photo grid with captions.
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Life at ArcaScience</p>
+          <h2 class="arca-display-sm">Where We Work</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <!-- Photo 1: Office -->
+          <div class="arca-card" style="padding: 0; overflow: hidden;" data-animate>
+            <div style="width: 100%; height: 280px; background: var(--grey-200); display: flex; align-items: center; justify-content: center; color: var(--grey-500); font-size: 0.875rem;">
+              <!-- Photo placeholder: Paris office open workspace -->
+              [Photo: Paris Office Open Workspace]
+            </div>
+            <div style="padding: var(--space-5);">
+              <p class="arca-body-sm arca-text-grey-600">
+                Our Paris office near Gare de Lyon — collaborative workspace designed for cross-functional teams.
+              </p>
+            </div>
+          </div>
+
+          <!-- Photo 2: Team Events -->
+          <div class="arca-card" style="padding: 0; overflow: hidden;" data-animate>
+            <div style="width: 100%; height: 280px; background: var(--grey-200); display: flex; align-items: center; justify-content: center; color: var(--grey-500); font-size: 0.875rem;">
+              <!-- Photo placeholder: Team offsite or social event -->
+              [Photo: Team Offsite Event]
+            </div>
+            <div style="padding: var(--space-5);">
+              <p class="arca-body-sm arca-text-grey-600">
+                Quarterly team offsites bring our Paris and Sunnyvale teams together for strategy, workshops, and team building.
+              </p>
+            </div>
+          </div>
+
+          <!-- Photo 3: Conferences -->
+          <div class="arca-card" style="padding: 0; overflow: hidden;" data-animate>
+            <div style="width: 100%; height: 280px; background: var(--grey-200); display: flex; align-items: center; justify-content: center; color: var(--grey-500); font-size: 0.875rem;">
+              <!-- Photo placeholder: Conference presentation or booth -->
+              [Photo: Conference Presentation]
+            </div>
+            <div style="padding: var(--space-5);">
+              <p class="arca-body-sm arca-text-grey-600">
+                Presenting at ICPE, DIA, and regulatory science conferences — our team stays at the forefront of pharmacoepidemiology research.
+              </p>
+            </div>
+          </div>
+
+          <!-- Photo 4: Collaboration -->
+          <div class="arca-card" style="padding: 0; overflow: hidden;" data-animate>
+            <div style="width: 100%; height: 280px; background: var(--grey-200); display: flex; align-items: center; justify-content: center; color: var(--grey-500); font-size: 0.875rem;">
+              <!-- Photo placeholder: Engineers and scientists collaborating -->
+              [Photo: Cross-Functional Collaboration]
+            </div>
+            <div style="padding: var(--space-5);">
+              <p class="arca-body-sm arca-text-grey-600">
+                Engineers, scientists, and commercial teams work side-by-side — the best solutions emerge when diverse perspectives converge.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: VALUES
+         Grey-50 background. 3-column layout of company values.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Our Values</p>
+          <h2 class="arca-display-sm">What Guides Us</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Scientific Integrity</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              We never compromise on methodological rigor. Every model, every analysis, every regulatory output is built on defensible scientific foundations. Our reputation depends on the quality of our work.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Patient Impact</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Every feature we build serves the mission of safer medicines. Benefit-risk decisions affect millions of patients. That responsibility drives every technical choice, every priority, every deadline.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Collaborative Excellence</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              The best work happens when diverse perspectives converge. Engineers challenge scientists. Scientists challenge engineers. Junior team members ask the hard questions. Hierarchy never silences the best idea.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 9: FINAL CTA
+         Full-width blue gradient. Primary conversion section.
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Ready to Make an Impact?
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Join a team building the analytical foundation for better drug safety decisions.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#positions" class="arca-btn-primary-inverted">
+            View Open Positions
+          </a>
+          <a href="/contact" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Contact Us <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Identical structure to homepage footer.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

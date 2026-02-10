@@ -1,0 +1,505 @@
+<!--
+  ArcaScience Cookie Policy Page — Webflow Structure Reference
+  =============================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy — ArcaScience</title>
+  <meta name="description" content="ArcaScience cookie policy. Learn about the cookies we use, their purposes, and how to manage your cookie preferences.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: BREADCRUMB + HERO
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-7) 0 var(--space-8);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/legal" style="color: rgba(255,255,255,0.65); text-decoration: none;">Legal</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Cookie Policy</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-4);">
+            Cookie Policy
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85);">
+            This policy explains how ArcaScience uses cookies and similar tracking technologies on our website, what information they collect, and how you can manage your preferences.
+          </p>
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.55); margin-top: var(--space-4);">
+            Last updated: January 2025
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: MAIN CONTENT — Two-column layout with TOC sidebar
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: start;">
+
+          <!-- LEFT: Table of Contents Sidebar -->
+          <aside style="position: sticky; top: calc(var(--nav-height) + 24px);">
+            <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-4);">On This Page</p>
+            <nav aria-label="Table of contents" style="display: flex; flex-direction: column; gap: 8px;">
+              <a href="#what-are-cookies" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">What Are Cookies</a>
+              <a href="#cookie-categories" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Cookie Categories</a>
+              <a href="#cookies-we-use" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Cookies We Use</a>
+              <a href="#cookie-consent" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Cookie Consent</a>
+              <a href="#managing-cookies" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">How to Control Cookies</a>
+              <a href="#third-party-cookies" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Third-Party Cookies</a>
+              <a href="#privacy-policy" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Privacy Policy Reference</a>
+              <a href="#changes" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Changes to This Policy</a>
+              <a href="#contact" style="color: var(--grey-600); text-decoration: none; font-size: 0.875rem; padding: 4px 0; border-left: 2px solid transparent; padding-left: 12px;">Contact</a>
+            </nav>
+          </aside>
+
+          <!-- RIGHT: Policy Content -->
+          <div style="max-width: 780px;">
+
+            <!-- 1. What Are Cookies -->
+            <div id="what-are-cookies" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                1. What Are Cookies
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Cookies are small text files that are placed on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work more efficiently, provide a better user experience, and supply information to website operators.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Cookies can be "first-party" (set by the website you are visiting) or "third-party" (set by a service provider other than the website operator). Cookies can also be "session cookies" (deleted when you close your browser) or "persistent cookies" (remaining on your device for a specified period or until you delete them manually).
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                In addition to cookies, we may use similar technologies such as pixels, web beacons, and local storage to collect information about how you interact with our website.
+              </p>
+            </div>
+
+            <!-- 2. Cookie Categories -->
+            <div id="cookie-categories" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                2. Cookie Categories
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                We classify the cookies used on our website into the following categories:
+              </p>
+
+              <div style="display: grid; gap: var(--space-4);">
+                <div class="arca-card" style="padding: var(--space-4);">
+                  <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Strictly Necessary Cookies</p>
+                  <p class="arca-body-sm arca-text-grey-600">These cookies are essential for the website to function properly. They enable core functionality such as security, session management, and accessibility preferences. You cannot opt out of these cookies as the website cannot function without them. They do not store any personally identifiable information beyond what is required for basic operation.</p>
+                </div>
+                <div class="arca-card" style="padding: var(--space-4);">
+                  <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Analytics Cookies</p>
+                  <p class="arca-body-sm arca-text-grey-600">These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. They allow us to measure the number of visitors, see which pages are most and least popular, and understand how visitors navigate the site. All information collected by these cookies is aggregated and therefore anonymous.</p>
+                </div>
+                <div class="arca-card" style="padding: var(--space-4);">
+                  <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Functional Cookies</p>
+                  <p class="arca-body-sm arca-text-grey-600">These cookies enable enhanced functionality and personalization, such as remembering your language preferences, region, or display settings. They may be set by us or by third-party providers whose services we have added to our pages. If you do not allow these cookies, some or all of these features may not function properly.</p>
+                </div>
+                <div class="arca-card" style="padding: var(--space-4);">
+                  <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Marketing Cookies</p>
+                  <p class="arca-body-sm arca-text-grey-600">These cookies are used to track visitors across websites. They are set by our advertising and marketing partners to build a profile of your interests and show you relevant content and advertisements on other sites. They work by uniquely identifying your browser and device. If you do not allow these cookies, you will experience less targeted advertising.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Cookies We Use -->
+            <div id="cookies-we-use" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                3. Cookies We Use
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                The following table lists the specific cookies used on the ArcaScience website, their provider, purpose, type, and duration:
+              </p>
+
+              <!-- Cookie Duration Table -->
+              <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
+                  <thead>
+                    <tr style="border-bottom: 2px solid var(--grey-200);">
+                      <th style="text-align: left; padding: 12px 16px; color: var(--grey-700); font-weight: 600;">Cookie Name</th>
+                      <th style="text-align: left; padding: 12px 16px; color: var(--grey-700); font-weight: 600;">Provider</th>
+                      <th style="text-align: left; padding: 12px 16px; color: var(--grey-700); font-weight: 600;">Purpose</th>
+                      <th style="text-align: left; padding: 12px 16px; color: var(--grey-700); font-weight: 600;">Type</th>
+                      <th style="text-align: left; padding: 12px 16px; color: var(--grey-700); font-weight: 600;">Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--grey-100);">
+                      <td style="padding: 12px 16px; color: var(--grey-700); font-family: monospace; font-size: 0.8125rem;">session_id</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">ArcaScience</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Maintains user session state across page requests. Essential for website functionality and security.</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Strictly Necessary</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Session</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--grey-100);">
+                      <td style="padding: 12px 16px; color: var(--grey-700); font-family: monospace; font-size: 0.8125rem;">__cf_bm</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Cloudflare</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Bot management cookie used to distinguish between humans and bots. Required for DDoS protection and security.</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Strictly Necessary</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">30 minutes</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--grey-100);">
+                      <td style="padding: 12px 16px; color: var(--grey-700); font-family: monospace; font-size: 0.8125rem;">_ga</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Google Analytics 4</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Distinguishes unique users by assigning a randomly generated number as a client identifier. Used to calculate visitor, session, and campaign data for analytics reports.</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Analytics</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">2 years</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--grey-100);">
+                      <td style="padding: 12px 16px; color: var(--grey-700); font-family: monospace; font-size: 0.8125rem;">_gid</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Google Analytics 4</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Stores and updates a unique value for each page visited. Used to count and track pageviews within a 24-hour period.</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Analytics</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">24 hours</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--grey-100);">
+                      <td style="padding: 12px 16px; color: var(--grey-700); font-family: monospace; font-size: 0.8125rem;">__hstc</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">HubSpot</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Tracks visitor sessions and attributes website visits to the correct marketing source. Contains the domain, utk, initial timestamp, last timestamp, current timestamp, and session number.</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Marketing</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">13 months</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--grey-100);">
+                      <td style="padding: 12px 16px; color: var(--grey-700); font-family: monospace; font-size: 0.8125rem;">hubspotutk</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">HubSpot</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Keeps track of a visitor's identity. This cookie is passed to HubSpot on form submission and used when deduplicating contacts. Contains an opaque GUID to represent the current visitor.</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">Marketing</td>
+                      <td style="padding: 12px 16px; color: var(--grey-600);">13 months</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="arca-body-sm arca-text-grey-500" style="margin-top: var(--space-3);">
+                This table was last reviewed and updated in January 2025. Cookie names, providers, and durations may change as we update our technology stack.
+              </p>
+            </div>
+
+            <!-- 4. Cookie Consent -->
+            <div id="cookie-consent" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                4. Cookie Consent Management
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                When you first visit the ArcaScience website, you will be presented with a cookie consent banner that allows you to accept or decline non-essential cookies. Your consent preferences are stored and applied on subsequent visits.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                You can change your cookie preferences at any time by clicking the "Cookie Settings" link in the footer of any page on our website. This will reopen the consent manager, allowing you to update your preferences.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                Strictly necessary cookies are always active and cannot be disabled, as they are required for the website to function. Analytics, functional, and marketing cookies are only set after you provide explicit consent in accordance with the EU ePrivacy Directive and GDPR requirements.
+              </p>
+            </div>
+
+            <!-- 5. How to Control Cookies -->
+            <div id="managing-cookies" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                5. How to Control Cookies
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                In addition to our cookie consent manager, you can control cookies through your browser settings. Most browsers allow you to:
+              </p>
+              <div style="display: grid; gap: var(--space-3);">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>View cookies:</strong> See which cookies are stored on your device and inspect their contents.</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Delete cookies:</strong> Remove all cookies or specific cookies from your device.</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Block cookies:</strong> Set your browser to block all cookies or only third-party cookies.</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Receive notifications:</strong> Configure your browser to notify you when a cookie is being set.</p>
+                </div>
+              </div>
+
+              <p class="arca-body-md arca-text-grey-600" style="margin-top: var(--space-4); margin-bottom: var(--space-4);">
+                Instructions for managing cookies in common browsers:
+              </p>
+              <div style="display: grid; gap: var(--space-3);">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Google Chrome:</strong> Settings &gt; Privacy and security &gt; Cookies and other site data</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Mozilla Firefox:</strong> Settings &gt; Privacy &amp; Security &gt; Cookies and Site Data</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Safari:</strong> Preferences &gt; Privacy &gt; Manage Website Data</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Microsoft Edge:</strong> Settings &gt; Cookies and site permissions &gt; Manage and delete cookies and site data</p>
+                </div>
+              </div>
+
+              <p class="arca-body-md arca-text-grey-600" style="margin-top: var(--space-4);">
+                Please note that blocking or deleting cookies may affect the functionality of our website and prevent certain features from working as intended.
+              </p>
+            </div>
+
+            <!-- 6. Third-Party Cookies -->
+            <div id="third-party-cookies" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                6. Third-Party Cookies
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Some cookies on our website are set by third-party services that appear on our pages. We do not control the setting of these cookies and recommend that you consult the respective third party's cookie policy for more information:
+              </p>
+              <div style="display: grid; gap: var(--space-3);">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Google Analytics:</strong> <a href="https://policies.google.com/technologies/cookies" style="color: var(--blue-600);">Google's Cookie Policy</a></p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>HubSpot:</strong> <a href="https://legal.hubspot.com/cookie-policy" style="color: var(--blue-600);">HubSpot's Cookie Policy</a></p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Cloudflare:</strong> <a href="https://www.cloudflare.com/cookie-policy/" style="color: var(--blue-600);">Cloudflare's Cookie Policy</a></p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                  <p class="arca-body-md arca-text-grey-600"><strong>Webflow:</strong> <a href="https://webflow.com/legal/cookie-policy" style="color: var(--blue-600);">Webflow's Cookie Policy</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Privacy Policy Reference -->
+            <div id="privacy-policy" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                7. Privacy Policy
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                This Cookie Policy should be read in conjunction with our <a href="/legal/privacy" style="color: var(--blue-600);">Privacy Policy</a>, which provides comprehensive information about how we collect, use, and protect your personal data, including data collected through cookies.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                For information about your rights regarding personal data, data retention periods, international data transfers, and how to contact our Data Protection Officer, please refer to our full <a href="/legal/privacy" style="color: var(--blue-600);">Privacy Policy</a>.
+              </p>
+            </div>
+
+            <!-- 8. Changes to This Policy -->
+            <div id="changes" style="margin-bottom: var(--space-8);">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                8. Changes to This Policy
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                We may update this Cookie Policy from time to time to reflect changes in the cookies we use, our technology stack, or applicable regulations. When we make material changes, we will update the "Last updated" date at the top of this page and, where appropriate, notify you through the cookie consent banner.
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                We encourage you to review this Cookie Policy periodically to stay informed about how we use cookies.
+              </p>
+            </div>
+
+            <!-- 9. Contact -->
+            <div id="contact">
+              <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+                9. Contact
+              </h2>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                If you have questions about our use of cookies or this Cookie Policy, please contact us:
+              </p>
+              <div class="arca-card" style="padding: var(--space-5);">
+                <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Data Protection Officer</p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  ArcaScience SAS<br>
+                  8 rue Jean-Antoine de Baif, 75013 Paris, France<br>
+                  Email: <a href="mailto:dpo@arcascience.ai" style="color: var(--blue-600);">dpo@arcascience.ai</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security &amp; Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Leadership</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

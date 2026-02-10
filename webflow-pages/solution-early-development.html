@@ -1,0 +1,453 @@
+<!--
+  ArcaScience Solution Page — Early Development (Phase I-II)
+  ==========================================================
+  Built from solution-template.html.
+  This page targets clinical development teams, pharmacologists,
+  and safety scientists evaluating compounds in Phase I-II.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Early Development Benefit-Risk Analysis — ArcaScience</title>
+  <meta name="description" content="AI-driven benefit-risk intelligence for Phase I-II drug development. DDI screening, comparator profiling, safety signal assessment, and early BRA framing — powered by 100+ billion data points.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <nav aria-label="Breadcrumb" style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0;">
+        <li><a href="/" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Home</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li><a href="/solutions" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Solutions</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li class="arca-body-sm arca-text-grey-900" aria-current="page">Early Development</li>
+      </ol>
+    </nav>
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         ================================================================ -->
+    <section style="padding: var(--space-8) 0 var(--space-7);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 780px;">
+          <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-3);">
+            Early Development
+          </p>
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Benefit-Risk Intelligence for Compounds in Early Clinical Development
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-5); max-width: 680px;">
+            Identify safety signals, screen for drug-drug interactions, and inform go/no-go decisions before Phase III investment.
+          </p>
+          <p class="arca-body-md arca-text-grey-600" style="max-width: 680px;">
+            In Phase I-II development, the benefit-risk question is prospective: does the emerging safety and efficacy profile of this compound justify continued investment? ArcaScience's platform provides early-stage development teams with comprehensive background intelligence — drawing on real-world evidence from related compounds, published literature, and class-level safety data — to contextualize early clinical findings. The result: better-informed decisions on dose selection, patient population targeting, comparator choice, and development program design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: THE CHALLENGE
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
+
+          <div>
+            <p class="arca-section-label">The Challenge</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              Limited Data, High-Stakes Decisions
+            </h2>
+            <p class="arca-body-md arca-text-grey-600">
+              Phase I-II datasets are small. Safety signals may be obscured by limited sample sizes and short exposure durations. Yet the decisions made at this stage — dose selection, patient population targeting, comparator choice, and the fundamental go/no-go on Phase III investment — commit hundreds of millions of dollars in downstream development. Development teams need external context that their own trial data cannot provide: background adverse event rates in the target population, safety profiles of pharmacologically similar compounds, and the competitive benefit-risk landscape in the target indication. The traditional approach — manual literature review and ad hoc CRO engagements — is too slow and too narrow for the complexity of modern early-stage decision-making.
+            </p>
+          </div>
+
+          <div style="display: grid; gap: 16px;">
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Small Datasets, Hidden Signals</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Phase I-II trials enroll tens to hundreds of patients. Adverse events that will become apparent in larger populations may not yet be statistically detectable, leaving development teams blind to risks that could derail Phase III.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Manual Literature Review Bottleneck</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Comprehensive background profiling for a single compound requires reviewing thousands of publications, FAERS reports, and comparator datasets. Manual approaches take weeks and still miss relevant findings.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">No Structured BRA Framework Early</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Most organizations defer structured benefit-risk assessment to late development. By then, the trial design is locked and the opportunity to proactively address safety questions in the pivotal program has passed.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: HOW ARCASCIENCE ADDRESSES THIS
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">How ArcaScience Addresses This</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Contextualizing Early Signals with 100+ Billion Data Points
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Data Intelligence -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Background Rate Estimation &amp; DDI Screening
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              The Data Intelligence Engine identifies expected incidence of adverse events in the target population independent of the study drug, profiles class-level safety patterns for pharmacologically similar compounds, and screens for drug-drug interactions at 3x the detection rate of manual literature review — critical for compounds expected to be used in polypharmacy settings.
+            </p>
+          </div>
+
+          <!-- Decision Intelligence -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Early Benefit-Risk Framing
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              ArcaScience establishes the value tree and effects table structure before Phase III, so the pivotal program is designed to generate the data needed for the eventual regulatory submission. BRAT framework and MCDA methodologies are applied early, creating a quantitative benefit-risk scaffold that evolves with the program rather than being constructed retrospectively.
+            </p>
+          </div>
+
+          <!-- Automated Outputs -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Comparator Landscape &amp; Signal Reports
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              The platform generates comparator landscape analyses, DDI screening reports with prioritized interaction lists, background rate reports for safety endpoints, and early benefit-risk position documents — all formatted for internal governance meetings and regulatory strategy discussions.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: WORKFLOW / PROCESS
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Workflow</p>
+          <h2 class="arca-display-sm">How It Works</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              1
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Define Compound Profile</p>
+            <p class="arca-body-sm arca-text-grey-600">Specify your molecule's mechanism of action, therapeutic class, target indication, and expected co-medications. The platform identifies the relevant comparator landscape and data perimeter.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              2
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Screen for Safety Signals &amp; DDIs</p>
+            <p class="arca-body-sm arca-text-grey-600">The Data Intelligence Engine screens AS Profiling Base 100b for drug-drug interactions, class-level adverse event patterns, and background rates across relevant populations and geographies.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              3
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Build Early BRA Framework</p>
+            <p class="arca-body-sm arca-text-grey-600">Decision Intelligence establishes the benefit-risk value tree and effects table structure, mapping key outcomes and decision criteria before Phase III protocol finalization.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              4
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Generate Go/No-Go Intelligence</p>
+            <p class="arca-body-sm arca-text-grey-600">Receive comparator landscape reports, DDI screening outputs, and early benefit-risk position documents to support internal governance decisions and regulatory strategy meetings.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PERFORMANCE METRICS
+         ================================================================ -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-3);">Performance Metrics</p>
+          <h2 class="arca-heading-1 arca-text-white">Measured Impact for Early Development</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="3" data-countup-suffix="x">0</span>
+            <p class="arca-caption">DDI detection rate vs. manual literature review</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">0</span>
+            <p class="arca-caption">Data points providing background context</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="12" data-countup-suffix="">0</span>
+            <p class="arca-caption">Therapeutic areas with early-phase coverage</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: RELATED CASE STUDY
+         ================================================================ -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <div>
+            <p class="arca-section-label">Case Study — AstraZeneca</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              Oncology Signal Detection in Early-Phase Development
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              ArcaScience's Data Intelligence Engine was deployed to profile the safety landscape for an early-phase oncology compound. The platform identified class-level adverse event patterns and potential drug-drug interactions with standard-of-care regimens that manual literature review had not surfaced — enabling the development team to adjust the Phase III protocol design and monitoring plan before pivotal study initiation.
+            </p>
+            <a href="/evidence/case-studies/astrazeneca-oncology" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              The depth of the comparator analysis and DDI screening gave our development team confidence in the Phase III design. ArcaScience surfaced interactions we had not identified through our standard review process.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Head of Clinical Pharmacology</p>
+              <p class="arca-body-sm arca-text-grey-600">Top-10 Global Pharmaceutical Company</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: RELATED USE CASES
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Related Solutions</p>
+          <h2 class="arca-display-sm">Benefit-Risk Analysis Across the Lifecycle</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <a href="/solutions/late-development" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Late Development &amp; Submission</h3>
+            <p class="arca-body-sm arca-text-grey-600">CTD Module 2.5, advisory committee preparation, integrated benefit-risk summary for regulatory submission.</p>
+          </a>
+
+          <a href="/solutions/post-marketing" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Post-Marketing Surveillance</h3>
+            <p class="arca-body-sm arca-text-grey-600">Automated PSUR/PBRER generation, continuous signal monitoring, RMP updates, label change support.</p>
+          </a>
+
+          <a href="/solutions/market-access" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Market Access &amp; HEOR</h3>
+            <p class="arca-body-sm arca-text-grey-600">Value dossiers, HTA submission support, comparative effectiveness evidence, payer communication materials.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: CTA
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Your Early Development Challenge
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your compound's therapeutic class, target indication, and Phase I-II data requirements.
+        </p>
+        <a href="/contact" class="arca-btn-primary-inverted">
+          Talk to a Scientist
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

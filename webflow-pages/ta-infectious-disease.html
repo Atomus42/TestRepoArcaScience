@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infectious Disease Solutions — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="ArcaScience's AI-driven benefit-risk analysis platform for Infectious Disease. 22B+ records covering anti-infective therapies, vaccine safety surveillance, pandemic response treatments, and real-time antimicrobial resistance monitoring.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown — ACTIVE -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- SECTION 1: BREADCRUMB + DARK HERO -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Infectious Disease</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Therapeutic Area Solutions
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Infectious Disease Benefit-Risk Analysis
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            End-to-end BRA for anti-infective therapies and vaccines — real-time safety signal detection, antimicrobial resistance monitoring, pandemic rapid-response frameworks, and large-population vaccine safety surveillance.
+          </p>
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request Infectious Disease Briefing
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: DATA COVERAGE STATS -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="22000000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Infectious disease safety records</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="14200" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Anti-infective & vaccine trials analyzed</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="24" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Regulatory submissions supported</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="180" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Countries in vaccine surveillance network</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TA-SPECIFIC CHALLENGE SECTION -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Unique Challenges</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Why Infectious Disease BRA Is Different
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Infectious disease therapies operate under unique constraints — evolving pathogen landscapes, massive population-scale safety monitoring for vaccines, and compressed development timelines during pandemic response that demand specialized BRA approaches.
+          </p>
+        </div>
+
+        <!-- 3 TA-specific challenge cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Resistance Signal Monitoring</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Antimicrobial resistance (AMR) introduces dynamic benefit-risk profiles that shift over time as resistance patterns evolve. Antibiotics and antifungals require continuous monitoring of MIC creep, cross-resistance emergence, and microbiome disruption signals. BRA must account for both individual patient risk and population-level resistance selection pressure — a dual consideration unique to infectious disease therapeutics.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Vaccine Safety Surveillance</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Vaccines administered to millions of healthy individuals require extraordinarily sensitive safety monitoring with very low signal-to-noise ratios. Rare adverse events occurring at 1-in-100,000 or 1-in-million rates — such as myocarditis, thrombosis with thrombocytopenia, or Guillain-Barre syndrome — must be detected rapidly against high background rates in large populations, demanding specialized statistical methods and real-time data integration.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Pandemic Timeline Compression</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Emergency Use Authorization (EUA) and conditional approval pathways compress typical development timelines from years to months, requiring rapid benefit-risk assessment with limited safety databases. Post-authorization safety monitoring must compensate for truncated pre-approval evaluation, with real-time signal detection systems processing millions of adverse event reports within weeks of mass vaccination or treatment deployment.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PLATFORM CAPABILITIES FOR THIS TA -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            How ArcaScience Addresses Infectious Disease BRA Challenges
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our three integrated modules — Data Intelligence, Decision Intelligence, and Automated Outputs — are configured for Infectious Disease-specific benefit-risk assessment workflows.
+          </p>
+        </div>
+
+        <!-- 3 module cards with colored tops -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Module 1: Data Intelligence (teal) -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Infectious Disease Data Coverage
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Comprehensive infectious disease data from 14,200+ clinical trials, 22B+ adverse event records spanning FAERS, EudraVigilance, VigiBase, and VAERS. Integrated AMR surveillance data from GLASS, EARS-Net, and ATLAS databases. Real-time vaccine safety feeds from V-safe, the Vaccine Safety Datalink (VSD), and BEST Initiative sentinel systems covering 180+ countries.
+            </p>
+            <a href="/platform/data-intelligence" class="arca-btn-tertiary">
+              Explore Data Engine <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 2: Decision Intelligence (indigo) -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              TA-Specific AI Models
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              8 AI models trained specifically on infectious disease safety and efficacy patterns, including rapid signal detection for vaccine-associated adverse events, AMR trend prediction from susceptibility data, and pandemic-speed sequential analysis. Bayesian self-controlled case series (SCCS) and tree-temporal scan statistics optimized for rare vaccine safety signal detection in large populations.
+            </p>
+            <a href="/platform/ai-models" class="arca-btn-tertiary">
+              Explore AI Models <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Module 3: Automated Outputs (green) -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Infectious Disease Regulatory Outputs
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Submission-ready vaccine safety reports, AMR monitoring dashboards, pandemic rapid BRA documents, PSUR/PBRER with infectious disease-specific safety sections, and REMS/RMP deliverables. Outputs formatted for FDA, EMA, WHO prequalification, and PMDA requirements, including EUA-specific benefit-risk frameworks and ACIP/JCVI presentation-ready safety summaries.
+            </p>
+            <a href="/platform/outputs" class="arca-btn-tertiary">
+              Explore Outputs <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ADVERSE EVENT LANDSCAPE -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Safety Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Infectious Disease Adverse Event Landscape
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key safety signal categories tracked across anti-infective and vaccine programs, with AI-powered detection optimized for both individual therapeutics and population-scale immunization campaigns.
+          </p>
+        </div>
+
+        <!-- AE category grid -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Vaccine-Associated Myocarditis</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Myocarditis and pericarditis following mRNA vaccination, predominantly in young males — requiring age-sex stratified signal detection, background rate comparison, and outcome severity assessment for ongoing benefit-risk evaluation.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Thrombosis with Thrombocytopenia</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Vaccine-induced immune thrombocytopenia and thrombosis (VITT) — a novel syndrome requiring new case definitions, specialized laboratory markers (anti-PF4 antibodies), and rapid regulatory action frameworks.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Hepatotoxicity</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Drug-induced liver injury from anti-infective agents including anti-tuberculosis regimens (isoniazid, rifampicin), antifungals (voriconazole), and antiretrovirals — requiring Hy's Law analysis and DILI network pattern recognition.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Clostridioides difficile Infection</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Antibiotic-associated C. difficile colitis driven by microbiome disruption — a critical secondary infection risk requiring microbiome impact profiling and comparative safety assessment across antibiotic classes.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">QT Prolongation</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Cardiac conduction abnormalities with fluoroquinolones, macrolides, and azole antifungals — requiring thorough QT studies, drug interaction modeling, and real-world cardiac safety monitoring in polypharmacy populations.
+            </p>
+          </div>
+
+          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
+            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Nephrotoxicity</h4>
+            <p class="arca-body-sm arca-text-grey-600">
+              Renal toxicity from aminoglycosides, vancomycin, amphotericin B, and antiviral agents (tenofovir) — requiring therapeutic drug monitoring integration, creatinine clearance trending, and dose-adjustment safety algorithms.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Link to data coverage -->
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/platform/data" class="arca-btn-tertiary">
+            See Full Infectious Disease Data Coverage <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CASE STUDY EXCERPT -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Case study content -->
+          <div>
+            <p class="arca-section-label">Case Study — Infectious Disease</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              mRNA Vaccine — Post-Authorization Safety Monitoring
+            </h2>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                A major vaccine manufacturer needed to establish real-time post-authorization safety surveillance for an mRNA vaccine platform deployed across 90+ countries. The program required near-real-time myocarditis signal quantification, age-sex stratified observed-vs-expected analysis, and automated regulatory reporting to FDA, EMA, and 30+ national regulatory authorities simultaneously — all within weeks of initial deployment rather than the typical months-long pharmacovigilance cycle.
+              </p>
+            </div>
+
+            <div style="margin-bottom: var(--space-5);">
+              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Approach</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                ArcaScience deployed pandemic-optimized AI models processing VAERS, V-safe, EudraVigilance, and VigiBase feeds in near-real-time. Sequential probability ratio testing (SPRT) and self-controlled case series analysis enabled continuous signal evaluation against dynamically updated background rates. Automated PADER (Post-Authorization Data Entry and Review) reports were generated weekly for FDA and monthly PSUR supplements for EMA.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="48" data-countup-suffix="hr">0</span>
+                <p class="arca-caption arca-text-grey-600">Signal detection turnaround</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="90" data-countup-suffix="+">0</span>
+                <p class="arca-caption arca-text-grey-600">Countries monitored simultaneously</p>
+              </div>
+              <div>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="75" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Reduction in reporting cycle time</p>
+              </div>
+            </div>
+
+            <a href="/evidence/case-studies/infectious-disease-case-study" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Testimonial -->
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              During the pandemic response, ArcaScience's real-time safety surveillance capability was indispensable. We went from months-long signal evaluation cycles to 48-hour turnaround — enabling us to provide regulators with actionable safety data at the speed the situation demanded.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Dr. Elena Vasquez</p>
+              <p class="arca-body-sm arca-text-grey-600">Global Head of Vaccine Safety, Major Vaccine Manufacturer</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: REGULATORY CONTEXT -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Regulatory Intelligence</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Infectious Disease Regulatory Context
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Key regulatory considerations and guidance specific to infectious disease and vaccine benefit-risk assessment for FDA, EMA, WHO, and PMDA submissions.
+          </p>
+        </div>
+
+        <!-- Accordion for regulatory guidance -->
+        <div style="max-width: 820px; margin: 0 auto;">
+
+          <div class="arca-accordion" data-accordion>
+
+            <!-- Accordion item 1 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">FDA EUA & Vaccine Safety Guidance</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  FDA's Emergency Use Authorization framework requires a benefit-risk assessment demonstrating that known and potential benefits outweigh known and potential risks. For vaccines, CBER's Guidance on EUA for Vaccines requires a median 2-month safety follow-up, pre-specified safety endpoints, and enhanced post-authorization monitoring through VAERS, the Vaccine Safety Datalink, and the BEST (Biologics Effectiveness and Safety) Initiative sentinel system.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key requirements:</strong> Weekly PADER reports during initial deployment, observed-vs-expected analyses for AESI (adverse events of special interest), REMS where appropriate, and ongoing BLA conversion studies. For anti-infectives, FDA's LPAD (Limited Population Pathway for Antibacterial and Antifungal Drugs) pathway requires targeted benefit-risk assessment for serious infections with limited treatment options.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 2 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">EMA & WHO Safety Reporting</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  EMA's conditional marketing authorization for vaccines and anti-infectives requires ongoing PASS (Post-Authorization Safety Studies) and enhanced PSUR reporting cycles. The PRAC (Pharmacovigilance Risk Assessment Committee) mandates specific signal detection for AESI using EudraVigilance data with Brighton Collaboration case definitions. WHO prequalification requires compliance with WHO Pharmacovigilance Guidelines and AEFI (Adverse Events Following Immunization) causality assessment using the revised WHO algorithm.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Key focus areas:</strong> Rapid safety signal communication through EMA Safety Communications, EU risk management plan updates, WHO UMC/VigiBase signal detection integration, and COVAX-aligned safety reporting for global vaccine distribution programs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 3 -->
+            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">PMDA Guidance for Infectious Disease</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Japan's PMDA requires vaccine safety data from Japanese populations with particular attention to anaphylaxis rates (historically higher reporting rates in Japan) and post-vaccination syncope monitoring. PMDA's Special Approval for Emergency framework parallels FDA's EUA but requires Japanese-specific safety follow-up studies and mandatory early post-marketing phase vigilance (EPPV) for all new vaccines.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
+                  <strong>Submission requirements:</strong> Japanese bridging immunogenicity studies, all-case post-marketing surveillance for new anti-infectives, J-RMP with infection-specific risk minimization, and alignment with Japan's National Immunization Program safety monitoring requirements and AMR Action Plan reporting.
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion item 4 -->
+            <div class="arca-accordion-item">
+              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Post-Marketing Requirements for Anti-Infectives & Vaccines</h3>
+                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+              </button>
+              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
+                <p class="arca-body-sm arca-text-grey-600">
+                  Regulatory authorities globally require enhanced post-marketing surveillance for vaccines and anti-infectives. ArcaScience automates PSUR/PBRER generation, PADER weekly reports, VAERS/EudraVigilance/VigiBase signal monitoring, and AMR susceptibility trend reporting aligned with ICH E2C(R2), EU GVP Module VIII, and WHO AEFI causality assessment guidelines. Specialized vaccine safety signal libraries cover myocarditis, VITT, GBS, anaphylaxis, and emerging platform-specific signals for mRNA, viral vector, and protein subunit vaccines.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; margin-top: var(--space-7);">
+            <a href="/resources/regulatory-intelligence" class="arca-btn-tertiary">
+              View All Infectious Disease Regulatory Updates <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RELATED RESOURCES -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Resources</p>
+          <h2 class="arca-display-sm">Related Infectious Disease Resources</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Resource 1: Whitepaper -->
+          <a href="/resources/whitepapers/vaccine-safety-surveillance-methodology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--blue-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--blue-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Whitepaper</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Real-Time Vaccine Safety Surveillance: AI Methods & Validation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Comprehensive methodology for AI-driven vaccine adverse event detection at scale, including sequential analysis approaches, background rate estimation, and multi-database signal confirmation strategies.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Download Whitepaper <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 2: Blog Post -->
+          <a href="/resources/insights/amr-benefit-risk-2026" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--indigo-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--indigo-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Insight</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AMR and Benefit-Risk: Integrating Resistance Data into BRA Frameworks</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              How antimicrobial resistance patterns should influence benefit-risk assessment for new antibiotics, including population-level resistance selection modeling and stewardship-aligned BRA approaches.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Read Article <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Resource 3: Webinar -->
+          <a href="/resources/webinars/pandemic-preparedness-bra-webinar" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
+            <div style="padding: var(--space-2) var(--space-3); background: var(--green-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
+              <span class="arca-label" style="color: var(--green-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Webinar</span>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Pandemic Preparedness: Building Rapid BRA Capabilities</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              On-demand webinar covering lessons learned from COVID-19 vaccine safety surveillance, with frameworks for building pandemic-ready benefit-risk assessment infrastructure.
+            </p>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Watch Recording <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/resources/hub?ta=infectious-disease" class="arca-btn-tertiary">
+            View All Infectious Disease Resources <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See How ArcaScience Supports Infectious Disease Programs
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration of ArcaScience's platform configured for infectious disease benefit-risk analysis. Our scientists will walk through vaccine safety surveillance capabilities, AMR monitoring tools, and regulatory output examples relevant to your anti-infective or vaccine development program.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact?ta=infectious-disease" class="arca-btn-primary-inverted">
+            Request Infectious Disease Briefing
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+
+      // Accordion functionality
+      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.arca-accordion-icon');
+          var isOpen = content.style.display === 'block';
+
+          // Close all accordions in this group
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) {
+            c.style.display = 'none';
+          });
+          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) {
+            i.textContent = '+';
+          });
+
+          // Toggle current accordion
+          if (!isOpen) {
+            content.style.display = 'block';
+            icon.textContent = '\u2212';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

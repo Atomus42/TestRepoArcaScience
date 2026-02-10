@@ -1,0 +1,707 @@
+{
+  "collections": [
+    {
+      "name": "Case Studies",
+      "slug": "case-studies",
+      "singularName": "Case Study",
+      "description": "Client success stories demonstrating ArcaScience platform impact across therapeutic areas and development phases.",
+      "usedOn": ["Case Studies hub", "Homepage featured study", "Related sidebars"],
+      "fields": [
+        {
+          "name": "Title",
+          "slug": "title",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "The case study headline. Use a specific, outcome-oriented title (e.g., 'Reducing Signal Detection Time by 60% in Oncology')."
+        },
+        {
+          "name": "Client",
+          "slug": "client",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Client company name. Use the official legal name or approved short name. If anonymized, use a descriptor like 'Top 10 Global Pharma Company'."
+        },
+        {
+          "name": "Therapeutic Area",
+          "slug": "therapeutic-area",
+          "type": "Reference",
+          "required": true,
+          "helpText": "Reference to the Therapeutic Areas collection. Select the primary therapeutic area for this case study.",
+          "referenceTo": "therapeutic-areas"
+        },
+        {
+          "name": "Development Phase",
+          "slug": "development-phase",
+          "type": "Option",
+          "required": true,
+          "helpText": "The drug development phase this case study covers.",
+          "options": [
+            "Pre-Clinical",
+            "Phase I",
+            "Phase II",
+            "Phase III",
+            "Phase IV / Post-Market",
+            "Full Lifecycle"
+          ]
+        },
+        {
+          "name": "Challenge",
+          "slug": "challenge",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Describe the client's problem or challenge before using ArcaScience. Include specific pain points, regulatory context, and scale of the issue. 2-4 paragraphs recommended."
+        },
+        {
+          "name": "Approach",
+          "slug": "approach",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Describe how ArcaScience's platform was applied to solve the challenge. Reference specific modules (Data Intelligence, Decision Intelligence, Automated Outputs) where applicable. 2-4 paragraphs recommended."
+        },
+        {
+          "name": "Outcome",
+          "slug": "outcome",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Describe the measurable results and business impact. Include quantified improvements (time saved, cost reduced, signals detected). 2-4 paragraphs recommended."
+        },
+        {
+          "name": "Key Metric Number",
+          "slug": "key-metric-number",
+          "type": "Number",
+          "required": true,
+          "helpText": "The primary quantified outcome as a number (e.g., 60 for '60% faster'). This is displayed as the hero metric on the case study card."
+        },
+        {
+          "name": "Key Metric Label",
+          "slug": "key-metric-label",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Label describing the key metric (e.g., '% Faster Signal Detection', 'Days Saved Per Cycle', '% Cost Reduction'). Displayed alongside the key metric number."
+        },
+        {
+          "name": "Featured Image",
+          "slug": "featured-image",
+          "type": "Image",
+          "required": true,
+          "helpText": "Hero image for the case study. Use WebP format, minimum 1200x630px for social sharing. Avoid stock photos; prefer data visualizations, abstract graphics, or approved client imagery."
+        },
+        {
+          "name": "Published Date",
+          "slug": "published-date",
+          "type": "DateTime",
+          "required": true,
+          "helpText": "The publication date of this case study. Used for sorting and display. Set to the date the case study is approved for publication."
+        },
+        {
+          "name": "Is Featured",
+          "slug": "is-featured",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON to feature this case study on the homepage and at the top of the Case Studies hub. Only 1-2 case studies should be featured at any time."
+        },
+        {
+          "name": "Slug",
+          "slug": "slug",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "URL-friendly identifier for this case study. Use lowercase with hyphens (e.g., 'oncology-signal-detection-60-percent-faster'). This becomes the page URL path."
+        }
+      ]
+    },
+    {
+      "name": "Team Members",
+      "slug": "team-members",
+      "singularName": "Team Member",
+      "description": "ArcaScience team members including leadership, engineering, science, operations, and advisory board members.",
+      "usedOn": ["Team page", "About page", "Resource author attribution"],
+      "fields": [
+        {
+          "name": "Name",
+          "slug": "name",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Full name of the team member (e.g., 'Dr. Sarah Chen'). Include professional prefixes (Dr., Prof.) where applicable."
+        },
+        {
+          "name": "Title",
+          "slug": "title",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Professional title at ArcaScience (e.g., 'Chief Medical Officer', 'Senior Data Scientist', 'VP of Engineering')."
+        },
+        {
+          "name": "Bio",
+          "slug": "bio",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Professional biography. Include relevant experience, domain expertise, education, and notable achievements. 1-3 paragraphs. Write in third person."
+        },
+        {
+          "name": "Headshot",
+          "slug": "headshot",
+          "type": "Image",
+          "required": true,
+          "helpText": "Professional headshot photo. Use WebP format, minimum 400x400px, square aspect ratio. Consistent lighting and neutral background across all team photos."
+        },
+        {
+          "name": "LinkedIn URL",
+          "slug": "linkedin-url",
+          "type": "Link",
+          "required": false,
+          "helpText": "Full LinkedIn profile URL (e.g., 'https://www.linkedin.com/in/username'). Leave blank if the team member prefers not to share."
+        },
+        {
+          "name": "Department",
+          "slug": "department",
+          "type": "Option",
+          "required": true,
+          "helpText": "The department or group this team member belongs to. Used for filtering on the Team page.",
+          "options": [
+            "Engineering",
+            "Science",
+            "Operations",
+            "Leadership",
+            "Advisory"
+          ]
+        },
+        {
+          "name": "Display Order",
+          "slug": "display-order",
+          "type": "Number",
+          "required": true,
+          "helpText": "Numeric sort order for display within the team member's department. Lower numbers appear first. Use increments of 10 (10, 20, 30) to allow easy reordering."
+        },
+        {
+          "name": "Is Leadership",
+          "slug": "is-leadership",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON if this person is a member of the executive leadership team (C-suite, VPs). Leadership members are displayed in the prominent leadership section."
+        },
+        {
+          "name": "Is Advisory Board",
+          "slug": "is-advisory-board",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON if this person is an advisory board member. Advisory board members are displayed in a separate section with a distinct layout."
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "slug": "resources",
+      "singularName": "Resource",
+      "description": "Content library including blog posts, whitepapers, case studies, webinars, and regulatory updates. Supports gated and ungated content.",
+      "usedOn": ["Resource hub", "Blog", "Sidebar recommendations", "Homepage featured resources"],
+      "fields": [
+        {
+          "name": "Title",
+          "slug": "title",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Resource title. Be specific and outcome-oriented. Avoid generic titles like 'An Introduction to...' in favor of 'How [Specific Approach] Achieves [Specific Result]'."
+        },
+        {
+          "name": "Type",
+          "slug": "type",
+          "type": "Option",
+          "required": true,
+          "helpText": "The content format of this resource. Determines display template and filtering on the Resource hub.",
+          "options": [
+            "Whitepaper",
+            "Case Study",
+            "Blog",
+            "Webinar",
+            "Regulatory Update"
+          ]
+        },
+        {
+          "name": "Topic Tags",
+          "slug": "topic-tags",
+          "type": "MultiReference",
+          "required": false,
+          "helpText": "Select one or more topics from the Topics collection. Used for filtering and recommending related content. Select all that apply.",
+          "referenceTo": "topics"
+        },
+        {
+          "name": "Therapeutic Area",
+          "slug": "therapeutic-area",
+          "type": "MultiReference",
+          "required": false,
+          "helpText": "Select one or more therapeutic areas from the Therapeutic Areas collection. Used for filtering resources by therapeutic focus.",
+          "referenceTo": "therapeutic-areas"
+        },
+        {
+          "name": "Author",
+          "slug": "author",
+          "type": "Reference",
+          "required": false,
+          "helpText": "Reference to the Team Members collection. Select the primary author. Their name, headshot, and title will be displayed on the resource page.",
+          "referenceTo": "team-members"
+        },
+        {
+          "name": "Excerpt",
+          "slug": "excerpt",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "A concise 1-2 sentence summary of the resource. Displayed on resource cards in the hub and in search results. Maximum 200 characters recommended."
+        },
+        {
+          "name": "Body",
+          "slug": "body",
+          "type": "RichText",
+          "required": true,
+          "helpText": "The full content of the resource. Supports headings, lists, images, and embedded media. For gated content, this is revealed after form submission."
+        },
+        {
+          "name": "Published Date",
+          "slug": "published-date",
+          "type": "DateTime",
+          "required": true,
+          "helpText": "Publication date. Used for sorting (newest first) and displayed on the resource page. Set to the approved publication date."
+        },
+        {
+          "name": "Reading Time",
+          "slug": "reading-time",
+          "type": "Number",
+          "required": true,
+          "helpText": "Estimated reading time in minutes (e.g., 5 for a blog post, 15 for a whitepaper). Displayed on resource cards to set reader expectations."
+        },
+        {
+          "name": "Is Featured",
+          "slug": "is-featured",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON to feature this resource prominently on the Resource hub and homepage. Limit to 2-3 featured resources at any time."
+        },
+        {
+          "name": "Is Gated",
+          "slug": "is-gated",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON to require form submission (email capture) before showing the full content. Typically ON for whitepapers and webinars, OFF for blog posts."
+        },
+        {
+          "name": "Download File",
+          "slug": "download-file",
+          "type": "File",
+          "required": false,
+          "helpText": "Uploadable PDF or document file for downloadable resources (whitepapers, reports). Leave empty for blog posts and webinars. Maximum file size 25MB."
+        },
+        {
+          "name": "Thumbnail",
+          "slug": "thumbnail",
+          "type": "Image",
+          "required": true,
+          "helpText": "Thumbnail image displayed on resource cards in the hub. Use WebP format, minimum 600x400px (3:2 aspect ratio). Should visually indicate the content type."
+        }
+      ]
+    },
+    {
+      "name": "Therapeutic Areas",
+      "slug": "therapeutic-areas",
+      "singularName": "Therapeutic Area",
+      "description": "Therapeutic areas where ArcaScience provides data coverage and pharmacovigilance intelligence. Referenced by Case Studies and Resources.",
+      "usedOn": ["Therapeutic Area pages", "Filters on Case Studies and Resources", "Homepage therapeutic area grid"],
+      "fields": [
+        {
+          "name": "Name",
+          "slug": "name",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Official therapeutic area name (e.g., 'Oncology', 'Immunology', 'Rare Diseases', 'Cardiovascular'). Use industry-standard terminology."
+        },
+        {
+          "name": "Slug",
+          "slug": "slug",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "URL-friendly identifier (e.g., 'oncology', 'rare-diseases'). Lowercase, hyphens only. This becomes the page URL path."
+        },
+        {
+          "name": "Description",
+          "slug": "description",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "A concise 1-2 sentence description of ArcaScience's capabilities in this therapeutic area. Displayed on cards and as meta description. Maximum 200 characters."
+        },
+        {
+          "name": "Icon SVG Code",
+          "slug": "icon-svg-code",
+          "type": "PlainText",
+          "required": false,
+          "helpText": "Raw SVG markup for the therapeutic area icon. Paste the full <svg>...</svg> code. Icons should be monochrome and work at 24x24px. Used inline via Webflow Embed elements."
+        },
+        {
+          "name": "Case Study Count",
+          "slug": "case-study-count",
+          "type": "Number",
+          "required": false,
+          "helpText": "Number of published case studies in this therapeutic area. Update manually when new case studies are published. Displayed as a credibility signal on TA pages."
+        },
+        {
+          "name": "Data Coverage Description",
+          "slug": "data-coverage-description",
+          "type": "RichText",
+          "required": false,
+          "helpText": "Detailed description of ArcaScience's data coverage, signal detection capabilities, and regulatory intelligence for this therapeutic area. Supports headings, lists, and formatting."
+        },
+        {
+          "name": "Hero Image",
+          "slug": "hero-image",
+          "type": "Image",
+          "required": false,
+          "helpText": "Hero image for the therapeutic area detail page. Use WebP format, minimum 1200x600px. Prefer abstract scientific imagery or data visualizations over stock photos."
+        }
+      ]
+    },
+    {
+      "name": "Open Positions",
+      "slug": "open-positions",
+      "singularName": "Open Position",
+      "description": "Job listings for ArcaScience careers page. Supports multiple departments, locations, and employment types.",
+      "usedOn": ["Careers page", "Footer careers link"],
+      "fields": [
+        {
+          "name": "Title",
+          "slug": "title",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Job title (e.g., 'Senior Data Engineer', 'Pharmacovigilance Scientist', 'Product Designer'). Use the official title from the hiring plan."
+        },
+        {
+          "name": "Department",
+          "slug": "department",
+          "type": "Option",
+          "required": true,
+          "helpText": "The department this position belongs to. Used for filtering on the Careers page.",
+          "options": [
+            "Engineering",
+            "Science",
+            "Operations",
+            "Leadership",
+            "Product",
+            "Sales",
+            "Marketing"
+          ]
+        },
+        {
+          "name": "Location",
+          "slug": "location",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Work location (e.g., 'Remote - US', 'San Francisco, CA', 'London, UK', 'Hybrid - Boston, MA'). Be specific about remote/hybrid/onsite."
+        },
+        {
+          "name": "Type",
+          "slug": "type",
+          "type": "Option",
+          "required": true,
+          "helpText": "Employment type for this position.",
+          "options": [
+            "Full-Time",
+            "Contract",
+            "Intern"
+          ]
+        },
+        {
+          "name": "Description",
+          "slug": "description",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Full job description including role overview, responsibilities, and what the candidate will work on. Use headings and bullet lists for readability."
+        },
+        {
+          "name": "Requirements",
+          "slug": "requirements",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Required and preferred qualifications, skills, and experience. Separate 'Required' and 'Nice to Have' with subheadings. Use bullet lists."
+        },
+        {
+          "name": "Apply URL",
+          "slug": "apply-url",
+          "type": "Link",
+          "required": true,
+          "helpText": "External URL to the application form (e.g., Greenhouse, Lever, or Ashby link). Must be a full URL starting with https://."
+        },
+        {
+          "name": "Is Active",
+          "slug": "is-active",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON for currently open positions. Toggle OFF to hide from the Careers page without deleting the listing. Only active positions are displayed."
+        },
+        {
+          "name": "Posted Date",
+          "slug": "posted-date",
+          "type": "DateTime",
+          "required": true,
+          "helpText": "The date this position was posted. Used for sorting (newest first) and to show how recently the position was listed."
+        }
+      ]
+    },
+    {
+      "name": "Topics",
+      "slug": "topics",
+      "singularName": "Topic",
+      "description": "Taxonomy tags for categorizing Resources. Enables filtering and discovery of related content across the resource library.",
+      "usedOn": ["Resource hub filters", "Resource detail page tags", "Related content recommendations"],
+      "fields": [
+        {
+          "name": "Name",
+          "slug": "name",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Topic name (e.g., 'Signal Detection', 'ICSR Processing', 'AI/ML in Pharmacovigilance', 'Regulatory Compliance'). Use concise, industry-recognized terminology."
+        },
+        {
+          "name": "Slug",
+          "slug": "slug",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "URL-friendly identifier (e.g., 'signal-detection', 'icsr-processing'). Lowercase, hyphens only. Used in filter URLs on the Resource hub."
+        },
+        {
+          "name": "Description",
+          "slug": "description",
+          "type": "PlainText",
+          "required": false,
+          "helpText": "Brief description of this topic (1-2 sentences). Displayed as a tooltip or description text on the Resource hub filter panel. Maximum 200 characters."
+        }
+      ]
+    },
+    {
+      "name": "Regulatory Updates",
+      "slug": "regulatory-updates",
+      "singularName": "Regulatory Update",
+      "description": "Tracking regulatory changes from major bodies (FDA, EMA, PMDA, ICH, CIOMS) that impact pharmacovigilance practices and ArcaScience platform capabilities.",
+      "usedOn": ["Regulatory Intelligence feed", "Resource hub", "Homepage regulatory ticker"],
+      "fields": [
+        {
+          "name": "Title",
+          "slug": "title",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Headline for the regulatory update (e.g., 'FDA Updates FAERS Reporting Requirements for 2026'). Be specific about the change and regulatory body."
+        },
+        {
+          "name": "Regulatory Body",
+          "slug": "regulatory-body",
+          "type": "Option",
+          "required": true,
+          "helpText": "The regulatory authority or standards organization that issued this update.",
+          "options": [
+            "FDA",
+            "EMA",
+            "PMDA",
+            "ICH",
+            "CIOMS"
+          ]
+        },
+        {
+          "name": "Guideline Reference",
+          "slug": "guideline-reference",
+          "type": "PlainText",
+          "required": false,
+          "helpText": "Official guideline or document reference number (e.g., 'ICH E2B(R3)', 'FDA Guidance 2024-12345', 'EMA/CHMP/ICH/287/1995'). Used for precise identification."
+        },
+        {
+          "name": "Impact Summary",
+          "slug": "impact-summary",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "A concise 2-3 sentence plain-language summary of the regulatory change and its practical impact on pharmacovigilance operations. Displayed on cards and in the feed."
+        },
+        {
+          "name": "Full Analysis",
+          "slug": "full-analysis",
+          "type": "RichText",
+          "required": true,
+          "helpText": "Detailed analysis of the regulatory update including background, what changed, impact on industry practices, how ArcaScience addresses the change, and recommended actions. Supports full formatting."
+        },
+        {
+          "name": "Published Date",
+          "slug": "published-date",
+          "type": "DateTime",
+          "required": true,
+          "helpText": "The date this regulatory update analysis was published. Used for sorting (newest first) in the regulatory feed."
+        },
+        {
+          "name": "Related Resources",
+          "slug": "related-resources",
+          "type": "MultiReference",
+          "required": false,
+          "helpText": "Select related resources (blog posts, whitepapers) from the Resources collection that provide additional context or analysis on this regulatory topic.",
+          "referenceTo": "resources"
+        }
+      ]
+    },
+    {
+      "name": "FAQ Items",
+      "slug": "faq-items",
+      "singularName": "FAQ Item",
+      "description": "Frequently asked questions organized by category. Used in accordion components across multiple pages.",
+      "usedOn": ["FAQ page", "Platform page FAQ section", "Pricing page FAQ section"],
+      "fields": [
+        {
+          "name": "Question",
+          "slug": "question",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "The question as a customer would ask it. Write in natural language, ending with a question mark (e.g., 'How does ArcaScience handle GDPR compliance for patient data?')."
+        },
+        {
+          "name": "Answer",
+          "slug": "answer",
+          "type": "RichText",
+          "required": true,
+          "helpText": "The complete answer. Use paragraphs, bullet lists, and bold text for readability. Keep answers concise but thorough. Link to relevant pages where appropriate."
+        },
+        {
+          "name": "Category",
+          "slug": "category",
+          "type": "Option",
+          "required": true,
+          "helpText": "The FAQ category. Used for filtering and grouping questions into sections on the FAQ page.",
+          "options": [
+            "Platform",
+            "Data",
+            "Compliance",
+            "Pricing",
+            "Integration"
+          ]
+        },
+        {
+          "name": "Display Order",
+          "slug": "display-order",
+          "type": "Number",
+          "required": true,
+          "helpText": "Numeric sort order within the category. Lower numbers appear first. Use increments of 10 (10, 20, 30) to allow easy reordering without renumbering."
+        }
+      ]
+    },
+    {
+      "name": "Conferences & Events",
+      "slug": "conferences-events",
+      "singularName": "Conference / Event",
+      "description": "Industry conferences, trade shows, and events where ArcaScience has a presence. Displayed on the Events page and homepage.",
+      "usedOn": ["Events page", "Homepage upcoming events section", "Footer events link"],
+      "fields": [
+        {
+          "name": "Name",
+          "slug": "name",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Official event name (e.g., 'DIA 2026 Global Annual Meeting', 'ISPE Annual Meeting', 'Drug Safety Symposium 2026'). Use the full official name."
+        },
+        {
+          "name": "Date",
+          "slug": "date",
+          "type": "DateTime",
+          "required": true,
+          "helpText": "Event start date and time. Used for sorting (soonest first for upcoming events) and display on event cards."
+        },
+        {
+          "name": "End Date",
+          "slug": "end-date",
+          "type": "DateTime",
+          "required": false,
+          "helpText": "Event end date. If the event spans multiple days, set this to the final day. Leave empty for single-day events."
+        },
+        {
+          "name": "Location",
+          "slug": "location",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Event venue and city (e.g., 'Moscone Center, San Francisco, CA' or 'Virtual'). Be specific for in-person events."
+        },
+        {
+          "name": "Description",
+          "slug": "description",
+          "type": "RichText",
+          "required": false,
+          "helpText": "Description of ArcaScience's participation in the event. Include details about presentations, demos, speaking sessions, or panel discussions. 1-3 paragraphs."
+        },
+        {
+          "name": "Booth Info",
+          "slug": "booth-info",
+          "type": "PlainText",
+          "required": false,
+          "helpText": "Booth or exhibit hall details (e.g., 'Booth #1234, Hall B'). Leave empty if ArcaScience is attending but not exhibiting."
+        },
+        {
+          "name": "Registration URL",
+          "slug": "registration-url",
+          "type": "Link",
+          "required": false,
+          "helpText": "External URL to the event registration or landing page. Must be a full URL starting with https://. Leave empty if registration is closed."
+        },
+        {
+          "name": "Is Upcoming",
+          "slug": "is-upcoming",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON for upcoming/future events. Toggle OFF for past events. Only upcoming events are shown in the 'Upcoming Events' sections. Update after event concludes."
+        }
+      ]
+    },
+    {
+      "name": "Client Logos",
+      "slug": "client-logos",
+      "singularName": "Client Logo",
+      "description": "Company logos for the client trust bar, partner section, and investor acknowledgments. Supports grayscale-to-color hover effect.",
+      "usedOn": ["Homepage logo bar", "About page partners section", "Case study pages"],
+      "fields": [
+        {
+          "name": "Company Name",
+          "slug": "company-name",
+          "type": "PlainText",
+          "required": true,
+          "helpText": "Official company name. Used as alt text for the logo image (accessibility) and for internal identification in the CMS."
+        },
+        {
+          "name": "Logo",
+          "slug": "logo",
+          "type": "Image",
+          "required": true,
+          "helpText": "Full-color company logo. Use SVG or transparent PNG format, minimum 200px wide. Should have transparent background for flexibility on different page backgrounds."
+        },
+        {
+          "name": "Logo Grayscale",
+          "slug": "logo-grayscale",
+          "type": "Image",
+          "required": false,
+          "helpText": "Grayscale version of the company logo for the default state in the logo bar. Use same dimensions as the color logo. The CSS applies grayscale filter on hover to reveal color, but a pre-made grayscale version ensures quality."
+        },
+        {
+          "name": "Display Order",
+          "slug": "display-order",
+          "type": "Number",
+          "required": true,
+          "helpText": "Numeric sort order in the logo bar. Lower numbers appear first (left). Use increments of 10 (10, 20, 30) for easy reordering."
+        },
+        {
+          "name": "Is Featured on Homepage",
+          "slug": "is-featured-on-homepage",
+          "type": "Switch",
+          "required": false,
+          "helpText": "Toggle ON to display this logo in the homepage trust bar. Limit to 6-8 logos on the homepage for a clean layout. All logos appear on the About page regardless."
+        },
+        {
+          "name": "Relationship Type",
+          "slug": "relationship-type",
+          "type": "Option",
+          "required": true,
+          "helpText": "The type of business relationship with this company. Determines which section the logo appears in on the About page.",
+          "options": [
+            "Client",
+            "Partner",
+            "Investor"
+          ]
+        }
+      ]
+    }
+  ]
+}

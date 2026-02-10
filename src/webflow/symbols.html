@@ -1,0 +1,254 @@
+<!--
+  ArcaScience — Webflow Symbols (Reusable Components)
+  ====================================================
+  These are component templates to create as Webflow Symbols.
+  Symbols are Webflow's version of reusable components — change once, update everywhere.
+
+  Create each of these as a Symbol in Webflow, then use them across pages.
+-->
+
+<!-- ================================================================
+     SYMBOL: Navigation Bar
+     Used on: Every page
+     ================================================================ -->
+<nav class="arca-nav" data-nav="sticky">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+    <a href="/" aria-label="ArcaScience home">
+      <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+    </a>
+    <div style="display: flex; align-items: center; gap: 32px;">
+      <a href="/" class="arca-nav-link">Home</a>
+      <!-- Webflow: Use native Dropdown component for Platform and Solutions -->
+      <a href="/platform" class="arca-nav-link">Platform</a>
+      <a href="/solutions" class="arca-nav-link">Solutions</a>
+      <a href="/science" class="arca-nav-link">Science</a>
+      <a href="/evidence" class="arca-nav-link">Evidence</a>
+      <a href="/company" class="arca-nav-link">Company</a>
+      <a href="/resources" class="arca-nav-link">Resources</a>
+    </div>
+    <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+      Talk to a Scientist
+    </a>
+  </div>
+</nav>
+
+
+<!-- ================================================================
+     SYMBOL: Footer
+     Used on: Every page
+     ================================================================ -->
+<footer class="arca-bg-blue-900" style="padding: 96px 0 48px;">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+      <!-- Col 1: Brand -->
+      <div>
+        <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: 24px;">
+        <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+          AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018. Paris &amp; Sunnyvale.
+        </p>
+      </div>
+      <!-- Col 2-5: Link groups (see homepage.html for full structure) -->
+    </div>
+    <div style="margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between;">
+      <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience</p>
+      <div style="display: flex; gap: 24px;">
+        <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); font-size: 0.75rem;">Privacy</a>
+        <a href="/legal/terms" style="color: rgba(255,255,255,0.45); font-size: 0.75rem;">Terms</a>
+        <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); font-size: 0.75rem;">Cookies</a>
+        <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); font-size: 0.75rem;">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ================================================================
+     SYMBOL: CTA Section (Full-width blue)
+     Used on: Bottom of every page (before footer)
+     Customize: H2 text and CTA text per page
+     ================================================================ -->
+<section class="arca-cta-section">
+  <div style="max-width: 680px; margin: 0 auto; padding: 0 24px; text-align: center;">
+    <h2 class="arca-heading-1" style="color: white; margin-bottom: 24px;">
+      <!-- CUSTOMIZE PER PAGE -->
+      See ArcaScience Applied to Your Therapeutic Area
+    </h2>
+    <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); margin-bottom: 48px;">
+      <!-- CUSTOMIZE PER PAGE -->
+      Request a demonstration customized to your regulatory challenge.
+    </p>
+    <a href="/contact" class="arca-btn-primary-inverted">
+      Talk to a Scientist
+    </a>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SYMBOL: Credibility Bar
+     Used on: Homepage, Platform Overview, Case Studies hub
+     ================================================================ -->
+<section class="arca-credibility-bar" data-animate>
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px;">
+    <div class="arca-credibility-metric">
+      <span class="arca-stat-lg" data-countup="50" data-countup-suffix="+">0</span>
+      <p class="arca-caption">Regulatory submissions</p>
+    </div>
+    <div class="arca-credibility-metric">
+      <span class="arca-stat-lg" data-countup="20" data-countup-suffix="+">0</span>
+      <p class="arca-caption">Pharmaceutical clients</p>
+    </div>
+    <div class="arca-credibility-metric">
+      <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">0</span>
+      <p class="arca-caption">Data points analyzed</p>
+    </div>
+    <div class="arca-credibility-metric">
+      <span class="arca-stat-lg" data-countup="24">0</span>
+      <p class="arca-caption">Proprietary AI models</p>
+    </div>
+    <div class="arca-credibility-metric">
+      <span class="arca-stat-lg" data-countup="12">0</span>
+      <p class="arca-caption">Therapeutic areas</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SYMBOL: Feature Card (Platform capabilities)
+     Used on: Homepage, Platform Overview, Use Case pages
+     ================================================================ -->
+<div class="arca-card arca-card-colored-top is-data" data-animate>
+  <!-- Change is-data / is-analytics / is-output for module color -->
+  <span class="arca-module-tag is-data">Data Intelligence</span>
+  <h3 class="arca-heading-2" style="margin: 16px 0 12px;">
+    <!-- TITLE -->
+  </h3>
+  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: 24px;">
+    <!-- DESCRIPTION (3 lines max) -->
+  </p>
+  <a href="#" class="arca-btn-tertiary">
+    <!-- CTA TEXT --> <span class="arca-arrow">&rarr;</span>
+  </a>
+</div>
+
+
+<!-- ================================================================
+     SYMBOL: Resource Card (Blog, Whitepaper, Case Study)
+     Used on: Resource Hub, sidebar recommendations
+     ================================================================ -->
+<a href="#" class="arca-card" style="text-decoration: none; color: inherit; display: block; border-top: 4px solid var(--blue-600);">
+  <!-- Change border-top-color: indigo for whitepaper, teal for case study, green for webinar -->
+  <h3 class="arca-heading-3" style="margin-bottom: 8px;">
+    <!-- TITLE -->
+  </h3>
+  <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: 16px;">
+    <!-- EXCERPT (2 lines) -->
+  </p>
+  <div style="display: flex; gap: 16px; align-items: center;">
+    <span class="arca-caption arca-text-grey-600"><!-- DATE --></span>
+    <span class="arca-caption arca-text-grey-600"><!-- READ TIME --> min read</span>
+    <span class="arca-module-tag is-analytics"><!-- TYPE --></span>
+  </div>
+</a>
+
+
+<!-- ================================================================
+     SYMBOL: Testimonial Block
+     Used on: Homepage, Case Study pages, Solution pages
+     ================================================================ -->
+<div class="arca-testimonial" data-animate>
+  <div class="arca-testimonial-quote">
+    <!-- QUOTE TEXT -->
+  </div>
+  <div class="arca-testimonial-attribution">
+    <p class="arca-body-md" style="font-weight: 600;"><!-- NAME --></p>
+    <p class="arca-body-sm arca-text-grey-600"><!-- TITLE, COMPANY --></p>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     SYMBOL: Accordion Group
+     Used on: FAQ, Security & Compliance, Science & Methodology
+     ================================================================ -->
+<div data-accordion="group">
+  <!-- Repeat this block for each item -->
+  <div data-accordion-trigger aria-expanded="false">
+    <h3 class="arca-heading-3"><!-- QUESTION / TITLE --></h3>
+    <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div data-accordion-content aria-hidden="true">
+    <div style="padding: 16px 0;">
+      <p class="arca-body-md arca-text-grey-600">
+        <!-- ANSWER / CONTENT -->
+      </p>
+    </div>
+  </div>
+  <!-- /Repeat -->
+</div>
+
+
+<!-- ================================================================
+     SYMBOL: Tab Group
+     Used on: Platform pages (stakeholder perspectives), Solution pages
+     ================================================================ -->
+<div data-tabs="group">
+  <!-- Tab triggers -->
+  <div style="display: flex; gap: 0; border-bottom: 1px solid var(--grey-200);">
+    <button data-tab-trigger class="is-active">Tab 1</button>
+    <button data-tab-trigger>Tab 2</button>
+    <button data-tab-trigger>Tab 3</button>
+  </div>
+  <!-- Tab panels -->
+  <div data-tab-panel class="is-active" aria-hidden="false">
+    <!-- Panel 1 content -->
+  </div>
+  <div data-tab-panel aria-hidden="true">
+    <!-- Panel 2 content -->
+  </div>
+  <div data-tab-panel aria-hidden="true">
+    <!-- Panel 3 content -->
+  </div>
+</div>
+
+
+<!-- ================================================================
+     SYMBOL: Compliance Badges Bar
+     Used on: Homepage, Platform, Security page
+     ================================================================ -->
+<div class="arca-compliance-badges" style="justify-content: center;">
+  <img src="/images/badges/iso-27001.svg" alt="ISO 27001" class="arca-compliance-badge">
+  <img src="/images/badges/fda-21-cfr.svg" alt="FDA 21 CFR Part 11" class="arca-compliance-badge">
+  <img src="/images/badges/gdpr.svg" alt="GDPR" class="arca-compliance-badge">
+  <img src="/images/badges/hds.svg" alt="HDS" class="arca-compliance-badge">
+  <img src="/images/badges/hipaa.svg" alt="HIPAA" class="arca-compliance-badge">
+</div>
+
+
+<!-- ================================================================
+     SYMBOL: Back to Top Button
+     Used on: Every page (via global custom code, but add the element)
+     ================================================================ -->
+<button data-back-to-top aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</button>
+
+
+<!-- ================================================================
+     SYMBOL: Section Header (centered)
+     Used on: Multiple sections across all pages
+     ================================================================ -->
+<div style="text-align: center; margin-bottom: 64px;">
+  <p class="arca-section-label"><!-- SECTION LABEL --></p>
+  <h2 class="arca-display-sm" style="margin-bottom: 16px;">
+    <!-- HEADLINE -->
+  </h2>
+  <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+    <!-- SUBTITLE -->
+  </p>
+</div>

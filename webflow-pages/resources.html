@@ -1,0 +1,629 @@
+<!--
+  ArcaScience Resource Hub — Webflow Structure Reference
+  ======================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+  5. The Resource Grid section uses a CMS Collection List — bind fields via data-cms-field attributes.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — ArcaScience | White Papers, Webinars & Regulatory Guides</title>
+  <meta name="description" content="Explore ArcaScience resources: white papers, webinars, case studies, regulatory guides, and blog posts on AI-driven benefit-risk analysis for pharmaceutical development.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Resources — ArcaScience">
+  <meta property="og:description" content="White papers, webinars, case studies, and regulatory guides on AI-driven benefit-risk analysis for pharmaceutical development.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.arcascience.com/resources">
+  <meta property="og:image" content="https://www.arcascience.com/images/og/resources-hub.jpg">
+  <meta property="og:site_name" content="ArcaScience">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resources — ArcaScience">
+  <meta name="twitter:description" content="White papers, webinars, case studies, and regulatory guides on AI-driven benefit-risk analysis.">
+  <meta name="twitter:image" content="https://www.arcascience.com/images/og/resources-hub.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.arcascience.com/resources">
+
+  <!-- Structured Data: WebPage + CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "CollectionPage"],
+    "name": "Resources — ArcaScience",
+    "description": "White papers, webinars, case studies, regulatory guides, and blog posts on AI-driven benefit-risk analysis for pharmaceutical development.",
+    "url": "https://www.arcascience.com/resources",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ArcaScience",
+      "url": "https://www.arcascience.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.arcascience.com/images/arcascience-logo.svg"
+      }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "ArcaScience Resources",
+      "description": "A collection of white papers, webinars, case studies, regulatory guides, and blog posts.",
+      "numberOfItems": "50+"
+    }
+  }
+  </script>
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       Resources link is-active on this page.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link is-active">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         Breadcrumb, title, description.
+         ================================================================ -->
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">Resources</li>
+          </ol>
+        </nav>
+
+        <!-- Page title and description -->
+        <div style="max-width: 680px; margin-top: var(--space-6); margin-bottom: var(--space-8);">
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Resources
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600">
+            White papers, webinars, case studies, regulatory guides, and insights on AI-driven benefit-risk analysis for pharmaceutical development.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: FILTER BAR
+         Sticky filter bar with type filters, therapeutic area dropdown,
+         and search input. JS behaviors via data-filter attributes.
+         ================================================================ -->
+    <section style="padding: var(--space-5) 0; border-bottom: 1px solid var(--grey-200); position: sticky; top: var(--nav-height); background: var(--white); z-index: 10;" data-filter-bar>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+
+          <!-- Resource type filters -->
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" role="group" aria-label="Filter by resource type">
+            <button class="arca-filter-pill is-active" data-filter="type" data-filter-value="all" aria-pressed="true">
+              All
+            </button>
+            <button class="arca-filter-pill" data-filter="type" data-filter-value="white-paper" aria-pressed="false">
+              White Papers
+            </button>
+            <button class="arca-filter-pill" data-filter="type" data-filter-value="webinar" aria-pressed="false">
+              Webinars
+            </button>
+            <button class="arca-filter-pill" data-filter="type" data-filter-value="case-study" aria-pressed="false">
+              Case Studies
+            </button>
+            <button class="arca-filter-pill" data-filter="type" data-filter-value="regulatory-guide" aria-pressed="false">
+              Regulatory Guides
+            </button>
+            <button class="arca-filter-pill" data-filter="type" data-filter-value="blog-post" aria-pressed="false">
+              Blog Posts
+            </button>
+          </div>
+
+          <!-- Therapeutic area + search -->
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+
+            <!-- Therapeutic area dropdown -->
+            <select class="arca-select" data-filter="therapeutic-area" aria-label="Filter by therapeutic area">
+              <option value="all">All Therapeutic Areas</option>
+              <option value="oncology">Oncology</option>
+              <option value="cardiovascular">Cardiovascular</option>
+              <option value="neurology">Neurology</option>
+              <option value="immunology">Immunology</option>
+              <option value="rare-disease">Rare Disease</option>
+              <option value="infectious-disease">Infectious Disease</option>
+            </select>
+
+            <!-- Search input -->
+            <div style="position: relative;">
+              <input
+                type="search"
+                class="arca-search-input"
+                data-filter="search"
+                placeholder="Search resources..."
+                aria-label="Search resources"
+              >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--grey-400);">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M11 11L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: FEATURED RESOURCE
+         Hero-style card for the latest/pinned resource.
+         Webflow: Bind to a CMS reference field or filtered collection item.
+         ================================================================ -->
+    <section style="padding: var(--space-8) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <a href="/resources/[FEATURED_SLUG]" class="arca-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; text-decoration: none; color: inherit; padding: var(--space-6);" data-cms="featured-resource" data-animate>
+
+          <!-- Left: Featured image -->
+          <div style="aspect-ratio: 16/10; background: var(--grey-100); border-radius: 8px; overflow: hidden;">
+            <img
+              src="/images/resources/[FEATURED_THUMBNAIL]"
+              alt="[FEATURED_TITLE]"
+              style="width: 100%; height: 100%; object-fit: cover;"
+              data-cms-field="thumbnail"
+              loading="eager"
+            >
+          </div>
+
+          <!-- Right: Featured content -->
+          <div>
+            <span class="arca-resource-badge is-white-paper" data-cms-field="resource-type">White Paper</span>
+            <h2 class="arca-heading-1" style="margin: var(--space-4) 0 var(--space-3);" data-cms-field="title">
+              [FEATURED_TITLE]
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5); line-height: 1.7;" data-cms-field="excerpt">
+              [FEATURED_EXCERPT] — Placeholder: A comprehensive analysis of how AI-driven benefit-risk assessment is transforming pharmaceutical development timelines and regulatory submission quality across oncology, cardiovascular, and rare disease programs.
+            </p>
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <span class="arca-caption arca-text-grey-500" data-cms-field="date">January 2026</span>
+              <span class="arca-caption arca-text-grey-400">|</span>
+              <span class="arca-caption arca-text-grey-500" data-cms-field="read-time">12 min read</span>
+              <span class="arca-caption arca-text-grey-400">|</span>
+              <span class="arca-caption arca-text-grey-500" data-cms-field="author">Dr. Sarah Chen</span>
+            </div>
+            <span class="arca-btn-tertiary">
+              Read Resource <span class="arca-arrow">&rarr;</span>
+            </span>
+          </div>
+
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: RESOURCE GRID
+         3-column responsive grid. Webflow CMS Collection List.
+         data-cms="resources" on the wrapper, data-cms-field on each field.
+         ================================================================ -->
+    <section style="padding: 0 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Active filter count / results summary -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6);">
+          <p class="arca-body-sm arca-text-grey-600" data-filter-count>
+            Showing <strong>24</strong> resources
+          </p>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <label class="arca-caption arca-text-grey-500" for="sort-select">Sort by:</label>
+            <select class="arca-select" id="sort-select" data-filter="sort" aria-label="Sort resources">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="popular">Most Popular</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CMS Collection List Wrapper -->
+        <div
+          data-cms="resources"
+          style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;"
+          role="list"
+          aria-label="Resource list"
+        >
+
+          <!-- Resource Card 1 -->
+          <article class="arca-card arca-resource-card" role="listitem" data-animate data-resource-type="white-paper" data-therapeutic-area="oncology">
+            <a href="/resources/[RESOURCE_SLUG]" style="text-decoration: none; color: inherit; display: block;">
+              <div style="aspect-ratio: 16/9; background: var(--grey-100); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+                <img
+                  src="/images/resources/[RESOURCE_THUMBNAIL]"
+                  alt="[RESOURCE_TITLE]"
+                  style="width: 100%; height: 100%; object-fit: cover;"
+                  data-cms-field="thumbnail"
+                  loading="lazy"
+                >
+              </div>
+              <span class="arca-resource-badge is-white-paper" data-cms-field="resource-type">White Paper</span>
+              <h3 class="arca-heading-3" style="margin: var(--space-3) 0 var(--space-2);" data-cms-field="title">
+                [RESOURCE_TITLE]
+              </h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;" data-cms-field="excerpt">
+                [RESOURCE_EXCERPT] — Placeholder: Quantitative frameworks for structured benefit-risk assessment in oncology drug development programs.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+                <span class="arca-caption arca-text-grey-500" data-cms-field="date">Jan 15, 2026</span>
+                <span class="arca-caption arca-text-grey-400">|</span>
+                <span class="arca-caption arca-text-grey-500" data-cms-field="read-time">8 min read</span>
+              </div>
+              <p class="arca-caption arca-text-grey-500" data-cms-field="author">Dr. Sarah Chen</p>
+              <span class="arca-btn-tertiary" style="margin-top: var(--space-4); display: inline-flex;">
+                Read More <span class="arca-arrow">&rarr;</span>
+              </span>
+            </a>
+          </article>
+
+          <!-- Resource Card 2 -->
+          <article class="arca-card arca-resource-card" role="listitem" data-animate data-resource-type="webinar" data-therapeutic-area="cardiovascular">
+            <a href="/resources/[RESOURCE_SLUG]" style="text-decoration: none; color: inherit; display: block;">
+              <div style="aspect-ratio: 16/9; background: var(--grey-100); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden; position: relative;">
+                <img
+                  src="/images/resources/[RESOURCE_THUMBNAIL]"
+                  alt="[RESOURCE_TITLE]"
+                  style="width: 100%; height: 100%; object-fit: cover;"
+                  data-cms-field="thumbnail"
+                  loading="lazy"
+                >
+                <!-- Play icon overlay for webinars -->
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                  <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4.5 3L14.5 9L4.5 15V3Z" fill="var(--blue-600)"/></svg>
+                  </div>
+                </div>
+              </div>
+              <span class="arca-resource-badge is-webinar" data-cms-field="resource-type">Webinar</span>
+              <h3 class="arca-heading-3" style="margin: var(--space-3) 0 var(--space-2);" data-cms-field="title">
+                [RESOURCE_TITLE]
+              </h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;" data-cms-field="excerpt">
+                [RESOURCE_EXCERPT] — Placeholder: On-demand webinar covering real-world evidence integration in cardiovascular benefit-risk assessment.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+                <span class="arca-caption arca-text-grey-500" data-cms-field="date">Jan 8, 2026</span>
+                <span class="arca-caption arca-text-grey-400">|</span>
+                <span class="arca-caption arca-text-grey-500" data-cms-field="read-time">45 min watch</span>
+              </div>
+              <p class="arca-caption arca-text-grey-500" data-cms-field="author">Dr. James Morgan</p>
+              <span class="arca-btn-tertiary" style="margin-top: var(--space-4); display: inline-flex;">
+                Watch Now <span class="arca-arrow">&rarr;</span>
+              </span>
+            </a>
+          </article>
+
+          <!-- Resource Card 3 -->
+          <article class="arca-card arca-resource-card" role="listitem" data-animate data-resource-type="case-study" data-therapeutic-area="oncology">
+            <a href="/resources/[RESOURCE_SLUG]" style="text-decoration: none; color: inherit; display: block;">
+              <div style="aspect-ratio: 16/9; background: var(--grey-100); border-radius: 4px; margin-bottom: var(--space-4); overflow: hidden;">
+                <img
+                  src="/images/resources/[RESOURCE_THUMBNAIL]"
+                  alt="[RESOURCE_TITLE]"
+                  style="width: 100%; height: 100%; object-fit: cover;"
+                  data-cms-field="thumbnail"
+                  loading="lazy"
+                >
+              </div>
+              <span class="arca-resource-badge is-case-study" data-cms-field="resource-type">Case Study</span>
+              <h3 class="arca-heading-3" style="margin: var(--space-3) 0 var(--space-2);" data-cms-field="title">
+                [RESOURCE_TITLE]
+              </h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3); line-height: 1.6;" data-cms-field="excerpt">
+                [RESOURCE_EXCERPT] — Placeholder: How a top-10 pharma company reduced BRA timelines by 60% using ArcaScience for their oncology submission.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-3);">
+                <span class="arca-caption arca-text-grey-500" data-cms-field="date">Dec 20, 2025</span>
+                <span class="arca-caption arca-text-grey-400">|</span>
+                <span class="arca-caption arca-text-grey-500" data-cms-field="read-time">6 min read</span>
+              </div>
+              <p class="arca-caption arca-text-grey-500" data-cms-field="author">ArcaScience Team</p>
+              <span class="arca-btn-tertiary" style="margin-top: var(--space-4); display: inline-flex;">
+                Read Case Study <span class="arca-arrow">&rarr;</span>
+              </span>
+            </a>
+          </article>
+
+          <!--
+            Webflow: The CMS Collection List will render additional cards
+            using the same card structure above. The 3 cards shown here
+            demonstrate the pattern for White Paper, Webinar, and Case Study
+            resource types. Additional types (Regulatory Guide, Blog Post)
+            use the same markup with different is-* badge modifiers:
+              - is-regulatory-guide
+              - is-blog-post
+          -->
+
+        </div>
+
+        <!-- Empty state (hidden by default, shown when filters yield no results) -->
+        <div data-filter-empty style="display: none; text-align: center; padding: var(--space-9) 0;">
+          <p class="arca-heading-3" style="margin-bottom: var(--space-3);">No resources found</p>
+          <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+            Try adjusting your filters or search terms to find what you are looking for.
+          </p>
+          <button class="arca-btn-secondary" data-filter-reset>
+            Clear All Filters
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PAGINATION
+         Simple prev/next with page numbers.
+         ================================================================ -->
+    <section style="padding: 0 0 var(--space-9);">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Resource pagination" style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+
+          <!-- Previous -->
+          <a href="/resources?page=1" class="arca-pagination-btn" data-pagination="prev" aria-label="Previous page" style="margin-right: 8px;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Prev
+          </a>
+
+          <!-- Page numbers -->
+          <a href="/resources?page=1" class="arca-pagination-num is-active" data-pagination="page" aria-label="Page 1" aria-current="page">1</a>
+          <a href="/resources?page=2" class="arca-pagination-num" data-pagination="page" aria-label="Page 2">2</a>
+          <a href="/resources?page=3" class="arca-pagination-num" data-pagination="page" aria-label="Page 3">3</a>
+          <span class="arca-pagination-ellipsis" aria-hidden="true">...</span>
+          <a href="/resources?page=8" class="arca-pagination-num" data-pagination="page" aria-label="Page 8">8</a>
+
+          <!-- Next -->
+          <a href="/resources?page=2" class="arca-pagination-btn" data-pagination="next" aria-label="Next page" style="margin-left: 8px;">
+            Next
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+        </nav>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: NEWSLETTER SIGNUP
+         Email capture section. Grey-50 background.
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+
+          <p class="arca-section-label">Newsletter</p>
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-4);">
+            Stay Informed
+          </h2>
+          <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+            Receive the latest white papers, regulatory updates, and benefit-risk analysis insights delivered to your inbox. No more than twice per month.
+          </p>
+
+          <!-- Email capture form -->
+          <form data-newsletter-form action="/api/newsletter" method="POST" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <label for="newsletter-email" class="sr-only">Email address</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              class="arca-input"
+              placeholder="you@company.com"
+              required
+              autocomplete="email"
+              aria-label="Email address"
+              style="flex: 1; min-width: 260px; max-width: 380px;"
+            >
+            <button type="submit" class="arca-btn-primary" data-newsletter-submit>
+              Subscribe
+            </button>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div data-newsletter-success style="display: none; margin-top: var(--space-5);">
+            <p class="arca-body-sm" style="color: var(--green-600);">
+              Thank you for subscribing. Check your inbox to confirm your subscription.
+            </p>
+          </div>
+
+          <!-- Privacy note -->
+          <p class="arca-caption arca-text-grey-400" style="margin-top: var(--space-4);">
+            By subscribing you agree to our <a href="/legal/privacy" style="color: var(--grey-500); text-decoration: underline;">Privacy Policy</a>. Unsubscribe at any time.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: CTA — REQUEST A DEMO
+         Full-width blue gradient. Primary conversion section.
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See ArcaScience Applied to Your Therapeutic Area
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your regulatory challenge, development phase, and therapeutic area.
+        </p>
+        <a href="/contact" class="arca-btn-primary-inverted">
+          Request a Demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       Identical structure to homepage footer.
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

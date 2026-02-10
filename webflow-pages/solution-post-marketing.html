@@ -1,0 +1,453 @@
+<!--
+  ArcaScience Solution Page — Post-Marketing Surveillance
+  ========================================================
+  Built from solution-template.html.
+  This page targets pharmacovigilance teams, safety leaders,
+  and regulatory affairs professionals managing marketed products.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-Marketing Surveillance Benefit-Risk Analysis — ArcaScience</title>
+  <meta name="description" content="Continuous benefit-risk monitoring for marketed products. Automated PSUR/PBRER generation, signal management, RMP updates, and label change support — aligned with ICH E2C(R2) and EMA GVP Module V.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <nav aria-label="Breadcrumb" style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0;">
+        <li><a href="/" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Home</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li><a href="/solutions" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Solutions</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li class="arca-body-sm arca-text-grey-900" aria-current="page">Post-Marketing Surveillance</li>
+      </ol>
+    </nav>
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         ================================================================ -->
+    <section style="padding: var(--space-8) 0 var(--space-7);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 780px;">
+          <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-3);">
+            Post-Marketing Surveillance
+          </p>
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Continuous Benefit-Risk Monitoring for Marketed Products
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-5); max-width: 680px;">
+            Automated PSUR/PBRER generation, signal management, and RMP updates — grounded in 100+ billion data points.
+          </p>
+          <p class="arca-body-md arca-text-grey-600" style="max-width: 680px;">
+            After marketing authorization, the benefit-risk profile of a product continues to evolve as real-world use generates new safety and effectiveness data. ArcaScience's platform supports pharmacovigilance and regulatory teams with continuous benefit-risk monitoring, automated generation of PSUR/PBRER and RMP documents aligned with ICH E2C(R2) and EMA GVP Module V, and signal detection across spontaneous reporting, literature, and real-world evidence. The platform ensures that periodic assessments are consistent, comprehensive, and produced on timelines that regulatory calendars demand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: THE CHALLENGE
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
+
+          <div>
+            <p class="arca-section-label">The Challenge</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              Why Periodic Benefit-Risk Assessment Remains Resource-Intensive
+            </h2>
+            <p class="arca-body-md arca-text-grey-600">
+              Post-marketing pharmacovigilance is a continuous obligation that scales with the number of marketed products, markets, and reporting requirements. PSUR/PBRER production cycles — spanning data lock points, interval and cumulative safety analysis, medical writing, multi-stakeholder review, and regulatory submission — consume weeks of specialized resources per product per cycle. Signal management workloads grow with increasing spontaneous reporting volumes from FAERS, EudraVigilance, and literature monitoring. RMP maintenance requires evolving safety specifications and pharmacovigilance plan updates. Regulatory expectations from EMA's proactive pharmacovigilance emphasis and FDA's post-marketing commitments continue to intensify. For organizations with portfolios of multiple marketed products across multiple markets, overlapping timelines create persistent resource pressure.
+            </p>
+          </div>
+
+          <div style="display: grid; gap: 16px;">
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">PSUR/PBRER Production Burden</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Each PSUR/PBRER cycle requires data lock point management, interval and cumulative safety data integration, benefit-risk evaluation, medical writing, and iterative review. For a portfolio of 20+ products, this creates a continuous production pipeline that strains PV teams.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Signal Detection at Scale</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Growing volumes of spontaneous reports, literature publications, and real-world evidence require continuous monitoring. Traditional signal detection applied only at PSUR data lock points misses emerging signals between assessment periods.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">RMP &amp; Label Change Complexity</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Risk Management Plans require ongoing updates as new safety data accumulates. Label change requests demand comprehensive evidence packages assembled under tight regulatory timelines. Each update must maintain consistency with prior assessments.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: HOW ARCASCIENCE ADDRESSES THIS
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">How ArcaScience Addresses This</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            One Platform from Development Through Post-Marketing
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Data Intelligence -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Continuous Signal Detection
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Automated monitoring of FAERS, EudraVigilance, published literature, and real-world evidence sources. Disproportionality analysis (PRR, ROR, BCPNN) applied continuously — not just at PSUR data lock points. New signal identification, assessment, and tracking from detection through evaluation to resolution, integrated with internal pharmacovigilance systems.
+            </p>
+          </div>
+
+          <!-- Decision Intelligence -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Periodic Benefit-Risk Evaluation
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              The benefit-risk framework established during development carries forward into post-marketing without re-creation. Decision Intelligence produces the ICH E2C(R2)-aligned benefit-risk evaluation section for each PSUR/PBRER cycle, incorporating interval safety data, cumulative safety data, and updated benefit evidence. Historical assessments are preserved with full audit trail continuity.
+            </p>
+          </div>
+
+          <!-- Automated Outputs -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              PSUR/PBRER, RMP &amp; Signal Reports
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Automated PSUR/PBRER document generation aligned with ICH E2C(R2), with signal summary auto-populated from the signal management workflow. RMP updates aligned with EMA GVP Module V, including safety specification updates, pharmacovigilance plan adjustments, and risk minimization measure effectiveness assessments. Label change evidence packages assembled from the platform's analytical outputs.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: WORKFLOW / PROCESS
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Workflow</p>
+          <h2 class="arca-display-sm">How It Works</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              1
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Continuous Signal Monitoring</p>
+            <p class="arca-body-sm arca-text-grey-600">The Data Intelligence Engine monitors FAERS, EudraVigilance, literature, and RWE sources continuously, applying PRR, ROR, and BCPNN disproportionality analyses to identify emerging safety signals between PSUR cycles.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              2
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Data Lock &amp; Benefit-Risk Evaluation</p>
+            <p class="arca-body-sm arca-text-grey-600">At each PSUR data lock point, the platform integrates interval safety data, cumulative safety data, and updated benefit evidence. Decision Intelligence produces the structured benefit-risk evaluation aligned with ICH E2C(R2).</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              3
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Generate PSUR/PBRER &amp; RMP Updates</p>
+            <p class="arca-body-sm arca-text-grey-600">Automated document generation produces the complete PSUR/PBRER with signal summaries auto-populated from the monitoring workflow. RMP safety specification and pharmacovigilance plan sections are updated in parallel.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              4
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Submit &amp; Support Label Changes</p>
+            <p class="arca-body-sm arca-text-grey-600">Submit regulatory-ready documents to FDA, EMA, and PMDA. When safety findings warrant label changes, the platform assembles the evidence package and benefit-risk justification for the proposed modification.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PERFORMANCE METRICS
+         ================================================================ -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-3);">Performance Metrics</p>
+          <h2 class="arca-heading-1 arca-text-white">Measured Impact for Post-Marketing</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="70" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Reduction in PSUR/PBRER production time vs. manual approaches</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="50" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Post-marketing submissions completed</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">0</span>
+            <p class="arca-caption">Data points monitored for continuous signal detection</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: RELATED CASE STUDY
+         ================================================================ -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <div>
+            <p class="arca-section-label">Case Study — GSK</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              PSUR Automation for a Multi-Product Portfolio
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              GSK deployed ArcaScience's platform to automate PSUR/PBRER production across a portfolio of marketed products. The platform's continuous signal monitoring identified safety-relevant findings between data lock points that manual periodic review had not surfaced. PSUR production timelines were reduced from weeks to days per product cycle, with signal summaries auto-populated and benefit-risk evaluation sections generated directly from the analytical framework.
+            </p>
+            <a href="/evidence/case-studies/gsk-post-marketing" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              ArcaScience transformed our PSUR production from a quarterly crisis into a managed process. The continuous signal monitoring means we are never surprised at data lock point — the emerging picture is always current.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Director of Pharmacovigilance</p>
+              <p class="arca-body-sm arca-text-grey-600">GSK — Post-Marketing Surveillance Program</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: RELATED USE CASES
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Related Solutions</p>
+          <h2 class="arca-display-sm">Benefit-Risk Analysis Across the Lifecycle</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <a href="/solutions/early-development" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Early Development</h3>
+            <p class="arca-body-sm arca-text-grey-600">Phase I-II signal detection, DDI screening, comparator profiling, and early benefit-risk framing.</p>
+          </a>
+
+          <a href="/solutions/late-development" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Late Development &amp; Submission</h3>
+            <p class="arca-body-sm arca-text-grey-600">CTD Module 2.5, advisory committee preparation, integrated benefit-risk summary for regulatory submission.</p>
+          </a>
+
+          <a href="/solutions/market-access" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Market Access &amp; HEOR</h3>
+            <p class="arca-body-sm arca-text-grey-600">Value dossiers, HTA submission support, comparative effectiveness evidence, payer communication materials.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: CTA
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Your Post-Marketing Surveillance Challenge
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your PSUR/PBRER production needs, portfolio size, and regulatory submission calendar.
+        </p>
+        <a href="/contact" class="arca-btn-primary-inverted">
+          Talk to a Scientist
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

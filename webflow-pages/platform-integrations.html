@@ -1,0 +1,727 @@
+<!--
+  ArcaScience Platform: Integrations & Interoperability — Webflow Structure Reference
+  ===================================================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrations & Interoperability — ArcaScience | Enterprise PV Infrastructure</title>
+  <meta name="description" content="Connects to your existing pharmacovigilance infrastructure. Integrate with safety databases, clinical data systems, and regulatory submission platforms.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown — ACTIVE -->
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link is-active">Platform</a>
+        </div>
+
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none;">Platform</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Integrations & Interoperability</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 780px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Integrations & Interoperability
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Connects to Your Existing Pharmacovigilance Infrastructure
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 640px;">
+            Integrate with safety databases, clinical data systems, and regulatory submission platforms.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: INTEGRATION PHILOSOPHY
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center;">
+
+          <!-- Left: Philosophy -->
+          <div>
+            <p class="arca-section-label" style="margin-bottom: var(--space-4);">Integration Philosophy</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              Work With Your Existing Systems, Not Replace Them
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              ArcaScience is designed to integrate with your current pharmacovigilance infrastructure — not force you to migrate data or retire systems that already work.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              Our API-first architecture supports real-time and batch integration with safety databases, EDC systems, regulatory submission platforms, and enterprise identity management.
+            </p>
+          </div>
+
+          <!-- Right: Benefits -->
+          <div style="display: grid; gap: 16px;">
+
+            <div class="arca-card arca-card-colored-top is-data" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">No Data Migration Required</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                ArcaScience connects to your existing data sources via API or scheduled batch processes. Your data stays where it is — we don't require migration or duplication.
+              </p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-data" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Bidirectional Sync</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Analysis results, signal detection alerts, and regulatory documents can be written back to your safety database for single-source-of-truth maintenance.
+              </p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-data" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Enterprise Security</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                All integrations encrypted in transit (TLS 1.3) and at rest (AES-256). SSO, MFA, RBAC, and audit logging for compliance with 21 CFR Part 11.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: INTEGRATION CATEGORIES
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Five Integration Categories</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Comprehensive Coverage of the PV Technology Stack
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 720px; margin: 0 auto;">
+            From case intake through regulatory submission, ArcaScience integrates with every layer of your pharmacovigilance infrastructure.
+          </p>
+        </div>
+
+        <!-- Category 1: Safety Databases -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(13,124,107,0.08) 0%, rgba(13,124,107,0.03) 100%); padding: var(--space-7); border-radius: 8px; border-left: 6px solid var(--teal-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--teal-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                1
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Safety Databases</h3>
+                <p class="arca-body-md arca-text-grey-600">Integrate with enterprise pharmacovigilance systems</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Argus Safety</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Native integration via Argus API. Real-time case intake, automated E2B export, bidirectional signal write-back, MedDRA coding sync.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Argus 8.x and 9.x supported</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Vault Safety (Veeva)</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  REST API integration with Vault Safety. Case data pull, automated narrative extraction, signal alert push, document attachment to cases.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Vault Safety 21R3+ supported</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">ArisGlobal MultiVigilance</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  SOAP/REST integration with MultiVigilance and LifeSphere Safety. Case export, aggregate report generation, audit trail sync.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">MultiVigilance 8.x+ supported</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Oracle Empirica Signal</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Database-level integration for data pull. Signal output comparison and validation. Custom query support for ad-hoc analysis.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Empirica 9.x+ supported</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">TRACKWISE</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  API integration for medical device adverse event data. MDR/MAUDE format support. Complaint handling workflow integration.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">TRACKWISE 17.x+ supported</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Custom / Legacy Systems</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  E2B(R3) XML import for any system. CSV batch upload with field mapping. Database direct-connect for legacy Oracle/SQL Server systems.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Flexible integration options</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Clinical Data Systems -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(67,56,202,0.08) 0%, rgba(67,56,202,0.03) 100%); padding: var(--space-7); border-radius: 8px; border-left: 6px solid var(--indigo-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--indigo-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                2
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Clinical Data Systems</h3>
+                <p class="arca-body-md arca-text-grey-600">Connect to EDC, CDMS, and trial registries</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">EDC Systems</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Medidata Rave, Oracle InForm, Veeva Vault CDMS. Automated AE data pull, SAE reconciliation, SDTM/ADaM dataset import for benefit-risk analysis.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">CDISC SDTM/ADaM compliant</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">ClinicalTrials.gov</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Automated study registry data pull. Adverse event reporting table extraction. Protocol-level metadata for contextualized benefit-risk assessment.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">NCT number-based lookup</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">CTMS / Trial Master File</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Veeva Vault CTMS, Medidata Clinical Cloud. Protocol amendments, CSR documents, investigator brochure versioning for regulatory submission traceability.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Document version control</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Regulatory Submission Platforms -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(22,128,60,0.08) 0%, rgba(22,128,60,0.03) 100%); padding: var(--space-7); border-radius: 8px; border-left: 6px solid var(--green-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--green-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                3
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Regulatory Submission Platforms</h3>
+                <p class="arca-body-md arca-text-grey-600">eCTD publishing, XEVMPD, IDMP integration</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">eCTD Publishing</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Direct export to eCTD publishing tools (Liquent, DocuBridge, Extedo). CTD Module 2.5 and 5.3.5 documents formatted for validation and submission.
+                </p>
+                <p class="arca-label" style="color: var(--green-600);">eCTD v3.2.2 and v4.0 compliant</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">XEVMPD Integration</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  EMA Extended EudraVigilance Medicinal Product Dictionary integration. Product registration data pull, EVMPD code assignment, substance/product hierarchy mapping.
+                </p>
+                <p class="arca-label" style="color: var(--green-600);">EMA XEVMPD format</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">IDMP / SPOR</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  ISO IDMP (Identification of Medicinal Products) data model support. EMA SPOR (Substance, Product, Organisation, Referentials) integration for EU regulatory submissions.
+                </p>
+                <p class="arca-label" style="color: var(--green-600);">ISO 11238/11615/11616 compliant</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: External Data Sources -->
+        <div style="margin-bottom: var(--space-9);" data-animate>
+          <div style="background: linear-gradient(135deg, rgba(13,124,107,0.08) 0%, rgba(13,124,107,0.03) 100%); padding: var(--space-7); border-radius: 8px; border-left: 6px solid var(--teal-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--teal-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                4
+              </div>
+              <div>
+                <h3 class="arca-heading-1">External Data Sources</h3>
+                <p class="arca-body-md arca-text-grey-600">Public databases and literature repositories</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">FAERS (FDA)</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Quarterly automated download from FDA Adverse Event Reporting System. Automated deduplication, MedDRA coding, and integration into AS Profiling Base.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Updated quarterly</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">EudraVigilance (EMA)</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Line listing download and processing. E2B(R3) XML parsing. Automated duplicate detection with FAERS for global signal detection.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Monthly updates</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">PubMed / Embase</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Automated literature search with configurable MeSH terms and drug/event keywords. NLP extraction from abstracts and full-text articles.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Weekly literature updates</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">VigiBase (WHO-UMC)</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  WHO Global ICSR Database integration for international signal detection. Access via Uppsala Monitoring Centre partnership.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">100+ country coverage</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">RWE Databases</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  CPRD, Optum, MarketScan, Sentinel. Patient-level data access agreements. OMOP CDM format standardization for comparative effectiveness studies.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">OMOP CDM v5.4 compliant</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Regulatory Websites</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  FDA approval packages, EMA assessment reports, PMDA reviews. Automated web scraping and PDF parsing with NLP extraction.
+                </p>
+                <p class="arca-label" style="color: var(--teal-600);">Automated updates</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 5: Enterprise Identity & Security -->
+        <div data-animate>
+          <div style="background: linear-gradient(135deg, rgba(67,56,202,0.08) 0%, rgba(67,56,202,0.03) 100%); padding: var(--space-7); border-radius: 8px; border-left: 6px solid var(--indigo-600);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-5);">
+              <div style="width: 56px; height: 56px; border-radius: 12px; background: var(--indigo-600); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                5
+              </div>
+              <div>
+                <h3 class="arca-heading-1">Enterprise Identity & Security</h3>
+                <p class="arca-body-md arca-text-grey-600">SSO, MFA, RBAC, and audit logging</p>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Single Sign-On (SSO)</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  SAML 2.0 and OAuth 2.0 / OpenID Connect support. Okta, Azure AD, Ping Identity, OneLogin, Auth0 tested and validated.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">SAML 2.0 / OAuth 2.0 / OIDC</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Multi-Factor Authentication</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  TOTP (Time-based One-Time Password), SMS, hardware tokens, biometric authentication. Configurable enforcement by role and IP range.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">FIDO2 / WebAuthn support</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">LDAP / Active Directory</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Direct integration with corporate directory services. User provisioning, group-based role assignment, automated deprovisioning on employee exit.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">LDAP v3 / AD integration</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Role-Based Access Control</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Granular permissions at module, project, and data-source level. Pre-defined roles (Admin, Analyst, Reviewer, Viewer) with custom role creation.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">Custom role builder</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Audit Trail Export</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  Complete audit log export to SIEM systems (Splunk, QRadar, Sentinel). CSV and JSON format. Real-time event streaming via webhook.
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">21 CFR Part 11 compliant</p>
+              </div>
+
+              <div class="arca-card">
+                <h4 class="arca-heading-3" style="margin-bottom: var(--space-2);">Data Residency Options</h4>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  US (AWS us-east-1, us-west-2), EU (AWS eu-central-1, eu-west-1), Japan (AWS ap-northeast-1). Customer-managed encryption keys (BYOK).
+                </p>
+                <p class="arca-label" style="color: var(--indigo-600);">GDPR / HIPAA compliant</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: TECHNICAL SPECIFICATIONS
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start;">
+
+          <!-- Left: Overview -->
+          <div>
+            <p class="arca-section-label" style="margin-bottom: var(--space-4);">Technical Specifications</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              RESTful API, Batch Processing, HL7 FHIR Support
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-6);">
+              ArcaScience's integration layer is built on modern, standards-based protocols with comprehensive documentation and SDKs for Python, R, Java, and .NET.
+            </p>
+            <a href="/contact" class="arca-btn-tertiary">
+              Request Integration Documentation <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Right: Technical details -->
+          <div style="display: grid; gap: 24px;">
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">REST API</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                RESTful API with JSON payloads. OAuth 2.0 authentication. OpenAPI 3.0 specification with auto-generated client libraries. Rate limiting: 10,000 requests/hour.
+              </p>
+              <p class="arca-label" style="color: var(--indigo-600);">Base URL: api.arcascience.com/v2</p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Batch Processing</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                SFTP, AWS S3, Azure Blob Storage for file-based integration. Scheduled jobs (daily, weekly, monthly). CSV, XML, JSON, SAS XPT formats supported. File size limit: 5GB.
+              </p>
+              <p class="arca-label" style="color: var(--indigo-600);">Supports large dataset uploads</p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">HL7 FHIR Support</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                HL7 FHIR R4 support for interoperability with EHR systems. AdverseEvent, MedicationAdministration, Patient, Practitioner resources. Bulk data export ($export operation).
+              </p>
+              <p class="arca-label" style="color: var(--indigo-600);">FHIR R4 compliant</p>
+            </div>
+
+            <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">SOA Architecture</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Service-oriented architecture with microservices for each integration type. Independent scaling and failover. 99.9% uptime SLA with automatic retry and error handling.
+              </p>
+              <p class="arca-label" style="color: var(--indigo-600);">99.9% uptime SLA</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: SECURITY & COMPLIANCE
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Security & Compliance</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            All Integrations Encrypted, Audit-Trailed, 21 CFR Part 11 Compliant
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 720px; margin: 0 auto;">
+            Enterprise-grade security controls ensure that all data integrations meet regulatory requirements for pharmacovigilance systems.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Encryption</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              TLS 1.3 for data in transit. AES-256 for data at rest. Customer-managed encryption keys (BYOK) supported. Hardware Security Module (HSM) key storage.
+            </p>
+            <p class="arca-label" style="color: var(--green-600);">TLS 1.3 / AES-256</p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Audit Trail</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Every API call, file upload, and data sync logged with timestamp, user, source IP, and result. Immutable audit log with tamper detection. 7-year retention.
+            </p>
+            <p class="arca-label" style="color: var(--green-600);">21 CFR Part 11 compliant</p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Regulatory Validation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              FDA 21 CFR Part 11, EU Annex 11, GAMP 5 compliant. IQ/OQ/PQ documentation available. Annual security audits by third-party assessors.
+            </p>
+            <p class="arca-label" style="color: var(--green-600);">FDA / EMA validated</p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Network Security</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              VPN and private network connectivity options. IP whitelisting, firewall rules, DDoS protection. AWS PrivateLink and Azure Private Link supported.
+            </p>
+            <p class="arca-label" style="color: var(--green-600);">Private network connectivity</p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Data Isolation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Dedicated database instances per customer. No data co-mingling. Logical and physical separation options. Private cloud deployment available.
+            </p>
+            <p class="arca-label" style="color: var(--green-600);">Dedicated infrastructure</p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Disaster Recovery</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              Daily backups with 30-day retention. Geo-redundant storage in multiple AWS/Azure regions. RTO: 4 hours, RPO: 1 hour. Annual DR testing.
+            </p>
+            <p class="arca-label" style="color: var(--green-600);">RTO: 4h | RPO: 1h</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: CTA — Discuss Integration Requirements
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Integration Requirements
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Schedule a technical consultation to review your current pharmacovigilance infrastructure and plan ArcaScience integration. Our solutions architects will map data flows and provide integration timeline estimates.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Talk to a Solutions Architect
+          </a>
+          <a href="/platform" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            View Platform Overview <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-svg-paths.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceSVGPaths) ArcaScienceSVGPaths.init({ selector: '[data-svg-animate]' });
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

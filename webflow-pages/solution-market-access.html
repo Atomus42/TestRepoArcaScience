@@ -1,0 +1,453 @@
+<!--
+  ArcaScience Solution Page — Market Access & HEOR
+  ==================================================
+  Built from solution-template.html.
+  This page targets market access directors, HEOR leads,
+  and payer communication professionals.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Access &amp; HEOR Benefit-Risk Evidence — ArcaScience</title>
+  <meta name="description" content="Benefit-risk evidence for payers, HTA bodies, and market access decisions. Value dossiers, comparative effectiveness, HTA submissions for NICE, G-BA, HAS, CADTH — powered by 100+ billion data points.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link is-active">Solutions</a>
+        </div>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <nav aria-label="Breadcrumb" style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0;">
+        <li><a href="/" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Home</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li><a href="/solutions" class="arca-body-sm arca-text-grey-600" style="text-decoration: none;">Solutions</a></li>
+        <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+        <li class="arca-body-sm arca-text-grey-900" aria-current="page">Market Access &amp; HEOR</li>
+      </ol>
+    </nav>
+
+    <!-- ================================================================
+         SECTION 1: PAGE HEADER
+         ================================================================ -->
+    <section style="padding: var(--space-8) 0 var(--space-7);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 780px;">
+          <p class="arca-label arca-text-blue-600" style="margin-bottom: var(--space-3);">
+            Market Access &amp; HEOR
+          </p>
+          <h1 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Benefit-Risk Evidence for Payers, HTA Bodies, and Market Access Decisions
+          </h1>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-5); max-width: 680px;">
+            From pharmacovigilance data to value dossiers — extending benefit-risk analysis beyond the regulator.
+          </p>
+          <p class="arca-body-md arca-text-grey-600" style="max-width: 680px;">
+            The audience for benefit-risk evidence extends beyond regulators. Health technology assessment bodies, payer organizations, and market access teams require comparative effectiveness data, safety-contextualized value propositions, and evidence packages that address their specific decision frameworks. ArcaScience's platform extends the same analytical rigor used for regulatory submissions into HEOR deliverables: value dossiers, comparative effectiveness summaries, and payer evidence packages that draw on the full depth of AS Profiling Base 100b.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: THE CHALLENGE
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
+
+          <div>
+            <p class="arca-section-label">The Challenge</p>
+            <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+              Why Regulatory Evidence Alone Does Not Satisfy Payers
+            </h2>
+            <p class="arca-body-md arca-text-grey-600">
+              Health technology assessment bodies — NICE in the UK, G-BA in Germany, HAS in France, CADTH in Canada, PBAC in Australia — require comparative effectiveness data beyond what regulators request. Payer decision frameworks emphasize value: clinical benefit relative to cost, not just benefit versus risk. Real-world evidence is increasingly expected alongside clinical trial data. Yet the current approach in most pharmaceutical organizations is fragmented: separate HEOR teams re-analyze data that was already processed for regulatory purposes, using different tools, different methodologies, and different data extracts. This creates inconsistency between the regulatory narrative and the payer narrative — a gap that HTA assessors notice and penalize.
+            </p>
+          </div>
+
+          <div style="display: grid; gap: 16px;">
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Fragmented Evidence Generation</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Regulatory and HEOR teams work from different data extracts using different tools. The benefit-risk narrative presented to FDA/EMA diverges from the value narrative presented to NICE/G-BA, creating inconsistencies that erode credibility with both audiences.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Comparator Evidence Gaps</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                HTA bodies require head-to-head or indirect treatment comparisons that clinical development programs rarely generate. Building comparative effectiveness evidence retrospectively is expensive, time-consuming, and methodologically constrained.
+              </p>
+            </div>
+
+            <div class="arca-card" data-animate>
+              <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Diverse HTA Requirements</h3>
+              <p class="arca-body-sm arca-text-grey-600">
+                Each HTA body has distinct evidence requirements, submission formats, and assessment frameworks. NICE's technology appraisals, G-BA's AMNOG added-benefit assessments, and HAS's transparency committee reviews each require tailored evidence packages.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: HOW ARCASCIENCE ADDRESSES THIS
+         ================================================================ -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">How ArcaScience Addresses This</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            One Data Foundation, Multiple Evidence Packages
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Data Intelligence -->
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Data Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Comparative Effectiveness &amp; RWE Integration
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              The Data Intelligence Engine draws from AS Profiling Base 100b to build comprehensive comparator datasets. Indirect treatment comparisons (ITCs) and network meta-analyses (NMAs) are supported by integrated real-world evidence from clinical trials, observational studies, registries, and post-marketing data — providing the comparative context that HTA bodies require but clinical development programs rarely generate directly.
+            </p>
+          </div>
+
+          <!-- Decision Intelligence -->
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Decision Intelligence</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Safety-Contextualized Value Analysis
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Decision Intelligence extends the benefit-risk analysis produced for regulatory submissions into payer-relevant frameworks. Comparative effectiveness across active comparators, subpopulation-specific benefit-risk profiles relevant for tiered access decisions, and safety-contextualized value narratives that demonstrate how the product's safety profile supports its value proposition — all grounded in the same data foundation as the regulatory submission.
+            </p>
+          </div>
+
+          <!-- Automated Outputs -->
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Automated Outputs</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Value Dossiers &amp; HTA Submissions
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Generate structured value dossiers, HTA submission packages, and payer evidence summaries tailored to the requirements of specific assessment bodies. Budget impact and cost-effectiveness framing where underlying data supports it. The payer narrative maintains consistency with the regulatory submission — both draw from the same analytical framework and data foundation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: WORKFLOW / PROCESS
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Workflow</p>
+          <h2 class="arca-display-sm">How It Works</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              1
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Extend Regulatory BRA for Payers</p>
+            <p class="arca-body-sm arca-text-grey-600">Start from the benefit-risk analysis produced for regulatory submission. The same data foundation and analytical framework are extended to address payer-specific questions about comparative effectiveness and value.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              2
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Build Comparative Evidence</p>
+            <p class="arca-body-sm arca-text-grey-600">The Data Intelligence Engine constructs indirect treatment comparisons and network meta-analyses across active comparators, integrating clinical trial data with real-world evidence to fill evidence gaps that HTA bodies identify.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              3
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Tailor for HTA Requirements</p>
+            <p class="arca-body-sm arca-text-grey-600">Adapt evidence presentation for specific HTA body requirements: NICE technology appraisals, G-BA added-benefit assessments (AMNOG), HAS transparency committee reviews, CADTH common drug reviews, and PBAC submissions.</p>
+          </div>
+
+          <div data-animate>
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: var(--space-4);">
+              4
+            </div>
+            <p class="arca-body-md" style="font-weight: 600; margin-bottom: var(--space-2);">Generate Value Dossiers</p>
+            <p class="arca-body-sm arca-text-grey-600">Produce structured value dossiers, payer evidence packages, and HTA submission documents. Budget impact framing and cost-effectiveness narratives are grounded in the same data and analysis as the regulatory submission.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PERFORMANCE METRICS
+         ================================================================ -->
+    <section class="arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-7);">
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-3);">Performance Metrics</p>
+          <h2 class="arca-heading-1 arca-text-white">Measured Impact for Market Access</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center;">
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="70" data-countup-suffix="%">0</span>
+            <p class="arca-caption">Cost reduction vs. traditional CRO-led HEOR engagements</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="5" data-countup-suffix="+">0</span>
+            <p class="arca-caption">HTA body frameworks supported (NICE, G-BA, HAS, CADTH, PBAC)</p>
+          </div>
+
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">0</span>
+            <p class="arca-caption">Data points for comparative effectiveness evidence</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: RELATED CASE STUDY
+         ================================================================ -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+
+          <div>
+            <p class="arca-section-label">Case Study — Takeda</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+              Rare Disease Value Dossier for Multi-Market HTA Submissions
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Takeda engaged ArcaScience to produce a value dossier for a rare disease compound requiring simultaneous HTA submissions across multiple markets. The platform's integrated data foundation enabled a single analytical workflow to generate tailored evidence packages for NICE, G-BA, and HAS — maintaining internal consistency while adapting to each body's distinct assessment requirements. Comparative effectiveness evidence was built from real-world data where head-to-head trials were not available, supported by indirect treatment comparisons constructed from the AS Profiling Base 100b.
+            </p>
+            <a href="/evidence/case-studies/takeda-rare-disease" class="arca-btn-tertiary">
+              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="arca-testimonial" style="text-align: left;">
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
+              Having a single analytical foundation for both our regulatory submission and HTA dossiers eliminated the inconsistencies that had caused problems in previous submissions. The comparative effectiveness evidence ArcaScience assembled from real-world data filled gaps our clinical program could not address.
+            </div>
+            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
+              <p class="arca-body-md" style="font-weight: 600;">Director of Market Access</p>
+              <p class="arca-body-sm arca-text-grey-600">Takeda — Rare Disease Program</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 7: RELATED USE CASES
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Related Solutions</p>
+          <h2 class="arca-display-sm">Benefit-Risk Analysis Across the Lifecycle</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <a href="/solutions/early-development" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Early Development</h3>
+            <p class="arca-body-sm arca-text-grey-600">Phase I-II signal detection, DDI screening, comparator profiling, and early benefit-risk framing.</p>
+          </a>
+
+          <a href="/solutions/late-development" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Late Development &amp; Submission</h3>
+            <p class="arca-body-sm arca-text-grey-600">CTD Module 2.5, advisory committee preparation, integrated benefit-risk summary for regulatory submission.</p>
+          </a>
+
+          <a href="/solutions/post-marketing" class="arca-card" style="text-decoration: none; color: inherit;" data-animate>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Post-Marketing Surveillance</h3>
+            <p class="arca-body-sm arca-text-grey-600">Automated PSUR/PBRER generation, continuous signal monitoring, RMP updates, label change support.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 8: CTA
+         ================================================================ -->
+    <section class="arca-cta-section" data-animate>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Discuss Your Market Access &amp; HEOR Challenge
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Request a demonstration customized to your HTA submission requirements, therapeutic area, and target payer markets.
+        </p>
+        <a href="/contact" class="arca-btn-primary-inverted">
+          Talk to a Scientist
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/team" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!--
+  ArcaScience Terms of Use Page — Webflow Structure Reference
+  =============================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — ArcaScience</title>
+  <meta name="description" content="ArcaScience terms of use governing access to our AI-driven benefit-risk analysis platform and website. Professional B2B SaaS terms.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;">
+          <a href="/platform" class="arca-nav-link">Platform</a>
+        </div>
+        <div style="position: relative;">
+          <a href="/solutions" class="arca-nav-link">Solutions</a>
+        </div>
+        <a href="/science" class="arca-nav-link">Science</a>
+        <a href="/evidence" class="arca-nav-link">Evidence</a>
+        <a href="/company" class="arca-nav-link">Company</a>
+        <a href="/resources" class="arca-nav-link">Resources</a>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         SECTION 1: BREADCRUMB + HERO
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-7) 0 var(--space-8);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/legal" style="color: rgba(255,255,255,0.65); text-decoration: none;">Legal</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">Terms of Use</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-4);">
+            Terms of Use
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85);">
+            These terms govern your access to and use of the ArcaScience website and platform. By accessing our services, you agree to be bound by these terms.
+          </p>
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.55); margin-top: var(--space-4);">
+            Last updated: January 2025
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: TERMS CONTENT
+         ================================================================ -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 820px; margin: 0 auto;">
+
+          <!-- 1. Acceptance of Terms -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              1. Acceptance of Terms
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              By accessing or using the ArcaScience website (arcascience.ai) or the ArcaScience platform (the "Service"), you agree to be bound by these Terms of Use ("Terms"). If you are accepting these Terms on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              If you do not agree to these Terms, you must not access or use the Service. These Terms constitute a legally binding agreement between you (or the organization you represent) and ArcaScience SAS, a company registered in France with its principal office at 8 rue Jean-Antoine de Baif, 75013 Paris, France ("ArcaScience," "we," "us," or "our").
+            </p>
+          </div>
+
+          <!-- 2. Service Description -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              2. Service Description
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              ArcaScience provides a software-as-a-service (SaaS) platform for AI-driven benefit-risk analysis in pharmaceutical development. The Service includes:
+            </p>
+            <div style="display: grid; gap: var(--space-3); margin-bottom: var(--space-4);">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600"><strong>Data Intelligence:</strong> Automated ingestion, harmonization, and analysis of pharmacovigilance, clinical, and real-world data.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600"><strong>Decision Intelligence:</strong> Structured benefit-risk frameworks (BRAT, MCDA, PrOACT-URL), signal detection, and quantitative analysis tools.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600"><strong>Regulatory Outputs:</strong> Automated generation of regulatory documents including PSURs, PBRERs, DSURs, RMPs, and CTD Module 2.5 summaries.</p>
+              </div>
+            </div>
+            <p class="arca-body-md arca-text-grey-600">
+              Access to the platform is provided pursuant to separate subscription agreements. These Terms govern general website use and supplement any existing platform subscription agreement.
+            </p>
+          </div>
+
+          <!-- 3. Permitted Use -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              3. Permitted Use
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              You may use the Service solely for lawful business purposes in accordance with these Terms. You agree not to:
+            </p>
+            <div style="display: grid; gap: var(--space-3);">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Use the Service in any manner that violates applicable laws or regulations, including pharmaceutical and data protection regulations.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Attempt to reverse engineer, decompile, disassemble, or otherwise derive the source code of the platform or any AI models.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Transmit any viruses, malware, or other harmful code through the Service.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Access or use the Service to build a competing product or service.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Share, sublicense, or transfer your account credentials to unauthorized third parties.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--grey-400); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Use automated tools (bots, scrapers) to access the website or platform without prior written authorization.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Intellectual Property -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              4. Intellectual Property
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              All intellectual property rights in the Service, including but not limited to the platform software, AI models, algorithms, user interface designs, documentation, trademarks, and trade secrets, are and shall remain the exclusive property of ArcaScience or its licensors.
+            </p>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              The ArcaScience name, logo, and all related product names, design marks, and slogans are trademarks of ArcaScience SAS. You may not use these marks without our prior written consent.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              You retain all rights to data you upload to the platform ("Client Data"). You grant ArcaScience a limited, non-exclusive license to process your Client Data solely for the purpose of providing the Service. We will not use Client Data for any other purpose, including training AI models, without your explicit written consent.
+            </p>
+          </div>
+
+          <!-- 5. Confidentiality -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              5. Confidentiality
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Each party agrees to maintain the confidentiality of the other party's Confidential Information. "Confidential Information" includes all non-public information disclosed by one party to the other, including but not limited to Client Data, platform architecture, pricing, business strategies, and proprietary methodologies.
+            </p>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Confidential Information does not include information that: (a) is or becomes publicly available through no fault of the receiving party; (b) was already known to the receiving party without restriction; (c) is independently developed by the receiving party; or (d) is rightfully received from a third party without restriction.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              Confidentiality obligations survive termination of these Terms for a period of five (5) years, except for trade secrets, which shall remain confidential for as long as they qualify as trade secrets under applicable law.
+            </p>
+          </div>
+
+          <!-- 6. Data Processing -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              6. Data Processing Agreement
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Where ArcaScience processes personal data on behalf of a client (acting as a data processor under GDPR), such processing is governed by a separate Data Processing Agreement ("DPA"). The DPA is incorporated by reference into these Terms for all platform clients.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              For details on how we collect and use personal data as a data controller (e.g., when you visit our website), please refer to our <a href="/legal/privacy" style="color: var(--blue-600);">Privacy Policy</a>.
+            </p>
+          </div>
+
+          <!-- 7. Limitation of Liability -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              7. Limitation of Liability
+            </h2>
+            <div class="arca-card" style="padding: var(--space-5); border-left: 4px solid var(--blue-600);">
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ARCASCIENCE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, BUSINESS OPPORTUNITIES, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.
+              </p>
+              <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                ARCASCIENCE'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE GREATER OF: (A) THE AMOUNTS PAID BY YOU TO ARCASCIENCE DURING THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR (B) ONE HUNDRED EUROS (&euro;100).
+              </p>
+              <p class="arca-body-md arca-text-grey-600">
+                The Service provides analytical outputs to support decision-making. ArcaScience does not provide medical, regulatory, or legal advice. All benefit-risk assessments generated by the platform should be reviewed by qualified professionals. ArcaScience shall not be liable for any regulatory, clinical, or business decisions made based on platform outputs.
+              </p>
+            </div>
+          </div>
+
+          <!-- 8. Indemnification -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              8. Indemnification
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              You agree to indemnify, defend, and hold harmless ArcaScience, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or related to: (a) your use of the Service in violation of these Terms; (b) your violation of any applicable law or regulation; or (c) any third-party claims related to Client Data you upload to the platform.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              ArcaScience agrees to indemnify you against any claims that the Service, as provided, infringes a third party's intellectual property rights, provided that you promptly notify ArcaScience of such claim and cooperate in the defense.
+            </p>
+          </div>
+
+          <!-- 9. Governing Law & Dispute Resolution -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              9. Governing Law & Dispute Resolution
+            </h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);">
+              <div class="arca-card" style="padding: var(--space-5);">
+                <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-3);">For EU Customers</p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  These Terms shall be governed by and construed in accordance with the laws of France, without regard to its conflict of law provisions.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Any disputes arising out of or relating to these Terms shall be submitted to the exclusive jurisdiction of the courts of Paris, France. Prior to initiating litigation, both parties agree to attempt resolution through good-faith negotiation for a period of thirty (30) days.
+                </p>
+              </div>
+              <div class="arca-card" style="padding: var(--space-5);">
+                <p class="arca-body-sm arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-3);">For US Customers</p>
+                <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                  These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.
+                </p>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Any disputes arising out of or relating to these Terms shall be resolved through binding arbitration administered by JAMS in Santa Clara County, California, under its Comprehensive Arbitration Rules. Judgment on the arbitration award may be entered in any court of competent jurisdiction.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Termination -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              10. Termination
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              These Terms remain in effect until terminated. We may terminate or suspend your access to the Service at any time, with or without cause, upon written notice. You may terminate these Terms by ceasing all use of the Service and providing written notice to ArcaScience.
+            </p>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Upon termination:
+            </p>
+            <div style="display: grid; gap: var(--space-3);">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Your right to access and use the Service immediately ceases.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">You may request export of your Client Data within thirty (30) days of termination. After this period, ArcaScience may delete Client Data in accordance with the DPA.</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--blue-600); margin-top: 8px; flex-shrink: 0;"></div>
+                <p class="arca-body-md arca-text-grey-600">Sections relating to intellectual property, confidentiality, limitation of liability, indemnification, and governing law shall survive termination.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. Service Availability & Warranty Disclaimer -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              11. Service Availability & Warranty Disclaimer
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              ArcaScience endeavors to maintain high availability of the Service but does not guarantee uninterrupted access. Planned maintenance windows will be communicated in advance. Service level commitments for platform clients are governed by separate Service Level Agreements (SLAs).
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE." TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ARCASCIENCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. ARCASCIENCE DOES NOT WARRANT THAT THE SERVICE WILL BE ERROR-FREE OR THAT ANY DEFECTS WILL BE CORRECTED.
+            </p>
+          </div>
+
+          <!-- 12. Modifications -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              12. Modifications to These Terms
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              ArcaScience reserves the right to modify these Terms at any time. We will provide at least thirty (30) days' notice of material changes by posting the updated Terms on our website and, for platform clients, by email notification to the account administrator.
+            </p>
+            <p class="arca-body-md arca-text-grey-600">
+              Your continued use of the Service after the effective date of any modifications constitutes acceptance of the updated Terms. If you do not agree to the modified Terms, you must discontinue use of the Service before the effective date.
+            </p>
+          </div>
+
+          <!-- 13. General Provisions -->
+          <div style="margin-bottom: var(--space-8);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              13. General Provisions
+            </h2>
+            <div style="display: grid; gap: var(--space-4);">
+              <div>
+                <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Entire Agreement</p>
+                <p class="arca-body-md arca-text-grey-600">These Terms, together with any applicable subscription agreement, DPA, and SLA, constitute the entire agreement between you and ArcaScience regarding the Service and supersede all prior agreements and understandings.</p>
+              </div>
+              <div>
+                <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Severability</p>
+                <p class="arca-body-md arca-text-grey-600">If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
+              </div>
+              <div>
+                <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Waiver</p>
+                <p class="arca-body-md arca-text-grey-600">The failure of ArcaScience to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision.</p>
+              </div>
+              <div>
+                <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Assignment</p>
+                <p class="arca-body-md arca-text-grey-600">You may not assign or transfer these Terms without ArcaScience's prior written consent. ArcaScience may assign these Terms in connection with a merger, acquisition, or sale of all or substantially all of its assets.</p>
+              </div>
+              <div>
+                <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">Force Majeure</p>
+                <p class="arca-body-md arca-text-grey-600">Neither party shall be liable for any failure or delay in performance due to circumstances beyond its reasonable control, including but not limited to natural disasters, pandemics, government actions, or infrastructure failures.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--grey-200);">
+              14. Contact Information
+            </h2>
+            <p class="arca-body-md arca-text-grey-600" style="margin-bottom: var(--space-4);">
+              For questions regarding these Terms of Use, please contact:
+            </p>
+            <div class="arca-card" style="padding: var(--space-5);">
+              <p class="arca-body-md arca-text-grey-700" style="font-weight: 600; margin-bottom: var(--space-2);">ArcaScience Legal Department</p>
+              <p class="arca-body-sm arca-text-grey-600">
+                ArcaScience SAS<br>
+                8 rue Jean-Antoine de Baif, 75013 Paris, France<br>
+                Email: <a href="mailto:legal@arcascience.ai" style="color: var(--blue-600);">legal@arcascience.ai</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform/data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform/decision-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform/outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/platform/security" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solutions/early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solutions/late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solutions/post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solutions/market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/company/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/company/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Leadership</a>
+            <a href="/company/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/company/news" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources/case-studies" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources/whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources/insights" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources/documentation" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal/privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal/terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal/cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal/accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>
