@@ -157,8 +157,29 @@
          SECTION 1: PAGE HEADER
          Dark background (blue-900). H1, subtitle, compliance context.
          ================================================================ -->
-    <section class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-8); margin-top: var(--space-4);" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+    <section class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-8); margin-top: var(--space-4); position: relative; overflow: hidden; background: linear-gradient(180deg, #0A1628 0%, #12203D 50%, #0E1E38 100%);" data-animate>
+      <!-- Decorative glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <!-- Shield SVG illustration -->
+      <svg width="420" height="380" viewBox="0 0 420 380" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.1; pointer-events: none; z-index: 0;">
+        <path d="M210 30 L370 100 L370 210 Q370 320 210 360 Q50 320 50 210 L50 100 Z" stroke="rgba(59,125,216,0.5)" stroke-width="1.5" fill="none"/>
+        <path d="M210 60 L340 120 L340 210 Q340 300 210 335 Q80 300 80 210 L80 120 Z" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none" stroke-dasharray="8 4"/>
+        <circle cx="210" cy="190" r="70" stroke="rgba(59,125,216,0.25)" stroke-width="1" fill="none"/>
+        <circle cx="210" cy="190" r="45" stroke="rgba(59,125,216,0.35)" stroke-width="1" fill="none"/>
+        <rect x="192" y="178" width="36" height="30" rx="4" stroke="rgba(59,125,216,0.5)" stroke-width="1.5" fill="none"/>
+        <path d="M200 178 V166 Q200 154 210 154 Q220 154 220 166 V178" stroke="rgba(59,125,216,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="193" r="3" fill="rgba(59,125,216,0.4)"/>
+        <line x1="130" y1="130" x2="160" y2="155" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <line x1="290" y1="130" x2="260" y2="155" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <line x1="210" y1="260" x2="210" y2="290" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <circle cx="130" cy="130" r="4" fill="rgba(59,125,216,0.2)"/>
+        <circle cx="290" cy="130" r="4" fill="rgba(59,125,216,0.2)"/>
+        <circle cx="210" cy="290" r="4" fill="rgba(59,125,216,0.2)"/>
+      </svg>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
         <div style="max-width: 820px;">
           <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
             Security &amp; Compliance
@@ -203,7 +224,9 @@
          SECTION 3: ACCORDION CONTENT SECTIONS
          Five accordion sections covering all compliance and security topics.
          ================================================================ -->
-    <section style="padding: var(--space-9) 0;" id="regulatory-compliance">
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-lines" style="padding: var(--space-9) 0;" id="regulatory-compliance">
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="max-width: 820px; margin: 0 auto;">
 
@@ -216,6 +239,9 @@
               Every aspect of the ArcaScience platform has been architected to meet the strictest regulatory and security requirements in the pharmaceutical industry.
             </p>
           </div>
+
+          <!-- Accordion group wrapper — required for JS accordion behavior -->
+          <div data-accordion="group">
 
           <!-- ============================================================
                ACCORDION 1: Regulatory Compliance
@@ -670,6 +696,8 @@
 
           </div>
 
+          </div><!-- /data-accordion="group" -->
+
         </div>
       </div>
     </section>
@@ -678,7 +706,9 @@
          SECTION 4: TRUST CENTER
          Downloadable compliance documents. Card-based layout.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" id="trust-center" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-mesh" style="padding: var(--space-9) 0;" id="trust-center" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <div style="text-align: center; margin-bottom: var(--space-8);">
@@ -768,8 +798,11 @@
          SECTION 5: CTA
          Full-width blue gradient. Request security package.
          ================================================================ -->
-    <section class="arca-cta-section" data-animate>
-      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+    <section class="arca-cta-section" style="position: relative; overflow: hidden;" data-animate>
+      <!-- CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
           Request Our Complete Security Package
         </h2>

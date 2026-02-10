@@ -143,8 +143,29 @@
          Breadcrumb: Solutions > By Lifecycle Phase > [PHASE_NAME]
          Contains: H1 phase name, description, CTA
          ================================================================ -->
-    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-10);" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-10);" data-animate>
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: solution funnel SVG -->
+    <svg width="400" height="320" viewBox="0 0 400 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.09; pointer-events: none; z-index: 0;">
+      <path d="M80 60 L320 60 L260 160 L260 240 L140 240 L140 160 Z" stroke="rgba(59,125,216,0.35)" stroke-width="1.5" fill="none"/>
+      <line x1="100" y1="90" x2="300" y2="90" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+      <line x1="120" y1="120" x2="280" y2="120" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="140" y1="160" x2="260" y2="160" stroke="rgba(59,125,216,0.1)" stroke-width="1"/>
+      <circle cx="150" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
+      <circle cx="200" cy="70" r="3" fill="rgba(59,125,216,0.25)"/>
+      <circle cx="250" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
+      <circle cx="175" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
+      <circle cx="225" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
+      <circle cx="200" cy="140" r="3" fill="rgba(59,125,216,0.2)"/>
+      <circle cx="200" cy="200" r="5" fill="rgba(59,125,216,0.35)"/>
+      <path d="M185 260 L200 280 L215 260" stroke="rgba(59,125,216,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
@@ -182,7 +203,9 @@
          Grey-50 background. Horizontal timeline showing all 6 phases.
          Current phase highlighted. Visual progress indicator.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-8) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-8) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-6);">
           <p class="arca-section-label">Drug Development Lifecycle</p>
@@ -339,7 +362,9 @@
          3 module cards (Data=teal, Decision=indigo, Output=green)
          with phase-specific capability descriptions.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">ArcaScience for [PHASE_NAME]</p>
@@ -521,7 +546,9 @@
          Grey-50 background. What FDA, EMA, PMDA expect at this phase.
          Accordion component for expandable regulatory authority detail.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Regulatory Context</p>
@@ -707,7 +734,9 @@
          Grey-50 background. Previous Phase / Next Phase navigation cards.
          Allows users to explore adjacent lifecycle phases.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Lifecycle Navigation</p>
@@ -759,8 +788,13 @@
          Full-width blue gradient. Primary conversion.
          Phase-specific CTA: "Request [PHASE_NAME]-Specific Demo"
          ================================================================ -->
-    <section class="arca-cta-section" data-animate>
-      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
           See ArcaScience Applied to [PHASE_NAME]
         </h2>

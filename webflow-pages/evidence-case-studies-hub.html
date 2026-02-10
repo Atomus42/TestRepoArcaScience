@@ -302,7 +302,9 @@
     </section>
 
     <!-- Downloadable Case Study -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-8) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-mesh" style="padding: var(--space-8) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="max-width: 680px; margin: 0 auto; text-align: center;">
           <p class="arca-section-label">Featured Download</p>
@@ -320,8 +322,13 @@
     </section>
 
     <!-- CTA -->
-    <section class="arca-cta-section" data-animate>
-      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
           Discuss a Similar Challenge
         </h2>

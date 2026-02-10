@@ -43,11 +43,16 @@ function initNavigation() {
  * Accordion — expand/collapse with data attributes
  * Webflow: add data-accordion="group" on wrapper, data-accordion-trigger on header,
  *          data-accordion-content on panel.
+ * Also supports standalone triggers outside groups (independent toggle).
  */
 function initAccordions() {
+  // Track which triggers are inside groups so we don't double-bind
+  const groupedTriggers = new Set();
+
   document.querySelectorAll('[data-accordion="group"]').forEach((group) => {
     const triggers = group.querySelectorAll('[data-accordion-trigger]');
     triggers.forEach((trigger) => {
+      groupedTriggers.add(trigger);
       trigger.addEventListener('click', () => {
         const content = trigger.nextElementSibling;
         if (!content || !content.hasAttribute('data-accordion-content')) return;
@@ -78,6 +83,65 @@ function initAccordions() {
       });
     });
   });
+
+  // Standalone accordion triggers (outside groups) — independent toggle
+  document.querySelectorAll('[data-accordion-trigger]').forEach((trigger) => {
+    if (groupedTriggers.has(trigger)) return;
+    trigger.addEventListener('click', () => {
+      const content = trigger.nextElementSibling;
+      if (!content || !content.hasAttribute('data-accordion-content')) return;
+
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.setAttribute('aria-hidden', 'false');
+      } else {
+        content.style.maxHeight = '0';
+        content.setAttribute('aria-hidden', 'true');
+      }
+    });
+  });
+}
+
+/**
+ * Parallax glow orbs — subtle mouse-tracking on decorative elements
+ * Targets glow orb divs inside sections with position: relative.
+ * Desktop only, uses requestAnimationFrame for performance.
+ */
+function initParallaxOrbs() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if ('ontouchstart' in window) return; // Skip on touch devices
+
+  const sections = document.querySelectorAll('section[style*="overflow: hidden"]');
+  if (sections.length === 0) return;
+
+  let mouseX = 0.5;
+  let mouseY = 0.5;
+  let rafId = null;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
+    if (!rafId) {
+      rafId = requestAnimationFrame(() => {
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          // Only animate if section is in viewport
+          if (rect.bottom < -100 || rect.top > window.innerHeight + 100) return;
+
+          const orbs = section.querySelectorAll('div[style*="radial-gradient"][style*="filter: blur"]');
+          orbs.forEach((orb, i) => {
+            const factor = i === 0 ? 15 : -10;
+            const dx = (mouseX - 0.5) * factor;
+            const dy = (mouseY - 0.5) * factor;
+            orb.style.transform = `translate(${dx}px, ${dy}px)`;
+          });
+        });
+        rafId = null;
+      });
+    }
+  }, { passive: true });
 }
 
 /**
@@ -287,6 +351,7 @@ function init() {
   initBackToTop();
   initAnchorLinks();
   initFormValidation();
+  initParallaxOrbs();
 
   // Auto-init scroll animations on data-attribute elements
   document.querySelectorAll('[data-animate]').forEach((el) => {

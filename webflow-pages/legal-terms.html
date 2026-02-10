@@ -109,8 +109,13 @@
     <!-- ================================================================
          SECTION 1: BREADCRUMB + HERO
          ================================================================ -->
-    <section class="arca-bg-blue-900" style="padding: var(--space-7) 0 var(--space-8);" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-7) 0 var(--space-8);" data-animate>
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">

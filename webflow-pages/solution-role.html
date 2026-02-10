@@ -87,8 +87,29 @@
     <!-- ============================================================
          SECTION 3: Hero — Role-specific value proposition
          ============================================================ -->
-    <section class="arca-section arca-bg-blue-900 arca-py-10">
-      <div class="arca-container">
+    <section class="arca-section arca-bg-blue-900 arca-py-10" style="position: relative; overflow: hidden;">
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: solution funnel SVG -->
+    <svg width="400" height="320" viewBox="0 0 400 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.09; pointer-events: none; z-index: 0;">
+      <path d="M80 60 L320 60 L260 160 L260 240 L140 240 L140 160 Z" stroke="rgba(59,125,216,0.35)" stroke-width="1.5" fill="none"/>
+      <line x1="100" y1="90" x2="300" y2="90" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+      <line x1="120" y1="120" x2="280" y2="120" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="140" y1="160" x2="260" y2="160" stroke="rgba(59,125,216,0.1)" stroke-width="1"/>
+      <circle cx="150" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
+      <circle cx="200" cy="70" r="3" fill="rgba(59,125,216,0.25)"/>
+      <circle cx="250" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
+      <circle cx="175" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
+      <circle cx="225" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
+      <circle cx="200" cy="140" r="3" fill="rgba(59,125,216,0.2)"/>
+      <circle cx="200" cy="200" r="5" fill="rgba(59,125,216,0.35)"/>
+      <path d="M185 260 L200 280 L215 260" stroke="rgba(59,125,216,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+
+      <div class="arca-container" style="position: relative; z-index: 1;">
         <div class="arca-section-label arca-text-blue-200">For [ROLE_TITLE]</div>
         <h1 class="arca-display-lg arca-text-white" data-animate>
           [HERO_HEADLINE]
@@ -155,7 +176,9 @@
     <!-- ============================================================
          SECTION 5: How ArcaScience Helps — Role-specific workflows
          ============================================================ -->
-    <section class="arca-section arca-bg-grey-50 arca-py-9">
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-section arca-bg-grey-50 arca-py-9 arca-bg-dots">
       <div class="arca-container">
         <div class="arca-section-label" data-animate>How ArcaScience Helps</div>
         <h2 class="arca-display-sm" data-animate>
@@ -284,7 +307,9 @@
     <!-- ============================================================
          SECTION 8: Case Study — Relevant to this role
          ============================================================ -->
-    <section class="arca-section arca-bg-grey-50 arca-py-9">
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-section arca-bg-grey-50 arca-py-9 arca-bg-dots">
       <div class="arca-container">
         <div class="arca-section-label" data-animate>See It in Action</div>
         <h2 class="arca-display-sm" data-animate>[CASE_STUDY_TITLE]</h2>
@@ -385,8 +410,13 @@
     <!-- ============================================================
          SECTION 10: CTA
          ============================================================ -->
-    <section class="arca-cta-section arca-bg-blue-900 arca-py-10">
-      <div class="arca-container arca-text-center">
+    <section class="arca-cta-section arca-bg-blue-900 arca-py-10" style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div class="arca-container arca-text-center" style="position: relative; z-index: 1;">
         <h2 class="arca-display-sm arca-text-white" data-animate>
           Ready to Transform Your [ROLE_NAME] Workflow?
         </h2>

@@ -132,8 +132,37 @@
          Full-width dark background (blue-900).
          Contains: breadcrumb, section label, H1, subtitle.
          ================================================================ -->
-    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: platform circuit SVG -->
+    <svg width="480" height="340" viewBox="0 0 480 340" fill="none" aria-hidden="true" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); opacity: 0.1; pointer-events: none; z-index: 0;">
+      <circle cx="120" cy="80" r="4" fill="rgba(59,125,216,0.6)"/>
+      <circle cx="240" cy="60" r="3" fill="rgba(59,125,216,0.4)"/>
+      <circle cx="360" cy="80" r="4" fill="rgba(59,125,216,0.6)"/>
+      <circle cx="180" cy="170" r="6" fill="rgba(59,125,216,0.7)"/>
+      <circle cx="300" cy="170" r="6" fill="rgba(59,125,216,0.7)"/>
+      <circle cx="240" cy="170" r="10" fill="rgba(59,125,216,0.9)" opacity="0.8"/>
+      <circle cx="120" cy="260" r="4" fill="rgba(59,125,216,0.5)"/>
+      <circle cx="240" cy="280" r="3" fill="rgba(59,125,216,0.4)"/>
+      <circle cx="360" cy="260" r="4" fill="rgba(59,125,216,0.5)"/>
+      <line x1="120" y1="80" x2="180" y2="170" stroke="rgba(59,125,216,0.25)" stroke-width="1"/>
+      <line x1="240" y1="60" x2="240" y2="170" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="360" y1="80" x2="300" y2="170" stroke="rgba(59,125,216,0.25)" stroke-width="1"/>
+      <line x1="180" y1="170" x2="240" y2="170" stroke="rgba(59,125,216,0.3)" stroke-width="1.5"/>
+      <line x1="240" y1="170" x2="300" y2="170" stroke="rgba(59,125,216,0.3)" stroke-width="1.5"/>
+      <line x1="180" y1="170" x2="120" y2="260" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="240" y1="170" x2="240" y2="280" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+      <line x1="300" y1="170" x2="360" y2="260" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <rect x="220" y="150" width="40" height="40" rx="6" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none"/>
+      <path d="M80 170 L120 80" stroke="rgba(59,125,216,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M400 170 L360 80" stroke="rgba(59,125,216,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+    </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
@@ -170,7 +199,9 @@
          Uses arca-card components with is-data, is-analytics, is-output.
          SVG pipeline diagram placeholder with data-svg-animate.
          ================================================================ -->
-    <section id="pipeline" class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section id="pipeline" class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">End-to-End Pipeline</p>
@@ -374,7 +405,9 @@
          Grey-50 background. Indigo/analytics module color accent.
          BRAT framework, MCDA, 24 AI models.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start;">
 
@@ -507,7 +540,9 @@
          Grey-50 background. ArcaScience vs Manual BRA vs CROs vs Point Solutions.
          Uses as-table CSS classes. is-highlight on ArcaScience column.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Comparison</p>
@@ -621,8 +656,13 @@
          SECTION 8: CTA — Schedule a Technical Briefing
          Full-width blue gradient. Primary conversion section.
          ================================================================ -->
-    <section class="arca-cta-section" data-animate>
-      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
           Schedule a Technical Briefing
         </h2>

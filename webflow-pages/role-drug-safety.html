@@ -73,8 +73,38 @@
     <!-- ============================================================
          SECTION 3: Hero — Role-specific value proposition
          ============================================================ -->
-    <section class="arca-section arca-bg-blue-900 arca-py-10">
-      <div class="arca-container">
+    <section class="arca-section arca-bg-blue-900 arca-py-10" style="position: relative; overflow: hidden;">
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: dashboard wireframe SVG -->
+    <svg width="400" height="300" viewBox="0 0 400 300" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.08; pointer-events: none; z-index: 0;">
+      <rect x="40" y="40" width="320" height="220" rx="8" stroke="rgba(59,125,216,0.4)" stroke-width="1.5" fill="none"/>
+      <line x1="40" y1="80" x2="360" y2="80" stroke="rgba(59,125,216,0.3)" stroke-width="1"/>
+      <rect x="55" y="55" width="40" height="12" rx="2" fill="rgba(59,125,216,0.15)"/>
+      <rect x="110" y="55" width="30" height="12" rx="2" fill="rgba(59,125,216,0.1)"/>
+      <rect x="155" y="55" width="30" height="12" rx="2" fill="rgba(59,125,216,0.1)"/>
+      <line x1="140" y1="80" x2="140" y2="260" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+      <rect x="55" y="95" width="70" height="10" rx="2" fill="rgba(59,125,216,0.12)"/>
+      <rect x="55" y="115" width="70" height="10" rx="2" fill="rgba(59,125,216,0.08)"/>
+      <rect x="55" y="135" width="70" height="10" rx="2" fill="rgba(59,125,216,0.08)"/>
+      <rect x="55" y="155" width="70" height="10" rx="2" fill="rgba(59,125,216,0.08)"/>
+      <rect x="55" y="175" width="70" height="10" rx="2" fill="rgba(59,125,216,0.08)"/>
+      <rect x="160" y="95" width="180" height="80" rx="4" stroke="rgba(59,125,216,0.2)" stroke-width="1" fill="none"/>
+      <line x1="175" y1="160" x2="175" y2="130" stroke="rgba(59,125,216,0.2)" stroke-width="8"/>
+      <line x1="200" y1="160" x2="200" y2="120" stroke="rgba(59,125,216,0.25)" stroke-width="8"/>
+      <line x1="225" y1="160" x2="225" y2="140" stroke="rgba(59,125,216,0.15)" stroke-width="8"/>
+      <line x1="250" y1="160" x2="250" y2="110" stroke="rgba(59,125,216,0.3)" stroke-width="8"/>
+      <line x1="275" y1="160" x2="275" y2="125" stroke="rgba(59,125,216,0.2)" stroke-width="8"/>
+      <line x1="300" y1="160" x2="300" y2="135" stroke="rgba(59,125,216,0.15)" stroke-width="8"/>
+      <line x1="325" y1="160" x2="325" y2="115" stroke="rgba(59,125,216,0.25)" stroke-width="8"/>
+      <rect x="160" y="190" width="85" height="55" rx="4" stroke="rgba(59,125,216,0.15)" stroke-width="1" fill="none"/>
+      <rect x="255" y="190" width="85" height="55" rx="4" stroke="rgba(59,125,216,0.15)" stroke-width="1" fill="none"/>
+    </svg>
+
+      <div class="arca-container" style="position: relative; z-index: 1;">
         <div class="arca-section-label arca-text-blue-200">For Drug Safety & Pharmacovigilance Leaders</div>
         <h1 class="arca-display-lg arca-text-white" data-animate>
           Transform Your Pharmacovigilance Operations with AI-Driven BRA
@@ -141,7 +171,9 @@
     <!-- ============================================================
          SECTION 5: How ArcaScience Helps — Role-specific workflows
          ============================================================ -->
-    <section class="arca-section arca-bg-grey-50 arca-py-9">
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-section arca-bg-grey-50 arca-py-9 arca-bg-dots">
       <div class="arca-container">
         <div class="arca-section-label" data-animate>How ArcaScience Helps</div>
         <h2 class="arca-display-sm" data-animate>
@@ -273,7 +305,9 @@
     <!-- ============================================================
          SECTION 8: Case Study — Relevant to this role
          ============================================================ -->
-    <section class="arca-section arca-bg-grey-50 arca-py-9">
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-section arca-bg-grey-50 arca-py-9 arca-bg-dots">
       <div class="arca-container">
         <div class="arca-section-label" data-animate>See It in Action</div>
         <h2 class="arca-display-sm" data-animate>Sanofi Dermatology: Accelerating Benefit-Risk Assessment for Post-Marketing Surveillance</h2>
@@ -374,8 +408,13 @@
     <!-- ============================================================
          SECTION 10: CTA
          ============================================================ -->
-    <section class="arca-cta-section arca-bg-blue-900 arca-py-10">
-      <div class="arca-container arca-text-center">
+    <section class="arca-cta-section arca-bg-blue-900 arca-py-10" style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div class="arca-container arca-text-center" style="position: relative; z-index: 1;">
         <h2 class="arca-display-sm arca-text-white" data-animate>
           Ready to Transform Your Drug Safety Workflow?
         </h2>

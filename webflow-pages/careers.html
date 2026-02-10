@@ -141,8 +141,36 @@
          Full-width dark background (blue-900).
          Contains: breadcrumb, H1, subtitle, primary CTA.
          ================================================================ -->
-    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-10);" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-10);" data-animate>
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: company network SVG -->
+    <svg width="400" height="300" viewBox="0 0 400 300" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.1; pointer-events: none; z-index: 0;">
+      <circle cx="200" cy="150" r="14" stroke="rgba(59,125,216,0.4)" stroke-width="1.5" fill="rgba(59,125,216,0.08)"/>
+      <circle cx="120" cy="80" r="10" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="rgba(59,125,216,0.05)"/>
+      <circle cx="280" cy="80" r="10" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="rgba(59,125,216,0.05)"/>
+      <circle cx="120" cy="220" r="10" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="rgba(59,125,216,0.05)"/>
+      <circle cx="280" cy="220" r="10" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="rgba(59,125,216,0.05)"/>
+      <circle cx="60" cy="150" r="7" stroke="rgba(59,125,216,0.2)" stroke-width="1" fill="none"/>
+      <circle cx="340" cy="150" r="7" stroke="rgba(59,125,216,0.2)" stroke-width="1" fill="none"/>
+      <circle cx="200" cy="50" r="7" stroke="rgba(59,125,216,0.2)" stroke-width="1" fill="none"/>
+      <circle cx="200" cy="250" r="7" stroke="rgba(59,125,216,0.2)" stroke-width="1" fill="none"/>
+      <line x1="200" y1="150" x2="120" y2="80" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="200" y1="150" x2="280" y2="80" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="200" y1="150" x2="120" y2="220" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="200" y1="150" x2="280" y2="220" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+      <line x1="120" y1="80" x2="60" y2="150" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="280" y1="80" x2="340" y2="150" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="120" y1="80" x2="200" y2="50" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="280" y1="80" x2="200" y2="50" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="120" y1="220" x2="200" y2="250" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      <line x1="280" y1="220" x2="200" y2="250" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+    </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
@@ -188,7 +216,9 @@
          SECTION 3: WHY ARCASCIENCE
          Grey-50 background. 4-card grid of employer value propositions.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Why ArcaScience</p>
@@ -343,7 +373,9 @@
          Grey-50 background. Filterable by department using tabs.
          Includes 6 placeholder positions + "Don't see your role?" card.
          ================================================================ -->
-    <section id="positions" class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section id="positions" class="arca-bg-grey-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Open Positions</p>
@@ -562,7 +594,9 @@
          SECTION 8: VALUES
          Grey-50 background. 3-column layout of company values.
          ================================================================ -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Our Values</p>
@@ -600,8 +634,13 @@
          SECTION 9: FINAL CTA
          Full-width blue gradient. Primary conversion section.
          ================================================================ -->
-    <section class="arca-cta-section" data-animate>
-      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
           Ready to Make an Impact?
         </h2>

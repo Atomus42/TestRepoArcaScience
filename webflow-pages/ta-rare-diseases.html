@@ -94,8 +94,39 @@
   <main role="main">
 
     <!-- SECTION 1: BREADCRUMB + DARK HERO -->
-    <section class="arca-bg-blue-900" style="padding: var(--space-8) 0 var(--space-9);" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
+<!-- arca-decor-injected -->
+      <!-- arca-decor: glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(13, 124, 107, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 125, 216, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+    <!-- arca-decor: molecule network SVG -->
+    <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
+      <circle cx="210" cy="160" r="16" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
+      <circle cx="210" cy="160" r="6" fill="rgba(13,124,107,0.3)"/>
+      <circle cx="290" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+      <circle cx="130" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+      <circle cx="290" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+      <circle cx="130" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
+      <circle cx="350" cy="160" r="7" stroke="rgba(13,124,107,0.3)" stroke-width="1" fill="none"/>
+      <circle cx="70" cy="160" r="7" stroke="rgba(13,124,107,0.3)" stroke-width="1" fill="none"/>
+      <circle cx="330" cy="60" r="5" fill="rgba(13,124,107,0.2)"/>
+      <circle cx="90" cy="60" r="5" fill="rgba(13,124,107,0.2)"/>
+      <circle cx="330" cy="260" r="5" fill="rgba(13,124,107,0.2)"/>
+      <circle cx="90" cy="260" r="5" fill="rgba(13,124,107,0.2)"/>
+      <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+      <line x1="290" y1="100" x2="350" y2="160" stroke="rgba(13,124,107,0.2)" stroke-width="1"/>
+      <line x1="130" y1="100" x2="70" y2="160" stroke="rgba(13,124,107,0.2)" stroke-width="1"/>
+      <line x1="290" y1="100" x2="330" y2="60" stroke="rgba(13,124,107,0.15)" stroke-width="1"/>
+      <line x1="130" y1="100" x2="90" y2="60" stroke="rgba(13,124,107,0.15)" stroke-width="1"/>
+      <line x1="290" y1="220" x2="330" y2="260" stroke="rgba(13,124,107,0.15)" stroke-width="1"/>
+      <line x1="130" y1="220" x2="90" y2="260" stroke="rgba(13,124,107,0.15)" stroke-width="1"/>
+    </svg>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
@@ -199,7 +230,9 @@
     </section>
 
     <!-- SECTION 4: PLATFORM CAPABILITIES FOR THIS TA -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Platform Capabilities</p>
@@ -482,7 +515,9 @@
     </section>
 
     <!-- SECTION 8: RELATED RESOURCES -->
-    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Resources</p>
@@ -545,8 +580,13 @@
     </section>
 
     <!-- SECTION 9: FINAL CTA -->
-    <section class="arca-cta-section" data-animate>
-      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
           See How ArcaScience Supports Rare Diseases
         </h2>
