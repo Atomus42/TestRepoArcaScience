@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcaScience Security Architecture: A Comprehensive Technical Overview | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2356A0 0%, #0A1628 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .page-header .classification {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px 14px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #2356A0;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #0A1628;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #3B7DD8;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .executive-summary {
+            background: #f0f4ff;
+            border-left: 4px solid #2356A0;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .executive-summary h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .callout {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .callout-title {
+            font-weight: 600;
+            color: #2356A0;
+            margin-bottom: 8px;
+        }
+
+        .callout-warning {
+            background: #fef3cd;
+            border: 1px solid #ffc107;
+        }
+
+        .callout-success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2356A0;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .metric-box {
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            margin: 10px 1%;
+            background: #f0f4ff;
+            border-radius: 8px;
+        }
+
+        .metric-box .number {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2356A0;
+        }
+
+        .metric-box .label {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .metrics-row {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .toc {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin: 30px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #2356A0;
+            margin-bottom: 15px;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 4px;
+            color: #475569;
+        }
+
+        .toc li a {
+            color: #475569;
+            text-decoration: none;
+        }
+
+        .toc li a:hover {
+            color: #2356A0;
+        }
+
+        .security-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-green { background: #d4edda; color: #155724; }
+        .badge-blue { background: #cce5ff; color: #004085; }
+        .badge-gray { background: #e2e8f0; color: #475569; }
+
+        .architecture-layer {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .architecture-layer .layer-label {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #ffffff;
+            padding: 0 8px;
+            font-size: 9pt;
+            font-weight: 600;
+            color: #2356A0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2356A0 0%, #0A1628 100%);
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .cta-section .cta-link {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .figure-caption {
+            font-size: 9pt;
+            color: #64748b;
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .metric-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .executive-summary { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .security-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3 { page-break-after: avoid; }
+            table, .callout, .metric-box, .architecture-layer { page-break-inside: avoid; }
+            .page-break { page-break-before: always; }
+            .toc { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <h1>ArcaScience Security Architecture: A Comprehensive Technical Overview</h1>
+    <div class="subtitle">Enterprise-grade security infrastructure for pharmaceutical benefit-risk analysis in regulated environments</div>
+    <div class="meta">Security Whitepaper | Version 3.2 | February 2026 | arcascience.ai</div>
+    <div class="classification">Confidential &mdash; Customer Distribution</div>
+</div>
+
+<div class="content">
+
+    <div class="executive-summary">
+        <h2>Executive Summary</h2>
+        <p>
+            ArcaScience operates at the intersection of artificial intelligence and pharmaceutical regulation, where the security and integrity of data are not merely business requirements but fundamental obligations to patient safety and regulatory compliance. Our platform processes highly sensitive clinical trial data, pharmacovigilance signals, and proprietary benefit-risk models for pharmaceutical companies, contract research organizations, and regulatory agencies worldwide.
+        </p>
+        <p>
+            This document provides a comprehensive technical overview of the security architecture underpinning the ArcaScience Benefit-Risk Analysis (BRA) platform. It addresses the multi-layered defense strategy, encryption standards, identity management, audit capabilities, infrastructure hardening, vulnerability management processes, incident response procedures, and business continuity planning that collectively ensure the confidentiality, integrity, and availability of our customers' data.
+        </p>
+        <p>
+            ArcaScience maintains <strong>SOC 2 Type II certification</strong>, aligns with <strong>ISO 27001</strong> controls, complies with <strong>FDA 21 CFR Part 11</strong> requirements for electronic records and signatures, and satisfies <strong>GDPR</strong>, <strong>HIPAA</strong>, and <strong>HDS (H&eacute;bergeur de Donn&eacute;es de Sant&eacute;)</strong> requirements for health data hosting in France and the European Union.
+        </p>
+    </div>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li>Introduction and Security Philosophy</li>
+            <li>Platform Security Architecture</li>
+            <li>Encryption Standards</li>
+            <li>Identity and Access Management</li>
+            <li>Audit Trail and Data Integrity</li>
+            <li>Infrastructure Security</li>
+            <li>Vulnerability Management</li>
+            <li>Incident Response</li>
+            <li>Business Continuity and Disaster Recovery</li>
+            <li>Compliance Framework Mapping</li>
+            <li>Appendices: Technical Specifications</li>
+        </ol>
+    </div>
+
+    <!-- Section 1 -->
+    <h2>1. Introduction and Security Philosophy</h2>
+
+    <p>
+        The pharmaceutical industry demands the highest standards of data security and regulatory compliance. Clinical trial data, adverse event reports, proprietary analytical models, and regulatory submission content represent some of the most sensitive information in any industry. A breach or loss of integrity in this data can have consequences ranging from competitive damage to direct harm to patient safety.
+    </p>
+    <p>
+        ArcaScience's security philosophy is built on four foundational principles:
+    </p>
+    <ul>
+        <li><strong>Defense in depth:</strong> No single security control is relied upon in isolation. Multiple overlapping layers of protection ensure that the compromise of any single control does not result in unauthorized access to sensitive data.</li>
+        <li><strong>Zero trust architecture:</strong> Every access request is authenticated, authorized, and encrypted, regardless of the requester's location within or outside the network perimeter. We assume breach and verify explicitly at every layer.</li>
+        <li><strong>Least privilege:</strong> Users, services, and system components are granted only the minimum permissions necessary to perform their intended functions. Permissions are reviewed quarterly and automatically revoked upon role changes.</li>
+        <li><strong>Security by design:</strong> Security is not an afterthought but an integral part of every stage of our software development lifecycle, from requirements gathering and architecture design through coding, testing, deployment, and operations.</li>
+    </ul>
+    <p>
+        These principles inform every architectural decision, operational process, and organizational practice described in this document. Our security program is overseen by a dedicated Chief Information Security Officer (CISO) who reports directly to the CEO, ensuring that security considerations receive appropriate executive attention and resource allocation.
+    </p>
+
+    <h3>1.1 Security Governance</h3>
+    <p>
+        ArcaScience maintains a formal Information Security Management System (ISMS) governed by a cross-functional Security Steering Committee that meets monthly. The committee includes representatives from Engineering, Product, Legal, Compliance, and executive leadership. Key responsibilities include:
+    </p>
+    <ul>
+        <li>Reviewing and approving information security policies and standards</li>
+        <li>Overseeing risk assessment and treatment activities</li>
+        <li>Reviewing security incident reports and trends</li>
+        <li>Allocating resources for security improvement initiatives</li>
+        <li>Ensuring alignment with regulatory requirements and customer expectations</li>
+    </ul>
+
+    <h3>1.2 Shared Responsibility Model</h3>
+    <p>
+        ArcaScience operates under a shared responsibility model that clearly delineates security obligations between ArcaScience as the platform provider and our customers as the data controllers. ArcaScience is responsible for securing the platform infrastructure, application code, data storage systems, and operational processes. Customers retain responsibility for managing their user accounts, configuring access policies within their tenant, classifying their data, and ensuring their use of the platform complies with applicable regulations.
+    </p>
+    <p>
+        This shared responsibility model is documented in our Master Service Agreement and reinforced through our customer onboarding process, which includes a dedicated security configuration review session.
+    </p>
+
+    <!-- Section 2 -->
+    <h2 class="page-break">2. Platform Security Architecture</h2>
+
+    <p>
+        The ArcaScience platform employs a multi-layered security architecture that protects data and operations at the network, application, and data layers. Each layer implements independent security controls that collectively provide comprehensive protection against a wide range of threat vectors.
+    </p>
+
+    <h3>2.1 Network Layer Security</h3>
+
+    <div class="architecture-layer">
+        <div class="layer-label">Network Layer</div>
+        <p>
+            The network architecture is designed around micro-segmented virtual private clouds (VPCs) with strict ingress and egress controls. All customer-facing traffic enters through a globally distributed content delivery network (CDN) and web application firewall (WAF) before reaching the application layer.
+        </p>
+    </div>
+
+    <p>
+        Key network security controls include:
+    </p>
+    <ul>
+        <li><strong>Network segmentation:</strong> Production, staging, and development environments are isolated in separate VPCs with no direct routing between them. Within the production environment, web-facing components, application logic, and data stores reside in distinct subnets with security group rules enforcing least-privilege communication paths.</li>
+        <li><strong>DDoS protection:</strong> Volumetric and application-layer DDoS protection is provided through our CDN partner (AWS CloudFront with AWS Shield Advanced), capable of absorbing attacks exceeding 1 Tbps. Rate limiting and bot detection at the edge prevent application-layer abuse.</li>
+        <li><strong>Web Application Firewall (WAF):</strong> Custom WAF rules inspect all incoming HTTP/HTTPS traffic for OWASP Top 10 attack patterns, including SQL injection, cross-site scripting (XSS), cross-site request forgery (CSRF), and server-side request forgery (SSRF). Rules are updated weekly based on threat intelligence feeds.</li>
+        <li><strong>Private connectivity:</strong> For enterprise customers requiring dedicated connectivity, ArcaScience supports AWS PrivateLink endpoints, eliminating the need for data to traverse the public internet.</li>
+        <li><strong>DNS security:</strong> DNSSEC is enabled on all ArcaScience domains. Internal service discovery uses private DNS zones inaccessible from outside the VPC.</li>
+    </ul>
+
+    <h3>2.2 Application Layer Security</h3>
+
+    <div class="architecture-layer">
+        <div class="layer-label">Application Layer</div>
+        <p>
+            The application layer implements defense-in-depth through input validation, output encoding, secure session management, API authentication, and real-time behavioral anomaly detection across all platform services.
+        </p>
+    </div>
+
+    <p>
+        The application layer is built on a containerized microservices architecture deployed on Kubernetes (Amazon EKS), with security controls embedded throughout:
+    </p>
+    <ul>
+        <li><strong>API security:</strong> All API endpoints require authentication via OAuth 2.0 bearer tokens with short-lived access tokens (15-minute expiry) and rotating refresh tokens. API requests are validated against OpenAPI specifications, and malformed requests are rejected before reaching business logic.</li>
+        <li><strong>Input validation:</strong> All user inputs are validated against strict schemas using server-side validation libraries. Parameterized queries prevent SQL injection, and output encoding prevents XSS. Content Security Policy (CSP) headers restrict script execution to trusted sources.</li>
+        <li><strong>Container security:</strong> Container images are built from minimal base images (distroless), scanned for vulnerabilities before deployment using Trivy and Snyk, and run with read-only filesystems and non-root users. Pod security policies enforce these constraints at the Kubernetes level.</li>
+        <li><strong>Service mesh:</strong> Inter-service communication is secured via mutual TLS (mTLS) using an Istio service mesh. Each microservice has a unique cryptographic identity, and all inter-service traffic is encrypted and authenticated.</li>
+        <li><strong>Secrets management:</strong> Application secrets, API keys, and database credentials are stored in AWS Secrets Manager with automatic rotation. Secrets are never stored in code repositories, configuration files, or environment variables accessible to application code.</li>
+    </ul>
+
+    <h3>2.3 Data Layer Security</h3>
+
+    <div class="architecture-layer">
+        <div class="layer-label">Data Layer</div>
+        <p>
+            The data layer implements tenant isolation, encryption at rest and in transit, fine-grained access controls, and continuous integrity verification to protect the most sensitive assets in the system: customer data and analytical models.
+        </p>
+    </div>
+
+    <p>
+        Data security controls span storage, processing, and transmission:
+    </p>
+    <ul>
+        <li><strong>Tenant isolation:</strong> Each customer's data is logically isolated using a combination of database-level row security policies and application-level tenant context enforcement. Enterprise customers may opt for physically isolated database instances for additional assurance.</li>
+        <li><strong>Data classification:</strong> All data elements are classified according to a four-tier sensitivity model (Public, Internal, Confidential, Restricted). Security controls are applied proportionally to classification level, with Restricted data (e.g., patient-level clinical data) receiving the highest level of protection.</li>
+        <li><strong>Backup encryption:</strong> Database backups are encrypted using separate encryption keys from production data, stored in a different AWS region, and retained according to customer-specified retention policies (default: 90 days).</li>
+        <li><strong>Data residency:</strong> Customers can select their preferred data residency region (EU-West, US-East, or AP-Southeast). Data never leaves the selected region unless explicitly authorized by the customer for specific operations such as disaster recovery failover.</li>
+    </ul>
+
+    <!-- Section 3 -->
+    <h2 class="page-break">3. Encryption Standards</h2>
+
+    <p>
+        Encryption is the cornerstone of data protection in the ArcaScience platform. We employ industry-leading encryption standards for data at rest, data in transit, and cryptographic key management, meeting or exceeding the requirements of all applicable regulatory frameworks.
+    </p>
+
+    <h3>3.1 Encryption at Rest</h3>
+    <p>
+        All data stored within the ArcaScience platform is encrypted at rest using AES-256-GCM (Advanced Encryption Standard with 256-bit keys in Galois/Counter Mode). AES-256 is approved by the U.S. National Institute of Standards and Technology (NIST) and is the standard required for protecting classified information at the Top Secret level.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Storage System</th>
+                <th>Encryption Algorithm</th>
+                <th>Key Length</th>
+                <th>Key Management</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Primary database (PostgreSQL)</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>AWS KMS (CMK per tenant)</td>
+            </tr>
+            <tr>
+                <td>Document storage (S3)</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>AWS KMS (SSE-KMS)</td>
+            </tr>
+            <tr>
+                <td>Search index (Elasticsearch)</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>AWS KMS</td>
+            </tr>
+            <tr>
+                <td>Cache layer (Redis)</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>AWS KMS</td>
+            </tr>
+            <tr>
+                <td>Backup storage</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>AWS KMS (separate key)</td>
+            </tr>
+            <tr>
+                <td>Log storage</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>AWS KMS</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        For customers requiring additional control over their encryption keys, ArcaScience supports Bring Your Own Key (BYOK) configurations where customers provide their own AWS KMS Customer Master Keys. In BYOK mode, ArcaScience cannot access customer data without the customer's key being available, providing an additional layer of customer control.
+    </p>
+
+    <h3>3.2 Encryption in Transit</h3>
+    <p>
+        All data transmitted to and from the ArcaScience platform is protected using TLS 1.3, the most current version of the Transport Layer Security protocol. TLS 1.2 is supported for backward compatibility with legacy clients but is scheduled for deprecation in Q4 2026. TLS 1.0 and 1.1 are not supported.
+    </p>
+    <p>
+        Our TLS configuration enforces the following cipher suites (in order of preference):
+    </p>
+    <ul>
+        <li><strong>TLS_AES_256_GCM_SHA384</strong> &mdash; AES-256 in GCM mode with SHA-384 for message authentication</li>
+        <li><strong>TLS_CHACHA20_POLY1305_SHA256</strong> &mdash; ChaCha20-Poly1305 for mobile clients where AES hardware acceleration is unavailable</li>
+        <li><strong>TLS_AES_128_GCM_SHA256</strong> &mdash; AES-128 in GCM mode (TLS 1.3 only)</li>
+    </ul>
+    <p>
+        Perfect Forward Secrecy (PFS) is enforced for all connections, ensuring that the compromise of long-term keys does not compromise past session keys. Certificate pinning is implemented in our mobile and desktop applications to prevent man-in-the-middle attacks via compromised certificate authorities.
+    </p>
+
+    <h3>3.3 Key Management</h3>
+    <p>
+        Cryptographic key management follows NIST SP 800-57 recommendations for key lifecycle management:
+    </p>
+    <ul>
+        <li><strong>Key generation:</strong> All encryption keys are generated using cryptographically secure random number generators (CSPRNG) within FIPS 140-2 Level 3 validated hardware security modules (HSMs) provided by AWS CloudHSM.</li>
+        <li><strong>Key rotation:</strong> Data encryption keys are automatically rotated every 90 days. Customer Master Keys (CMKs) are rotated annually. Key rotation is performed without service interruption and without requiring re-encryption of existing data (envelope encryption model).</li>
+        <li><strong>Key storage:</strong> Master keys never leave the HSM boundary in plaintext. Data encryption keys are stored encrypted (wrapped) by the master key. The key hierarchy follows an envelope encryption model with three levels: master keys, data encryption keys, and per-object keys.</li>
+        <li><strong>Key revocation:</strong> Compromised or retired keys can be revoked immediately. Revocation triggers automatic re-encryption of affected data with new keys. Key revocation events are logged and alerted to the security operations team.</li>
+        <li><strong>Key escrow:</strong> ArcaScience does not escrow customer encryption keys. In BYOK configurations, customers retain sole control of their master keys. Standard configurations use AWS KMS where key material is protected within FIPS 140-2 Level 3 HSMs.</li>
+    </ul>
+
+    <h3>3.4 Application-Level Encryption</h3>
+    <p>
+        Beyond infrastructure-level encryption, certain high-sensitivity data fields receive additional application-level encryption before storage. This includes:
+    </p>
+    <ul>
+        <li>Patient identifiers and demographic data in clinical datasets</li>
+        <li>User authentication credentials (bcrypt with cost factor 12)</li>
+        <li>API keys and integration tokens</li>
+        <li>Electronic signature data and certificates</li>
+    </ul>
+    <p>
+        Application-level encryption uses per-tenant keys derived from the customer's master key, ensuring that even database administrators with direct access to storage systems cannot read sensitive field values.
+    </p>
+
+    <!-- Section 4 -->
+    <h2 class="page-break">4. Identity and Access Management</h2>
+
+    <p>
+        Identity and Access Management (IAM) is the primary mechanism through which ArcaScience controls who can access the platform, what actions they can perform, and what data they can view. Our IAM implementation is designed to meet the stringent requirements of FDA 21 CFR Part 11, which mandates that electronic records and electronic signatures are trustworthy, reliable, and equivalent to paper records and handwritten signatures.
+    </p>
+
+    <h3>4.1 Role-Based Access Control (RBAC)</h3>
+    <p>
+        ArcaScience implements a hierarchical RBAC model with five standard roles, each with progressively increasing permissions. Customers can also define custom roles with granular permission assignments.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Description</th>
+                <th>Key Permissions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Viewer</td>
+                <td>Read-only access to assigned projects</td>
+                <td>View dashboards, reports, and BRA outputs</td>
+            </tr>
+            <tr>
+                <td>Analyst</td>
+                <td>Can create and modify analyses within assigned projects</td>
+                <td>Viewer + create/edit BRA models, import data, run simulations</td>
+            </tr>
+            <tr>
+                <td>Reviewer</td>
+                <td>Can review and approve analyses (segregation of duties)</td>
+                <td>Analyst + approve/reject analyses, sign-off on reports</td>
+            </tr>
+            <tr>
+                <td>Project Admin</td>
+                <td>Manages project-level settings and team membership</td>
+                <td>Reviewer + manage project users, configure workflows</td>
+            </tr>
+            <tr>
+                <td>Tenant Admin</td>
+                <td>Full administrative control over the customer's tenant</td>
+                <td>All permissions + SSO configuration, user management, audit log access</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        The RBAC system enforces segregation of duties for regulated workflows. For example, the user who creates a benefit-risk analysis cannot be the same user who approves it for regulatory submission. This segregation is enforced at the system level and cannot be overridden, even by Tenant Administrators.
+    </p>
+
+    <h3>4.2 Multi-Factor Authentication (MFA)</h3>
+    <p>
+        Multi-factor authentication is mandatory for all user accounts. ArcaScience supports the following MFA methods:
+    </p>
+    <ul>
+        <li><strong>TOTP (Time-based One-Time Password):</strong> Compatible with authenticator apps such as Google Authenticator, Microsoft Authenticator, and Authy. Uses HMAC-SHA1 with 6-digit codes and 30-second validity windows.</li>
+        <li><strong>WebAuthn/FIDO2:</strong> Hardware security key support (YubiKey, Titan, etc.) providing phishing-resistant authentication. This is the recommended MFA method for all users.</li>
+        <li><strong>SMS OTP:</strong> Available as a fallback method but not recommended for high-security accounts due to the known vulnerabilities of SMS-based authentication (SIM swapping, SS7 attacks). Customers can disable SMS MFA at the tenant level.</li>
+    </ul>
+    <p>
+        MFA enrollment is required during the user's first login. Recovery codes are generated during enrollment and must be stored securely by the user. Account recovery without MFA requires identity verification by the Tenant Administrator and generates an audit log entry.
+    </p>
+
+    <h3>4.3 Single Sign-On (SSO) and SAML Integration</h3>
+    <p>
+        Enterprise customers can integrate ArcaScience with their existing identity providers using SAML 2.0 or OpenID Connect (OIDC). Supported identity providers include:
+    </p>
+    <ul>
+        <li>Microsoft Entra ID (formerly Azure Active Directory)</li>
+        <li>Okta</li>
+        <li>Ping Identity</li>
+        <li>OneLogin</li>
+        <li>Google Workspace</li>
+        <li>Any SAML 2.0 or OIDC-compliant identity provider</li>
+    </ul>
+    <p>
+        When SSO is enabled, ArcaScience acts as a Service Provider (SP), delegating authentication entirely to the customer's Identity Provider (IdP). User provisioning and deprovisioning can be automated via SCIM 2.0, ensuring that employee lifecycle changes in the customer's HR system are reflected in ArcaScience access within minutes.
+    </p>
+    <p>
+        SSO sessions honor the IdP's session policies. When a user's session expires or is revoked at the IdP, their ArcaScience session is terminated within 60 seconds through backchannel logout notifications.
+    </p>
+
+    <h3>4.4 Session Management</h3>
+    <p>
+        User sessions are managed with security-hardened parameters designed to minimize the risk of session hijacking or unauthorized access:
+    </p>
+    <ul>
+        <li><strong>Session timeout:</strong> Idle sessions expire after 30 minutes of inactivity (configurable by Tenant Administrators, minimum 15 minutes). Absolute session lifetime is 12 hours, after which re-authentication is required regardless of activity.</li>
+        <li><strong>Session binding:</strong> Sessions are bound to the user's IP address and User-Agent string. Significant changes in either trigger re-authentication.</li>
+        <li><strong>Concurrent session limits:</strong> By default, users are limited to 3 concurrent sessions. Tenant Administrators can adjust this limit or restrict to a single session.</li>
+        <li><strong>Session tokens:</strong> Cryptographically random, 256-bit session tokens are transmitted exclusively over HTTPS in secure, HttpOnly, SameSite cookies. Tokens are rotated after each authentication event and at 15-minute intervals during active use.</li>
+    </ul>
+
+    <!-- Section 5 -->
+    <h2 class="page-break">5. Audit Trail and Data Integrity</h2>
+
+    <p>
+        In regulated pharmaceutical environments, the ability to demonstrate that data has not been altered, deleted, or fabricated is not optional&mdash;it is a legal requirement. ArcaScience's audit trail system is designed to satisfy FDA 21 CFR Part 11, EU Annex 11, and ICH E6(R2) Good Clinical Practice requirements for data integrity.
+    </p>
+
+    <h3>5.1 ALCOA+ Compliance</h3>
+    <p>
+        All audit records within the ArcaScience platform conform to the ALCOA+ principles, the gold standard for data integrity in pharmaceutical and clinical environments:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Principle</th>
+                <th>Definition</th>
+                <th>ArcaScience Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>A</strong>ttributable</td>
+                <td>Data is attributed to the person who generated it</td>
+                <td>Every action is linked to authenticated user identity with timestamp</td>
+            </tr>
+            <tr>
+                <td><strong>L</strong>egible</td>
+                <td>Data is readable and permanent</td>
+                <td>Structured JSON format with human-readable descriptions; immutable storage</td>
+            </tr>
+            <tr>
+                <td><strong>C</strong>ontemporaneous</td>
+                <td>Data is recorded at the time of activity</td>
+                <td>Events recorded synchronously with sub-millisecond timestamps (NTP-synchronized)</td>
+            </tr>
+            <tr>
+                <td><strong>O</strong>riginal</td>
+                <td>First recording of data is preserved</td>
+                <td>Original values preserved in change records; no overwrite capability</td>
+            </tr>
+            <tr>
+                <td><strong>A</strong>ccurate</td>
+                <td>Data is correct and truthful</td>
+                <td>Server-side timestamp generation; validated data types; checksum verification</td>
+            </tr>
+            <tr>
+                <td><strong>C</strong>omplete</td>
+                <td>All data is present</td>
+                <td>No audit records can be deleted; gap detection alerts on missing sequence numbers</td>
+            </tr>
+            <tr>
+                <td><strong>C</strong>onsistent</td>
+                <td>Data follows logical sequence</td>
+                <td>Monotonic sequence numbers; cross-reference validation between related events</td>
+            </tr>
+            <tr>
+                <td><strong>E</strong>nduring</td>
+                <td>Data is available throughout retention period</td>
+                <td>Minimum 15-year retention; geo-redundant storage; format migration guarantees</td>
+            </tr>
+            <tr>
+                <td><strong>A</strong>vailable</td>
+                <td>Data is accessible when needed</td>
+                <td>Real-time query API; export in CSV, JSON, and PDF formats; sub-second search</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>5.2 Immutable Audit Logs</h3>
+    <p>
+        Audit logs in the ArcaScience platform are stored in an append-only data store that prevents modification or deletion of existing records, even by system administrators. The immutability of audit logs is guaranteed through multiple mechanisms:
+    </p>
+    <ul>
+        <li><strong>Append-only storage:</strong> Audit logs are written to Amazon S3 with Object Lock enabled in Compliance mode. Once written, log objects cannot be deleted or overwritten until the retention period expires, even by the AWS root account.</li>
+        <li><strong>Hash chaining:</strong> Each audit record includes a SHA-256 hash of the previous record, creating a blockchain-like chain of integrity. Any tampering with a historical record would break the hash chain, which is verified continuously by an independent monitoring process.</li>
+        <li><strong>Independent timestamp authority:</strong> Audit record timestamps are countersigned by an RFC 3161-compliant timestamping authority, providing non-repudiable proof of when each record was created.</li>
+        <li><strong>Segregation of duties:</strong> The systems that generate audit logs are architecturally separated from the systems that store and query them. No single role or credential can both perform a logged action and modify the corresponding log entry.</li>
+    </ul>
+
+    <h3>5.3 Audit Scope</h3>
+    <p>
+        The following categories of events are captured in the audit trail:
+    </p>
+    <ul>
+        <li><strong>Authentication events:</strong> Login success and failure, MFA challenges, SSO assertions, session creation and termination, password changes</li>
+        <li><strong>Authorization events:</strong> Role assignments, permission changes, access denied events, privilege escalation attempts</li>
+        <li><strong>Data events:</strong> Record creation, modification, and deletion (including before and after values); data imports and exports; report generation</li>
+        <li><strong>Workflow events:</strong> BRA model submissions, approvals, rejections, electronic signatures, version promotions</li>
+        <li><strong>Configuration events:</strong> System setting changes, integration configuration, user management actions</li>
+        <li><strong>Security events:</strong> Encryption key operations, vulnerability scan results, security alert triggers</li>
+    </ul>
+
+    <h3>5.4 Electronic Signatures</h3>
+    <p>
+        ArcaScience's electronic signature implementation satisfies FDA 21 CFR Part 11 requirements:
+    </p>
+    <ul>
+        <li>Electronic signatures include the signer's full name, the date and time of signing, and the meaning of the signature (e.g., "Approved," "Reviewed," "Authored")</li>
+        <li>Signatures are linked to their respective electronic records such that they cannot be excised, copied, or otherwise transferred to falsify another record</li>
+        <li>Signing requires re-authentication (username and password plus MFA) at the time of signature</li>
+        <li>Signed records are immediately versioned and locked against further modification</li>
+    </ul>
+
+    <!-- Section 6 -->
+    <h2 class="page-break">6. Infrastructure Security</h2>
+
+    <p>
+        ArcaScience's infrastructure is hosted on Amazon Web Services (AWS), leveraging AWS's extensive physical security, network security, and compliance certifications. Our infrastructure architecture is designed for security, availability, and performance across multiple geographic regions.
+    </p>
+
+    <h3>6.1 Cloud Infrastructure (SOC 2 Certified)</h3>
+    <p>
+        ArcaScience's production infrastructure runs exclusively on AWS, which maintains SOC 1, SOC 2, and SOC 3 certifications, ISO 27001, ISO 27017, ISO 27018, and ISO 27701 certifications, and numerous industry-specific compliance attestations including HIPAA, FedRAMP, and PCI DSS.
+    </p>
+    <p>
+        Our infrastructure is deployed across multiple Availability Zones (AZs) within each supported region, providing resilience against individual data center failures. Key infrastructure components include:
+    </p>
+    <ul>
+        <li><strong>Compute:</strong> Amazon EKS (Kubernetes) running on EC2 instances in private subnets. Worker nodes use Amazon Linux 2 with CIS Benchmark Level 2 hardening. Node images are rebuilt weekly from a hardened golden AMI.</li>
+        <li><strong>Database:</strong> Amazon RDS for PostgreSQL with Multi-AZ deployment, automated backups, and point-in-time recovery. Read replicas provide read scaling and can be promoted in the event of primary failure.</li>
+        <li><strong>Storage:</strong> Amazon S3 with server-side encryption, versioning, and cross-region replication for critical data. S3 bucket policies enforce encryption-in-transit and block public access.</li>
+        <li><strong>Networking:</strong> AWS VPC with private subnets, NAT gateways for outbound internet access, and VPC endpoints for AWS service access without internet traversal. Network ACLs and security groups implement defense in depth.</li>
+        <li><strong>Load balancing:</strong> AWS Application Load Balancer (ALB) with AWS WAF integration, TLS termination, and health-check-based routing. Geographic routing directs users to the nearest regional deployment.</li>
+    </ul>
+
+    <h3>6.2 DDoS Protection</h3>
+    <p>
+        Distributed Denial of Service (DDoS) protection is implemented at multiple layers:
+    </p>
+    <ul>
+        <li><strong>Layer 3/4:</strong> AWS Shield Advanced provides always-on network flow monitoring and automatic inline attack mitigation for volumetric, state-exhaustion, and reflection attacks. Shield Advanced includes 24/7 access to the AWS DDoS Response Team (DRT).</li>
+        <li><strong>Layer 7:</strong> AWS WAF with rate-based rules automatically blocks IP addresses exceeding defined request rate thresholds. Bot detection and CAPTCHA challenges protect against application-layer attacks.</li>
+        <li><strong>CDN absorption:</strong> CloudFront's globally distributed edge network absorbs attack traffic at points of presence closest to the attack source, preventing it from reaching origin infrastructure.</li>
+    </ul>
+
+    <h3>6.3 Server Hardening</h3>
+    <p>
+        All server instances follow a rigorous hardening standard based on the CIS Benchmarks:
+    </p>
+    <ul>
+        <li>Unnecessary services, packages, and ports are disabled or removed</li>
+        <li>SSH access requires key-based authentication; password authentication is disabled</li>
+        <li>All administrative access requires going through a bastion host with session recording</li>
+        <li>File integrity monitoring (FIM) detects unauthorized changes to critical system files</li>
+        <li>SELinux is enabled in enforcing mode on all Linux instances</li>
+        <li>System clocks are synchronized to AWS NTP servers with monitoring for drift</li>
+    </ul>
+
+    <div class="callout">
+        <div class="callout-title">Infrastructure as Code</div>
+        <p>
+            All infrastructure is defined and managed through Infrastructure as Code (IaC) using Terraform, with state stored in encrypted S3 buckets. Infrastructure changes follow the same code review, testing, and approval processes as application code changes. Drift detection runs hourly to identify any configuration changes made outside the IaC pipeline.
+        </p>
+    </div>
+
+    <!-- Section 7 -->
+    <h2 class="page-break">7. Vulnerability Management</h2>
+
+    <p>
+        ArcaScience maintains a comprehensive vulnerability management program that identifies, prioritizes, and remediates security vulnerabilities across all layers of the technology stack. The program combines automated scanning, manual penetration testing, and community-driven discovery through our responsible disclosure program.
+    </p>
+
+    <h3>7.1 Penetration Testing</h3>
+    <p>
+        Independent penetration testing is conducted by qualified third-party firms on the following schedule:
+    </p>
+    <ul>
+        <li><strong>Annual comprehensive assessment:</strong> A full-scope penetration test covering network, application, and social engineering vectors is conducted annually by a CREST-accredited firm. The scope includes black-box, grey-box, and white-box testing methodologies.</li>
+        <li><strong>Quarterly targeted assessments:</strong> Focused penetration tests target specific areas of the platform that have undergone significant changes or that address specific threat scenarios relevant to the pharmaceutical industry (e.g., insider threat, supply chain compromise).</li>
+        <li><strong>Pre-release testing:</strong> Major platform releases undergo security-focused testing before deployment, including API security testing, authentication bypass attempts, and privilege escalation testing.</li>
+    </ul>
+    <p>
+        Penetration test findings are classified using the CVSS v3.1 scoring system, and remediation timelines are based on severity:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Severity (CVSS)</th>
+                <th>Remediation SLA</th>
+                <th>Escalation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Critical (9.0-10.0)</td>
+                <td>24 hours</td>
+                <td>Immediate CISO and CEO notification</td>
+            </tr>
+            <tr>
+                <td>High (7.0-8.9)</td>
+                <td>72 hours</td>
+                <td>CISO notification within 4 hours</td>
+            </tr>
+            <tr>
+                <td>Medium (4.0-6.9)</td>
+                <td>30 days</td>
+                <td>Included in next sprint planning</td>
+            </tr>
+            <tr>
+                <td>Low (0.1-3.9)</td>
+                <td>90 days</td>
+                <td>Tracked in vulnerability backlog</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>7.2 Bug Bounty Program</h3>
+    <p>
+        ArcaScience operates a private bug bounty program through HackerOne, providing a structured channel for independent security researchers to report vulnerabilities. The program offers rewards ranging from $500 for low-severity findings to $15,000 for critical vulnerabilities, with bonus payments for exceptional reports that include proof-of-concept exploits and remediation recommendations.
+    </p>
+    <p>
+        To date, the bug bounty program has received over 340 submissions, with 47 valid vulnerabilities identified and remediated. The mean time to first response is under 4 hours, and the mean time to remediation for accepted findings is 6.2 days.
+    </p>
+
+    <h3>7.3 Static and Dynamic Application Security Testing</h3>
+    <p>
+        Automated security testing is integrated throughout the software development lifecycle:
+    </p>
+    <ul>
+        <li><strong>SAST (Static Application Security Testing):</strong> Every code commit triggers static analysis using Semgrep and CodeQL, checking for security anti-patterns, hardcoded secrets, injection vulnerabilities, and unsafe deserialization. Pull requests with high-severity SAST findings cannot be merged.</li>
+        <li><strong>DAST (Dynamic Application Security Testing):</strong> Automated DAST scans run against the staging environment nightly using OWASP ZAP, testing for runtime vulnerabilities including authentication flaws, session management issues, and injection vulnerabilities in API endpoints.</li>
+        <li><strong>SCA (Software Composition Analysis):</strong> Dependency scanning identifies known vulnerabilities in third-party libraries and open-source components. Dependabot and Snyk automatically create pull requests for vulnerable dependency updates. Licenses of all dependencies are verified against an approved list.</li>
+        <li><strong>IaC scanning:</strong> Terraform and Kubernetes manifests are scanned by Checkov and kube-bench for misconfigurations, overly permissive policies, and compliance violations before deployment.</li>
+    </ul>
+
+    <h3>7.4 Patch Management</h3>
+    <p>
+        Operating system and infrastructure patches are applied according to the following schedule:
+    </p>
+    <ul>
+        <li><strong>Critical security patches:</strong> Applied within 24 hours of vendor release, following emergency change management procedures</li>
+        <li><strong>High-severity patches:</strong> Applied within 7 days, following standard change management procedures</li>
+        <li><strong>Routine patches:</strong> Applied during monthly maintenance windows, typically the second Saturday of each month</li>
+        <li><strong>Application dependencies:</strong> Updated within 48 hours for critical vulnerabilities, weekly for non-critical updates</li>
+    </ul>
+
+    <!-- Section 8 -->
+    <h2 class="page-break">8. Incident Response</h2>
+
+    <p>
+        Despite comprehensive preventive controls, ArcaScience recognizes that no system is immune to security incidents. Our incident response program ensures rapid detection, containment, eradication, and recovery from security events, with clear communication protocols to keep stakeholders informed.
+    </p>
+
+    <h3>8.1 Detection</h3>
+    <p>
+        ArcaScience employs multiple detection mechanisms operating continuously:
+    </p>
+    <ul>
+        <li><strong>Security Information and Event Management (SIEM):</strong> Centralized log aggregation and correlation using a cloud-native SIEM solution. Over 400 detection rules monitor for indicators of compromise, anomalous behavior, and policy violations across all platform components.</li>
+        <li><strong>Endpoint Detection and Response (EDR):</strong> All server instances and developer workstations run EDR agents that provide real-time threat detection, behavioral analysis, and automated response capabilities.</li>
+        <li><strong>Network threat detection:</strong> VPC Flow Logs, DNS query logs, and WAF logs are analyzed in real-time for indicators of network-based attacks, data exfiltration, and command-and-control communications.</li>
+        <li><strong>User behavior analytics (UBA):</strong> Machine learning models baseline normal user behavior and alert on anomalies such as unusual login locations, abnormal data access patterns, or suspicious privilege usage.</li>
+    </ul>
+
+    <h3>8.2 Containment</h3>
+    <p>
+        Upon detection of a confirmed security incident, the incident response team executes containment procedures appropriate to the incident type:
+    </p>
+    <ul>
+        <li><strong>Account compromise:</strong> Immediate session termination, credential rotation, and temporary account lockout. Affected user is notified and required to complete identity verification before access is restored.</li>
+        <li><strong>Malware detection:</strong> Affected systems are isolated from the network. Forensic images are captured before remediation. Lateral movement indicators are investigated across the environment.</li>
+        <li><strong>Data exfiltration:</strong> Egress traffic is blocked or filtered to prevent further data loss. Affected data is identified through DLP logs and access records. Legal and compliance teams are notified for regulatory impact assessment.</li>
+        <li><strong>Service compromise:</strong> Affected services are taken offline or isolated. Traffic is rerouted to unaffected instances. Infrastructure is rebuilt from known-good configurations.</li>
+    </ul>
+
+    <h3>8.3 Recovery</h3>
+    <p>
+        Recovery procedures are designed to restore normal operations while preserving forensic evidence:
+    </p>
+    <ul>
+        <li>Systems are rebuilt from verified clean images rather than cleaned in place</li>
+        <li>Credentials and keys that may have been exposed are rotated</li>
+        <li>Enhanced monitoring is enabled for a minimum of 30 days post-incident</li>
+        <li>Recovery is validated through automated tests and manual verification</li>
+    </ul>
+
+    <h3>8.4 Notification SLAs</h3>
+    <p>
+        ArcaScience commits to the following notification timelines for confirmed security incidents affecting customer data:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Incident Severity</th>
+                <th>Customer Notification SLA</th>
+                <th>Regulatory Notification</th>
+                <th>Update Frequency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Critical (confirmed data breach)</td>
+                <td>Within 24 hours</td>
+                <td>Within 72 hours (GDPR)</td>
+                <td>Every 4 hours until resolved</td>
+            </tr>
+            <tr>
+                <td>High (potential data exposure)</td>
+                <td>Within 48 hours</td>
+                <td>As required by assessment</td>
+                <td>Every 8 hours until resolved</td>
+            </tr>
+            <tr>
+                <td>Medium (security event, no data impact)</td>
+                <td>Within 72 hours</td>
+                <td>Not typically required</td>
+                <td>Daily until resolved</td>
+            </tr>
+            <tr>
+                <td>Low (minor policy violation)</td>
+                <td>Monthly security report</td>
+                <td>Not required</td>
+                <td>Monthly summary</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <div class="callout-title">Post-Incident Review</div>
+        <p>
+            Every security incident, regardless of severity, is followed by a blameless post-incident review within 5 business days. The review produces a written report documenting the incident timeline, root cause analysis, impact assessment, remediation actions taken, and preventive measures to avoid recurrence. Lessons learned are incorporated into the security program and shared with relevant teams.
+        </p>
+    </div>
+
+    <!-- Section 9 -->
+    <h2 class="page-break">9. Business Continuity and Disaster Recovery</h2>
+
+    <p>
+        ArcaScience's Business Continuity and Disaster Recovery (BCDR) program ensures that critical platform services can be maintained or rapidly restored in the event of infrastructure failures, natural disasters, or other disruptive events. The program is designed to meet the stringent availability requirements of pharmaceutical organizations that depend on continuous access to benefit-risk data and analyses.
+    </p>
+
+    <h3>9.1 Recovery Objectives</h3>
+
+    <div class="metrics-row">
+        <div class="metric-box">
+            <div class="number">4h</div>
+            <div class="label">Recovery Time<br>Objective (RTO)</div>
+        </div>
+        <div class="metric-box">
+            <div class="number">1h</div>
+            <div class="label">Recovery Point<br>Objective (RPO)</div>
+        </div>
+        <div class="metric-box">
+            <div class="number">99.95%</div>
+            <div class="label">Availability<br>SLA Target</div>
+        </div>
+    </div>
+
+    <ul>
+        <li><strong>Recovery Time Objective (RTO) &mdash; 4 hours:</strong> In the event of a complete regional failure, full platform functionality will be restored within 4 hours. Partial service (read-only access to existing data and reports) is typically restored within 1 hour through automatic failover to the disaster recovery site.</li>
+        <li><strong>Recovery Point Objective (RPO) &mdash; 1 hour:</strong> Maximum data loss in a disaster scenario is limited to 1 hour of transactions. This is achieved through continuous database replication to the DR site (synchronous within-region, asynchronous cross-region with lag monitoring) and hourly incremental backups of all persistent storage.</li>
+    </ul>
+
+    <h3>9.2 Geographic Redundancy</h3>
+    <p>
+        ArcaScience maintains active-passive disaster recovery configurations for each supported data residency region:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Primary Region</th>
+                <th>DR Region</th>
+                <th>Replication Mode</th>
+                <th>Failover Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EU-West (Ireland)</td>
+                <td>EU-Central (Frankfurt)</td>
+                <td>Async (&lt;30s lag)</td>
+                <td>Automated with manual approval</td>
+            </tr>
+            <tr>
+                <td>US-East (Virginia)</td>
+                <td>US-West (Oregon)</td>
+                <td>Async (&lt;30s lag)</td>
+                <td>Automated with manual approval</td>
+            </tr>
+            <tr>
+                <td>AP-Southeast (Singapore)</td>
+                <td>AP-Northeast (Tokyo)</td>
+                <td>Async (&lt;60s lag)</td>
+                <td>Manual (regulatory constraint)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Within each primary region, the platform is deployed across three Availability Zones, providing automatic failover for individual data center failures without service interruption. Cross-region failover is triggered when a regional outage persists beyond 30 minutes or when monitoring detects unrecoverable data corruption.
+    </p>
+
+    <h3>9.3 Backup Strategy</h3>
+    <p>
+        ArcaScience implements a comprehensive backup strategy with multiple tiers:
+    </p>
+    <ul>
+        <li><strong>Continuous replication:</strong> Database write-ahead logs are continuously shipped to the DR site, enabling point-in-time recovery to any moment within the retention window.</li>
+        <li><strong>Hourly incremental backups:</strong> All database and storage systems are backed up incrementally every hour. Backup integrity is verified through automated restore testing.</li>
+        <li><strong>Daily full backups:</strong> Complete system backups are performed daily during low-activity windows. Each backup is verified through automated checksum validation and sample data verification.</li>
+        <li><strong>Monthly archive backups:</strong> Monthly backup snapshots are retained for the full retention period (default: 7 years for regulated data) in a separate AWS account with independent access controls.</li>
+    </ul>
+
+    <h3>9.4 DR Testing</h3>
+    <p>
+        Disaster recovery capabilities are validated through regular testing:
+    </p>
+    <ul>
+        <li><strong>Quarterly tabletop exercises:</strong> The incident response and operations teams walk through simulated disaster scenarios to validate procedures and identify gaps.</li>
+        <li><strong>Semi-annual failover tests:</strong> Every six months, a controlled failover to the DR site is executed during a maintenance window. The DR site operates as the primary site for a minimum of 4 hours to validate full operational capability.</li>
+        <li><strong>Annual full-scale exercise:</strong> An annual exercise simulates a complete regional outage with no advance preparation for the operations team, testing both technical recovery capabilities and organizational response procedures.</li>
+        <li><strong>Monthly backup restore tests:</strong> Random backup sets are restored to isolated environments and validated for data integrity and completeness.</li>
+    </ul>
+
+    <!-- Section 10 -->
+    <h2 class="page-break">10. Compliance Framework Mapping</h2>
+
+    <p>
+        ArcaScience's security program is designed to satisfy the requirements of multiple regulatory frameworks applicable to pharmaceutical companies operating globally. The following table maps our key security controls to the most relevant compliance frameworks.
+    </p>
+
+    <h3>10.1 FDA 21 CFR Part 11</h3>
+    <p>
+        FDA 21 CFR Part 11 establishes requirements for electronic records and electronic signatures in FDA-regulated industries. ArcaScience's compliance with Part 11 is critical for customers who use the platform to generate and manage records that may be submitted to the FDA.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Part 11 Requirement</th>
+                <th>ArcaScience Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>System validation (11.10(a))</td>
+                <td>IQ/OQ/PQ documentation; automated regression testing; change control procedures</td>
+            </tr>
+            <tr>
+                <td>Record generation and retention (11.10(b))</td>
+                <td>Immutable audit trail; 15-year retention; human-readable export</td>
+            </tr>
+            <tr>
+                <td>Record protection (11.10(c))</td>
+                <td>AES-256 encryption; RBAC; backup and recovery procedures</td>
+            </tr>
+            <tr>
+                <td>Limited system access (11.10(d))</td>
+                <td>RBAC with least privilege; MFA; session management controls</td>
+            </tr>
+            <tr>
+                <td>Audit trail (11.10(e))</td>
+                <td>ALCOA+ compliant audit trail; hash-chained immutable logs</td>
+            </tr>
+            <tr>
+                <td>Operational system checks (11.10(f))</td>
+                <td>Input validation; data type enforcement; sequence verification</td>
+            </tr>
+            <tr>
+                <td>Authority checks (11.10(g))</td>
+                <td>Permission verification before every operation; segregation of duties</td>
+            </tr>
+            <tr>
+                <td>Device checks (11.10(h))</td>
+                <td>Session binding; device fingerprinting; anomaly detection</td>
+            </tr>
+            <tr>
+                <td>Personnel training (11.10(i))</td>
+                <td>Role-specific onboarding; annual security training; compliance attestation</td>
+            </tr>
+            <tr>
+                <td>Electronic signatures (11.50-11.300)</td>
+                <td>Unique user ID; re-authentication at signing; signature-record binding</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>10.2 GDPR</h3>
+    <p>
+        The General Data Protection Regulation (GDPR) applies to the processing of personal data of EU/EEA residents. ArcaScience serves as a Data Processor on behalf of our customers (Data Controllers) and implements the following GDPR-relevant controls:
+    </p>
+    <ul>
+        <li><strong>Lawful basis:</strong> Data Processing Agreements with all customers establish the lawful basis and instructions for processing</li>
+        <li><strong>Data minimization:</strong> Platform features support pseudonymization and anonymization of personal data; customers can configure data retention policies</li>
+        <li><strong>Data subject rights:</strong> API and UI tools support data access, rectification, erasure, portability, and restriction of processing requests</li>
+        <li><strong>Data protection by design:</strong> Privacy impact assessments are conducted for new features; privacy-enhancing technologies are built into the platform</li>
+        <li><strong>International transfers:</strong> Standard Contractual Clauses (SCCs) are incorporated into all DPAs; EU data residency option ensures data remains within the EU</li>
+        <li><strong>Breach notification:</strong> 72-hour notification SLA to Data Controllers for confirmed personal data breaches</li>
+    </ul>
+
+    <h3>10.3 ISO 27001</h3>
+    <p>
+        ArcaScience's Information Security Management System (ISMS) is aligned with ISO/IEC 27001:2022 controls. While ArcaScience is pursuing formal ISO 27001 certification (expected Q3 2026), our current control implementation covers all 93 controls in Annex A, organized across the four themes: Organizational, People, Physical, and Technological.
+    </p>
+
+    <h3>10.4 HIPAA</h3>
+    <p>
+        For U.S. customers who process Protected Health Information (PHI) on the ArcaScience platform, we execute Business Associate Agreements (BAAs) and implement the HIPAA Security Rule's administrative, physical, and technical safeguards:
+    </p>
+    <ul>
+        <li>Access controls with unique user identification and automatic logoff</li>
+        <li>Audit controls for recording and examining system activity</li>
+        <li>Integrity controls to protect electronic PHI from improper alteration</li>
+        <li>Transmission security with encryption for all PHI in transit</li>
+        <li>Workforce training and security awareness programs</li>
+    </ul>
+
+    <h3>10.5 HDS (H&eacute;bergeur de Donn&eacute;es de Sant&eacute;)</h3>
+    <p>
+        ArcaScience's EU infrastructure deployment satisfies the requirements of the French HDS certification for hosting health data. Our HDS compliance is inherited from our hosting on AWS's HDS-certified Paris (eu-west-3) region, supplemented by ArcaScience's application-level security controls and data governance procedures.
+    </p>
+
+    <h3>10.6 Cross-Framework Control Mapping</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Control Domain</th>
+                <th>21 CFR Part 11</th>
+                <th>GDPR</th>
+                <th>ISO 27001</th>
+                <th>HIPAA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Access Control</td>
+                <td>11.10(d),(g)</td>
+                <td>Art. 25, 32</td>
+                <td>A.8.2-A.8.5</td>
+                <td>164.312(a)</td>
+            </tr>
+            <tr>
+                <td>Audit Trail</td>
+                <td>11.10(e)</td>
+                <td>Art. 30</td>
+                <td>A.8.15</td>
+                <td>164.312(b)</td>
+            </tr>
+            <tr>
+                <td>Encryption</td>
+                <td>11.10(c)</td>
+                <td>Art. 32</td>
+                <td>A.8.24</td>
+                <td>164.312(a)(2)(iv)</td>
+            </tr>
+            <tr>
+                <td>Incident Response</td>
+                <td>&mdash;</td>
+                <td>Art. 33, 34</td>
+                <td>A.5.24-A.5.28</td>
+                <td>164.308(a)(6)</td>
+            </tr>
+            <tr>
+                <td>Backup/Recovery</td>
+                <td>11.10(c)</td>
+                <td>Art. 32</td>
+                <td>A.8.13-A.8.14</td>
+                <td>164.308(a)(7)</td>
+            </tr>
+            <tr>
+                <td>Risk Assessment</td>
+                <td>11.10(a)</td>
+                <td>Art. 35</td>
+                <td>A.5.1</td>
+                <td>164.308(a)(1)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 11 -->
+    <h2 class="page-break">11. Appendices: Technical Specifications</h2>
+
+    <h3>Appendix A: Cryptographic Standards Summary</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Use Case</th>
+                <th>Algorithm</th>
+                <th>Key Length</th>
+                <th>Standard</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data at rest</td>
+                <td>AES-256-GCM</td>
+                <td>256-bit</td>
+                <td>NIST SP 800-38D</td>
+            </tr>
+            <tr>
+                <td>Data in transit</td>
+                <td>TLS 1.3</td>
+                <td>256-bit (AES) / 253-bit (X25519)</td>
+                <td>RFC 8446</td>
+            </tr>
+            <tr>
+                <td>Key exchange</td>
+                <td>X25519 / ECDHE P-256</td>
+                <td>253-bit / 256-bit</td>
+                <td>RFC 7748 / NIST SP 800-56A</td>
+            </tr>
+            <tr>
+                <td>Digital signatures</td>
+                <td>Ed25519 / ECDSA P-256</td>
+                <td>256-bit</td>
+                <td>RFC 8032 / FIPS 186-4</td>
+            </tr>
+            <tr>
+                <td>Password hashing</td>
+                <td>bcrypt</td>
+                <td>Cost factor 12</td>
+                <td>OWASP recommendation</td>
+            </tr>
+            <tr>
+                <td>Audit log integrity</td>
+                <td>SHA-256</td>
+                <td>256-bit</td>
+                <td>FIPS 180-4</td>
+            </tr>
+            <tr>
+                <td>Random number generation</td>
+                <td>CSPRNG (DRBG)</td>
+                <td>256-bit seed</td>
+                <td>NIST SP 800-90A</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Appendix B: Network Architecture Summary</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Component</th>
+                <th>Technology</th>
+                <th>Security Controls</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Edge / CDN</td>
+                <td>AWS CloudFront</td>
+                <td>TLS 1.3, WAF, DDoS protection, geo-restriction</td>
+            </tr>
+            <tr>
+                <td>Load Balancer</td>
+                <td>AWS ALB</td>
+                <td>TLS termination, health checks, request routing</td>
+            </tr>
+            <tr>
+                <td>Application Tier</td>
+                <td>Amazon EKS (Kubernetes)</td>
+                <td>Pod security, mTLS (Istio), network policies</td>
+            </tr>
+            <tr>
+                <td>Database Tier</td>
+                <td>Amazon RDS PostgreSQL</td>
+                <td>AES-256, Multi-AZ, private subnet, IAM auth</td>
+            </tr>
+            <tr>
+                <td>Object Storage</td>
+                <td>Amazon S3</td>
+                <td>SSE-KMS, Object Lock, versioning, access logging</td>
+            </tr>
+            <tr>
+                <td>Secrets</td>
+                <td>AWS Secrets Manager</td>
+                <td>Auto-rotation, IAM policies, audit logging</td>
+            </tr>
+            <tr>
+                <td>DNS</td>
+                <td>Amazon Route 53</td>
+                <td>DNSSEC, private hosted zones, health checks</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Appendix C: Security Monitoring and Alerting</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Monitoring Category</th>
+                <th>Tools</th>
+                <th>Alert Threshold</th>
+                <th>Response SLA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Failed authentication</td>
+                <td>SIEM, application logs</td>
+                <td>5 failures in 10 minutes</td>
+                <td>Auto-lockout + review within 1 hour</td>
+            </tr>
+            <tr>
+                <td>Privilege escalation</td>
+                <td>SIEM, UBA</td>
+                <td>Any unauthorized attempt</td>
+                <td>Immediate investigation</td>
+            </tr>
+            <tr>
+                <td>Data exfiltration</td>
+                <td>DLP, network monitoring</td>
+                <td>Anomalous data volume or pattern</td>
+                <td>15-minute investigation SLA</td>
+            </tr>
+            <tr>
+                <td>Infrastructure anomaly</td>
+                <td>CloudTrail, GuardDuty</td>
+                <td>ML-based anomaly detection</td>
+                <td>30-minute investigation SLA</td>
+            </tr>
+            <tr>
+                <td>Certificate expiry</td>
+                <td>Certificate monitoring</td>
+                <td>30 days before expiry</td>
+                <td>Renewal within 7 days</td>
+            </tr>
+            <tr>
+                <td>Vulnerability detection</td>
+                <td>Trivy, Snyk, OWASP ZAP</td>
+                <td>Critical/High severity</td>
+                <td>Per remediation SLA table</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Appendix D: Compliance Certifications and Attestations</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Certification / Attestation</th>
+                <th>Status</th>
+                <th>Scope</th>
+                <th>Validity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SOC 2 Type II</td>
+                <td><span class="security-badge badge-green">Active</span></td>
+                <td>Security, Availability, Confidentiality</td>
+                <td>Jan 2025 &mdash; Dec 2025 (renewal in progress)</td>
+            </tr>
+            <tr>
+                <td>ISO 27001:2022</td>
+                <td><span class="security-badge badge-blue">In Progress</span></td>
+                <td>Full ISMS</td>
+                <td>Expected Q3 2026</td>
+            </tr>
+            <tr>
+                <td>HIPAA BAA</td>
+                <td><span class="security-badge badge-green">Available</span></td>
+                <td>PHI processing on platform</td>
+                <td>Per customer agreement</td>
+            </tr>
+            <tr>
+                <td>FDA 21 CFR Part 11</td>
+                <td><span class="security-badge badge-green">Compliant</span></td>
+                <td>Electronic records and signatures</td>
+                <td>Continuous (self-assessed + audited)</td>
+            </tr>
+            <tr>
+                <td>GDPR DPA</td>
+                <td><span class="security-badge badge-green">Available</span></td>
+                <td>Personal data processing</td>
+                <td>Per customer agreement</td>
+            </tr>
+            <tr>
+                <td>HDS</td>
+                <td><span class="security-badge badge-green">Compliant</span></td>
+                <td>Health data hosting (France/EU)</td>
+                <td>Via AWS HDS-certified infrastructure</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Appendix E: Contact Information</h3>
+
+    <div class="callout">
+        <div class="callout-title">Security Team Contacts</div>
+        <p><strong>General security inquiries:</strong> security@arcascience.ai</p>
+        <p><strong>Vulnerability reports:</strong> security-reports@arcascience.ai or via HackerOne</p>
+        <p><strong>Data Protection Officer:</strong> dpo@arcascience.ai</p>
+        <p><strong>Incident reporting (24/7):</strong> +33 1 XX XX XX XX | incidents@arcascience.ai</p>
+        <p><strong>Compliance documentation requests:</strong> compliance@arcascience.ai</p>
+        <p style="margin-bottom: 0;"><strong>NDA and security questionnaire responses:</strong> trust@arcascience.ai</p>
+    </div>
+
+    <div class="cta-section">
+        <h3>Request a Security Briefing</h3>
+        <p>Our security team is available to conduct detailed walkthroughs of our security architecture tailored to your organization's requirements.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a class="cta-link" href="https://arcascience.ai/contact">Schedule a Briefing</a> &nbsp;|&nbsp;
+            <a class="cta-link" href="mailto:security@arcascience.ai">security@arcascience.ai</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience. All rights reserved. | arcascience.ai<br>
+    CONFIDENTIAL &mdash; This document is intended for ArcaScience customers and prospective customers under NDA. Version 3.2 | February 2026<br>
+    This document does not constitute a warranty or guarantee. Security controls and certifications are subject to change.
+</div>
+
+</body>
+</html>

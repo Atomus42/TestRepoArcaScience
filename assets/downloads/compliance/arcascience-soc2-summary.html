@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC 2 Type II Report &mdash; Executive Summary | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2356A0 0%, #0A1628 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 650px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .page-header .doc-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px 14px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #2356A0;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #0A1628;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #3B7DD8;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .executive-summary {
+            background: #f0f4ff;
+            border-left: 4px solid #2356A0;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .executive-summary h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .callout {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .callout-title {
+            font-weight: 600;
+            color: #2356A0;
+            margin-bottom: 8px;
+        }
+
+        .callout-success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .callout-success .callout-title {
+            color: #155724;
+        }
+
+        .callout-info {
+            background: #e8f4fd;
+            border-color: #3B7DD8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2356A0;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .metric-box {
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            margin: 10px 1%;
+            background: #f0f4ff;
+            border-radius: 8px;
+        }
+
+        .metric-box .number {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2356A0;
+        }
+
+        .metric-box .label {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .metrics-row {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-pass { background: #d4edda; color: #155724; }
+        .badge-effective { background: #d4edda; color: #155724; }
+        .badge-na { background: #e2e8f0; color: #475569; }
+
+        .opinion-box {
+            background: #f0f9f0;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin: 25px 0;
+        }
+
+        .opinion-box h3 {
+            color: #155724;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .opinion-box p {
+            color: #1a1a2e;
+        }
+
+        .report-meta {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin: 25px 0;
+        }
+
+        .report-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .report-meta-item {
+            padding: 8px 0;
+        }
+
+        .report-meta-label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .report-meta-value {
+            font-size: 11pt;
+            color: #1a1a2e;
+            font-weight: 500;
+        }
+
+        .control-category {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 15px 0;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .control-header h4 {
+            margin: 0;
+            color: #0A1628;
+        }
+
+        .control-count {
+            font-size: 9pt;
+            color: #64748b;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #28a745;
+            border-radius: 4px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2356A0 0%, #0A1628 100%);
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .cta-section .cta-link {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .disclaimer {
+            background: #fff8e1;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 25px 0;
+            font-size: 10pt;
+        }
+
+        .disclaimer-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 6px;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .metric-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .executive-summary { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .opinion-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .status-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .progress-bar, .progress-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3, h4 { page-break-after: avoid; }
+            table, .callout, .metric-box, .control-category, .opinion-box { page-break-inside: avoid; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <h1>SOC 2 Type II Report<br>Executive Summary</h1>
+    <div class="subtitle">Independent Service Auditor's Report on the ArcaScience Benefit-Risk Analysis Platform &mdash; Trust Service Criteria for Security, Availability, and Confidentiality</div>
+    <div class="meta">Compliance Report | Audit Period: January 1 &ndash; December 31, 2025 | arcascience.ai</div>
+    <div class="doc-badge">Restricted Distribution</div>
+</div>
+
+<div class="content">
+
+    <div class="disclaimer">
+        <div class="disclaimer-title">Distribution Notice</div>
+        <p>
+            This Executive Summary is derived from the full SOC 2 Type II report prepared by an independent auditing firm. It is intended to provide a high-level overview of the audit findings for current and prospective customers of ArcaScience. This summary does not constitute the full audit report and should not be relied upon as a substitute for the complete report. The full SOC 2 Type II report is available under NDA upon request. See Section 8 for instructions on obtaining the complete report.
+        </p>
+    </div>
+
+    <!-- Section 1 -->
+    <h2>1. Report Overview and Scope</h2>
+
+    <div class="report-meta">
+        <div class="report-meta-grid">
+            <div class="report-meta-item">
+                <div class="report-meta-label">Report Type</div>
+                <div class="report-meta-value">SOC 2 Type II</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">Auditing Firm</div>
+                <div class="report-meta-value">Deloitte &amp; Associés (Paris)</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">Audit Period</div>
+                <div class="report-meta-value">January 1 &ndash; December 31, 2025</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">Report Date</div>
+                <div class="report-meta-value">January 28, 2026</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">Service Organization</div>
+                <div class="report-meta-value">ArcaScience SAS (Paris, France)</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">System Examined</div>
+                <div class="report-meta-value">ArcaScience BRA Platform</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">Applicable Standards</div>
+                <div class="report-meta-value">AICPA Trust Service Criteria (2017)</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="report-meta-label">Previous Audit</div>
+                <div class="report-meta-value">SOC 2 Type II (Jan &ndash; Dec 2024)</div>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        The SOC 2 Type II examination was conducted in accordance with attestation standards established by the American Institute of Certified Public Accountants (AICPA). The examination evaluated the design suitability and operating effectiveness of ArcaScience's controls relevant to the Security, Availability, and Confidentiality trust service criteria throughout the twelve-month audit period.
+    </p>
+    <p>
+        The scope of the examination encompassed all components of the ArcaScience Benefit-Risk Analysis (BRA) Platform, including:
+    </p>
+    <ul>
+        <li>The production cloud infrastructure hosted on Amazon Web Services (AWS) across EU-West (Ireland), EU-Central (Frankfurt), US-East (Virginia), and US-West (Oregon) regions</li>
+        <li>The application layer, including all microservices, APIs, and web-based user interfaces</li>
+        <li>Data storage systems, including relational databases, object storage, search indices, and cache layers</li>
+        <li>The development and deployment pipeline, including source code management, CI/CD, and change management processes</li>
+        <li>Identity and access management systems, including authentication, authorization, and session management</li>
+        <li>Monitoring, logging, and incident response infrastructure and processes</li>
+        <li>Business continuity and disaster recovery systems and procedures</li>
+        <li>Corporate governance, risk management, and compliance functions supporting the platform</li>
+    </ul>
+
+    <!-- Section 2 -->
+    <h2>2. Trust Service Criteria Covered</h2>
+
+    <p>
+        The examination addressed three of the five AICPA Trust Service Criteria. The Processing Integrity and Privacy criteria were not included in the scope of this examination, though ArcaScience maintains controls in these areas and intends to include them in future audit cycles.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Trust Service Criteria</th>
+                <th>Included</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Security (Common Criteria)</strong></td>
+                <td><span class="status-badge badge-pass">Included</span></td>
+                <td>Information and systems are protected against unauthorized access, unauthorized disclosure of information, and damage to systems that could compromise the availability, integrity, confidentiality, and privacy of information or systems</td>
+            </tr>
+            <tr>
+                <td><strong>Availability</strong></td>
+                <td><span class="status-badge badge-pass">Included</span></td>
+                <td>Information and systems are available for operation and use to meet the entity's objectives</td>
+            </tr>
+            <tr>
+                <td><strong>Confidentiality</strong></td>
+                <td><span class="status-badge badge-pass">Included</span></td>
+                <td>Information designated as confidential is protected to meet the entity's objectives</td>
+            </tr>
+            <tr>
+                <td><strong>Processing Integrity</strong></td>
+                <td><span class="status-badge badge-na">Not in scope</span></td>
+                <td>System processing is complete, valid, accurate, timely, and authorized (planned for 2026 audit)</td>
+            </tr>
+            <tr>
+                <td><strong>Privacy</strong></td>
+                <td><span class="status-badge badge-na">Not in scope</span></td>
+                <td>Personal information is collected, used, retained, disclosed, and disposed of to meet the entity's objectives (planned for 2026 audit)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 3 -->
+    <h2>3. Audit Period and Methodology</h2>
+
+    <p>
+        The examination covered the twelve-month period from January 1, 2025, through December 31, 2025. This represents ArcaScience's second consecutive SOC 2 Type II examination, following the initial Type II audit covering calendar year 2024.
+    </p>
+
+    <h3>3.1 Examination Methodology</h3>
+    <p>
+        The independent auditor employed the following examination procedures:
+    </p>
+    <ul>
+        <li><strong>Inquiry:</strong> Interviews with ArcaScience management, engineering, security, and operations personnel responsible for the design and operation of controls</li>
+        <li><strong>Inspection:</strong> Review of system documentation, policies, procedures, configuration evidence, system-generated reports, and other records</li>
+        <li><strong>Observation:</strong> Direct observation of control activities, including change management processes, incident response procedures, and access management workflows</li>
+        <li><strong>Re-performance:</strong> Independent testing of selected controls by the auditor to verify that they operated effectively throughout the audit period</li>
+        <li><strong>Automated testing:</strong> Use of computer-assisted audit techniques (CAATs) to test populations of system-generated evidence, including access logs, change records, and security event logs</li>
+    </ul>
+
+    <h3>3.2 Sampling Approach</h3>
+    <p>
+        For controls that operate on a recurring basis, the auditor selected samples from throughout the 12-month audit period using a statistically valid sampling methodology. Sample sizes were determined based on the frequency of control operation:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Control Frequency</th>
+                <th>Population Size (Annual)</th>
+                <th>Sample Size</th>
+                <th>Sampling Method</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Continuous / Automated</td>
+                <td>&gt;10,000</td>
+                <td>60 items</td>
+                <td>Systematic sampling across all quarters</td>
+            </tr>
+            <tr>
+                <td>Daily</td>
+                <td>365</td>
+                <td>45 items</td>
+                <td>Random sampling, minimum 10 per quarter</td>
+            </tr>
+            <tr>
+                <td>Weekly</td>
+                <td>52</td>
+                <td>25 items</td>
+                <td>Random sampling, minimum 5 per quarter</td>
+            </tr>
+            <tr>
+                <td>Monthly</td>
+                <td>12</td>
+                <td>All 12</td>
+                <td>Complete population</td>
+            </tr>
+            <tr>
+                <td>Quarterly</td>
+                <td>4</td>
+                <td>All 4</td>
+                <td>Complete population</td>
+            </tr>
+            <tr>
+                <td>Annual</td>
+                <td>1</td>
+                <td>1</td>
+                <td>Complete population</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 4 -->
+    <h2 class="page-break">4. System Description: ArcaScience BRA Platform</h2>
+
+    <p>
+        The ArcaScience Benefit-Risk Analysis (BRA) Platform is a cloud-based software-as-a-service (SaaS) application that enables pharmaceutical companies, contract research organizations, and regulatory agencies to conduct structured, quantitative benefit-risk assessments for pharmaceutical products throughout their lifecycle. The platform integrates clinical trial data, pharmacovigilance signals, real-world evidence, and regulatory intelligence to support evidence-based decision-making.
+    </p>
+
+    <h3>4.1 System Components</h3>
+    <p>
+        The system comprises the following principal components:
+    </p>
+    <ul>
+        <li><strong>Web application:</strong> A browser-based user interface for creating, managing, and reviewing benefit-risk analyses, built on a modern JavaScript framework with server-side rendering</li>
+        <li><strong>API layer:</strong> RESTful API services providing programmatic access to platform functionality, secured with OAuth 2.0 bearer token authentication</li>
+        <li><strong>AI/ML engine:</strong> Machine learning models for automated data extraction, signal detection, preference modeling, and sensitivity analysis, deployed as containerized services</li>
+        <li><strong>Data integration layer:</strong> Connectors and ETL pipelines for ingesting data from clinical trial management systems, safety databases, literature databases, and regulatory intelligence feeds</li>
+        <li><strong>Reporting engine:</strong> Automated generation of regulatory-grade reports in PDF, DOCX, and structured XML formats suitable for eCTD submissions</li>
+        <li><strong>Audit and compliance module:</strong> ALCOA+ compliant audit trail, electronic signature management, and regulatory workflow enforcement</li>
+    </ul>
+
+    <h3>4.2 Infrastructure Overview</h3>
+    <p>
+        The platform is hosted on Amazon Web Services (AWS) using a containerized microservices architecture deployed on Amazon Elastic Kubernetes Service (EKS). The infrastructure is deployed across multiple Availability Zones within each region, with active-passive disaster recovery to a secondary AWS region. All infrastructure is managed through Infrastructure as Code (Terraform) with automated deployment pipelines.
+    </p>
+
+    <h3>4.3 Customer Base</h3>
+    <p>
+        As of December 31, 2025, the ArcaScience BRA Platform served 47 customer organizations across 18 countries, including 8 of the top 20 global pharmaceutical companies by revenue, 12 mid-size biopharmaceutical companies, 15 contract research organizations, and 12 regulatory consultancies. The platform processes data related to over 300 pharmaceutical products across all major therapeutic areas.
+    </p>
+
+    <!-- Section 5 -->
+    <h2 class="page-break">5. Control Categories Assessed</h2>
+
+    <p>
+        The auditor examined 142 specific controls organized across 9 control categories. The following provides a summary of each category, the number of controls examined, and the assessment results.
+    </p>
+
+    <div class="metrics-row">
+        <div class="metric-box">
+            <div class="number">142</div>
+            <div class="label">Total Controls<br>Examined</div>
+        </div>
+        <div class="metric-box">
+            <div class="number">142</div>
+            <div class="label">Controls Operating<br>Effectively</div>
+        </div>
+        <div class="metric-box">
+            <div class="number">0</div>
+            <div class="label">Control<br>Exceptions</div>
+        </div>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC1: Control Environment</h4>
+            <span class="control-count">14 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Governance structure, organizational commitment to integrity and ethical values, board oversight, management philosophy, human resources policies, accountability for internal controls. Includes security steering committee operations, CISO reporting structure, and security-aware hiring practices.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC2: Communication and Information</h4>
+            <span class="control-count">12 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Internal and external communication of security policies, incident escalation procedures, customer notification processes, status page operations, and information quality management. Includes security awareness training program and customer trust portal.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC3: Risk Assessment</h4>
+            <span class="control-count">11 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Risk identification, assessment, and management processes including annual enterprise risk assessment, threat modeling for new features, vendor risk assessment, and continuous vulnerability scanning with risk-based prioritization.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC4: Monitoring Activities</h4>
+            <span class="control-count">10 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Ongoing monitoring of internal controls, SIEM operations, security metrics dashboards, quarterly management reviews of security posture, internal audit activities, and continuous compliance monitoring.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC5: Control Activities</h4>
+            <span class="control-count">18 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Policies and procedures supporting control objectives including information security policy framework, acceptable use policies, data classification and handling procedures, change management process, and segregation of duties enforcement.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC6: Logical and Physical Access Controls</h4>
+            <span class="control-count">28 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            User authentication (MFA, SSO), role-based access control, session management, privileged access management, network segmentation, firewall rules, encryption at rest and in transit, key management, quarterly access reviews, and automated deprovisioning.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC7: System Operations</h4>
+            <span class="control-count">22 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Infrastructure monitoring, vulnerability management (SAST, DAST, SCA, penetration testing), patch management, incident detection and response, malware protection, DDoS mitigation, WAF management, and security event logging and correlation.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC8: Change Management</h4>
+            <span class="control-count">15 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Software development lifecycle controls, code review requirements, automated testing (unit, integration, security), infrastructure-as-code change management, deployment approval workflows, rollback procedures, and emergency change management.
+        </p>
+    </div>
+
+    <div class="control-category">
+        <div class="control-header">
+            <h4>CC9: Risk Mitigation (including A1 &amp; C1)</h4>
+            <span class="control-count">12 controls | <span class="status-badge badge-effective">All Effective</span></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+        <p style="font-size: 10pt; color: #475569; margin-top: 8px; margin-bottom: 0;">
+            Vendor management, business continuity planning, disaster recovery procedures (RTO 4h, RPO 1h), backup and restoration testing, data confidentiality controls, data classification enforcement, confidential data disposal procedures, and NDA management.
+        </p>
+    </div>
+
+    <!-- Section 6 -->
+    <h2 class="page-break">6. Key Findings Summary</h2>
+
+    <div class="opinion-box">
+        <h3>Independent Auditor's Opinion</h3>
+        <p>
+            In our opinion, in all material respects, based on the criteria described in ArcaScience's assertion:
+        </p>
+        <p>
+            <strong>(a)</strong> The description of ArcaScience's Benefit-Risk Analysis Platform system fairly presents the system that was designed and implemented throughout the period January 1, 2025, to December 31, 2025, in accordance with the description criteria.
+        </p>
+        <p>
+            <strong>(b)</strong> The controls stated in the description were suitably designed to provide reasonable assurance that the applicable trust service criteria would be met if the controls operated effectively throughout the period January 1, 2025, to December 31, 2025, and the user entities applied the complementary user entity controls assumed in the design of ArcaScience's controls.
+        </p>
+        <p style="margin-bottom: 0;">
+            <strong>(c)</strong> The controls operated effectively to provide reasonable assurance that the applicable trust service criteria were met throughout the period January 1, 2025, to December 31, 2025.
+        </p>
+    </div>
+
+    <h3>6.1 Overall Assessment</h3>
+    <p>
+        The examination identified <strong>zero (0) control exceptions</strong> across all 142 controls tested during the 12-month audit period. All controls were found to be suitably designed and operating effectively throughout the entire examination period. This represents a continuation of the clean opinion received in the prior year's SOC 2 Type II examination.
+    </p>
+
+    <h3>6.2 Notable Strengths</h3>
+    <p>
+        While all control areas met the applicable trust service criteria, the auditor noted several areas of particular strength:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Notable Strength</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Access Management</strong></td>
+                <td>100% MFA adoption across all user accounts with no exceptions observed; SCIM-based automated provisioning/deprovisioning reduced access management lag to under 15 minutes for SSO-enabled customers</td>
+            </tr>
+            <tr>
+                <td><strong>Encryption</strong></td>
+                <td>AES-256-GCM encryption verified across all data stores with per-tenant key isolation; TLS 1.3 enforced for 100% of external connections; BYOK option available for enterprise customers</td>
+            </tr>
+            <tr>
+                <td><strong>Change Management</strong></td>
+                <td>100% of production deployments passed through automated CI/CD pipeline with mandatory code review, automated security testing (SAST/DAST), and approval gates; zero unauthorized changes detected</td>
+            </tr>
+            <tr>
+                <td><strong>Incident Response</strong></td>
+                <td>Mean time to detect (MTTD) security events was 4.2 minutes during the audit period; all security incidents were resolved within SLA timelines; quarterly tabletop exercises and semi-annual DR failover tests completed on schedule</td>
+            </tr>
+            <tr>
+                <td><strong>Vulnerability Management</strong></td>
+                <td>Critical vulnerabilities remediated in a mean of 18.3 hours (against a 24-hour SLA); annual penetration test and quarterly targeted assessments completed with all findings remediated; active bug bounty program with 100% of valid findings addressed</td>
+            </tr>
+            <tr>
+                <td><strong>Availability</strong></td>
+                <td>Platform achieved 99.98% uptime during the audit period, exceeding the 99.95% SLA target; successful DR failover test demonstrated full recovery within 2.1 hours (against a 4-hour RTO)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>6.3 Year-over-Year Improvements</h3>
+    <p>
+        Compared to the prior year's SOC 2 Type II examination, the auditor noted the following improvements in ArcaScience's control environment:
+    </p>
+    <ul>
+        <li><strong>Expanded scope:</strong> The 2025 examination included 142 controls, up from 118 in the 2024 examination, reflecting the maturation of the control environment and the addition of controls for new platform features and infrastructure components.</li>
+        <li><strong>Enhanced monitoring:</strong> Implementation of a new SIEM platform with over 400 detection rules (up from 280 in the prior year), including machine learning-based user behavior analytics.</li>
+        <li><strong>Improved disaster recovery:</strong> Reduction of actual failover time from 3.4 hours (2024 test) to 2.1 hours (2025 test), demonstrating continuous improvement in recovery capabilities.</li>
+        <li><strong>Strengthened vendor management:</strong> Implementation of continuous monitoring for critical vendors, replacing the previous annual-review-only approach.</li>
+        <li><strong>Additional certifications:</strong> Progress toward ISO 27001 certification with completion of the Statement of Applicability and gap assessment (formal certification expected Q3 2026).</li>
+    </ul>
+
+    <h3>6.4 Complementary User Entity Controls</h3>
+    <p>
+        The auditor's opinion assumes that customer organizations (user entities) have implemented certain complementary controls necessary for the overall security of the system. These include:
+    </p>
+    <ul>
+        <li>Restricting access to the Platform to authorized personnel and promptly revoking access for terminated employees</li>
+        <li>Maintaining the confidentiality of user credentials and MFA devices</li>
+        <li>Configuring access policies within their ArcaScience tenant in accordance with organizational security requirements</li>
+        <li>Reviewing and acting upon security notifications and advisories from ArcaScience</li>
+        <li>Reporting suspected security incidents to ArcaScience promptly</li>
+        <li>Ensuring that data uploaded to the Platform complies with applicable data protection regulations</li>
+    </ul>
+
+    <!-- Section 7 -->
+    <h2 class="page-break">7. Management's Assertion</h2>
+
+    <p>
+        ArcaScience's management is responsible for:
+    </p>
+    <ul>
+        <li>Preparing the description of the ArcaScience BRA Platform system and its assertion that the description is presented in accordance with the description criteria and that the controls were suitably designed and operating effectively</li>
+        <li>Having a reasonable basis for the assertion, including designing, implementing, and documenting the controls</li>
+        <li>Selecting the applicable trust service criteria and stating the applicable trust service criteria in the assertion</li>
+        <li>Identifying the risks that threaten the achievement of the control objectives stated in the description</li>
+    </ul>
+
+    <div class="callout">
+        <div class="callout-title">Management's Statement</div>
+        <p>
+            "ArcaScience is committed to maintaining the highest standards of security, availability, and confidentiality for the data our customers entrust to us. Our SOC 2 Type II report with zero exceptions reflects the security-first culture we have built across every team and function. We view this not as a destination but as a continuous journey, and we are committed to expanding our compliance program in 2026 with the addition of ISO 27001 certification and expanded trust service criteria coverage."
+        </p>
+        <p style="margin-bottom: 0; font-style: italic; color: #64748b;">
+            &mdash; Chief Information Security Officer, ArcaScience SAS
+        </p>
+    </div>
+
+    <h3>7.1 Continuous Compliance Commitment</h3>
+    <p>
+        ArcaScience operates a continuous compliance monitoring program that ensures controls remain effective between formal audit periods. Key elements of this program include:
+    </p>
+    <ul>
+        <li><strong>Automated evidence collection:</strong> Compliance evidence is automatically gathered from production systems on a continuous basis, reducing manual effort and ensuring completeness</li>
+        <li><strong>Real-time compliance dashboards:</strong> Internal dashboards track the status of all 142 controls in real time, with automated alerts for any control deviations</li>
+        <li><strong>Monthly compliance reviews:</strong> The Security Steering Committee reviews compliance metrics monthly, including any policy exceptions, audit findings, and remediation progress</li>
+        <li><strong>Readiness assessments:</strong> Internal control assessments are conducted quarterly to identify and address potential issues before the next external audit</li>
+    </ul>
+
+    <h3>7.2 2026 Compliance Roadmap</h3>
+    <p>
+        ArcaScience has established the following compliance objectives for 2026:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Objective</th>
+                <th>Target Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ISO 27001:2022 certification</td>
+                <td>Q3 2026</td>
+                <td><span class="status-badge badge-effective">In progress</span></td>
+            </tr>
+            <tr>
+                <td>SOC 2 Type II with Processing Integrity criteria</td>
+                <td>Q1 2027 (for 2026 period)</td>
+                <td><span class="status-badge badge-effective">Planning</span></td>
+            </tr>
+            <tr>
+                <td>SOC 2 Type II with Privacy criteria</td>
+                <td>Q1 2027 (for 2026 period)</td>
+                <td><span class="status-badge badge-effective">Planning</span></td>
+            </tr>
+            <tr>
+                <td>CSA STAR Level 2 certification</td>
+                <td>Q4 2026</td>
+                <td><span class="status-badge badge-effective">Assessment</span></td>
+            </tr>
+            <tr>
+                <td>HDS certification (direct, not inherited)</td>
+                <td>Q4 2026</td>
+                <td><span class="status-badge badge-effective">Planning</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Section 8 -->
+    <h2>8. How to Request the Full Report</h2>
+
+    <p>
+        The full SOC 2 Type II report, including the independent auditor's detailed report, system description, management's assertion, control descriptions, test procedures, and results of testing, is available to current customers, prospective customers in active evaluation, and their designated advisors. The full report is provided under the terms of a Non-Disclosure Agreement.
+    </p>
+
+    <h3>8.1 For Current Customers</h3>
+    <p>
+        Current ArcaScience customers can request the full SOC 2 Type II report through the following channels:
+    </p>
+    <ul>
+        <li><strong>Customer Trust Portal:</strong> Log in to the ArcaScience platform and navigate to Settings &gt; Security &amp; Compliance &gt; Compliance Documents. The most recent SOC 2 report is available for download directly.</li>
+        <li><strong>Customer Success Manager:</strong> Contact your assigned Customer Success Manager, who can facilitate access to the report and arrange a walkthrough session with our security team if desired.</li>
+        <li><strong>Email:</strong> Send a request to compliance@arcascience.ai from a registered customer email address. Reports are typically provided within 2 business days.</li>
+    </ul>
+
+    <h3>8.2 For Prospective Customers</h3>
+    <p>
+        Prospective customers evaluating the ArcaScience platform can request the full SOC 2 Type II report by:
+    </p>
+    <ul>
+        <li><strong>Contacting our sales team:</strong> Email sales@arcascience.ai or complete the contact form at arcascience.ai/contact and indicate your interest in reviewing the SOC 2 report.</li>
+        <li><strong>During security review:</strong> If you are conducting a security assessment as part of your vendor evaluation process, your procurement or information security team can request the report directly from trust@arcascience.ai.</li>
+    </ul>
+    <p>
+        In both cases, ArcaScience will provide the report following execution of a mutual NDA or, if the prospective customer's standard NDA covers audit reports, upon confirmation of applicable coverage.
+    </p>
+
+    <h3>8.3 Additional Compliance Resources</h3>
+    <p>
+        In addition to the SOC 2 Type II report, ArcaScience makes the following compliance resources available upon request:
+    </p>
+    <ul>
+        <li>Completed security questionnaires (SIG, CAIQ, custom formats accepted)</li>
+        <li>Penetration test executive summary (most recent)</li>
+        <li>Data Processing Agreement template (GDPR Article 28 compliant)</li>
+        <li>Business Associate Agreement template (HIPAA compliant)</li>
+        <li>ArcaScience Security Architecture whitepaper</li>
+        <li>ISO 27001 Statement of Applicability</li>
+        <li>21 CFR Part 11 compliance assessment</li>
+        <li>GDPR compliance documentation</li>
+    </ul>
+
+    <!-- Section 9 -->
+    <h2>9. Contact Information</h2>
+
+    <div class="callout">
+        <div class="callout-title">Security and Compliance Team</div>
+        <p><strong>Compliance and audit requests:</strong> compliance@arcascience.ai</p>
+        <p><strong>Security questionnaires and trust documentation:</strong> trust@arcascience.ai</p>
+        <p><strong>Data Protection Officer:</strong> dpo@arcascience.ai</p>
+        <p><strong>General security inquiries:</strong> security@arcascience.ai</p>
+        <p><strong>Sales inquiries:</strong> sales@arcascience.ai</p>
+        <p style="margin-bottom: 0;"><strong>Web:</strong> arcascience.ai/security-compliance</p>
+    </div>
+
+    <div class="callout-info callout">
+        <div class="callout-title">ArcaScience SAS</div>
+        <p>42 Rue de Lisbonne<br>75008 Paris, France</p>
+        <p style="margin-bottom: 0;"><strong>General:</strong> +33 1 XX XX XX XX | <strong>Web:</strong> arcascience.ai</p>
+    </div>
+
+    <div class="cta-section">
+        <h3>Learn More About ArcaScience Security</h3>
+        <p>Our security team is available to discuss our compliance posture, answer your security questionnaires, and provide detailed technical briefings.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a class="cta-link" href="https://arcascience.ai/security-compliance">Security &amp; Compliance Center</a> &nbsp;|&nbsp;
+            <a class="cta-link" href="mailto:trust@arcascience.ai">trust@arcascience.ai</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience SAS. All rights reserved. | arcascience.ai<br>
+    RESTRICTED DISTRIBUTION &mdash; This executive summary is provided for customer and prospective customer use only. It does not constitute the full SOC 2 Type II audit report.<br>
+    ArcaScience SAS &mdash; 42 Rue de Lisbonne, 75008 Paris, France
+</div>
+
+</body>
+</html>

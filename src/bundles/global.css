@@ -140,6 +140,22 @@
 .arca-nav-link.is-active { color: var(--blue-600); }
 .arca-nav-link.is-active::after { width:100%; left:0; }
 
+/* Dropdown navigation — hover show/hide */
+.arca-nav-dropdown-wrap { position: relative; }
+.arca-nav-dropdown-wrap:hover > .arca-nav-dropdown,
+.arca-nav-dropdown-wrap:focus-within > .arca-nav-dropdown {
+  opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important;
+}
+.arca-nav-dropdown a:hover {
+  background-color: var(--blue-50) !important; color: var(--blue-600) !important; text-decoration: none !important;
+}
+/* Chevron rotation on hover */
+.arca-nav-dropdown-wrap:hover > .arca-nav-link svg,
+.arca-nav-dropdown-wrap:focus-within > .arca-nav-link svg {
+  transform: rotate(180deg); transition: transform 200ms ease;
+}
+.arca-nav-link svg { transition: transform 200ms ease; }
+
 /* =========================================================================
    Buttons — pill shape, gradient fills, animated hovers
    ========================================================================= */
@@ -353,6 +369,12 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Floating animation for decorative elements */
+@keyframes as-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 /* =========================================================================

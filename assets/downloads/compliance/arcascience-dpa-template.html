@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processing Agreement &mdash; ArcaScience Platform Services | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #0A1628 0%, #2356A0 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 650px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .page-header .doc-id {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px 14px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #2356A0;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #0A1628;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #3B7DD8;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .preamble {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .preamble p {
+            margin-bottom: 10px;
+        }
+
+        .preamble p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-note {
+            background: #f0f4ff;
+            border-left: 4px solid #2356A0;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+
+        .legal-note .note-title {
+            font-weight: 600;
+            color: #2356A0;
+            margin-bottom: 6px;
+            font-size: 10pt;
+        }
+
+        ul, ol {
+            margin-bottom: 12px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .clause {
+            margin-bottom: 8px;
+        }
+
+        .clause-num {
+            font-weight: 600;
+            color: #0A1628;
+        }
+
+        .sub-clause {
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2356A0;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .signature-block {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .signature-party {
+            flex: 1;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .signature-party h4 {
+            color: #0A1628;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #1a1a2e;
+            margin: 25px 0 5px;
+            width: 100%;
+        }
+
+        .signature-label {
+            font-size: 9pt;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+
+        .fill-field {
+            display: inline-block;
+            min-width: 200px;
+            border-bottom: 1px dotted #94a3b8;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .annex-header {
+            background: #f0f4ff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin: 30px 0 20px;
+        }
+
+        .annex-header h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .callout {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .callout-title {
+            font-weight: 600;
+            color: #2356A0;
+            margin-bottom: 8px;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .legal-note { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .annex-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3, h4 { page-break-after: avoid; }
+            table, .callout, .signature-block, .signature-party { page-break-inside: avoid; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <h1>Data Processing Agreement</h1>
+    <div class="subtitle">ArcaScience Platform Services &mdash; Pursuant to Article 28 of the General Data Protection Regulation (EU) 2016/679</div>
+    <div class="meta">Legal Document | Template Version 2.4 | February 2026 | arcascience.ai</div>
+    <div class="doc-id">DPA-TEMPLATE-2026-V2.4</div>
+</div>
+
+<div class="content">
+
+    <div class="preamble">
+        <p><strong>This Data Processing Agreement ("DPA")</strong> is entered into as of <span class="fill-field">[Date]</span> ("Effective Date") and forms part of the Master Service Agreement or Terms of Service ("Principal Agreement") between:</p>
+        <p><strong>Data Controller:</strong> <span class="fill-field">[Customer Legal Entity Name]</span>, a company organized and existing under the laws of <span class="fill-field">[Jurisdiction]</span>, with its registered office at <span class="fill-field">[Address]</span> ("Controller" or "Customer");</p>
+        <p><strong>Data Processor:</strong> ArcaScience SAS, a company organized and existing under the laws of France, with its registered office at 42 Rue de Lisbonne, 75008 Paris, France, registered with the Paris Trade and Companies Register under number <span class="fill-field">[RCS Number]</span> ("Processor" or "ArcaScience");</p>
+        <p>each a "Party" and together the "Parties."</p>
+    </div>
+
+    <div class="legal-note">
+        <div class="note-title">Important Notice</div>
+        <p>This DPA template is provided for informational and negotiation purposes. It should be reviewed by qualified legal counsel before execution. Bracketed fields [like this] require completion by the Parties. This template is compliant with GDPR Article 28 requirements and incorporates the European Commission's Standard Contractual Clauses (SCCs) by reference where applicable for international data transfers.</p>
+    </div>
+
+    <!-- Article 1 -->
+    <h2>Article 1. Definitions and Interpretation</h2>
+
+    <p class="clause"><span class="clause-num">1.1</span> In this DPA, unless the context otherwise requires, the following terms shall have the meanings set out below. Terms not defined herein shall have the meanings ascribed to them in the GDPR or the Principal Agreement.</p>
+
+    <p class="clause"><span class="clause-num">1.2</span> <strong>"Applicable Data Protection Law"</strong> means all laws and regulations applicable to the Processing of Personal Data under this DPA, including but not limited to: (a) Regulation (EU) 2016/679 (General Data Protection Regulation, "GDPR"); (b) the GDPR as incorporated into United Kingdom law ("UK GDPR"); (c) the Swiss Federal Act on Data Protection ("FADP"); (d) the French Loi Informatique et Libert&eacute;s; and (e) any other applicable data protection legislation in the jurisdictions in which the Controller or Processor operate.</p>
+
+    <p class="clause"><span class="clause-num">1.3</span> <strong>"Authorized Sub-processor"</strong> means a third party engaged by the Processor to process Personal Data on behalf of the Controller, as listed in Annex 2 of this DPA.</p>
+
+    <p class="clause"><span class="clause-num">1.4</span> <strong>"Data Breach"</strong> means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, Personal Data transmitted, stored, or otherwise processed by the Processor on behalf of the Controller.</p>
+
+    <p class="clause"><span class="clause-num">1.5</span> <strong>"Data Subject"</strong> means an identified or identifiable natural person to whom the Personal Data relates.</p>
+
+    <p class="clause"><span class="clause-num">1.6</span> <strong>"Personal Data"</strong> means any information relating to a Data Subject that is processed by the Processor on behalf of the Controller in connection with the Platform Services, as further described in Annex 1.</p>
+
+    <p class="clause"><span class="clause-num">1.7</span> <strong>"Platform Services"</strong> means the ArcaScience benefit-risk analysis platform and related services provided to the Controller pursuant to the Principal Agreement.</p>
+
+    <p class="clause"><span class="clause-num">1.8</span> <strong>"Processing"</strong> means any operation or set of operations performed on Personal Data, whether or not by automated means, including collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.</p>
+
+    <p class="clause"><span class="clause-num">1.9</span> <strong>"Standard Contractual Clauses" ("SCCs")</strong> means the standard contractual clauses for the transfer of personal data to third countries adopted by the European Commission pursuant to Commission Implementing Decision (EU) 2021/914.</p>
+
+    <p class="clause"><span class="clause-num">1.10</span> <strong>"Technical and Organizational Measures" ("TOMs")</strong> means the security measures implemented by the Processor as described in Annex 1 of this DPA.</p>
+
+    <p class="clause"><span class="clause-num">1.11</span> In the event of any conflict between this DPA and the Principal Agreement, this DPA shall prevail with respect to the Processing of Personal Data. The recitals to this DPA form an integral part of the agreement.</p>
+
+    <!-- Article 2 -->
+    <h2>Article 2. Scope and Purpose of Processing</h2>
+
+    <p class="clause"><span class="clause-num">2.1</span> This DPA applies to the Processing of Personal Data by the Processor on behalf of the Controller in connection with the provision of the Platform Services under the Principal Agreement.</p>
+
+    <p class="clause"><span class="clause-num">2.2</span> The subject matter, duration, nature, and purpose of Processing, the types of Personal Data, and the categories of Data Subjects are described in the following table and further detailed in Annex 1:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Subject matter</strong></td>
+                <td>Processing of Personal Data in connection with the Controller's use of the ArcaScience benefit-risk analysis platform for pharmaceutical and clinical data analysis</td>
+            </tr>
+            <tr>
+                <td><strong>Duration</strong></td>
+                <td>For the term of the Principal Agreement, plus such additional period as is necessary for the Processor to delete or return all Personal Data in accordance with Article 11</td>
+            </tr>
+            <tr>
+                <td><strong>Nature of Processing</strong></td>
+                <td>Collection, storage, organization, structuring, retrieval, consultation, use (including AI/ML-based analysis), alignment, combination, pseudonymization, and erasure</td>
+            </tr>
+            <tr>
+                <td><strong>Purpose of Processing</strong></td>
+                <td>To provide the Platform Services as described in the Principal Agreement, including: benefit-risk analysis modeling, pharmacovigilance signal management, clinical data analysis, report generation, and regulatory submission support</td>
+            </tr>
+            <tr>
+                <td><strong>Types of Personal Data</strong></td>
+                <td>Pseudonymized clinical trial participant data; adverse event reporter information; healthcare professional identifiers; Controller employee account data (names, email addresses, roles); usage data and access logs</td>
+            </tr>
+            <tr>
+                <td><strong>Special categories of data</strong></td>
+                <td>Health data (clinical and pharmacovigilance data) processed in pseudonymized form; genetic data only if explicitly included by Controller in datasets uploaded to the Platform</td>
+            </tr>
+            <tr>
+                <td><strong>Categories of Data Subjects</strong></td>
+                <td>Clinical trial participants (pseudonymized); adverse event reporters; healthcare professionals; Controller's employees and authorized users</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="clause"><span class="clause-num">2.3</span> The Processor shall process Personal Data only on documented instructions from the Controller, including with regard to transfers of Personal Data to a third country or international organization, unless required to do so by Union or Member State law to which the Processor is subject; in such a case, the Processor shall inform the Controller of that legal requirement before Processing, unless that law prohibits such information on important grounds of public interest.</p>
+
+    <!-- Article 3 -->
+    <h2 class="page-break">Article 3. Controller's Obligations</h2>
+
+    <p class="clause"><span class="clause-num">3.1</span> The Controller warrants and undertakes that:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> it has a lawful basis for Processing the Personal Data and for instructing the Processor to process the Personal Data on its behalf, in accordance with Applicable Data Protection Law;</li>
+        <li><span class="clause-num">(b)</span> it has provided all necessary notices to, and obtained all necessary consents or authorizations from, Data Subjects or other relevant parties as required by Applicable Data Protection Law;</li>
+        <li><span class="clause-num">(c)</span> it shall ensure that its instructions to the Processor comply with Applicable Data Protection Law and that the Processing of Personal Data in accordance with such instructions will not cause the Processor to violate any Applicable Data Protection Law;</li>
+        <li><span class="clause-num">(d)</span> it has conducted, and shall maintain, a data protection impact assessment where required by Article 35 of the GDPR in connection with the Processing activities covered by this DPA;</li>
+        <li><span class="clause-num">(e)</span> it shall implement appropriate technical and organizational measures to ensure the security of Personal Data before transmitting it to the Processor, including encryption of data in transit;</li>
+        <li><span class="clause-num">(f)</span> it shall ensure that Personal Data uploaded to the Platform has been pseudonymized or anonymized to the greatest extent practicable, consistent with the purposes of Processing;</li>
+        <li><span class="clause-num">(g)</span> it shall promptly inform the Processor if it becomes aware of any circumstances that may affect the Processor's ability to fulfill its obligations under this DPA.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">3.2</span> The Controller acknowledges that the Processor's ability to fulfill certain obligations under this DPA (including those related to data subject rights and data breach notification) depends on the Controller providing accurate and timely information and responding to the Processor's communications without undue delay.</p>
+
+    <!-- Article 4 -->
+    <h2>Article 4. Processor's Obligations</h2>
+
+    <p class="clause"><span class="clause-num">4.1</span> The Processor warrants and undertakes that it shall:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> process Personal Data only on documented instructions from the Controller, as set out in this DPA, the Principal Agreement, and any subsequent written instructions agreed by the Parties, unless required to do so by applicable law;</li>
+        <li><span class="clause-num">(b)</span> ensure that persons authorized to process Personal Data have committed themselves to confidentiality or are under an appropriate statutory obligation of confidentiality, and that such obligations survive the termination of the individual's employment or engagement;</li>
+        <li><span class="clause-num">(c)</span> implement and maintain the Technical and Organizational Measures described in Annex 1, taking into account the state of the art, the costs of implementation, the nature, scope, context, and purposes of Processing, and the risks to the rights and freedoms of Data Subjects;</li>
+        <li><span class="clause-num">(d)</span> not engage another processor (sub-processor) without prior specific or general written authorization of the Controller, in accordance with Article 5 of this DPA;</li>
+        <li><span class="clause-num">(e)</span> taking into account the nature of the Processing, assist the Controller by appropriate technical and organizational measures, insofar as this is possible, for the fulfillment of the Controller's obligation to respond to requests for exercising Data Subjects' rights;</li>
+        <li><span class="clause-num">(f)</span> assist the Controller in ensuring compliance with the obligations pursuant to Articles 32 to 36 of the GDPR, taking into account the nature of Processing and the information available to the Processor;</li>
+        <li><span class="clause-num">(g)</span> at the choice of the Controller, delete or return all Personal Data to the Controller after the end of the provision of services relating to Processing, and delete existing copies unless Union or Member State law requires storage of the Personal Data;</li>
+        <li><span class="clause-num">(h)</span> make available to the Controller all information necessary to demonstrate compliance with the obligations laid down in Article 28 of the GDPR and allow for and contribute to audits, including inspections, conducted by the Controller or another auditor mandated by the Controller;</li>
+        <li><span class="clause-num">(i)</span> immediately inform the Controller if, in its opinion, an instruction from the Controller infringes the GDPR or other Applicable Data Protection Law.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">4.2</span> The Processor shall maintain a record of all categories of processing activities carried out on behalf of the Controller, in accordance with Article 30(2) of the GDPR, and shall make such records available to the Controller and supervisory authorities upon request.</p>
+
+    <p class="clause"><span class="clause-num">4.3</span> The Processor shall designate a Data Protection Officer (DPO) and shall provide the DPO's contact details to the Controller upon request. As of the Effective Date, the DPO can be contacted at dpo@arcascience.ai.</p>
+
+    <!-- Article 5 -->
+    <h2>Article 5. Sub-processors</h2>
+
+    <p class="clause"><span class="clause-num">5.1</span> The Controller provides general written authorization for the Processor to engage Sub-processors for the Processing of Personal Data, subject to the conditions set forth in this Article. The list of currently Authorized Sub-processors is set out in Annex 2 of this DPA.</p>
+
+    <p class="clause"><span class="clause-num">5.2</span> The Processor shall inform the Controller in writing (including by email to the Controller's designated contact) of any intended changes concerning the addition or replacement of Sub-processors, providing the Controller with a reasonable opportunity to object to such changes. The Processor shall provide at least thirty (30) calendar days' prior notice before engaging a new Sub-processor or changing an existing Sub-processor.</p>
+
+    <p class="clause"><span class="clause-num">5.3</span> If the Controller objects to a new or replacement Sub-processor on reasonable grounds relating to the protection of Personal Data, the Processor shall use commercially reasonable efforts to make available to the Controller an alternative arrangement that avoids the use of the objected-to Sub-processor. If the Processor is unable to provide such alternative arrangement within thirty (30) calendar days of receipt of the Controller's objection, either Party may terminate the affected portion of the Platform Services by providing written notice to the other Party.</p>
+
+    <p class="clause"><span class="clause-num">5.4</span> Where the Processor engages a Sub-processor for carrying out specific Processing activities on behalf of the Controller, the Processor shall impose on such Sub-processor, by way of a written contract, the same data protection obligations as set out in this DPA, in particular providing sufficient guarantees to implement appropriate Technical and Organizational Measures such that the Processing meets the requirements of the GDPR.</p>
+
+    <p class="clause"><span class="clause-num">5.5</span> The Processor shall remain fully liable to the Controller for the performance of any Sub-processor's obligations under the relevant sub-processing agreement. Where a Sub-processor fails to fulfill its data protection obligations, the Processor shall be liable to the Controller for the performance of that Sub-processor's obligations.</p>
+
+    <p class="clause"><span class="clause-num">5.6</span> The Processor shall maintain an up-to-date list of Sub-processors on its website at https://arcascience.ai/legal/sub-processors and shall provide a mechanism for the Controller to subscribe to notifications of changes to the Sub-processor list.</p>
+
+    <!-- Article 6 -->
+    <h2 class="page-break">Article 6. International Data Transfers</h2>
+
+    <p class="clause"><span class="clause-num">6.1</span> The Processor shall not transfer Personal Data to a country outside the European Economic Area ("EEA"), the United Kingdom, or Switzerland ("Third Country") unless one of the following conditions is met:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> the European Commission has issued an adequacy decision for the Third Country pursuant to Article 45(3) of the GDPR;</li>
+        <li><span class="clause-num">(b)</span> appropriate safeguards have been provided in accordance with Article 46 of the GDPR, including the Standard Contractual Clauses adopted by the European Commission;</li>
+        <li><span class="clause-num">(c)</span> the transfer falls within a recognized derogation under Article 49 of the GDPR; or</li>
+        <li><span class="clause-num">(d)</span> the Controller has provided explicit prior written authorization for the transfer, having been informed of the risks.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">6.2</span> Where the Standard Contractual Clauses are relied upon as the transfer mechanism, the Parties agree that the SCCs (Commission Implementing Decision (EU) 2021/914) are hereby incorporated by reference into this DPA and shall apply as follows:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> Module Two (Controller to Processor) shall apply where the Controller transfers Personal Data to the Processor in a Third Country;</li>
+        <li><span class="clause-num">(b)</span> Module Three (Processor to Sub-processor) shall apply where the Processor transfers Personal Data to a Sub-processor in a Third Country;</li>
+        <li><span class="clause-num">(c)</span> For Clause 7, the optional docking clause shall apply;</li>
+        <li><span class="clause-num">(d)</span> For Clause 9, Option 2 (general written authorization) shall apply with a notification period of thirty (30) calendar days;</li>
+        <li><span class="clause-num">(e)</span> For Clause 11, the optional language shall not apply;</li>
+        <li><span class="clause-num">(f)</span> For Clause 17, the SCCs shall be governed by the laws of <span class="fill-field">[Member State of Controller]</span>;</li>
+        <li><span class="clause-num">(g)</span> For Clause 18(b), disputes shall be resolved before the courts of <span class="fill-field">[Member State of Controller]</span>.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">6.3</span> The Processor shall conduct a Transfer Impact Assessment for each transfer of Personal Data to a Third Country that relies on the SCCs, evaluating the laws and practices of the Third Country of destination, and shall implement supplementary technical measures (such as encryption with Controller-held keys) where the assessment indicates that the SCCs alone cannot ensure an essentially equivalent level of protection.</p>
+
+    <p class="clause"><span class="clause-num">6.4</span> The Processor shall promptly notify the Controller if it becomes aware of any change in the laws or practices of a Third Country that may affect the level of protection afforded to transferred Personal Data, including any government access requests or disclosure orders.</p>
+
+    <p class="clause"><span class="clause-num">6.5</span> For the United Kingdom, the UK International Data Transfer Addendum to the EU Commission Standard Contractual Clauses (version B1.0) is incorporated into this DPA and applies to transfers of Personal Data subject to the UK GDPR. For Switzerland, the applicable version of the SCCs as recognized by the Swiss Federal Data Protection and Information Commissioner shall apply.</p>
+
+    <!-- Article 7 -->
+    <h2>Article 7. Data Subject Rights</h2>
+
+    <p class="clause"><span class="clause-num">7.1</span> The Processor shall, taking into account the nature of the Processing, assist the Controller by appropriate technical and organizational measures, insofar as this is possible, in responding to requests from Data Subjects exercising their rights under Chapter III of the GDPR, including:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> Right of access (Article 15)</li>
+        <li><span class="clause-num">(b)</span> Right to rectification (Article 16)</li>
+        <li><span class="clause-num">(c)</span> Right to erasure ("right to be forgotten") (Article 17)</li>
+        <li><span class="clause-num">(d)</span> Right to restriction of processing (Article 18)</li>
+        <li><span class="clause-num">(e)</span> Right to data portability (Article 20)</li>
+        <li><span class="clause-num">(f)</span> Right to object (Article 21)</li>
+        <li><span class="clause-num">(g)</span> Rights related to automated decision-making and profiling (Article 22)</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">7.2</span> If the Processor receives a request from a Data Subject directly, the Processor shall promptly (and in any event within two (2) business days) forward such request to the Controller without responding to the Data Subject, unless otherwise instructed by the Controller or required by Applicable Data Protection Law.</p>
+
+    <p class="clause"><span class="clause-num">7.3</span> The Processor shall provide the Controller with self-service tools within the Platform to facilitate responses to Data Subject requests, including the ability to: (a) search for and export Personal Data associated with a Data Subject; (b) rectify Personal Data; (c) delete Personal Data; and (d) restrict Processing of Personal Data. Where self-service tools are insufficient, the Processor shall provide manual assistance within five (5) business days of the Controller's written request.</p>
+
+    <p class="clause"><span class="clause-num">7.4</span> The Processor shall maintain technical capabilities to support the Controller in fulfilling data portability requests, including the ability to export Personal Data in structured, commonly used, and machine-readable formats (JSON, CSV, XML).</p>
+
+    <!-- Article 8 -->
+    <h2>Article 8. Security Measures</h2>
+
+    <p class="clause"><span class="clause-num">8.1</span> The Processor shall implement and maintain appropriate Technical and Organizational Measures to ensure a level of security appropriate to the risk, taking into account the state of the art, the costs of implementation, and the nature, scope, context, and purposes of Processing, as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons.</p>
+
+    <p class="clause"><span class="clause-num">8.2</span> Without prejudice to the generality of clause 8.1, the Processor shall implement at a minimum the Technical and Organizational Measures set out in Annex 1 of this DPA, which include measures for:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> the pseudonymization and encryption of Personal Data;</li>
+        <li><span class="clause-num">(b)</span> the ability to ensure the ongoing confidentiality, integrity, availability, and resilience of processing systems and services;</li>
+        <li><span class="clause-num">(c)</span> the ability to restore the availability and access to Personal Data in a timely manner in the event of a physical or technical incident;</li>
+        <li><span class="clause-num">(d)</span> a process for regularly testing, assessing, and evaluating the effectiveness of the Technical and Organizational Measures.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">8.3</span> The Processor shall not materially decrease the overall level of security of the Platform Services during the term of this DPA. The Processor may update or modify the Technical and Organizational Measures from time to time, provided that such updates do not materially decrease the overall level of protection afforded to Personal Data.</p>
+
+    <p class="clause"><span class="clause-num">8.4</span> The Processor shall ensure that any natural person acting under its authority who has access to Personal Data does not process that data except on instructions from the Controller, unless required to do so by applicable law.</p>
+
+    <!-- Article 9 -->
+    <h2 class="page-break">Article 9. Data Breach Notification</h2>
+
+    <p class="clause"><span class="clause-num">9.1</span> The Processor shall notify the Controller without undue delay, and in any event within <strong>thirty-six (36) hours</strong> after becoming aware of a Data Breach affecting Personal Data processed on behalf of the Controller.</p>
+
+    <p class="clause"><span class="clause-num">9.2</span> The notification shall include, at a minimum, the following information (to the extent known at the time of notification):</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> a description of the nature of the Data Breach, including where possible the categories and approximate number of Data Subjects concerned and the categories and approximate number of Personal Data records concerned;</li>
+        <li><span class="clause-num">(b)</span> the name and contact details of the Processor's data protection officer or other contact point where more information can be obtained;</li>
+        <li><span class="clause-num">(c)</span> a description of the likely consequences of the Data Breach;</li>
+        <li><span class="clause-num">(d)</span> a description of the measures taken or proposed to be taken by the Processor to address the Data Breach, including, where appropriate, measures to mitigate its possible adverse effects.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">9.3</span> Where it is not possible to provide all information at the time of the initial notification, the information may be provided in phases without undue further delay. The Processor shall provide regular updates (at least every twenty-four (24) hours during the initial investigation phase) until the Data Breach has been fully resolved.</p>
+
+    <p class="clause"><span class="clause-num">9.4</span> The Processor shall cooperate with the Controller and take all commercially reasonable steps directed by the Controller to assist in the investigation, mitigation, and remediation of any Data Breach, including preserving forensic evidence, providing log data, and facilitating communications with supervisory authorities.</p>
+
+    <p class="clause"><span class="clause-num">9.5</span> The Processor shall not make any public statements regarding a Data Breach affecting the Controller's Personal Data without the Controller's prior written consent, except where required by applicable law.</p>
+
+    <p class="clause"><span class="clause-num">9.6</span> The Processor shall maintain a comprehensive incident response plan that is tested at least annually. A summary of the incident response plan shall be made available to the Controller upon request.</p>
+
+    <!-- Article 10 -->
+    <h2>Article 10. Audit Rights</h2>
+
+    <p class="clause"><span class="clause-num">10.1</span> The Processor shall make available to the Controller all information reasonably necessary to demonstrate compliance with the obligations laid down in this DPA and in Article 28 of the GDPR.</p>
+
+    <p class="clause"><span class="clause-num">10.2</span> The Processor shall allow for and contribute to audits, including inspections, conducted by the Controller or an independent auditor mandated by the Controller, subject to the following conditions:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> The Controller shall provide at least thirty (30) calendar days' prior written notice of any audit request (except in cases where a supervisory authority orders or requests an audit on a shorter timeline);</li>
+        <li><span class="clause-num">(b)</span> Audits shall be conducted during normal business hours with minimal disruption to the Processor's operations;</li>
+        <li><span class="clause-num">(c)</span> The Controller (or its mandated auditor) shall comply with the Processor's reasonable security and confidentiality requirements during any on-site inspection;</li>
+        <li><span class="clause-num">(d)</span> The Controller shall bear its own costs associated with the audit. If the audit requires more than two (2) person-days of the Processor's staff time per calendar year, the Processor may charge a reasonable fee for additional time based on its then-current professional services rates;</li>
+        <li><span class="clause-num">(e)</span> Audit findings and reports shall be treated as Confidential Information of the Processor.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">10.3</span> As an alternative to on-site audits, the Processor shall make available the following compliance evidence, which the Controller may accept in satisfaction of its audit rights:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> The most recent SOC 2 Type II audit report, issued by an independent third-party auditor;</li>
+        <li><span class="clause-num">(b)</span> The most recent penetration test executive summary;</li>
+        <li><span class="clause-num">(c)</span> ISO 27001 certification (when obtained) or the current Statement of Applicability;</li>
+        <li><span class="clause-num">(d)</span> Responses to the Controller's security questionnaire (SIG, CAIQ, or custom);</li>
+        <li><span class="clause-num">(e)</span> Any other certifications, attestations, or audit reports relevant to the Processing activities.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">10.4</span> The Processor shall promptly inform the Controller if, in the Processor's opinion, an audit instruction or request from the Controller infringes Applicable Data Protection Law or exceeds the scope of the Controller's audit rights under this DPA.</p>
+
+    <!-- Article 11 -->
+    <h2>Article 11. Term and Termination</h2>
+
+    <p class="clause"><span class="clause-num">11.1</span> This DPA shall come into effect on the Effective Date and shall remain in force for the duration of the Principal Agreement. In the event that the Principal Agreement is terminated or expires, this DPA shall continue in force until the Processor has ceased all Processing of Personal Data on behalf of the Controller and has deleted or returned all Personal Data in accordance with this Article.</p>
+
+    <p class="clause"><span class="clause-num">11.2</span> Upon termination or expiry of the Principal Agreement, or upon the Controller's written request at any time during the term, the Processor shall, at the Controller's choice:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> <strong>Return:</strong> Return all Personal Data to the Controller in a structured, commonly used, and machine-readable format (JSON, CSV, or as otherwise agreed), including all metadata and audit trail records; or</li>
+        <li><span class="clause-num">(b)</span> <strong>Delete:</strong> Securely delete all Personal Data, including all copies, backups, and archived data, using methods that render the data unrecoverable (e.g., cryptographic erasure or NIST SP 800-88 compliant media sanitization).</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">11.3</span> The Processor shall complete the return or deletion of Personal Data within <strong>sixty (60) calendar days</strong> of receiving the Controller's written instruction. The Processor shall provide written certification of deletion upon completion.</p>
+
+    <p class="clause"><span class="clause-num">11.4</span> The Processor may retain Personal Data to the extent required by applicable law (e.g., for tax, accounting, or regulatory compliance purposes), provided that such retention is limited to the minimum data necessary and for the minimum period required. The Processor shall inform the Controller of any such legal retention requirement and shall continue to protect any retained Personal Data in accordance with this DPA.</p>
+
+    <p class="clause"><span class="clause-num">11.5</span> The Controller shall have a period of <strong>thirty (30) calendar days</strong> from the date of termination or expiry of the Principal Agreement to provide instructions regarding the return or deletion of Personal Data. If no instructions are received within this period, the Processor shall securely delete all Personal Data in accordance with clause 11.2(b).</p>
+
+    <!-- Article 12 -->
+    <h2>Article 12. Liability</h2>
+
+    <p class="clause"><span class="clause-num">12.1</span> Each Party's liability under this DPA shall be subject to the limitations and exclusions of liability set out in the Principal Agreement, except that nothing in this DPA or the Principal Agreement shall limit either Party's liability for:</p>
+    <ul>
+        <li><span class="clause-num">(a)</span> breaches of Applicable Data Protection Law where such limitation would be prohibited by law;</li>
+        <li><span class="clause-num">(b)</span> the Processor's processing of Personal Data outside or contrary to the Controller's lawful instructions, where such processing is not required by applicable law;</li>
+        <li><span class="clause-num">(c)</span> either Party's indemnification obligations with respect to third-party claims by Data Subjects or supervisory authorities arising from a breach of this DPA.</li>
+    </ul>
+
+    <p class="clause"><span class="clause-num">12.2</span> The Processor shall indemnify the Controller against all costs, claims, damages, and expenses (including reasonable legal fees) incurred by the Controller arising from the Processor's breach of this DPA or Applicable Data Protection Law, provided that the Controller has given the Processor prompt notice of any claim, reasonable cooperation, and sole authority to defend or settle the claim.</p>
+
+    <p class="clause"><span class="clause-num">12.3</span> Without prejudice to the rights of Data Subjects under Articles 79 and 82 of the GDPR, the Processor shall be liable for the damage caused by Processing only where it has not complied with obligations of the GDPR specifically directed to processors or where it has acted outside or contrary to lawful instructions of the Controller.</p>
+
+    <!-- Annex 1 -->
+    <div class="annex-header page-break">
+        <h2>Annex 1: Technical and Organizational Measures</h2>
+    </div>
+
+    <p>
+        The following Technical and Organizational Measures are implemented by the Processor to protect Personal Data processed on behalf of the Controller. These measures are subject to continuous improvement and may be updated from time to time in accordance with Article 8.3 of this DPA.
+    </p>
+
+    <h3>A1.1 Encryption and Pseudonymization</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Measure</th>
+                <th>Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Encryption at rest</td>
+                <td>AES-256-GCM encryption for all data stores (databases, object storage, backups, logs) using AWS KMS with per-tenant Customer Master Keys</td>
+            </tr>
+            <tr>
+                <td>Encryption in transit</td>
+                <td>TLS 1.3 enforced for all external communications; mutual TLS (mTLS) for inter-service communications via Istio service mesh</td>
+            </tr>
+            <tr>
+                <td>Application-level encryption</td>
+                <td>Field-level encryption for high-sensitivity data elements (patient identifiers, credentials, electronic signatures) using per-tenant derived keys</td>
+            </tr>
+            <tr>
+                <td>Key management</td>
+                <td>FIPS 140-2 Level 3 HSMs; automatic key rotation every 90 days; Bring Your Own Key (BYOK) option for enterprise customers</td>
+            </tr>
+            <tr>
+                <td>Pseudonymization</td>
+                <td>Platform supports automated pseudonymization of patient data upon ingestion; re-identification keys stored separately with restricted access</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>A1.2 Access Control</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Measure</th>
+                <th>Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Authentication</td>
+                <td>Mandatory multi-factor authentication for all users; support for TOTP, WebAuthn/FIDO2 hardware keys</td>
+            </tr>
+            <tr>
+                <td>Single Sign-On</td>
+                <td>SAML 2.0 and OpenID Connect integration with customer identity providers; SCIM 2.0 automated provisioning</td>
+            </tr>
+            <tr>
+                <td>Authorization</td>
+                <td>Role-based access control (RBAC) with five standard roles and custom role support; enforced segregation of duties for regulated workflows</td>
+            </tr>
+            <tr>
+                <td>Session management</td>
+                <td>30-minute idle timeout; 12-hour absolute timeout; session binding to IP and User-Agent; secure, HttpOnly, SameSite cookies</td>
+            </tr>
+            <tr>
+                <td>Privileged access</td>
+                <td>Just-in-time access for administrative operations; bastion host with session recording; quarterly access reviews</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>A1.3 Data Integrity and Availability</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Measure</th>
+                <th>Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Audit trail</td>
+                <td>ALCOA+ compliant immutable audit logs with SHA-256 hash chaining; append-only storage with S3 Object Lock</td>
+            </tr>
+            <tr>
+                <td>Backup</td>
+                <td>Continuous replication; hourly incremental; daily full; geo-redundant storage; automated restore testing</td>
+            </tr>
+            <tr>
+                <td>Disaster recovery</td>
+                <td>Active-passive cross-region DR; RTO 4 hours; RPO 1 hour; semi-annual failover testing</td>
+            </tr>
+            <tr>
+                <td>Availability</td>
+                <td>Multi-AZ deployment; 99.95% uptime SLA; automated failover; real-time health monitoring</td>
+            </tr>
+            <tr>
+                <td>Input validation</td>
+                <td>Server-side schema validation; parameterized queries; output encoding; Content Security Policy headers</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>A1.4 Physical and Environmental Security</h3>
+    <p>
+        Physical security is provided by AWS's data center infrastructure, which maintains SOC 1/2/3, ISO 27001, ISO 27017, ISO 27018, and ISO 27701 certifications. AWS data centers feature multi-layered physical access controls including biometric access, 24/7 security staff, video surveillance, and environmental controls (fire suppression, climate control, power redundancy).
+    </p>
+
+    <h3>A1.5 Personnel Security</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Measure</th>
+                <th>Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Background checks</td>
+                <td>All employees with access to Personal Data undergo background verification checks prior to onboarding</td>
+            </tr>
+            <tr>
+                <td>Confidentiality agreements</td>
+                <td>All employees sign confidentiality and data protection agreements as part of employment contracts</td>
+            </tr>
+            <tr>
+                <td>Security training</td>
+                <td>Mandatory annual security awareness training; role-specific training for developers and operations staff; phishing simulation exercises</td>
+            </tr>
+            <tr>
+                <td>Offboarding</td>
+                <td>Immediate revocation of all system access upon termination; return of all company equipment and data; exit interview including security obligations reminder</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>A1.6 Vulnerability Management and Testing</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Measure</th>
+                <th>Implementation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Penetration testing</td>
+                <td>Annual comprehensive pen test by CREST-accredited firm; quarterly targeted assessments; pre-release security testing</td>
+            </tr>
+            <tr>
+                <td>Vulnerability scanning</td>
+                <td>Continuous SAST (Semgrep, CodeQL), nightly DAST (OWASP ZAP), SCA (Snyk, Dependabot), IaC scanning (Checkov)</td>
+            </tr>
+            <tr>
+                <td>Patch management</td>
+                <td>Critical patches within 24 hours; high-severity within 7 days; routine patches monthly</td>
+            </tr>
+            <tr>
+                <td>Bug bounty</td>
+                <td>Private bug bounty program via HackerOne; rewards up to $15,000 for critical findings</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Annex 2 -->
+    <div class="annex-header page-break">
+        <h2>Annex 2: Authorized Sub-processors</h2>
+    </div>
+
+    <p>
+        The following Sub-processors are authorized by the Controller as of the Effective Date of this DPA. The Processor shall notify the Controller of any changes to this list in accordance with Article 5 of this DPA.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-processor</th>
+                <th>Purpose of Processing</th>
+                <th>Location of Processing</th>
+                <th>Transfer Mechanism</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Amazon Web Services (AWS)</strong><br>Amazon Web Services EMEA SARL</td>
+                <td>Cloud infrastructure hosting, data storage, compute, database, and related managed services</td>
+                <td>EU (Ireland, Frankfurt), US (Virginia, Oregon), or AP (Singapore, Tokyo) per customer data residency selection</td>
+                <td>Adequacy decision (EU-US DPF) / SCCs</td>
+            </tr>
+            <tr>
+                <td><strong>Datadog</strong><br>Datadog, Inc.</td>
+                <td>Infrastructure monitoring, application performance monitoring, and log management (anonymized/aggregated operational metrics only; no Personal Data in normal operation)</td>
+                <td>United States (Virginia)</td>
+                <td>EU-US Data Privacy Framework / SCCs</td>
+            </tr>
+            <tr>
+                <td><strong>SendGrid (Twilio)</strong><br>Twilio Inc.</td>
+                <td>Transactional email delivery (user notifications, password resets, system alerts)</td>
+                <td>United States</td>
+                <td>EU-US Data Privacy Framework / SCCs</td>
+            </tr>
+            <tr>
+                <td><strong>HackerOne</strong><br>HackerOne, Inc.</td>
+                <td>Security vulnerability disclosure management (no customer Personal Data processed)</td>
+                <td>United States</td>
+                <td>Not applicable (no Personal Data)</td>
+            </tr>
+            <tr>
+                <td><strong>Stripe</strong><br>Stripe Payments Europe, Ltd.</td>
+                <td>Payment processing for Platform Services subscriptions (billing contact data only)</td>
+                <td>Ireland / United States</td>
+                <td>Adequacy decision (Ireland) / EU-US DPF</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="legal-note">
+        <div class="note-title">Sub-processor Updates</div>
+        <p>
+            An up-to-date list of Sub-processors is maintained at <strong>https://arcascience.ai/legal/sub-processors</strong>. The Controller may subscribe to email notifications of changes to this list by contacting dpo@arcascience.ai or through the Platform's administrative settings.
+        </p>
+    </div>
+
+    <!-- Signature block -->
+    <h2 class="page-break">Execution</h2>
+
+    <p>
+        IN WITNESS WHEREOF, the Parties have caused this Data Processing Agreement to be executed by their duly authorized representatives as of the Effective Date.
+    </p>
+
+    <div class="signature-block">
+        <div class="signature-party">
+            <h4>Data Controller</h4>
+            <p><strong>Entity:</strong> <span class="fill-field">[Customer Legal Entity]</span></p>
+            <div class="signature-line"></div>
+            <div class="signature-label">Signature</div>
+            <p style="margin-top: 15px;"><strong>Name:</strong> <span class="fill-field">[Name]</span></p>
+            <p><strong>Title:</strong> <span class="fill-field">[Title]</span></p>
+            <p><strong>Date:</strong> <span class="fill-field">[Date]</span></p>
+        </div>
+        <div class="signature-party">
+            <h4>Data Processor</h4>
+            <p><strong>Entity:</strong> ArcaScience SAS</p>
+            <div class="signature-line"></div>
+            <div class="signature-label">Signature</div>
+            <p style="margin-top: 15px;"><strong>Name:</strong> <span class="fill-field">[Name]</span></p>
+            <p><strong>Title:</strong> <span class="fill-field">[Title]</span></p>
+            <p><strong>Date:</strong> <span class="fill-field">[Date]</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience SAS. All rights reserved. | arcascience.ai<br>
+    DPA-TEMPLATE-2026-V2.4 | This template is provided for informational and negotiation purposes and should be reviewed by qualified legal counsel before execution.<br>
+    ArcaScience SAS &mdash; 42 Rue de Lisbonne, 75008 Paris, France
+</div>
+
+</body>
+</html>
