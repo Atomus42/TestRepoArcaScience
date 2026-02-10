@@ -279,8 +279,10 @@
   transition: background-color 150ms ease;
 }
 [data-accordion-trigger]:hover { background-color: var(--grey-50); }
-[data-accordion-trigger] .chevron { transition: transform 200ms ease; }
-[data-accordion-trigger][aria-expanded="true"] .chevron { transform: rotate(180deg); }
+[data-accordion-trigger] .chevron,
+[data-accordion-trigger] [data-accordion-icon] { transition: transform 200ms ease; }
+[data-accordion-trigger][aria-expanded="true"] .chevron,
+[data-accordion-trigger][aria-expanded="true"] [data-accordion-icon] { transform: rotate(180deg); }
 
 /* =========================================================================
    Tabs

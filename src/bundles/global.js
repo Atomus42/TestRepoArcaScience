@@ -53,6 +53,10 @@ function initAccordions() {
     const triggers = group.querySelectorAll('[data-accordion-trigger]');
     triggers.forEach((trigger) => {
       groupedTriggers.add(trigger);
+      // Ensure aria-expanded is initialized
+      if (!trigger.hasAttribute('aria-expanded')) {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
       trigger.addEventListener('click', () => {
         const content = trigger.nextElementSibling;
         if (!content || !content.hasAttribute('data-accordion-content')) return;
