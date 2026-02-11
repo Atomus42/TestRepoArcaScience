@@ -105,6 +105,36 @@ function initDropdowns() {
     if (activeDropdown === wrap) activeDropdown = null;
   }
 
+  // Sub-dropdown hover handling
+  const subWraps = document.querySelectorAll('.arca-nav-subdropdown-wrap');
+  subWraps.forEach((subWrap) => {
+    let subCloseTimer = null;
+    const subDropdown = subWrap.querySelector('.arca-nav-subdropdown');
+    if (!subDropdown) return;
+
+    subWrap.addEventListener('mouseenter', () => {
+      clearTimeout(subCloseTimer);
+      subWrap.classList.add('is-sub-open');
+    });
+    subWrap.addEventListener('mouseleave', () => {
+      subCloseTimer = setTimeout(() => {
+        subWrap.classList.remove('is-sub-open');
+      }, 120);
+    });
+
+    // Touch support for sub-dropdown trigger
+    const subTrigger = subWrap.querySelector('.arca-nav-subdropdown-trigger');
+    if (subTrigger) {
+      subTrigger.addEventListener('click', (e) => {
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+          e.preventDefault();
+          e.stopPropagation();
+          subWrap.classList.toggle('is-sub-open');
+        }
+      });
+    }
+  });
+
   // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && activeDropdown) {
