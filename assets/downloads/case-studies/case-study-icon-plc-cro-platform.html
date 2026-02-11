@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: ICON plc — CRO-Scale Benefit-Risk Analysis Platform | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header .label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #2563EB;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .overview-box {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .overview-item {
+            padding: 0;
+        }
+
+        .overview-item .label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #2563EB;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .overview-item .value {
+            font-size: 11pt;
+            color: #1a1a2e;
+        }
+
+        .challenge-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .challenge-box h3 {
+            color: #b91c1c;
+            margin-top: 0;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .solution-box h3 {
+            color: #15803d;
+            margin-top: 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .result-card {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .result-card .number {
+            font-size: 30pt;
+            font-weight: 700;
+            color: #2563EB;
+            line-height: 1;
+        }
+
+        .result-card .unit {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2563EB;
+        }
+
+        .result-card .description {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 25px 0;
+            padding-left: 25px;
+            border-left: 3px solid #2563EB;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #2563EB;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #2563EB;
+        }
+
+        .timeline-item .week {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #2563EB;
+            text-transform: uppercase;
+        }
+
+        .timeline-item .title {
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .timeline-item .detail {
+            font-size: 10pt;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2563EB;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .testimonial {
+            background: #f8fafc;
+            border-left: 4px solid #2563EB;
+            padding: 22px 28px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 12pt;
+            line-height: 1.6;
+        }
+
+        .testimonial .attribution {
+            font-style: normal;
+            font-size: 10pt;
+            color: #64748b;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .cta-section .cta-link {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-header .label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .result-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .overview-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .challenge-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .solution-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3 { page-break-after: avoid; }
+            table, .testimonial, .results-grid { page-break-inside: avoid; }
+            .results-grid { display: block; }
+            .result-card { display: inline-block; width: 30%; margin: 5px 1%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <div class="label">Case Study &mdash; CRO Partnership</div>
+    <h1>ICON plc: CRO-Scale Benefit-Risk Analysis Platform</h1>
+    <div class="subtitle">How ICON deployed ArcaScience across 200+ compounds and 50+ sponsors, reducing BRA setup time by 73% and generating $8.4M in annual operational savings</div>
+    <div class="meta">Case Study | 2026 | arcascience.ai</div>
+</div>
+
+<div class="content">
+
+    <div class="overview-box">
+        <div class="overview-item">
+            <div class="label">Company</div>
+            <div class="value">ICON plc (Top 3 Global CRO)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Scope</div>
+            <div class="value">Enterprise CRO Platform Deployment</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Portfolio</div>
+            <div class="value">200+ active compounds across 50+ sponsor companies</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Challenge</div>
+            <div class="value">Scalable, multi-sponsor BRA platform for CRO operations</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">ArcaScience Modules Used</div>
+            <div class="value">Data Intelligence, Decision Intelligence, Automated Outputs</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Timeline</div>
+            <div class="value">16-week platform implementation</div>
+        </div>
+    </div>
+
+    <h2>The Challenge</h2>
+
+    <div class="challenge-box">
+        <h3>Scaling BRA Services Across a Diverse Multi-Sponsor Portfolio</h3>
+        <p>
+            As a leading CRO managing pharmacovigilance for 50+ sponsor companies, ICON faced unique challenges in delivering consistent, high-quality BRA across a diverse portfolio. Each sponsor had different data formats, safety database systems, and reporting requirements. Manual BRA preparation required extensive customization for each sponsor, limiting scalability.
+        </p>
+    </div>
+
+    <p>
+        The specific challenges facing ICON's pharmacovigilance operations were significant:
+    </p>
+    <ul>
+        <li><strong>Consultant time allocation:</strong> ICON's PV consultants spent 65% of their time on data preparation rather than scientific analysis, limiting the value they could deliver to sponsors</li>
+        <li><strong>Competitive pressure:</strong> Other CROs were investing in technology-driven differentiation, demanding faster turnaround and more advanced analytical capabilities</li>
+        <li><strong>Inconsistent quality:</strong> The lack of a standardized platform meant quality and timelines varied significantly across engagements, with consistency scores ranging from 60% to 90%</li>
+        <li><strong>Scalability constraints:</strong> Manual, consultant-dependent processes could not scale to meet growing demand without proportional headcount increases</li>
+        <li><strong>Sponsor onboarding delays:</strong> Integrating a new sponsor's data systems and processes took 4&ndash;6 weeks, slowing revenue recognition and client satisfaction</li>
+    </ul>
+
+    <h2>The Solution</h2>
+
+    <div class="solution-box">
+        <h3>ArcaScience Multi-Tenant BRA Platform</h3>
+        <p>
+            ArcaScience partnered with ICON to deploy a multi-tenant BRA platform capable of serving 50+ sponsor companies simultaneously, with configurable workflows that adapt to each sponsor's specific requirements while maintaining consistent quality standards.
+        </p>
+    </div>
+
+    <h2>Implementation Process</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="week">Weeks 1&ndash;3</div>
+            <div class="title">Platform Architecture</div>
+            <div class="detail">Designed multi-tenant architecture with sponsor-specific data isolation. Mapped integration requirements for 8 major safety database systems (Argus, ArisGlobal, ARIS-g, etc.). Defined configurable workflow templates.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 4&ndash;7</div>
+            <div class="title">Multi-Tenant Build</div>
+            <div class="detail">Built automated sponsor onboarding pipeline. Configured data connectors for each sponsor's safety database system. Created parameterized BRA templates for 12 therapeutic areas.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 8&ndash;11</div>
+            <div class="title">Pilot Deployment</div>
+            <div class="detail">Launched with 25 sponsor compounds across oncology, immunology, and CNS. Validated output quality with sponsor PV teams. Refined AI models based on therapeutic area-specific requirements.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 12&ndash;14</div>
+            <div class="title">Scale-Up</div>
+            <div class="detail">Extended to 200+ compounds across all therapeutic areas. Onboarded remaining 25+ sponsors. Integrated with ICON's existing regulatory submission workflows.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 15&ndash;16</div>
+            <div class="title">Optimization &amp; Training</div>
+            <div class="detail">Fine-tuned automation for compound-specific requirements. Trained 85+ ICON PV consultants on platform usage. Established SLAs and quality metrics.</div>
+        </div>
+    </div>
+
+    <h2>Results</h2>
+
+    <div class="results-grid">
+        <div class="result-card">
+            <div class="number">73<span class="unit">%</span></div>
+            <div class="description">Reduction in BRA<br>setup time</div>
+        </div>
+        <div class="result-card">
+            <div class="number">$8.4<span class="unit">M</span></div>
+            <div class="description">Annual operational<br>savings</div>
+        </div>
+        <div class="result-card">
+            <div class="number">200<span class="unit">+</span></div>
+            <div class="description">Compounds on<br>platform</div>
+        </div>
+    </div>
+
+    <p style="text-align: center; font-weight: 600; color: #2563EB; margin-top: -10px;">
+        50+ sponsors served simultaneously on a single platform
+    </p>
+
+    <h3>Quantitative Outcomes</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Before ArcaScience</th>
+                <th>After ArcaScience</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BRA setup time per compound</td>
+                <td>3&ndash;4 weeks</td>
+                <td>3&ndash;5 days (73% reduction)</td>
+            </tr>
+            <tr>
+                <td>Compounds managed</td>
+                <td>200+ (manually)</td>
+                <td>200+ (automated platform)</td>
+            </tr>
+            <tr>
+                <td>PV consultant time on data prep</td>
+                <td>65%</td>
+                <td>20%</td>
+            </tr>
+            <tr>
+                <td>Sponsor onboarding time</td>
+                <td>4&ndash;6 weeks</td>
+                <td>5&ndash;7 days</td>
+            </tr>
+            <tr>
+                <td>BRA consistency score</td>
+                <td>Variable (60&ndash;90%)</td>
+                <td>Standardized (95%+)</td>
+            </tr>
+            <tr>
+                <td>Annual operational savings</td>
+                <td>Baseline</td>
+                <td>$8.4M</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="testimonial">
+        "ArcaScience has become a core differentiator for ICON's pharmacovigilance services. Our ability to offer AI-powered benefit-risk analysis at scale, across any therapeutic area and any sponsor's data system, has transformed our competitive position. Sponsors are choosing ICON specifically because of this capability."
+        <div class="attribution">&mdash; EVP, Drug Safety &amp; Pharmacovigilance, ICON plc</div>
+    </div>
+
+    <div class="testimonial">
+        "The impact on our consultants has been transformative. Instead of spending most of their time wrestling with data, they're now focused on scientific analysis and strategic safety advice. That's better for our team, better for our sponsors, and ultimately better for patients."
+        <div class="attribution">&mdash; SVP, PV Operations, ICON plc</div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ol>
+        <li><strong>Multi-tenant BRA platforms enable CROs to deliver consistent, high-quality safety analysis</strong> across diverse sponsor portfolios at unprecedented scale.</li>
+        <li><strong>The 73% reduction in BRA setup time transforms CRO economics,</strong> enabling profitable growth without proportional headcount increases.</li>
+        <li><strong>Standardized quality scores (95%+) across all engagements</strong> eliminate the variability inherent in manual, consultant-dependent processes.</li>
+        <li><strong>Freeing PV consultants from data preparation</strong> allows CROs to offer higher-value strategic safety consulting services.</li>
+        <li><strong>Rapid sponsor onboarding (5&ndash;7 days vs. 4&ndash;6 weeks)</strong> creates competitive advantage and accelerates revenue recognition.</li>
+    </ol>
+
+    <div class="cta-section">
+        <h3>Ready to Transform Your Benefit-Risk Strategy?</h3>
+        <p>Learn how ArcaScience can support your next regulatory submission with AI-driven benefit-risk analysis.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a class="cta-link" href="https://arcascience.ai/contact">Schedule a Consultation</a> &nbsp;|&nbsp;
+            <a class="cta-link" href="mailto:info@arcascience.ai">info@arcascience.ai</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience. All rights reserved. | arcascience.ai<br>
+    This case study is based on an actual client engagement with certain details anonymized and modified to protect confidentiality.
+</div>
+
+</body>
+</html>

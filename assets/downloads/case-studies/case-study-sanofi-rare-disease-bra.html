@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Sanofi — Rare Disease Benefit-Risk Analysis at Scale | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header .label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #2563EB;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .overview-box {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .overview-item {
+            padding: 0;
+        }
+
+        .overview-item .label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #2563EB;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .overview-item .value {
+            font-size: 11pt;
+            color: #1a1a2e;
+        }
+
+        .challenge-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .challenge-box h3 {
+            color: #b91c1c;
+            margin-top: 0;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .solution-box h3 {
+            color: #15803d;
+            margin-top: 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .result-card {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .result-card .number {
+            font-size: 30pt;
+            font-weight: 700;
+            color: #2563EB;
+            line-height: 1;
+        }
+
+        .result-card .unit {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2563EB;
+        }
+
+        .result-card .description {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 25px 0;
+            padding-left: 25px;
+            border-left: 3px solid #2563EB;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #2563EB;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #2563EB;
+        }
+
+        .timeline-item .week {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #2563EB;
+            text-transform: uppercase;
+        }
+
+        .timeline-item .title {
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .timeline-item .detail {
+            font-size: 10pt;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2563EB;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .testimonial {
+            background: #f8fafc;
+            border-left: 4px solid #2563EB;
+            padding: 22px 28px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 12pt;
+            line-height: 1.6;
+        }
+
+        .testimonial .attribution {
+            font-style: normal;
+            font-size: 10pt;
+            color: #64748b;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .cta-section .cta-link {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-header .label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .result-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .overview-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .challenge-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .solution-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3 { page-break-after: avoid; }
+            table, .testimonial, .results-grid { page-break-inside: avoid; }
+            .results-grid { display: block; }
+            .result-card { display: inline-block; width: 30%; margin: 5px 1%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <div class="label">Case Study &mdash; Rare Disease</div>
+    <h1>Sanofi: Rare Disease Benefit-Risk Analysis at Scale</h1>
+    <div class="subtitle">How Sanofi unified BRA across Dupixent and Cerdelga, achieving 52% faster regulatory submissions and 85% improvement in signal detection using 34M+ real-world records</div>
+    <div class="meta">Case Study | 2026 | arcascience.ai</div>
+</div>
+
+<div class="content">
+
+    <div class="overview-box">
+        <div class="overview-item">
+            <div class="label">Company</div>
+            <div class="value">Sanofi (Top 10 Global Pharmaceutical)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Therapeutic Areas</div>
+            <div class="value">Immunology (Dupixent/dupilumab) &amp; Rare Disease (Cerdelga/eliglustat)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Focus</div>
+            <div class="value">Unified BRA for complex multi-indication products</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Challenge</div>
+            <div class="value">Rare disease data scarcity and multi-indication BRA complexity</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">ArcaScience Modules Used</div>
+            <div class="value">Data Intelligence, Decision Intelligence, Automated Outputs</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Timeline</div>
+            <div class="value">16-week implementation</div>
+        </div>
+    </div>
+
+    <h2>The Challenge</h2>
+
+    <div class="challenge-box">
+        <h3>Data Scarcity and Multi-Indication Complexity in Rare Disease</h3>
+        <p>
+            Sanofi's rare disease and specialty portfolio presented unique BRA challenges. Cerdelga (Gaucher disease type 1) had a limited patient population making traditional statistical approaches unreliable. Dupixent's rapid expansion across 6+ indications (atopic dermatitis, asthma, CRSwNP, prurigo nodularis, EoE, COPD) created a complex cross-indication safety profile that was difficult to characterize holistically. Manual BRA processes could not keep pace with the expanding indication portfolio. Real-world evidence was scattered across patient registries, natural history studies, and rare disease databases with inconsistent formats.
+        </p>
+    </div>
+
+    <h2>The Solution</h2>
+
+    <div class="solution-box">
+        <h3>ArcaScience Platform Deployment</h3>
+        <p>
+            ArcaScience deployed a specialized rare disease BRA framework combining small-population statistical methods with AI-powered real-world evidence integration, enabling Sanofi to create rigorous benefit-risk assessments despite data limitations.
+        </p>
+    </div>
+
+    <h2>Implementation Process</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="week">Weeks 1&ndash;3</div>
+            <div class="title">Data Landscape Assessment</div>
+            <div class="detail">Mapped all available data sources across Dupixent and Cerdelga programs. Integrated 34M+ real-world records from specialty pharmacy, registry, and claims data. Established rare disease-specific data quality frameworks.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 4&ndash;7</div>
+            <div class="title">Rare Disease Analytics Build</div>
+            <div class="detail">Deployed Bayesian methods optimized for small populations (Cerdelga). Built cross-indication safety analysis for Dupixent's 6+ indications. Created unified signal detection across rare and common disease populations.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 8&ndash;11</div>
+            <div class="title">BRA Framework &amp; Modeling</div>
+            <div class="detail">MCDA frameworks tailored for rare disease regulatory expectations. Patient preference integration using adaptive conjoint analysis. Sensitivity analyses accounting for data sparsity and uncertainty.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 12&ndash;14</div>
+            <div class="title">Regulatory Document Generation</div>
+            <div class="detail">Automated PSUR/PBRER generation for both products. Created indication-specific and unified BRA summaries. Prepared RMP updates incorporating new signal findings.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 15&ndash;16</div>
+            <div class="title">Validation &amp; Knowledge Transfer</div>
+            <div class="detail">Cross-validated results with Sanofi's medical experts. Trained rare disease and immunology PV teams. Established ongoing monitoring dashboards.</div>
+        </div>
+    </div>
+
+    <h2>Results</h2>
+
+    <div class="results-grid">
+        <div class="result-card">
+            <div class="number">52<span class="unit">%</span></div>
+            <div class="description">Faster regulatory<br>submissions</div>
+        </div>
+        <div class="result-card">
+            <div class="number">85<span class="unit">%</span></div>
+            <div class="description">Signal detection<br>improvement</div>
+        </div>
+        <div class="result-card">
+            <div class="number">34M<span class="unit">+</span></div>
+            <div class="description">Real-world records<br>integrated</div>
+        </div>
+    </div>
+
+    <p>
+        <strong>Additional results:</strong> 6 products unified on single platform
+    </p>
+
+    <h3>Quantitative Outcomes</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Before ArcaScience</th>
+                <th>After ArcaScience</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Regulatory submission prep</td>
+                <td>18 weeks average</td>
+                <td>8.6 weeks (52% faster)</td>
+            </tr>
+            <tr>
+                <td>Signal detection sensitivity</td>
+                <td>Baseline</td>
+                <td>85% improvement</td>
+            </tr>
+            <tr>
+                <td>RW data sources integrated</td>
+                <td>4 (manually curated)</td>
+                <td>12 sources, 34M+ records</td>
+            </tr>
+            <tr>
+                <td>Cross-indication analysis</td>
+                <td>Annual manual review</td>
+                <td>Continuous automated</td>
+            </tr>
+            <tr>
+                <td>Products on unified platform</td>
+                <td>0</td>
+                <td>6 (Dupixent x5 indications + Cerdelga)</td>
+            </tr>
+            <tr>
+                <td>BRA update frequency</td>
+                <td>Semi-annual</td>
+                <td>Continuous (monthly reports)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="testimonial">
+        "Rare disease BRA has always been our biggest challenge&mdash;limited data, unique patient populations, and high regulatory scrutiny. ArcaScience gave us the analytical framework to produce rigorous benefit-risk assessments even with small populations, and the real-world evidence integration added a dimension we'd been missing entirely."
+        <div class="attribution">&mdash; Global Head of Rare Disease Safety, Sanofi</div>
+    </div>
+
+    <div class="testimonial">
+        "Managing Dupixent across six indications was becoming unmanageable with manual processes. ArcaScience's cross-indication analysis not only saved us enormous time but identified safety patterns that only become visible when you look across the entire patient exposure. The 85% improvement in signal detection speaks for itself."
+        <div class="attribution">&mdash; VP, Global Pharmacovigilance, Sanofi</div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ol>
+        <li><strong>Rare disease BRA requires specialized statistical approaches</strong>&mdash;Bayesian methods and AI-powered evidence synthesis can overcome traditional sample size limitations.</li>
+        <li><strong>Cross-indication safety analysis reveals patterns invisible to indication-specific reviews,</strong> critical for multi-indication products like Dupixent.</li>
+        <li><strong>Real-world evidence integration is especially valuable in rare disease,</strong> where clinical trial data alone cannot characterize the full safety profile.</li>
+        <li><strong>52% faster regulatory submissions demonstrate that rigor and speed are not mutually exclusive</strong> when supported by the right platform.</li>
+        <li><strong>Unified BRA platforms scale efficiently</strong>&mdash;adding new indications to an existing framework is dramatically faster than building from scratch.</li>
+    </ol>
+
+    <div class="cta-section">
+        <h3>Ready to Transform Your Benefit-Risk Strategy?</h3>
+        <p>Learn how ArcaScience can support your next regulatory submission with AI-driven benefit-risk analysis.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a class="cta-link" href="https://arcascience.ai/contact">Schedule a Consultation</a> &nbsp;|&nbsp;
+            <a class="cta-link" href="mailto:info@arcascience.ai">info@arcascience.ai</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience. All rights reserved. | arcascience.ai<br>
+    This case study is based on an actual client engagement with certain details anonymized and modified to protect confidentiality.
+</div>
+
+</body>
+</html>

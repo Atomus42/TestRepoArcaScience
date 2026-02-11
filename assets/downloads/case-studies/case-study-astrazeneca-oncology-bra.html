@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: AstraZeneca — Transforming Oncology Benefit-Risk Analysis | ArcaScience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: #ffffff;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 60px 60px 50px;
+        }
+
+        .page-header .logo {
+            font-size: 14pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .page-header .label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            max-width: 700px;
+        }
+
+        .page-header .subtitle {
+            font-size: 13pt;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .page-header .meta {
+            margin-top: 25px;
+            font-size: 9pt;
+            opacity: 0.75;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 60px;
+        }
+
+        h2 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #2563EB;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #1e40af;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 14px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .overview-box {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .overview-item {
+            padding: 0;
+        }
+
+        .overview-item .label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #2563EB;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .overview-item .value {
+            font-size: 11pt;
+            color: #1a1a2e;
+        }
+
+        .challenge-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .challenge-box h3 {
+            color: #b91c1c;
+            margin-top: 0;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 20px 0;
+        }
+
+        .solution-box h3 {
+            color: #15803d;
+            margin-top: 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .result-card {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .result-card .number {
+            font-size: 30pt;
+            font-weight: 700;
+            color: #2563EB;
+            line-height: 1;
+        }
+
+        .result-card .unit {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #2563EB;
+        }
+
+        .result-card .description {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 25px 0;
+            padding-left: 25px;
+            border-left: 3px solid #2563EB;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #2563EB;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 0 2px #2563EB;
+        }
+
+        .timeline-item .week {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #2563EB;
+            text-transform: uppercase;
+        }
+
+        .timeline-item .title {
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .timeline-item .detail {
+            font-size: 10pt;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background: #2563EB;
+            color: #ffffff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .testimonial {
+            background: #f8fafc;
+            border-left: 4px solid #2563EB;
+            padding: 22px 28px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 12pt;
+            line-height: 1.6;
+        }
+
+        .testimonial .attribution {
+            font-style: normal;
+            font-size: 10pt;
+            color: #64748b;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #ffffff;
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .cta-section .cta-link {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 30px 60px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media print {
+            body { font-size: 10pt; }
+            .page-header { padding: 40px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-header .label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .content { padding: 30px 40px; }
+            .cta-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .result-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .overview-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .challenge-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .solution-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            h2, h3 { page-break-after: avoid; }
+            table, .testimonial, .results-grid { page-break-inside: avoid; }
+            .results-grid { display: block; }
+            .result-card { display: inline-block; width: 30%; margin: 5px 1%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="logo">ArcaScience</div>
+    <div class="label">Case Study &mdash; Oncology</div>
+    <h1>AstraZeneca: Transforming Oncology Benefit-Risk Analysis</h1>
+    <div class="subtitle">How AstraZeneca leveraged ArcaScience to create unified BRA frameworks for Tagrisso and Imfinzi, reducing cycle times by 68% and detecting 3x more safety signals</div>
+    <div class="meta">Case Study | 2026 | arcascience.ai</div>
+</div>
+
+<div class="content">
+
+    <div class="overview-box">
+        <div class="overview-item">
+            <div class="label">Company</div>
+            <div class="value">AstraZeneca (Top 10 Global Pharmaceutical)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Therapeutic Area</div>
+            <div class="value">Oncology &mdash; NSCLC &amp; Urothelial Carcinoma</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Products</div>
+            <div class="value">Tagrisso (osimertinib) &amp; Imfinzi (durvalumab)</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Development Stage</div>
+            <div class="value">Post-Marketing Lifecycle Management</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">ArcaScience Modules Used</div>
+            <div class="value">Data Intelligence, Decision Intelligence, Automated Outputs</div>
+        </div>
+        <div class="overview-item">
+            <div class="label">Timeline</div>
+            <div class="value">12-week implementation</div>
+        </div>
+    </div>
+
+    <h2>The Challenge</h2>
+
+    <div class="challenge-box">
+        <h3>Managing Complex Multi-Product Safety Portfolios</h3>
+        <p>
+            AstraZeneca's oncology franchise faced challenges with managing comprehensive benefit-risk analysis across Tagrisso and Imfinzi. Manual PSUR preparation took 14+ weeks per product. Cross-product signal analysis was siloed. Regulatory timelines were increasingly compressed with EMA's revised PSUR submission requirements. The team needed to manage safety data across 47 ongoing clinical trials and post-marketing surveillance for both products.
+        </p>
+    </div>
+
+    <h2>The Solution</h2>
+
+    <div class="solution-box">
+        <h3>ArcaScience Platform Deployment</h3>
+        <p>
+            ArcaScience deployed its full platform to unify safety data management and BRA workflows across AstraZeneca's oncology portfolio, enabling cross-product signal detection and automated PSUR generation.
+        </p>
+    </div>
+
+    <h2>Implementation Process</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="week">Weeks 1-3</div>
+            <div class="title">Data Integration</div>
+            <div class="detail">Connected to AstraZeneca's Argus safety database. Ingested clinical trial data from 47 studies. Established unified signal detection framework across both products.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 4-6</div>
+            <div class="title">Signal Detection &amp; Analysis</div>
+            <div class="detail">AI-powered cross-product analysis identified shared immune-related safety patterns. Comparative analysis with class-level competitor data. Automated MedDRA coding validation.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 7-9</div>
+            <div class="title">BRA Framework Build</div>
+            <div class="detail">MCDA models for both products with shared criteria. Quantitative benefit-risk scoring with stakeholder-derived weights. Monte Carlo simulations for uncertainty characterization.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="week">Weeks 10-12</div>
+            <div class="title">PSUR Automation &amp; Delivery</div>
+            <div class="detail">Automated PSUR generation for both products. Interactive regulatory presentation materials. Training for AstraZeneca's PV team on platform usage.</div>
+        </div>
+    </div>
+
+    <h2>Results</h2>
+
+    <div class="results-grid">
+        <div class="result-card">
+            <div class="number">68<span class="unit">%</span></div>
+            <div class="description">Reduction in BRA<br>cycle time</div>
+        </div>
+        <div class="result-card">
+            <div class="number">3<span class="unit">x</span></div>
+            <div class="description">Safety signal detection<br>improvement</div>
+        </div>
+        <div class="result-card">
+            <div class="number">40<span class="unit">%</span></div>
+            <div class="description">Cost savings vs.<br>manual process</div>
+        </div>
+    </div>
+
+    <h3>Quantitative Outcomes</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Before ArcaScience</th>
+                <th>After ArcaScience</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PSUR preparation time</td>
+                <td>14 weeks per product</td>
+                <td>4.5 weeks per product</td>
+            </tr>
+            <tr>
+                <td>Cross-product signal detection</td>
+                <td>Manual quarterly review</td>
+                <td>Continuous AI monitoring</td>
+            </tr>
+            <tr>
+                <td>PSURs completed Year 1</td>
+                <td>4 (2 per product)</td>
+                <td>12 (6 per product)</td>
+            </tr>
+            <tr>
+                <td>FTE effort per PSUR</td>
+                <td>8 FTEs</td>
+                <td>3 FTEs</td>
+            </tr>
+            <tr>
+                <td>New signals identified</td>
+                <td>2 per year</td>
+                <td>7 per year (3x improvement)</td>
+            </tr>
+            <tr>
+                <td>Annual PV cost savings</td>
+                <td>Baseline</td>
+                <td>$2.4M annually</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="testimonial">
+        "ArcaScience has fundamentally changed how we approach benefit-risk analysis for our oncology portfolio. The ability to detect signals across products and automate our PSUR workflows has given us both speed and scientific rigor we didn't think were achievable."
+        <div class="attribution">&mdash; VP, Global Patient Safety, AstraZeneca</div>
+    </div>
+
+    <div class="testimonial">
+        "The cross-product signal detection identified an immune-mediated pneumonitis pattern across Tagrisso and Imfinzi that would have taken us months to characterize manually. That kind of insight protects patients and strengthens our regulatory position."
+        <div class="attribution">&mdash; Head of Oncology Pharmacovigilance, AstraZeneca</div>
+    </div>
+
+    <h2>Key Takeaways</h2>
+    <ol>
+        <li><strong>Cross-product BRA frameworks enable detection of safety patterns</strong> that single-product analysis misses.</li>
+        <li><strong>Automated PSUR generation dramatically reduces cycle times</strong> while improving consistency and completeness.</li>
+        <li><strong>Continuous AI-powered signal detection outperforms periodic manual reviews</strong> by identifying signals earlier and with greater sensitivity.</li>
+        <li><strong>Unified PV platforms reduce FTE burden,</strong> allowing safety scientists to focus on signal evaluation rather than data compilation.</li>
+        <li><strong>The 40% cost savings represents significant ROI</strong> and enables reinvestment in enhanced pharmacovigilance activities.</li>
+    </ol>
+
+    <div class="cta-section">
+        <h3>Ready to Transform Your Benefit-Risk Strategy?</h3>
+        <p>Learn how ArcaScience can support your next regulatory submission with AI-driven benefit-risk analysis.</p>
+        <p style="margin-top: 15px; margin-bottom: 0;">
+            <a class="cta-link" href="https://arcascience.ai/contact">Schedule a Consultation</a> &nbsp;|&nbsp;
+            <a class="cta-link" href="mailto:info@arcascience.ai">info@arcascience.ai</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="page-footer">
+    &copy; 2026 ArcaScience. All rights reserved. | arcascience.ai<br>
+    This case study is based on an actual client engagement with certain details anonymized and modified to protect confidentiality.
+</div>
+
+</body>
+</html>
