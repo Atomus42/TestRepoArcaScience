@@ -449,13 +449,19 @@ function initMagneticButtons() {
   if ('ontouchstart' in window) return;
 
   document.querySelectorAll('.arca-btn-primary, .arca-btn-primary-inverted, .arca-btn-secondary').forEach((btn) => {
+    let rafId = null;
     btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translateY(-2px) translate(${x * 0.15}px, ${y * 0.15}px)`;
-    });
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translateY(-2px) translate(${x * 0.15}px, ${y * 0.15}px)`;
+        rafId = null;
+      });
+    }, { passive: true });
     btn.addEventListener('mouseleave', () => {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
       btn.style.transform = '';
     });
   });
@@ -490,41 +496,8 @@ function initTextReveals() {
   });
 }
 
-/**
- * Animated Borders — cards with .arca-card get an animated gradient
- * border on hover for a subtle glow effect.
- */
-function initAnimatedBorders() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  document.querySelectorAll('.arca-card').forEach((card) => {
-    card.addEventListener('mouseenter', () => {
-      card.style.borderImage = 'linear-gradient(135deg, rgba(59,125,216,0.3), rgba(13,124,107,0.3)) 1';
-      card.style.borderImageSlice = '1';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.borderImage = '';
-      card.style.borderImageSlice = '';
-    });
-  });
-}
-
-/**
- * Page Entrance — orchestrated entrance animation: hero section children
- * get sequential transition delays for a polished first-paint feel.
- */
-function initPageEntrance() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const hero = document.querySelector('section:first-of-type');
-  if (!hero) return;
-
-  // Animate hero children sequentially
-  const animatables = hero.querySelectorAll('[data-animate]');
-  animatables.forEach((el, i) => {
-    el.style.transitionDelay = `${150 + i * 80}ms`;
-  });
-}
+/* initAnimatedBorders — removed: conflicted with initCardTilt hover state */
+/* initPageEntrance — removed: redundant with initStaggeredReveals */
 
 /**
  * Scroll-linked Parallax — elements with [data-parallax] shift vertically
@@ -555,45 +528,7 @@ function initScrollParallax() {
   window.addEventListener('scroll', onScroll, { passive: true });
 }
 
-/**
- * Cursor Glow Trail — a radial gradient glow follows the cursor when it
- * hovers over dark hero sections, adding ambient atmosphere.
- */
-function initCursorGlow() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if ('ontouchstart' in window) return;
-
-  const darkSections = document.querySelectorAll('.arca-bg-blue-900, .arca-cta-section');
-  if (darkSections.length === 0) return;
-
-  const glow = document.createElement('div');
-  glow.style.cssText = 'position:fixed;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(59,125,216,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;opacity:0;transition:opacity 0.3s ease;transform:translate(-50%,-50%);';
-  document.body.appendChild(glow);
-
-  let isInDark = false;
-
-  document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-
-    // Check if cursor is over a dark section
-    let overDark = false;
-    darkSections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (e.clientY >= rect.top && e.clientY <= rect.bottom && e.clientX >= rect.left && e.clientX <= rect.right) {
-        overDark = true;
-      }
-    });
-
-    if (overDark && !isInDark) {
-      glow.style.opacity = '1';
-      isInDark = true;
-    } else if (!overDark && isInDark) {
-      glow.style.opacity = '0';
-      isInDark = false;
-    }
-  }, { passive: true });
-}
+/* initCursorGlow — removed: distracting, unnecessary mousemove listener overhead */
 
 /**
  * Smooth Counters — elements with [data-smooth-counter] smoothly animate
@@ -702,17 +637,23 @@ function initCardTilt() {
 
   cards.forEach((card) => {
     card.style.transformStyle = 'preserve-3d';
+    let rafId = null;
 
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 3;
-      const rotateX = ((centerY - e.clientY) / (rect.height / 2)) * 3;
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 3;
+        const rotateX = ((centerY - e.clientY) / (rect.height / 2)) * 3;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        rafId = null;
+      });
+    }, { passive: true });
 
     card.addEventListener('mouseleave', () => {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
       card.style.transform = '';
     });
   });
@@ -759,284 +700,10 @@ function initImageReveal() {
   imgContainers.forEach((container) => observer.observe(container));
 }
 
-/**
- * Typing Effect — elements with [data-typing] get a typing cursor effect.
- * Text types out character by character when scrolled into view.
- * Speed: 30ms per char. Blinking cursor at end. Only for short text (<50 chars).
- */
-function initTypingEffect() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const elements = document.querySelectorAll('[data-typing]');
-  if (elements.length === 0) return;
-
-  // Inject cursor keyframes once
-  if (!document.getElementById('arca-typing-style')) {
-    const style = document.createElement('style');
-    style.id = 'arca-typing-style';
-    style.textContent = `
-      @keyframes arca-blink-cursor {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-      .arca-typing-cursor {
-        display: inline-block;
-        width: 2px;
-        height: 1em;
-        background: currentColor;
-        margin-left: 2px;
-        vertical-align: text-bottom;
-        animation: arca-blink-cursor 0.8s step-end infinite;
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  function typeText(el, fullText) {
-    el.textContent = '';
-    const cursor = document.createElement('span');
-    cursor.className = 'arca-typing-cursor';
-    el.appendChild(cursor);
-
-    let i = 0;
-    function typeChar() {
-      if (i < fullText.length) {
-        const textNode = document.createTextNode(fullText.charAt(i));
-        el.insertBefore(textNode, cursor);
-        i++;
-        setTimeout(typeChar, 30);
-      } else {
-        // Remove cursor after 3 seconds
-        setTimeout(() => {
-          cursor.style.transition = 'opacity 0.3s ease';
-          cursor.style.opacity = '0';
-          setTimeout(() => cursor.remove(), 300);
-        }, 3000);
-      }
-    }
-    typeChar();
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const text = el.getAttribute('data-typing') || el.textContent.trim();
-        if (text.length > 0 && text.length < 50) {
-          typeText(el, text);
-        }
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  elements.forEach((el) => {
-    // Store original text in data attribute if not already set
-    if (!el.getAttribute('data-typing') || el.getAttribute('data-typing') === '') {
-      el.setAttribute('data-typing', el.textContent.trim());
-    }
-    el.style.minHeight = '1.2em'; // Prevent layout shift
-    observer.observe(el);
-  });
-}
-
-/**
- * Number Ticker — stat elements (.arca-stat-lg, .arca-stat-sm) inside
- * [data-animate] elements get a rapid random-digit scramble effect before
- * settling on their final value (like a slot machine). 1s scramble then 0.5s settle.
- */
-function initNumberTicker() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const statEls = document.querySelectorAll('[data-animate] .arca-stat-lg, [data-animate] .arca-stat-sm');
-  if (statEls.length === 0) return;
-
-  function scramble(el) {
-    const originalText = el.textContent.trim();
-    // Identify which characters are digits vs non-digits
-    const chars = originalText.split('');
-    const digitIndices = [];
-    chars.forEach((ch, i) => {
-      if (/\d/.test(ch)) digitIndices.push(i);
-    });
-
-    if (digitIndices.length === 0) return;
-
-    const scrambleDuration = 1000;
-    const settleDuration = 500;
-    const totalDuration = scrambleDuration + settleDuration;
-    const startTime = performance.now();
-    // Track which indices have settled
-    const settled = new Set();
-
-    function tick(now) {
-      const elapsed = now - startTime;
-
-      if (elapsed >= totalDuration) {
-        el.textContent = originalText;
-        return;
-      }
-
-      const currentChars = [...chars];
-
-      if (elapsed < scrambleDuration) {
-        // Full scramble phase — randomize all digit positions
-        digitIndices.forEach((idx) => {
-          currentChars[idx] = String(Math.floor(Math.random() * 10));
-        });
-      } else {
-        // Settle phase — progressively lock digits from left to right
-        const settleProgress = (elapsed - scrambleDuration) / settleDuration;
-        const numToSettle = Math.floor(settleProgress * digitIndices.length);
-
-        digitIndices.forEach((idx, i) => {
-          if (i < numToSettle) {
-            currentChars[idx] = chars[idx]; // Final value
-            settled.add(idx);
-          } else {
-            currentChars[idx] = String(Math.floor(Math.random() * 10));
-          }
-        });
-      }
-
-      el.textContent = currentChars.join('');
-      requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Find stat elements within this container
-        const stats = entry.target.querySelectorAll('.arca-stat-lg, .arca-stat-sm');
-        stats.forEach((stat) => scramble(stat));
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  // Observe the [data-animate] parents, not the stat elements themselves
-  const observed = new Set();
-  statEls.forEach((stat) => {
-    const parent = stat.closest('[data-animate]');
-    if (parent && !observed.has(parent)) {
-      observed.add(parent);
-      observer.observe(parent);
-    }
-  });
-}
-
-/**
- * Scroll Velocity Text — elements with [data-scroll-speed] subtly skew
- * based on scroll velocity (max skewY: 2deg). Creates a dynamic parallax feel.
- * Resets when scroll stops.
- */
-function initScrollVelocityText() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const elements = document.querySelectorAll('[data-scroll-speed]');
-  if (elements.length === 0) return;
-
-  let lastScrollY = window.scrollY;
-  let velocity = 0;
-  let ticking = false;
-  let resetTimer = null;
-
-  function onScroll() {
-    const currentScrollY = window.scrollY;
-    velocity = currentScrollY - lastScrollY;
-    lastScrollY = currentScrollY;
-
-    clearTimeout(resetTimer);
-    resetTimer = setTimeout(() => {
-      velocity = 0;
-      applySkew();
-    }, 150);
-
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(() => {
-        applySkew();
-        ticking = false;
-      });
-    }
-  }
-
-  function applySkew() {
-    // Clamp velocity to produce max 2deg skew
-    const skew = Math.max(-2, Math.min(2, velocity * 0.08));
-
-    elements.forEach((el) => {
-      el.style.transform = `skewY(${skew}deg)`;
-      el.style.transition = velocity === 0 ? 'transform 0.4s ease' : 'transform 0.1s ease';
-    });
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-}
-
-/**
- * Hover Ripple — buttons (.arca-btn-primary, .arca-btn-secondary) get a
- * ripple effect originating from click/tap position. Creates a <span> with
- * radial gradient that expands and fades.
- */
-function initHoverRipple() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  // Inject ripple keyframes once
-  if (!document.getElementById('arca-ripple-style')) {
-    const style = document.createElement('style');
-    style.id = 'arca-ripple-style';
-    style.textContent = `
-      @keyframes arca-ripple-expand {
-        0% {
-          transform: translate(-50%, -50%) scale(0);
-          opacity: 0.4;
-        }
-        100% {
-          transform: translate(-50%, -50%) scale(4);
-          opacity: 0;
-        }
-      }
-      .arca-ripple-span {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-        width: 100px;
-        height: 100px;
-        background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.15) 40%, transparent 70%);
-        animation: arca-ripple-expand 0.6s ease-out forwards;
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  const buttons = document.querySelectorAll('.arca-btn-primary, .arca-btn-secondary');
-
-  buttons.forEach((btn) => {
-    // Ensure the button can contain the ripple
-    const pos = window.getComputedStyle(btn).position;
-    if (pos === 'static') btn.style.position = 'relative';
-
-    btn.addEventListener('click', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const ripple = document.createElement('span');
-      ripple.className = 'arca-ripple-span';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-
-      btn.appendChild(ripple);
-
-      // Clean up after animation
-      ripple.addEventListener('animationend', () => ripple.remove());
-    });
-  });
-}
+/* initTypingEffect — removed: dated 1990s feel, conflicts with initTextReveals */
+/* initNumberTicker — removed: conflicts with initSmoothCounters on same elements */
+/* initScrollVelocityText — removed: disorienting skew, no UX value */
+/* initHoverRipple — removed: Material Design ripple feels dated */
 
 // ---- Public API ----
 
@@ -1062,24 +729,15 @@ function init() {
   initFormValidation();
   initParallaxOrbs();
 
-  // Enhanced visual effects
+  // Visual polish — refined, non-competing effects
   initStaggeredReveals();
   initMagneticButtons();
   initTextReveals();
-  initAnimatedBorders();
-  initPageEntrance();
   initScrollParallax();
-  initCursorGlow();
-
-  // New animations — motion & delight
   initSmoothCounters();
   initRevealLines();
   initCardTilt();
   initImageReveal();
-  initTypingEffect();
-  initNumberTicker();
-  initScrollVelocityText();
-  initHoverRipple();
 
   // Auto-init scroll animations on data-attribute elements
   document.querySelectorAll('[data-animate]').forEach((el) => {

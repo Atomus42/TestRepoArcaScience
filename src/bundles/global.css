@@ -458,12 +458,7 @@
   background: linear-gradient(90deg, transparent 5%, rgba(35, 86, 160, 0.12) 30%, rgba(13, 124, 107, 0.08) 70%, transparent 95%);
 }
 
-/* Animated gradient border on cards */
-@keyframes arca-border-glow {
-  0%, 100% { border-color: rgba(59, 125, 216, 0.2); }
-  50% { border-color: rgba(13, 124, 107, 0.2); }
-}
-.arca-card-glow:hover { animation: arca-border-glow 3s ease-in-out infinite; }
+/* arca-border-glow removed — card hover handled by JS tilt + CSS translateY */
 
 /* Floating particles container */
 @keyframes arca-particle-drift {
@@ -477,18 +472,7 @@
    Enhanced Visual Effects — eye-candy animations
    ========================================================================= */
 
-/* Shimmer effect on stat numbers */
-.arca-stat-lg, .arca-stat-sm {
-  background: linear-gradient(90deg, currentColor 40%, var(--blue-400) 50%, currentColor 60%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: arca-shimmer 3s ease-in-out infinite;
-}
-@keyframes arca-shimmer {
-  0%, 100% { background-position: 100% 50%; }
-  50% { background-position: 0% 50%; }
-}
+/* Stat numbers — clean, no shimmer (conflicts with JS counter animations) */
 
 /* Pulse glow on credibility metrics */
 .arca-credibility-metric {
@@ -522,22 +506,7 @@
   text-transform: uppercase;
 }
 
-/* Hover-reveal line animation for card dividers */
-.arca-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--blue-600), var(--teal-600));
-  transition: width 0.4s ease, left 0.4s ease;
-  border-radius: 2px;
-}
-.arca-card:hover::before {
-  width: 60%;
-  left: 20%;
-}
+/* Card base — position context for colored-top border */
 .arca-card { position: relative; overflow: hidden; }
 
 /* Animated underline on headings in view */
@@ -907,20 +876,7 @@ section[data-animate].is-visible {
   transition: transform 0.6s ease, filter 0.6s ease, clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
 }
 
-/* =========================================================================
-   Typing cursor styles (injected by JS, CSS fallback here)
-   ========================================================================= */
-[data-typing] {
-  font-variant-numeric: tabular-nums;
-}
-
-/* =========================================================================
-   Scroll velocity text base transition
-   ========================================================================= */
-[data-scroll-speed] {
-  will-change: transform;
-  transition: transform 0.1s ease;
-}
+/* data-typing and data-scroll-speed CSS removed — JS effects removed */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0ms !important; transition-duration: 0ms !important; }
@@ -931,7 +887,6 @@ section[data-animate].is-visible {
   .arca-btn-primary::after, .arca-btn-secondary::before { display: none; }
   .arca-testimonial-quote::before { opacity: 1; transform: translateX(-50%); }
   [data-accordion-content] { opacity: 1; }
-  [data-scroll-speed] { transform: none !important; }
   .arca-form-field-wrap::before { animation: none; }
   [data-animate] img { clip-path: none; }
 }

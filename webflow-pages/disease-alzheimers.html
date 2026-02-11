@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alzheimer's Disease BRA — ArcaScience | Anti-Amyloid Benefit-Risk Analysis</title>
-  <meta name="description" content="AI-driven benefit-risk analysis for Alzheimer's Disease therapies. Comprehensive BRA for lecanemab, donanemab, aducanumab, and tau-targeting therapies with ARIA monitoring, ApoE4 risk stratification, and accelerated approval regulatory frameworks.">
+  <title>Alzheimer's Disease BRA — ArcaScience | Anti-Amyloid &amp; ARIA Monitoring</title>
+  <meta name="description" content="AI-driven benefit-risk analysis for Alzheimer's Disease including anti-amyloid antibodies lecanemab and donanemab. ArcaScience covers ARIA-E/H monitoring, ApoE4 risk stratification, and neurology-specific regulatory submissions.">
 
   <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -25,37 +25,65 @@
   <!-- NAVIGATION -->
   <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
     <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
-      <a href="/" aria-label="ArcaScience home"><img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32"></a>
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
       <div style="display: flex; align-items: center; gap: 32px;">
         <a href="/" class="arca-nav-link">Home</a>
-        <div style="position: relative;"><a href="/platform-overview" class="arca-nav-link">Platform</a></div>
-        <div style="position: relative;"><a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions</a></div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 240px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 240px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 2px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 2px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+          </div>
+        </div>
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
-            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Case Studies</a>
-            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Publications</a>
-            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Platform Metrics</a>
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
           </div>
         </div>
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
-            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">About ArcaScience</a>
-            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Leadership</a>
-            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Careers</a>
-            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Science &amp; Methodology</a>
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
           </div>
         </div>
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
-            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Resource Hub</a>
-            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Whitepapers</a>
-            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Webinars &amp; Events</a>
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
             <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
-            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">FAQ</a>
-            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px;">Glossary</a>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
           </div>
         </div>
       </div>
@@ -69,20 +97,20 @@
 
     <!-- HERO -->
     <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
-      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(13, 124, 107, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(79, 70, 189, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 125, 216, 0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
 
       <svg width="420" height="320" viewBox="0 0 420 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.12; pointer-events: none; z-index: 0;">
-        <circle cx="210" cy="160" r="16" stroke="rgba(13,124,107,0.5)" stroke-width="1.5" fill="none"/>
-        <circle cx="210" cy="160" r="6" fill="rgba(13,124,107,0.3)"/>
-        <circle cx="290" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
-        <circle cx="130" cy="100" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
-        <circle cx="290" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
-        <circle cx="130" cy="220" r="10" stroke="rgba(13,124,107,0.4)" stroke-width="1" fill="none"/>
-        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
-        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
-        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
-        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(13,124,107,0.3)" stroke-width="1.5"/>
+        <circle cx="210" cy="160" r="16" stroke="rgba(79,70,189,0.5)" stroke-width="1.5" fill="none"/>
+        <circle cx="210" cy="160" r="6" fill="rgba(79,70,189,0.3)"/>
+        <circle cx="290" cy="100" r="10" stroke="rgba(79,70,189,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="100" r="10" stroke="rgba(79,70,189,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="290" cy="220" r="10" stroke="rgba(79,70,189,0.4)" stroke-width="1" fill="none"/>
+        <circle cx="130" cy="220" r="10" stroke="rgba(79,70,189,0.4)" stroke-width="1" fill="none"/>
+        <line x1="210" y1="160" x2="290" y2="100" stroke="rgba(79,70,189,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="100" stroke="rgba(79,70,189,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="290" y2="220" stroke="rgba(79,70,189,0.3)" stroke-width="1.5"/>
+        <line x1="210" y1="160" x2="130" y2="220" stroke="rgba(79,70,189,0.3)" stroke-width="1.5"/>
       </svg>
 
       <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
@@ -94,17 +122,17 @@
             <li style="color: rgba(255,255,255,0.4);">/</li>
             <li><a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none;">Neurology</a></li>
             <li style="color: rgba(255,255,255,0.4);">/</li>
-            <li style="color: var(--white);">Alzheimer's Disease</li>
+            <li style="color: var(--white);">Alzheimer&#8217;s Disease</li>
           </ol>
         </nav>
 
         <div style="max-width: 820px;">
-          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">Neurology &rsaquo; Alzheimer&rsquo;s Disease</p>
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">Neurology &#8250; Alzheimer&#8217;s Disease</p>
           <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
-            Anti-Amyloid Benefit-Risk Analysis for Alzheimer&rsquo;s Disease
+            AI-Driven Benefit-Risk Analysis for Alzheimer&#8217;s Disease
           </h1>
           <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
-            Alzheimer&rsquo;s disease has entered a new therapeutic era with anti-amyloid antibodies, but ARIA (amyloid-related imaging abnormalities), slow cognitive decline measurement, and the accelerated approval controversy demand rigorous, transparent benefit-risk analysis. ArcaScience provides comprehensive BRA across lecanemab, donanemab, aducanumab, and emerging tau-targeting therapies.
+            Alzheimer&#8217;s disease BRA centers on anti-amyloid antibody therapies with novel ARIA monitoring requirements, ApoE4 genotype-based risk stratification, and the complex balance between modest cognitive slowing against significant safety signals. ArcaScience delivers genotype-aware safety profiling across lecanemab, donanemab, and emerging disease-modifying therapies.
           </p>
           <div style="display: flex; gap: 16px; flex-wrap: wrap;">
             <a href="/platform-overview" class="arca-btn-primary-inverted">See Platform</a>
@@ -120,19 +148,19 @@
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
           <div class="arca-credibility-metric">
             <span class="arca-stat-lg" data-countup="55000000" data-countup-suffix="+">0</span>
-            <p class="arca-caption">People living with dementia worldwide</p>
+            <p class="arca-caption">Dementia patients globally</p>
           </div>
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="2400" data-countup-suffix="+">0</span>
-            <p class="arca-caption">Alzheimer's therapy trials analyzed in platform</p>
+            <span class="arca-stat-lg" data-countup="600" data-countup-suffix="+">0</span>
+            <p class="arca-caption">AD clinical trials analyzed</p>
           </div>
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="27" data-countup-suffix="%">0</span>
-            <p class="arca-caption">CDR-SB slowing with lecanemab (CLARITY AD)</p>
+            <span class="arca-stat-lg" data-countup="13" data-countup-suffix="B">$0</span>
+            <p class="arca-caption">Global AD therapeutics market</p>
           </div>
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="35" data-countup-suffix="%">0</span>
-            <p class="arca-caption">ARIA-E incidence with lecanemab (overall population)</p>
+            <span class="arca-stat-lg" style="font-size: 1.75rem; color: var(--indigo-600);">Emerging</span>
+            <p class="arca-caption">Novel disease-modifying therapy class</p>
           </div>
         </div>
       </div>
@@ -143,29 +171,29 @@
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
           <p class="arca-section-label">Disease Overview</p>
-          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why Alzheimer&rsquo;s Disease Demands Specialized BRA</h2>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">Why Alzheimer&#8217;s Disease Demands Specialized BRA</h2>
           <p class="arca-body-lg arca-text-grey-600">
-            Alzheimer&rsquo;s disease presents unprecedented BRA challenges: anti-amyloid therapies carry the novel risk of ARIA (brain edema and microhemorrhages), require intensive MRI monitoring, show statistically significant but clinically modest cognitive benefits, and face an evolving regulatory landscape shaped by the accelerated approval controversy surrounding aducanumab.
+            The advent of anti-amyloid antibodies has introduced an entirely novel safety paradigm in neurology. ARIA (Amyloid-Related Imaging Abnormalities) requires MRI-based monitoring, genotype-driven risk assessment, and careful weighing of modest cognitive slowing against serious brain edema and microhemorrhage risks&#8212;challenges that demand purpose-built benefit-risk frameworks.
           </p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
           <div class="arca-card" data-animate="slide-up">
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ARIA Monitoring and Risk Stratification</h3>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ARIA-E &amp; ARIA-H Monitoring</h3>
             <p class="arca-body-sm arca-text-grey-600">
-              Amyloid-related imaging abnormalities represent the defining safety challenge of anti-amyloid therapy. ARIA-E (edema/effusion) occurs in 12.6% of lecanemab patients (CLARITY AD) and up to 24% with donanemab (TRAILBLAZER-ALZ 2), rising to 35.2% in ApoE4 homozygotes. ARIA-H (microhemorrhage/hemosiderin deposits) compounds the risk. BRA must model ARIA severity grades, symptomatic vs. asymptomatic events, ApoE4 genotype-stratified risk, anticoagulant co-medication interactions, and the intensive MRI monitoring burden.
+              Anti-amyloid antibodies including lecanemab and donanemab cause ARIA-E (vasogenic edema) in 12&#8211;35% of patients and ARIA-H (microhemorrhages and superficial siderosis) in 14&#8211;20%. Most ARIA events are radiographic and asymptomatic, but symptomatic ARIA can include headache, confusion, visual disturbances, and in rare cases, serious cerebral macrohemorrhage. BRA must integrate MRI monitoring frequency, dose modification protocols, and clinical significance stratification.
             </p>
           </div>
           <div class="arca-card" data-animate="slide-up">
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Clinical Meaningfulness of Cognitive Outcomes</h3>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ApoE4 Genotype Risk Stratification</h3>
             <p class="arca-body-sm arca-text-grey-600">
-              Lecanemab demonstrated a 0.45-point difference on CDR-SB (27% slowing) and donanemab showed a 0.67-point difference (35% slowing) in iADRS over 18 months. Whether these differences cross the threshold of clinical meaningfulness remains debated. BRA frameworks must integrate CDR-SB, ADAS-Cog14, ADCS-MCI-ADL, and iADRS endpoints with patient-reported outcomes, caregiver burden assessments, and time-to-milestone analyses (e.g., delay of transition from MCI to mild AD) to build a holistic benefit case.
+              ApoE4 homozygotes face dramatically elevated ARIA risk&#8212;up to 3&#8211;4 times higher than non-carriers&#8212;and more severe presentations including symptomatic ARIA-E and macrohemorrhage. The Clarity AD and TRAILBLAZER-ALZ 2 trials revealed that ApoE4 status fundamentally alters the benefit-risk equation, leading to label restrictions and mandatory genotyping requirements. BRA must model risk-benefit separately by ApoE4 zygosity (homozygous, heterozygous, non-carrier).
             </p>
           </div>
           <div class="arca-card" data-animate="slide-up">
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ApoE4 Genotype and Health Equity</h3>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Cognitive Benefit vs. Safety Tradeoff</h3>
             <p class="arca-body-sm arca-text-grey-600">
-              ApoE4 homozygotes face dramatically higher ARIA risk (35% ARIA-E with lecanemab, up to 41% with donanemab) yet may derive greater amyloid clearance benefit. The FDA labeling recommends ApoE4 genotyping before treatment initiation, creating benefit-risk stratification challenges. BRA must address genotype-specific risk-benefit ratios, informed consent complexity, genetic privacy considerations, and equity implications for populations with varying ApoE4 allele frequencies.
+              Anti-amyloid therapies demonstrate statistically significant but clinically modest cognitive slowing (27&#8211;35% reduction in decline on CDR-SB). Whether this magnitude of benefit justifies ARIA risks, infusion burden, and cost remains the central BRA question. The platform models clinical meaningfulness thresholds, minimal clinically important differences, and patient and caregiver preference weighting to support transparent benefit-risk communication.
             </p>
           </div>
         </div>
@@ -175,31 +203,41 @@
     <!-- ARCASCIENCE APPROACH -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
-    <section class="arca-bg-grey-50 arca-bg-rings" style="padding: var(--space-9) 0;" data-animate>
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
           <p class="arca-section-label">Platform Capabilities</p>
-          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses Alzheimer&rsquo;s BRA</h2>
-          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">Our modules are configured with Alzheimer's disease-specific data from CLARITY AD, TRAILBLAZER-ALZ 2, and EMERGE/ENGAGE trials, ARIA detection models, and regulatory templates aligned with FDA and EMA neurology guidance.</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">How ArcaScience Addresses Alzheimer&#8217;s Disease BRA</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our platform is configured with Alzheimer&#8217;s-specific ARIA detection models, ApoE4 genotype-stratified risk analytics, and regulatory templates aligned with the FDA&#8217;s accelerated approval and confirmatory trial monitoring requirements.
+          </p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
           <div class="arca-card arca-card-colored-top is-data" data-animate="slide-up">
             <span class="arca-module-tag is-data">Data Intelligence</span>
-            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Alzheimer&rsquo;s Therapy Data</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">2,400+ Alzheimer's clinical trials including CLARITY AD (lecanemab), TRAILBLAZER-ALZ 2 (donanemab), EMERGE/ENGAGE (aducanumab), GRADUATE I/II (gantenerumab), and emerging tau-targeting trial datasets. Comprehensive ARIA databases with MRI-correlated imaging data, ApoE4 genotype-stratified outcomes, and amyloid PET clearance kinetics across all anti-amyloid mechanisms of action.</p>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Alzheimer&#8217;s Data Coverage</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              600+ AD clinical trials including Clarity AD, TRAILBLAZER-ALZ 2, EMERGE/ENGAGE, AHEAD, and DIAN-TU datasets. ARIA event data covering edema severity grading, microhemorrhage counts, superficial siderosis progression, and symptomatic vs. radiographic-only events. ApoE4 genotype-stratified safety data from all major anti-amyloid programs.
+            </p>
             <a href="/platform-data-intelligence" class="arca-btn-tertiary">Explore Data Engine <span class="arca-arrow">&rarr;</span></a>
           </div>
+
           <div class="arca-card arca-card-colored-top is-analytics" data-animate="slide-up">
             <span class="arca-module-tag is-analytics">Decision Intelligence</span>
-            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">ARIA-Specific AI Models</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">AI models for ARIA-E and ARIA-H detection, severity grading, and progression prediction using MRI feature analysis. ApoE4 genotype-stratified risk calculators, infusion-related reaction monitoring, cognitive trajectory modeling across CDR-SB, ADAS-Cog14, and iADRS endpoints, and comparative benefit-risk profiling across anti-amyloid antibodies with different epitope specificities and dosing regimens.</p>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">ARIA Risk Prediction Models</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              AI models for ARIA onset prediction based on ApoE4 status, baseline MRI findings, and treatment duration. Genotype-stratified benefit-risk modeling across ApoE4 homozygotes, heterozygotes, and non-carriers. CDR-SB and ADAS-Cog cognitive endpoint modeling with minimal clinically important difference thresholds. BRAT framework application with AD-specific regulatory precedent from PCNS advisory committee deliberations.
+            </p>
             <a href="/platform-ai-models" class="arca-btn-tertiary">Explore AI Models <span class="arca-arrow">&rarr;</span></a>
           </div>
+
           <div class="arca-card arca-card-colored-top is-output" data-animate="slide-up">
             <span class="arca-module-tag is-output">Automated Outputs</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">Neurology Regulatory Outputs</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">PSURs with detailed ARIA sections including MRI monitoring compliance data and genotype-stratified safety analyses; RMPs with ARIA management protocols and ApoE4 screening recommendations; accelerated-to-traditional approval conversion dossiers; cost-effectiveness BRA inputs for HTA submissions; and post-marketing commitment reports aligned with FDA Accelerated Approval requirements and EMA conditional marketing authorization.</p>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              PSURs with ARIA deep-dives by genotype and severity grade, REMS-aligned monitoring protocols with MRI scheduling guidance, CTD 2.5 with CDR-SB, ADAS-Cog, and amyloid PET biomarker endpoint integration, and HEOR reports supporting payer submissions with quality-adjusted life year modeling for anti-amyloid therapies.
+            </p>
             <a href="/platform-outputs" class="arca-btn-tertiary">Explore Outputs <span class="arca-arrow">&rarr;</span></a>
           </div>
         </div>
@@ -210,25 +248,25 @@
     <section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
-          <p class="arca-section-label">Alzheimer&rsquo;s Intelligence</p>
-          <h2 class="arca-display-sm">Platform Performance in Alzheimer&rsquo;s Disease</h2>
+          <p class="arca-section-label">Alzheimer&#8217;s Disease Intelligence</p>
+          <h2 class="arca-display-sm">Platform Performance in Alzheimer&#8217;s Disease</h2>
         </div>
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
           <div>
-            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="4500000000" data-countup-suffix="+">0</span>
-            <p class="arca-caption arca-text-grey-600">Alzheimer's safety and imaging data points tracked</p>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="4200000000" data-countup-suffix="+">0</span>
+            <p class="arca-caption arca-text-grey-600">AD adverse event data points including ARIA</p>
           </div>
           <div>
-            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="68" data-countup-suffix="%">0</span>
-            <p class="arca-caption arca-text-grey-600">Faster ARIA signal detection and classification</p>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="70" data-countup-suffix="%">0</span>
+            <p class="arca-caption arca-text-grey-600">Faster ARIA signal characterization</p>
+          </div>
+          <div>
+            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="3">0</span>
+            <p class="arca-caption arca-text-grey-600">ApoE4 genotype strata modeled</p>
           </div>
           <div>
             <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="5">0</span>
-            <p class="arca-caption arca-text-grey-600">ApoE4-stratified ARIA risk models deployed</p>
-          </div>
-          <div>
-            <span class="arca-stat-lg" style="color: var(--indigo-600);" data-countup="7">0</span>
-            <p class="arca-caption arca-text-grey-600">Alzheimer's regulatory submissions supported</p>
+            <p class="arca-caption arca-text-grey-600">Anti-amyloid program submissions supported</p>
           </div>
         </div>
       </div>
@@ -239,35 +277,36 @@
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
           <div>
-            <p class="arca-section-label">Case Evidence &mdash; Alzheimer&rsquo;s</p>
-            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">ARIA Risk Stratification for Anti-Amyloid Antibody Post-Marketing Surveillance</h2>
+            <p class="arca-section-label">Case Evidence &#8212; Alzheimer&#8217;s Disease</p>
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">ARIA Monitoring Program for Anti-Amyloid Therapy Launch</h2>
             <div style="margin-bottom: var(--space-5);">
               <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
-              <p class="arca-body-sm arca-text-grey-600">A large biopharmaceutical company launching an anti-amyloid antibody needed to establish a comprehensive post-marketing ARIA monitoring program that could handle the unprecedented scale of MRI surveillance data, stratify ARIA risk by ApoE4 genotype, detect symptomatic ARIA events early, and generate real-world evidence to support the transition from accelerated to traditional FDA approval.</p>
+              <p class="arca-body-sm arca-text-grey-600">A large pharma company preparing for commercial launch of an anti-amyloid antibody needed to design a comprehensive post-marketing ARIA monitoring program. The FDA required detailed ARIA surveillance with genotype-stratified reporting, and the company needed real-time benefit-risk updates to support REMS compliance and payer negotiations demonstrating clinical value in the ApoE4-stratified population.</p>
             </div>
             <div style="margin-bottom: var(--space-5);">
               <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Result</h3>
-              <p class="arca-body-sm arca-text-grey-600">ArcaScience's ARIA-specific AI models processed MRI surveillance data from 12,000+ treated patients, identifying symptomatic ARIA-E events 3.8x faster than manual radiological review and detecting a previously unrecognized ARIA risk enrichment in patients on concurrent antiplatelet therapy, enabling a proactive label update and targeted risk minimization measures.</p>
+              <p class="arca-body-sm arca-text-grey-600">ArcaScience deployed ARIA-specific detection models trained on anti-amyloid clinical trial MRI data, enabling automated ARIA severity grading and ApoE4-stratified incidence tracking. The platform reduced ARIA case adjudication time by 65% and provided real-time genotype-specific benefit-risk dashboards that supported both FDA post-marketing commitments and NICE/G-BA health technology assessments for reimbursement.</p>
             </div>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
               <div>
-                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="3.8" data-countup-suffix="x">0</span>
-                <p class="arca-caption arca-text-grey-600">Faster symptomatic ARIA-E detection</p>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="65" data-countup-suffix="%">0</span>
+                <p class="arca-caption arca-text-grey-600">Faster ARIA case adjudication</p>
               </div>
               <div>
-                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="42" data-countup-suffix="%">0</span>
-                <p class="arca-caption arca-text-grey-600">Reduction in ARIA false positive classifications</p>
+                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="3" data-countup-suffix="x">0</span>
+                <p class="arca-caption arca-text-grey-600">More granular genotype stratification</p>
               </div>
             </div>
             <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">View All Case Studies <span class="arca-arrow">&rarr;</span></a>
           </div>
+
           <div class="arca-testimonial" style="text-align: left;">
-            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
-              The scale of ARIA monitoring required for an anti-amyloid launch was unlike anything we had faced before. ArcaScience's AI models turned what would have been an overwhelming MRI data management problem into a structured, risk-stratified surveillance program. Detecting the antiplatelet interaction before it became a regulatory inquiry was invaluable.
+            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--indigo-400);">
+              The ARIA monitoring capabilities ArcaScience built for our anti-amyloid program were essential for our launch strategy. Being able to track ARIA by ApoE4 genotype in real time gave us the evidence we needed for our REMS program and gave payers confidence in the safety monitoring infrastructure supporting our therapy.
             </div>
             <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
-              <p class="arca-body-md" style="font-weight: 600;">Global Head of Neuroscience Pharmacovigilance</p>
-              <p class="arca-body-sm arca-text-grey-600">Top 10 Pharmaceutical Company</p>
+              <p class="arca-body-md" style="font-weight: 600;">Head of Neuroscience Safety &amp; Pharmacovigilance</p>
+              <p class="arca-body-sm arca-text-grey-600">Global Pharma Company</p>
             </div>
           </div>
         </div>
@@ -281,44 +320,53 @@
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
           <p class="arca-section-label">Frequently Asked Questions</p>
-          <h2 class="arca-display-sm">Alzheimer&rsquo;s Disease BRA</h2>
+          <h2 class="arca-display-sm">Alzheimer&#8217;s Disease Benefit-Risk Analysis</h2>
         </div>
         <div style="max-width: 820px; margin: 0 auto;">
-          <div class="arca-accordion" data-accordion="group">
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">How does ArcaScience compare lecanemab vs. donanemab benefit-risk profiles?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+          <div data-accordion="group">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does ArcaScience stratify ARIA risk by ApoE4 genotype?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Our platform provides head-to-head comparative BRA between lecanemab (CLARITY AD) and donanemab (TRAILBLAZER-ALZ 2) across cognitive efficacy endpoints (CDR-SB, iADRS, ADAS-Cog14), ARIA incidence and severity by ApoE4 genotype, amyloid clearance rates, infusion-related reactions, and dosing convenience (biweekly vs. monthly with treatment discontinuation at amyloid clearance). AI models generate quantitative benefit-risk scores that account for population-level and subgroup-specific differences, supporting formulary decisions, HTA submissions, and treatment selection guidance.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Our platform maintains separate risk models for ApoE4 homozygotes (e4/e4), heterozygotes (e4/e3 or e4/e2), and non-carriers, reflecting the 3&#8211;4 fold difference in ARIA incidence across these groups. For homozygotes, where ARIA-E rates can exceed 35% and serious symptomatic events are substantially more common, the benefit-risk equation is modeled separately with adjusted benefit thresholds. The platform also incorporates emerging data on ApoE4-stratified efficacy, as some trials suggest differential cognitive benefit by genotype, which further complicates the risk-benefit calculus for these patients.</p></div>
               </div>
             </div>
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">Can the platform model ARIA risk for ApoE4 homozygotes specifically?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does the platform model the cognitive benefit vs. ARIA safety tradeoff?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Yes. ApoE4 homozygotes represent approximately 15% of Alzheimer's patients but face dramatically elevated ARIA risk (35% ARIA-E with lecanemab, 41% with donanemab vs. 5-10% in non-carriers). Our platform provides genotype-stratified ARIA risk models that incorporate baseline amyloid burden, vascular risk factors, anticoagulant/antiplatelet use, and MRI microhemorrhage counts to generate individualized ARIA probability estimates. These models support informed consent processes, patient selection criteria, and risk minimization strategies required by regulatory authorities.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">ArcaScience models the cognitive benefit using CDR-SB, ADAS-Cog 14, and ADCS-MCI-ADL endpoints with explicit minimal clinically important difference (MCID) thresholds. The platform weighs demonstrated cognitive slowing (typically 0.45&#8211;0.67 CDR-SB points at 18 months) against ARIA incidence, severity, and clinical significance. We incorporate patient and caregiver preference data from discrete choice experiments and conjoint analyses to model acceptable risk thresholds, recognizing that patient-perceived value of even modest cognitive preservation may exceed what clinical metrics alone suggest.</p></div>
               </div>
             </div>
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">How does ArcaScience address the accelerated approval to traditional approval conversion?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Does ArcaScience account for caregiver burden in Alzheimer&#8217;s BRA?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">The path from accelerated approval (based on amyloid clearance as a surrogate endpoint) to traditional approval (based on clinical benefit) requires rigorous confirmatory evidence. Our platform models the relationship between amyloid PET clearance and downstream cognitive outcomes, generates integrated benefit-risk summaries that bridge surrogate and clinical endpoints, and produces post-marketing commitment tracking reports. For donanemab's treatment-to-target approach (discontinuing at amyloid clearance), we model long-term cognitive trajectories after treatment cessation to support durability-of-effect demonstrations.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Yes. Our BRA framework extends beyond traditional patient-centric safety and efficacy to incorporate caregiver burden as a benefit dimension. Anti-amyloid therapies require biweekly infusions and serial MRI monitoring, imposing significant logistical burden on caregivers. The platform models treatment burden alongside ARIA monitoring requirements, infusion center accessibility, and the caregiver quality-of-life impact of cognitive benefit versus treatment demands. This broader perspective is increasingly required by HTA bodies evaluating real-world value of AD disease-modifying therapies.</p></div>
               </div>
             </div>
-            <div class="arca-accordion-item">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">Does the platform incorporate caregiver burden and health economics into BRA?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">How does the platform support FDA accelerated approval monitoring requirements?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Yes. Alzheimer's disease imposes enormous societal costs estimated at over $350 billion annually in the US alone, with informal caregiving accounting for the majority. Our BRA models incorporate caregiver burden assessments (Zarit Burden Interview), quality-adjusted life years (QALYs), delay-to-institutionalization projections, and the cost impact of MRI monitoring requirements (estimated at $4,000-6,000 per patient annually). These health economic dimensions are critical for HTA submissions to NICE, ICER, and other bodies evaluating whether the clinical benefit of anti-amyloid therapies justifies their cost at $26,500 per year (lecanemab list price).</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">ArcaScience provides purpose-built tools for the unique regulatory landscape of anti-amyloid therapies, many of which received accelerated or traditional approval with extensive post-marketing commitments. The platform tracks confirmatory trial endpoints, generates post-marketing ARIA surveillance reports aligned with REMS requirements, monitors real-world ARIA incidence against clinical trial benchmarks, and provides early signal detection for emerging safety concerns in broader commercial populations including patients with comorbidities excluded from registration trials. The platform also supports PDUFA commitment tracking and PMR/PMC compliance reporting.</p></div>
+              </div>
+            </div>
+            <div data-accordion-item>
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+                <h3 class="arca-heading-3">Can the platform compare benefit-risk across different anti-amyloid agents?</h3>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Yes. Our platform provides cross-trial comparative analyses of lecanemab, donanemab, and aducanumab using network meta-analytic approaches and indirect treatment comparison methodologies. We compare ARIA incidence and severity profiles, cognitive efficacy endpoints, amyloid clearance rates, and dosing regimen burden across agents. The platform accounts for trial design differences, population heterogeneity, and endpoint measurement variability to produce clinically meaningful comparative BRA outputs that support formulary positioning, clinical guideline development, and regulatory advisory committee preparation.</p></div>
               </div>
             </div>
           </div>
@@ -331,10 +379,10 @@
       <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
       <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
-        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Alzheimer&rsquo;s Disease</h2>
-        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration focused on Alzheimer&rsquo;s disease BRA. Our neuroscience scientists will present ARIA risk stratification models, ApoE4-genotype analysis, cognitive outcome trajectory modeling, and accelerated approval regulatory frameworks.</p>
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience Applied to Alzheimer&#8217;s Disease</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a demonstration of ArcaScience&#8217;s platform configured for Alzheimer&#8217;s disease benefit-risk analysis. Our neuroscience scientists will walk through ARIA monitoring models, ApoE4-stratified risk analytics, and regulatory output examples tailored to anti-amyloid therapy submissions.</p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="/contact?disease=alzheimers" class="arca-btn-primary-inverted">Request Alzheimer&rsquo;s Briefing</a>
+          <a href="/contact?disease=alzheimers" class="arca-btn-primary-inverted">Request Alzheimer&#8217;s Briefing</a>
           <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore the Platform <span class="arca-arrow">&rarr;</span></a>
         </div>
       </div>
@@ -346,11 +394,48 @@
   <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
     <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
       <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
-        <div><img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);"><p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p></div>
-        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a><a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a><a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a><a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a><a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a></nav></div>
-        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a><a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a><a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a></nav></div>
-        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a><a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a><a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a><a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a><a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a></nav></div>
-        <div><p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p><nav style="display: flex; flex-direction: column; gap: 12px;"><a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a><a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a><a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a><a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a></nav></div>
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.</p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
+            <a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
+            <a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
       </div>
       <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
         <p class="arca-caption" style="color: rgba(255,255,255,0.45);">&copy; 2026 ArcaScience. All rights reserved.</p>
@@ -364,7 +449,9 @@
     </div>
   </footer>
 
-  <button data-back-to-top aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
 
   <script src="/dist/arcascience-global.min.js" defer></script>
   <script src="/dist/arcascience-countup.min.js" defer></script>
@@ -372,16 +459,6 @@
     document.addEventListener('DOMContentLoaded', function() {
       if (window.ArcaScience) ArcaScience.init();
       if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
-      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
-        header.addEventListener('click', function() {
-          var content = this.nextElementSibling;
-          var icon = this.querySelector('.arca-accordion-icon');
-          var isOpen = content.style.display === 'block';
-          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) { c.style.display = 'none'; });
-          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) { i.textContent = '+'; });
-          if (!isOpen) { content.style.display = 'block'; icon.textContent = '\u2212'; }
-        });
-      });
     });
   </script>
 </body>

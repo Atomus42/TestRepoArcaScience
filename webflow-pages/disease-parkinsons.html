@@ -28,8 +28,34 @@
       <a href="/" aria-label="ArcaScience home"><img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32"></a>
       <div style="display: flex; align-items: center; gap: 32px;">
         <a href="/" class="arca-nav-link">Home</a>
-        <div style="position: relative;"><a href="/platform-overview" class="arca-nav-link">Platform</a></div>
-        <div style="position: relative;"><a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions</a></div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+          </div>
+        </div>
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
@@ -285,40 +311,40 @@
         </div>
         <div style="max-width: 820px; margin: 0 auto;">
           <div class="arca-accordion" data-accordion="group">
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
                 <h3 class="arca-heading-3">How does ArcaScience model motor fluctuation risk over time?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Our platform uses longitudinal levodopa dose data, treatment duration, disease severity scores (UPDRS/MDS-UPDRS), and patient demographic profiles to predict the onset and progression of motor fluctuations and dyskinesia. AI models trained on 100,000+ patient-years of data identify wearing-off patterns, on-off transitions, and peak-dose dyskinesia trajectories, enabling proactive adjunctive therapy recommendations and supporting regulatory BRA for new formulations designed to provide more continuous dopaminergic stimulation.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Our platform uses longitudinal levodopa dose data, treatment duration, disease severity scores (UPDRS/MDS-UPDRS), and patient demographic profiles to predict the onset and progression of motor fluctuations and dyskinesia. AI models trained on 100,000+ patient-years of data identify wearing-off patterns, on-off transitions, and peak-dose dyskinesia trajectories, enabling proactive adjunctive therapy recommendations and supporting regulatory BRA for new formulations designed to provide more continuous dopaminergic stimulation.</p></div>
               </div>
             </div>
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
                 <h3 class="arca-heading-3">Can the platform assess benefit-risk for alpha-synuclein immunotherapies?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Yes. Alpha-synuclein-targeting therapies like prasinezumab (PASADENA, PADOVA trials) represent a fundamentally new BRA paradigm. Our models address the unique challenge of measuring disease modification versus symptomatic benefit, analyzing composite endpoint sensitivity, biomarker-clinical correlations (DAT-SPECT imaging, serum neurofilament light chain), and infusion reaction/immunogenicity profiles. We also model the benefit-risk of treating patients earlier in disease course where toxicity tolerance is lower but disease-modification potential is highest.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Yes. Alpha-synuclein-targeting therapies like prasinezumab (PASADENA, PADOVA trials) represent a fundamentally new BRA paradigm. Our models address the unique challenge of measuring disease modification versus symptomatic benefit, analyzing composite endpoint sensitivity, biomarker-clinical correlations (DAT-SPECT imaging, serum neurofilament light chain), and infusion reaction/immunogenicity profiles. We also model the benefit-risk of treating patients earlier in disease course where toxicity tolerance is lower but disease-modification potential is highest.</p></div>
               </div>
             </div>
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+            <div data-accordion-item style="border-bottom: 1px solid var(--grey-200);">
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
                 <h3 class="arca-heading-3">How does ArcaScience handle device-aided therapy BRA (DBS, LCIG)?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Device-aided therapies present unique BRA complexity due to surgical risk (DBS lead placement, PEJ tube insertion for LCIG), device-related complications (lead migration, tube occlusion, pump malfunction), and the irreversibility of some interventions. Our platform integrates DBS registry data covering stimulation-related neuropsychiatric effects (mood changes, speech impairment, apathy), LCIG polyneuropathy signals, and subcutaneous apomorphine infusion site reactions. Models support patient selection criteria development and informed consent frameworks required by regulatory authorities.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Device-aided therapies present unique BRA complexity due to surgical risk (DBS lead placement, PEJ tube insertion for LCIG), device-related complications (lead migration, tube occlusion, pump malfunction), and the irreversibility of some interventions. Our platform integrates DBS registry data covering stimulation-related neuropsychiatric effects (mood changes, speech impairment, apathy), LCIG polyneuropathy signals, and subcutaneous apomorphine infusion site reactions. Models support patient selection criteria development and informed consent frameworks required by regulatory authorities.</p></div>
               </div>
             </div>
-            <div class="arca-accordion-item">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
+            <div data-accordion-item>
+              <button data-accordion-trigger aria-expanded="false" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
                 <h3 class="arca-heading-3">Does the platform cover gene therapy BRA for Parkinson&rsquo;s disease?</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
+                <svg data-accordion-icon width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">Yes. Gene therapies for PD, including AAV2-AADC (eladocagene exuparvovec/SPARK trial) and GBA1-targeted approaches, introduce unprecedented BRA challenges. Our platform models surgical delivery risks (stereotactic injection), AAV vector immunogenicity, long-term transgene expression durability and safety, and the theoretical risk of insertional mutagenesis. We provide 15-year follow-up BRA frameworks aligned with FDA and EMA long-term gene therapy safety guidance, and comparative models that position gene therapy benefit-risk against optimized medical therapy and DBS for advanced PD patients.</p>
+              <div data-accordion-content aria-hidden="true" style="max-height: 0; overflow: hidden; transition: max-height 300ms ease-out;">
+                <div style="padding: 0 0 var(--space-5);"><p class="arca-body-sm arca-text-grey-600">Yes. Gene therapies for PD, including AAV2-AADC (eladocagene exuparvovec/SPARK trial) and GBA1-targeted approaches, introduce unprecedented BRA challenges. Our platform models surgical delivery risks (stereotactic injection), AAV vector immunogenicity, long-term transgene expression durability and safety, and the theoretical risk of insertional mutagenesis. We provide 15-year follow-up BRA frameworks aligned with FDA and EMA long-term gene therapy safety guidance, and comparative models that position gene therapy benefit-risk against optimized medical therapy and DBS for advanced PD patients.</p></div>
               </div>
             </div>
           </div>
@@ -372,16 +398,6 @@
     document.addEventListener('DOMContentLoaded', function() {
       if (window.ArcaScience) ArcaScience.init();
       if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
-      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
-        header.addEventListener('click', function() {
-          var content = this.nextElementSibling;
-          var icon = this.querySelector('.arca-accordion-icon');
-          var isOpen = content.style.display === 'block';
-          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) { c.style.display = 'none'; });
-          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) { i.textContent = '+'; });
-          if (!isOpen) { content.style.display = 'block'; icon.textContent = '\u2212'; }
-        });
-      });
     });
   </script>
 </body>
