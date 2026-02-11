@@ -1,32 +1,8 @@
 <!--
-  ArcaScience Therapeutic Area Solution Page Template — Webflow Structure Reference
-  ================================================================================
-  This is a REUSABLE TEMPLATE for all 13 therapeutic area solution pages.
-  Replace [TA_NAME], [TA_SLUG], and placeholder content for each specific TA.
-
-  Therapeutic Areas this template supports:
-  - Oncology
-  - Immunology
-  - Dermatology
-  - Rare Diseases
-  - Neurology
-  - Cardiology
-  - Respiratory
-  - Infectious Disease
-  - Gastroenterology
-  - Endocrinology
-  - Hematology
-  - Pediatrics
-  - Others as needed
-
-  HOW TO USE:
-  1. Copy this template for each therapeutic area
-  2. Find/replace [TA_NAME] with the therapeutic area name (e.g., "Oncology")
-  3. Find/replace [TA_SLUG] with the URL slug (e.g., "oncology")
-  4. Update placeholder numbers, challenges, and content specific to that TA
-  5. In Webflow, create each section as a div block
-  6. Apply the classes shown here (add them as custom classes in Webflow)
-  7. The data-* attributes trigger JS behaviors automatically
+  ArcaScience Therapeutic Area Hub — Webflow Structure Reference
+  ==============================================================
+  Hub page listing all 12 therapeutic areas with links to TA pages
+  and their associated disease-specific pages.
 -->
 
 <!DOCTYPE html>
@@ -34,8 +10,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[TA_NAME] Solutions — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
-  <meta name="description" content="ArcaScience's AI-driven benefit-risk analysis platform for [TA_NAME]. Comprehensive data coverage, TA-specific AI models, and regulatory-grade outputs for [TA_NAME] drug development and post-marketing surveillance.">
+  <title>Solutions by Therapeutic Area — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="Explore ArcaScience's AI-driven benefit-risk analysis solutions across 12 therapeutic areas — oncology, neurology, immunology, cardiology, and more. TA-specific data, AI models, and regulatory outputs.">
 
   <!-- Fonts: self-hosted for performance -->
   <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -55,17 +31,10 @@
 </head>
 <body>
 
-  <!-- ================================================================
-       SCROLL PROGRESS BAR
-       Webflow: Add a div with data-scroll-progress, position fixed top 0.
-       ================================================================ -->
+  <!-- SCROLL PROGRESS BAR -->
   <div data-scroll-progress></div>
 
-  <!-- ================================================================
-       NAVIGATION
-       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
-       Solutions link should be is-active on this page.
-       ================================================================ -->
+  <!-- NAVIGATION -->
   <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
     <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
 
@@ -107,6 +76,14 @@
             <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
             <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
             <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">Therapeutic Areas</p>
+            <a href="/ta-oncology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Oncology</a>
+            <a href="/ta-neurology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Neurology</a>
+            <a href="/ta-immunology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Immunology</a>
+            <a href="/ta-cardiology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cardiology</a>
+            <a href="/ta-respiratory" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Respiratory</a>
+            <a href="/ta-rare-diseases" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rare Diseases</a>
           </div>
         </div>
 
@@ -153,32 +130,31 @@
 
   <main role="main">
 
-    <!-- ================================================================
-         SECTION 1: BREADCRUMB + DARK HERO
-         Full-width dark background (blue-900).
-         Contains: breadcrumb, section label, H1, subtitle, primary CTA.
-         ================================================================ -->
+    <!-- SECTION 1: HERO -->
     <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
-<!-- arca-decor-injected -->
       <!-- arca-decor: glow orbs -->
       <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
 
-    <!-- arca-decor: solution funnel SVG -->
-    <svg width="400" height="320" viewBox="0 0 400 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.09; pointer-events: none; z-index: 0;">
-      <path d="M80 60 L320 60 L260 160 L260 240 L140 240 L140 160 Z" stroke="rgba(59,125,216,0.35)" stroke-width="1.5" fill="none"/>
-      <line x1="100" y1="90" x2="300" y2="90" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
-      <line x1="120" y1="120" x2="280" y2="120" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
-      <line x1="140" y1="160" x2="260" y2="160" stroke="rgba(59,125,216,0.1)" stroke-width="1"/>
-      <circle cx="150" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
-      <circle cx="200" cy="70" r="3" fill="rgba(59,125,216,0.25)"/>
-      <circle cx="250" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
-      <circle cx="175" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
-      <circle cx="225" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
-      <circle cx="200" cy="140" r="3" fill="rgba(59,125,216,0.2)"/>
-      <circle cx="200" cy="200" r="5" fill="rgba(59,125,216,0.35)"/>
-      <path d="M185 260 L200 280 L215 260" stroke="rgba(59,125,216,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    </svg>
+      <!-- arca-decor: grid pattern -->
+      <svg width="400" height="320" viewBox="0 0 400 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.07; pointer-events: none; z-index: 0;">
+        <rect x="40" y="40" width="80" height="60" rx="4" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none"/>
+        <rect x="160" y="40" width="80" height="60" rx="4" stroke="rgba(13,124,107,0.3)" stroke-width="1" fill="none"/>
+        <rect x="280" y="40" width="80" height="60" rx="4" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none"/>
+        <rect x="40" y="130" width="80" height="60" rx="4" stroke="rgba(13,124,107,0.3)" stroke-width="1" fill="none"/>
+        <rect x="160" y="130" width="80" height="60" rx="4" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none"/>
+        <rect x="280" y="130" width="80" height="60" rx="4" stroke="rgba(13,124,107,0.3)" stroke-width="1" fill="none"/>
+        <rect x="40" y="220" width="80" height="60" rx="4" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none"/>
+        <rect x="160" y="220" width="80" height="60" rx="4" stroke="rgba(13,124,107,0.3)" stroke-width="1" fill="none"/>
+        <rect x="280" y="220" width="80" height="60" rx="4" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none"/>
+        <line x1="120" y1="70" x2="160" y2="70" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+        <line x1="240" y1="70" x2="280" y2="70" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+        <line x1="120" y1="160" x2="160" y2="160" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+        <line x1="240" y1="160" x2="280" y2="160" stroke="rgba(59,125,216,0.2)" stroke-width="1"/>
+        <line x1="80" y1="100" x2="80" y2="130" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <line x1="200" y1="100" x2="200" y2="130" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <line x1="320" y1="100" x2="320" y2="130" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+      </svg>
 
       <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
 
@@ -189,173 +165,371 @@
             <li style="color: rgba(255,255,255,0.4);">/</li>
             <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
             <li style="color: rgba(255,255,255,0.4);">/</li>
-            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Therapeutic Areas</a></li>
-            <li style="color: rgba(255,255,255,0.4);">/</li>
-            <li style="color: var(--white);">[TA_NAME]</li>
+            <li style="color: var(--white);">Therapeutic Areas</li>
           </ol>
         </nav>
 
         <div style="max-width: 820px;">
           <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
-            Therapeutic Area Solutions
+            Solutions by Therapeutic Area
           </p>
           <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
-            [TA_NAME]
+            AI-Driven BRA Across 12 Therapeutic Areas
           </h1>
           <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
-            ArcaScience provides comprehensive benefit-risk analysis coverage for [TA_NAME], with TA-specific data intelligence, AI models trained on [TA_NAME] safety and efficacy patterns, and regulatory-grade outputs for FDA, EMA, and PMDA submissions.
+            Every therapeutic area has unique benefit-risk challenges. ArcaScience configures its data intelligence, AI models, and regulatory outputs for each TA's specific safety signals, patient populations, and regulatory requirements.
           </p>
           <a href="/contact" class="arca-btn-primary-inverted">
-            Request [TA_NAME] Briefing
+            Request a TA-Specific Briefing
           </a>
         </div>
 
       </div>
     </section>
 
-    <!-- ================================================================
-         SECTION 2: DATA COVERAGE STATS
-         Dark bar (credibility-bar style) with key TA-specific metrics.
-         Uses data-countup for animated numbers on scroll.
-         Replace placeholder numbers with TA-specific data.
-         ================================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
+    <!-- SECTION 2: CREDIBILITY BAR -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
 
-<section class="arca-bg-green-100 arca-credibility-bar" data-animate>
+    <section class="arca-bg-green-100 arca-credibility-bar" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
-
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="12500" data-countup-suffix="+">0</span>
-            <p class="arca-caption">[TA_NAME] clinical trials analyzed</p>
+            <span class="arca-stat-lg" data-countup="12">0</span>
+            <p class="arca-caption">Therapeutic areas covered</p>
           </div>
-
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="450000" data-countup-suffix="+">0</span>
-            <p class="arca-caption">Adverse events tracked</p>
+            <span class="arca-stat-lg" data-countup="20" data-countup-suffix="+">0</span>
+            <p class="arca-caption">Disease-specific models</p>
           </div>
-
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="85" data-countup-suffix="+">0</span>
+            <span class="arca-stat-lg" data-countup="50" data-countup-suffix="+">0</span>
             <p class="arca-caption">Regulatory submissions supported</p>
           </div>
-
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="18">0</span>
-            <p class="arca-caption">Years of [TA_NAME] safety data</p>
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">0</span>
+            <p class="arca-caption">Data points across all TAs</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ================================================================
-         SECTION 3: TA-SPECIFIC CHALLENGE SECTION
-         White background. Describes unique BRA challenges for this TA.
-         3 challenge cards using arca-card.
-         Customize the challenges for each therapeutic area.
-         ================================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
-
-<section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
-          <p class="arca-section-label">Unique Challenges</p>
-          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
-            Benefit-Risk Complexity in [TA_NAME]
-          </h2>
-          <p class="arca-body-lg arca-text-grey-600">
-            [TA_NAME] presents distinct challenges for benefit-risk assessment that require specialized data coverage, analytical approaches, and regulatory expertise.
-          </p>
-        </div>
-
-        <!-- 3 TA-specific challenge cards -->
-        <!-- CUSTOMIZE THESE FOR EACH TA -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-
-          <div class="arca-card" data-animate>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Complex Safety Signals</h3>
-            <p class="arca-body-sm arca-text-grey-600">
-              [TA_NAME] therapies often present rare but serious adverse events that are difficult to detect in clinical trials but emerge in post-marketing surveillance. Traditional signal detection methods lack the sensitivity to identify these patterns early.
-            </p>
-          </div>
-
-          <div class="arca-card" data-animate>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Heterogeneous Patient Populations</h3>
-            <p class="arca-body-sm arca-text-grey-600">
-              Patient subgroups in [TA_NAME] vary significantly by disease stage, prior treatment history, and comorbidities. Benefit-risk profiles can differ dramatically across subpopulations, requiring granular analysis capabilities.
-            </p>
-          </div>
-
-          <div class="arca-card" data-animate>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Evolving Regulatory Standards</h3>
-            <p class="arca-body-sm arca-text-grey-600">
-              Regulatory expectations for [TA_NAME] submissions continue to evolve, with FDA and EMA issuing updated guidance on specific safety endpoints, study designs, and post-marketing requirements that demand continuous methodology adaptation.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         SECTION 4: PLATFORM CAPABILITIES FOR THIS TA
-         Grey-50 background. How the 3 modules address this TA's needs.
-         Uses colored-top cards (teal, indigo, green).
-         ================================================================ -->
+    <!-- SECTION 3: TA GRID — PRIMARY THERAPEUTIC AREAS -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
     <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="text-align: center; margin-bottom: var(--space-8);">
-          <p class="arca-section-label">Platform Capabilities</p>
-          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
-            How ArcaScience Addresses [TA_NAME] BRA Challenges
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Explore by Therapeutic Area</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            TA-Specific Benefit-Risk Solutions
           </h2>
-          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
-            Our three integrated modules — Data Intelligence, Decision Intelligence, and Automated Outputs — are configured for [TA_NAME]-specific benefit-risk assessment workflows.
+          <p class="arca-body-lg arca-text-grey-600">
+            Each therapeutic area has dedicated data pipelines, AI models trained on TA-specific safety patterns, and regulatory output templates aligned with the latest guidance.
           </p>
         </div>
 
-        <!-- 3 module cards with colored tops -->
+        <!-- TA Cards Grid — 3 columns -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
 
-          <!-- Module 1: Data Intelligence (teal) -->
+          <!-- Oncology -->
+          <a href="/ta-oncology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--teal-100), var(--teal-50)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="3" fill="var(--teal-500)" opacity="0.5"/><path d="M10 3v14M3 10h14" stroke="var(--teal-600)" stroke-width="1" opacity="0.3"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Oncology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Complex multi-drug regimens, immunotherapy safety, accelerated approvals. AI models for immune-related AEs, biomarker subgroups, and combination toxicity.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">NSCLC</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Breast Cancer</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Melanoma</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">AML</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Oncology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Neurology -->
+          <a href="/ta-neurology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--indigo-100), var(--indigo-50)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C6 2 3 5 3 9c0 3 2 5 4 6v2h6v-2c2-1 4-3 4-6 0-4-3-7-7-7z" stroke="var(--indigo-600)" stroke-width="1.5" fill="none"/><path d="M7 18h6" stroke="var(--indigo-600)" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Neurology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Neurodegenerative diseases, long treatment durations, cognitive endpoints. AI models for CNS safety signals, disease progression, and biomarker monitoring.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Alzheimer's</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Parkinson's</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Multiple Sclerosis</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">SMA</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Neurology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Immunology -->
+          <a href="/ta-immunology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--green-100), var(--green-50)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke="var(--green-600)" stroke-width="1.5" fill="none"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4M4.3 4.3l2.8 2.8M12.9 12.9l2.8 2.8M4.3 15.7l2.8-2.8M12.9 7.1l2.8-2.8" stroke="var(--green-600)" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Immunology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Autoimmune diseases, biologic safety, infection risk monitoring. AI models for immune suppression signals, anti-drug antibodies, and long-term risk.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Rheumatoid Arthritis</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Psoriasis</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Lupus</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Immunology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Cardiology -->
+          <a href="/ta-cardiology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(220,38,38,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17s-7-4.5-7-9c0-2.5 2-4.5 4.5-4.5 1.5 0 2.5.8 2.5.8s1-.8 2.5-.8C15 3.5 17 5.5 17 8c0 4.5-7 9-7 9z" stroke="#dc2626" stroke-width="1.5" fill="none"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Cardiology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              CV outcomes trials, arrhythmia monitoring, heart failure endpoints. AI models for QT prolongation detection, MACE analysis, and cardiovascular risk profiling.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Atrial Fibrillation</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Heart Failure</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Cardiology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Respiratory -->
+          <a href="/ta-respiratory" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--blue-100), var(--blue-50)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v10M10 13c-3 0-6 2-6 4h12c0-2-3-4-6-4z" stroke="var(--blue-600)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M7 8c-2 0-4 1-4 3M13 8c2 0 4 1 4 3" stroke="var(--blue-600)" stroke-width="1" opacity="0.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Respiratory</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Chronic respiratory diseases, inhalation device safety, exacerbation endpoints. AI models for pulmonary function decline, infection signals, and biologic safety.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Asthma</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Cystic Fibrosis</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Respiratory <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Rare Diseases -->
+          <a href="/ta-rare-diseases" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(147,51,234,0.1), rgba(147,51,234,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.3L10 14.5 5.1 17l.9-5.3-4-3.9L7.5 7z" stroke="#9333ea" stroke-width="1.5" fill="none"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Rare Diseases</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Small patient populations, orphan drug pathways, novel gene therapies. AI models for sparse data analysis, natural history modeling, and single-arm trial evaluation.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">SMA</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Gene Therapies</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Orphan Drugs</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Rare Diseases <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Dermatology -->
+          <a href="/ta-dermatology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="4" width="12" height="12" rx="3" stroke="#f59e0b" stroke-width="1.5" fill="none"/><path d="M7 8h6M7 11h4" stroke="#f59e0b" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Dermatology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Chronic skin conditions, biologic escalation, patient-reported outcomes. AI models for treatment response patterns, skin-specific AEs, and PRO integration.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Atopic Dermatitis</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Psoriasis</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Dermatology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Gastroenterology -->
+          <a href="/ta-gastroenterology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(234,88,12,0.1), rgba(234,88,12,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4c0 3 4 4 4 8s-4 5-4 5M14 4c0 3-4 4-4 8s4 5 4 5" stroke="#ea580c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Gastroenterology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              IBD biologics, hepatotoxicity monitoring, GI-specific endpoints. AI models for gut-immune interactions, liver safety signals, and mucosal healing assessment.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Crohn's Disease</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Ulcerative Colitis</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Gastroenterology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Hematology -->
+          <a href="/ta-hematology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(190,18,60,0.1), rgba(190,18,60,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-2 3-5 5-5 8.5C5 14.5 7.2 17 10 17s5-2.5 5-5.5C15 8 12 6 10 3z" stroke="#be123c" stroke-width="1.5" fill="none"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Hematology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Blood disorders, cell and gene therapies, coagulation monitoring. AI models for cytopenias, bleeding/thrombotic events, and transfusion-related safety.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Multiple Myeloma</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">AML</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Hematology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Endocrinology -->
+          <a href="/ta-endocrinology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(5,150,105,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#059669" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="2" fill="#059669" opacity="0.3"/><path d="M10 4v2M10 14v2M4 10h2M14 10h2" stroke="#059669" stroke-width="1" stroke-linecap="round" opacity="0.4"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Endocrinology</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Metabolic diseases, GLP-1 safety, CV outcome requirements. AI models for hypoglycemia detection, weight-related AEs, and long-term metabolic monitoring.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Type 2 Diabetes</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Endocrinology <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Infectious Disease -->
+          <a href="/ta-infectious-disease" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(14,165,233,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="5" stroke="#0ea5e9" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="2" stroke="#0ea5e9" stroke-width="1" fill="none" opacity="0.5"/><line x1="10" y1="1" x2="10" y2="5" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/><line x1="10" y1="15" x2="10" y2="19" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/><line x1="1" y1="10" x2="5" y2="10" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/><line x1="15" y1="10" x2="19" y2="10" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Infectious Disease</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Antivirals, vaccines, antimicrobial resistance. AI models for resistance pattern detection, vaccine safety signals, and rapid outbreak response analysis.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Antivirals</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Vaccines</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Infectious Disease <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+          <!-- Pediatrics -->
+          <a href="/ta-pediatrics" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.05)); display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#6366f1" stroke-width="1.5" fill="none"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#6366f1" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="arca-heading-2" style="margin: 0;">Pediatrics</h3>
+            </div>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
+              Developmental safety, age-appropriate formulations, growth monitoring. AI models for pediatric dosing, developmental toxicity, and age-stratified safety analysis.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Pediatric Oncology</span>
+              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Rare Pediatric</span>
+            </div>
+            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+              Explore Pediatrics <span class="arca-arrow">&rarr;</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS — 3 MODULES -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Capabilities</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Configured for Every Therapeutic Area
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Our three integrated modules adapt to each TA's unique data landscape, safety patterns, and regulatory requirements.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
           <div class="arca-card arca-card-colored-top is-data" data-animate>
             <span class="arca-module-tag is-data">Data Intelligence</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
-              [TA_NAME] Data Coverage
+              TA-Specific Data Pipelines
             </h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
-              Comprehensive [TA_NAME] data from 12,500+ clinical trials, 450,000+ adverse event reports, TA-specific literature from PubMed and Embase, and real-world evidence from EHR and claims databases. Continuous updates with MedDRA coding specific to [TA_NAME] safety signals.
+              Curated data sources for each therapeutic area — clinical trial registries, adverse event databases, TA-specific literature, real-world evidence, and regulatory submissions. MedDRA coding configured for TA-specific safety signal categories.
             </p>
             <a href="/platform-data-intelligence" class="arca-btn-tertiary">
               Explore Data Engine <span class="arca-arrow">&rarr;</span>
             </a>
           </div>
 
-          <!-- Module 2: Decision Intelligence (indigo) -->
           <div class="arca-card arca-card-colored-top is-analytics" data-animate>
             <span class="arca-module-tag is-analytics">Decision Intelligence</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
-              TA-Specific AI Models
+              TA-Trained AI Models
             </h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
-              7 AI models trained specifically on [TA_NAME] safety and efficacy patterns, including [TA_NAME]-specific signal detection, subpopulation analysis, and comparative effectiveness evaluation. BRAT framework application with [TA_NAME] regulatory precedent integration.
+              AI models trained on TA-specific safety and efficacy patterns. Signal detection algorithms tuned for each therapeutic area's unique adverse event profiles, subpopulation characteristics, and regulatory precedents.
             </p>
             <a href="/platform-ai-models" class="arca-btn-tertiary">
               Explore AI Models <span class="arca-arrow">&rarr;</span>
             </a>
           </div>
 
-          <!-- Module 3: Automated Outputs (green) -->
           <div class="arca-card arca-card-colored-top is-output" data-animate>
             <span class="arca-module-tag is-output">Automated Outputs</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
-              [TA_NAME] Regulatory Outputs
+              TA-Formatted Reports
             </h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
-              Submission-ready PSUR/PBRER, Risk Management Plans, CTD Module 2.5, and HEOR reports formatted for FDA, EMA, and PMDA requirements with [TA_NAME]-specific safety sections, efficacy endpoints, and regulatory citations from approved [TA_NAME] submissions.
+              Submission-ready outputs with TA-specific safety sections, efficacy endpoints, and regulatory citations. Templates pre-configured for FDA, EMA, and PMDA requirements in each therapeutic area.
             </p>
             <a href="/platform-outputs" class="arca-btn-tertiary">
               Explore Outputs <span class="arca-arrow">&rarr;</span>
@@ -366,334 +540,21 @@
       </div>
     </section>
 
-    <!-- ================================================================
-         SECTION 5: ADVERSE EVENT LANDSCAPE
-         White background. Visual representation of AE landscape for this TA.
-         Card grid showing key safety signal categories.
-         CUSTOMIZE AE categories for each therapeutic area.
-         ================================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
-
-<section class="arca-bg-blue-50 arca-bg-mesh" style="padding: var(--space-9) 0;" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
-          <p class="arca-section-label">Safety Intelligence</p>
-          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
-            [TA_NAME] Adverse Event Landscape
-          </h2>
-          <p class="arca-body-lg arca-text-grey-600">
-            Key safety signal categories tracked across [TA_NAME] development programs, with AI-powered detection and comparative analysis against class-wide safety profiles.
-          </p>
-        </div>
-
-        <!-- AE category grid -->
-        <!-- CUSTOMIZE THESE CATEGORIES FOR EACH TA -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-
-          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
-            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Hematologic Events</h4>
-            <p class="arca-body-sm arca-text-grey-600">
-              Cytopenias, thrombocytopenia, anemia — critical dose-limiting toxicities requiring continuous monitoring.
-            </p>
-          </div>
-
-          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
-            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Cardiovascular Events</h4>
-            <p class="arca-body-sm arca-text-grey-600">
-              QT prolongation, arrhythmias, cardiac dysfunction — key regulatory focus areas for [TA_NAME] therapies.
-            </p>
-          </div>
-
-          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
-            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Hepatic Events</h4>
-            <p class="arca-body-sm arca-text-grey-600">
-              Elevated liver enzymes, hepatotoxicity, drug-induced liver injury — requiring structured causality assessment.
-            </p>
-          </div>
-
-          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
-            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Infections</h4>
-            <p class="arca-body-sm arca-text-grey-600">
-              Opportunistic infections, immune suppression effects — critical in immunomodulatory therapies.
-            </p>
-          </div>
-
-          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
-            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Dermatologic Reactions</h4>
-            <p class="arca-body-sm arca-text-grey-600">
-              Rash, Stevens-Johnson syndrome, severe cutaneous adverse reactions requiring immediate intervention.
-            </p>
-          </div>
-
-          <div class="arca-card" style="padding: var(--space-5); border-left: 3px solid var(--indigo-500);" data-animate>
-            <h4 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">GI & Metabolic Events</h4>
-            <p class="arca-body-sm arca-text-grey-600">
-              Nausea, diarrhea, metabolic disturbances — common dose-limiting events affecting patient adherence.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Link to data coverage -->
-        <div style="text-align: center; margin-top: var(--space-7);">
-          <a href="/platform-data-intelligence" class="arca-btn-tertiary">
-            See Full [TA_NAME] Data Coverage <span class="arca-arrow">&rarr;</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         SECTION 6: CASE STUDY EXCERPT
-         Blue-50 background. Featured case study relevant to this TA.
-         Left: challenge + approach + result stats.
-         Right: client testimonial quote.
-         REPLACE with TA-specific case study when available.
-         ================================================================ -->
-    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
-
-          <!-- Left: Case study content -->
-          <div>
-            <p class="arca-section-label">Case Study — [TA_NAME]</p>
-            <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
-              Accelerating [TA_NAME] BRA for Regulatory Submission
-            </h2>
-
-            <div style="margin-bottom: var(--space-5);">
-              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Challenge</h3>
-              <p class="arca-body-sm arca-text-grey-600">
-                A top-10 pharmaceutical company needed a comprehensive benefit-risk assessment for a novel [TA_NAME] therapy ahead of FDA and EMA submission, with 12-month timeline constraints and complex subpopulation analysis requirements.
-              </p>
-            </div>
-
-            <div style="margin-bottom: var(--space-5);">
-              <h3 class="arca-heading-4" style="margin-bottom: var(--space-2); color: var(--indigo-600);">Approach</h3>
-              <p class="arca-body-sm arca-text-grey-600">
-                ArcaScience deployed [TA_NAME]-specific data intelligence covering 8,500+ clinical trials and 250,000+ adverse event reports, applied BRAT framework with TA-specific AI models, and generated submission-ready CTD Module 2.5 and Risk Management Plan.
-              </p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: var(--space-6);">
-              <div>
-                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="65" data-countup-suffix="%">0</span>
-                <p class="arca-caption arca-text-grey-600">Faster than manual BRA</p>
-              </div>
-              <div>
-                <span class="arca-stat-sm" style="color: var(--indigo-600);" data-countup="12">0</span>
-                <p class="arca-caption arca-text-grey-600">Subpopulations analyzed</p>
-              </div>
-            </div>
-
-            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary">
-              Read Full Case Study <span class="arca-arrow">&rarr;</span>
-            </a>
-          </div>
-
-          <!-- Right: Testimonial -->
-          <div class="arca-testimonial" style="text-align: left;">
-            <div class="arca-testimonial-quote" style="padding-left: 24px; border-left: 3px solid var(--blue-400);">
-              ArcaScience's [TA_NAME]-specific data coverage and AI models enabled us to conduct a comprehensive benefit-risk analysis in months rather than the year we had budgeted. The submission-ready outputs met every FDA and EMA requirement on first review.
-            </div>
-            <div class="arca-testimonial-attribution" style="margin-top: var(--space-5);">
-              <p class="arca-body-md" style="font-weight: 600;">VP Regulatory Affairs</p>
-              <p class="arca-body-sm arca-text-grey-600">Top-10 Pharmaceutical Company — [TA_NAME] Program</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         SECTION 7: REGULATORY CONTEXT
-         White background. Key regulatory considerations for this TA.
-         Uses accordion for expandable detail (data-accordion).
-         CUSTOMIZE regulatory guidance for each TA.
-         ================================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
-
-<section class="arca-bg-green-100" style="padding: var(--space-9) 0;" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
-          <p class="arca-section-label">Regulatory Intelligence</p>
-          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
-            [TA_NAME] Regulatory Context
-          </h2>
-          <p class="arca-body-lg arca-text-grey-600">
-            Key regulatory considerations and guidance specific to [TA_NAME] benefit-risk assessment for FDA, EMA, and PMDA submissions.
-          </p>
-        </div>
-
-        <!-- Accordion for regulatory guidance -->
-        <!-- Webflow: Use Accordion component or custom implementation with data-accordion -->
-        <div style="max-width: 820px; margin: 0 auto;">
-
-          <div class="arca-accordion" data-accordion>
-
-            <!-- Accordion item 1 -->
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">FDA Guidance for [TA_NAME]</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
-              </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">
-                  FDA's guidance for [TA_NAME] therapies emphasizes comprehensive safety monitoring for [specific AE categories], dose-response characterization, and subpopulation benefit-risk profiling. Recent updates (2024-2025) require structured benefit-risk frameworks aligned with BRAT methodology for all [TA_NAME] NDAs and BLAs.
-                </p>
-                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
-                  <strong>Key requirements:</strong> Long-term safety follow-up, comparator analysis vs. standard of care, patient-reported outcomes integration, and risk minimization strategy documentation.
-                </p>
-              </div>
-            </div>
-
-            <!-- Accordion item 2 -->
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">EMA Guidance for [TA_NAME]</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
-              </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">
-                  EMA's Committee for Medicinal Products for Human Use (CHMP) has issued [TA_NAME]-specific guidance emphasizing EU GVP Module V compliance for Risk Management Plans, Periodic Safety Update Reports (PSURs), and post-authorization safety studies (PASS).
-                </p>
-                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
-                  <strong>Key focus areas:</strong> European real-world evidence integration, HTA-aligned benefit-risk communication, and adaptive pathway considerations for [TA_NAME] therapies with unmet medical need.
-                </p>
-              </div>
-            </div>
-
-            <!-- Accordion item 3 -->
-            <div class="arca-accordion-item" style="border-bottom: 1px solid var(--grey-200);">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">PMDA Guidance for [TA_NAME]</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
-              </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">
-                  Japan's PMDA requires [TA_NAME]-specific data from Japanese patient populations, with emphasis on ethnic factors affecting safety and efficacy. Recent guidelines mandate comprehensive post-marketing surveillance for all [TA_NAME] therapies.
-                </p>
-                <p class="arca-body-sm arca-text-grey-600" style="margin-top: var(--space-3);">
-                  <strong>Submission requirements:</strong> Japanese bridging studies, J-RMP (Japanese Risk Management Plan), and continuous safety monitoring aligned with MIHARI Project standards.
-                </p>
-              </div>
-            </div>
-
-            <!-- Accordion item 4 -->
-            <div class="arca-accordion-item">
-              <button class="arca-accordion-header" style="width: 100%; text-align: left; padding: var(--space-5) 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; cursor: pointer;">
-                <h3 class="arca-heading-3">Post-Marketing Requirements for [TA_NAME]</h3>
-                <span class="arca-accordion-icon" style="color: var(--grey-500); font-size: 1.25rem;">+</span>
-              </button>
-              <div class="arca-accordion-content" style="padding: 0 0 var(--space-5); display: none;">
-                <p class="arca-body-sm arca-text-grey-600">
-                  Regulatory authorities globally require ongoing benefit-risk evaluation for [TA_NAME] therapies through periodic safety reports, signal detection, and registry studies. ArcaScience automates PSUR/PBRER generation, signal monitoring, and RMP updates aligned with ICH E2C(R2) and EU GVP Module VIII.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <div style="text-align: center; margin-top: var(--space-7);">
-            <a href="/resources" class="arca-btn-tertiary">
-              View All [TA_NAME] Regulatory Updates <span class="arca-arrow">&rarr;</span>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         SECTION 8: RELATED RESOURCES
-         Grey-50 background. 3 cards linking to whitepapers, blog posts, webinars.
-         CUSTOMIZE resources for each TA.
-         ================================================================ -->
-    <div class="arca-section-divider" aria-hidden="true"></div>
-
-    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="text-align: center; margin-bottom: var(--space-8);">
-          <p class="arca-section-label">Resources</p>
-          <h2 class="arca-display-sm">Related [TA_NAME] Resources</h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-
-          <!-- Resource 1: Whitepaper -->
-          <a href="/resources-whitepapers" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
-            <div style="padding: var(--space-2) var(--space-3); background: var(--blue-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
-              <span class="arca-label" style="color: var(--blue-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Whitepaper</span>
-            </div>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI-Driven BRA for [TA_NAME]: Methodology & Case Studies</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Comprehensive overview of ArcaScience's [TA_NAME]-specific benefit-risk analysis approach, including data sources, AI model validation, and regulatory submission outcomes.
-            </p>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Download Whitepaper <span class="arca-arrow">&rarr;</span>
-            </span>
-          </a>
-
-          <!-- Resource 2: Blog Post -->
-          <a href="/resources" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
-            <div style="padding: var(--space-2) var(--space-3); background: var(--indigo-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
-              <span class="arca-label" style="color: var(--indigo-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Insight</span>
-            </div>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">[TA_NAME] Regulatory Trends: What Changed in 2026</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Analysis of recent FDA and EMA guidance updates affecting [TA_NAME] benefit-risk assessment requirements, with implications for current development programs.
-            </p>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Read Article <span class="arca-arrow">&rarr;</span>
-            </span>
-          </a>
-
-          <!-- Resource 3: Webinar -->
-          <a href="/resources-webinars" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;" data-animate>
-            <div style="padding: var(--space-2) var(--space-3); background: var(--green-50); border-radius: 4px; margin-bottom: var(--space-4); display: inline-block; align-self: flex-start;">
-              <span class="arca-label" style="color: var(--green-600); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em;">Webinar</span>
-            </div>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">AI-Powered Signal Detection in [TA_NAME]</h3>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              On-demand webinar covering advanced signal detection methods for [TA_NAME] therapies, including case examples and live platform demonstration.
-            </p>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Watch Recording <span class="arca-arrow">&rarr;</span>
-            </span>
-          </a>
-
-        </div>
-
-        <div style="text-align: center; margin-top: var(--space-7);">
-          <a href="/resource-hub?ta=[TA_SLUG]" class="arca-btn-tertiary">
-            View All [TA_NAME] Resources <span class="arca-arrow">&rarr;</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================================================================
-         SECTION 9: FINAL CTA
-         Full-width dark blue gradient. Primary conversion section.
-         ================================================================ -->
+    <!-- SECTION 5: FINAL CTA -->
     <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
-
-      <!-- arca-decor: CTA glow orbs -->
       <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
 
       <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
-          See How ArcaScience Supports [TA_NAME]
+          Get a TA-Specific Platform Demo
         </h2>
         <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
-          Request a demonstration of ArcaScience's platform configured for [TA_NAME] benefit-risk analysis. Our scientists will walk through TA-specific data coverage, AI model capabilities, and regulatory output examples relevant to your development program.
+          Tell us your therapeutic area and we'll show you exactly how ArcaScience's data intelligence, AI models, and regulatory outputs are configured for your specific BRA challenges.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="/contact?ta=[TA_SLUG]" class="arca-btn-primary-inverted">
-            Request [TA_NAME] Briefing
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request a Briefing
           </a>
           <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
             Explore the Platform <span class="arca-arrow">&rarr;</span>
@@ -704,10 +565,7 @@
 
   </main>
 
-  <!-- ================================================================
-       FOOTER
-       Identical structure to homepage footer.
-       ================================================================ -->
+  <!-- FOOTER -->
   <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
     <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
       <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
@@ -736,10 +594,13 @@
         <div>
           <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
+            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
+            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
+            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
             <a href="/solution-early-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Early Development</a>
             <a href="/solution-late-development" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Late Development</a>
-            <a href="/solution-post-marketing" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Post-Marketing</a>
-            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
           </nav>
         </div>
 
@@ -750,7 +611,7 @@
             <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
             <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
             <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
-            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/science-methodology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Science & Methodology</a>
             <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
           </nav>
         </div>
@@ -762,7 +623,7 @@
             <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
             <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
             <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
-            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+            <a href="/resources-faq" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">FAQ</a>
           </nav>
         </div>
 
@@ -795,29 +656,6 @@
     document.addEventListener('DOMContentLoaded', function() {
       if (window.ArcaScience) ArcaScience.init();
       if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
-
-      // Accordion functionality
-      document.querySelectorAll('[data-accordion] .arca-accordion-header').forEach(function(header) {
-        header.addEventListener('click', function() {
-          var content = this.nextElementSibling;
-          var icon = this.querySelector('.arca-accordion-icon');
-          var isOpen = content.style.display === 'block';
-
-          // Close all accordions in this group
-          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-content').forEach(function(c) {
-            c.style.display = 'none';
-          });
-          this.closest('[data-accordion]').querySelectorAll('.arca-accordion-icon').forEach(function(i) {
-            i.textContent = '+';
-          });
-
-          // Toggle current accordion
-          if (!isOpen) {
-            content.style.display = 'block';
-            icon.textContent = '−';
-          }
-        });
-      });
     });
   </script>
 
