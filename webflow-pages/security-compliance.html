@@ -1013,6 +1013,11 @@
 
   <!-- Global JS only (no hero or countup needed on this page) -->
   <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
 
 </body>
 </html>
