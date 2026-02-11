@@ -42,6 +42,17 @@
   --red-600:    #C81E1E;
   --red-100:    #FDE8E8;
 
+  --indigo-500: #5B50D6;
+  --indigo-50:  #F5F3FF;
+  --green-50:   #F0FDF4;
+  --teal-500:   #0F9B86;
+  --blue-50-alt:#EEF4FD;
+  --amber-500:  #D97706;
+  --purple-600: #7C3AED;
+  --purple-100: #F3E8FF;
+  --rose-600:   #E11D48;
+  --rose-100:   #FFE4E6;
+
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -890,6 +901,118 @@ section[data-animate].is-visible {
   .arca-form-field-wrap::before { animation: none; }
   [data-animate] img { clip-path: none; }
 }
+
+/* =========================================================================
+   TA-Specific Hero Color Themes
+   Each TA gets a unique gradient hero background for visual differentiation
+   ========================================================================= */
+.arca-hero-oncology { background: linear-gradient(135deg, #0A1628 0%, #1A2A4D 50%, #1E3A5F 100%); }
+.arca-hero-neurology { background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%); }
+.arca-hero-immunology { background: linear-gradient(135deg, #0A1628 0%, #134E4A 50%, #115E59 100%); }
+.arca-hero-cardiology { background: linear-gradient(135deg, #0A1628 0%, #7F1D1D 40%, #991B1B 100%); }
+.arca-hero-respiratory { background: linear-gradient(135deg, #0A1628 0%, #1A3A5C 50%, #166534 100%); }
+.arca-hero-rare-diseases { background: linear-gradient(135deg, #0F172A 0%, #4C1D95 50%, #5B21B6 100%); }
+.arca-hero-dermatology { background: linear-gradient(135deg, #0A1628 0%, #92400E 50%, #B45309 100%); }
+.arca-hero-gastroenterology { background: linear-gradient(135deg, #0A1628 0%, #155E75 50%, #0E7490 100%); }
+.arca-hero-hematology { background: linear-gradient(135deg, #0F172A 0%, #831843 50%, #9F1239 100%); }
+.arca-hero-endocrinology { background: linear-gradient(135deg, #0A1628 0%, #1E3A5F 50%, #065F46 100%); }
+.arca-hero-infectious-disease { background: linear-gradient(135deg, #0A1628 0%, #064E3B 50%, #047857 100%); }
+.arca-hero-pediatrics { background: linear-gradient(135deg, #0F172A 0%, #1E40AF 50%, #3B82F6 100%); }
+
+/* TA hero accent color for glow orbs — each TA uses a different accent */
+.arca-hero-oncology .arca-hero-glow { background: radial-gradient(circle, rgba(59,125,216,0.15) 0%, transparent 70%); }
+.arca-hero-neurology .arca-hero-glow { background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%); }
+.arca-hero-immunology .arca-hero-glow { background: radial-gradient(circle, rgba(13,124,107,0.18) 0%, transparent 70%); }
+.arca-hero-cardiology .arca-hero-glow { background: radial-gradient(circle, rgba(239,68,68,0.15) 0%, transparent 70%); }
+.arca-hero-respiratory .arca-hero-glow { background: radial-gradient(circle, rgba(34,197,94,0.15) 0%, transparent 70%); }
+.arca-hero-rare-diseases .arca-hero-glow { background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%); }
+.arca-hero-dermatology .arca-hero-glow { background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%); }
+.arca-hero-gastroenterology .arca-hero-glow { background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%); }
+.arca-hero-hematology .arca-hero-glow { background: radial-gradient(circle, rgba(236,72,153,0.18) 0%, transparent 70%); }
+.arca-hero-endocrinology .arca-hero-glow { background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); }
+.arca-hero-infectious-disease .arca-hero-glow { background: radial-gradient(circle, rgba(52,211,153,0.15) 0%, transparent 70%); }
+.arca-hero-pediatrics .arca-hero-glow { background: radial-gradient(circle, rgba(96,165,250,0.18) 0%, transparent 70%); }
+
+/* =========================================================================
+   Downloadable Resource Card — PDF/Document download styling
+   ========================================================================= */
+.arca-download-card {
+  border: 1px solid rgba(209,213,222,0.6);
+  border-radius: 12px;
+  padding: var(--space-5);
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+.arca-download-card:hover {
+  border-color: rgba(59,125,216,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: inherit;
+}
+.arca-download-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-100);
+  color: var(--blue-600);
+  transition: background 200ms ease, transform 200ms ease;
+}
+.arca-download-card:hover .arca-download-icon {
+  background: var(--blue-600);
+  color: var(--white);
+  transform: scale(1.05);
+}
+.arca-download-meta {
+  flex: 1;
+}
+.arca-download-meta h4 {
+  margin-bottom: var(--space-1);
+}
+.arca-download-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--blue-100);
+  color: var(--blue-600);
+  margin-bottom: var(--space-2);
+}
+.arca-download-badge.is-excel { background: var(--green-100); color: var(--green-600); }
+.arca-download-badge.is-ppt { background: var(--amber-100); color: var(--amber-600); }
+
+/* =========================================================================
+   TA accent color bar — thin colored line at top of credibility section
+   ========================================================================= */
+.arca-ta-accent-bar {
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-6);
+}
+.arca-ta-accent-bar.is-oncology { background: linear-gradient(90deg, var(--blue-600), var(--blue-400)); }
+.arca-ta-accent-bar.is-neurology { background: linear-gradient(90deg, var(--indigo-600), var(--indigo-500)); }
+.arca-ta-accent-bar.is-immunology { background: linear-gradient(90deg, var(--teal-600), var(--teal-500)); }
+.arca-ta-accent-bar.is-cardiology { background: linear-gradient(90deg, #DC2626, #EF4444); }
+.arca-ta-accent-bar.is-respiratory { background: linear-gradient(90deg, var(--green-600), #22C55E); }
+.arca-ta-accent-bar.is-rare-diseases { background: linear-gradient(90deg, var(--purple-600), #A78BFA); }
+.arca-ta-accent-bar.is-dermatology { background: linear-gradient(90deg, var(--amber-600), var(--amber-500)); }
+.arca-ta-accent-bar.is-gastroenterology { background: linear-gradient(90deg, #0891B2, #06B6D4); }
+.arca-ta-accent-bar.is-hematology { background: linear-gradient(90deg, var(--rose-600), #FB7185); }
+.arca-ta-accent-bar.is-endocrinology { background: linear-gradient(90deg, #059669, #10B981); }
+.arca-ta-accent-bar.is-infectious-disease { background: linear-gradient(90deg, #047857, #34D399); }
+.arca-ta-accent-bar.is-pediatrics { background: linear-gradient(90deg, #2563EB, #60A5FA); }
 
 /* =========================================================================
    Responsive
