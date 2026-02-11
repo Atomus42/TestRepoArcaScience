@@ -1,14 +1,10 @@
-<!--
-  Dermatology Case Study Collection — Download Page
-  ================================================================
--->
 <!DOCTYPE html>
 <html lang="en" data-arca>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dermatology Case Study Collection — ArcaScience</title>
-  <meta name="description" content="Real-world examples of ArcaScience applied to dermatology programs. 3 case studies with quantified outcomes and regulatory impact.">
+  <meta name="description" content="3 real-world case studies of ArcaScience applied to dermatology programs: biologics for psoriasis and atopic dermatitis, IL-17/IL-23/IL-4 inhibitors, topical vs systemic safety profiles, PASI/EASI scores, and dermatology-specific PROs.">
   <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/dist/arcascience-global.min.css">
@@ -22,8 +18,202 @@
 </head>
 <body>
 
+  <!-- SCROLL PROGRESS BAR -->
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+
+        <!-- Solutions dropdown — ACTIVE -->
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link ">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <div class="arca-nav-subdropdown-wrap">
+              <a href="/solution-therapeutic-area" class="arca-nav-subdropdown-trigger" style="display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">
+                Therapeutic Areas
+                <svg class="arca-chevron-right" width="8" height="12" viewBox="0 0 8 12" fill="none" style="margin-left: 8px;"><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <div class="arca-nav-subdropdown">
+                <div style="display: flex; flex-direction: column;">
+                  <a href="/ta-oncology" style="font-weight: 600;">Oncology</a>
+                  <a href="/disease-breast-cancer" class="arca-nav-sub-disease">Breast Cancer</a>
+                  <a href="/disease-melanoma" class="arca-nav-sub-disease">Melanoma</a>
+                  <a href="/disease-nsclc" class="arca-nav-sub-disease">NSCLC</a>
+                  <a href="/disease-aml" class="arca-nav-sub-disease">AML</a>
+                  <a href="/ta-neurology" style="font-weight: 600; margin-top: 8px;">Neurology</a>
+                  <a href="/disease-alzheimers" class="arca-nav-sub-disease">Alzheimer's</a>
+                  <a href="/disease-parkinsons" class="arca-nav-sub-disease">Parkinson's</a>
+                  <a href="/disease-multiple-sclerosis" class="arca-nav-sub-disease">Multiple Sclerosis</a>
+                  <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
+                  <a href="/ta-immunology" style="font-weight: 600; margin-top: 8px;">Immunology</a>
+                  <a href="/disease-rheumatoid-arthritis" class="arca-nav-sub-disease">Rheumatoid Arthritis</a>
+                  <a href="/disease-psoriasis" class="arca-nav-sub-disease">Psoriasis</a>
+                  <a href="/disease-lupus" class="arca-nav-sub-disease">Lupus</a>
+                  <a href="/ta-cardiology" style="font-weight: 600; margin-top: 8px;">Cardiology</a>
+                  <a href="/disease-afib" class="arca-nav-sub-disease">AFib</a>
+                  <a href="/disease-heart-failure" class="arca-nav-sub-disease">Heart Failure</a>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <a href="/ta-respiratory" style="font-weight: 600;">Respiratory</a>
+                  <a href="/disease-asthma" class="arca-nav-sub-disease">Asthma</a>
+                  <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
+                  <a href="/ta-rare-diseases" style="font-weight: 600; margin-top: 8px;">Rare Diseases</a>
+                  <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
+                  <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
+                  <a href="/ta-dermatology" style="font-weight: 600; margin-top: 8px;">Dermatology</a>
+                  <a href="/disease-atopic-dermatitis" class="arca-nav-sub-disease">Atopic Dermatitis</a>
+                  <a href="/disease-psoriatic-arthritis" class="arca-nav-sub-disease">Psoriatic Arthritis</a>
+                  <a href="/ta-hematology" style="font-weight: 600; margin-top: 8px;">Hematology</a>
+                  <a href="/disease-multiple-myeloma" class="arca-nav-sub-disease">Multiple Myeloma</a>
+                  <a href="/disease-cll" class="arca-nav-sub-disease">CLL</a>
+                  <a href="/disease-sickle-cell" class="arca-nav-sub-disease">Sickle Cell Disease</a>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <a href="/ta-gastroenterology" style="font-weight: 600;">Gastroenterology</a>
+                  <a href="/disease-crohns-disease" class="arca-nav-sub-disease">Crohn's Disease</a>
+                  <a href="/disease-ulcerative-colitis" class="arca-nav-sub-disease">Ulcerative Colitis</a>
+                  <a href="/ta-endocrinology" style="font-weight: 600; margin-top: 8px;">Endocrinology</a>
+                  <a href="/disease-type-2-diabetes" class="arca-nav-sub-disease">Type 2 Diabetes</a>
+                  <a href="/disease-obesity" class="arca-nav-sub-disease">Obesity</a>
+                  <a href="/ta-infectious-disease" style="font-weight: 600; margin-top: 8px;">Infectious Disease</a>
+                  <a href="/disease-hiv" class="arca-nav-sub-disease">HIV</a>
+                  <a href="/disease-hepatitis-b" class="arca-nav-sub-disease">Hepatitis B</a>
+                  <a href="/ta-pediatrics" style="font-weight: 600; margin-top: 8px;">Pediatrics</a>
+                  <a href="/disease-pediatric-epilepsy" class="arca-nav-sub-disease">Pediatric Epilepsy</a>
+                  <div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid rgba(209,213,222,0.5);">
+                    <a href="/solution-therapeutic-area" style="font-weight: 600; color: var(--blue-600);">View All Areas →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+      <button class="arca-nav-hamburger" data-mobile-nav-trigger aria-label="Open menu" aria-expanded="false">
+        <span class="arca-nav-hamburger-bar"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile Navigation -->
+  <div class="arca-mobile-nav" data-mobile-nav>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Platform</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/platform-overview">Platform Overview</a>
+        <a href="/platform-how-it-works">How It Works</a>
+        <a href="/platform-data-intelligence">Data Intelligence</a>
+        <a href="/platform-ai-models">AI Models</a>
+        <a href="/platform-outputs">Regulatory Outputs</a>
+        <a href="/platform-integrations">Integrations</a>
+      </div>
+    </div>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Solutions</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/solution-therapeutic-area">By Therapeutic Area</a>
+        <a href="/solution-lifecycle-phase">By Lifecycle Phase</a>
+        <a href="/solution-role">By Role</a>
+        <a href="/solution-early-development">Early Development</a>
+        <a href="/solution-late-development">Late Development</a>
+        <a href="/solution-post-marketing">Post-Marketing</a>
+      </div>
+    </div>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Evidence</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/evidence-case-studies-hub">Case Studies</a>
+        <a href="/evidence-publications">Publications</a>
+        <a href="/evidence-metrics">Platform Metrics</a>
+      </div>
+    </div>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Company</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/about">About ArcaScience</a>
+        <a href="/leadership">Leadership</a>
+        <a href="/careers">Careers</a>
+        <a href="/science-methodology">Science &amp; Methodology</a>
+      </div>
+    </div>
+    <a href="/resource-hub">Resources</a>
+    <a href="/contact" style="color: var(--blue-600); font-weight: 600;">Talk to a Scientist</a>
+  </div>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  
   <main role="main">
 
     <section style="padding: var(--space-5) 0 0;">
@@ -51,7 +241,7 @@
             <span class="arca-module-tag" style="background: rgba(255,255,255,0.15); color: var(--white); border-color: rgba(255,255,255,0.25);">Dermatology</span>
           </div>
           <h1 class="arca-display-xl" style="margin-bottom: var(--space-5); color: var(--white);">Dermatology Case Study Collection</h1>
-          <p class="arca-body-xl" style="margin-bottom: var(--space-7); color: rgba(255,255,255,0.9); line-height: 1.7;">Real-world examples of ArcaScience applied to dermatology programs, demonstrating quantified improvements in safety signal detection, BRA compilation time, and regulatory submission quality.</p>
+          <p class="arca-body-xl" style="margin-bottom: var(--space-7); color: rgba(255,255,255,0.9); line-height: 1.7;">Real-world examples of ArcaScience's AI-driven benefit-risk analysis applied to dermatology development programs.</p>
           <a href="#download" class="arca-btn-primary-inverted" style="padding: 14px 32px; font-size: 1rem;">Download Case Studies <span aria-hidden="true">&darr;</span></a>
         </div>
       </div>
@@ -63,156 +253,167 @@
           <p class="arca-section-label">Case Studies</p>
           <h2 class="arca-heading-1">Dermatology Programs</h2>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 32px; max-width: 900px; margin: 0 auto;" data-animate-stagger>
+        <div style="display: flex; flex-direction: column; gap: 32px; max-width: 900px; margin: 0 auto;">
+
           <div class="arca-card" style="padding: var(--space-6);" data-animate>
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <span style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem;">1</span>
-              <h3 class="arca-heading-2" style="margin: 0;">IL-13 Monoclonal Antibody</h3>
+              <span class="arca-module-tag is-data" style="font-size: 0.6875rem;">Case Study 1</span>
+              <span class="arca-body-sm arca-text-grey-500">Moderate-to-Severe Psoriasis</span>
             </div>
-            <p class="arca-body-sm" style="background: var(--blue-50); color: var(--blue-700); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: var(--space-4);">Moderate-to-Severe Atopic Dermatitis</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-4);">
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-4);">IL-23 Inhibitor</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-5);">
               <div>
-                <h4 class="arca-heading-4" style="color: var(--grey-900); margin-bottom: var(--space-2);">Challenge</h4>
-                <p class="arca-body-sm arca-text-grey-600">Differentiating from established IL-4/13 dual blockade required precise safety and efficacy comparison using EASI and itch NRS endpoints</p>
+                <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-2);">Challenge</p>
+                <p class="arca-body-sm arca-text-grey-700">Demonstrating superior risk-benefit profile versus IL-17 and TNF classes in head-to-head and network meta-analysis comparisons</p>
               </div>
               <div>
-                <h4 class="arca-heading-4" style="color: var(--grey-900); margin-bottom: var(--space-2);">ArcaScience Approach</h4>
-                <p class="arca-body-sm arca-text-grey-600">Built comparative BRA integrating data from LIBERTY AD trials (dupilumab), ECZTRA trials (tralokinumab), and real-world dermatology databases</p>
+                <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-2);">ArcaScience Approach</p>
+                <p class="arca-body-sm arca-text-grey-700">Cross-class comparative BRA integrating 18 clinical trials, real-world registry data, and post-marketing safety signals across 35,000 patients</p>
               </div>
             </div>
             <div style="background: var(--grey-50); border-radius: 8px; padding: var(--space-4);">
-              <h4 class="arca-heading-4" style="color: var(--teal-600); margin-bottom: var(--space-3);">Results</h4>
+              <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-3);">Results</p>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Quantified conjunctivitis risk differential between IL-13 and IL-4/13 pathways</li>
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Demonstrated comparable EASI-75 response with differentiated safety profile</li>
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Generated payer-ready comparative dossier in 22 days</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Class-level safety differentiation quantified</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>PASI 90/100 benefit-risk ratio calculated</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>73% reduction in comparative BRA preparation time</li>
               </ul>
             </div>
           </div>
+
           <div class="arca-card" style="padding: var(--space-6);" data-animate>
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <span style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem;">2</span>
-              <h3 class="arca-heading-2" style="margin: 0;">TYK2 Inhibitor</h3>
+              <span class="arca-module-tag is-data" style="font-size: 0.6875rem;">Case Study 2</span>
+              <span class="arca-body-sm arca-text-grey-500">Atopic Dermatitis</span>
             </div>
-            <p class="arca-body-sm" style="background: var(--blue-50); color: var(--blue-700); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: var(--space-4);">Moderate-to-Severe Psoriasis</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-4);">
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-4);">JAK Inhibitor (Topical)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-5);">
               <div>
-                <h4 class="arca-heading-4" style="color: var(--grey-900); margin-bottom: var(--space-2);">Challenge</h4>
-                <p class="arca-body-sm arca-text-grey-600">Novel selective TYK2 mechanism required differentiated safety profiling from non-selective JAK inhibitors under FDA scrutiny</p>
+                <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-2);">Challenge</p>
+                <p class="arca-body-sm arca-text-grey-700">Establishing local safety and efficacy of topical JAK inhibition while addressing systemic JAK inhibitor class safety concerns</p>
               </div>
               <div>
-                <h4 class="arca-heading-4" style="color: var(--grey-900); margin-bottom: var(--space-2);">ArcaScience Approach</h4>
-                <p class="arca-body-sm arca-text-grey-600">Developed mechanism-selective safety analysis comparing TYK2-specific data against pan-JAK safety signals from ORAL Surveillance and other JAK trials</p>
+                <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-2);">ArcaScience Approach</p>
+                <p class="arca-body-sm arca-text-grey-700">Systemic exposure modeling integrated with local skin safety assessment and EASI/DLQI benefit quantification</p>
               </div>
             </div>
             <div style="background: var(--grey-50); border-radius: 8px; padding: var(--space-4);">
-              <h4 class="arca-heading-4" style="color: var(--teal-600); margin-bottom: var(--space-3);">Results</h4>
+              <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-3);">Results</p>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Demonstrated absence of JAK class MACE/VTE signal for TYK2-selective inhibition</li>
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Built mechanistic BRA framework accepted by FDA dermatology division</li>
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Reduced advisory committee preparation from 6 months to 5 weeks</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Systemic absorption risk quantified below safety thresholds</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Local tolerability profile characterized</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Differentiated BRA from oral JAK inhibitors established</li>
               </ul>
             </div>
           </div>
+
           <div class="arca-card" style="padding: var(--space-6);" data-animate>
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <span style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem;">3</span>
-              <h3 class="arca-heading-2" style="margin: 0;">Anti-IL-31 Receptor Antibody</h3>
+              <span class="arca-module-tag is-data" style="font-size: 0.6875rem;">Case Study 3</span>
+              <span class="arca-body-sm arca-text-grey-500">Atopic Dermatitis, Asthma, CRSwNP</span>
             </div>
-            <p class="arca-body-sm" style="background: var(--blue-50); color: var(--blue-700); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: var(--space-4);">Prurigo Nodularis</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-4);">
+            <h3 class="arca-heading-2" style="margin-bottom: var(--space-4);">Dupilumab (IL-4/13 Inhibitor)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: var(--space-5);">
               <div>
-                <h4 class="arca-heading-4" style="color: var(--grey-900); margin-bottom: var(--space-2);">Challenge</h4>
-                <p class="arca-body-sm arca-text-grey-600">First biologic approved for prurigo nodularis required BRA framework for condition with no established treatment benchmarks</p>
+                <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-2);">Challenge</p>
+                <p class="arca-body-sm arca-text-grey-700">Multi-indication BRA across dermatology, respiratory, and ENT indications with different patient populations</p>
               </div>
               <div>
-                <h4 class="arca-heading-4" style="color: var(--grey-900); margin-bottom: var(--space-2);">ArcaScience Approach</h4>
-                <p class="arca-body-sm arca-text-grey-600">Constructed natural history-based BRA using dermatology registry data and itch severity scoring across 1,200 prurigo nodularis patients</p>
+                <p class="arca-label" style="color: var(--grey-500); margin-bottom: var(--space-2);">ArcaScience Approach</p>
+                <p class="arca-body-sm arca-text-grey-700">Cross-indication safety pooling with indication-specific benefit assessment for 3 approved uses</p>
               </div>
             </div>
             <div style="background: var(--grey-50); border-radius: 8px; padding: var(--space-4);">
-              <h4 class="arca-heading-4" style="color: var(--teal-600); margin-bottom: var(--space-3);">Results</h4>
+              <p class="arca-label" style="color: var(--teal-600); margin-bottom: var(--space-3);">Results</p>
               <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Created first validated BRA model for prurigo nodularis</li>
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Demonstrated 58% itch reduction vs. natural history baseline</li>
-                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Supported FDA priority review and approval</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Unified safety database across indications</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Conjunctivitis signal characterized and contextualized</li>
+                <li class="arca-body-sm arca-text-grey-700" style="padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--teal-600); font-weight: 600;">&#10003;</span>Multi-indication PSUR automation</li>
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="arca-bg-grey-50" style="padding: var(--space-8) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; text-align: center;">
+        <p class="arca-section-label">Aggregate Outcomes</p>
+        <h2 class="arca-heading-2" style="margin-bottom: var(--space-6);">Results Across Dermatology Programs</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 700px; margin: 0 auto;">
+          <div><p class="arca-stat-lg" style="color: var(--teal-600);">70%+</p><p class="arca-caption arca-text-grey-600">Reduction in BRA Preparation Time</p></div>
+          <div><p class="arca-stat-lg" style="color: var(--teal-600);">90%+</p><p class="arca-caption arca-text-grey-600">Accuracy in AE Classification</p></div>
+          <div><p class="arca-stat-lg" style="color: var(--teal-600);">3x</p><p class="arca-caption arca-text-grey-600">Faster Regulatory Submissions</p></div>
         </div>
       </div>
     </section>
 
     <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" id="download" data-animate>
-      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="max-width: 560px; margin: 0 auto;">
-          <div style="text-align: center; margin-bottom: var(--space-6);">
-            <p class="arca-section-label">Download</p>
-            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4);">Get Your Free Copy</h2>
-            <p class="arca-body-md arca-text-grey-600">Complete the form below to download this case study collection.</p>
-          </div>
-          <form style="display: flex; flex-direction: column; gap: 16px;" onsubmit="event.preventDefault(); alert('Thank you! Your download will begin shortly.');">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-              <div>
-                <label class="arca-body-sm" style="display: block; margin-bottom: 6px; font-weight: 500;">First Name *</label>
-                <input type="text" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; transition: border-color 150ms ease;" placeholder="First name">
-              </div>
-              <div>
-                <label class="arca-body-sm" style="display: block; margin-bottom: 6px; font-weight: 500;">Last Name *</label>
-                <input type="text" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; transition: border-color 150ms ease;" placeholder="Last name">
-              </div>
-            </div>
-            <div>
-              <label class="arca-body-sm" style="display: block; margin-bottom: 6px; font-weight: 500;">Work Email *</label>
-              <input type="email" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; transition: border-color 150ms ease;" placeholder="you@company.com">
-            </div>
-            <div>
-              <label class="arca-body-sm" style="display: block; margin-bottom: 6px; font-weight: 500;">Company *</label>
-              <input type="text" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; transition: border-color 150ms ease;" placeholder="Company name">
-            </div>
-            <div>
-              <label class="arca-body-sm" style="display: block; margin-bottom: 6px; font-weight: 500;">Role</label>
-              <select style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; background: white; transition: border-color 150ms ease;">
-                <option value="">Select your role</option>
-                <option>Drug Safety / Pharmacovigilance</option>
-                <option>Regulatory Affairs</option>
-                <option>Clinical Operations</option>
-                <option>Medical Affairs</option>
-                <option>Market Access / HEOR</option>
-                <option>CMO / Executive</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <button type="submit" class="arca-btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;">
-              Download Now <span class="arca-arrow">&rarr;</span>
-            </button>
-            <p class="arca-caption arca-text-grey-400" style="text-align: center; margin-top: 4px;">By downloading, you agree to our <a href="/legal-privacy" style="color: var(--blue-600);">Privacy Policy</a>.</p>
-          </form>
+      <div style="max-width: 560px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <p class="arca-section-label">Download</p>
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-4);">Get the Full Dermatology Case Study Collection</h2>
+          <p class="arca-body-md arca-text-grey-600">Complete the form below to receive the document via email.</p>
         </div>
+        <form class="arca-card" style="display: flex; flex-direction: column; gap: 16px; padding: var(--space-6);" onsubmit="event.preventDefault(); this.querySelector('.arca-btn-primary').textContent='Sending...'; setTimeout(()=>{this.innerHTML='<div style=\'text-align:center;padding:var(--space-6)\' ><svg width=\'48\' height=\'48\' viewBox=\'0 0 48 48\' fill=\'none\' style=\'margin-bottom:16px\'><circle cx=\'24\' cy=\'24\' r=\'22\' stroke=\'var(--teal-600)\' stroke-width=\'2\'/><path d=\'M16 24l6 6 10-10\' stroke=\'var(--teal-600)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/></svg><h3 class=\'arca-heading-2\' style=\'margin-bottom:8px\'>Check Your Email</h3><p class=\'arca-body-md arca-text-grey-600\'>The document has been sent to your email address.</p></div>';},1500);">
+          <div>
+            <label class="arca-body-sm" style="font-weight: 500; display: block; margin-bottom: 6px;">Full Name *</label>
+            <input type="text" required placeholder="Your name" style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; outline: none; transition: border 150ms;" onfocus="this.style.borderColor='var(--blue-500)'" onblur="this.style.borderColor='var(--grey-200)'">
+          </div>
+          <div>
+            <label class="arca-body-sm" style="font-weight: 500; display: block; margin-bottom: 6px;">Work Email *</label>
+            <input type="email" required placeholder="you@company.com" style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; outline: none; transition: border 150ms;" onfocus="this.style.borderColor='var(--blue-500)'" onblur="this.style.borderColor='var(--grey-200)'">
+          </div>
+          <div>
+            <label class="arca-body-sm" style="font-weight: 500; display: block; margin-bottom: 6px;">Company *</label>
+            <input type="text" required placeholder="Company name" style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; outline: none; transition: border 150ms;" onfocus="this.style.borderColor='var(--blue-500)'" onblur="this.style.borderColor='var(--grey-200)'">
+          </div>
+          <div>
+            <label class="arca-body-sm" style="font-weight: 500; display: block; margin-bottom: 6px;">Role</label>
+            <select style="width: 100%; padding: 10px 14px; border: 1px solid var(--grey-200); border-radius: 8px; font-size: 0.875rem; background: var(--white); outline: none;">
+              <option value="">Select your role</option>
+              <option>Drug Safety / Pharmacovigilance</option>
+              <option>Regulatory Affairs</option>
+              <option>Clinical Development</option>
+              <option>Medical Affairs</option>
+              <option>Market Access / HEOR</option>
+              <option>Executive / C-Suite</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="arca-btn-primary" style="width: 100%; margin-top: 8px;">Download Now</button>
+          <p class="arca-caption arca-text-grey-400" style="text-align: center;">By downloading, you agree to our <a href="/legal-privacy" style="color: var(--grey-500);">Privacy Policy</a>.</p>
+        </form>
       </div>
     </section>
 
-    <section style="padding: var(--space-9) 0;" data-animate>
+    <section style="padding: var(--space-8) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
-        <div style="text-align: center; margin-bottom: var(--space-7);">
+        <div style="text-align: center; margin-bottom: var(--space-6);">
           <p class="arca-section-label">Related Resources</p>
-          <h2 class="arca-heading-1">More Dermatology Resources</h2>
+          <h2 class="arca-heading-2">More Dermatology Resources</h2>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto;" data-animate-stagger>
-          <a href="/ta-dermatology-whitepaper" class="arca-card" style="text-decoration: none; color: inherit; transition: transform 200ms ease, box-shadow 200ms ease;" data-animate>
-            <span class="arca-download-badge" style="background: var(--blue-100); color: var(--blue-600); margin-bottom: var(--space-3); display: inline-block;">PDF Whitepaper</span>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Dermatology BRA Methodology Guide</h3>
-            <p class="arca-body-sm arca-text-grey-600">Download &rarr;</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto;">
+          <a href="/ta-dermatology-whitepaper" class="arca-card" style="text-decoration: none; color: inherit; transition: transform 200ms ease, box-shadow 200ms ease;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--blue-100); color: var(--blue-600); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <span class="arca-caption" style="color: var(--blue-600); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">PDF Whitepaper</span>
+            <h3 class="arca-heading-4" style="margin-top: var(--space-2);">Dermatology BRA Methodology Guide</h3>
           </a>
-          <a href="/ta-dermatology-slide-deck" class="arca-card" style="text-decoration: none; color: inherit; transition: transform 200ms ease, box-shadow 200ms ease;" data-animate>
-            <span class="arca-download-badge" style="background: var(--indigo-100); color: var(--indigo-600); margin-bottom: var(--space-3); display: inline-block;">Slide Deck</span>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Dermatology Platform Overview Deck</h3>
-            <p class="arca-body-sm arca-text-grey-600">Download &rarr;</p>
+          <a href="/ta-dermatology-slide-deck" class="arca-card" style="text-decoration: none; color: inherit; transition: transform 200ms ease, box-shadow 200ms ease;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--indigo-100); color: var(--indigo-600); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span class="arca-caption" style="color: var(--indigo-600); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Slide Deck</span>
+            <h3 class="arca-heading-4" style="margin-top: var(--space-2);">Dermatology Platform Overview Deck</h3>
           </a>
-          <a href="/ta-dermatology-regulatory-guide" class="arca-card" style="text-decoration: none; color: inherit; transition: transform 200ms ease, box-shadow 200ms ease;" data-animate>
-            <span class="arca-download-badge" style="background: var(--green-100); color: var(--green-600); margin-bottom: var(--space-3); display: inline-block;">Regulatory Guide</span>
-            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Dermatology Regulatory Landscape</h3>
-            <p class="arca-body-sm arca-text-grey-600">Download &rarr;</p>
+          <a href="/ta-dermatology-regulatory-guide" class="arca-card" style="text-decoration: none; color: inherit; transition: transform 200ms ease, box-shadow 200ms ease;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: var(--green-100); color: var(--green-600); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            </div>
+            <span class="arca-caption" style="color: var(--green-600); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Regulatory Guide</span>
+            <h3 class="arca-heading-4" style="margin-top: var(--space-2);">Dermatology Regulatory Landscape</h3>
           </a>
         </div>
       </div>
@@ -221,13 +422,15 @@
     <section class="arca-cta-section" style="position: relative; overflow: hidden;" data-animate>
       <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; z-index: 0;"></div>
       <div style="max-width: 680px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
-        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">Ready to Transform Your Benefit-Risk Analysis?</h2>
-        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">See how ArcaScience can accelerate your regulatory submissions with AI-driven BRA. Schedule a personalized demo with our scientific team.</p>
-        <a href="/contact" class="arca-btn-primary-inverted">Talk to a Scientist</a>
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">See ArcaScience for Dermatology</h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">Request a live demonstration of ArcaScience configured for dermatology benefit-risk analysis. Our scientists will show TA-specific data, AI models, and regulatory outputs relevant to your program.</p>
+        <a href="/contact?ta=dermatology" class="arca-btn-primary-inverted">Request Dermatology Demo</a>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
     <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
       <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
@@ -308,11 +511,12 @@
     </div>
   </footer>
 
+  <!-- Back to top button -->
   <button data-back-to-top aria-label="Back to top">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
   </button>
 
-  <script src="/dist/arcascience-global.min.js" defer></script>
+    <script src="/dist/arcascience-global.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       if (window.ArcaScience) ArcaScience.init();
