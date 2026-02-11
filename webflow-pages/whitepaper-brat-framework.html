@@ -1,0 +1,607 @@
+<!--
+  BRAT Framework Implementation Whitepaper Detail — Webflow Structure Reference
+  =============================================================================
+  Detail page for the BRAT Framework whitepaper with download CTA and sample content.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAT Framework Implementation: From Theory to Automated Practice — ArcaScience</title>
+  <meta name="description" content="How ArcaScience automates the complete BRAT framework workflow, reducing BRA preparation time from months to days with full regulatory traceability.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">Therapeutic Areas</p>
+            <a href="/ta-oncology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Oncology</a>
+            <a href="/disease-breast-cancer" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Breast Cancer</a>
+            <a href="/disease-melanoma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Melanoma</a>
+            <a href="/disease-nsclc" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">NSCLC</a>
+            <a href="/disease-aml" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AML</a>
+            <a href="/ta-neurology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Neurology</a>
+            <a href="/disease-alzheimers" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Alzheimer's</a>
+            <a href="/disease-parkinsons" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Parkinson's</a>
+            <a href="/disease-multiple-sclerosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Sclerosis</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/ta-immunology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Immunology</a>
+            <a href="/disease-rheumatoid-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rheumatoid Arthritis</a>
+            <a href="/disease-psoriasis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriasis</a>
+            <a href="/disease-lupus" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Lupus</a>
+            <a href="/ta-cardiology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cardiology</a>
+            <a href="/disease-afib" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AFib</a>
+            <a href="/disease-heart-failure" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Heart Failure</a>
+            <a href="/ta-respiratory" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Respiratory</a>
+            <a href="/disease-asthma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Asthma</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-rare-diseases" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rare Diseases</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-dermatology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Dermatology</a>
+            <a href="/disease-atopic-dermatitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Atopic Dermatitis</a>
+            <a href="/disease-psoriatic-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriatic Arthritis</a>
+            <a href="/ta-hematology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hematology</a>
+            <a href="/disease-multiple-myeloma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Myeloma</a>
+            <a href="/disease-cll" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">CLL</a>
+            <a href="/disease-sickle-cell" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Sickle Cell Disease</a>
+            <a href="/ta-gastroenterology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Gastroenterology</a>
+            <a href="/disease-crohns-disease" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Crohn's Disease</a>
+            <a href="/disease-ulcerative-colitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Ulcerative Colitis</a>
+            <a href="/ta-endocrinology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Endocrinology</a>
+            <a href="/disease-type-2-diabetes" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Type 2 Diabetes</a>
+            <a href="/disease-obesity" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Obesity</a>
+            <a href="/ta-infectious-disease" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Infectious Disease</a>
+            <a href="/disease-hiv" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">HIV</a>
+            <a href="/disease-hepatitis-b" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hepatitis B</a>
+            <a href="/ta-pediatrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatrics</a>
+            <a href="/disease-pediatric-epilepsy" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatric Epilepsy</a>
+          </div>
+        </div>
+
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link is-active">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- Breadcrumb -->
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources-whitepapers" style="color: var(--grey-600); text-decoration: none;">Whitepapers</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">BRAT Framework Implementation</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Hero Section with Gradient Background -->
+    <section style="background: linear-gradient(135deg, var(--indigo-500) 0%, var(--purple-500) 100%); padding: var(--space-9) 0; position: relative; overflow: hidden;" data-animate>
+
+      <!-- Decorative elements -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <div style="max-width: 840px; margin: 0 auto;">
+
+          <!-- Tags -->
+          <div style="display: flex; gap: 12px; margin-bottom: var(--space-5); justify-content: center;">
+            <span class="arca-module-tag is-analytics" style="background: rgba(255,255,255,0.2); color: var(--white); border: 1px solid rgba(255,255,255,0.3);">Analytics</span>
+            <span style="padding: 4px 12px; background: rgba(255,255,255,0.15); color: var(--white); border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; border: 1px solid rgba(255,255,255,0.25);">18 Pages</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="arca-display-lg" style="color: var(--white); margin-bottom: var(--space-5); text-align: center;">
+            BRAT Framework Implementation: From Theory to Automated Practice
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-7); text-align: center; max-width: 680px; margin-left: auto; margin-right: auto;">
+            How ArcaScience automates the complete Benefit-Risk Action Team (BRAT) framework workflow, reducing BRA preparation time from 4-6 months to days while maintaining full regulatory traceability and multi-stakeholder alignment.
+          </p>
+
+          <!-- Download CTA -->
+          <div style="display: flex; justify-content: center;">
+            <a href="/downloads/whitepapers/brat-framework-guide.html" class="arca-btn-primary-inverted" style="padding: 14px 32px; font-size: 1rem;" data-whitepaper-download="brat" target="_blank" rel="noopener">
+              Download PDF <span aria-hidden="true">&darr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: 840px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">Executive Summary</h2>
+
+        <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+          <p class="arca-body-lg arca-text-grey-700" style="line-height: 1.7;">
+            The Benefit-Risk Action Team (BRAT) framework, developed by the Centre for Innovation in Regulatory Science (CIRS) and endorsed by the FDA and EMA in their benefit-risk assessment guidance documents, provides a structured, systematic methodology for evaluating the benefit-risk profile of medicinal products. The framework's core components—value trees for structuring decision criteria, effects tables for organizing evidence, and visual displays for communicating assessments—have become the de facto standard for regulatory submissions requiring transparent, reproducible benefit-risk analysis.
+          </p>
+
+          <p class="arca-body-lg arca-text-grey-700" style="line-height: 1.7;">
+            However, traditional BRAT implementation presents significant operational challenges. Constructing comprehensive value trees requires synthesizing compound profiles, clinical endpoints, and stakeholder perspectives across multiple therapeutic and regulatory contexts. Populating effects tables demands extensive manual extraction, harmonization, and scoring of clinical trial data, real-world evidence, and published literature. Scenario modeling—exploring how varying assumptions about efficacy, safety, or population characteristics affect the overall benefit-risk balance—typically requires rebuilding analyses from scratch for each scenario.
+          </p>
+
+          <p class="arca-body-lg arca-text-grey-700" style="line-height: 1.7;">
+            ArcaScience automates the entire BRAT workflow through its Decision Intelligence module. Natural language processing and domain-specific knowledge graphs generate structured value trees from compound profile data and regulatory guidance, ensuring alignment with both scientific best practices and jurisdiction-specific requirements. Machine learning models extract and score effects from integrated clinical databases, automatically populating effects tables with proper source attribution and confidence intervals. Interactive scenario modeling enables real-time exploration of alternative assumptions, with automated regeneration of visualizations for patient, clinician, regulator, and payer perspectives. The result: what traditionally requires 4-6 months of manual effort now takes days, with improved consistency, auditability, and the ability to maintain BRAT frameworks dynamically as new evidence emerges throughout the product lifecycle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways Grid -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-7); text-align: center;">Key Takeaways</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <!-- Takeaway 1 -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--indigo-500), var(--purple-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automated Value Tree Construction</h3>
+            <p class="arca-body-sm arca-text-grey-700" style="line-height: 1.6;">
+              AI-generated decision frameworks from compound profile data, regulatory guidance, and therapeutic area best practices. Structured hierarchies align benefits, risks, and key decision factors across FDA, EMA, and PMDA requirements without manual template customization.
+            </p>
+          </div>
+
+          <!-- Takeaway 2 -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-500), var(--pink-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Effects Table Population</h3>
+            <p class="arca-body-sm arca-text-grey-700" style="line-height: 1.6;">
+              Automated extraction and scoring from clinical data sources including CSRs, integrated summaries of efficacy/safety, and published meta-analyses. Machine learning models identify relevant outcomes, calculate effect sizes with confidence intervals, and maintain full data lineage for audit trails.
+            </p>
+          </div>
+
+          <!-- Takeaway 3 -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--blue-500), var(--indigo-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Scenario Modeling</h3>
+            <p class="arca-body-sm arca-text-grey-700" style="line-height: 1.6;">
+              Interactive what-if analysis with confidence intervals and sensitivity testing. Instantly explore how varying efficacy assumptions, safety event rates, or population characteristics affect benefit-risk balance. Compare scenarios side-by-side with automated visualization regeneration.
+            </p>
+          </div>
+
+          <!-- Takeaway 4 -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--teal-500), var(--green-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Multi-Stakeholder Views</h3>
+            <p class="arca-body-sm arca-text-grey-700" style="line-height: 1.6;">
+              Customized benefit-risk presentations for patient, clinician, regulator, and payer perspectives. Same underlying evidence base, different weighting schemes and visualization formats optimized for each audience's decision-making priorities and information needs.
+            </p>
+          </div>
+
+          <!-- Takeaway 5 -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange-500), var(--red-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Complete Audit Trail</h3>
+            <p class="arca-body-sm arca-text-grey-700" style="line-height: 1.6;">
+              Full traceability from raw data source to final benefit-risk assessment. Every value tree node, effects table entry, and scenario parameter linked to original evidence with timestamp, data version, and model confidence score. Meets 21 CFR Part 11 and GxP requirements.
+            </p>
+          </div>
+
+          <!-- Takeaway 6 -->
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--blue-600), var(--teal-600)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Global Harmonization</h3>
+            <p class="arca-body-sm arca-text-grey-700" style="line-height: 1.6;">
+              Single framework adapted for FDA, EMA, PMDA, and Health Canada regulatory requirements. Jurisdiction-specific value tree structures, terminology preferences, and visualization formats generated automatically while maintaining consistent underlying evidence base for efficient multi-region submissions.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: 840px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-7);">Table of Contents</h2>
+
+        <div class="arca-card" style="padding: var(--space-7);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-4);">
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 1</span>
+              <span class="arca-body-md arca-text-grey-800">Origins and Evolution of the BRAT Framework</span>
+            </li>
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 2</span>
+              <span class="arca-body-md arca-text-grey-800">Key Components: Value Trees, Effects Tables, and Visualization</span>
+            </li>
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 3</span>
+              <span class="arca-body-md arca-text-grey-800">Challenges in Manual BRAT Implementation</span>
+            </li>
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 4</span>
+              <span class="arca-body-md arca-text-grey-800">ArcaScience's Automated Approach</span>
+            </li>
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 5</span>
+              <span class="arca-body-md arca-text-grey-800">Value Tree Construction with NLP and Knowledge Graphs</span>
+            </li>
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 6</span>
+              <span class="arca-body-md arca-text-grey-800">Effects Table Population and Evidence Synthesis</span>
+            </li>
+            <li style="display: flex; gap: 16px; padding-bottom: var(--space-4); border-bottom: 1px solid var(--grey-200);">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 7</span>
+              <span class="arca-body-md arca-text-grey-800">Interactive Scenario Modeling and Sensitivity Analysis</span>
+            </li>
+            <li style="display: flex; gap: 16px;">
+              <span class="arca-heading-3" style="color: var(--indigo-500); min-width: 120px;">Chapter 8</span>
+              <span class="arca-body-md arca-text-grey-800">Regulatory Submission Integration</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Content: Chapter 1 Excerpt -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: 840px; margin: 0 auto; padding: 0 24px;">
+
+        <div style="display: inline-block; padding: 6px 12px; background: var(--indigo-100); color: var(--indigo-700); border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-4);">
+          Chapter 1 Excerpt
+        </div>
+
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">Origins and Evolution of the BRAT Framework</h2>
+
+        <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            The BRAT framework emerged from a multi-year collaboration between pharmaceutical industry stakeholders and regulatory authorities, coordinated by the Centre for Innovation in Regulatory Science (CIRS) beginning in 2008. The initiative aimed to address a fundamental challenge in drug development: while regulators and sponsors universally recognized the need to balance benefits against risks when evaluating medicinal products, no standardized methodology existed for structuring, documenting, and communicating these complex assessments in a transparent, reproducible manner.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            Early benefit-risk assessment practices varied widely across therapeutic areas, regulatory agencies, and even individual review teams. Some relied on implicit clinical judgment without formal documentation of decision criteria. Others employed quantitative methods like number-needed-to-treat calculations or quality-adjusted life years, but struggled to integrate these metrics with qualitative considerations around uncertainty, patient preferences, and disease severity. The lack of a common framework made it difficult to compare assessments across products, understand the basis for regulatory decisions, or efficiently update evaluations as new evidence emerged post-approval.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            The BRAT methodology addressed these challenges through three core structural components. First, value trees provide hierarchical representations of decision criteria, organizing benefits and risks into clinically meaningful categories with explicit weighting of relative importance. Second, effects tables systematically document evidence for each criterion, including effect sizes, confidence intervals, and quality assessments. Third, visual displays translate complex evidence into accessible formats optimized for different stakeholder audiences—technical reviewers, advisory committees, patients, and healthcare providers.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            Regulatory endorsement came swiftly. The FDA's 2013 "Structured Approach to Benefit-Risk Assessment in Drug Regulatory Decision-Making" explicitly referenced the BRAT framework as a model for structured assessment. The EMA's benefit-risk methodology project, launched in 2010 and formalized in multiple procedural guidance documents, incorporated BRAT's value tree and effects table structure into the centralized approval process for new active substances. Health Canada, PMDA, and Swissmedic subsequently adopted similar frameworks, creating de facto global harmonization around BRAT's core methodological principles even as implementation details varied by jurisdiction.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            By 2020, the BRAT framework had become the standard methodology for benefit-risk assessment in regulatory submissions requiring explicit structured analysis—particularly those involving novel mechanisms, accelerated approval pathways, significant safety signals, or advisory committee deliberations. However, implementation remained resource-intensive. Industry surveys indicated BRAT preparation consumed 4-6 months of dedicated effort per submission, with cross-functional teams manually constructing value trees, extracting data from clinical study reports, and iterating visualizations. The opportunity for automation was clear, but the technical challenges were substantial: benefit-risk assessment required not just data processing, but domain-specific reasoning about clinical meaningfulness, stakeholder perspectives, and regulatory context.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Content: Chapter 4 Excerpt -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: 840px; margin: 0 auto; padding: 0 24px;">
+
+        <div style="display: inline-block; padding: 6px 12px; background: var(--purple-100); color: var(--purple-700); border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-4);">
+          Chapter 4 Excerpt
+        </div>
+
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">ArcaScience's Automated Approach</h2>
+
+        <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            ArcaScience's Decision Intelligence module reimagines BRAT implementation as an AI-driven workflow that automates the labor-intensive aspects of framework construction while preserving—and enhancing—the clinical and regulatory reasoning that makes BRAT effective. The automation strategy targets three core capabilities: intelligent value tree generation from compound profiles and regulatory context, automated effects table population from integrated evidence sources, and dynamic scenario modeling that enables exploration of alternative assumptions without manual rework.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            Value tree construction begins with ingestion of the compound profile—mechanism of action, therapeutic indication, target population, clinical development history, and prior regulatory interactions. Natural language processing models trained on regulatory guidance documents, published benefit-risk assessments, and therapeutic area-specific frameworks extract relevant decision criteria. A domain-specific knowledge graph—structured around MedDRA preferred terms for adverse events, clinical outcome assessment taxonomies, and ICH E9 guidance on statistical endpoints—maps these criteria into hierarchical structures that reflect clinical meaningfulness and regulatory priorities.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            The system automatically adapts value trees to jurisdiction-specific requirements without manual template customization. FDA submissions emphasize patient-reported outcomes and functional endpoints aligned with patient-focused drug development guidance. EMA frameworks incorporate comparative effectiveness considerations and reflect the agency's emphasis on population-level benefit-risk balance. PMDA structures prioritize safety monitoring given Japan's pharmacovigilance requirements and ethnic factor considerations. Users can further customize generated trees by adjusting hierarchy depth, adding proprietary endpoints, or modifying criteria weights—changes that propagate through downstream analyses automatically.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            Effects table population leverages the platform's integrated evidence base—clinical study reports parsed through the Data Intelligence module, published literature processed via full-text mining, and real-world evidence from linked claims and electronic health record datasets. Machine learning models identify relevant outcomes matching value tree criteria, extract effect sizes with confidence intervals, and perform meta-analyses when multiple evidence sources address the same endpoint. Each effects table entry includes full data lineage: source document, extraction timestamp, model version, and confidence score—meeting 21 CFR Part 11 requirements for audit trails in regulatory submissions.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            Scenario modeling transforms benefit-risk assessment from a one-time analysis into an interactive exploration. Users adjust efficacy assumptions, modify safety event rates, or reweight criteria importance—the platform instantly recalculates summary metrics, updates forest plots and value tree visualizations, and regenerates stakeholder-specific views. This capability proves especially valuable for advisory committee preparation, where sponsors must anticipate questions about alternative interpretations of uncertain evidence. Rather than preparing dozens of static sensitivity analyses in advance, teams can respond to committee questions in real time by running scenarios during deliberations and displaying results through the platform's presentation interface.
+          </p>
+
+          <p class="arca-body-md arca-text-grey-700" style="line-height: 1.7;">
+            The result: BRAT implementation that would traditionally require 4-6 months can now be completed in days, with quality improvements in consistency, completeness, and traceability. Automation eliminates transcription errors in effects table data entry, ensures all relevant evidence is considered through comprehensive database searches, and maintains perfect synchronization between value trees, effects tables, and visualizations. Most importantly, automated BRAT frameworks remain living documents throughout the product lifecycle—updated dynamically as new clinical trial results emerge, post-market safety signals are detected, or regulatory guidance evolves—providing continuous decision support from initial development through generic competition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-9) 0; position: relative; overflow: hidden;" data-animate>
+
+      <!-- Decorative glow -->
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(80px); pointer-events: none;"></div>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <h2 class="arca-heading-1" style="color: var(--white); margin-bottom: var(--space-8); text-align: center;">Demonstrated Impact</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;">
+
+          <!-- Metric 1 -->
+          <div style="text-align: center;" data-animate>
+            <div class="arca-display-xl" style="color: var(--white); margin-bottom: var(--space-3);" data-countup="85">85</div>
+            <div class="arca-heading-3" style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-3);">%</div>
+            <p class="arca-body-md" style="color: rgba(255,255,255,0.7);">
+              Reduction in BRA preparation time from manual BRAT implementation baseline
+            </p>
+          </div>
+
+          <!-- Metric 2 -->
+          <div style="text-align: center;" data-animate>
+            <div class="arca-display-xl" style="color: var(--white); margin-bottom: var(--space-3);" data-countup="4">4</div>
+            <div class="arca-heading-3" style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-3);">x</div>
+            <p class="arca-body-md" style="color: rgba(255,255,255,0.7);">
+              More scenarios analyzed per assessment, enabling comprehensive sensitivity testing
+            </p>
+          </div>
+
+          <!-- Metric 3 -->
+          <div style="text-align: center;" data-animate>
+            <div class="arca-display-xl" style="color: var(--white); margin-bottom: var(--space-3);" data-countup="100">100</div>
+            <div class="arca-heading-3" style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-3);">%</div>
+            <p class="arca-body-md" style="color: rgba(255,255,255,0.7);">
+              Audit traceability maintained from data source to final assessment
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Whitepapers -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-7);">Related Resources</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Related 1 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">24 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">The ArcaScience Methodology: AI-Driven Benefit-Risk Analysis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comprehensive overview of the platform's scientific foundation, 24 AI model taxonomy, and regulatory alignment.
+            </p>
+            <a href="/downloads/whitepapers/quantitative-bra-methodology.html" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Related 2 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <span class="arca-module-tag is-output" style="margin-bottom: var(--space-3); width: fit-content;">20 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automating PSUR/PBRER: A Technical Guide</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              ICH E2C(R2) alignment and methodology for submission-ready document generation with full regulatory traceability.
+            </p>
+            <a href="/downloads/whitepapers/psur-pbrer-automation.html" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Related 3 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <span class="arca-module-tag is-output" style="margin-bottom: var(--space-3); width: fit-content;">12 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Benefit-Risk Evidence for HTA Bodies</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              How to repurpose regulatory BRA for NICE, G-BA, and other health technology assessment submissions.
+            </p>
+            <a href="/downloads/whitepapers/hta-market-access-guide.html" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Download the Complete Whitepaper
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Get the full 18-page technical guide to automated BRAT framework implementation, including detailed case studies, technical architecture diagrams, and regulatory alignment documentation.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/downloads/whitepapers/brat-framework-guide.html" class="arca-btn-primary-inverted" data-whitepaper-download="brat" target="_blank" rel="noopener">
+            Download PDF <span aria-hidden="true">&darr;</span>
+          </a>
+          <a href="/contact" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Request Platform Demo <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
+            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
+            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
+            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
+            <a href="/ta-respiratory" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Respiratory</a>
+            <a href="/ta-rare-diseases" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Rare Diseases</a>
+            <a href="/ta-dermatology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Dermatology</a>
+            <a href="/ta-hematology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Hematology</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources-webinars" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Webinars</a>
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init();
+    });
+  </script>
+
+</body>
+</html>

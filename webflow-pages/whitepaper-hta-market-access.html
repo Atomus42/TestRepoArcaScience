@@ -1,0 +1,684 @@
+<!--
+  ArcaScience Whitepaper Detail: Benefit-Risk Evidence for HTA Bodies
+  ====================================================================
+  Detail page for HTA market access whitepaper with full content preview.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benefit-Risk Evidence for HTA Bodies: Extending Regulatory Analysis — ArcaScience Whitepaper</title>
+  <meta name="description" content="Learn how to repurpose regulatory BRA for NICE, G-BA, HAS, CADTH, and PBAC submissions. 12-page technical guide on regulatory-to-HTA evidence bridging.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">Therapeutic Areas</p>
+            <a href="/ta-oncology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Oncology</a>
+            <a href="/disease-breast-cancer" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Breast Cancer</a>
+            <a href="/disease-melanoma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Melanoma</a>
+            <a href="/disease-nsclc" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">NSCLC</a>
+            <a href="/disease-aml" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AML</a>
+            <a href="/ta-neurology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Neurology</a>
+            <a href="/disease-alzheimers" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Alzheimer's</a>
+            <a href="/disease-parkinsons" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Parkinson's</a>
+            <a href="/disease-multiple-sclerosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Sclerosis</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/ta-immunology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Immunology</a>
+            <a href="/disease-rheumatoid-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rheumatoid Arthritis</a>
+            <a href="/disease-psoriasis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriasis</a>
+            <a href="/disease-lupus" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Lupus</a>
+            <a href="/ta-cardiology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cardiology</a>
+            <a href="/disease-afib" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AFib</a>
+            <a href="/disease-heart-failure" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Heart Failure</a>
+            <a href="/ta-respiratory" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Respiratory</a>
+            <a href="/disease-asthma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Asthma</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-rare-diseases" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rare Diseases</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-dermatology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Dermatology</a>
+            <a href="/disease-atopic-dermatitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Atopic Dermatitis</a>
+            <a href="/disease-psoriatic-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriatic Arthritis</a>
+            <a href="/ta-hematology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hematology</a>
+            <a href="/disease-multiple-myeloma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Myeloma</a>
+            <a href="/disease-cll" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">CLL</a>
+            <a href="/disease-sickle-cell" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Sickle Cell Disease</a>
+            <a href="/ta-gastroenterology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Gastroenterology</a>
+            <a href="/disease-crohns-disease" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Crohn's Disease</a>
+            <a href="/disease-ulcerative-colitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Ulcerative Colitis</a>
+            <a href="/ta-endocrinology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Endocrinology</a>
+            <a href="/disease-type-2-diabetes" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Type 2 Diabetes</a>
+            <a href="/disease-obesity" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Obesity</a>
+            <a href="/ta-infectious-disease" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Infectious Disease</a>
+            <a href="/disease-hiv" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">HIV</a>
+            <a href="/disease-hepatitis-b" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hepatitis B</a>
+            <a href="/ta-pediatrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatrics</a>
+            <a href="/disease-pediatric-epilepsy" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatric Epilepsy</a>
+          </div>
+        </div>
+
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link is-active">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- Breadcrumb -->
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources-whitepapers" style="color: var(--grey-600); text-decoration: none;">Whitepapers</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">BRA for HTA Bodies</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section style="padding: var(--space-7) 0 var(--space-9); background: linear-gradient(135deg, #7c3aed 0%, #d946ef 100%); position: relative; overflow: hidden;" data-animate>
+      <!-- Decorative glow orbs -->
+      <div style="position: absolute; top: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite;"></div>
+      <div style="position: absolute; bottom: -60px; right: -60px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto; text-align: center; color: var(--white);">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: var(--space-5);">
+            <span class="arca-module-tag is-output" style="background: rgba(255,255,255,0.15); color: var(--white); border: 1px solid rgba(255,255,255,0.25);">Output</span>
+            <span style="font-size: 0.875rem; opacity: 0.9;">12 Pages</span>
+          </div>
+
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5); color: var(--white);">
+            Benefit-Risk Evidence for HTA Bodies: Extending Regulatory Analysis
+          </h1>
+
+          <p class="arca-body-lg" style="margin-bottom: var(--space-7); opacity: 0.95; max-width: 720px; margin-left: auto; margin-right: auto;">
+            Health Technology Assessment bodies require comparative effectiveness and value evidence beyond regulatory submissions. Learn how to repurpose your regulatory BRA investment for NICE, G-BA, HAS, CADTH, and PBAC dossiers.
+          </p>
+
+          <a href="/downloads/whitepapers/hta-market-access-guide.html" class="arca-btn-primary-inverted" style="display: inline-flex; align-items: center; gap: 8px;" data-whitepaper-download="hta">
+            Download PDF (12 pages) <span aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <div style="margin-bottom: var(--space-6);">
+            <span class="arca-label" style="color: var(--purple-600);">Executive Summary</span>
+          </div>
+
+          <div class="arca-body-lg" style="line-height: 1.7; color: var(--grey-800);">
+            <p style="margin-bottom: 1.5rem;">
+              Health Technology Assessment (HTA) bodies like NICE (UK), G-BA (Germany), HAS (France), CADTH (Canada), and PBAC (Australia) require comparative effectiveness and value evidence that goes beyond regulatory safety and efficacy data. While regulatory approval focuses on demonstrating that a medicine is safe and effective, HTA submissions must prove that it offers meaningful clinical value relative to existing treatment options and represents a cost-effective use of healthcare resources.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              ArcaScience's platform bridges the gap between regulatory BRA and HTA evidence requirements by extending benefit-risk analysis with comparative effectiveness data, patient-reported outcomes, and economic modeling inputs. This approach allows pharmaceutical companies to repurpose their regulatory BRA investment and accelerate market access across multiple geographies.
+            </p>
+            <p style="margin-bottom: 0;">
+              This whitepaper demonstrates how pharmaceutical companies can transform their regulatory benefit-risk dossiers into compelling HTA submissions that address the specific evidence requirements of major reimbursement agencies, reducing HTA dossier preparation time by up to 60% while maintaining the rigor and traceability that payers demand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <span class="arca-label" style="color: var(--purple-600);">Key Takeaways</span>
+          <h2 class="arca-heading-1" style="margin-top: var(--space-3);">
+            What You'll Learn
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+
+          <!-- Takeaway 1 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-500), var(--pink-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Regulatory-to-HTA Bridge</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Discover how to repurpose existing regulatory BRA frameworks, value trees, and effects tables for payer submissions without starting from scratch. Leverage the clinical evidence you've already compiled for FDA/EMA to build HTA-ready comparative effectiveness assessments.
+            </p>
+          </div>
+
+          <!-- Takeaway 2 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--blue-500), var(--purple-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Multi-Country Adaptation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Navigate the unique requirements of NICE (technology appraisal), G-BA (nutzenbewertung), HAS (ASMR rating), CADTH (CEDAC review), and PBAC (PBAC submission) with jurisdiction-specific evidence mapping and customized value narratives.
+            </p>
+          </div>
+
+          <!-- Takeaway 3 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--indigo-500), var(--purple-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Comparative Effectiveness</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Learn how to perform relative benefit-risk analysis against standard of care, conduct network meta-analyses, and synthesize indirect treatment comparisons that satisfy HTA evidentiary standards for clinical superiority claims.
+            </p>
+          </div>
+
+          <!-- Takeaway 4 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-500), var(--purple-600)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Patient Perspective</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Integrate patient-reported outcomes (PROs), quality-of-life measurements, and patient preference evidence into your HTA value story. Map clinical endpoints to utility scores and demonstrate impact on daily functioning and well-being.
+            </p>
+          </div>
+
+          <!-- Takeaway 5 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--green-500), var(--teal-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Economic Evidence</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Bridge from clinical BRA to cost-effectiveness analysis by extracting the inputs needed for health economic modeling: treatment effect sizes, duration of benefit, adverse event profiles, and health state utilities for ICER and QALY calculations.
+            </p>
+          </div>
+
+          <!-- Takeaway 6 -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange-500), var(--pink-500)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Faster Market Access</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Reduce HTA dossier preparation time by 60% through evidence reuse and automated comparative synthesis. Launch in additional markets months faster by maintaining parallel regulatory and payer evidence strategies from Phase 3 onward.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: var(--space-8);">
+            <span class="arca-label" style="color: var(--purple-600);">Contents</span>
+            <h2 class="arca-heading-1" style="margin-top: var(--space-3);">
+              8 Chapters, 12 Pages
+            </h2>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+
+            <!-- Chapter 1 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">1</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">The Growing Importance of HTA in Market Access</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  The evolution from regulatory approval to reimbursement gatekeeper. Why HTA bodies now determine commercial success in most developed markets, and how payer evidence requirements have diverged from regulatory standards over the past decade.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 2 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">2</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Divergence Between Regulatory and HTA Evidence Needs</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  Side-by-side comparison of FDA/EMA versus NICE/G-BA evidence standards. Understanding the difference between absolute efficacy (regulatory) and relative effectiveness (HTA), and why placebo-controlled trials often don't satisfy payer requirements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 3 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">3</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">ArcaScience's Regulatory-to-HTA Evidence Bridge</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  The platform approach to evidence reuse and extension. How the AS Profiling Base enables both regulatory BRA and comparative effectiveness analysis from a single data architecture, with automated adaptation to jurisdiction-specific HTA frameworks.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 4 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">4</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">NICE Technology Appraisal Requirements</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  Deep-dive on UK's National Institute for Health and Care Excellence. Company submission template requirements, evidence review group (ERG) scrutiny points, cost-effectiveness threshold considerations, and how to build an appraisal-ready value story.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 5 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">5</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">G-BA and Continental European HTA Frameworks</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  Germany's early benefit assessment (nutzenbewertung), France's ASMR rating system, and the emerging EU HTA Regulation. Comparative analysis of dossier requirements, endpoint hierarchies, and patient-relevant outcomes across European HTA bodies.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 6 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">6</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Comparative Effectiveness and Indirect Treatment Comparisons</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  Methodologies for relative BRA when head-to-head trials don't exist. Network meta-analysis (NMA), matching-adjusted indirect comparison (MAIC), simulated treatment comparison (STC), and how ArcaScience automates evidence synthesis for payer-grade comparisons.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 7 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">7</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Patient-Reported Outcomes and Quality of Life Evidence</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  The role of PROs in HTA value assessments. How to map clinical endpoints to patient-meaningful outcomes, integrate health utility scores (EQ-5D, SF-36), and present quality-adjusted life years (QALYs) in benefit-risk frameworks.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter 8 -->
+            <div class="arca-card" style="display: flex; align-items: start; gap: 20px; padding: var(--space-5);" data-animate>
+              <div style="min-width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.125rem; color: var(--purple-700);">8</div>
+              <div>
+                <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Implementation: From Regulatory BRA to HTA Submission</h3>
+                <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+                  Practical roadmap for cross-functional teams. Timeline considerations, evidence gap analysis, stakeholder coordination between medical affairs, market access, and regulatory, plus real-world case studies of successful regulatory-to-HTA evidence bridging.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Content -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: var(--space-8);">
+            <span class="arca-label" style="color: var(--purple-600);">Preview</span>
+            <h2 class="arca-heading-1" style="margin-top: var(--space-3);">
+              Sample Content from Chapters 1 &amp; 3
+            </h2>
+          </div>
+
+          <!-- Chapter 1 Sample -->
+          <div class="arca-card" style="margin-bottom: var(--space-6); padding: var(--space-6);" data-animate>
+            <div style="border-left: 4px solid var(--purple-500); padding-left: var(--space-5); margin-bottom: var(--space-6);">
+              <p class="arca-label" style="color: var(--purple-600); margin-bottom: var(--space-2);">Chapter 1</p>
+              <h3 class="arca-heading-2">The Growing Importance of HTA in Market Access</h3>
+            </div>
+
+            <div class="arca-body-sm" style="line-height: 1.7; color: var(--grey-700);">
+              <p style="margin-bottom: 1.25rem;">
+                <strong>The Regulatory-Reimbursement Gap</strong>
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                A decade ago, pharmaceutical companies could reasonably expect that regulatory approval from the FDA or EMA would lead directly to market access across developed economies. Today, that assumption no longer holds. In the United Kingdom, NICE rejects approximately 20% of regulatory-approved medicines as not cost-effective. In Germany, G-BA assigns "no added benefit" to nearly 40% of new drugs undergoing early benefit assessment. Even in the United States, where formal HTA is less centralized, pharmacy benefit managers and payer organizations increasingly require comparative effectiveness evidence before granting formulary access.
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                This divergence stems from fundamentally different questions. Regulatory agencies ask: "Is this medicine safe and effective for its intended use?" HTA bodies ask: "Does this medicine offer meaningful improvement over existing treatments, and is that improvement worth the additional cost?" The first question can often be answered with placebo-controlled trials. The second requires active-comparator evidence, patient-reported outcomes, real-world effectiveness data, and health economic modeling.
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                <strong>The Evidence Timing Problem</strong>
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                Most pharmaceutical companies design their clinical development programs to satisfy regulatory requirements first, with HTA considerations treated as a post-approval concern. This sequential approach creates significant delays. By the time regulatory approval is secured, the HTA evidence package is incomplete: comparative effectiveness analyses haven't been conducted, health utility data hasn't been collected, and real-world evidence hasn't accumulated. Companies then face 12-18 month delays while scrambling to generate payer-grade evidence, hemorrhaging revenue during the critical launch window.
+              </p>
+              <p style="margin-bottom: 0;">
+                ArcaScience's approach enables parallel evidence generation: designing the regulatory BRA framework from the start to also support comparative effectiveness analysis, PRO integration, and health economic input extraction. This parallelization compresses time-to-reimbursement by 40-60%, transforming market access from a post-approval afterthought into a strategic advantage embedded in clinical development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Chapter 3 Sample -->
+          <div class="arca-card" style="padding: var(--space-6);" data-animate>
+            <div style="border-left: 4px solid var(--purple-500); padding-left: var(--space-5); margin-bottom: var(--space-6);">
+              <p class="arca-label" style="color: var(--purple-600); margin-bottom: var(--space-2);">Chapter 3</p>
+              <h3 class="arca-heading-2">ArcaScience's Regulatory-to-HTA Evidence Bridge</h3>
+            </div>
+
+            <div class="arca-body-sm" style="line-height: 1.7; color: var(--grey-700);">
+              <p style="margin-bottom: 1.25rem;">
+                <strong>The AS Profiling Base as Universal Evidence Layer</strong>
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                The challenge of serving both regulatory and HTA audiences from a single evidence base has historically seemed insurmountable. Regulatory submissions emphasize absolute safety and efficacy. HTA submissions emphasize relative effectiveness and value. The data structures, analytical methodologies, and presentation formats differ so dramatically that most companies maintain entirely separate evidence streams.
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                ArcaScience's solution centers on the AS Profiling Base: a unified data architecture that captures clinical trial results, real-world evidence, safety surveillance, literature evidence, and patient-reported outcomes in a standardized, queryable format. This architecture enables both regulatory BRA and comparative effectiveness analysis because it structures evidence around therapeutic decisions rather than submission templates.
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                For regulatory BRA, the platform generates value trees that map therapeutic goals to safety/efficacy endpoints, produces effects tables with absolute risk measures, and performs scenario modeling for benefit-risk trade-off visualization. For HTA submissions, the same underlying evidence base powers relative benefit-risk analysis against standard of care, network meta-analyses for indirect treatment comparison, health utility mapping from clinical endpoints to quality-of-life scores, and economic model input extraction for cost-effectiveness analysis.
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                <strong>Jurisdiction-Specific Adaptation Engines</strong>
+              </p>
+              <p style="margin-bottom: 1.25rem;">
+                Beyond evidence reuse, ArcaScience automates the translation of evidence into jurisdiction-specific HTA formats. NICE requires a particular company submission template structure with specific cost-effectiveness modeling conventions. G-BA demands endpoint hierarchies aligned with patient-relevant outcomes and strict comparator definitions. HAS uses an entirely different value framework based on ASMR ratings and clinical added value levels.
+              </p>
+              <p style="margin-bottom: 0;">
+                The platform's adaptation engines apply these jurisdiction-specific rules automatically: selecting appropriate comparators based on local treatment guidelines, mapping endpoints to payer-recognized patient benefit categories, formatting evidence tables to match submission templates, and flagging evidence gaps that require supplementary analysis. This automation reduces the manual burden of multi-country HTA submissions from months to weeks, while ensuring that each dossier speaks the specific evidentiary language that local HTA bodies expect.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section style="padding: var(--space-9) 0; background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%); position: relative; overflow: hidden;" data-animate>
+      <!-- Decorative elements -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <h2 class="arca-heading-1" style="color: var(--white);">
+            Measured Impact
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+
+          <!-- Metric 1 -->
+          <div style="text-align: center;" data-animate>
+            <div style="font-family: var(--font-serif); font-size: 3.5rem; font-weight: 700; color: var(--white); margin-bottom: var(--space-3); line-height: 1;">
+              <span data-countup="60">0</span><span style="color: var(--pink-300);">%</span>
+            </div>
+            <p class="arca-body-sm" style="color: rgba(255,255,255,0.8); max-width: 280px; margin: 0 auto;">
+              Faster HTA dossier preparation through evidence reuse and automated comparative synthesis
+            </p>
+          </div>
+
+          <!-- Metric 2 -->
+          <div style="text-align: center;" data-animate>
+            <div style="font-family: var(--font-serif); font-size: 3.5rem; font-weight: 700; color: var(--white); margin-bottom: var(--space-3); line-height: 1;">
+              <span data-countup="5">0</span><span style="color: var(--purple-300);">+</span>
+            </div>
+            <p class="arca-body-sm" style="color: rgba(255,255,255,0.8); max-width: 280px; margin: 0 auto;">
+              HTA body frameworks supported: NICE, G-BA, HAS, CADTH, PBAC with jurisdiction-specific adaptation
+            </p>
+          </div>
+
+          <!-- Metric 3 -->
+          <div style="text-align: center;" data-animate>
+            <div style="font-family: var(--font-serif); font-size: 3.5rem; font-weight: 700; color: var(--white); margin-bottom: var(--space-3); line-height: 1;">
+              <span data-countup="85">0</span><span style="color: var(--blue-300);">%</span>
+            </div>
+            <p class="arca-body-sm" style="color: rgba(255,255,255,0.8); max-width: 280px; margin: 0 auto;">
+              Evidence reuse from regulatory BRA to HTA comparative effectiveness analysis
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Whitepapers -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <span class="arca-label" style="color: var(--purple-600);">Related Reading</span>
+          <h2 class="arca-heading-1" style="margin-top: var(--space-3);">
+            Additional Whitepapers
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Methodology Whitepaper -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-500) 0%, var(--indigo-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1rem; font-weight: 600; padding: 20px; text-align: center;">
+              The ArcaScience Methodology
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">24 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">The ArcaScience Methodology</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comprehensive overview of the platform's scientific foundation, data architecture, and regulatory alignment.
+            </p>
+            <a href="/downloads/whitepapers/quantitative-bra-methodology.html" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              View Whitepaper <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- BRAT Framework -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--indigo-500) 0%, var(--purple-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1rem; font-weight: 600; padding: 20px; text-align: center;">
+              BRAT Framework Implementation
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">18 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">BRAT Framework Implementation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              How ArcaScience operationalizes the Benefit-Risk Action Team framework for regulatory submissions.
+            </p>
+            <a href="/downloads/whitepapers/brat-framework-guide.html" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              View Whitepaper <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- PSUR/PBRER -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--orange-500) 0%, var(--red-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1rem; font-weight: 600; padding: 20px; text-align: center;">
+              Automating PSUR/PBRER
+            </div>
+            <span class="arca-module-tag is-output" style="margin-bottom: var(--space-3); width: fit-content;">20 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automating PSUR/PBRER</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              ICH E2C(R2) alignment and automation methodology for post-marketing safety reporting.
+            </p>
+            <a href="/downloads/whitepapers/psur-pbrer-automation.html" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              View Whitepaper <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section style="padding: var(--space-9) 0; background: linear-gradient(135deg, #7c3aed 0%, #d946ef 100%); position: relative; overflow: hidden;" data-animate>
+      <div style="position: absolute; top: -60px; left: -60px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); pointer-events: none; animation: as-float 8s ease-in-out infinite;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 840px; margin: 0 auto; padding: 0 24px; text-align: center; color: var(--white);">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5); color: var(--white);">
+          Download the Complete Whitepaper
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7); opacity: 0.95; max-width: 680px; margin-left: auto; margin-right: auto;">
+          Get the full 12-page guide to bridging regulatory BRA and HTA evidence requirements. Includes jurisdiction-specific frameworks, comparative effectiveness methodologies, and implementation roadmaps.
+        </p>
+        <a href="/downloads/whitepapers/hta-market-access-guide.html" class="arca-btn-primary-inverted" style="display: inline-flex; align-items: center; gap: 8px; font-size: 1.125rem;" data-whitepaper-download="hta">
+          Download PDF (12 pages) <span aria-hidden="true">&darr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
+            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
+            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
+            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
+            <a href="/ta-respiratory" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Respiratory</a>
+            <a href="/ta-rare-diseases" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Rare Diseases</a>
+            <a href="/ta-dermatology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Dermatology</a>
+            <a href="/ta-hematology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Hematology</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources-webinars" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Webinars</a>
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

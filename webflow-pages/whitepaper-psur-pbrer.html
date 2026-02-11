@@ -1,0 +1,724 @@
+<!--
+  ArcaScience Whitepaper Detail: Automating PSUR/PBRER
+  ====================================================
+  20-page technical whitepaper on ICH E2C(R2)-compliant PSUR automation.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automating PSUR/PBRER: A Technical Guide — ArcaScience</title>
+  <meta name="description" content="ICH E2C(R2) alignment and automation methodology for Periodic Safety Update Reports and Periodic Benefit-Risk Evaluation Reports.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">Therapeutic Areas</p>
+            <a href="/ta-oncology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Oncology</a>
+            <a href="/disease-breast-cancer" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Breast Cancer</a>
+            <a href="/disease-melanoma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Melanoma</a>
+            <a href="/disease-nsclc" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">NSCLC</a>
+            <a href="/disease-aml" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AML</a>
+            <a href="/ta-neurology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Neurology</a>
+            <a href="/disease-alzheimers" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Alzheimer's</a>
+            <a href="/disease-parkinsons" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Parkinson's</a>
+            <a href="/disease-multiple-sclerosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Sclerosis</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/ta-immunology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Immunology</a>
+            <a href="/disease-rheumatoid-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rheumatoid Arthritis</a>
+            <a href="/disease-psoriasis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriasis</a>
+            <a href="/disease-lupus" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Lupus</a>
+            <a href="/ta-cardiology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cardiology</a>
+            <a href="/disease-afib" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AFib</a>
+            <a href="/disease-heart-failure" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Heart Failure</a>
+            <a href="/ta-respiratory" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Respiratory</a>
+            <a href="/disease-asthma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Asthma</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-rare-diseases" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rare Diseases</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-dermatology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Dermatology</a>
+            <a href="/disease-atopic-dermatitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Atopic Dermatitis</a>
+            <a href="/disease-psoriatic-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriatic Arthritis</a>
+            <a href="/ta-hematology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hematology</a>
+            <a href="/disease-multiple-myeloma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Myeloma</a>
+            <a href="/disease-cll" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">CLL</a>
+            <a href="/disease-sickle-cell" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Sickle Cell Disease</a>
+            <a href="/ta-gastroenterology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Gastroenterology</a>
+            <a href="/disease-crohns-disease" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Crohn's Disease</a>
+            <a href="/disease-ulcerative-colitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Ulcerative Colitis</a>
+            <a href="/ta-endocrinology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Endocrinology</a>
+            <a href="/disease-type-2-diabetes" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Type 2 Diabetes</a>
+            <a href="/disease-obesity" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Obesity</a>
+            <a href="/ta-infectious-disease" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Infectious Disease</a>
+            <a href="/disease-hiv" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">HIV</a>
+            <a href="/disease-hepatitis-b" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hepatitis B</a>
+            <a href="/ta-pediatrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatrics</a>
+            <a href="/disease-pediatric-epilepsy" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatric Epilepsy</a>
+          </div>
+        </div>
+
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link is-active">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- Breadcrumb -->
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources-whitepapers" style="color: var(--grey-600); text-decoration: none;">Whitepapers</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">Automating PSUR/PBRER</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section style="padding: var(--space-8) 0 var(--space-9); background: linear-gradient(135deg, var(--orange-500) 0%, var(--red-500) 100%); color: var(--white); position: relative; overflow: hidden;" data-animate>
+      <div style="position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -100px; left: -60px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(50px); pointer-events: none;"></div>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-5);">
+            <span class="arca-module-tag is-output" style="border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);">Output</span>
+            <span style="padding: 6px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; font-size: 0.75rem; font-weight: 500; background: rgba(255,255,255,0.1);">20 Pages</span>
+          </div>
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5);">
+            Automating PSUR/PBRER: A Technical Guide
+          </h1>
+          <p class="arca-body-lg" style="margin-bottom: var(--space-7); opacity: 0.95;">
+            How ArcaScience automates ICH E2C(R2)-compliant Periodic Safety Update Reports with integrated data intelligence, signal detection synthesis, and quantitative benefit-risk evaluation—reducing preparation time from months to weeks while maintaining complete regulatory traceability.
+          </p>
+          <a href="#download-form" class="arca-btn-primary-inverted" style="display: inline-flex; align-items: center; gap: 8px;">
+            Download Full Whitepaper
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity: 0.8;"><path d="M8 2v10m-3-3l3 3 3-3M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">Executive Summary</h2>
+          <div class="arca-body-lg" style="line-height: 1.7; color: var(--grey-700);">
+            <p style="margin-bottom: var(--space-5);">
+              Periodic Safety Update Reports (PSURs) and Periodic Benefit-Risk Evaluation Reports (PBRERs) represent one of the most resource-intensive regulatory obligations in pharmacovigilance. A single PSUR can consume 3-6 months of pharmacovigilance team effort, requiring manual compilation of adverse event data from global safety databases, systematic literature review, signal evaluation, and comprehensive benefit-risk assessment.
+            </p>
+            <p style="margin-bottom: var(--space-5);">
+              ArcaScience's automation platform integrates data from global safety databases (FAERS, EudraVigilance, VigiBase), literature monitoring systems (PubMed, Embase), clinical trial registries, and real-world evidence sources to generate ICH E2C(R2)-compliant PSUR/PBRER documents in a fraction of the time. The platform maintains complete data traceability and regulatory audit trails while embedding quantitative benefit-risk analysis directly into each report section.
+            </p>
+            <p style="margin-bottom: 0;">
+              This technical guide walks through the architecture, methodology, and validation approach that enables regulatory-grade document generation with 75% reduction in preparation time, 100% ICH E2C(R2) section coverage, and seamless eCTD Module 2.7 formatting for direct regulatory submission.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <h2 class="arca-heading-1">Key Takeaways</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto;">
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--indigo-500), var(--purple-500)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: white;"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">ICH E2C(R2) Alignment</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Every PSUR section—from executive summary through appendices—is mapped directly to ICH E2C(R2) regulatory requirements. Automated compliance checks ensure no required elements are missing before submission.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--teal-500), var(--green-500)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: white;"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automated Data Integration</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Continuous ingestion from FAERS, EudraVigilance, VigiBase, company safety databases, and sponsor-specific data warehouses. Data is normalized, deduplicated, and harmonized to MedDRA terminology automatically.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--orange-500), var(--red-500)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: white;"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Signal Detection Synthesis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Automated disproportionality analysis (PRR, ROR, MGPS, BCPNN) with AI-augmented signal evaluation. Generates signal narratives with complete supporting evidence tables and statistical workbooks.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--blue-500), var(--indigo-500)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: white;"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Literature Monitoring</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Continuous PubMed and Embase screening with AI-powered relevance scoring. Literature results are automatically extracted, categorized, and integrated into PSUR section narratives with full citation management.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--purple-500), var(--pink-500)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: white;"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Benefit-Risk Evaluation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Quantitative benefit-risk analysis embedded directly into the PSUR Integrated Benefit-Risk Analysis section. BRAT framework value trees, effects tables, and sensitivity analyses generated automatically.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--green-500), var(--teal-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: white;"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Submission-Ready Output</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Documents are formatted for eCTD Module 2.7 with automated table of contents, figure/table numbering, and cross-references. Direct export to regulatory portal submission formats (FDA Gateway, EMA Gateway).
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">What's Inside</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-7);">
+            This 20-page technical guide provides a complete walkthrough of PSUR/PBRER automation methodology:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--blue-100), var(--blue-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--blue-700);">1</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">The PSUR/PBRER Regulatory Landscape</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Evolution from PSUR to PBRER, ICH E2C(R2) requirements, regional variations, and the business case for automation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--indigo-100), var(--indigo-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--indigo-700);">2</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">ICH E2C(R2) Requirements and Structure</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Detailed breakdown of all 19 PBRER sections, regulatory expectations, and how ArcaScience maps to each requirement.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--teal-100), var(--teal-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--teal-700);">3</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Data Sources and Integration Architecture</h3>
+                  <p class="arca-body-sm arca-text-grey-600">How the platform ingests from FAERS, EudraVigilance, VigiBase, sponsor databases, and clinical trial data with full lineage tracking.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--orange-100), var(--orange-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--orange-700);">4</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Automated Signal Evaluation for PSURs</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Disproportionality methods (PRR, ROR, MGPS, BCPNN), threshold tuning, false discovery rate control, and narrative generation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--purple-100), var(--purple-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--purple-700);">5</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Literature Monitoring and Evidence Synthesis</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Continuous literature screening, relevance classification, full-text extraction, and automated citation management.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--pink-100), var(--pink-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--pink-700);">6</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Benefit-Risk Evaluation Integration</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Embedding BRAT framework analysis into PBRER Section 16: Integrated Benefit-Risk Analysis for Approved Indications.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--green-100), var(--green-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--green-700);">7</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Document Generation and Quality Assurance</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Template engine architecture, automated QC checks, medical writer review workflow, and version control.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: var(--space-5); border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white);">
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, var(--blue-100), var(--indigo-200)); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--blue-700);">8</span>
+                <div>
+                  <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">eCTD Formatting and Submission Workflow</h3>
+                  <p class="arca-body-sm arca-text-grey-600">Module 2.7 packaging, automated table/figure numbering, cross-reference validation, and direct export to FDA/EMA Gateway formats.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Content -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">Sample Content</h2>
+          <p class="arca-body-lg arca-text-grey-600" style="margin-bottom: var(--space-7);">
+            Preview two chapters from the whitepaper:
+          </p>
+
+          <!-- Chapter 1 Excerpt -->
+          <div class="arca-card" style="margin-bottom: var(--space-6);">
+            <div style="padding: 12px 16px; background: linear-gradient(135deg, var(--blue-50), var(--indigo-50)); border-radius: 6px 6px 0 0; border-bottom: 1px solid var(--grey-200);">
+              <h3 class="arca-heading-4">Chapter 1: The PSUR/PBRER Regulatory Landscape</h3>
+            </div>
+            <div style="padding: var(--space-6);">
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: var(--space-4);">
+                Periodic Safety Update Reports were introduced by the International Council for Harmonisation (ICH) in 1996 as a standardized format for post-approval safety reporting. The guideline underwent significant revision in 2012 with ICH E2C(R2), which reframed the document as a Periodic Benefit-Risk Evaluation Report (PBRER)—emphasizing not just adverse event cataloging, but comprehensive benefit-risk assessment.
+              </p>
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: var(--space-4);">
+                The transition from PSUR to PBRER reflected a fundamental shift in regulatory thinking: safety signals must be evaluated in the context of therapeutic benefit, patient population characteristics, and availability of alternative treatments. This change increased both the scientific rigor and operational burden of periodic reporting.
+              </p>
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: var(--space-4);">
+                A typical PSUR/PBRER for a marketed product requires:
+              </p>
+              <ul style="margin: 0 0 var(--space-4) 24px; padding: 0;">
+                <li class="arca-body-md" style="color: var(--grey-700); margin-bottom: var(--space-2);">Manual review of 5,000-50,000 adverse event reports from global databases</li>
+                <li class="arca-body-md" style="color: var(--grey-700); margin-bottom: var(--space-2);">Systematic literature screening of 200-2,000 publications</li>
+                <li class="arca-body-md" style="color: var(--grey-700); margin-bottom: var(--space-2);">Signal detection analysis across multiple therapeutic areas and geographies</li>
+                <li class="arca-body-md" style="color: var(--grey-700); margin-bottom: var(--space-2);">Integration of clinical trial safety data, real-world evidence, and non-clinical findings</li>
+                <li class="arca-body-md" style="color: var(--grey-700); margin-bottom: var(--space-2);">Comprehensive benefit-risk narrative with quantitative or semi-quantitative analysis</li>
+                <li class="arca-body-md" style="color: var(--grey-700);">Preparation of 100-300 page documents with 20-50 appendices</li>
+              </ul>
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: var(--space-4);">
+                This work typically consumes 3-6 months of effort from multidisciplinary teams including pharmacovigilance scientists, medical writers, statisticians, and medical reviewers. For companies with large portfolios, the resource burden can become unsustainable—particularly when combined with other pharmacovigilance obligations like Development Safety Update Reports (DSURs), Risk Management Plans (RMPs), and signal management activities.
+              </p>
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: 0;">
+                <strong>The business case for automation:</strong> ArcaScience's platform enables 75% reduction in PSUR preparation time while improving consistency, reducing human error, and maintaining complete audit trails. This frees senior pharmacovigilance staff to focus on strategic signal evaluation and regulatory strategy rather than document assembly.
+              </p>
+            </div>
+          </div>
+
+          <!-- Chapter 3 Excerpt -->
+          <div class="arca-card">
+            <div style="padding: 12px 16px; background: linear-gradient(135deg, var(--teal-50), var(--green-50)); border-radius: 6px 6px 0 0; border-bottom: 1px solid var(--grey-200);">
+              <h3 class="arca-heading-4">Chapter 3: Data Sources and Integration Architecture</h3>
+            </div>
+            <div style="padding: var(--space-6);">
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: var(--space-4);">
+                Automated PSUR generation depends on robust, real-time data integration from multiple heterogeneous sources. ArcaScience's data pipeline ingests safety data from:
+              </p>
+
+              <div style="margin-bottom: var(--space-5);">
+                <h4 class="arca-heading-5" style="margin-bottom: var(--space-3);">Global Safety Databases</h4>
+                <ul style="margin: 0 0 0 24px; padding: 0;">
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>FDA FAERS:</strong> 15+ million adverse event reports, quarterly releases, normalized to MedDRA</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>EMA EudraVigilance:</strong> 20+ million reports from EU member states, real-time access via EVDAS</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>WHO VigiBase:</strong> 25+ million reports from 140+ countries, accessed via VigiLyze API</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>PMDA (Japan), Health Canada, MHRA (UK):</strong> Regional databases integrated on rolling basis</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700);"><strong>Sponsor safety databases:</strong> Oracle Argus, ArisGlobal LifeSphere, Veeva Vault SafetyDocs via HL7 ICSR feeds</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: var(--space-5);">
+                <h4 class="arca-heading-5" style="margin-bottom: var(--space-3);">Literature and Publication Sources</h4>
+                <ul style="margin: 0 0 0 24px; padding: 0;">
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>PubMed/MEDLINE:</strong> 35+ million biomedical citations, daily updates via E-utilities API</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>Embase:</strong> 40+ million records including conference abstracts, accessed via Elsevier API</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>ClinicalTrials.gov:</strong> Trial results data for efficacy/safety comparison</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700);"><strong>Regulatory agency communications:</strong> FDA Drug Safety Communications, EMA safety referrals</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: var(--space-5);">
+                <h4 class="arca-heading-5" style="margin-bottom: var(--space-3);">Data Harmonization Pipeline</h4>
+                <p class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-3);">
+                  Raw data from these sources undergoes a four-stage normalization process:
+                </p>
+                <ol style="margin: 0 0 0 24px; padding: 0;">
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>Deduplication:</strong> Fuzzy matching on patient demographics, event dates, reporter information to identify duplicates across databases</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>MedDRA standardization:</strong> All adverse events mapped to consistent MedDRA version (currently 26.0), with automatic updates when new versions release</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700); margin-bottom: var(--space-2);"><strong>Data quality scoring:</strong> Completeness, recency, source reliability used to weight reports in signal detection</li>
+                  <li class="arca-body-sm" style="color: var(--grey-700);"><strong>Lineage tracking:</strong> Every data point maintains full provenance chain for regulatory audit trails</li>
+                </ol>
+              </div>
+
+              <p class="arca-body-md" style="line-height: 1.7; color: var(--grey-700); margin-bottom: 0;">
+                This architecture enables near-real-time PSUR data queries while maintaining the data integrity and traceability required for regulatory submissions. Chapter 3 includes detailed data flow diagrams, API specifications, and validation test cases used in platform development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section style="padding: var(--space-9) 0; background: linear-gradient(135deg, var(--blue-900) 0%, var(--indigo-900) 100%); color: var(--white);" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-4);">Impact on PSUR Preparation</h2>
+          <p class="arca-body-lg" style="opacity: 0.9;">
+            Real-world performance metrics from production deployments
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; max-width: 960px; margin: 0 auto;">
+          <div style="text-align: center;">
+            <div class="arca-display-xl" data-countup="75" data-countup-suffix="%" style="margin-bottom: var(--space-3); background: linear-gradient(135deg, var(--orange-400), var(--red-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0%</div>
+            <p class="arca-body-md" style="opacity: 0.85;">Reduction in PSUR preparation time from initial data lock to final submission-ready document</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="arca-display-xl" data-countup="100" data-countup-suffix="%" style="margin-bottom: var(--space-3); background: linear-gradient(135deg, var(--green-400), var(--teal-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0%</div>
+            <p class="arca-body-md" style="opacity: 0.85;">ICH E2C(R2) section coverage with automated compliance validation and missing element detection</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="arca-display-xl" data-countup="8" data-countup-suffix="+" style="margin-bottom: var(--space-3); background: linear-gradient(135deg, var(--blue-400), var(--indigo-400)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+            <p class="arca-body-md" style="opacity: 0.85;">Global safety databases integrated for comprehensive adverse event coverage and signal detection</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Whitepapers -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <h2 class="arca-heading-1">Related Whitepapers</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- BRAT Framework -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--indigo-500) 0%, var(--purple-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              BRAT Framework
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">18 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">BRAT Framework Implementation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Step-by-step guide to automating the Benefit-Risk Action Team framework for regulatory submissions.
+            </p>
+            <a href="/resources-whitepapers#brat" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Signal Detection -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-600) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              Signal Detection
+            </div>
+            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); width: fit-content;">14 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Signal Detection at Scale</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Technical deep-dive on disproportionality analysis methods and AI-augmented signal identification.
+            </p>
+            <a href="/resources-whitepapers#signal-detection" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Methodology -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-500) 0%, var(--indigo-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; padding: 24px; text-align: center;">
+              The ArcaScience Methodology
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">24 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">The ArcaScience Methodology</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comprehensive overview of the platform's scientific foundation, data architecture, and AI model taxonomy.
+            </p>
+            <a href="/resources-whitepapers#methodology" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Learn More <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section id="download-form" class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 680px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: var(--space-7);">
+            <h2 class="arca-heading-1" style="margin-bottom: var(--space-4);">Download the Full Whitepaper</h2>
+            <p class="arca-body-lg arca-text-grey-700">
+              Get the complete 20-page technical guide to PSUR/PBRER automation with detailed methodology, validation data, and implementation case studies.
+            </p>
+          </div>
+
+          <form class="arca-card" style="padding: var(--space-7);" data-whitepaper-form>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <label for="download-name" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Full Name *</label>
+                  <input type="text" id="download-name" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+                </div>
+                <div>
+                  <label for="download-email" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Work Email *</label>
+                  <input type="email" id="download-email" class="arca-form-field" data-form-email required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <label for="download-company" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Company *</label>
+                  <input type="text" id="download-company" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem;">
+                </div>
+                <div>
+                  <label for="download-role" class="arca-label" style="display: block; margin-bottom: var(--space-2);">Job Function *</label>
+                  <select id="download-role" class="arca-form-field" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--grey-300); border-radius: 4px; font-size: 0.875rem; background: var(--white); cursor: pointer;">
+                    <option value="">Select...</option>
+                    <option value="pharmacovigilance">Pharmacovigilance</option>
+                    <option value="medical-affairs">Medical Affairs</option>
+                    <option value="regulatory">Regulatory Affairs</option>
+                    <option value="clinical-development">Clinical Development</option>
+                    <option value="market-access">Market Access/HEOR</option>
+                    <option value="executive">Executive Leadership</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label style="display: flex; align-items: start; gap: 8px; cursor: pointer;">
+                  <input type="checkbox" required style="margin-top: 4px;">
+                  <span class="arca-caption arca-text-grey-600">
+                    I agree to receive communications from ArcaScience about benefit-risk methodology and platform updates. View our <a href="/legal-privacy" style="text-decoration: underline; color: var(--blue-600);">Privacy Policy</a>.
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="arca-btn-primary" style="width: 100%; margin-top: var(--space-3); display: flex; align-items: center; justify-content: center; gap: 8px;">
+                Download PDF
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity: 0.9;"><path d="M8 2v10m-3-3l3 3 3-3M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <p class="arca-caption arca-text-grey-500" style="text-align: center; margin: 0;">
+                Corporate email required. Your information will be used in accordance with our privacy policy.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See PSUR Automation in Action
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Schedule a live demonstration to see how ArcaScience generates ICH E2C(R2)-compliant PSURs from your own safety data, or discuss custom deployment for your pharmacovigilance team.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request a Demo
+          </a>
+          <a href="/platform-outputs" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore Platform Outputs <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
+            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
+            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
+            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
+            <a href="/ta-respiratory" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Respiratory</a>
+            <a href="/ta-rare-diseases" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Rare Diseases</a>
+            <a href="/ta-dermatology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Dermatology</a>
+            <a href="/ta-hematology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Hematology</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources-webinars" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Webinars</a>
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init();
+    });
+  </script>
+
+</body>
+</html>

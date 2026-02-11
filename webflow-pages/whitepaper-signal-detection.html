@@ -1,0 +1,677 @@
+<!--
+  ArcaScience Whitepaper Detail: Signal Detection at Scale — Webflow Structure Reference
+  ======================================================================================
+  14-page whitepaper on AI-augmented safety signal detection across multiple databases.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Detection at Scale: Methods and Validation — ArcaScience Whitepapers</title>
+  <meta name="description" content="Technical deep-dive on PRR, ROR, MGPS, BCPNN methods enhanced with deep learning for 3x faster signal identification and reduced false positives.">
+
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div data-scroll-progress></div>
+
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">Therapeutic Areas</p>
+            <a href="/ta-oncology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Oncology</a>
+            <a href="/disease-breast-cancer" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Breast Cancer</a>
+            <a href="/disease-melanoma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Melanoma</a>
+            <a href="/disease-nsclc" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">NSCLC</a>
+            <a href="/disease-aml" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AML</a>
+            <a href="/ta-neurology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Neurology</a>
+            <a href="/disease-alzheimers" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Alzheimer's</a>
+            <a href="/disease-parkinsons" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Parkinson's</a>
+            <a href="/disease-multiple-sclerosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Sclerosis</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/ta-immunology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Immunology</a>
+            <a href="/disease-rheumatoid-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rheumatoid Arthritis</a>
+            <a href="/disease-psoriasis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriasis</a>
+            <a href="/disease-lupus" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Lupus</a>
+            <a href="/ta-cardiology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cardiology</a>
+            <a href="/disease-afib" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AFib</a>
+            <a href="/disease-heart-failure" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Heart Failure</a>
+            <a href="/ta-respiratory" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Respiratory</a>
+            <a href="/disease-asthma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Asthma</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-rare-diseases" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Rare Diseases</a>
+            <a href="/disease-sma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">SMA</a>
+            <a href="/disease-cystic-fibrosis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Cystic Fibrosis</a>
+            <a href="/ta-dermatology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Dermatology</a>
+            <a href="/disease-atopic-dermatitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Atopic Dermatitis</a>
+            <a href="/disease-psoriatic-arthritis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Psoriatic Arthritis</a>
+            <a href="/ta-hematology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hematology</a>
+            <a href="/disease-multiple-myeloma" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Multiple Myeloma</a>
+            <a href="/disease-cll" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">CLL</a>
+            <a href="/disease-sickle-cell" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Sickle Cell Disease</a>
+            <a href="/ta-gastroenterology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Gastroenterology</a>
+            <a href="/disease-crohns-disease" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Crohn's Disease</a>
+            <a href="/disease-ulcerative-colitis" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Ulcerative Colitis</a>
+            <a href="/ta-endocrinology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Endocrinology</a>
+            <a href="/disease-type-2-diabetes" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Type 2 Diabetes</a>
+            <a href="/disease-obesity" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Obesity</a>
+            <a href="/ta-infectious-disease" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Infectious Disease</a>
+            <a href="/disease-hiv" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">HIV</a>
+            <a href="/disease-hepatitis-b" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Hepatitis B</a>
+            <a href="/ta-pediatrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatrics</a>
+            <a href="/disease-pediatric-epilepsy" style="display: block; padding: 4px 16px 4px 28px; font-size: 0.75rem; color: var(--grey-500); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Pediatric Epilepsy</a>
+          </div>
+        </div>
+
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link is-active">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- Breadcrumb -->
+    <section style="padding: var(--space-5) 0 0;">
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <nav aria-label="Breadcrumb">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: var(--grey-600); text-decoration: none;">Home</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources" style="color: var(--grey-600); text-decoration: none;">Resources</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li><a href="/resources-whitepapers" style="color: var(--grey-600); text-decoration: none;">Whitepapers</a></li>
+            <li style="color: var(--grey-400);">/</li>
+            <li style="color: var(--grey-900);">Signal Detection at Scale</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section style="padding: var(--space-8) 0; background: linear-gradient(135deg, var(--blue-600) 0%, var(--teal-600) 100%); color: var(--white); position: relative; overflow: hidden;" data-animate>
+      <!-- Decorative gradient orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <div style="max-width: 840px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-5);">
+            <span class="arca-module-tag is-data" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: var(--white);">Data</span>
+            <span style="font-size: 0.875rem; font-weight: 500; opacity: 0.9;">14 Pages</span>
+          </div>
+          <h1 class="arca-display-lg" style="margin-bottom: var(--space-5); color: var(--white);">
+            Signal Detection at Scale: Methods and Validation
+          </h1>
+          <p class="arca-body-lg" style="margin-bottom: var(--space-7); opacity: 0.95; line-height: 1.6;">
+            Traditional disproportionality methods analyze individual data sources in isolation. ArcaScience integrates classical statistical approaches with deep learning to analyze signals across FAERS, EudraVigilance, VigiBase, and real-world evidence simultaneously—achieving 3x faster signal identification with 40% fewer false positives.
+          </p>
+          <a href="#download" class="arca-btn-primary-inverted" style="display: inline-flex; align-items: center; gap: 8px;">
+            Download PDF <span aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">Executive Summary</h2>
+          <div class="arca-body-lg arca-text-grey-700" style="line-height: 1.7;">
+            <p style="margin-bottom: var(--space-5);">
+              Safety signal detection is the cornerstone of pharmacovigilance. Traditional disproportionality methods—Proportional Reporting Ratio (PRR), Reporting Odds Ratio (ROR), Multi-item Gamma Poisson Shrinker (MGPS), and Bayesian Confidence Propagation Neural Network (BCPNN)—analyze individual data sources in isolation, creating information silos that delay signal identification and increase false positive rates.
+            </p>
+            <p style="margin-bottom: var(--space-5);">
+              ArcaScience integrates these classical methods with deep learning to analyze signals across FAERS, EudraVigilance, VigiBase, and real-world evidence simultaneously. Our hybrid approach achieves 3x faster signal identification with 40% fewer false positives compared to single-source analysis.
+            </p>
+            <p style="margin-bottom: 0;">
+              This whitepaper details the methodology, validation against known signals, and implementation approach. We demonstrate how multi-source analysis enhanced with neural networks improves signal detection sensitivity while reducing noise, enabling proactive safety surveillance at unprecedented scale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="arca-bg-blue-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-7); text-align: center;">Key Takeaways</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2v20M2 12h20"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Multi-Source Analysis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Simultaneous signal detection across FAERS, EudraVigilance, VigiBase, and real-world evidence databases eliminates information silos.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--indigo-500), var(--indigo-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Classical + AI Hybrid</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              PRR, ROR, MGPS, and BCPNN methods enhanced with neural networks that learn signal patterns from historical data.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--blue-500), var(--blue-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">3x Faster Detection</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Reduced time from signal emergence to evaluation through automated cross-database analysis and priority ranking.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--green-500), var(--green-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">40% Fewer False Positives</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              Deep learning filters noise from true signals by identifying patterns in reporting behavior and confounding factors.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--purple-500), var(--purple-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Known Signal Validation</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              98.3% sensitivity against historical signal corpus of 247 validated drug-event pairs from regulatory databases.
+            </p>
+          </div>
+
+          <div class="arca-card" data-animate>
+            <div style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--orange-500), var(--orange-600)); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Real-World Evidence Integration</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="line-height: 1.6;">
+              EHR and claims data integration for signal corroboration and assessment of clinical significance beyond spontaneous reports.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-6);">Table of Contents</h2>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">1</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Foundations of Pharmacovigilance Signal Detection</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Historical context, regulatory requirements, and the limitations of manual signal detection processes.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">2</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Classical Disproportionality Methods Explained</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Mathematical foundations of PRR, ROR, MGPS, and BCPNN with worked examples and performance characteristics.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">3</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Limitations of Single-Source Analysis</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Database-specific biases, reporting patterns, and the information loss from isolated signal detection.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">4</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">ArcaScience's Multi-Source Detection Architecture</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Technical architecture for simultaneous analysis across FAERS, EudraVigilance, VigiBase, and RWE sources.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">5</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Deep Learning Enhancement of Classical Methods</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Neural network architecture for pattern recognition, false positive reduction, and signal priority ranking.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">6</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Validation Methodology and Known Signal Testing</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Performance evaluation against 247 validated drug-event pairs from FDA and EMA signal databases.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">7</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Real-World Evidence Integration</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Incorporating EHR and claims data for signal corroboration, incidence rate estimation, and clinical context.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 16px; padding: 16px; border: 1px solid var(--grey-200); border-radius: 8px; background: var(--white); transition: all 200ms ease;" class="arca-hover-lift">
+              <span class="arca-heading-3" style="color: var(--blue-600); min-width: 40px;">8</span>
+              <div>
+                <h3 class="arca-heading-4" style="margin-bottom: var(--space-2);">Implementation and Operational Deployment</h3>
+                <p class="arca-body-sm arca-text-grey-600">
+                  Practical guidance on deploying multi-source signal detection in pharmacovigilance workflows.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Content -->
+    <section class="arca-bg-grey-50" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 840px; margin: 0 auto;">
+          <h2 class="arca-heading-1" style="margin-bottom: var(--space-7);">Sample Content</h2>
+
+          <!-- Chapter 1 Excerpt -->
+          <div style="margin-bottom: var(--space-8);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <span class="arca-heading-2" style="color: var(--blue-600);">Chapter 1</span>
+              <h3 class="arca-heading-2">Foundations of Pharmacovigilance Signal Detection</h3>
+            </div>
+            <div class="arca-body arca-text-grey-700" style="line-height: 1.7;">
+              <p style="margin-bottom: var(--space-4);">
+                Safety signal detection represents the earliest opportunity to identify previously unknown or incompletely characterized adverse drug reactions. A signal, as defined by the WHO Uppsala Monitoring Centre, is "information arising from one or multiple sources which suggests a new potentially causal association, or a new aspect of a known association, between an intervention and an event or set of related events."
+              </p>
+              <p style="margin-bottom: var(--space-4);">
+                Traditional signal detection relies on disproportionality analysis—statistical methods that identify drug-event combinations reported more frequently than expected based on the background reporting rate. The four primary methods employed globally include:
+              </p>
+              <ul style="margin-bottom: var(--space-4); padding-left: 24px; list-style-type: disc;">
+                <li style="margin-bottom: var(--space-2);"><strong>Proportional Reporting Ratio (PRR)</strong> — Used by UK MHRA and many industry groups. Compares the proportion of reports for a drug-event pair to the proportion for all other drugs.</li>
+                <li style="margin-bottom: var(--space-2);"><strong>Reporting Odds Ratio (ROR)</strong> — Used by Netherlands Pharmacovigilance Centre. Similar to PRR but uses odds ratio calculation.</li>
+                <li style="margin-bottom: var(--space-2);"><strong>Multi-item Gamma Poisson Shrinker (MGPS)</strong> — Used by FDA's FAERS analysis. Bayesian approach that adjusts for multiple comparisons.</li>
+                <li style="margin-bottom: var(--space-2);"><strong>Bayesian Confidence Propagation Neural Network (BCPNN)</strong> — Used by WHO VigiBase. Neural network-inspired Bayesian method.</li>
+              </ul>
+              <p style="margin-bottom: var(--space-4);">
+                Each method has demonstrated value in identifying safety signals. However, each also operates within significant constraints: analysis of a single data source, inability to account for cross-database reporting patterns, and high false positive rates due to confounding by indication, media attention, and reporting stimulation.
+              </p>
+              <p style="margin-bottom: 0;">
+                The fundamental limitation is information fragmentation. FAERS captures North American spontaneous reports. EudraVigilance captures European reports. VigiBase captures global WHO network reports. Real-world evidence sources capture clinical practice patterns. No existing approach synthesizes these sources simultaneously to create a comprehensive view of emerging safety signals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Chapter 5 Excerpt -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
+              <span class="arca-heading-2" style="color: var(--blue-600);">Chapter 5</span>
+              <h3 class="arca-heading-2">Deep Learning Enhancement of Classical Methods</h3>
+            </div>
+            <div class="arca-body arca-text-grey-700" style="line-height: 1.7;">
+              <p style="margin-bottom: var(--space-4);">
+                Classical disproportionality methods excel at identifying statistical anomalies in reporting patterns. However, they struggle to distinguish true signals from noise generated by confounding factors, media attention, and reporting stimulation. Deep learning enhances classical methods by learning patterns that separate signal from noise.
+              </p>
+              <p style="margin-bottom: var(--space-4);">
+                ArcaScience's hybrid approach uses a three-stage architecture:
+              </p>
+              <ol style="margin-bottom: var(--space-4); padding-left: 24px;">
+                <li style="margin-bottom: var(--space-3);"><strong>Classical Signal Generation</strong> — PRR, ROR, MGPS, and BCPNN run independently on each data source, generating initial signal candidates with statistical thresholds.</li>
+                <li style="margin-bottom: var(--space-3);"><strong>Feature Extraction</strong> — For each signal candidate, extract 127 features including temporal patterns, geographic distribution, reporter characteristics, MedDRA hierarchy relationships, drug class effects, and RWE incidence rates.</li>
+                <li style="margin-bottom: var(--space-3);"><strong>Neural Network Classification</strong> — A gradient-boosted decision tree ensemble trained on 247 validated drug-event pairs predicts signal validity probability and priority score.</li>
+              </ol>
+              <p style="margin-bottom: var(--space-4);">
+                The neural network architecture incorporates domain knowledge through feature engineering rather than end-to-end learning. This approach maintains interpretability—critical for regulatory validation—while achieving the pattern recognition capabilities of deep learning.
+              </p>
+              <p style="margin-bottom: var(--space-4);">
+                Key features that distinguish true signals from false positives include:
+              </p>
+              <ul style="margin-bottom: var(--space-4); padding-left: 24px; list-style-type: disc;">
+                <li style="margin-bottom: var(--space-2);">Consistency across multiple data sources (signals present in FAERS, EudraVigilance, and VigiBase simultaneously)</li>
+                <li style="margin-bottom: var(--space-2);">Temporal stability (signals that persist rather than spike and disappear)</li>
+                <li style="margin-bottom: var(--space-2);">Biological plausibility based on known mechanism of action and pharmacology</li>
+                <li style="margin-bottom: var(--space-2);">Absence of strong confounding by indication (event not expected from underlying disease)</li>
+                <li style="margin-bottom: var(--space-2);">RWE corroboration (elevated incidence in claims/EHR data compared to unexposed population)</li>
+              </ul>
+              <p style="margin-bottom: 0;">
+                Validation against known signals demonstrates 98.3% sensitivity (correctly identifying 243 of 247 validated drug-event pairs) with 40% reduction in false positive rate compared to classical methods alone. This performance enables proactive signal detection at scale without overwhelming safety teams with false alerts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section style="padding: var(--space-9) 0; background: linear-gradient(135deg, var(--blue-900) 0%, var(--indigo-900) 100%); color: var(--white); position: relative; overflow: hidden;" data-animate>
+      <!-- Decorative gradient orbs -->
+      <div style="position: absolute; top: -80px; right: -80px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-7); text-align: center; color: var(--white);">
+          Impact Metrics
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;">
+
+          <div style="text-align: center;">
+            <div class="arca-display-xl" style="margin-bottom: var(--space-4); color: var(--white);" data-countup="3">0</div>
+            <div style="display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: var(--space-3);">
+              <span class="arca-label" style="color: rgba(255,255,255,0.9);">times faster</span>
+            </div>
+            <p class="arca-body arca-text-white" style="opacity: 0.85;">
+              Reduced time from signal emergence to evaluation through automated cross-database analysis
+            </p>
+          </div>
+
+          <div style="text-align: center;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: var(--space-4);">
+              <span class="arca-display-xl" style="color: var(--white);" data-countup="98.3">0</span>
+              <span class="arca-display-lg" style="color: var(--white); opacity: 0.9;">%</span>
+            </div>
+            <div style="display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: var(--space-3);">
+              <span class="arca-label" style="color: rgba(255,255,255,0.9);">sensitivity</span>
+            </div>
+            <p class="arca-body arca-text-white" style="opacity: 0.85;">
+              Correctly identified 243 of 247 validated drug-event pairs from regulatory signal databases
+            </p>
+          </div>
+
+          <div style="text-align: center;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: var(--space-4);">
+              <span class="arca-display-xl" style="color: var(--white);" data-countup="40">0</span>
+              <span class="arca-display-lg" style="color: var(--white); opacity: 0.9;">%</span>
+            </div>
+            <div style="display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: var(--space-3);">
+              <span class="arca-label" style="color: rgba(255,255,255,0.9);">reduction</span>
+            </div>
+            <p class="arca-body arca-text-white" style="opacity: 0.85;">
+              Fewer false positives compared to classical methods alone through neural network filtering
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Whitepapers -->
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-7);">Related Whitepapers</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- Domain AI -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--teal-500) 0%, var(--green-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.125rem; font-weight: 600; padding: 24px; text-align: center;">
+              Domain AI vs General Models
+            </div>
+            <span class="arca-module-tag is-data" style="margin-bottom: var(--space-3); width: fit-content;">16 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Domain-Specific AI vs General-Purpose Models for Pharmacovigilance</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comparative analysis demonstrating why purpose-trained models outperform general LLMs for adverse event extraction and MedDRA coding.
+            </p>
+            <a href="/whitepaper-domain-ai" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Read Whitepaper <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- PSUR/PBRER -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--orange-500) 0%, var(--red-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.125rem; font-weight: 600; padding: 24px; text-align: center;">
+              Automating PSUR/PBRER
+            </div>
+            <span class="arca-module-tag is-output" style="margin-bottom: var(--space-3); width: fit-content;">20 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">Automating PSUR/PBRER: A Technical Guide</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              ICH E2C(R2) alignment and automation methodology for submission-ready document generation with full regulatory traceability.
+            </p>
+            <a href="/whitepaper-psur-pbrer" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Read Whitepaper <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Methodology -->
+          <div class="arca-card" style="display: flex; flex-direction: column;" data-animate>
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--blue-500) 0%, var(--indigo-500) 100%); border-radius: 4px; margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; color: var(--white); font-family: var(--font-serif); font-size: 1.125rem; font-weight: 600; padding: 24px; text-align: center;">
+              The ArcaScience Methodology
+            </div>
+            <span class="arca-module-tag is-analytics" style="margin-bottom: var(--space-3); width: fit-content;">24 pages</span>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-3);">The ArcaScience Methodology: AI-Driven Benefit-Risk Analysis</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); line-height: 1.6; flex-grow: 1;">
+              Comprehensive overview of the platform's scientific foundation, data architecture, 24 AI model taxonomy, and regulatory alignment.
+            </p>
+            <a href="/whitepaper-methodology" class="arca-btn-secondary" style="width: 100%; display: block; text-align: center; text-decoration: none;">
+              Read Whitepaper <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section id="download" class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
+
+      <!-- arca-decor: CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Download the Full Whitepaper
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Get the complete 14-page technical analysis including detailed methodology, validation results, implementation guidance, and case studies from multi-source signal detection deployments.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="arca-btn-primary-inverted" data-whitepaper-download="signal-detection">
+            Download PDF <span aria-hidden="true">&darr;</span>
+          </a>
+          <a href="/contact" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Talk to a Scientist <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
+            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
+            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
+            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
+            <a href="/ta-respiratory" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Respiratory</a>
+            <a href="/ta-rare-diseases" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Rare Diseases</a>
+            <a href="/ta-dermatology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Dermatology</a>
+            <a href="/ta-hematology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Hematology</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources-webinars" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Webinars</a>
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script src="/dist/arcascience-countup.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>
