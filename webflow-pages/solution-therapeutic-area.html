@@ -1,8 +1,8 @@
 <!--
-  ArcaScience Therapeutic Area Hub — Webflow Structure Reference
-  ==============================================================
-  Hub page listing all 12 therapeutic areas with links to TA pages
-  and their associated disease-specific pages.
+  ArcaScience Solutions by Therapeutic Area Hub — Webflow Structure Reference
+  ===========================================================================
+  Hub page listing all 12 therapeutic areas with links to TA-specific pages.
+  Pattern mirrors solution-role.html.
 -->
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solutions by Therapeutic Area — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
-  <meta name="description" content="Explore ArcaScience's AI-driven benefit-risk analysis solutions across 12 therapeutic areas — oncology, neurology, immunology, cardiology, and more. TA-specific data, AI models, and regulatory outputs.">
+  <meta name="description" content="ArcaScience's AI-driven BRA platform is pre-configured with domain-specific knowledge for 12 therapeutic areas, analyzing safety profiles, efficacy benchmarks, and regulatory precedents unique to each field.">
 
   <!-- Fonts: self-hosted for performance -->
   <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -83,47 +83,56 @@
                 <svg class="arca-chevron-right" width="8" height="12" viewBox="0 0 8 12" fill="none" style="margin-left: 8px;"><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
               <div class="arca-nav-subdropdown">
-                <a href="/ta-oncology">Oncology</a>
-                <a href="/disease-breast-cancer" class="arca-nav-sub-disease">Breast Cancer</a>
-                <a href="/disease-melanoma" class="arca-nav-sub-disease">Melanoma</a>
-                <a href="/disease-nsclc" class="arca-nav-sub-disease">NSCLC</a>
-                <a href="/disease-aml" class="arca-nav-sub-disease">AML</a>
-                <a href="/ta-neurology">Neurology</a>
-                <a href="/disease-alzheimers" class="arca-nav-sub-disease">Alzheimer's</a>
-                <a href="/disease-parkinsons" class="arca-nav-sub-disease">Parkinson's</a>
-                <a href="/disease-multiple-sclerosis" class="arca-nav-sub-disease">Multiple Sclerosis</a>
-                <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
-                <a href="/ta-immunology">Immunology</a>
-                <a href="/disease-rheumatoid-arthritis" class="arca-nav-sub-disease">Rheumatoid Arthritis</a>
-                <a href="/disease-psoriasis" class="arca-nav-sub-disease">Psoriasis</a>
-                <a href="/disease-lupus" class="arca-nav-sub-disease">Lupus</a>
-                <a href="/ta-cardiology">Cardiology</a>
-                <a href="/disease-afib" class="arca-nav-sub-disease">AFib</a>
-                <a href="/disease-heart-failure" class="arca-nav-sub-disease">Heart Failure</a>
-                <a href="/ta-respiratory">Respiratory</a>
-                <a href="/disease-asthma" class="arca-nav-sub-disease">Asthma</a>
-                <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
-                <a href="/ta-rare-diseases">Rare Diseases</a>
-                <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
-                <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
-                <a href="/ta-dermatology">Dermatology</a>
-                <a href="/disease-atopic-dermatitis" class="arca-nav-sub-disease">Atopic Dermatitis</a>
-                <a href="/disease-psoriatic-arthritis" class="arca-nav-sub-disease">Psoriatic Arthritis</a>
-                <a href="/ta-hematology">Hematology</a>
-                <a href="/disease-multiple-myeloma" class="arca-nav-sub-disease">Multiple Myeloma</a>
-                <a href="/disease-cll" class="arca-nav-sub-disease">CLL</a>
-                <a href="/disease-sickle-cell" class="arca-nav-sub-disease">Sickle Cell Disease</a>
-                <a href="/ta-gastroenterology">Gastroenterology</a>
-                <a href="/disease-crohns-disease" class="arca-nav-sub-disease">Crohn's Disease</a>
-                <a href="/disease-ulcerative-colitis" class="arca-nav-sub-disease">Ulcerative Colitis</a>
-                <a href="/ta-endocrinology">Endocrinology</a>
-                <a href="/disease-type-2-diabetes" class="arca-nav-sub-disease">Type 2 Diabetes</a>
-                <a href="/disease-obesity" class="arca-nav-sub-disease">Obesity</a>
-                <a href="/ta-infectious-disease">Infectious Disease</a>
-                <a href="/disease-hiv" class="arca-nav-sub-disease">HIV</a>
-                <a href="/disease-hepatitis-b" class="arca-nav-sub-disease">Hepatitis B</a>
-                <a href="/ta-pediatrics">Pediatrics</a>
-                <a href="/disease-pediatric-epilepsy" class="arca-nav-sub-disease">Pediatric Epilepsy</a>
+                <div style="display: flex; flex-direction: column;">
+                  <a href="/ta-oncology" style="font-weight: 600;">Oncology</a>
+                  <a href="/disease-breast-cancer" class="arca-nav-sub-disease">Breast Cancer</a>
+                  <a href="/disease-melanoma" class="arca-nav-sub-disease">Melanoma</a>
+                  <a href="/disease-nsclc" class="arca-nav-sub-disease">NSCLC</a>
+                  <a href="/disease-aml" class="arca-nav-sub-disease">AML</a>
+                  <a href="/ta-neurology" style="font-weight: 600; margin-top: 8px;">Neurology</a>
+                  <a href="/disease-alzheimers" class="arca-nav-sub-disease">Alzheimer's</a>
+                  <a href="/disease-parkinsons" class="arca-nav-sub-disease">Parkinson's</a>
+                  <a href="/disease-multiple-sclerosis" class="arca-nav-sub-disease">Multiple Sclerosis</a>
+                  <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
+                  <a href="/ta-immunology" style="font-weight: 600; margin-top: 8px;">Immunology</a>
+                  <a href="/disease-rheumatoid-arthritis" class="arca-nav-sub-disease">Rheumatoid Arthritis</a>
+                  <a href="/disease-psoriasis" class="arca-nav-sub-disease">Psoriasis</a>
+                  <a href="/disease-lupus" class="arca-nav-sub-disease">Lupus</a>
+                  <a href="/ta-cardiology" style="font-weight: 600; margin-top: 8px;">Cardiology</a>
+                  <a href="/disease-afib" class="arca-nav-sub-disease">AFib</a>
+                  <a href="/disease-heart-failure" class="arca-nav-sub-disease">Heart Failure</a>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <a href="/ta-respiratory" style="font-weight: 600;">Respiratory</a>
+                  <a href="/disease-asthma" class="arca-nav-sub-disease">Asthma</a>
+                  <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
+                  <a href="/ta-rare-diseases" style="font-weight: 600; margin-top: 8px;">Rare Diseases</a>
+                  <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
+                  <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
+                  <a href="/ta-dermatology" style="font-weight: 600; margin-top: 8px;">Dermatology</a>
+                  <a href="/disease-atopic-dermatitis" class="arca-nav-sub-disease">Atopic Dermatitis</a>
+                  <a href="/disease-psoriatic-arthritis" class="arca-nav-sub-disease">Psoriatic Arthritis</a>
+                  <a href="/ta-hematology" style="font-weight: 600; margin-top: 8px;">Hematology</a>
+                  <a href="/disease-multiple-myeloma" class="arca-nav-sub-disease">Multiple Myeloma</a>
+                  <a href="/disease-cll" class="arca-nav-sub-disease">CLL</a>
+                  <a href="/disease-sickle-cell" class="arca-nav-sub-disease">Sickle Cell Disease</a>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <a href="/ta-gastroenterology" style="font-weight: 600;">Gastroenterology</a>
+                  <a href="/disease-crohns-disease" class="arca-nav-sub-disease">Crohn's Disease</a>
+                  <a href="/disease-ulcerative-colitis" class="arca-nav-sub-disease">Ulcerative Colitis</a>
+                  <a href="/ta-endocrinology" style="font-weight: 600; margin-top: 8px;">Endocrinology</a>
+                  <a href="/disease-type-2-diabetes" class="arca-nav-sub-disease">Type 2 Diabetes</a>
+                  <a href="/disease-obesity" class="arca-nav-sub-disease">Obesity</a>
+                  <a href="/ta-infectious-disease" style="font-weight: 600; margin-top: 8px;">Infectious Disease</a>
+                  <a href="/disease-hiv" class="arca-nav-sub-disease">HIV</a>
+                  <a href="/disease-hepatitis-b" class="arca-nav-sub-disease">Hepatitis B</a>
+                  <a href="/ta-pediatrics" style="font-weight: 600; margin-top: 8px;">Pediatrics</a>
+                  <a href="/disease-pediatric-epilepsy" class="arca-nav-sub-disease">Pediatric Epilepsy</a>
+                  <div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid rgba(209,213,222,0.5);">
+                    <a href="/solution-therapeutic-area" style="font-weight: 600; color: var(--blue-600);">View All Areas →</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -164,8 +173,55 @@
       <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
         Talk to a Scientist
       </a>
+      <button class="arca-nav-hamburger" data-mobile-nav-trigger aria-label="Open menu" aria-expanded="false">
+        <span class="arca-nav-hamburger-bar"></span>
+      </button>
     </div>
   </nav>
+  <!-- Mobile Navigation -->
+  <div class="arca-mobile-nav" data-mobile-nav>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Platform</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/platform-overview">Platform Overview</a>
+        <a href="/platform-how-it-works">How It Works</a>
+        <a href="/platform-data-intelligence">Data Intelligence</a>
+        <a href="/platform-ai-models">AI Models</a>
+        <a href="/platform-outputs">Regulatory Outputs</a>
+        <a href="/platform-integrations">Integrations</a>
+      </div>
+    </div>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Solutions</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/solution-therapeutic-area">By Therapeutic Area</a>
+        <a href="/solution-lifecycle-phase">By Lifecycle Phase</a>
+        <a href="/solution-role">By Role</a>
+        <a href="/solution-early-development">Early Development</a>
+        <a href="/solution-late-development">Late Development</a>
+        <a href="/solution-post-marketing">Post-Marketing</a>
+      </div>
+    </div>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Evidence</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/evidence-case-studies-hub">Case Studies</a>
+        <a href="/evidence-publications">Publications</a>
+        <a href="/evidence-metrics">Platform Metrics</a>
+      </div>
+    </div>
+    <div class="arca-mobile-nav-section">
+      <p class="arca-mobile-nav-heading">Company</p>
+      <div class="arca-mobile-nav-sub">
+        <a href="/about">About ArcaScience</a>
+        <a href="/leadership">Leadership</a>
+        <a href="/careers">Careers</a>
+        <a href="/science-methodology">Science &amp; Methodology</a>
+      </div>
+    </div>
+    <a href="/resource-hub">Resources</a>
+    <a href="/contact" style="color: var(--blue-600); font-weight: 600;">Talk to a Scientist</a>
+  </div>
 
   <!-- Spacer for fixed nav -->
   <div style="height: var(--nav-height);"></div>
@@ -216,13 +272,13 @@
             Solutions by Therapeutic Area
           </p>
           <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
-            AI-Driven BRA Across 12 Therapeutic Areas
+            Precision Benefit-Risk Analysis Across Every Therapeutic Area
           </h1>
           <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
-            Every therapeutic area has unique benefit-risk challenges. ArcaScience configures its data intelligence, AI models, and regulatory outputs for each TA's specific safety signals, patient populations, and regulatory requirements.
+            ArcaScience's AI-driven BRA platform is pre-configured with domain-specific knowledge for 12 therapeutic areas, analyzing safety profiles, efficacy benchmarks, and regulatory precedents unique to each field.
           </p>
           <a href="/contact" class="arca-btn-primary-inverted">
-            Request a TA-Specific Briefing
+            Request a Therapeutic Area Briefing
           </a>
         </div>
 
@@ -240,22 +296,22 @@
             <p class="arca-caption">Therapeutic areas covered</p>
           </div>
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="20" data-countup-suffix="+">20+</span>
+            <span class="arca-stat-lg" data-countup="30" data-countup-suffix="+">30+</span>
             <p class="arca-caption">Disease-specific models</p>
           </div>
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="50" data-countup-suffix="+">50+</span>
-            <p class="arca-caption">Regulatory submissions supported</p>
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">100B+</span>
+            <p class="arca-caption">Data points analyzed</p>
           </div>
           <div class="arca-credibility-metric">
-            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="B+">100B+</span>
-            <p class="arca-caption">Data points across all TAs</p>
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="%">100%</span>
+            <p class="arca-caption">Regulatory acceptance</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: TA GRID — PRIMARY THERAPEUTIC AREAS -->
+    <!-- SECTION 3: TA CARDS GRID -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
     <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
@@ -270,270 +326,348 @@
           </p>
         </div>
 
-        <!-- TA Cards Grid — 3 columns -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <!-- TA Cards Grid — 2 columns -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
 
-          <!-- Oncology -->
-          <a href="/ta-oncology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--teal-100), var(--teal-50)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="3" fill="var(--teal-500)" opacity="0.5"/><path d="M10 3v14M3 10h14" stroke="var(--teal-600)" stroke-width="1" opacity="0.3"/></svg>
+          <!-- 1. Oncology -->
+          <a href="/ta-oncology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--teal-100), var(--teal-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Molecule icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="4" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/>
+                <circle cx="14" cy="5" r="2.5" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/>
+                <circle cx="21.5" cy="18.5" r="2.5" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/>
+                <circle cx="6.5" cy="18.5" r="2.5" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/>
+                <line x1="14" y1="10" x2="14" y2="7.5" stroke="var(--teal-600)" stroke-width="1.5"/>
+                <line x1="17.5" y1="16" x2="19.5" y2="17" stroke="var(--teal-600)" stroke-width="1.5"/>
+                <line x1="10.5" y1="16" x2="8.5" y2="17" stroke="var(--teal-600)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Oncology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Complex safety profiles, biomarker-driven therapies, accelerated approvals, and immunotherapy combinations.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Breast Cancer</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Melanoma</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">NSCLC</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">AML</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Oncology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Oncology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Complex multi-drug regimens, immunotherapy safety, accelerated approvals. AI models for immune-related AEs, biomarker subgroups, and combination toxicity.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">NSCLC</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Breast Cancer</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Melanoma</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">AML</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Oncology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Neurology -->
-          <a href="/ta-neurology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--indigo-100), var(--indigo-50)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C6 2 3 5 3 9c0 3 2 5 4 6v2h6v-2c2-1 4-3 4-6 0-4-3-7-7-7z" stroke="var(--indigo-600)" stroke-width="1.5" fill="none"/><path d="M7 18h6" stroke="var(--indigo-600)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <!-- 2. Neurology -->
+          <a href="/ta-neurology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--indigo-100), var(--indigo-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Brain icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 4C9 4 5 8 5 13c0 4 3 7 5.5 8.5V24h7v-2.5C20 20 23 17 23 13c0-5-4-9-9-9z" stroke="var(--indigo-600)" stroke-width="1.5" fill="none"/>
+                <path d="M14 4v20" stroke="var(--indigo-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+                <path d="M9 10c2 1 3 3 3 5" stroke="var(--indigo-600)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+                <path d="M19 10c-2 1-3 3-3 5" stroke="var(--indigo-600)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+                <path d="M10 25h8" stroke="var(--indigo-600)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Neurology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Neurodegenerative disease BRA, CNS safety monitoring, and long-term outcome modeling.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Alzheimer's</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Parkinson's</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Multiple Sclerosis</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">SMA</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Neurology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Neurology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Neurodegenerative diseases, long treatment durations, cognitive endpoints. AI models for CNS safety signals, disease progression, and biomarker monitoring.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Alzheimer's</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Parkinson's</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Multiple Sclerosis</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">SMA</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Neurology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Immunology -->
-          <a href="/ta-immunology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--green-100), var(--green-50)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke="var(--green-600)" stroke-width="1.5" fill="none"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4M4.3 4.3l2.8 2.8M12.9 12.9l2.8 2.8M4.3 15.7l2.8-2.8M12.9 7.1l2.8-2.8" stroke="var(--green-600)" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+          <!-- 3. Immunology -->
+          <a href="/ta-immunology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--green-100), var(--green-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Shield icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 3L5 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7L14 3z" stroke="var(--green-600)" stroke-width="1.5" fill="none"/>
+                <circle cx="14" cy="13" r="3" stroke="var(--green-600)" stroke-width="1.5" fill="none"/>
+                <path d="M14 10v-2M14 18v-2M11 13H9M19 13h-2" stroke="var(--green-600)" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Immunology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Autoimmune disease benefit-risk, immunosuppression safety profiles, and biologic therapy monitoring.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Rheumatoid Arthritis</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Psoriasis</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Lupus</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Immunology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Immunology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Autoimmune diseases, biologic safety, infection risk monitoring. AI models for immune suppression signals, anti-drug antibodies, and long-term risk.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Rheumatoid Arthritis</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Psoriasis</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Lupus</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Immunology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Cardiology -->
-          <a href="/ta-cardiology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(220,38,38,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17s-7-4.5-7-9c0-2.5 2-4.5 4.5-4.5 1.5 0 2.5.8 2.5.8s1-.8 2.5-.8C15 3.5 17 5.5 17 8c0 4.5-7 9-7 9z" stroke="#dc2626" stroke-width="1.5" fill="none"/></svg>
+          <!-- 4. Cardiology -->
+          <a href="/ta-cardiology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(220,38,38,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Heart icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 24s-10-6.5-10-13c0-3.5 2.8-6.5 6.5-6.5 2 0 3.5 1 3.5 1s1.5-1 3.5-1C21.2 4.5 24 7.5 24 11c0 6.5-10 13-10 13z" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+                <path d="M8 13h3l2-3 2 5 2-3h3" stroke="#dc2626" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Cardiology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Cardiovascular outcome trials, arrhythmia risk modeling, and heart failure therapy assessment.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">AFib</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Heart Failure</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Cardiology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Cardiology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              CV outcomes trials, arrhythmia monitoring, heart failure endpoints. AI models for QT prolongation detection, MACE analysis, and cardiovascular risk profiling.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Atrial Fibrillation</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Heart Failure</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Cardiology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Respiratory -->
-          <a href="/ta-respiratory" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--blue-100), var(--blue-50)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v10M10 13c-3 0-6 2-6 4h12c0-2-3-4-6-4z" stroke="var(--blue-600)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M7 8c-2 0-4 1-4 3M13 8c2 0 4 1 4 3" stroke="var(--blue-600)" stroke-width="1" opacity="0.5" stroke-linecap="round"/></svg>
+          <!-- 5. Respiratory -->
+          <a href="/ta-respiratory" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--blue-100), var(--blue-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Lungs icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 5v12" stroke="var(--blue-600)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M14 17c-4 0-8 2-8 5h8" stroke="var(--blue-600)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M14 17c4 0 8 2 8 5h-8" stroke="var(--blue-600)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M9 11c-3 0-5 2-5 4" stroke="var(--blue-600)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+                <path d="M19 11c3 0 5 2 5 4" stroke="var(--blue-600)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Respiratory</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Pulmonary safety analysis, inhaled therapy BRA, and rare lung disease modeling.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Asthma</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Cystic Fibrosis</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Respiratory</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Respiratory Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Chronic respiratory diseases, inhalation device safety, exacerbation endpoints. AI models for pulmonary function decline, infection signals, and biologic safety.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Asthma</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Cystic Fibrosis</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Respiratory <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Rare Diseases -->
-          <a href="/ta-rare-diseases" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(147,51,234,0.1), rgba(147,51,234,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.3L10 14.5 5.1 17l.9-5.3-4-3.9L7.5 7z" stroke="#9333ea" stroke-width="1.5" fill="none"/></svg>
+          <!-- 6. Rare Diseases -->
+          <a href="/ta-rare-diseases" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(147,51,234,0.1), rgba(147,51,234,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- DNA icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M10 4v20" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M18 4v20" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 8h8M10 13h8M10 18h8" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="10" cy="8" r="1.5" fill="#9333ea" opacity="0.3"/>
+                <circle cx="18" cy="13" r="1.5" fill="#9333ea" opacity="0.3"/>
+                <circle cx="10" cy="18" r="1.5" fill="#9333ea" opacity="0.3"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Rare Diseases</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Small-population BRA, gene therapy safety, and accelerated approval pathway support.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">SMA</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Cystic Fibrosis</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Rare Diseases</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Rare Diseases Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Small patient populations, orphan drug pathways, novel gene therapies. AI models for sparse data analysis, natural history modeling, and single-arm trial evaluation.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">SMA</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Gene Therapies</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Orphan Drugs</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Rare Diseases <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Dermatology -->
-          <a href="/ta-dermatology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="4" width="12" height="12" rx="3" stroke="#f59e0b" stroke-width="1.5" fill="none"/><path d="M7 8h6M7 11h4" stroke="#f59e0b" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
+          <!-- 7. Dermatology -->
+          <a href="/ta-dermatology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Skin layers icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M6 10c4-2 8 2 12 0s4-2 4-2" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M6 15c4-2 8 2 12 0s4-2 4-2" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+                <path d="M6 20c4-2 8 2 12 0s4-2 4-2" stroke="#f59e0b" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.3"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Dermatology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Skin disease benefit-risk, biologic safety in dermatology, and topical vs systemic therapy comparison.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Atopic Dermatitis</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Psoriatic Arthritis</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Dermatology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Dermatology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Chronic skin conditions, biologic escalation, patient-reported outcomes. AI models for treatment response patterns, skin-specific AEs, and PRO integration.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Atopic Dermatitis</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Psoriasis</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Dermatology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Gastroenterology -->
-          <a href="/ta-gastroenterology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(234,88,12,0.1), rgba(234,88,12,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4c0 3 4 4 4 8s-4 5-4 5M14 4c0 3-4 4-4 8s4 5 4 5" stroke="#ea580c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <!-- 8. Hematology -->
+          <a href="/ta-hematology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(190,18,60,0.1), rgba(190,18,60,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Blood drop icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 4c-3 4.5-7 7.5-7 12.5C7 20.4 10.1 24 14 24s7-3.6 7-7.5C21 11.5 17 8.5 14 4z" stroke="#be123c" stroke-width="1.5" fill="none"/>
+                <circle cx="14" cy="17" r="2.5" stroke="#be123c" stroke-width="1" fill="none" opacity="0.4"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Hematology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Blood cancer and blood disorder BRA, CAR-T safety monitoring, and transfusion-dependent disease analysis.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Multiple Myeloma</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">CLL</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Sickle Cell Disease</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Gastroenterology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Hematology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              IBD biologics, hepatotoxicity monitoring, GI-specific endpoints. AI models for gut-immune interactions, liver safety signals, and mucosal healing assessment.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Crohn's Disease</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Ulcerative Colitis</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Gastroenterology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Hematology -->
-          <a href="/ta-hematology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(190,18,60,0.1), rgba(190,18,60,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c-2 3-5 5-5 8.5C5 14.5 7.2 17 10 17s5-2.5 5-5.5C15 8 12 6 10 3z" stroke="#be123c" stroke-width="1.5" fill="none"/></svg>
+          <!-- 9. Gastroenterology -->
+          <a href="/ta-gastroenterology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(234,88,12,0.1), rgba(234,88,12,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Stomach icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M9 6c0 4 6 5 6 11s-6 7-6 7" stroke="#ea580c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M19 6c0 4-6 5-6 11s6 7 6 7" stroke="#ea580c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <path d="M11 14h6" stroke="#ea580c" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Gastroenterology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                IBD benefit-risk analysis, GI safety profiling, and mucosal healing outcome modeling.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Crohn's Disease</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Ulcerative Colitis</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Hematology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Gastroenterology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Blood disorders, cell and gene therapies, coagulation monitoring. AI models for cytopenias, bleeding/thrombotic events, and transfusion-related safety.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Multiple Myeloma</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">AML</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Hematology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Endocrinology -->
-          <a href="/ta-endocrinology" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(5,150,105,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#059669" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="2" fill="#059669" opacity="0.3"/><path d="M10 4v2M10 14v2M4 10h2M14 10h2" stroke="#059669" stroke-width="1" stroke-linecap="round" opacity="0.4"/></svg>
+          <!-- 10. Endocrinology -->
+          <a href="/ta-endocrinology" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(5,150,105,0.1), rgba(5,150,105,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Gland icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <ellipse cx="14" cy="12" rx="6" ry="4" stroke="#059669" stroke-width="1.5" fill="none"/>
+                <path d="M14 16v6" stroke="#059669" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M11 22h6" stroke="#059669" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="14" cy="8" r="1" fill="#059669" opacity="0.4"/>
+                <path d="M10 10c0-2 2-4 4-4s4 2 4 4" stroke="#059669" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Endocrinology</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Metabolic disease BRA, diabetes cardiovascular risk modeling, and weight management safety analysis.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Type 2 Diabetes</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Obesity</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Endocrinology</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Endocrinology Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Metabolic diseases, GLP-1 safety, CV outcome requirements. AI models for hypoglycemia detection, weight-related AEs, and long-term metabolic monitoring.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Type 2 Diabetes</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Endocrinology <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Infectious Disease -->
-          <a href="/ta-infectious-disease" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(14,165,233,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="5" stroke="#0ea5e9" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="2" stroke="#0ea5e9" stroke-width="1" fill="none" opacity="0.5"/><line x1="10" y1="1" x2="10" y2="5" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/><line x1="10" y1="15" x2="10" y2="19" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/><line x1="1" y1="10" x2="5" y2="10" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/><line x1="15" y1="10" x2="19" y2="10" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round"/></svg>
+          <!-- 11. Infectious Disease -->
+          <a href="/ta-infectious-disease" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(14,165,233,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Virus icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="6" stroke="#0ea5e9" stroke-width="1.5" fill="none"/>
+                <circle cx="14" cy="14" r="2.5" stroke="#0ea5e9" stroke-width="1" fill="none" opacity="0.5"/>
+                <line x1="14" y1="3" x2="14" y2="8" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="14" y1="20" x2="14" y2="25" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3" y1="14" x2="8" y2="14" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="20" y1="14" x2="25" y2="14" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="6.2" y1="6.2" x2="9.7" y2="9.7" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+                <line x1="18.3" y1="18.3" x2="21.8" y2="21.8" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Infectious Disease</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Antiviral therapy BRA, resistance pattern analysis, and long-term treatment safety monitoring.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">HIV</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Hepatitis B</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Infectious Disease</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Infectious Disease Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Antivirals, vaccines, antimicrobial resistance. AI models for resistance pattern detection, vaccine safety signals, and rapid outbreak response analysis.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Antivirals</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Vaccines</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Infectious Disease <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
-          <!-- Pediatrics -->
-          <a href="/ta-pediatrics" class="arca-card" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;" data-animate>
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-4);">
-              <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.05)); display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#6366f1" stroke-width="1.5" fill="none"/><path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#6366f1" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <!-- 12. Pediatrics -->
+          <a href="/ta-pediatrics" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Child icon -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="8" r="4" stroke="#6366f1" stroke-width="1.5" fill="none"/>
+                <path d="M8 24c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#6366f1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="12" cy="7.5" r="0.8" fill="#6366f1" opacity="0.5"/>
+                <circle cx="16" cy="7.5" r="0.8" fill="#6366f1" opacity="0.5"/>
+                <path d="M12.5 9.5c0.8 0.5 2.2 0.5 3 0" stroke="#6366f1" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Pediatrics</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Age-appropriate dosing safety, pediatric-specific adverse event modeling, and developmental outcome tracking.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Pediatric Epilepsy</span>
               </div>
-              <h3 class="arca-heading-2" style="margin: 0;">Pediatrics</h3>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Pediatrics Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
             </div>
-            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4); flex-grow: 1;">
-              Developmental safety, age-appropriate formulations, growth monitoring. AI models for pediatric dosing, developmental toxicity, and age-stratified safety analysis.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Pediatric Oncology</span>
-              <span style="padding: 2px 8px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600);">Rare Pediatric</span>
-            </div>
-            <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
-              Explore Pediatrics <span class="arca-arrow">&rarr;</span>
-            </span>
           </a>
 
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: HOW IT WORKS — 3 MODULES -->
+    <!-- SECTION 4: TAILORED TO YOUR THERAPEUTIC AREA -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
     <section style="padding: var(--space-9) 0;" data-animate>
       <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
         <div style="text-align: center; margin-bottom: var(--space-8);">
-          <p class="arca-section-label">Platform Capabilities</p>
+          <p class="arca-section-label">Platform Architecture</p>
           <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
-            Configured for Every Therapeutic Area
+            Tailored to Your Therapeutic Area
           </h2>
           <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
-            Our three integrated modules adapt to each TA's unique data landscape, safety patterns, and regulatory requirements.
+            ArcaScience's three integrated modules adapt to each therapeutic area's unique data landscape, safety patterns, and regulatory requirements.
           </p>
         </div>
 
@@ -542,10 +676,10 @@
           <div class="arca-card arca-card-colored-top is-data" data-animate>
             <span class="arca-module-tag is-data">Data Intelligence</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
-              TA-Specific Data Pipelines
+              Domain-Specific Knowledge
             </h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
-              Curated data sources for each therapeutic area — clinical trial registries, adverse event databases, TA-specific literature, real-world evidence, and regulatory submissions. MedDRA coding configured for TA-specific safety signal categories.
+              Pre-built disease models with TA-specific safety parameters, efficacy benchmarks, and regulatory precedents. Curated data pipelines for each therapeutic area ensure comprehensive, up-to-date evidence.
             </p>
             <a href="/platform-data-intelligence" class="arca-btn-tertiary">
               Explore Data Engine <span class="arca-arrow">&rarr;</span>
@@ -555,10 +689,10 @@
           <div class="arca-card arca-card-colored-top is-analytics" data-animate>
             <span class="arca-module-tag is-analytics">Decision Intelligence</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
-              TA-Trained AI Models
+              Adaptive AI Models
             </h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
-              AI models trained on TA-specific safety and efficacy patterns. Signal detection algorithms tuned for each therapeutic area's unique adverse event profiles, subpopulation characteristics, and regulatory precedents.
+              AI models trained on TA-specific literature, trial data, and post-marketing evidence for each disease area. Signal detection algorithms tuned for each therapeutic area's unique adverse event profiles.
             </p>
             <a href="/platform-ai-models" class="arca-btn-tertiary">
               Explore AI Models <span class="arca-arrow">&rarr;</span>
@@ -568,10 +702,10 @@
           <div class="arca-card arca-card-colored-top is-output" data-animate>
             <span class="arca-module-tag is-output">Automated Outputs</span>
             <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
-              TA-Formatted Reports
+              Regulatory-Ready Outputs
             </h3>
             <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
-              Submission-ready outputs with TA-specific safety sections, efficacy endpoints, and regulatory citations. Templates pre-configured for FDA, EMA, and PMDA requirements in each therapeutic area.
+              Pre-formatted outputs aligned with TA-specific regulatory requirements and submission standards. Templates configured for FDA, EMA, and PMDA requirements in each therapeutic area.
             </p>
             <a href="/platform-outputs" class="arca-btn-tertiary">
               Explore Outputs <span class="arca-arrow">&rarr;</span>
@@ -589,17 +723,17 @@
 
       <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
         <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
-          Get a TA-Specific Platform Demo
+          Explore How ArcaScience Supports Your Therapeutic Area
         </h2>
         <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
-          Tell us your therapeutic area and we'll show you exactly how ArcaScience's data intelligence, AI models, and regulatory outputs are configured for your specific BRA challenges.
+          Tell us your therapeutic focus and we'll show you how ArcaScience's domain-specific AI models deliver faster, more comprehensive benefit-risk analysis.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <a href="/contact" class="arca-btn-primary-inverted">
             Request a Briefing
           </a>
           <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
-            Explore the Platform <span class="arca-arrow">&rarr;</span>
+            View Platform Overview <span class="arca-arrow">&rarr;</span>
           </a>
         </div>
       </div>
@@ -637,14 +771,13 @@
           <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
           <nav style="display: flex; flex-direction: column; gap: 12px;">
             <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
-            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
-            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
-            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
-            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
-            <a href="/ta-respiratory" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Respiratory</a>
-            <a href="/ta-rare-diseases" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Rare Diseases</a>
-            <a href="/ta-dermatology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Dermatology</a>
-            <a href="/ta-hematology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Hematology</a>
+            <a href="/solution-lifecycle-phase" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Lifecycle Phases</a>
+            <a href="/solution-role" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">By Role</a>
+            <a href="/role-drug-safety" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Drug Safety</a>
+            <a href="/role-regulatory-affairs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Affairs</a>
+            <a href="/role-clinical-ops" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Clinical Operations</a>
+            <a href="/role-market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+            <a href="/role-cmo" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">CMO</a>
           </nav>
         </div>
 

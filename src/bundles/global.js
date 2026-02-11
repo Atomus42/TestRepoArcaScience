@@ -63,6 +63,7 @@ function initDropdowns() {
       dropdown.style.transform = 'translateY(0)';
       dropdown.style.pointerEvents = 'auto';
       wrap.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
       activeDropdown = wrap;
     }
 
@@ -96,14 +97,39 @@ function initDropdowns() {
 
   function closeDropdown(wrap) {
     const dropdown = wrap.querySelector('.arca-nav-dropdown');
+    const trigger = wrap.querySelector('.arca-nav-link');
     if (!dropdown) return;
     dropdown.style.opacity = '0';
     dropdown.style.visibility = 'hidden';
     dropdown.style.transform = 'translateY(-8px)';
     dropdown.style.pointerEvents = 'none';
     wrap.classList.remove('is-open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
     if (activeDropdown === wrap) activeDropdown = null;
   }
+
+  // Reposition dropdown if it overflows viewport bottom
+  function repositionDropdown(dropdown) {
+    if (!dropdown) return;
+    const rect = dropdown.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const overflow = rect.bottom - viewportHeight + 16; // 16px safety margin
+    if (overflow > 0) {
+      // Set max-height to fit in viewport
+      const maxH = Math.max(200, rect.height - overflow);
+      dropdown.style.maxHeight = maxH + 'px';
+      dropdown.style.overflowY = 'auto';
+    }
+  }
+
+  // Reposition all dropdowns on open
+  wraps.forEach((wrap) => {
+    const dropdown = wrap.querySelector('.arca-nav-dropdown');
+    if (!dropdown) return;
+    wrap.addEventListener('mouseenter', () => {
+      requestAnimationFrame(() => repositionDropdown(dropdown));
+    });
+  });
 
   // Sub-dropdown hover handling
   const subWraps = document.querySelectorAll('.arca-nav-subdropdown-wrap');
@@ -146,6 +172,42 @@ function initDropdowns() {
   document.addEventListener('click', (e) => {
     if (activeDropdown && !activeDropdown.contains(e.target)) {
       closeDropdown(activeDropdown);
+    }
+  });
+}
+
+/**
+ * Mobile navigation — hamburger toggle for mobile viewports
+ */
+function initMobileNav() {
+  const hamburger = document.querySelector('[data-mobile-nav-trigger]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('is-open');
+    mobileNav.classList.toggle('is-open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      mobileNav.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+      hamburger.classList.remove('is-open');
+      mobileNav.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
   });
 }
@@ -751,6 +813,7 @@ function init() {
   // Webflow component behaviors
   initDropdowns();
   initNavigation();
+  initMobileNav();
   initAccordions();
   initTabs();
   initScrollProgress();

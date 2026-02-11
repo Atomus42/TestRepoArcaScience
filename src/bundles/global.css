@@ -31,8 +31,12 @@
   --grey-50:  #F7F8FA;
   --white:    #FFFFFF;
 
+  --teal-800:   #065F46;
+  --teal-700:   #047857;
   --teal-600:   #0D7C6B;
   --teal-100:   #E0F5F1;
+  --teal-50:    #F0FDFA;
+  --grey-500:   #6B7280;
   --indigo-600: #4338CA;
   --indigo-100: #EEF0FF;
   --green-600:  #16803C;
@@ -96,6 +100,7 @@
 .arca-heading-1   { font-size: 2rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
 .arca-heading-2   { font-size: 1.5rem; font-weight: 600; line-height: 1.25; letter-spacing: -0.005em; }
 .arca-heading-3   { font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
+.arca-heading-4   { font-size: 1rem; font-weight: 600; line-height: 1.4; }
 .arca-body-lg     { font-size: 1.125rem; font-weight: 400; line-height: 1.6; }
 .arca-body-md     { font-size: 1rem; font-weight: 400; line-height: 1.65; }
 .arca-body-sm     { font-size: 0.875rem; font-weight: 400; line-height: 1.6; }
@@ -121,6 +126,10 @@
 .arca-bg-green-100  { background-color: var(--green-100); }
 
 .arca-text-blue-600   { color: var(--blue-600); }
+.arca-text-blue-400   { color: var(--blue-400); }
+.arca-text-blue-200   { color: rgba(196, 218, 246, 1); }
+.arca-text-blue-100   { color: rgba(214, 229, 249, 1); }
+.arca-text-blue-300   { color: rgba(170, 202, 240, 1); }
 .arca-text-grey-900   { color: var(--grey-900); }
 .arca-text-grey-800   { color: var(--grey-800); }
 .arca-text-grey-600   { color: var(--grey-600); }
@@ -128,6 +137,263 @@
 .arca-text-teal-600   { color: var(--teal-600); }
 .arca-text-indigo-600 { color: var(--indigo-600); }
 .arca-text-green-600  { color: var(--green-600); }
+.arca-text-center     { text-align: center; }
+
+/* =========================================================================
+   Layout — Container, Sections, Grids, Spacing
+   ========================================================================= */
+.arca-container {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.arca-section {
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-9);
+}
+
+/* Spacing utilities */
+.arca-py-7  { padding-top: var(--space-7);  padding-bottom: var(--space-7); }
+.arca-py-8  { padding-top: var(--space-8);  padding-bottom: var(--space-8); }
+.arca-py-9  { padding-top: var(--space-9);  padding-bottom: var(--space-9); }
+.arca-py-10 { padding-top: var(--space-10); padding-bottom: var(--space-10); }
+
+/* Grid layouts */
+.arca-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.arca-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.arca-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.arca-grid-7-5 { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; }
+.arca-grid-5-7 { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: center; }
+
+@media (max-width: 1023px) {
+  .arca-grid-2, .arca-grid-7-5, .arca-grid-5-7 { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .arca-grid-3, .arca-grid-4 { grid-template-columns: 1fr; }
+  .arca-section { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .arca-py-8 { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .arca-py-9 { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .arca-py-10 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+}
+
+/* =========================================================================
+   Navigation Inner Structure
+   ========================================================================= */
+.arca-nav-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.arca-nav-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--blue-600);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.arca-nav-logo:hover { text-decoration: none; }
+.arca-nav-logo img { height: 32px; }
+.arca-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.arca-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================================================================
+   Card Inner
+   ========================================================================= */
+.arca-card-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================================
+   Feature List
+   ========================================================================= */
+.arca-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+}
+.arca-feature-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: var(--space-3);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--grey-600);
+}
+.arca-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-600), var(--teal-600));
+}
+
+/* =========================================================================
+   Hero Actions
+   ========================================================================= */
+.arca-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: var(--space-5);
+}
+
+/* =========================================================================
+   Workflow Visual & Placeholder
+   ========================================================================= */
+.arca-workflow-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arca-placeholder-img {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--grey-100);
+}
+
+/* =========================================================================
+   Resource Tags
+   ========================================================================= */
+.arca-resource-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+.arca-resource-tag.is-whitepaper { background: var(--blue-100); color: var(--blue-600); }
+.arca-resource-tag.is-webinar { background: var(--indigo-100); color: var(--indigo-600); }
+.arca-resource-tag.is-case-study { background: var(--teal-100); color: var(--teal-600); }
+.arca-resource-tag.is-blog { background: var(--green-100); color: var(--green-600); }
+
+/* =========================================================================
+   Breadcrumb
+   ========================================================================= */
+.arca-breadcrumb {
+  padding: var(--space-4) 0;
+  font-size: 0.75rem;
+}
+.arca-breadcrumb a {
+  color: var(--grey-600);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+.arca-breadcrumb a:hover { color: var(--blue-600); }
+.arca-breadcrumb span { color: var(--grey-900); }
+.arca-breadcrumb-sep { color: var(--grey-400); margin: 0 6px; }
+
+/* =========================================================================
+   Testimonial Attribution
+   ========================================================================= */
+.arca-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--grey-200);
+  flex-shrink: 0;
+}
+.arca-testimonial-attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: var(--space-5);
+}
+
+/* =========================================================================
+   Footer
+   ========================================================================= */
+.arca-footer {
+  padding: var(--space-9) 0 var(--space-7);
+}
+.arca-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.arca-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+.arca-footer-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-4);
+}
+.arca-footer-heading {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.60);
+  margin-bottom: var(--space-4);
+}
+.arca-footer-link {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 2;
+  transition: color 150ms ease;
+}
+.arca-footer-link:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+.arca-footer-bottom {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arca-footer-legal {
+  display: flex;
+  gap: 24px;
+}
+.arca-footer-legal .arca-footer-link {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.60);
+}
+
+@media (max-width: 1023px) {
+  .arca-footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 767px) {
+  .arca-footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .arca-footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .arca-nav-inner { padding: 0 16px; }
+  .arca-nav-links { display: none; }
+  .arca-nav-hamburger { display: flex; }
+  .arca-footer-link {
+    line-height: 2.4;
+    padding: 4px 0;
+  }
+}
 
 /* =========================================================================
    Navigation — frosted glass with refined hover states
@@ -135,6 +401,9 @@
 .arca-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-height);
+  background-color: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: height 200ms ease, background-color 200ms ease, box-shadow 200ms ease, backdrop-filter 200ms ease;
 }
 .arca-nav.is-scrolled {
@@ -181,14 +450,14 @@
   flex-shrink: 0; transition: transform 200ms ease;
 }
 .arca-nav-subdropdown {
-  position: absolute;
-  top: -8px;
-  left: 100%;
-  margin-left: 4px;
-  min-width: 260px;
-  max-height: 70vh;
-  overflow-y: auto;
-  padding: 8px 0;
+  position: fixed;
+  top: var(--nav-height, 72px);
+  left: 50%;
+  width: min(90vw, 900px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 12px;
+  padding: 16px 12px;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -197,28 +466,31 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08);
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-8px);
+  transform: translateX(-50%) translateY(-8px);
   transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
   pointer-events: none;
   z-index: 101;
 }
 /* Gap bridge for sub-dropdown — covers the gap to the left */
 .arca-nav-subdropdown::before {
-  content: ''; position: absolute; top: 0; left: -12px; width: 12px; bottom: 0;
+  content: ''; position: absolute; top: 0; left: -16px; width: 16px; bottom: 0;
 }
 /* Show sub-dropdown on hover */
 .arca-nav-subdropdown-wrap:hover > .arca-nav-subdropdown,
 .arca-nav-subdropdown-wrap.is-sub-open > .arca-nav-subdropdown {
-  opacity: 1; visibility: visible; transform: translateX(0);
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
 .arca-nav-subdropdown-wrap:hover > .arca-nav-subdropdown-trigger svg.arca-chevron-right,
 .arca-nav-subdropdown-wrap.is-sub-open > .arca-nav-subdropdown-trigger svg.arca-chevron-right {
   transform: translateX(2px);
 }
-/* Sub-dropdown scrollbar styling */
+/* Dropdown scrollbar styling */
+.arca-nav-dropdown::-webkit-scrollbar,
 .arca-nav-subdropdown::-webkit-scrollbar { width: 4px; }
+.arca-nav-dropdown::-webkit-scrollbar-track,
 .arca-nav-subdropdown::-webkit-scrollbar-track { background: transparent; }
+.arca-nav-dropdown::-webkit-scrollbar-thumb,
 .arca-nav-subdropdown::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
 /* Sub-dropdown link styles */
 .arca-nav-subdropdown a {
@@ -1080,6 +1352,167 @@ section[data-animate].is-visible {
 .arca-ta-accent-bar.is-endocrinology { background: linear-gradient(90deg, #059669, #10B981); }
 .arca-ta-accent-bar.is-infectious-disease { background: linear-gradient(90deg, #047857, #34D399); }
 .arca-ta-accent-bar.is-pediatrics { background: linear-gradient(90deg, #2563EB, #60A5FA); }
+
+/* =========================================================================
+   Ergonomic Improvements — Focus, Accessibility, Mobile
+   ========================================================================= */
+
+/* Focus-visible outlines for all interactive elements */
+.arca-btn-secondary:focus-visible,
+.arca-btn-tertiary:focus-visible,
+.arca-btn-primary-inverted:focus-visible {
+  outline: 2px solid var(--blue-400);
+  outline-offset: 3px;
+}
+.arca-card:focus-within {
+  outline: 2px solid var(--blue-400);
+  outline-offset: 2px;
+}
+[data-accordion-trigger]:focus-visible {
+  outline: 2px solid var(--blue-400);
+  outline-offset: -2px;
+}
+.arca-nav-dropdown a:focus-visible,
+.arca-nav-subdropdown a:focus-visible {
+  outline: 2px solid var(--blue-400);
+  outline-offset: -2px;
+  background-color: var(--blue-50);
+}
+.arca-nav-link:focus-visible {
+  outline: 2px solid var(--blue-400);
+  outline-offset: 3px;
+}
+.arca-footer-link:focus-visible {
+  outline: 2px solid var(--blue-400);
+  outline-offset: 2px;
+}
+
+/* Body text links — underlined for accessibility (WCAG 1.4.1) */
+p a:not([class]), li a:not([class]), blockquote a:not([class]) {
+  text-decoration: underline;
+  text-decoration-color: rgba(35, 86, 160, 0.3);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 150ms ease;
+}
+p a:not([class]):hover, li a:not([class]):hover, blockquote a:not([class]):hover {
+  text-decoration-color: var(--blue-500);
+}
+
+/* Compliance badges — more visible trust signals */
+.arca-compliance-badge {
+  opacity: 0.75;
+  filter: grayscale(50%);
+}
+.arca-compliance-badge:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Section dividers — visible by default, JS enhances with animation */
+.arca-section-divider {
+  opacity: 1;
+}
+
+/* Reduced-motion class for JS-controlled reduced motion */
+.reduced-motion *, .reduced-motion *::before, .reduced-motion *::after {
+  animation-duration: 0ms !important;
+  transition-duration: 0ms !important;
+}
+
+/* Mobile hamburger menu */
+.arca-nav-hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+.arca-nav-hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--grey-800);
+  border-radius: 1px;
+  transition: transform 250ms ease, opacity 200ms ease;
+  position: relative;
+}
+.arca-nav-hamburger-bar::before,
+.arca-nav-hamburger-bar::after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--grey-800);
+  border-radius: 1px;
+  position: absolute;
+  left: 0;
+  transition: transform 250ms ease, opacity 200ms ease;
+}
+.arca-nav-hamburger-bar::before { top: -7px; }
+.arca-nav-hamburger-bar::after { top: 7px; }
+
+/* Hamburger open state */
+.arca-nav-hamburger.is-open .arca-nav-hamburger-bar { background: transparent; }
+.arca-nav-hamburger.is-open .arca-nav-hamburger-bar::before { top: 0; transform: rotate(45deg); }
+.arca-nav-hamburger.is-open .arca-nav-hamburger-bar::after { top: 0; transform: rotate(-45deg); }
+
+/* Mobile nav overlay */
+.arca-mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 999;
+  padding: calc(var(--nav-height) + 16px) 24px 32px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 250ms ease, transform 250ms ease, visibility 250ms ease;
+}
+.arca-mobile-nav.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.arca-mobile-nav a {
+  display: block;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--grey-800);
+  text-decoration: none;
+  border-bottom: 1px solid var(--grey-100);
+  transition: color 150ms ease;
+}
+.arca-mobile-nav a:hover { color: var(--blue-600); }
+.arca-mobile-nav .arca-mobile-nav-section {
+  margin-top: 16px;
+}
+.arca-mobile-nav .arca-mobile-nav-heading {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-400);
+  padding: 8px 0;
+  margin: 0;
+}
+.arca-mobile-nav .arca-mobile-nav-sub a {
+  padding-left: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--grey-600);
+}
 
 /* =========================================================================
    Responsive
