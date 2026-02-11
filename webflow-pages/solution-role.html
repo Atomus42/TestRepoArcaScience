@@ -1,15 +1,8 @@
 <!--
-  ArcaScience Solution by Role — Webflow Structure Reference
-  ===========================================================
-  REUSABLE TEMPLATE for 5 role/audience pages:
-  - For Drug Safety & PV Leaders (/solutions/role/drug-safety)
-  - For Regulatory Affairs (/solutions/role/regulatory-affairs)
-  - For Clinical Operations (/solutions/role/clinical-operations)
-  - For Market Access & HEOR (/solutions/role/market-access-heor)
-  - For Chief Medical Officers (/solutions/role/cmo)
-
-  Replace [ROLE_NAME], [ROLE_SLUG], [ROLE_TITLE], [ROLE_DESCRIPTION]
-  with actual content per page.
+  ArcaScience Solutions by Role Hub — Webflow Structure Reference
+  ================================================================
+  Hub page listing all 5 professional roles with links to role-specific pages.
+  Pattern mirrors solution-therapeutic-area.html.
 -->
 
 <!DOCTYPE html>
@@ -17,11 +10,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[ROLE_NAME] — ArcaScience Solutions</title>
-  <meta name="description" content="How ArcaScience helps [ROLE_NAME] professionals with AI-driven benefit-risk analysis. [ROLE_DESCRIPTION]">
+  <title>Solutions by Role — ArcaScience | AI-Driven Benefit-Risk Analysis</title>
+  <meta name="description" content="Explore ArcaScience's AI-driven benefit-risk analysis solutions for every stakeholder — drug safety, regulatory affairs, clinical operations, market access, and CMOs. Role-specific dashboards, outputs, and workflows.">
+
+  <!-- Fonts: self-hosted for performance -->
   <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
   <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
   <script>
     (function(){
       if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -32,16 +31,23 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       SECTION 1: Navigation (same on all pages)
-       ============================================================ -->
-  <nav class="arca-nav" data-nav="sticky">
-    <div class="arca-nav-inner">
-      <a href="/" class="arca-nav-logo" aria-label="ArcaScience home">
-        <!-- Webflow: Insert ArcaScience logo as image or SVG -->
-        ArcaScience
+  <!-- SCROLL PROGRESS BAR -->
+  <div data-scroll-progress></div>
+
+  <!-- NAVIGATION -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
       </a>
-      <div class="arca-nav-links">
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/platform-overview" class="arca-nav-link">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
@@ -55,6 +61,8 @@
             <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
           </div>
         </div>
+
+        <!-- Solutions dropdown — ACTIVE -->
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/solution-therapeutic-area" class="arca-nav-link is-active">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
@@ -120,6 +128,8 @@
             </div>
           </div>
         </div>
+
+
         <div style="position: relative;" class="arca-nav-dropdown-wrap">
           <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
@@ -137,378 +147,376 @@
             <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
           </div>
         </div>
-        <a href="/resource-hub" class="arca-nav-link">Resources</a>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
       </div>
-      <div class="arca-nav-actions">
-        <a href="/contact" class="arca-btn-primary">Talk to a Scientist</a>
-      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
     </div>
   </nav>
 
-  <main>
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
 
-    <!-- ============================================================
-         SECTION 2: Breadcrumb
-         ============================================================ -->
-    <div class="arca-breadcrumb" data-animate>
-      <div class="arca-container">
-        <a href="/solution-therapeutic-area">Solutions</a>
-        <span class="arca-breadcrumb-sep">/</span>
-        <a href="/solution-therapeutic-area">By Role</a>
-        <span class="arca-breadcrumb-sep">/</span>
-        <span>[ROLE_NAME]</span>
-      </div>
-    </div>
+  <main role="main">
 
-    <!-- ============================================================
-         SECTION 3: Hero — Role-specific value proposition
-         ============================================================ -->
-    <section class="arca-section arca-bg-blue-900 arca-py-10" style="position: relative; overflow: hidden;">
-<!-- arca-decor-injected -->
+    <!-- SECTION 1: HERO -->
+    <section class="arca-bg-blue-900" style="position: relative; overflow: hidden; padding: var(--space-8) 0 var(--space-9);" data-animate>
       <!-- arca-decor: glow orbs -->
       <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
 
-    <!-- arca-decor: solution funnel SVG -->
-    <svg width="400" height="320" viewBox="0 0 400 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.09; pointer-events: none; z-index: 0;">
-      <path d="M80 60 L320 60 L260 160 L260 240 L140 240 L140 160 Z" stroke="rgba(59,125,216,0.35)" stroke-width="1.5" fill="none"/>
-      <line x1="100" y1="90" x2="300" y2="90" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
-      <line x1="120" y1="120" x2="280" y2="120" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
-      <line x1="140" y1="160" x2="260" y2="160" stroke="rgba(59,125,216,0.1)" stroke-width="1"/>
-      <circle cx="150" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
-      <circle cx="200" cy="70" r="3" fill="rgba(59,125,216,0.25)"/>
-      <circle cx="250" cy="75" r="3" fill="rgba(59,125,216,0.3)"/>
-      <circle cx="175" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
-      <circle cx="225" cy="105" r="3" fill="rgba(59,125,216,0.25)"/>
-      <circle cx="200" cy="140" r="3" fill="rgba(59,125,216,0.2)"/>
-      <circle cx="200" cy="200" r="5" fill="rgba(59,125,216,0.35)"/>
-      <path d="M185 260 L200 280 L215 260" stroke="rgba(59,125,216,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    </svg>
+      <!-- arca-decor: people/org chart SVG pattern -->
+      <svg width="400" height="320" viewBox="0 0 400 320" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.07; pointer-events: none; z-index: 0;">
+        <!-- Central node -->
+        <circle cx="200" cy="160" r="20" stroke="rgba(59,125,216,0.3)" stroke-width="1.5" fill="none"/>
+        <circle cx="200" cy="160" r="6" fill="rgba(59,125,216,0.2)"/>
+        <!-- Top left role -->
+        <circle cx="80" cy="60" r="14" stroke="rgba(59,125,216,0.25)" stroke-width="1" fill="none"/>
+        <line x1="94" y1="68" x2="182" y2="148" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <!-- Top right role -->
+        <circle cx="320" cy="60" r="14" stroke="rgba(13,124,107,0.25)" stroke-width="1" fill="none"/>
+        <line x1="306" y1="68" x2="218" y2="148" stroke="rgba(13,124,107,0.15)" stroke-width="1"/>
+        <!-- Bottom left role -->
+        <circle cx="80" cy="260" r="14" stroke="rgba(59,125,216,0.25)" stroke-width="1" fill="none"/>
+        <line x1="94" y1="252" x2="182" y2="172" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <!-- Bottom right role -->
+        <circle cx="320" cy="260" r="14" stroke="rgba(13,124,107,0.25)" stroke-width="1" fill="none"/>
+        <line x1="306" y1="252" x2="218" y2="172" stroke="rgba(13,124,107,0.15)" stroke-width="1"/>
+        <!-- Middle left role -->
+        <circle cx="50" cy="160" r="14" stroke="rgba(59,125,216,0.2)" stroke-width="1" fill="none"/>
+        <line x1="64" y1="160" x2="180" y2="160" stroke="rgba(59,125,216,0.12)" stroke-width="1"/>
+      </svg>
 
-      <div class="arca-container" style="position: relative; z-index: 1;">
-        <div class="arca-section-label arca-text-blue-200">For [ROLE_TITLE]</div>
-        <h1 class="arca-display-lg arca-text-white" data-animate>
-          [HERO_HEADLINE]
-        </h1>
-        <p class="arca-body-lg arca-text-blue-100" style="max-width: 680px;" data-animate>
-          [HERO_SUBHEADLINE — Describe what ArcaScience does specifically for this role. 2-3 sentences.]
-        </p>
-        <div class="arca-hero-actions" data-animate>
-          <a href="/contact" class="arca-btn-primary-inverted">Request a [ROLE_NAME] Demo</a>
-          <a href="/platform-overview" class="arca-btn-tertiary arca-text-white">
-            Explore the Platform <span class="arca-arrow">&rarr;</span>
+      <div style="position: relative; z-index: 1; max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-5);">
+          <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 0.75rem;">
+            <li><a href="/" style="color: rgba(255,255,255,0.65); text-decoration: none;">Home</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li><a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none;">Solutions</a></li>
+            <li style="color: rgba(255,255,255,0.4);">/</li>
+            <li style="color: var(--white);">By Role</li>
+          </ol>
+        </nav>
+
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Solutions by Role
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Purpose-Built for Every Stakeholder in Benefit-Risk
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); max-width: 680px; margin-bottom: var(--space-7);">
+            Whether you lead drug safety, regulatory strategy, clinical operations, market access, or medical affairs, ArcaScience surfaces the insights and outputs that matter most to your function.
+          </p>
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request a Role-Specific Demo
           </a>
         </div>
+
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 4: Pain Points — What keeps [ROLE_NAME] up at night
-         ============================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
-
-<section class="arca-section arca-bg-green-100 arca-py-9">
-      <div class="arca-container">
-        <div class="arca-section-label" data-animate>Your Challenges</div>
-        <h2 class="arca-display-sm" data-animate>
-          The Reality of [ROLE_NAME] Today
-        </h2>
-        <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px;" data-animate>
-          [Describe the daily pressures and challenges this role faces with current BRA approaches. 2-3 sentences.]
-        </p>
-
-        <div class="arca-grid-3" data-animate>
-          <!-- Pain Point 1 -->
-          <div class="arca-card">
-            <div class="arca-card-inner">
-              <h3 class="arca-heading-3">[Pain Point 1 Title]</h3>
-              <p class="arca-body-sm arca-text-grey-600">
-                [Description of pain point 1 specific to this role. E.g., for Drug Safety: "Manual signal detection across global databases consumes 70% of your team's bandwidth."]
-              </p>
-            </div>
-          </div>
-
-          <!-- Pain Point 2 -->
-          <div class="arca-card">
-            <div class="arca-card-inner">
-              <h3 class="arca-heading-3">[Pain Point 2 Title]</h3>
-              <p class="arca-body-sm arca-text-grey-600">
-                [Description of pain point 2.]
-              </p>
-            </div>
-          </div>
-
-          <!-- Pain Point 3 -->
-          <div class="arca-card">
-            <div class="arca-card-inner">
-              <h3 class="arca-heading-3">[Pain Point 3 Title]</h3>
-              <p class="arca-body-sm arca-text-grey-600">
-                [Description of pain point 3.]
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 5: How ArcaScience Helps — Role-specific workflows
-         ============================================================ -->
+    <!-- SECTION 2: CREDIBILITY BAR -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
-    <section class="arca-section arca-bg-grey-50 arca-py-9 arca-bg-dots">
-      <div class="arca-container">
-        <div class="arca-section-label" data-animate>How ArcaScience Helps</div>
-        <h2 class="arca-display-sm" data-animate>
-          Your Workflow, Transformed
-        </h2>
-
-        <!-- Workflow Step 1 -->
-        <div class="arca-grid-7-5" data-animate>
-          <div>
-            <div class="arca-module-tag is-data">Data Intelligence</div>
-            <h3 class="arca-heading-2">[Workflow Step 1 Title]</h3>
-            <p class="arca-body-md arca-text-grey-600">
-              [How the Data Intelligence module addresses this role's specific data needs. 2-3 sentences.]
-            </p>
-            <ul class="arca-feature-list">
-              <li>[Specific capability relevant to role]</li>
-              <li>[Specific capability relevant to role]</li>
-              <li>[Specific capability relevant to role]</li>
-            </ul>
+    <section class="arca-bg-green-100 arca-credibility-bar" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;">
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="5">5</span>
+            <p class="arca-caption">Roles supported</p>
           </div>
-          <div class="arca-workflow-visual">
-            <!-- Webflow: add screenshot or diagram placeholder -->
-            <div class="arca-placeholder-img" style="aspect-ratio: 4/3; background: var(--teal-100, #e0f7f5); border-radius: 8px;"></div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="83" data-countup-suffix="%">83%</span>
+            <p class="arca-caption">Time reduction</p>
           </div>
-        </div>
-
-        <!-- Workflow Step 2 -->
-        <div class="arca-grid-7-5" style="margin-top: var(--space-8, 64px);" data-animate>
-          <div class="arca-workflow-visual" style="order: -1;">
-            <div class="arca-placeholder-img" style="aspect-ratio: 4/3; background: var(--indigo-100, #e8eaf6); border-radius: 8px;"></div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg">Zero</span>
+            <p class="arca-caption">Manual transcription</p>
           </div>
-          <div>
-            <div class="arca-module-tag is-analytics">Decision Intelligence</div>
-            <h3 class="arca-heading-2">[Workflow Step 2 Title]</h3>
-            <p class="arca-body-md arca-text-grey-600">
-              [How the Decision Intelligence module supports this role's analysis and decision-making. 2-3 sentences.]
-            </p>
-            <ul class="arca-feature-list">
-              <li>[Specific capability relevant to role]</li>
-              <li>[Specific capability relevant to role]</li>
-              <li>[Specific capability relevant to role]</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Workflow Step 3 -->
-        <div class="arca-grid-7-5" style="margin-top: var(--space-8, 64px);" data-animate>
-          <div>
-            <div class="arca-module-tag is-output">Automated Outputs</div>
-            <h3 class="arca-heading-2">[Workflow Step 3 Title]</h3>
-            <p class="arca-body-md arca-text-grey-600">
-              [How the Automated Outputs module produces the deliverables this role needs. 2-3 sentences.]
-            </p>
-            <ul class="arca-feature-list">
-              <li>[Specific output relevant to role]</li>
-              <li>[Specific output relevant to role]</li>
-              <li>[Specific output relevant to role]</li>
-            </ul>
-          </div>
-          <div class="arca-workflow-visual">
-            <div class="arca-placeholder-img" style="aspect-ratio: 4/3; background: var(--green-100, #e8f5e9); border-radius: 8px;"></div>
+          <div class="arca-credibility-metric">
+            <span class="arca-stat-lg" data-countup="100" data-countup-suffix="%">100%</span>
+            <p class="arca-caption">Audit trail coverage</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 6: Impact Metrics — What [ROLE_NAME] achieves
-         ============================================================ -->
-    <section class="arca-section arca-bg-blue-600 arca-py-8">
-      <div class="arca-container">
-        <h2 class="arca-heading-1 arca-text-white arca-text-center" data-animate>
-          Impact for [ROLE_NAME] Teams
-        </h2>
-        <div class="arca-grid-4" data-animate>
-          <div class="arca-text-center">
-            <div class="arca-stat-lg arca-text-white">
-              <span data-countup="60" data-countup-suffix="%" data-countup-duration="2000">60%</span>
-            </div>
-            <div class="arca-body-sm arca-text-blue-100">[Metric 1 label, e.g., "Faster report generation"]</div>
-          </div>
-          <div class="arca-text-center">
-            <div class="arca-stat-lg arca-text-white">
-              <span data-countup="3" data-countup-suffix="×" data-countup-duration="2000">3×</span>
-            </div>
-            <div class="arca-body-sm arca-text-blue-100">[Metric 2 label]</div>
-          </div>
-          <div class="arca-text-center">
-            <div class="arca-stat-lg arca-text-white">
-              <span data-countup="100" data-countup-suffix="%" data-countup-duration="2000">100%</span>
-            </div>
-            <div class="arca-body-sm arca-text-blue-100">[Metric 3 label]</div>
-          </div>
-          <div class="arca-text-center">
-            <div class="arca-stat-lg arca-text-white">
-              <span data-countup="40" data-countup-suffix="%" data-countup-duration="2000">40%</span>
-            </div>
-            <div class="arca-body-sm arca-text-blue-100">[Metric 4 label]</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 7: Testimonial from this role
-         ============================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
-
-<section class="arca-section arca-bg-grey-50 arca-bg-dots arca-py-9">
-      <div class="arca-container" style="max-width: 800px;">
-        <div class="arca-testimonial" data-animate>
-          <blockquote class="arca-testimonial-quote arca-quote">
-            "[Testimonial from a [ROLE_NAME] professional who uses ArcaScience. 3-4 sentences describing the transformation in their workflow and outcomes.]"
-          </blockquote>
-          <div class="arca-testimonial-attribution">
-            <div class="arca-testimonial-avatar">
-              <!-- Webflow: add headshot image -->
-            </div>
-            <div>
-              <div class="arca-heading-3">[Name]</div>
-              <div class="arca-body-sm arca-text-grey-600">[Title], [Company]</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 8: Case Study — Relevant to this role
-         ============================================================ -->
+    <!-- SECTION 3: ROLE CARDS GRID -->
     <div class="arca-section-divider" aria-hidden="true"></div>
 
-    <section class="arca-section arca-bg-grey-50 arca-py-9 arca-bg-dots">
-      <div class="arca-container">
-        <div class="arca-section-label" data-animate>See It in Action</div>
-        <h2 class="arca-display-sm" data-animate>[CASE_STUDY_TITLE]</h2>
+    <section class="arca-bg-grey-50 arca-bg-dots" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;">
+          <p class="arca-section-label">Explore by Role</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-5);">
+            Role-Specific Benefit-Risk Solutions
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600">
+            Every stakeholder in the benefit-risk process has unique data needs, analytical priorities, and deliverables. ArcaScience configures its dashboards, AI models, and outputs for each function.
+          </p>
+        </div>
 
-        <div class="arca-grid-7-5" data-animate>
-          <div>
-            <p class="arca-body-md arca-text-grey-600">
-              [2-3 sentence summary of the case study, focused on what the [ROLE_NAME] user achieved.]
-            </p>
-            <div class="arca-grid-3" style="margin-top: var(--space-5, 24px);">
-              <div>
-                <div class="arca-stat-sm" data-countup="60" data-countup-suffix="%">60%</div>
-                <div class="arca-caption arca-text-grey-600">[Result metric 1]</div>
-              </div>
-              <div>
-                <div class="arca-stat-sm" data-countup="3" data-countup-suffix="×">3×</div>
-                <div class="arca-caption arca-text-grey-600">[Result metric 2]</div>
-              </div>
-              <div>
-                <div class="arca-stat-sm" data-countup="100" data-countup-suffix="%">100%</div>
-                <div class="arca-caption arca-text-grey-600">[Result metric 3]</div>
-              </div>
+        <!-- Role Cards Grid — single column for richer cards -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+
+          <!-- 1. Drug Safety & Pharmacovigilance Leaders -->
+          <a href="/role-drug-safety" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(220,38,38,0.05)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Shield with cross icon — safety/protection -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 3L5 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7L14 3z" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+                <path d="M10 14h8M14 10v8" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
             </div>
-            <a href="/evidence-case-studies-hub" class="arca-btn-tertiary" style="margin-top: var(--space-4, 16px);">
-              Read Full Case Study <span class="arca-arrow">&rarr;</span>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Drug Safety &amp; Pharmacovigilance Leaders</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Automate signal detection, PSUR/PBRER generation, and safety database analysis. Shift from manual case processing to AI-driven aggregate analysis that catches signals weeks earlier.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">PSUR/PBRER</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Signal Reports</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Safety Database Reviews</span>
+              </div>
+              <div style="padding: 10px 14px; background: linear-gradient(135deg, rgba(220,38,38,0.04), rgba(220,38,38,0.02)); border-left: 3px solid rgba(220,38,38,0.3); border-radius: 0 6px 6px 0; margin-bottom: var(--space-4);">
+                <p class="arca-body-sm arca-text-grey-600" style="margin: 0; font-style: italic;">
+                  Weeks spent compiling safety data manually &rarr; hours with automated pipelines
+                </p>
+              </div>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Drug Safety Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- 2. Regulatory Affairs Professionals -->
+          <a href="/role-regulatory-affairs" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--indigo-100), var(--indigo-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Document with checkmark icon — regulatory/compliance -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect x="6" y="3" width="16" height="22" rx="2" stroke="var(--indigo-600)" stroke-width="1.5" fill="none"/>
+                <path d="M10 12l3 3 5-6" stroke="var(--indigo-600)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="10" y1="19" x2="18" y2="19" stroke="var(--indigo-600)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+                <line x1="10" y1="22" x2="15" y2="22" stroke="var(--indigo-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Regulatory Affairs Professionals</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Generate submission-ready documents — CTD 2.5, RMP, responses to Health Authority queries — directly from the analytical engine. Ensure consistency across global filings.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">CTD Module 2.5</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">RMP</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">HA Query Responses</span>
+              </div>
+              <div style="padding: 10px 14px; background: linear-gradient(135deg, rgba(99,102,241,0.04), rgba(99,102,241,0.02)); border-left: 3px solid rgba(99,102,241,0.3); border-radius: 0 6px 6px 0; margin-bottom: var(--space-4);">
+                <p class="arca-body-sm arca-text-grey-600" style="margin: 0; font-style: italic;">
+                  Inconsistencies across regional submissions &rarr; unified analytical source
+                </p>
+              </div>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Regulatory Affairs Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- 3. Clinical Operations Leaders -->
+          <a href="/role-clinical-ops" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--teal-100), var(--teal-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Clipboard with pulse icon — clinical operations -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect x="6" y="5" width="16" height="20" rx="2" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/>
+                <rect x="10" y="2" width="8" height="4" rx="1" stroke="var(--teal-600)" stroke-width="1.5" fill="none"/>
+                <polyline points="9,17 12,14 15,18 19,12" stroke="var(--teal-600)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Clinical Operations Leaders</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Integrate clinical trial safety data with real-time benefit-risk monitoring. Support DSMB briefings, interim analyses, and protocol amendment decisions with quantitative BRA.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">DSMB Reports</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Interim BRA</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Protocol Amendments</span>
+              </div>
+              <div style="padding: 10px 14px; background: linear-gradient(135deg, rgba(13,124,107,0.04), rgba(13,124,107,0.02)); border-left: 3px solid rgba(13,124,107,0.3); border-radius: 0 6px 6px 0; margin-bottom: var(--space-4);">
+                <p class="arca-body-sm arca-text-grey-600" style="margin: 0; font-style: italic;">
+                  Delayed safety reviews slowing trial decisions &rarr; real-time quantitative BRA
+                </p>
+              </div>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Clinical Ops Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- 4. Market Access & HEOR Teams -->
+          <a href="/role-market-access" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--green-100), var(--green-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Bar chart with dollar icon — market access/HEOR -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect x="4" y="16" width="4" height="8" rx="1" stroke="var(--green-600)" stroke-width="1.5" fill="none"/>
+                <rect x="12" y="10" width="4" height="14" rx="1" stroke="var(--green-600)" stroke-width="1.5" fill="none"/>
+                <rect x="20" y="4" width="4" height="20" rx="1" stroke="var(--green-600)" stroke-width="1.5" fill="none"/>
+                <line x1="2" y1="26" x2="26" y2="26" stroke="var(--green-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Market Access &amp; HEOR Teams</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Produce comparative effectiveness evidence, NNT/NNH analyses, and value dossiers for HTA bodies and payers. Translate clinical benefit-risk into economic value language.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Value Dossiers</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">NNT/NNH</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Budget Impact Models</span>
+              </div>
+              <div style="padding: 10px 14px; background: linear-gradient(135deg, rgba(5,150,105,0.04), rgba(5,150,105,0.02)); border-left: 3px solid rgba(5,150,105,0.3); border-radius: 0 6px 6px 0; margin-bottom: var(--space-4);">
+                <p class="arca-body-sm arca-text-grey-600" style="margin: 0; font-style: italic;">
+                  Months building HTA submissions &rarr; automated evidence synthesis
+                </p>
+              </div>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore Market Access Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- 5. Chief Medical Officers -->
+          <a href="/role-cmo" class="arca-card" style="text-decoration: none; color: inherit; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start;" data-animate>
+            <div style="width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--blue-100), var(--blue-50)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <!-- Dashboard/eye icon — strategic oversight -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="10" stroke="var(--blue-600)" stroke-width="1.5" fill="none"/>
+                <circle cx="14" cy="14" r="4" stroke="var(--blue-600)" stroke-width="1.5" fill="none"/>
+                <circle cx="14" cy="14" r="1.5" fill="var(--blue-600)" opacity="0.5"/>
+                <line x1="14" y1="2" x2="14" y2="6" stroke="var(--blue-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+                <line x1="14" y1="22" x2="14" y2="26" stroke="var(--blue-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+                <line x1="2" y1="14" x2="6" y2="14" stroke="var(--blue-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+                <line x1="22" y1="14" x2="26" y2="14" stroke="var(--blue-600)" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="arca-heading-2" style="margin: 0 0 var(--space-3) 0;">Chief Medical Officers</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-4);">
+                Strategic oversight of the entire benefit-risk landscape. Dashboard-level visibility into signal trends, submission timelines, and competitive positioning across the portfolio.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--space-4);">
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Portfolio Dashboard</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Strategic BRA</span>
+                <span style="padding: 3px 10px; background: var(--grey-100); border-radius: 4px; font-size: 0.6875rem; color: var(--grey-600); font-weight: 500;">Board Reports</span>
+              </div>
+              <div style="padding: 10px 14px; background: linear-gradient(135deg, rgba(59,125,216,0.04), rgba(59,125,216,0.02)); border-left: 3px solid rgba(59,125,216,0.3); border-radius: 0 6px 6px 0; margin-bottom: var(--space-4);">
+                <p class="arca-body-sm arca-text-grey-600" style="margin: 0; font-style: italic;">
+                  Fragmented safety data across teams &rarr; unified portfolio-level visibility
+                </p>
+              </div>
+              <span class="arca-btn-tertiary" style="display: inline-flex; align-self: flex-start;">
+                Explore CMO Solutions <span class="arca-arrow">&rarr;</span>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ONE PLATFORM, EVERY PERSPECTIVE -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Platform Architecture</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            One Platform, Every Perspective
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            ArcaScience provides role-specific views of the same underlying analytical engine. Every function works from a single source of truth, eliminating data silos and version conflicts.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <div class="arca-card arca-card-colored-top is-data" data-animate>
+            <span class="arca-module-tag is-data">Shared Foundation</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Same Data, Different Lenses
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              All roles access the same curated data lake — clinical trial data, real-world evidence, regulatory intelligence, and literature. Each role gets a purpose-built view that surfaces what matters most to their function.
+            </p>
+            <a href="/platform-data-intelligence" class="arca-btn-tertiary">
+              Explore Data Engine <span class="arca-arrow">&rarr;</span>
             </a>
           </div>
-          <div>
-            <div class="arca-card">
-              <div class="arca-card-inner">
-                <div class="arca-caption arca-text-grey-600">Client</div>
-                <div class="arca-heading-3">[Client Name]</div>
-                <div class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3, 12px);">Therapeutic Area</div>
-                <div class="arca-body-sm">[TA Name]</div>
-                <div class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3, 12px);">Development Phase</div>
-                <div class="arca-body-sm">[Phase Name]</div>
-                <div class="arca-caption arca-text-grey-600" style="margin-top: var(--space-3, 12px);">Modules Used</div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;">
-                  <span class="arca-module-tag is-data">Data</span>
-                  <span class="arca-module-tag is-analytics">Decision</span>
-                  <span class="arca-module-tag is-output">Output</span>
-                </div>
-              </div>
-            </div>
+
+          <div class="arca-card arca-card-colored-top is-analytics" data-animate>
+            <span class="arca-module-tag is-analytics">Role Configurations</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Role-Based Dashboards
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Configurable dashboards and output templates tailored to each stakeholder's workflow. Drug safety sees signal trends; regulatory sees submission status; CMOs see portfolio-level KPIs — all from one analytical engine.
+            </p>
+            <a href="/platform-ai-models" class="arca-btn-tertiary">
+              Explore AI Models <span class="arca-arrow">&rarr;</span>
+            </a>
           </div>
+
+          <div class="arca-card arca-card-colored-top is-output" data-animate>
+            <span class="arca-module-tag is-output">Cross-Functional</span>
+            <h3 class="arca-heading-2" style="margin: var(--space-4) 0 var(--space-3);">
+              Collaborative BRA Evidence
+            </h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-5);">
+              Cross-functional collaboration on shared benefit-risk evidence. When drug safety updates a signal assessment, regulatory sees it instantly. When market access builds a value dossier, the CMO dashboard reflects it.
+            </p>
+            <a href="/platform-outputs" class="arca-btn-tertiary">
+              Explore Outputs <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 9: Related Resources
-         ============================================================ -->
-        <div class="arca-section-divider" aria-hidden="true"></div>
-
-<section class="arca-section arca-bg-blue-50 arca-bg-mesh arca-py-9">
-      <div class="arca-container">
-        <div class="arca-section-label" data-animate>Resources for [ROLE_NAME]</div>
-        <h2 class="arca-heading-1" data-animate>Deepen Your Understanding</h2>
-
-        <div class="arca-grid-3" data-animate>
-          <!-- Resource 1: Whitepaper -->
-          <div class="arca-card">
-            <div class="arca-card-inner">
-              <span class="arca-resource-tag is-whitepaper">Whitepaper</span>
-              <h3 class="arca-heading-3">[Whitepaper title relevant to role]</h3>
-              <p class="arca-body-sm arca-text-grey-600">[1-sentence excerpt]</p>
-              <a href="#" class="arca-btn-tertiary">
-                Download <span class="arca-arrow">&rarr;</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Resource 2: Blog Post -->
-          <div class="arca-card">
-            <div class="arca-card-inner">
-              <span class="arca-resource-tag is-blog">Blog</span>
-              <h3 class="arca-heading-3">[Blog post title relevant to role]</h3>
-              <p class="arca-body-sm arca-text-grey-600">[1-sentence excerpt]</p>
-              <a href="#" class="arca-btn-tertiary">
-                Read <span class="arca-arrow">&rarr;</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Resource 3: Webinar -->
-          <div class="arca-card">
-            <div class="arca-card-inner">
-              <span class="arca-resource-tag is-webinar">Webinar</span>
-              <h3 class="arca-heading-3">[Webinar title relevant to role]</h3>
-              <p class="arca-body-sm arca-text-grey-600">[1-sentence excerpt]</p>
-              <a href="#" class="arca-btn-tertiary">
-                Watch <span class="arca-arrow">&rarr;</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 10: CTA
-         ============================================================ -->
-    <section class="arca-cta-section arca-bg-blue-900 arca-py-10" style="position: relative; overflow: hidden;">
-
-      <!-- arca-decor: CTA glow orbs -->
+    <!-- SECTION 5: FINAL CTA -->
+    <section class="arca-cta-section" data-animate style="position: relative; overflow: hidden;">
       <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
       <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
 
-      <div class="arca-container arca-text-center" style="position: relative; z-index: 1;">
-        <h2 class="arca-display-sm arca-text-white" data-animate>
-          Ready to Transform Your [ROLE_NAME] Workflow?
+      <div style="position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          See How ArcaScience Works for Your Role
         </h2>
-        <p class="arca-body-lg arca-text-blue-100" data-animate>
-          See how ArcaScience empowers [ROLE_NAME] professionals at leading pharmaceutical companies.
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Tell us your function and we'll show you exactly how ArcaScience's dashboards, AI models, and automated outputs are configured for your specific benefit-risk workflow.
         </p>
-        <div class="arca-hero-actions" data-animate>
-          <a href="/contact" class="arca-btn-primary-inverted">Request a [ROLE_NAME] Demo</a>
-          <a href="/evidence-case-studies-hub" class="arca-btn-tertiary arca-text-white">
-            View Case Studies <span class="arca-arrow">&rarr;</span>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact" class="arca-btn-primary-inverted">
+            Request a Demo
+          </a>
+          <a href="/platform-overview" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            Explore the Platform <span class="arca-arrow">&rarr;</span>
           </a>
         </div>
       </div>
@@ -516,70 +524,98 @@
 
   </main>
 
-  <!-- ============================================================
-       FOOTER (same on all pages)
-       ============================================================ -->
-  <footer class="arca-footer arca-bg-blue-900">
-    <div class="arca-container">
-      <div class="arca-footer-grid">
-        <div class="arca-footer-col">
-          <div class="arca-footer-logo">ArcaScience</div>
-          <p class="arca-body-sm arca-text-blue-200">AI-driven benefit-risk analysis for pharmaceutical development.</p>
+  <!-- FOOTER -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
         </div>
-        <div class="arca-footer-col">
-          <h4 class="arca-footer-heading">Platform</h4>
-          <a href="/platform-overview" class="arca-footer-link">Overview</a>
-          <a href="/platform-data-intelligence" class="arca-footer-link">Data Intelligence</a>
-          <a href="/platform-ai-models" class="arca-footer-link">AI Models</a>
-          <a href="/platform-outputs" class="arca-footer-link">Automated Outputs</a>
-          <a href="/security-compliance" class="arca-footer-link">Security</a>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
         </div>
-        <div class="arca-footer-col">
-          <h4 class="arca-footer-heading">Solutions</h4>
-          <a href="/solution-therapeutic-area" class="arca-footer-link">Therapeutic Areas</a>
-          <a href="/ta-oncology" class="arca-footer-link">Oncology</a>
-          <a href="/ta-neurology" class="arca-footer-link">Neurology</a>
-          <a href="/ta-immunology" class="arca-footer-link">Immunology</a>
-          <a href="/ta-cardiology" class="arca-footer-link">Cardiology</a>
-          <a href="/ta-respiratory" class="arca-footer-link">Respiratory</a>
-          <a href="/ta-rare-diseases" class="arca-footer-link">Rare Diseases</a>
-          <a href="/ta-dermatology" class="arca-footer-link">Dermatology</a>
-          <a href="/ta-hematology" class="arca-footer-link">Hematology</a>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/solution-lifecycle-phase" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Lifecycle Phases</a>
+            <a href="/solution-role" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">By Role</a>
+            <a href="/role-drug-safety" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Drug Safety</a>
+            <a href="/role-regulatory-affairs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Affairs</a>
+            <a href="/role-clinical-ops" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Clinical Operations</a>
+            <a href="/role-market-access" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Market Access</a>
+            <a href="/role-cmo" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">CMO</a>
+          </nav>
         </div>
-        <div class="arca-footer-col">
-          <h4 class="arca-footer-heading">Company</h4>
-          <a href="/about" class="arca-footer-link">About</a>
-          <a href="/leadership" class="arca-footer-link">Leadership</a>
-          <a href="/careers" class="arca-footer-link">Careers</a>
-          <a href="/contact" class="arca-footer-link">Contact</a>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/science-methodology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Science & Methodology</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
         </div>
-        <div class="arca-footer-col">
-          <h4 class="arca-footer-heading">Resources</h4>
-          <a href="/resources" class="arca-footer-link">Blog</a>
-          <a href="/resources-whitepapers" class="arca-footer-link">Whitepapers</a>
-          <a href="/resources-webinars" class="arca-footer-link">Events</a>
-          <a href="/resources-faq" class="arca-footer-link">FAQ</a>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources-faq" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">FAQ</a>
+          </nav>
         </div>
+
       </div>
-      <div class="arca-footer-bottom">
-        <p class="arca-caption arca-text-blue-300">&copy; 2025 ArcaScience. All rights reserved.</p>
-        <div class="arca-footer-legal">
-          <a href="/legal-privacy" class="arca-footer-link">Privacy</a>
-          <a href="/legal-terms" class="arca-footer-link">Terms</a>
-          <a href="/legal-cookies" class="arca-footer-link">Cookies</a>
-          <a href="/legal-accessibility" class="arca-footer-link">Accessibility</a>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS -->
   <script src="/dist/arcascience-global.min.js" defer></script>
   <script src="/dist/arcascience-countup.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       if (window.ArcaScience) ArcaScience.init();
-      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init();
+      if (window.ArcaScienceCountUp) ArcaScienceCountUp.init({ selector: '[data-countup]' });
     });
   </script>
 

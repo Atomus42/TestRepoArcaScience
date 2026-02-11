@@ -1,0 +1,865 @@
+<!--
+  ArcaScience Trust Center Page — Webflow Structure Reference
+  ============================================================
+  This file is NOT meant to be deployed directly.
+  It is a structural blueprint showing exact class names, data-attributes,
+  and section ordering for the Webflow designer to recreate.
+
+  HOW TO USE:
+  1. In Webflow, create each section as a div block.
+  2. Apply the classes shown here (add them as custom classes in Webflow).
+  3. Paste the custom code embeds from dist/webflow-embeds/ into Webflow Settings.
+  4. The data-* attributes trigger JS behaviors automatically.
+
+  PAGE: /trust-center
+  Complementary to /security-compliance — focused on downloadable documents & certifications.
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-arca>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust Center — ArcaScience</title>
+  <meta name="description" content="ArcaScience Trust Center: download compliance certifications, security documentation, and audit reports. ISO 27001, SOC 2 Type II, GDPR, FDA 21 CFR Part 11, GxP, and HIPAA.">
+
+  <!-- Fonts: self-hosted for performance -->
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Literata-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS (from build) -->
+  <link rel="stylesheet" href="/dist/arcascience-global.min.css">
+
+  <!-- Reduced motion detection before paint -->
+  <script>
+    (function(){
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.classList.add('reduced-motion');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================================================================
+       SCROLL PROGRESS BAR
+       Webflow: Add a div with data-scroll-progress, position fixed top 0.
+       ================================================================ -->
+  <div data-scroll-progress></div>
+
+  <!-- ================================================================
+       NAVIGATION
+       Webflow: Navbar component. Add data-nav="sticky" to outermost wrapper.
+       ================================================================ -->
+  <nav class="arca-nav" data-nav="sticky" role="navigation" aria-label="Main navigation">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 100%;">
+
+      <!-- Logo -->
+      <a href="/" aria-label="ArcaScience home">
+        <img src="/images/arcascience-logo.svg" alt="ArcaScience" height="32">
+      </a>
+
+      <!-- Nav Links -->
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="/" class="arca-nav-link">Home</a>
+
+        <!-- Platform dropdown -->
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/platform-overview" class="arca-nav-link is-active">Platform <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/platform-overview" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Overview</a>
+            <a href="/platform-how-it-works" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">How It Works</a>
+            <a href="/platform-data-intelligence" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">AI Models</a>
+            <a href="/platform-outputs" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Regulatory Outputs</a>
+            <a href="/platform-integrations" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Integrations</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/security-compliance" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Security &amp; Compliance</a>
+          </div>
+        </div>
+
+        <!-- Solutions dropdown -->
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/solution-therapeutic-area" class="arca-nav-link">Solutions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 260px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Approach</p>
+            <a href="/solution-therapeutic-area" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Therapeutic Area</a>
+            <a href="/solution-lifecycle-phase" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Lifecycle Phase</a>
+            <a href="/solution-role" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">By Role</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <p style="padding: 6px 16px 4px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); margin: 0;">By Stage</p>
+            <a href="/solution-early-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Early Development</a>
+            <a href="/solution-late-development" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Late Development</a>
+            <a href="/solution-post-marketing" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Post-Marketing</a>
+            <a href="/solution-market-access" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Market Access</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <div class="arca-nav-subdropdown-wrap">
+              <a href="/solution-therapeutic-area" class="arca-nav-subdropdown-trigger" style="display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">
+                Therapeutic Areas
+                <svg class="arca-chevron-right" width="8" height="12" viewBox="0 0 8 12" fill="none" style="margin-left: 8px;"><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <div class="arca-nav-subdropdown">
+                <a href="/ta-oncology">Oncology</a>
+                <a href="/disease-breast-cancer" class="arca-nav-sub-disease">Breast Cancer</a>
+                <a href="/disease-melanoma" class="arca-nav-sub-disease">Melanoma</a>
+                <a href="/disease-nsclc" class="arca-nav-sub-disease">NSCLC</a>
+                <a href="/disease-aml" class="arca-nav-sub-disease">AML</a>
+                <a href="/ta-neurology">Neurology</a>
+                <a href="/disease-alzheimers" class="arca-nav-sub-disease">Alzheimer's</a>
+                <a href="/disease-parkinsons" class="arca-nav-sub-disease">Parkinson's</a>
+                <a href="/disease-multiple-sclerosis" class="arca-nav-sub-disease">Multiple Sclerosis</a>
+                <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
+                <a href="/ta-immunology">Immunology</a>
+                <a href="/disease-rheumatoid-arthritis" class="arca-nav-sub-disease">Rheumatoid Arthritis</a>
+                <a href="/disease-psoriasis" class="arca-nav-sub-disease">Psoriasis</a>
+                <a href="/disease-lupus" class="arca-nav-sub-disease">Lupus</a>
+                <a href="/ta-cardiology">Cardiology</a>
+                <a href="/disease-afib" class="arca-nav-sub-disease">AFib</a>
+                <a href="/disease-heart-failure" class="arca-nav-sub-disease">Heart Failure</a>
+                <a href="/ta-respiratory">Respiratory</a>
+                <a href="/disease-asthma" class="arca-nav-sub-disease">Asthma</a>
+                <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
+                <a href="/ta-rare-diseases">Rare Diseases</a>
+                <a href="/disease-sma" class="arca-nav-sub-disease">SMA</a>
+                <a href="/disease-cystic-fibrosis" class="arca-nav-sub-disease">Cystic Fibrosis</a>
+                <a href="/ta-dermatology">Dermatology</a>
+                <a href="/disease-atopic-dermatitis" class="arca-nav-sub-disease">Atopic Dermatitis</a>
+                <a href="/disease-psoriatic-arthritis" class="arca-nav-sub-disease">Psoriatic Arthritis</a>
+                <a href="/ta-hematology">Hematology</a>
+                <a href="/disease-multiple-myeloma" class="arca-nav-sub-disease">Multiple Myeloma</a>
+                <a href="/disease-cll" class="arca-nav-sub-disease">CLL</a>
+                <a href="/disease-sickle-cell" class="arca-nav-sub-disease">Sickle Cell Disease</a>
+                <a href="/ta-gastroenterology">Gastroenterology</a>
+                <a href="/disease-crohns-disease" class="arca-nav-sub-disease">Crohn's Disease</a>
+                <a href="/disease-ulcerative-colitis" class="arca-nav-sub-disease">Ulcerative Colitis</a>
+                <a href="/ta-endocrinology">Endocrinology</a>
+                <a href="/disease-type-2-diabetes" class="arca-nav-sub-disease">Type 2 Diabetes</a>
+                <a href="/disease-obesity" class="arca-nav-sub-disease">Obesity</a>
+                <a href="/ta-infectious-disease">Infectious Disease</a>
+                <a href="/disease-hiv" class="arca-nav-sub-disease">HIV</a>
+                <a href="/disease-hepatitis-b" class="arca-nav-sub-disease">Hepatitis B</a>
+                <a href="/ta-pediatrics">Pediatrics</a>
+                <a href="/disease-pediatric-epilepsy" class="arca-nav-sub-disease">Pediatric Epilepsy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/evidence-case-studies-hub" class="arca-nav-link">Evidence <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/evidence-case-studies-hub" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Case Studies</a>
+            <a href="/evidence-publications" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Publications</a>
+            <a href="/evidence-metrics" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Platform Metrics</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/about" class="arca-nav-link">Company <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; left: -12px; min-width: 200px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/about" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">About ArcaScience</a>
+            <a href="/leadership" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Leadership</a>
+            <a href="/careers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Careers</a>
+            <a href="/science-methodology" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Science &amp; Methodology</a>
+          </div>
+        </div>
+        <div style="position: relative;" class="arca-nav-dropdown-wrap">
+          <a href="/resources" class="arca-nav-link">Resources <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left: 4px; vertical-align: middle;"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="arca-nav-dropdown" style="position: absolute; top: 100%; right: -12px; min-width: 220px; padding: 8px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(209,213,222,0.5); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; z-index: 100;">
+            <a href="/resources" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Resource Hub</a>
+            <a href="/resources-whitepapers" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Whitepapers</a>
+            <a href="/resources-webinars" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Webinars &amp; Events</a>
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(35,86,160,0.15), transparent); margin: 6px 12px;"></div>
+            <a href="/resources-faq" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">FAQ</a>
+            <a href="/resources-glossary" style="display: block; padding: 8px 16px; font-size: 0.875rem; color: var(--grey-800); text-decoration: none; border-radius: 6px; margin: 0 4px; transition: background 150ms ease;">Glossary</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header CTA -->
+      <a href="/contact" class="arca-btn-primary" style="height: 40px; padding: 8px 24px; font-size: 0.875rem;">
+        Talk to a Scientist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed nav -->
+  <div style="height: var(--nav-height);"></div>
+
+  <main role="main">
+
+    <!-- ================================================================
+         BREADCRUMB
+         ================================================================ -->
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: var(--space-4) 24px 0;">
+      <nav aria-label="Breadcrumb">
+        <ol style="display: flex; align-items: center; gap: 8px; list-style: none; padding: 0; margin: 0;">
+          <li><a href="/" class="arca-body-sm arca-text-blue-600" style="text-decoration: none;">Home</a></li>
+          <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+          <li><a href="/security-compliance" class="arca-body-sm arca-text-blue-600" style="text-decoration: none;">Security &amp; Compliance</a></li>
+          <li class="arca-body-sm arca-text-grey-400" aria-hidden="true">/</li>
+          <li class="arca-body-sm arca-text-grey-600" aria-current="page">Trust Center</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- ================================================================
+         SECTION 1: HERO
+         Dark background (blue-900). Title, subtitle about transparency.
+         ================================================================ -->
+    <section class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-8); margin-top: var(--space-4); position: relative; overflow: hidden; background: linear-gradient(180deg, #0A1628 0%, #12203D 50%, #0E1E38 100%);" data-animate>
+      <!-- Decorative glow orbs -->
+      <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 125, 216, 0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 8s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13, 124, 107, 0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; animation: as-float 10s ease-in-out infinite reverse; z-index: 0;"></div>
+
+      <!-- Shield + document SVG illustration -->
+      <svg width="420" height="380" viewBox="0 0 420 380" fill="none" aria-hidden="true" style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); opacity: 0.1; pointer-events: none; z-index: 0;">
+        <path d="M210 30 L370 100 L370 210 Q370 320 210 360 Q50 320 50 210 L50 100 Z" stroke="rgba(59,125,216,0.5)" stroke-width="1.5" fill="none"/>
+        <path d="M210 60 L340 120 L340 210 Q340 300 210 335 Q80 300 80 210 L80 120 Z" stroke="rgba(59,125,216,0.3)" stroke-width="1" fill="none" stroke-dasharray="8 4"/>
+        <circle cx="210" cy="190" r="70" stroke="rgba(59,125,216,0.25)" stroke-width="1" fill="none"/>
+        <circle cx="210" cy="190" r="45" stroke="rgba(59,125,216,0.35)" stroke-width="1" fill="none"/>
+        <rect x="192" y="172" width="36" height="42" rx="3" stroke="rgba(59,125,216,0.5)" stroke-width="1.5" fill="none"/>
+        <path d="M200 184h20M200 190h20M200 196h14" stroke="rgba(59,125,216,0.35)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M198 172v-6a12 12 0 0124 0v6" stroke="rgba(59,125,216,0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="130" cy="130" r="4" fill="rgba(59,125,216,0.2)"/>
+        <circle cx="290" cy="130" r="4" fill="rgba(59,125,216,0.2)"/>
+        <circle cx="210" cy="290" r="4" fill="rgba(59,125,216,0.2)"/>
+        <line x1="130" y1="130" x2="160" y2="155" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <line x1="290" y1="130" x2="260" y2="155" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+        <line x1="210" y1="260" x2="210" y2="290" stroke="rgba(59,125,216,0.15)" stroke-width="1"/>
+      </svg>
+
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <div style="max-width: 820px;">
+          <p class="arca-label arca-text-blue-400" style="margin-bottom: var(--space-3);">
+            Trust Center
+          </p>
+          <h1 class="arca-display-lg arca-text-white" style="margin-bottom: var(--space-5);">
+            Transparency, Verification, and Compliance Documentation
+          </h1>
+          <p class="arca-body-lg" style="color: rgba(255,255,255,0.85); margin-bottom: var(--space-6); max-width: 720px;">
+            The ArcaScience Trust Center provides your procurement, legal, and IT security teams with direct access to our certifications, compliance documentation, and security architecture details. Everything you need to evaluate and approve ArcaScience for your organization.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#certifications" class="arca-btn-primary-inverted">
+              View Certifications
+            </a>
+            <a href="#documentation" class="arca-btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+              Browse Documentation <span class="arca-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 2: CERTIFICATIONS & COMPLIANCE STATUS
+         Grid of certification cards with status indicators.
+         ================================================================ -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-white" style="padding: var(--space-9) 0;" id="certifications" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Certifications &amp; Compliance Status</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Current Compliance Posture
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            ArcaScience maintains active certifications and compliance programs across the regulatory frameworks required by pharmaceutical organizations worldwide.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+          <!-- ISO 27001:2022 -->
+          <div class="arca-card" style="position: relative; overflow: hidden;" data-animate>
+            <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; background: rgba(13, 124, 107, 0.08); padding: 4px 12px; border-radius: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal-600); display: inline-block;"></span>
+              <span class="arca-caption" style="color: var(--teal-600); font-weight: 600;">Certified</span>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="color: var(--blue-600);">
+                <path d="M24 4L42 14V24C42 35.05 34.25 45.22 24 48C13.75 45.22 6 35.05 6 24V14L24 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">ISO 27001:2022</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Information Security Management System (ISMS) certified. Covers the design, development, and operation of the ArcaScience benefit-risk analysis platform.
+            </p>
+            <p class="arca-caption arca-text-grey-400">Annual surveillance audits &middot; Full recertification every 3 years</p>
+          </div>
+
+          <!-- SOC 2 Type II -->
+          <div class="arca-card" style="position: relative; overflow: hidden;" data-animate>
+            <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; background: rgba(13, 124, 107, 0.08); padding: 4px 12px; border-radius: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal-600); display: inline-block;"></span>
+              <span class="arca-caption" style="color: var(--teal-600); font-weight: 600;">Audited</span>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="color: var(--blue-600);">
+                <rect x="8" y="6" width="32" height="36" rx="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 18h16M16 24h16M16 30h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 14l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">SOC 2 Type II</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Independently audited controls for security, availability, and confidentiality. Report covers the platform's operational environment, control objectives, and test results over a 12-month observation period.
+            </p>
+            <p class="arca-caption arca-text-grey-400">Report available under NDA &middot; Executive summary on request</p>
+          </div>
+
+          <!-- GDPR Compliance -->
+          <div class="arca-card" style="position: relative; overflow: hidden;" data-animate>
+            <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; background: rgba(13, 124, 107, 0.08); padding: 4px 12px; border-radius: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal-600); display: inline-block;"></span>
+              <span class="arca-caption" style="color: var(--teal-600); font-weight: 600;">Compliant</span>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="color: var(--blue-600);">
+                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 14v4M24 30v4M14 24h4M30 24h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M20 20l8 8M28 20l-8 8" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">GDPR Compliance</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              EU data protection fully implemented. Data Protection Officer appointed. Standard DPA and Standard Contractual Clauses available. Compliant with EU-US Data Privacy Framework (DPF) for transatlantic data transfers.
+            </p>
+            <p class="arca-caption arca-text-grey-400">Paris-headquartered &middot; DPO: dpo@arcascience.ai</p>
+          </div>
+
+          <!-- FDA 21 CFR Part 11 -->
+          <div class="arca-card" style="position: relative; overflow: hidden;" data-animate>
+            <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; background: rgba(13, 124, 107, 0.08); padding: 4px 12px; border-radius: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal-600); display: inline-block;"></span>
+              <span class="arca-caption" style="color: var(--teal-600); font-weight: 600;">Validated</span>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="color: var(--blue-600);">
+                <rect x="10" y="8" width="28" height="32" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M18 16h12M18 22h12M18 28h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M34 32l-4 4-2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">FDA 21 CFR Part 11</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Electronic records and electronic signatures validated per FDA requirements. Immutable audit trails, system validation (IQ/OQ/PQ), and GAMP 5-aligned change control processes.
+            </p>
+            <p class="arca-caption arca-text-grey-400">Validated electronic records &amp; signatures &middot; Full audit trail</p>
+          </div>
+
+          <!-- GxP Compliance -->
+          <div class="arca-card" style="position: relative; overflow: hidden;" data-animate>
+            <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; background: rgba(13, 124, 107, 0.08); padding: 4px 12px; border-radius: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal-600); display: inline-block;"></span>
+              <span class="arca-caption" style="color: var(--teal-600); font-weight: 600;">Aligned</span>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="color: var(--blue-600);">
+                <path d="M24 6L6 16v16l18 10 18-10V16L24 6z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M6 16l18 10M24 26v16M42 16l-18 10" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                <circle cx="24" cy="22" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M22 22l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">GxP Compliance</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Good Practice alignment across GCP (Good Clinical Practice), GVP (Good Pharmacovigilance Practice), and GLP (Good Laboratory Practice). Platform workflows designed to support regulated pharmaceutical processes.
+            </p>
+            <p class="arca-caption arca-text-grey-400">GCP &middot; GVP &middot; GLP aligned workflows</p>
+          </div>
+
+          <!-- HIPAA -->
+          <div class="arca-card" style="position: relative; overflow: hidden;" data-animate>
+            <div style="position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 6px; background: rgba(13, 124, 107, 0.08); padding: 4px 12px; border-radius: 20px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal-600); display: inline-block;"></span>
+              <span class="arca-caption" style="color: var(--teal-600); font-weight: 600;">Compliant</span>
+            </div>
+            <div style="margin-bottom: var(--space-4);">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="color: var(--blue-600);">
+                <path d="M24 4C18 4 14 8 14 12v4h-2a4 4 0 00-4 4v20a4 4 0 004 4h24a4 4 0 004-4V20a4 4 0 00-4-4h-2v-4c0-4-4-8-10-8z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M18 16v-4a6 6 0 0112 0v4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <circle cx="24" cy="30" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 33v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">HIPAA</h3>
+            <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+              Business Associate Agreement (BAA) available for US clients. Protected Health Information (PHI) handled per HIPAA Security Rule requirements, including technical, administrative, and physical safeguards.
+            </p>
+            <p class="arca-caption arca-text-grey-400">BAA available &middot; PHI safeguards per Security Rule</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: AVAILABLE DOCUMENTATION
+         Downloadable documents list with icons and request access links.
+         ================================================================ -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-grey-50 arca-bg-mesh" style="padding: var(--space-9) 0;" id="documentation" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Available Documentation</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Compliance &amp; Security Documents
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            Access the documentation your procurement, legal, and IT security teams need to evaluate ArcaScience. Request access to receive documents directly from our security team.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 960px; margin: 0 auto;">
+
+          <!-- 1. ISO 27001 Certificate -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L12 2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">ISO 27001 Certificate</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Current ISO 27001:2022 certification issued by an accredited certification body. Includes scope of certification and validity dates.
+              </p>
+              <a href="/contact?subject=trust-center-iso27001" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. SOC 2 Type II Report -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">SOC 2 Type II Report (Latest Period)</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Full independent auditor's report on security, availability, and confidentiality controls. Covers the most recent 12-month observation period. Available under NDA.
+              </p>
+              <a href="/contact?subject=trust-center-soc2" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. Penetration Test Executive Summary -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Penetration Test Executive Summary</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Executive summary of the most recent annual penetration test conducted by an independent third-party security firm. Includes scope, methodology, and findings overview.
+              </p>
+              <a href="/contact?subject=trust-center-pentest" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. Sub-Processor List -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Sub-Processor List</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Complete list of third-party sub-processors with access to client data, including entity name, location, purpose, and data processed. Updated per GDPR Article 28 requirements.
+              </p>
+              <a href="/contact?subject=trust-center-subprocessors" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 5. Data Processing Agreement (DPA) Template -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Data Processing Agreement (DPA) Template</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Pre-approved DPA template compliant with GDPR Article 28. Includes Standard Contractual Clauses, sub-processor list annex, and technical/organizational measures.
+              </p>
+              <a href="/contact?subject=trust-center-dpa" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 6. Business Associate Agreement (BAA) Template -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Business Associate Agreement (BAA) Template</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Standard BAA for US clients processing Protected Health Information. Defines obligations under HIPAA Privacy and Security Rules. Available for execution prior to PHI processing.
+              </p>
+              <a href="/contact?subject=trust-center-baa" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 7. HIPAA Compliance Documentation -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M12 2C8 2 6 5 6 7v2H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2v-9a2 2 0 00-2-2h-2V7c0-2-2-5-6-5z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M8 9V7a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="16" r="2" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">HIPAA Compliance Documentation</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Detailed documentation of ArcaScience's HIPAA Security Rule implementation, including technical safeguards, administrative safeguards, and breach notification procedures.
+              </p>
+              <a href="/contact?subject=trust-center-hipaa" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 8. Platform Security Architecture Whitepaper -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 9h20" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 9v12" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="5.5" cy="6" r="1" fill="currentColor"/>
+                <circle cx="8.5" cy="6" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Platform Security Architecture Whitepaper</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Comprehensive technical overview of ArcaScience's security architecture, encryption standards, access controls, incident response, and compliance posture. Designed for IT security evaluation.
+              </p>
+              <a href="/contact?subject=trust-center-security-wp" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 9. Disaster Recovery & Business Continuity Plan Summary -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M4 14a1 1 0 011-1h4a1 1 0 011 1v7H4v-7z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 10a1 1 0 011-1h4a1 1 0 011 1v11H9V10z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M14 6a1 1 0 011-1h4a1 1 0 011 1v15h-6V6z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M1 21h22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Disaster Recovery &amp; Business Continuity Plan Summary</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Summary of DR/BCP capabilities including RTO/RPO targets, backup strategy, geographic redundancy, and semi-annual testing results.
+              </p>
+              <a href="/contact?subject=trust-center-drbcp" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 10. Data Retention & Deletion Policy -->
+          <div class="arca-card" style="display: flex; align-items: flex-start; gap: 16px; padding: 24px;" data-animate>
+            <div style="flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(35,86,160,0.08), rgba(35,86,160,0.04)); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: var(--blue-600);">
+                <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M5 6v14a2 2 0 002 2h10a2 2 0 002-2V6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <h3 class="arca-heading-4" style="margin-bottom: 4px;">Data Retention &amp; Deletion Policy</h3>
+              <p class="arca-body-sm arca-text-grey-600" style="margin-bottom: var(--space-3);">
+                Documented policy covering data retention schedules, deletion procedures, certificate of destruction process, and compliance with GDPR right to erasure requirements.
+              </p>
+              <a href="/contact?subject=trust-center-retention" class="arca-btn-tertiary" style="font-size: 0.8125rem;">
+                Request Access <span class="arca-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: SECURITY ARCHITECTURE OVERVIEW
+         Brief text overview of key security architecture details.
+         ================================================================ -->
+    <div class="arca-section-divider" aria-hidden="true"></div>
+
+    <section class="arca-bg-white arca-bg-lines" style="padding: var(--space-9) 0;" data-animate>
+      <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+
+        <div style="text-align: center; margin-bottom: var(--space-8);">
+          <p class="arca-section-label">Security Architecture</p>
+          <h2 class="arca-display-sm" style="margin-bottom: var(--space-4);">
+            Enterprise-Grade Security by Design
+          </h2>
+          <p class="arca-body-lg arca-text-grey-600" style="max-width: 680px; margin: 0 auto;">
+            ArcaScience's platform is built on a security-first architecture, designed from the ground up to protect pharmaceutical data at every layer.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1060px; margin: 0 auto;">
+
+          <!-- Encryption -->
+          <div style="text-align: center;" data-animate>
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(35,86,160,0.1), rgba(35,86,160,0.04)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="color: var(--blue-600);">
+                <rect x="4" y="14" width="24" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 14V10a6 6 0 0112 0v4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="16" cy="22" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Encryption</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              <strong>AES-256 encryption at rest</strong> for all stored data, databases, and backups. <strong>TLS 1.3 in transit</strong> enforced for all communications. Encryption keys managed via hardware security modules (HSMs).
+            </p>
+          </div>
+
+          <!-- Multi-Tenant Isolation -->
+          <div style="text-align: center;" data-animate>
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(13,124,107,0.1), rgba(13,124,107,0.04)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="color: var(--teal-600);">
+                <rect x="4" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="18" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="4" y="18" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="18" y="18" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Multi-Tenant Isolation</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              <strong>Dedicated compute per customer</strong> with logical data segregation enforced at the database, storage, and application layers. No client can access another client's data, models, or outputs.
+            </p>
+          </div>
+
+          <!-- Data Residency -->
+          <div style="text-align: center;" data-animate>
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(99,74,211,0.1), rgba(99,74,211,0.04)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="color: var(--indigo-600);">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <ellipse cx="16" cy="16" rx="6" ry="12" stroke="currentColor" stroke-width="1"/>
+                <path d="M4 16h24M6 10h20M6 22h20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Data Residency</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              <strong>AWS eu-west-1 (Ireland) primary</strong>, with configurable data residency options for EU, US, and other regions. Default EU data storage for all clients with geographic redundancy.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Second row -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 720px; margin: var(--space-7) auto 0;">
+
+          <!-- Zero Trust -->
+          <div style="text-align: center;" data-animate>
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(35,86,160,0.1), rgba(35,86,160,0.04)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="color: var(--blue-600);">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 10v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 6l2 4M22 6l-2 4M6 16h4M22 16h4M10 26l2-4M22 26l-2-4" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Zero-Trust Architecture</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Zero-trust network architecture with identity-based access controls, micro-segmentation, continuous authentication, and least-privilege enforcement across all platform services.
+            </p>
+          </div>
+
+          <!-- Penetration Testing -->
+          <div style="text-align: center;" data-animate>
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(13,124,107,0.1), rgba(13,124,107,0.04)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="color: var(--teal-600);">
+                <circle cx="16" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="16" cy="14" r="6" stroke="currentColor" stroke-width="1"/>
+                <circle cx="16" cy="14" r="2" fill="currentColor"/>
+                <path d="M22 20l6 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="arca-heading-3" style="margin-bottom: var(--space-2);">Independent Penetration Testing</h3>
+            <p class="arca-body-sm arca-text-grey-600">
+              Regular penetration testing conducted by independent third-party security firms. Annual full-scope assessments with continuous vulnerability scanning on a weekly cadence. Findings remediated to completion.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Link to full Security & Compliance page -->
+        <div style="text-align: center; margin-top: var(--space-7);">
+          <a href="/security-compliance" class="arca-btn-secondary">
+            Full Security &amp; Compliance Details <span class="arca-arrow">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: CTA — Request Security Package
+         Full-width blue gradient.
+         ================================================================ -->
+    <section class="arca-cta-section" style="position: relative; overflow: hidden;" data-animate>
+      <!-- CTA glow orbs -->
+      <div style="position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 7s ease-in-out infinite; z-index: 0;"></div>
+      <div style="position: absolute; bottom: -40px; right: -40px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); pointer-events: none; animation: as-float 9s ease-in-out infinite reverse; z-index: 0;"></div>
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1;">
+        <h2 class="arca-heading-1" style="margin-bottom: var(--space-5);">
+          Request Security Package
+        </h2>
+        <p class="arca-body-lg" style="margin-bottom: var(--space-7);">
+          Receive our complete compliance documentation bundle -- including SOC 2 report, ISO 27001 certificate, security whitepaper, DPA template, BAA, and completed SIG/CAIQ questionnaire -- prepared for your vendor assessment process.
+        </p>
+        <a href="/contact?subject=security-package" class="arca-btn-primary-inverted">
+          Request Security Package
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="arca-bg-blue-900" style="padding: var(--space-9) 0 var(--space-7);">
+    <div style="max-width: var(--content-max-width); margin: 0 auto; padding: 0 24px;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <img src="/images/arcascience-logo-white.svg" alt="ArcaScience" height="28" style="margin-bottom: var(--space-5);">
+          <p class="arca-body-sm" style="color: rgba(255,255,255,0.65); max-width: 280px;">
+            AI-driven benefit-risk analysis for pharmaceutical development. Founded 2018.
+          </p>
+        </div>
+
+        <!-- Column 2: Platform -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Platform</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/platform-overview" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Overview</a>
+            <a href="/platform-data-intelligence" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Data Intelligence</a>
+            <a href="/platform-ai-models" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Decision Intelligence</a>
+            <a href="/platform-outputs" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Regulatory Outputs</a>
+            <a href="/security-compliance" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Security & Compliance</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Solutions -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Solutions</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/solution-therapeutic-area" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Therapeutic Areas</a>
+            <a href="/ta-oncology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Oncology</a>
+            <a href="/ta-neurology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Neurology</a>
+            <a href="/ta-immunology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Immunology</a>
+            <a href="/ta-cardiology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Cardiology</a>
+            <a href="/ta-respiratory" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Respiratory</a>
+            <a href="/ta-rare-diseases" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Rare Diseases</a>
+            <a href="/ta-dermatology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Dermatology</a>
+            <a href="/ta-hematology" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Hematology</a>
+          </nav>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Company</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">About</a>
+            <a href="/leadership" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Team</a>
+            <a href="/careers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Careers</a>
+            <a href="/about" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">News</a>
+            <a href="/contact" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <p class="arca-label" style="color: rgba(255,255,255,0.45); margin-bottom: var(--space-4);">Resources</p>
+          <nav style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/evidence-case-studies-hub" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Case Studies</a>
+            <a href="/resources-whitepapers" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Whitepapers</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Blog</a>
+            <a href="/resources" style="color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem;">Documentation</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div style="margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+        <p class="arca-caption" style="color: rgba(255,255,255,0.45);">
+          &copy; 2026 ArcaScience. All rights reserved.
+        </p>
+        <div style="display: flex; gap: 24px;">
+          <a href="/legal-privacy" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Privacy</a>
+          <a href="/legal-terms" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Terms</a>
+          <a href="/legal-cookies" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Cookies</a>
+          <a href="/legal-accessibility" style="color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.75rem;">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button data-back-to-top aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+
+  <!-- Global JS only (no hero or countup needed on this page) -->
+  <script src="/dist/arcascience-global.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.ArcaScience) ArcaScience.init();
+    });
+  </script>
+
+</body>
+</html>

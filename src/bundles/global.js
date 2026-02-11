@@ -744,6 +744,7 @@ let pauseControl = null;
 function init() {
   // Core animation systems
   scrollController = new ScrollAnimationController();
+  scrollController.init();
   perfMonitor = new AnimationPerformanceMonitor();
   pauseControl = new AnimationPauseControl();
 

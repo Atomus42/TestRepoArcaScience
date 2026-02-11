@@ -82,7 +82,7 @@ const ROOT_MARGIN = '0px 0px -20% 0px';
 /**
  * The CSS class added to elements when they should animate.
  */
-const ANIMATED_CLASS = 'as-animated';
+const ANIMATED_CLASS = 'is-visible';
 
 /**
  * Main controller class.
@@ -346,7 +346,7 @@ export class ScrollAnimationController {
   pause() {
     this.isPaused = true;
     // Show all currently hidden elements immediately (so no content is invisible)
-    const hidden = document.querySelectorAll('[data-animate]:not(.as-animated)');
+    const hidden = document.querySelectorAll('[data-animate]:not(.is-visible)');
     hidden.forEach((el) => {
       el.classList.add(ANIMATED_CLASS);
       el.style.transition = 'none';
@@ -359,6 +359,30 @@ export class ScrollAnimationController {
    */
   resume() {
     this.isPaused = false;
+  }
+
+  /**
+   * Observe an individual element for scroll-triggered animation.
+   * @param {Element} el
+   */
+  observe(el) {
+    if (!el || this.animatedElements.has(el)) return;
+    if (this.respectReducedMotion && prefersReducedMotion()) {
+      el.classList.add(ANIMATED_CLASS);
+      el.style.transition = 'none';
+      this.animatedElements.add(el);
+      return;
+    }
+    // Use first observer, or create one if needed
+    if (this.observers.length === 0) {
+      const threshold = THRESHOLD_MAP.content;
+      const observer = new IntersectionObserver(
+        (entries) => this._handleIntersections(entries),
+        { root: null, rootMargin: ROOT_MARGIN, threshold: [threshold] }
+      );
+      this.observers.push(observer);
+    }
+    this.observers[0].observe(el);
   }
 
   /**
